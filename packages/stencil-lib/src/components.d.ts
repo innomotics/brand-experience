@@ -5,8 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonVariant } from "./components/button/button";
-export { ButtonVariant } from "./components/button/button";
 export namespace Components {
     interface InnoButton {
         "disabled": boolean;
@@ -14,35 +12,6 @@ export namespace Components {
         "tabIdx": number;
         "type": 'button' | 'submit';
         "variant": 'cta' | 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
-    }
-    interface IxButton {
-        "alignment": 'center' | 'start';
-        /**
-          * Disable the button
-         */
-        "disabled": boolean;
-        /**
-          * Icon name
-         */
-        "icon": string;
-        "iconSize": '12' | '16' | '24';
-        /**
-          * Loading button
-          * @since 2.0.0
-         */
-        "loading": boolean;
-        /**
-          * Outline button
-         */
-        "outline": boolean;
-        /**
-          * Type of the button
-         */
-        "type": 'button' | 'submit';
-        /**
-          * Button variant
-         */
-        "variant": ButtonVariant;
     }
     interface MyComponent {
         /**
@@ -66,12 +35,6 @@ declare global {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
     };
-    interface HTMLIxButtonElement extends Components.IxButton, HTMLStencilElement {
-    }
-    var HTMLIxButtonElement: {
-        prototype: HTMLIxButtonElement;
-        new (): HTMLIxButtonElement;
-    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -80,7 +43,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "inno-button": HTMLInnoButtonElement;
-        "ix-button": HTMLIxButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -91,35 +53,6 @@ declare namespace LocalJSX {
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'cta' | 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
-    }
-    interface IxButton {
-        "alignment"?: 'center' | 'start';
-        /**
-          * Disable the button
-         */
-        "disabled"?: boolean;
-        /**
-          * Icon name
-         */
-        "icon"?: string;
-        "iconSize"?: '12' | '16' | '24';
-        /**
-          * Loading button
-          * @since 2.0.0
-         */
-        "loading"?: boolean;
-        /**
-          * Outline button
-         */
-        "outline"?: boolean;
-        /**
-          * Type of the button
-         */
-        "type"?: 'button' | 'submit';
-        /**
-          * Button variant
-         */
-        "variant"?: ButtonVariant;
     }
     interface MyComponent {
         /**
@@ -137,7 +70,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "inno-button": InnoButton;
-        "ix-button": IxButton;
         "my-component": MyComponent;
     }
 }
@@ -146,7 +78,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
-            "ix-button": LocalJSX.IxButton & JSXBase.HTMLAttributes<HTMLIxButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -30,28 +30,6 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'loading', 'outline', 'type', 'variant']
-})
-@Component({
-  selector: 'ix-button',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'loading', 'outline', 'type', 'variant'],
-})
-export class IxButton {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface IxButton extends Components.IxButton {}
-
-
-@ProxyCmp({
   inputs: ['first', 'last', 'middle']
 })
 @Component({

@@ -10,13 +10,18 @@ const copyAssets = [
   {
     src: './../../../node_modules/@innomotics/ix-fonts/dist',
     dest: '',
+  },
+  {
+    src:'../styles',
+    dest:''
   }
 ];
 
 export const config: Config = {
   namespace: 'innomotics-ix',
-  plugins: [sass({ includePaths: ['src/styles','../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
+  plugins: [sass({ includePaths: ['styles','../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
   globalScript: './src/setup.ts',
+  srcDir:'./src',
   outputTargets: [
     {
       type: 'dist',
@@ -32,6 +37,12 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: copyAssets
+    },
+    {
+      type:'dist',
+      copy: [
+        {src: '../styles'}
+      ]
     },
     angularOutputTarget({
       componentCorePackage: '@innomotics/ix',

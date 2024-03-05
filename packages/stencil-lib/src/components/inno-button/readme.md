@@ -6,7 +6,7 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoButton first="My" last="name">Button</InnoButton>
+    <InnoButton variant="primary">Button</InnoButton>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
@@ -15,12 +15,12 @@ import {InnoButton} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-     <InnoButton first="My" last="name">Button</InnoButton>
+     <InnoButton variant="primary">Button</InnoButton>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-     <InnoButton first="My" last="name">Button</InnoButton>
+     <InnoButton variant="primary">Button</InnoButton>
     ```
   </TabItem>
 </Tabs>

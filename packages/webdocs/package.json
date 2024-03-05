@@ -18,6 +18,7 @@
     "@docusaurus/core": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@innomotics/ix-react-lib": "*",
+    "@innomotics/ix-fonts":"*",
     "@mdx-js/react": "^3.0.0",
     "@siemens/ix-icons": "^2.1.0",
     "clsx": "^2.0.0",

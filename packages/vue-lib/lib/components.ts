@@ -17,18 +17,6 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 ]);
 
 
-export const IxButton = /*@__PURE__*/ defineContainer<JSX.IxButton>('ix-button', undefined, [
-  'variant',
-  'outline',
-  'disabled',
-  'type',
-  'loading',
-  'icon',
-  'alignment',
-  'iconSize'
-]);
-
-
 export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
   'first',
   'middle',
