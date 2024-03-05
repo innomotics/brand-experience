@@ -1,0 +1,30 @@
+{
+  "name": "@innomotics/ix-fonts",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/fonts.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://Innomotics-AKS@dev.azure.com/Innomotics-AKS/InnomoticsSalesTools/_git/inno-UX"
+  },
+  "scripts": {
+    "build": "npm run sassbuild && npm run copyoutputs && npm run copyreadme",
+    "sassbuild": "npx sass --style=compressed ./lib/styles",
+    "copyoutputs":" npx cpx \"./lib/**\" \"./dist/\"",
+    "copyreadme":"npx cpx readme.md \"../webdocs/docs/fonts\""
+  },
+  "devDependencies": {
+    "cpx2": "^7.0.1",
+    "sass": "^1.71.1"
+  }
+}

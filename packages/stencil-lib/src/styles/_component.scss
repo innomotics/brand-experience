@@ -1,0 +1,11 @@
+@use 'scrollbar';
+
+@mixin default() {
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
+  
+    @include scrollbar.default();
+}

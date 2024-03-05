@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/innomotics-ix.esm.js"></script>
+  <script nomodule src="/build/innomotics-ix.js"></script>
+</head>
+
+<body>
+  <h1>regular buttons</h1>
+  <div style="display: flex; flex-direction: row;">
+    <div style="background-color:white; padding: 15px">
+      <span style="display: block; margin-bottom: 25px;">light background</span>
+      <inno-button variant="cta">cta button <ix-icon name="star"></ix-icon></inno-button>
+      <inno-button variant="primary">primary button</inno-button>
+      <inno-button variant="secondary">secondary button <ix-icon name="arrow-diagonal-top-right"></ix-icon></inno-button>
+      <inno-button variant="tertiary">tertiary button</inno-button>
+    </div>
+    <div style="background-color:#E1F000; padding: 15px">
+      <span style="display: block;margin-bottom: 25px;">light highlight background</span>
+      <inno-button variant="cta" parent-background-color="light-highlight">cta button</inno-button>
+      <inno-button variant="primary" parent-background-color="light-highlight">primary button</inno-button>
+      <inno-button variant="secondary" parent-background-color="light-highlight">secondary button</inno-button>
+      <inno-button variant="tertiary" parent-background-color="light-highlight">tertiary button <ix-icon name="arrow-right"></ix-icon></inno-button>
+    </div>
+    <div style="background-color:#08191F; padding: 15px">
+      <span style="display: block;margin-bottom: 25px; color: white;">dark background</span>
+      <inno-button variant="cta" parent-background-color="dark">cta button</inno-button>
+      <inno-button variant="primary" parent-background-color="dark">primary button</inno-button>
+      <inno-button variant="secondary" parent-background-color="dark">secondary button</inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark">tertiary button</inno-button>
+    </div>
+    <div style="background-color: white; padding: 15px">
+      <span style="display: block;margin-bottom: 25px;">disabled</span>
+      <inno-button variant="cta" disabled>cta button</inno-button>
+      <inno-button variant="primary" disabled>primary button</inno-button>
+      <inno-button variant="secondary" disabled>secondary button</inno-button>
+      <inno-button variant="tertiary" disabled>tertiary button</inno-button>
+    </div>
+  </div>
+  <h1>media buttons</h1>
+  <div style="display: flex; flex-direction: row; gap: 40px;">
+    <inno-button variant="media"><ix-icon name="search" style="width: 40px; height: 40px;"></ix-icon></inno-button>
+    <inno-button variant="media" disabled><ix-icon name="search" style="width: 40px; height: 40px;"></ix-icon></inno-button>
+  </div>
+  <h1>navigation buttons</h1>
+  <div style="display: flex; flex-direction: row; gap: 40px;">
+    <inno-button variant="navigation">&lt;</inno-button>
+    <inno-button variant="navigation" disabled>&gt;</inno-button>
+  </div>
+</body>
+
+</html>

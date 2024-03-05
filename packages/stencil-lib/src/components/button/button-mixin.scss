@@ -1,0 +1,182 @@
+/*
+ * SPDX-FileCopyrightText: 2024 Innomotics GmbH
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+@use 'sass:map';
+@use '../../styles/base';
+@use '../../styles/component';
+@use '../../styles/fonts';
+@use '../../styles/states';
+
+@mixin btn-base-variant($name, $enable-border: true) {
+  .btn-#{$name} {
+    border-radius: map-get(base.$button-colors,btn--border-radius);
+
+    &,
+    &.focus,
+    &:focus-visible {
+      background-color: map-get(base.$button-colors,btn-#{$name}--background);
+      color: map-get(base.$button-colors,btn-#{$name}--color);
+
+      --ix-button-color: map-get(base.$button-colors,btn-#{$name}--color);
+
+      @if $enable-border {
+         border-width: map-get(base.$button-colors,btn--border-thickness);
+         border-color: map-get(base.$button-colors,btn-#{$name}--border-color);
+         border-style: solid;
+      } @else {
+        border-color: transparent;
+      }
+    }
+
+    @include states.focus-visible {
+      outline: 1px solid map-get(base.$colors,color-focus-bdr);
+      outline-offset: map-get(base.$button-colors,btn--focus--outline-offset);
+    }
+
+    &.selected {
+      background-color: map-get(base.$colors,color-ghost--selected);
+      color: map-get(base.$colors,color-dynamic);
+
+      @include states.hover {
+        background-color: map-get(base.$colors,color-ghost--selected-hover);
+        color: map-get(base.$colors,color-dynamic);
+      }
+
+      @include states.active {
+        background-color: map-get(base.$colors,color-ghost--selected-active);
+        color: map-get(base.$colors,color-dynamic);
+      }
+    }
+
+    @include states.hover {
+      @if $enable-border {
+        border-color: map-get(base.$button-colors,btn-#{$name}--border-color--hover);
+      }
+
+      background-color: map-get(base.$button-colors,btn-#{$name}--background--hover);
+      color: map-get(base.$button-colors,btn-#{$name}--color--hover);
+      box-shadow: 0px -8px map-get(base.$button-colors,btn-#{$name}--underline-color) inset;
+      transition: box-shadow 200ms ease;
+    }
+
+    @include states.active {
+      @if $enable-border {
+        border-color: map-get(base.$button-colors,btn-#{$name}--border-color--active);
+      }
+
+      background-color: map-get(base.$button-colors,btn-#{$name}--background--active);
+      color: map-get(base.$button-colors,btn-#{$name}--color--active);
+    }
+
+    box-shadow: 0px -2px map-get(base.$button-colors,btn-#{$name}--underline-color) inset;
+  }
+}
+
+@mixin btn-base-variant-disabled($name, $enable-border: true) {
+  .btn-#{$name} {
+    &.disabled,
+    &:disabled {
+      pointer-events: none;
+
+      @if $enable-border {
+        border-color: map-get(base.$button-colors,btn-#{$name}--border-color--disabled);
+      }
+
+      background-color: map-get(base.$button-colors,btn-#{$name}--background--disabled);
+      color: map-get(base.$button-colors,btn-#{$name}--color--disabled);
+      opacity: 1;
+
+      --ix-button-color: map-get(base.$button-colors,btn-#{$name}--color--disabled);
+    }
+  }
+}
+
+@mixin btn-variant($name, $enable-border: true) {
+  :host {
+    @include btn-base-variant($name, $enable-border);
+  }
+
+  :host(.disabled) {
+    pointer-events: none;
+
+    @include btn-base-variant-disabled($name, $enable-border);
+  }
+}
+
+@mixin btn-base {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 48px;
+  padding: 0 24px;
+}
+
+@mixin btn {
+  :host {
+    @include component.default;
+    display: inline-block;
+    height: 2rem;
+    vertical-align: middle;
+    cursor: pointer;
+
+    @include fonts.text-default-title;
+
+    button {
+      @include btn-base();
+    }
+
+    ix-spinner {
+      margin-right: 0.25rem;
+    }
+
+    ix-icon {
+      margin-right: 0.25rem;
+    }
+
+    .content {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .content-start {
+      width: 100%;
+    }
+
+    .icon {
+      // Prevents icon to show title tooltip
+      // if embedded in ix-icon-button or ix-button[icon]
+      pointer-events: none;
+    }
+  }
+
+  :host(.disabled) {
+    cursor: default;
+  }
+}
+
+@mixin all-btn-variants {
+  @include btn;
+  $button-categories: ("primary":false, "secondary":true);
+
+  @each $category, $border in $button-categories {
+    @include btn-variant($category,$border);
+    @include btn-variant('outline-#{$category}');
+  }
+}

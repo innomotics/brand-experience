@@ -1,0 +1,57 @@
+{
+  "name": "@innomotics/ix",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.js",
+  "es2017": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/innomotix-ix/innomotix-ix.esm.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
+    "build": "stencil build && npm run copyreadmes",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@innomotics/ix-fonts": "*",
+    "@stencil/core": "^4.7.0",
+    "@stencil/sass": "^3.0.10",
+    "animejs": "^3.2.2"
+  },
+  "devDependencies": {
+    "@siemens/ix-icons": "^2.1.0",
+    "@stencil-community/postcss": "^2.2.0",
+    "@stencil/angular-output-target": "^0.8.4",
+    "@stencil/react-output-target": "^0.5.3",
+    "@stencil/vue-output-target": "^0.8.7",
+    "@types/autoprefixer": "^10.2.0",
+    "@types/jest": "^29.5.6",
+    "@types/node": "^16.18.11",
+    "autoprefixer": "^10.4.17",
+    "cpx2": "^7.0.1",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "puppeteer": "^21.9.0"
+  },
+  "peerDependencies": {
+    "@siemens/ix-icons": "^2.1.0"
+  },
+  "license": "MIT"
+}
