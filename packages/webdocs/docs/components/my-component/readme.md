@@ -15,12 +15,15 @@ import {MyComponent} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <my-component first="My" last="Name"></my-component>
+     <MyComponent first="My" last="name"></MyComponent>
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+     <MyComponent first="My" last="name"></MyComponent>
     ```
   </TabItem>
 </Tabs>
-
-retek
 
 <!-- Auto Generated Below -->
 

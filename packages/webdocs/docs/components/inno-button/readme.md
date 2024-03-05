@@ -1,5 +1,30 @@
 # inno-button
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoButton} from '@innomotics/ix-react-lib';
+
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoButton first="My" last="name">Button</InnoButton>
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js
+    <inno-button variant="primary">Button</inno-button>
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+     <InnoButton first="My" last="name">Button</InnoButton>
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+     <InnoButton first="My" last="name">Button</InnoButton>
+    ```
+  </TabItem>
+</Tabs>
+
 
 
 <!-- Auto Generated Below -->
