@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -30,7 +30,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix-fonts": "^0.0.1-alpha.0",
     "@stencil/core": "^4.7.0",
     "@stencil/sass": "^3.0.10",
     "animejs": "^3.2.2"

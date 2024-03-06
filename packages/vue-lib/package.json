@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-vue-lib",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "test": "node ./__tests__/vue-lib.test.js",
-    "build" : "npm run tsc",
-    "tsc":"tsc -p . --outDir ./dist"
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
   },
   "devDependencies": {
     "vue": "^3.4.21"
@@ -26,8 +26,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@innomotics/ix":"*",
-    "@innomotics/ix-fonts":"*",
+    "@innomotics/ix": "*",
+    "@innomotics/ix-fonts": "*",
     "@siemens/ix-icons": "^2.1.0"
   }
 }
