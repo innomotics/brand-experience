@@ -14,6 +14,10 @@ const copyAssets = [
   {
     src:'../styles',
     dest:''
+  },
+  {
+    src: './../../../node_modules/@innomotics/ix-icons/dist',
+    dest: '',
   }
 ];
 

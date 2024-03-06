@@ -6,12 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface InnoBreadcrumb {
+    }
+    interface InnoBreadcrumbItem {
+        /**
+          * Icon to be displayed next ot the label
+         */
+        "icon": string;
+        "iconSize": number;
+        /**
+          * Breadcrumb label
+         */
+        "label": string;
+        "showChevron": boolean;
+        "visible": boolean;
+    }
     interface InnoButton {
         "disabled": boolean;
         "parentBackgroundColor": 'light' | 'dark' | 'light-highlight';
         "tabIdx": number;
         "type": 'button' | 'submit';
         "variant": 'cta' | 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    interface InnoIcon {
+        /**
+          * The icon name
+         */
+        "icon": string;
+        "size": number;
     }
     interface MyComponent {
         /**
@@ -28,12 +50,60 @@ export namespace Components {
         "middle": string;
     }
 }
+export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoBreadcrumbElement;
+}
+export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoBreadcrumbItemElement;
+}
 declare global {
+    interface HTMLInnoBreadcrumbElementEventMap {
+        "itemClick": string;
+    }
+    interface HTMLInnoBreadcrumbElement extends Components.InnoBreadcrumb, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoBreadcrumbElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbElement, ev: InnoBreadcrumbCustomEvent<HTMLInnoBreadcrumbElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoBreadcrumbElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbElement, ev: InnoBreadcrumbCustomEvent<HTMLInnoBreadcrumbElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoBreadcrumbElement: {
+        prototype: HTMLInnoBreadcrumbElement;
+        new (): HTMLInnoBreadcrumbElement;
+    };
+    interface HTMLInnoBreadcrumbItemElementEventMap {
+        "breadcrumbItemClick": string;
+    }
+    interface HTMLInnoBreadcrumbItemElement extends Components.InnoBreadcrumbItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoBreadcrumbItemElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbItemElement, ev: InnoBreadcrumbItemCustomEvent<HTMLInnoBreadcrumbItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoBreadcrumbItemElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbItemElement, ev: InnoBreadcrumbItemCustomEvent<HTMLInnoBreadcrumbItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoBreadcrumbItemElement: {
+        prototype: HTMLInnoBreadcrumbItemElement;
+        new (): HTMLInnoBreadcrumbItemElement;
+    };
     interface HTMLInnoButtonElement extends Components.InnoButton, HTMLStencilElement {
     }
     var HTMLInnoButtonElement: {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
+    };
+    interface HTMLInnoIconElement extends Components.InnoIcon, HTMLStencilElement {
+    }
+    var HTMLInnoIconElement: {
+        prototype: HTMLInnoIconElement;
+        new (): HTMLInnoIconElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -42,17 +112,47 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "inno-breadcrumb": HTMLInnoBreadcrumbElement;
+        "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
+        "inno-icon": HTMLInnoIconElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface InnoBreadcrumb {
+        /**
+          * Crumb item clicked event
+         */
+        "onItemClick"?: (event: InnoBreadcrumbCustomEvent<string>) => void;
+    }
+    interface InnoBreadcrumbItem {
+        /**
+          * Icon to be displayed next ot the label
+         */
+        "icon"?: string;
+        "iconSize"?: number;
+        /**
+          * Breadcrumb label
+         */
+        "label"?: string;
+        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<string>) => void;
+        "showChevron"?: boolean;
+        "visible"?: boolean;
+    }
     interface InnoButton {
         "disabled"?: boolean;
         "parentBackgroundColor"?: 'light' | 'dark' | 'light-highlight';
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'cta' | 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    interface InnoIcon {
+        /**
+          * The icon name
+         */
+        "icon"?: string;
+        "size"?: number;
     }
     interface MyComponent {
         /**
@@ -69,7 +169,10 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "inno-breadcrumb": InnoBreadcrumb;
+        "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
+        "inno-icon": InnoIcon;
         "my-component": MyComponent;
     }
 }
@@ -77,7 +180,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
+            "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -8,12 +8,33 @@ import type { JSX } from '@innomotics/ix';
 
 
 
+export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>('inno-breadcrumb', undefined, [
+  'itemClick'
+]);
+
+
+export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumbItem>('inno-breadcrumb-item', undefined, [
+  'label',
+  'icon',
+  'iconSize',
+  'visible',
+  'showChevron',
+  'breadcrumbItemClick'
+]);
+
+
 export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-button', undefined, [
   'variant',
   'parentBackgroundColor',
   'type',
   'tabIdx',
   'disabled'
+]);
+
+
+export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
+  'icon',
+  'size'
 ]);
 
 

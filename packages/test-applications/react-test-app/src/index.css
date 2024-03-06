@@ -1,6 +1,7 @@
 
 
 @import url("@innomotics/ix-fonts/dist/styles/innomoticsHaffer.css");
+@import url("@innomotics/ix-icons/dist/styles/innomoticsIcons.css");
 
 :root {
   font-family: 'InnomoticsHafferSQ-Light';

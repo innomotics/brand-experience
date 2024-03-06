@@ -5,10 +5,9 @@
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "lib/fonts.js",
+  "private":false,
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "files": [
     "lib"

@@ -10,6 +10,7 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/innomotix-ix/innomotix-ix.esm.js",
+  "private":false,
   "repository": {
     "type": "git",
     "url": ""
@@ -31,7 +32,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@innomotics/ix-fonts": "^0.0.1-alpha.1",
+    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix-icons":"*",
     "@stencil/core": "^4.7.0",
     "@stencil/sass": "^3.0.10",
     "animejs": "^3.2.2"
@@ -52,7 +54,8 @@
     "puppeteer": "^21.9.0"
   },
   "peerDependencies": {
-    "@siemens/ix-icons": "^2.1.0"
+    "@siemens/ix-icons": "^2.1.0",
+    "@innomotics/ix-icons":"*"
   },
   "license": "MIT"
 }

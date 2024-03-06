@@ -1,14 +1,16 @@
 {
   "name": "test-applications",
   "version": "0.0.1-alpha.1",
-  "private": true,
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/test-applications.js",
-  "directories": {},
-  "files": [],
+  "private":true,
+  "directories": {
+  },
+  "files": [
+  ],
   "scripts": {
     "reactApp": "cd react-test-app && npm run build",
     "vueApp": "cd vue-test-app && npm run build",
@@ -34,6 +36,8 @@
     "@innomotics/ix-react-lib": "^0.0.1-alpha.1",
     "@innomotics/ix-vue-lib": "^0.0.1-alpha.1",
     "@siemens/ix-icons": "^2.1.0",
+    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix-icons":"*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rxjs": "~7.8.0",
