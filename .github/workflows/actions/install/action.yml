@@ -21,3 +21,7 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
       shell: bash
+      
+    - name: install lerna
+      run: npm install --global lerna
+      shell: bash
