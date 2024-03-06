@@ -30,7 +30,7 @@ jobs:
 
       - name: Publish 
         run: |
-          lerna publish --no-private --yes
+          lerna publish from-package --no-private --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
