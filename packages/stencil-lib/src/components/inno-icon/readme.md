@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description   | Type     | Default                |
-| -------- | --------- | ------------- | -------- | ---------------------- |
-| `icon`   | `icon`    | The icon name | `string` | `undefined`            |
-| `size`   | `size`    |               | `number` | `12 \| 16 \| 24 \| 32` |
+| Property | Attribute | Description   | Type     | Default     |
+| -------- | --------- | ------------- | -------- | ----------- |
+| `icon`   | `icon`    | The icon name | `string` | `undefined` |
+| `size`   | `size`    |               | `number` | `16`        |
 
 
 ## Dependencies

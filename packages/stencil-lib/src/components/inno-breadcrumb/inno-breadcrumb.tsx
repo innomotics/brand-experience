@@ -37,11 +37,20 @@ export class Breadcrumb {
     return [...Array.from(this.hostElement.querySelectorAll('inno-breadcrumb-item'))];
   }
 
+  removeLastItemChevron(children: HTMLInnoBreadcrumbItemElement[])
+  {
+    if(children.length>0)
+    {
+      children[children.length-1].showChevron = false;
+    }
+  }
+
   render() {
+    this.removeLastItemChevron(this.items);
     return (
       <Host>
         <ol>
-          {this.items?.length > 0 ? <inno-breadcrumb-item label="..." icon="ix-home"></inno-breadcrumb-item> : null}
+          {this.items?.length > 0 ? (<inno-breadcrumb-item label="..." icon="home" showChevron={this.items.length>0}></inno-breadcrumb-item>) : null}
           <slot></slot>
         </ol>
       </Host>

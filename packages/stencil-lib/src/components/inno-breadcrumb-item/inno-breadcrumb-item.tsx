@@ -56,8 +56,9 @@ export class BreadcrumbItem {
       >
         <li onClick={() => this.breadcrumbItemClick.emit(this.label)}>
           <a>
-            {this.icon ? <inno-icon icon={this.icon} size={this.iconSize}></inno-icon> : this.label}
+            {this.icon ? (<inno-icon icon={this.icon} size={this.iconSize}></inno-icon>) : this.label}
             <slot></slot>
+            {this.showChevron? (<inno-icon icon="chevron-right" class="chevron" size={this.iconSize}></inno-icon>): null}
           </a>
         </li>
       </Host>

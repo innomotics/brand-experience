@@ -14,24 +14,21 @@ export class InnoIcon {
   /*
    * The icon size
    */
-  @Prop() size: number = 12 | 16 | 24 | 32;
+  @Prop() size: number = 16;
 
   @State() svgContent?: string;
 
   async componentDidLoad() {
-    console.log("Resolving icon..");
     this.svgContent = await this.resolveIcon(this.icon);
-    console.log("Icon resolved..");
-
   }
 
   render() {
-    return <Host class={`icon-${this.size}`} innerHTML={this.svgContent}></Host>;
+    return <Host class={`icon-${this.size} icon-inno-${this.icon}`} innerHTML={this.svgContent}></Host>;
   }
 
   async resolveIcon(icon: string) {
-    const esmIcon = await import(`@innomotics/ix-icons/dist/inno-icons`);
-    const iconname = 'inno_'+icon.replace(/\-/g,'');
-    return esmIcon[iconname];
+    const svgIcon = await import(`@innomotics/ix-icons/dist/inno-icons`);
+    const iconname = 'inno_' + icon.replace(/\-/g, '');
+    return svgIcon[iconname];
   }
 }
