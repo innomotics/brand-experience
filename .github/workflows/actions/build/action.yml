@@ -19,6 +19,10 @@ runs:
           node_modules
           packages/**/node_modules
 
+    - name: install lerna
+      run: npm install --global lerna
+      shell: bash
+
     - name: build all
       run: lerna run build
       shell: bash
