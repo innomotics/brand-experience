@@ -1,0 +1,14 @@
+$sizes: 16, 24, 32, 64;
+
+@mixin icons-classes() {
+  @each $size in $sizes {
+    .icon-#{$size} {
+      svg {
+        width: #{$size}px;
+        height: #{$size}px;
+      }
+    }
+  }
+}
+
+@include icons-classes();
