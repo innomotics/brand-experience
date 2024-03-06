@@ -23,7 +23,8 @@
     "vue": "^3.4.21"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "@innomotics/ix": "*",
