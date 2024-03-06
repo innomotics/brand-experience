@@ -1,0 +1,24 @@
+name: 'Build'
+description: 'Build'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@innomotics'
+
+    - uses: actions/cache@v3
+      id: cache
+      with:
+        key: npm-${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          npm-${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
+        path: |
+          node_modules
+          packages/**/node_modules
+
+    - name: build all
+      run: lerna run build
+      shell: bash

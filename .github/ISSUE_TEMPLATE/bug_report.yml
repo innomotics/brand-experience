@@ -1,0 +1,58 @@
+name: Bug Report
+description: Bug report 📚
+labels: ['triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this bug report!
+
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      description:  Make sure to not violate these rules
+      options:
+        - label: I have not leaked any internal company information.
+          required: true
+        - label: I have not posted internal links or code snippets.
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the issue here.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+
+  - type: dropdown
+    id: framework
+    attributes:
+      label: What type of frontend frameware are you seeing the problem on?
+      multiple: true
+      options:
+        - Angular
+        - React
+        - JavaScript
+        - Others
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Which version of iX do you use?
+      description: The exact version of Innomotics iX you use.
+      placeholder: v1.x.x
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Code to produce this issue.
+      description: Please copy and paste any relevant code to re-produce this issue (__preferred__ stackblitz/codesandbox/... link or a github repository).
+      render: shell
+    validations:
+      required: true

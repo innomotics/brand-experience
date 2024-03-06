@@ -1,0 +1,27 @@
+name: Bug Report for the official iX documentation
+description: Documentation bug report 📑
+labels: ['component: documentation', 'triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      description:  Make sure to not violate these rules
+      options:
+        - label: I have not leaked any internal company information.
+          required: true
+        - label: I have not posted internal links or code snippets.
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the issue here.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
