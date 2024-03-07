@@ -35,7 +35,6 @@
     "@innomotics/ix-angular-lib": "^0.0.1-alpha.1",
     "@innomotics/ix-react-lib": "^0.0.1-alpha.1",
     "@innomotics/ix-vue-lib": "^0.0.1-alpha.1",
-    "@siemens/ix-icons": "^2.1.0",
     "@innomotics/ix-fonts": "*",
     "@innomotics/ix-icons":"*",
     "react": "^18.2.0",

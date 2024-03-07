@@ -3,7 +3,7 @@ import { Component, Host, Prop, State, h } from '@stencil/core';
 @Component({
   tag: 'inno-icon',
   styleUrl: 'inno-icon.scss',
-  scoped: true,
+  scoped: true
 })
 export class InnoIcon {
   /**
@@ -23,7 +23,9 @@ export class InnoIcon {
   }
 
   render() {
-    return <Host class={`icon-${this.size} icon-inno-${this.icon}`} innerHTML={this.svgContent}></Host>;
+    return <Host class={`icon-${this.size} icon-inno-${this.icon}`}>
+      <div innerHTML={this.svgContent}></div>
+    </Host>;
   }
 
   async resolveIcon(icon: string) {

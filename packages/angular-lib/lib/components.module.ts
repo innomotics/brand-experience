@@ -1,13 +1,11 @@
 import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
 import { DIRECTIVES } from "./stencil-generated";
 import { appInitialize } from "./app-initialize";
-import { IxIcon } from "./ix-icon";
 import { DOCUMENT } from '@angular/common';
 import { defineCustomElements } from "@innomotics/ix/loader";
 
 const DECLARATIONS = [
-    ...DIRECTIVES,
-    IxIcon
+    ...DIRECTIVES
 ];
 
 @NgModule({

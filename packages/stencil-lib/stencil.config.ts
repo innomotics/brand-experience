@@ -24,7 +24,6 @@ const copyAssets = [
 export const config: Config = {
   namespace: 'innomotics-ix',
   plugins: [sass({ includePaths: ['styles','../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
-  globalScript: './src/setup.ts',
   srcDir:'./src',
   outputTargets: [
     {

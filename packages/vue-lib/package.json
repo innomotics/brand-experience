@@ -29,7 +29,6 @@
   },
   "peerDependencies": {
     "@innomotics/ix": "*",
-    "@innomotics/ix-fonts": "*",
-    "@siemens/ix-icons": "^2.1.0"
+    "@innomotics/ix-fonts": "*"
   }
 }
