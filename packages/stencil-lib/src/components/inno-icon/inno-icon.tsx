@@ -20,13 +20,11 @@ export class InnoIcon {
 
   @Watch('icon')
   async svgContentChanged(){
-    console.log("watch fired");
     this.svgContent = await this.resolveIcon(this.icon);
   }
   
   async connectedCallback()
   {
-    console.log("watch fired");
     this.svgContentChanged();
   }
   

@@ -9,15 +9,7 @@ import autoprefixer from 'autoprefixer';
 const copyAssets = [
   {
     src: './../../../node_modules/@innomotics/ix-fonts/dist',
-    dest: '',
-  },
-  {
-    src:'../styles',
-    dest:''
-  },
-  {
-    src: './../../../node_modules/@innomotics/ix-icons/dist',
-    dest: '',
+    dest: ''
   }
 ];
 
@@ -25,6 +17,7 @@ export const config: Config = {
   namespace: 'innomotics-ix',
   plugins: [sass({ includePaths: ['styles','../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
   srcDir:'./src',
+  globalStyle:'./styles/innomotics.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -38,14 +31,8 @@ export const config: Config = {
     },
     {
       type: 'www',
-      serviceWorker: null, // disable service workers
+      serviceWorker: null,
       copy: copyAssets
-    },
-    {
-      type:'dist',
-      copy: [
-        {src: '../styles'}
-      ]
     },
     angularOutputTarget({
       componentCorePackage: '@innomotics/ix',

@@ -1,3 +1,3 @@
-@use '@innomotics/ix-fonts/dist/styles/innomoticsHaffer';
-@use '@innomotics/ix-icons/dist/styles/innomoticsIcons';
+@forward '@innomotics/ix-fonts/dist/styles/innomoticsHaffer';
+@forward '@innomotics/ix-icons/dist/styles/innomoticsIcons';
 @forward './colors';
