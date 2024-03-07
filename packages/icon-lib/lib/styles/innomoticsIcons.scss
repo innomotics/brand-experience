@@ -3,9 +3,20 @@ $sizes: 16, 24, 32, 64;
 @mixin icons-classes() {
   @each $size in $sizes {
     .icon-#{$size} {
+      width: #{$size}px;
+      height: #{$size}px;
+      max-width: #{$size}px;
+      max-height: #{$size}px;
       svg {
         width: #{$size}px;
         height: #{$size}px;
+        max-width: #{$size}px;
+        max-height: #{$size}px;
+      }
+      svg,
+      svg[fill],
+      svg [fill] {
+        fill: currentColor !important;
       }
     }
   }

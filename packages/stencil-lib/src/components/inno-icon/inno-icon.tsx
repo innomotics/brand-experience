@@ -1,4 +1,4 @@
-import { Component, Host, Prop, State, h } from '@stencil/core';
+import { Component, Host, Prop, State, Watch, h } from '@stencil/core';
 
 @Component({
   tag: 'inno-icon',
@@ -18,13 +18,21 @@ export class InnoIcon {
 
   @State() svgContent?: string;
 
-  async componentDidLoad() {
+  @Watch('icon')
+  async svgContentChanged(){
+    console.log("watch fired");
     this.svgContent = await this.resolveIcon(this.icon);
   }
-
+  
+  async connectedCallback()
+  {
+    console.log("watch fired");
+    this.svgContentChanged();
+  }
+  
   render() {
     return <Host class={`icon-${this.size} icon-inno-${this.icon}`}>
-      <div innerHTML={this.svgContent}></div>
+      <div class={`icon-${this.size}`} innerHTML={this.svgContent}></div>
     </Host>;
   }
 
