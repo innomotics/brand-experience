@@ -6,11 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/test-applications.js",
-  "private":true,
-  "directories": {
-  },
-  "files": [
-  ],
+  "private": true,
+  "directories": {},
+  "files": [],
   "scripts": {
     "reactApp": "cd react-test-app && npm run build",
     "vueApp": "cd vue-test-app && npm run build",
@@ -21,7 +19,7 @@
     "@innomotics/ix-angular-lib": "*",
     "@innomotics/ix-react-lib": "*",
     "@innomotics/ix-vue-lib": "*",
-    "vue": "^3.4.15"
+    "vue": "3.4.21"
   },
   "dependencies": {
     "@angular/animations": "^17.2.0",
@@ -33,15 +31,15 @@
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
     "@innomotics/ix-angular-lib": "^0.0.1-alpha.1",
+    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix-icons": "*",
     "@innomotics/ix-react-lib": "^0.0.1-alpha.1",
     "@innomotics/ix-vue-lib": "^0.0.1-alpha.1",
-    "@innomotics/ix-fonts": "*",
-    "@innomotics/ix-icons":"*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "vue": "^3.4.15",
+    "vue": "3.4.21",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

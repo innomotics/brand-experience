@@ -7,6 +7,7 @@
   "devDependencies": {
     "@types/node": "^20.11.21",
     "lerna": "^8.1.2",
+    "lerna-update-wizard": "^1.1.2",
     "typescript": "^5.3.3"
   }
 }

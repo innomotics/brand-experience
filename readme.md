@@ -15,3 +15,10 @@ You can build any package in the package folder by npm run build
 You can run the test apps in their folder by
 - npm run dev (Vue and React)
 - ng serve (Angular)
+- npm start (Stencil)
+
+You can start docusaurus in the webdocs package
+- npx docusaurus start
+
+You can upgrade npm packages using lernawizard
+- npx lernaupdate
