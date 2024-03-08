@@ -18,6 +18,7 @@ export namespace Components {
           * Breadcrumb label
          */
         "label": string;
+        "orderId"?: number;
         "showChevron": boolean;
         "visible": boolean;
     }
@@ -77,7 +78,7 @@ declare global {
         new (): HTMLInnoBreadcrumbElement;
     };
     interface HTMLInnoBreadcrumbItemElementEventMap {
-        "breadcrumbItemClick": string;
+        "breadcrumbItemClick": number;
     }
     interface HTMLInnoBreadcrumbItemElement extends Components.InnoBreadcrumbItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoBreadcrumbItemElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbItemElement, ev: InnoBreadcrumbItemCustomEvent<HTMLInnoBreadcrumbItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -136,7 +137,8 @@ declare namespace LocalJSX {
           * Breadcrumb label
          */
         "label"?: string;
-        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<string>) => void;
+        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<number>) => void;
+        "orderId"?: number;
         "showChevron"?: boolean;
         "visible"?: boolean;
     }

@@ -42,6 +42,8 @@ export class Breadcrumb {
     if(children.length>0)
     {
       children[children.length-1].showChevron = false;
+      let childrenId : number = 0;
+      children.forEach(c=>c.orderId = childrenId++);
     }
   }
 

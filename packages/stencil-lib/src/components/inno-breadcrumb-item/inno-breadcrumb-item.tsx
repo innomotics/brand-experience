@@ -21,12 +21,17 @@ export class BreadcrumbItem {
    * Breadcrumb label
    */
   @Prop() label: string;
-
   /**
    * Icon to be displayed next ot the label
    */
   @Prop() icon: string;
-
+  /*
+  * Id to use in click event (optional will be generated automatically)
+  */
+  @Prop() orderId?: number;
+  /*
+  * The size of the icon if the icon property is not empty
+  */
   @Prop() iconSize: number = 16;
 
   /**@internal */
@@ -36,7 +41,7 @@ export class BreadcrumbItem {
   @Prop() showChevron = true;
 
   /**@internal */
-  @Event() breadcrumbItemClick: EventEmitter<string>;
+  @Event() breadcrumbItemClick: EventEmitter<number>;
 
   componentDidLoad() {}
 
@@ -52,7 +57,7 @@ export class BreadcrumbItem {
         class={{
           'hide-chevron': !this.showChevron,
         }}
-        onClick={() => this.breadcrumbItemClick.emit(this.label)}
+        onClick={() => this.breadcrumbItemClick.emit(this.orderId)}
       >
         <li>
           <a>
