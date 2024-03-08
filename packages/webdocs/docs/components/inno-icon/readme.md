@@ -18,11 +18,13 @@
 ### Used by
 
  - [inno-breadcrumb-item](../inno-breadcrumb-item)
+ - [inno-button](../inno-button)
 
 ### Graph
 ```mermaid
 graph TD;
   inno-breadcrumb-item --> inno-icon
+  inno-button --> inno-icon
   style inno-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

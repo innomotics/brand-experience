@@ -12,6 +12,7 @@
 | `icon`     | `icon`      | Icon to be displayed next ot the label | `string` | `undefined` |
 | `iconSize` | `icon-size` |                                        | `number` | `16`        |
 | `label`    | `label`     | Breadcrumb label                       | `string` | `undefined` |
+| `orderId`  | `order-id`  |                                        | `number` | `undefined` |
 
 
 ## Dependencies

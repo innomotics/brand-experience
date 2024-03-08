@@ -16,6 +16,7 @@ export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>(
 export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumbItem>('inno-breadcrumb-item', undefined, [
   'label',
   'icon',
+  'orderId',
   'iconSize',
   'visible',
   'showChevron',
@@ -28,7 +29,11 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
   'parentBackgroundColor',
   'type',
   'tabIdx',
-  'disabled'
+  'disabled',
+  'icon',
+  'iconPosition',
+  'navDirection',
+  'iconOnly'
 ]);
 
 

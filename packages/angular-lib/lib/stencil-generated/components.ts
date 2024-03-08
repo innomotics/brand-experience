@@ -35,14 +35,14 @@ export declare interface InnoBreadcrumb extends Components.InnoBreadcrumb {
 
 
 @ProxyCmp({
-  inputs: ['icon', 'iconSize', 'label']
+  inputs: ['icon', 'iconSize', 'label', 'orderId']
 })
 @Component({
   selector: 'inno-breadcrumb-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'iconSize', 'label'],
+  inputs: ['icon', 'iconSize', 'label', 'orderId'],
 })
 export class InnoBreadcrumbItem {
   protected el: HTMLElement;
@@ -57,14 +57,14 @@ export declare interface InnoBreadcrumbItem extends Components.InnoBreadcrumbIte
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'parentBackgroundColor', 'tabIdx', 'type', 'variant']
+  inputs: ['disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'parentBackgroundColor', 'tabIdx', 'type', 'variant']
 })
 @Component({
   selector: 'inno-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'parentBackgroundColor', 'tabIdx', 'type', 'variant'],
+  inputs: ['disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'parentBackgroundColor', 'tabIdx', 'type', 'variant'],
 })
 export class InnoButton {
   protected el: HTMLElement;

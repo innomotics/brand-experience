@@ -32,14 +32,31 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property                | Attribute                 | Description | Type                                                                         | Default     |
-| ----------------------- | ------------------------- | ----------- | ---------------------------------------------------------------------------- | ----------- |
-| `disabled`              | `disabled`                |             | `boolean`                                                                    | `false`     |
-| `parentBackgroundColor` | `parent-background-color` |             | `"dark" \| "light" \| "light-highlight"`                                     | `'light'`   |
-| `tabIdx`                | `tab-idx`                 |             | `number`                                                                     | `0`         |
-| `type`                  | `type`                    |             | `"button" \| "submit"`                                                       | `'button'`  |
-| `variant`               | `variant`                 |             | `"cta" \| "media" \| "navigation" \| "primary" \| "secondary" \| "tertiary"` | `undefined` |
+| Property                | Attribute                 | Description | Type                                                                | Default     |
+| ----------------------- | ------------------------- | ----------- | ------------------------------------------------------------------- | ----------- |
+| `disabled`              | `disabled`                |             | `boolean`                                                           | `false`     |
+| `icon`                  | `icon`                    |             | `string`                                                            | `undefined` |
+| `iconOnly`              | `icon-only`               |             | `boolean`                                                           | `false`     |
+| `iconPosition`          | `icon-position`           |             | `"left" \| "right"`                                                 | `'right'`   |
+| `navDirection`          | `nav-direction`           |             | `"left" \| "right"`                                                 | `'right'`   |
+| `parentBackgroundColor` | `parent-background-color` |             | `"dark" \| "light"`                                                 | `'light'`   |
+| `tabIdx`                | `tab-idx`                 |             | `number`                                                            | `0`         |
+| `type`                  | `type`                    |             | `"button" \| "submit"`                                              | `'button'`  |
+| `variant`               | `variant`                 |             | `"media" \| "navigation" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
+
+## Dependencies
+
+### Depends on
+
+- [inno-icon](../inno-icon)
+
+### Graph
+```mermaid
+graph TD;
+  inno-button --> inno-icon
+  style inno-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
