@@ -24,6 +24,10 @@ export namespace Components {
     }
     interface InnoButton {
         "disabled": boolean;
+        "icon": string;
+        "iconOnly": boolean;
+        "iconPosition": 'left' | 'right';
+        "navDirection": 'left' | 'right';
         "parentBackgroundColor": 'light' | 'dark';
         "tabIdx": number;
         "type": 'button' | 'submit';
@@ -144,6 +148,10 @@ declare namespace LocalJSX {
     }
     interface InnoButton {
         "disabled"?: boolean;
+        "icon"?: string;
+        "iconOnly"?: boolean;
+        "iconPosition"?: 'left' | 'right';
+        "navDirection"?: 'left' | 'right';
         "parentBackgroundColor"?: 'light' | 'dark';
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';

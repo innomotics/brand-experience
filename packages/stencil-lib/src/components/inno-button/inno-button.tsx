@@ -6,11 +6,15 @@ import { Component, Element, Host, Prop, h } from '@stencil/core';
   scoped: true
 })
 export class InnoButton {
-  @Prop() variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
-  @Prop() parentBackgroundColor: 'light' | 'dark' = 'light';
+  @Prop({ mutable: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' = 'primary';
+  @Prop({ mutable: true }) parentBackgroundColor: 'light' | 'dark' = 'light';
   @Prop() type: 'button' | 'submit' = 'button';
-  @Prop() tabIdx: number = 0;
-  @Prop({ reflect: true }) disabled = false;
+  @Prop({ mutable: true }) tabIdx: number = 0;
+  @Prop({ reflect: true, mutable: true }) disabled = false;
+  @Prop({ mutable: true }) icon: string;
+  @Prop({ mutable: true }) iconPosition: 'left' | 'right' = 'right';
+  @Prop({ mutable: true }) navDirection: 'left' | 'right' = 'right';
+  @Prop() iconOnly: boolean = false;
 
   @Element() hostElement: HTMLInnoButtonElement;
   submitButtonElement: HTMLButtonElement;
@@ -34,6 +38,13 @@ export class InnoButton {
   }
 
   render() {
+    let hasIcon: boolean = (this.icon != null && this.icon != '') || this.variant === 'navigation';
+    let hideSlot: boolean = this.variant === 'media' || this.variant === 'navigation' || this.iconOnly;
+    let iconSize: number = this.variant === 'media' ? 32 : 24;
+    let icon: string = this.variant === 'navigation'
+      ? (this.navDirection === 'right' ? 'chevron-right-small' : 'chevron-left-small')
+      : this.icon;
+
     return (
       <Host class={{
         disabled: this.disabled
@@ -46,6 +57,7 @@ export class InnoButton {
               'tertiary': this.variant === 'tertiary',
               'media': this.variant === 'media',
               'navigation': this.variant === 'navigation',
+              'icon-only': this.iconOnly,
               'light-bgc': this.parentBackgroundColor === 'light',
               'dark-bgc': this.parentBackgroundColor === 'dark',
               disabled: this.disabled
@@ -55,7 +67,13 @@ export class InnoButton {
           type={this.type}
           tabIndex={this.disabled ? -1 : this.tabIdx ?? 0}
         >
-          <slot></slot>
+          {hasIcon && this.iconPosition === 'left'
+            ? <inno-icon icon={icon} size={iconSize}></inno-icon>
+            : null}
+          {!hideSlot ? <slot></slot> : null}
+          {hasIcon && this.iconPosition === 'right'
+            ? <inno-icon icon={icon} size={iconSize}></inno-icon>
+            : null}
         </button>
       </Host>
     );

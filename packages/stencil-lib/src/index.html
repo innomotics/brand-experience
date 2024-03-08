@@ -16,38 +16,50 @@
   <div style="display: flex; flex-direction: row;">
     <div style="background-color:white; padding: 15px">
       <span style="display: block; margin-bottom: 25px;">light background</span>
-      <inno-button variant="primary">primary button</inno-button>
-      <inno-button variant="secondary">secondary button <inno-icon icon="arrow-diagonal-top-right" size="24"></inno-icon></inno-button>
-      <inno-button variant="tertiary">tertiary button</inno-button>
+      <inno-button variant="primary" icon="arrow-right">primary button</inno-button>
+      <inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
+      <inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
+      <inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
+      <inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
+      <inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
     </div>
     <div style="background-color:#08191F; padding: 15px">
       <span style="display: block;margin-bottom: 25px; color: white;">dark background</span>
-      <inno-button variant="primary" parent-background-color="dark">primary button</inno-button>
-      <inno-button variant="secondary" parent-background-color="dark">secondary button</inno-button>
-      <inno-button variant="tertiary" parent-background-color="dark">tertiary button</inno-button>
+      <inno-button variant="primary" parent-background-color="dark" icon="arrow-right">primary button</inno-button>
+      <inno-button variant="secondary" parent-background-color="dark" icon="arrow-right">secondary button</inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark" icon="arrow-right">tertiary button</inno-button>
+      <inno-button variant="primary" parent-background-color="dark" icon="arrow-right" icon-only="true"></inno-button>
+      <inno-button variant="secondary" parent-background-color="dark" icon="arrow-right" icon-only="true"></inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark" icon="arrow-right" icon-only="true"></inno-button>
     </div>
     <div style="background-color: white; padding: 15px">
       <span style="display: block;margin-bottom: 25px;">disabled light background</span>
-      <inno-button variant="primary" disabled>primary button</inno-button>
-      <inno-button variant="secondary" disabled>secondary button</inno-button>
-      <inno-button variant="tertiary" disabled>tertiary button</inno-button>
+      <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
+      <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
+      <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
+      <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
+      <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
+      <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
     </div>
     <div style="background-color: #08191F; padding: 15px">
       <span style="display: block;margin-bottom: 25px; color: white;">disabled dark background</span>
-      <inno-button variant="primary" parent-background-color="dark" disabled>primary button</inno-button>
-      <inno-button variant="secondary" parent-background-color="dark" disabled>secondary button</inno-button>
-      <inno-button variant="tertiary" parent-background-color="dark" disabled>tertiary button</inno-button>
+      <inno-button variant="primary" parent-background-color="dark" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
+      <inno-button variant="secondary" parent-background-color="dark" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
+      <inno-button variant="primary" parent-background-color="dark" disabled icon="cogwheel" icon-only="true"></inno-button>
+      <inno-button variant="secondary" parent-background-color="dark" disabled icon="cogwheel" icon-only="true"></inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark" disabled icon="cogwheel" icon-only="true"></inno-button>
     </div>
   </div>
   <h1>media buttons</h1>
   <div style="display: flex; flex-direction: row; gap: 40px;">
-    <inno-button variant="media"><inno-icon icon="search" size="32"></inno-icon></inno-button>
-    <inno-button variant="media" disabled><inno-icon icon="search" size="32"></inno-icon></inno-button>
+    <inno-button variant="media" icon="search"></inno-button>
+    <inno-button variant="media" icon="search" disabled></inno-button>
   </div>
   <h1>navigation buttons</h1>
   <div style="display: flex; flex-direction: row; gap: 40px;">
-    <inno-button variant="navigation">&lt;</inno-button>
-    <inno-button variant="navigation" disabled>&gt;</inno-button>
+    <inno-button variant="navigation" nav-direction="left"></inno-button>
+    <inno-button variant="navigation" disabled></inno-button>
   </div>
   <h1>breadcrumb</h1>
   <inno-breadcrumb>
