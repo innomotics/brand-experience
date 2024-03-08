@@ -15,37 +15,14 @@
   background-color: transparent;
   overflow: hidden;
 
-  .previous-button {
-    width: 3rem;
-    min-width: 0px;
-  }
-
-  .crumb-dropdown {
-    overflow: visible;
-  }
-
-  .remove-anchor::after {
-    display: none;
-  }
-
-  .more-text {
-    display: flex;
-
-    .more-text-ellipsis {
-      width: 1rem;
-      display: inline-block;
-    }
-
-    ix-icon {
-      // line-height: unset; --> Note: 'line-height' can't be applied due to shadow DOM encapsulation at ix-icon
-      // using padding-top to achieve same position as before
+    inno-icon {
       padding-top: 2px;
     }
-  }
+  
 
   nav,
   ol,
   .crumb-items {
-    display: contents;
+    display: flex;
   }
 }

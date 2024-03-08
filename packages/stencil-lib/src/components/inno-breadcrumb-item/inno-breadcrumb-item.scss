@@ -18,8 +18,11 @@
   max-width: 15rem;
   min-width: 0;
 
-  li {
+  li{
     display: contents;
+    a{
+      display: contents;
+    }
   }
 
   .chevron {
