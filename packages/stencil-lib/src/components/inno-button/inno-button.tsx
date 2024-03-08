@@ -6,8 +6,8 @@ import { Component, Element, Host, Prop, h } from '@stencil/core';
   scoped: true
 })
 export class InnoButton {
-  @Prop() variant: 'cta' | 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
-  @Prop() parentBackgroundColor: 'light' | 'dark' | 'light-highlight' = 'light';
+  @Prop() variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+  @Prop() parentBackgroundColor: 'light' | 'dark' = 'light';
   @Prop() type: 'button' | 'submit' = 'button';
   @Prop() tabIdx: number = 0;
   @Prop({ reflect: true }) disabled = false;
@@ -41,7 +41,6 @@ export class InnoButton {
         <button
           class={
             {
-              'cta': this.variant === 'cta',
               'primary': this.variant === 'primary',
               'secondary': this.variant === 'secondary',
               'tertiary': this.variant === 'tertiary',
@@ -49,7 +48,6 @@ export class InnoButton {
               'navigation': this.variant === 'navigation',
               'light-bgc': this.parentBackgroundColor === 'light',
               'dark-bgc': this.parentBackgroundColor === 'dark',
-              'light-highlight-bgc': this.parentBackgroundColor === 'light-highlight',
               disabled: this.disabled
             }
           }

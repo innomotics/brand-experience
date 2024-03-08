@@ -13,35 +13,30 @@
 
 <body>
   <h1>regular buttons</h1>
-  <inno-icon icon="star" size="24"></inno-icon>
   <div style="display: flex; flex-direction: row;">
     <div style="background-color:white; padding: 15px">
       <span style="display: block; margin-bottom: 25px;">light background</span>
-      <inno-button variant="cta">cta button <inno-icon icon="star" size="24"></inno-icon></inno-button>
       <inno-button variant="primary">primary button</inno-button>
       <inno-button variant="secondary">secondary button <inno-icon icon="arrow-diagonal-top-right" size="24"></inno-icon></inno-button>
       <inno-button variant="tertiary">tertiary button</inno-button>
     </div>
-    <div style="background-color:#E1F000; padding: 15px">
-      <span style="display: block;margin-bottom: 25px;">light highlight background</span>
-      <inno-button variant="cta" parent-background-color="light-highlight">cta button</inno-button>
-      <inno-button variant="primary" parent-background-color="light-highlight">primary button</inno-button>
-      <inno-button variant="secondary" parent-background-color="light-highlight">secondary button</inno-button>
-      <inno-button variant="tertiary" parent-background-color="light-highlight">tertiary button <inno-icon icon="arrow-right" size="24"></inno-icon></inno-button>
-    </div>
     <div style="background-color:#08191F; padding: 15px">
       <span style="display: block;margin-bottom: 25px; color: white;">dark background</span>
-      <inno-button variant="cta" parent-background-color="dark">cta button</inno-button>
       <inno-button variant="primary" parent-background-color="dark">primary button</inno-button>
       <inno-button variant="secondary" parent-background-color="dark">secondary button</inno-button>
       <inno-button variant="tertiary" parent-background-color="dark">tertiary button</inno-button>
     </div>
     <div style="background-color: white; padding: 15px">
-      <span style="display: block;margin-bottom: 25px;">disabled</span>
-      <inno-button variant="cta" disabled>cta button</inno-button>
+      <span style="display: block;margin-bottom: 25px;">disabled light background</span>
       <inno-button variant="primary" disabled>primary button</inno-button>
       <inno-button variant="secondary" disabled>secondary button</inno-button>
       <inno-button variant="tertiary" disabled>tertiary button</inno-button>
+    </div>
+    <div style="background-color: #08191F; padding: 15px">
+      <span style="display: block;margin-bottom: 25px; color: white;">disabled dark background</span>
+      <inno-button variant="primary" parent-background-color="dark" disabled>primary button</inno-button>
+      <inno-button variant="secondary" parent-background-color="dark" disabled>secondary button</inno-button>
+      <inno-button variant="tertiary" parent-background-color="dark" disabled>tertiary button</inno-button>
     </div>
   </div>
   <h1>media buttons</h1>

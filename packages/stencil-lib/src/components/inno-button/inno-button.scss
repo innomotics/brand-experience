@@ -9,8 +9,10 @@
   }
 
   button {
+    height: 48px;
     min-height: 48px;
     max-height: 48px;
+    min-width: 96px;
     padding-left: 24px;
     padding-right: 24px;
     font-weight: bold;
@@ -25,240 +27,133 @@
     gap: 8px;
     font-size: 16px;
     font-family: 'InnomoticsHafferSQ-Bold';
-
-    &.cta {
-      &.light-bgc:not(.disabled):not(:disabled) {
-        background-color: innomotics.$primary-yellow;
-        border-bottom: 2px solid innomotics.$primary-black;
-
-        &:hover,
-        &:focus {
-          box-shadow: 0px -7px innomotics.$primary-black inset;
-          transition: box-shadow 200ms ease 0s;
-
-          &:active {
-            box-shadow: 0px -7px innomotics.$gray-active inset;
-            transition: none;
-            border-bottom: 2px solid innomotics.$gray-active;
-          }
-        }
-
-        &:active {
-          box-shadow: 0px -7px innomotics.$gray-active inset;
-          transition: none;
-          border-bottom: 2px solid innomotics.$gray-active;
-        }
-      }
-
-      &.dark-bgc:not(.disabled):not(:disabled) {
-        background-color: innomotics.$primary-yellow;
-
-        &:active {
-          box-shadow: 0px -7px innomotics.$primary-white inset;
-        }
-      }
-
-      &.light-highlight-bgc:not(.disabled):not(:disabled) {
-        color: innomotics.$primary-white;
-        background-color: innomotics.$primary-black;
-
-        &:active {
-          color: innomotics.$primary-white;
-          background-color: innomotics.$gray-active;
-          box-shadow: 0px -7px innomotics.$primary-white inset;
-        }
-      }
-
-      &:hover:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        box-shadow: 0px -7px innomotics.$primary-white inset;
-        transition: box-shadow 200ms ease 0s;
-      }
-
-      &:active:not(.disabled):not(:disabled) {
-        color: innomotics.$primary-black;
-        background-color: innomotics.$yellow-active;
-      }
-
-      &:disabled,
-      &.disabled {
-        color: innomotics.$gray-active;
-        background-color: innomotics.$gray-disabled;
-        pointer-events: none;
-      }
-    }
+    box-sizing: border-box; 
 
     &.primary {
-      &.light-bgc:not(.disabled):not(:disabled) {
-        color: innomotics.$primary-white;
+      &.light-bgc {
+        color: innomotics.$primary-yellow;
         background-color: innomotics.$primary-black;
 
-        &:hover,
-        &:focus {
-          box-shadow: 0px -7px innomotics.$primary-yellow inset;
-          transition: box-shadow 200ms ease 0s;
-
-          &:active {
-            box-shadow: 0px -7px innomotics.$yellow-active inset;
-          }
+        &:hover:not(.disabled):not(:disabled) {
+          color: innomotics.$primary-white;
+          background-color: innomotics.$gray-800;
         }
 
-        &:active {
-          box-shadow: 0px -7px innomotics.$yellow-active inset;
-        }
-      }
-
-      &.dark-bgc:not(.disabled):not(:disabled) {
-        background-color: innomotics.$primary-white;
-
-        &:hover,
-        &:focus {
-          box-shadow: 0px -7px innomotics.$primary-yellow inset;
-          transition: box-shadow 200ms ease 0s;
-
-          &:active {
-            background-color: innomotics.$primary-white;
-            box-shadow: 0px -7px innomotics.$yellow-active inset;
-          }
+        &:active:not(.disabled):not(:disabled) {
+          color: innomotics.$primary-white;
+          background-color: innomotics.$gray-900;
         }
 
-        &:active {
-          background-color: innomotics.$primary-white;
-          box-shadow: 0px -7px innomotics.$yellow-active inset;
+        &:disabled,
+        &.disabled {
+          color: innomotics.$gray-400;
+          background-color: innomotics.$gray-200;
+          pointer-events: none;
         }
       }
 
-      &.light-highlight-bgc:not(.disabled):not(:disabled) {
-        color: innomotics.$primary-white;
-        background-color: innomotics.$primary-black;
+      &.dark-bgc {
+        color: innomotics.$primary-black;
+        background-color: innomotics.$primary-yellow;
 
-        &:active {
-          box-shadow: 0px -7px innomotics.$primary-white inset;
+        &:hover:not(.disabled):not(:disabled)  {
+          background-color: innomotics.$gray-300;
         }
-      }
 
-      &:hover:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        box-shadow: 0px -7px innomotics.$primary-white inset;
-        transition: box-shadow 200ms ease 0s;
-      }
+        &:active:not(.disabled):not(:disabled) {
+          background-color: innomotics.$gray-400;
+        }
 
-      &:active:not(.disabled):not(:disabled) {
-        background-color: innomotics.$gray-active;
-        transition: none;
-      }
-
-      &:disabled,
-      &.disabled {
-        color: innomotics.$gray-active;
-        background-color: innomotics.$gray-disabled;
-        pointer-events: none;
+        &:disabled,
+        &.disabled {
+          color: innomotics.$gray-400;
+          background-color: innomotics.$gray-800;
+          pointer-events: none;
+        }
       }
     }
 
     &.secondary {
-      border: 1px solid innomotics.$primary-black;
-      border-bottom: 2px solid innomotics.$primary-black;
       background-color: transparent;
 
-      &.dark-bgc:not(.disabled):not(:disabled) {
-        color: innomotics.$primary-white;
-        border: 1px solid innomotics.$primary-white;
-        border-bottom: 2px solid innomotics.$primary-white;
+      &.light-bgc {
+        border: 2px solid innomotics.$primary-black;
 
-        &:hover,
-        &:focus {
-          box-shadow: 0px -7px innomotics.$primary-white inset;
-          transition: box-shadow 200ms ease 0s;
-
-          &:active {
-            box-shadow: 0px -7px innomotics.$primary-white inset;
-          }
-        }
-
-        &:active {
+        &:hover:not(.disabled):not(:disabled) {
+          border-color: transparent;
           color: innomotics.$primary-white;
-          border: 1px solid innomotics.$primary-white;
-          border-bottom: 2px solid innomotics.$primary-white;
-          box-shadow: 0px -7px innomotics.$primary-white inset !important;
+          background-color: innomotics.$gray-800;
         }
-      }
-
-      &:hover:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        box-shadow: 0px -7px innomotics.$primary-black inset;
-        transition: box-shadow 200ms ease 0s;
 
         &:active:not(.disabled):not(:disabled) {
-          box-shadow: 0px -7px innomotics.$gray-active inset;
+          border-color: transparent;
+          color: innomotics.$primary-white;
+          background-color: innomotics.$gray-900;
         }
       }
 
-      &:active:not(.disabled):not(:disabled) {
-        border: 1px solid innomotics.$gray-active;
-        border-bottom: 2px solid innomotics.$gray-active;
-        color: innomotics.$gray-active;
-        box-shadow: 0px -7px innomotics.$gray-active inset;
+      &.dark-bgc {
+        color: innomotics.$primary-white;
+        border: 2px solid innomotics.$primary-white;
+
+        &:hover:not(.disabled):not(:disabled) {
+          border-color: transparent;
+          color: innomotics.$primary-black;
+          background-color: innomotics.$gray-300;
+        }
+
+        &:active:not(.disabled):not(:disabled) {
+          border-color: transparent;
+          color: innomotics.$primary-black;
+          background-color: innomotics.$gray-400;
+        }
       }
 
       &:disabled,
       &.disabled {
-        color: innomotics.$gray-disabled;
-        border: 1px solid innomotics.$gray-disabled;
-        background-color: transparent;
+        color: innomotics.$gray-400;
+        border: 2px solid innomotics.$gray-400;
         pointer-events: none;
       }
     }
 
     &.tertiary {
-      padding-left: 5px;
-      padding-right: 5px;
-      border-bottom: 2px solid innomotics.$primary-black;
+      padding: 0;
+      border-bottom: 5px solid innomotics.$primary-black;
       background-color: transparent;
       margin-left: 32px;
 
-      &.dark-bgc:not(.disabled):not(:disabled) {
+      &.light-bgc {
+        &:hover:not(.disabled):not(:disabled) {
+          color: innomotics.$gray-800;
+          border-color: innomotics.$gray-800;
+        }
+
+        &:active:not(.disabled):not(:disabled) {
+          color: innomotics.$gray-900;
+          border-color: innomotics.$gray-900;
+        }
+      }
+
+      &.dark-bgc {
         color: innomotics.$primary-white;
-        border-bottom: 2px solid innomotics.$primary-white;
+        border-color: innomotics.$primary-white;
 
-        &:hover,
-        &:focus {
-          box-shadow: 0px -7px innomotics.$primary-white inset;
-          transition: box-shadow 200ms ease 0s;
-
-          &:active {
-            box-shadow: 0px -7px innomotics.$primary-white inset;
-          }
+        &:hover:not(.disabled):not(:disabled) {
+          color: innomotics.$gray-300;
+          border-color: innomotics.$gray-300;
         }
 
-        &:active {
-          color: innomotics.$primary-white;
-          border-bottom: 2px solid innomotics.$primary-white;
-          box-shadow: 0px -7px innomotics.$primary-white inset;
+        &:active:not(.disabled):not(:disabled) {
+          color: innomotics.$gray-400;
+          border-color: innomotics.$gray-400;
         }
-      }
-
-      &:hover:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        box-shadow: 0px -7px innomotics.$primary-black inset;
-        transition: box-shadow 200ms ease 0s;
-
-        &:active {
-          box-shadow: 0px -7px innomotics.$gray-active inset;
-        }
-      }
-
-      &:active:not(.disabled):not(:disabled) {
-        color: innomotics.$gray-active;
-        border-bottom: 2px solid innomotics.$gray-active;
-        box-shadow: 0px -7px innomotics.$gray-active inset;
       }
 
       &:disabled,
       &.disabled {
-        color: innomotics.$gray-disabled;
-        border-bottom: 1px solid innomotics.$gray-disabled;
-        background-color: transparent;
+        color: innomotics.$gray-400;
+        border-color: innomotics.$gray-400;
         pointer-events: none;
       }
     }
@@ -279,24 +174,20 @@
       padding: 0;
       background-color: innomotics.$primary-white;
       box-shadow: 0px 4px 20px 0px #00000033;
+      color: innomotics.$primary-black;
 
       &:hover:not(.disabled):not(:disabled) {
-        background-color: innomotics.$primary-yellow;
+        color: innomotics.$gray-800;
       }
 
-      &:active:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        background-color: innomotics.$gray-light;
+      &:active:not(.disabled):not(:disabled) {
+        color: innomotics.$gray-900;
       }
 
-      &:focus:not(.disabled):not(:disabled) {
-        outline-offset: 3px;
-      }
-
-      &:disabled, &.disabled {
+      &:disabled,
+      &.disabled {
         pointer-events: none;
-        background-color: innomotics.$gray-disabled;
-        color: innomotics.$gray-active;
+        color: innomotics.$gray-400;
       }
     }
 
@@ -310,18 +201,17 @@
       box-shadow: 0px 4px 20px 0px #00000033;
 
       &:hover:not(.disabled):not(:disabled) {
-        background-color: innomotics.$primary-yellow;
+        color: innomotics.$gray-800;
       }
 
-      &:active:not(.disabled):not(:disabled),
-      &:focus:not(.disabled):not(:disabled) {
-        background-color: innomotics.$gray-light;
+      &:active:not(.disabled):not(:disabled) {
+        color: innomotics.$gray-900;
       }
 
-      &:disabled, &.disabled {
+      &:disabled,
+      &.disabled {
         pointer-events: none;
-        background-color: innomotics.$gray-disabled;
-        color: innomotics.$gray-active;
+        color: innomotics.$gray-400;
       }
     }
   }
