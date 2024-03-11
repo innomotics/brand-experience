@@ -60,6 +60,7 @@ export class InnoButton {
               'icon-only': this.iconOnly,
               'light-bgc': this.parentBackgroundColor === 'light',
               'dark-bgc': this.parentBackgroundColor === 'dark',
+              'display-reverse': this.iconPosition === 'left',
               disabled: this.disabled
             }
           }
@@ -67,13 +68,8 @@ export class InnoButton {
           type={this.type}
           tabIndex={this.disabled ? -1 : this.tabIdx ?? 0}
         >
-          {hasIcon && this.iconPosition === 'left'
-            ? <inno-icon icon={icon} size={iconSize}></inno-icon>
-            : null}
           {!hideSlot ? <slot></slot> : null}
-          {hasIcon && this.iconPosition === 'right'
-            ? <inno-icon icon={icon} size={iconSize}></inno-icon>
-            : null}
+          {hasIcon ? <inno-icon icon={icon} size={iconSize}></inno-icon> : null}
         </button>
       </Host>
     );

@@ -29,6 +29,10 @@
     font-family: 'InnomoticsHafferSQ-Bold';
     cursor: pointer;
 
+    &.display-reverse {
+      flex-direction: row-reverse;
+    }
+
     &.primary {
       &.light-bgc {
         color: innomotics.$primary-yellow;
