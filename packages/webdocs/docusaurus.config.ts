@@ -49,6 +49,10 @@ const config: Config = {
   ],
   plugins:[['docusaurus-plugin-sass', { sassOptions: {includePaths: ['../../node_modules']}}]],
   themeConfig: {
+    colorMode:{
+      defaultMode:'dark',
+      disableSwitch: true
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
