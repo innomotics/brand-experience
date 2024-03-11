@@ -41,20 +41,20 @@ const config: Config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: [require.resolve('./src/css/custom.scss')],
+
+          customCss: './src/css/custom.scss',
         },
       } satisfies Preset.Options,
     ],
   ],
-  plugins:['docusaurus-plugin-sass'],
+  plugins:[['docusaurus-plugin-sass', { sassOptions: {includePaths: ['../../node_modules']}}]],
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Innomotics UX',
       logo: {
         alt: 'Inno Logo',
-        src: 'img/logo.svg',
+        src: 'img/innomotics-logo.svg',
       },
       items: [
         {
