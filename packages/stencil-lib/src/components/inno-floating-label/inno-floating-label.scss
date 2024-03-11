@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  .label {
+    z-index: 1;
+    font-family: serif;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    color: #595959;
+    transform: translate(0.5rem, 2.25rem) scale(1);
+    margin-left: 10px;
+  }
+  
+  .floatingLabel {
+    color: #1890ff;
+    transform: translate(0.5rem, 1.25rem) scale(1);
+    margin-left: 0;
+  }
+}

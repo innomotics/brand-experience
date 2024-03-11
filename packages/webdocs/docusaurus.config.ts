@@ -56,6 +56,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
+      style:'dark',
       logo: {
         alt: 'Inno Logo',
         src: 'img/innomotics-logo.svg',
