@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
+export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export namespace Components {
     interface InnoBreadcrumb {
     }
@@ -47,6 +49,14 @@ export namespace Components {
     interface InnoInput {
         "isActive": boolean;
     }
+    interface InnoPane {
+        "closeOnBackdropClick": boolean;
+        "expanded": boolean;
+        "hideCloseButton": boolean;
+        "paneSize": string;
+        "position": 'top' | 'left' | 'bottom' | 'right';
+        "titleText": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -69,6 +79,10 @@ export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
 export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbItemElement;
+}
+export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoPaneElement;
 }
 declare global {
     interface HTMLInnoBreadcrumbElementEventMap {
@@ -129,6 +143,23 @@ declare global {
         prototype: HTMLInnoInputElement;
         new (): HTMLInnoInputElement;
     };
+    interface HTMLInnoPaneElementEventMap {
+        "expandedChanged": ExpandedChangedEvent;
+    }
+    interface HTMLInnoPaneElement extends Components.InnoPane, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoPaneElementEventMap>(type: K, listener: (this: HTMLInnoPaneElement, ev: InnoPaneCustomEvent<HTMLInnoPaneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoPaneElementEventMap>(type: K, listener: (this: HTMLInnoPaneElement, ev: InnoPaneCustomEvent<HTMLInnoPaneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoPaneElement: {
+        prototype: HTMLInnoPaneElement;
+        new (): HTMLInnoPaneElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -142,6 +173,7 @@ declare global {
         "inno-floating-label": HTMLInnoFloatingLabelElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
+        "inno-pane": HTMLInnoPaneElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -192,6 +224,15 @@ declare namespace LocalJSX {
     interface InnoInput {
         "isActive"?: boolean;
     }
+    interface InnoPane {
+        "closeOnBackdropClick"?: boolean;
+        "expanded"?: boolean;
+        "hideCloseButton"?: boolean;
+        "onExpandedChanged"?: (event: InnoPaneCustomEvent<ExpandedChangedEvent>) => void;
+        "paneSize"?: string;
+        "position"?: 'top' | 'left' | 'bottom' | 'right';
+        "titleText"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -213,6 +254,7 @@ declare namespace LocalJSX {
         "inno-floating-label": InnoFloatingLabel;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
+        "inno-pane": InnoPane;
         "my-component": MyComponent;
     }
 }
@@ -226,6 +268,7 @@ declare module "@stencil/core" {
             "inno-floating-label": LocalJSX.InnoFloatingLabel & JSXBase.HTMLAttributes<HTMLInnoFloatingLabelElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
+            "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

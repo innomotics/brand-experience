@@ -47,6 +47,10 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 ## Dependencies
 
+### Used by
+
+ - [inno-pane](../inno-pane)
+
 ### Depends on
 
 - [inno-icon](../inno-icon)
@@ -55,6 +59,7 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 ```mermaid
 graph TD;
   inno-button --> inno-icon
+  inno-pane --> inno-button
   style inno-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -37,9 +37,31 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 ]);
 
 
+export const InnoFloatingLabel = /*@__PURE__*/ defineContainer<JSX.InnoFloatingLabel>('inno-floating-label', undefined, [
+  'label',
+  'activeState'
+]);
+
+
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
   'size'
+]);
+
+
+export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
+  'isActive'
+]);
+
+
+export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane', undefined, [
+  'position',
+  'expanded',
+  'hideCloseButton',
+  'titleText',
+  'closeOnBackdropClick',
+  'paneSize',
+  'expandedChanged'
 ]);
 
 

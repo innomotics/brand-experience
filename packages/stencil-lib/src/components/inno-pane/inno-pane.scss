@@ -1,0 +1,94 @@
+@use '@innomotics/ix/styles/colors' as innomotics;
+
+:host {
+  display: block;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  [hidden] {
+    display: none;
+    visibility: hidden;
+  }
+
+  &.not-visible {
+    display: none;
+    visibility: hidden;
+
+    .pane-content-container {
+
+      &.pane-pos-top,
+      &.pane-pos-bottom {
+        height: 0 !important;
+      }
+
+      &.pane-pos-right,
+      &.pane-pos-left {
+        width: 0 !important;
+      }
+    }
+  }
+
+  .pane-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #00000099;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+  }
+
+  .pane-content-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1001;
+    background-color: innomotics.$primary-black;
+    padding: 15px;
+    font-family: 'InnomoticsHafferSQ-Bold';
+    color: innomotics.$primary-white;
+
+    .pane-title-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &.no-title {
+        justify-content: flex-end;
+      }
+    }
+
+    &.pane-pos-top,
+    &.pane-pos-bottom {
+      width: 100vw;
+      left: 0;
+    }
+
+    &.pane-pos-right,
+    &.pane-pos-left {
+      height: 100vh;
+      top: 0;
+    }
+
+    &.pane-pos-right {
+      right: 0;
+    }
+
+    &.pane-pos-left {
+      left: 0;
+    }
+
+    &.pane-pos-top {
+      top: 0;
+    }
+
+    &.pane-pos-bottom {
+      bottom: 0;
+    }
+  }
+}

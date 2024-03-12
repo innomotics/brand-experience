@@ -39,7 +39,6 @@ export class InnoButton {
 
   render() {
     let hasIcon: boolean = (this.icon != null && this.icon != '') || this.variant === 'navigation';
-    let hideSlot: boolean = this.variant === 'media' || this.variant === 'navigation' || this.iconOnly;
     let iconSize: number = this.variant === 'media' ? 32 : 24;
     let icon: string = this.variant === 'navigation'
       ? (this.navDirection === 'right' ? 'chevron-right-small' : 'chevron-left-small')
@@ -68,7 +67,7 @@ export class InnoButton {
           type={this.type}
           tabIndex={this.disabled ? -1 : this.tabIdx ?? 0}
         >
-          {!hideSlot ? <slot></slot> : null}
+          <slot></slot>
           {hasIcon ? <inno-icon icon={icon} size={iconSize}></inno-icon> : null}
         </button>
       </Host>

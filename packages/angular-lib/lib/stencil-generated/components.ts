@@ -79,6 +79,28 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
+  inputs: ['activeState', 'label']
+})
+@Component({
+  selector: 'inno-floating-label',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeState', 'label'],
+})
+export class InnoFloatingLabel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoFloatingLabel extends Components.InnoFloatingLabel {}
+
+
+@ProxyCmp({
   inputs: ['icon', 'size']
 })
 @Component({
@@ -98,6 +120,56 @@ export class InnoIcon {
 
 
 export declare interface InnoIcon extends Components.InnoIcon {}
+
+
+@ProxyCmp({
+  inputs: ['isActive']
+})
+@Component({
+  selector: 'inno-input',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['isActive'],
+})
+export class InnoInput {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoInput extends Components.InnoInput {}
+
+
+@ProxyCmp({
+  inputs: ['closeOnBackdropClick', 'expanded', 'hideCloseButton', 'paneSize', 'position', 'titleText']
+})
+@Component({
+  selector: 'inno-pane',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['closeOnBackdropClick', 'expanded', 'hideCloseButton', 'paneSize', 'position', 'titleText'],
+})
+export class InnoPane {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['expandedChanged']);
+  }
+}
+
+
+import type { ExpandedChangedEvent as IInnoPaneExpandedChangedEvent } from '@innomotics/ix';
+
+export declare interface InnoPane extends Components.InnoPane {
+
+  expandedChanged: EventEmitter<CustomEvent<IInnoPaneExpandedChangedEvent>>;
+}
 
 
 @ProxyCmp({
