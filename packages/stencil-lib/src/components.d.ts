@@ -46,6 +46,7 @@ export namespace Components {
         "isActive": boolean;
         "isFocused": boolean;
         "label": string;
+        "variant": string;
     }
     interface InnoPane {
         "closeOnBackdropClick": boolean;
@@ -212,6 +213,7 @@ declare namespace LocalJSX {
         "isActive"?: boolean;
         "isFocused"?: boolean;
         "label"?: string;
+        "variant"?: string;
     }
     interface InnoPane {
         "closeOnBackdropClick"?: boolean;

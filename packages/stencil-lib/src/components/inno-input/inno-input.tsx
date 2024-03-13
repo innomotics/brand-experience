@@ -9,6 +9,7 @@ export class InnoInput {
   @Prop({ mutable: true }) isActive: boolean;
   @Prop({ mutable: true }) isFocused: boolean;
   @Prop() label: string;
+  @Prop() variant: string;
   @State() value: string;
 
 
@@ -34,9 +35,9 @@ export class InnoInput {
   render() {
     return (
       <Host>
-        <div class={{"input-container":true, "focused": this.isFocused}}>
+        <div class={{"input-container":true, "isactive":this.isActive, "focused": this.isFocused, "light": this.variant === "light", "dark": this.variant === "dark"}}>
           <span class={{ label: true, float: this.isActive }}>{this.label}</span>
-          <input onBlur={() => this.onBlur()} onFocus={() => this.onFocus()} onFocusout={() => this.onFocusout()} value={this.value} onInput={event => this.inputChanged(event)} />
+          <input class={{"light": this.variant === "light", "dark": this.variant === "dark"}} onBlur={() => this.onBlur()} onFocus={() => this.onFocus()} onFocusout={() => this.onFocusout()} value={this.value} onInput={event => this.inputChanged(event)} />
         </div>
       </Host>
     );
