@@ -1,0 +1,99 @@
+@use '@innomotics/ix/styles/colors';
+
+:host {
+  display: flex;
+
+  .accordion {
+    text-decoration: none;
+
+    width: 100%;
+    border-top: 1px solid colors.$gray-400;
+
+    &.light {
+      background-color: colors.$primary-white;
+
+      &:hover {
+        background-color: #F0F0F0;
+        border-top: 1px solid colors.$primary-black;
+        border-bottom: 1px solid colors.$primary-black;
+      }
+
+      &:focus {
+        outline: colors.$blue-focus;
+        outline-style: solid;
+        outline-width: 2px;
+      }
+    }
+
+    &.dark {
+      background-color: colors.$primary-black;
+
+      &:hover {
+        background-color: colors.$gray-800;
+        border-top: 1px solid rgba(225, 240, 0, 1);
+        border-bottom: 1px solid rgba(225, 240, 0, 1);
+      }
+
+      &:focus {
+        outline: colors.$blue-focus;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px 0px 24px;
+    min-height: 3rem;
+    height: 3rem;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .accordion-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    height: 100%;
+
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'InnomoticsHafferSQ-Bold';
+
+    &.light {
+      color: colors.$primary-black;
+    }
+
+    &.dark {
+      color: colors.$primary-white;
+    }
+  }
+
+  .accordion-content {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+
+    &.light {
+      color: colors.$primary-black;
+    }
+
+    &.dark {
+      color: colors.$primary-white;
+    }
+
+    display: block;
+
+    &.hide {
+      display: none;
+      max-height: 0;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}

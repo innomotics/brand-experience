@@ -16,6 +16,8 @@ export class InnoIcon {
    */
   @Prop() size: number = 16;
 
+  @Prop({ mutable: true }) theme: 'light' | 'dark' = 'light';
+
   @State() svgContent?: string;
 
   @Watch('icon')
@@ -30,7 +32,7 @@ export class InnoIcon {
   
   render() {
     return <Host class={`icon-${this.size} icon-inno-${this.icon}`}>
-      <div class={`icon-${this.size}`} innerHTML={this.svgContent}></div>
+      <div class={`icon-${this.size} icon-${this.theme}` } innerHTML={this.svgContent}></div>
     </Host>;
   }
 

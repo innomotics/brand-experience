@@ -8,6 +8,9 @@ import type { JSX } from '@innomotics/ix';
 
 
 
+export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('inno-accordion', undefined);
+
+
 export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>('inno-breadcrumb', undefined, [
   'itemClick'
 ]);

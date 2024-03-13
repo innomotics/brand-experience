@@ -8,6 +8,12 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export namespace Components {
+    interface InnoAccordion {
+        "collapsed": boolean;
+        "icon": string;
+        "label": string;
+        "variant": 'light' | 'dark';
+    }
     interface InnoBreadcrumb {
     }
     interface InnoBreadcrumbItem {
@@ -41,6 +47,7 @@ export namespace Components {
          */
         "icon": string;
         "size": number;
+        "theme": 'light' | 'dark';
     }
     interface InnoInput {
         "isActive": boolean;
@@ -84,6 +91,12 @@ export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     target: HTMLInnoPaneElement;
 }
 declare global {
+    interface HTMLInnoAccordionElement extends Components.InnoAccordion, HTMLStencilElement {
+    }
+    var HTMLInnoAccordionElement: {
+        prototype: HTMLInnoAccordionElement;
+        new (): HTMLInnoAccordionElement;
+    };
     interface HTMLInnoBreadcrumbElementEventMap {
         "itemClick": string;
     }
@@ -160,6 +173,7 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "inno-accordion": HTMLInnoAccordionElement;
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
@@ -170,6 +184,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface InnoAccordion {
+        "collapsed"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "variant"?: 'light' | 'dark';
+    }
     interface InnoBreadcrumb {
         /**
           * Crumb item clicked event
@@ -208,6 +228,7 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         "size"?: number;
+        "theme"?: 'light' | 'dark';
     }
     interface InnoInput {
         "isActive"?: boolean;
@@ -239,6 +260,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "inno-accordion": InnoAccordion;
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
@@ -252,6 +274,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "inno-accordion": LocalJSX.InnoAccordion & JSXBase.HTMLAttributes<HTMLInnoAccordionElement>;
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;

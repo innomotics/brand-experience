@@ -7,6 +7,7 @@ import type { JSX } from '@innomotics/ix';
 
 
 
+export const InnoAccordion = /*@__PURE__*/createReactComponent<JSX.InnoAccordion, HTMLInnoAccordionElement>('inno-accordion');
 export const InnoBreadcrumb = /*@__PURE__*/createReactComponent<JSX.InnoBreadcrumb, HTMLInnoBreadcrumbElement>('inno-breadcrumb');
 export const InnoBreadcrumbItem = /*@__PURE__*/createReactComponent<JSX.InnoBreadcrumbItem, HTMLInnoBreadcrumbItemElement>('inno-breadcrumb-item');
 export const InnoButton = /*@__PURE__*/createReactComponent<JSX.InnoButton, HTMLInnoButtonElement>('inno-button');

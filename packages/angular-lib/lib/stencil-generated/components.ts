@@ -10,6 +10,27 @@ import { Components } from '@innomotics/ix';
 @ProxyCmp({
 })
 @Component({
+  selector: 'inno-accordion',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoAccordion {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoAccordion extends Components.InnoAccordion {}
+
+
+@ProxyCmp({
+})
+@Component({
   selector: 'inno-breadcrumb',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
