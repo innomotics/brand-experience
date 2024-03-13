@@ -1,11 +1,5 @@
 @use '@innomotics/ix/styles/colors';
-
-@mixin focus{
-  outline: colors.$blue-focus;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-offset: 2px;
-}
+@use '@innomotics/ix/styles/componentmixins';
 
 @mixin light-base
 {
@@ -54,7 +48,7 @@
       }
     }
     &.focused{
-      @include focus;
+      @include componentmixins.focus;
     }
   }
 
@@ -88,7 +82,7 @@
       }
     }
     &.focused{
-      @include focus;
+      @include componentmixins.focus;
     }
   }
 

@@ -1,6 +1,7 @@
 @forward '@innomotics/ix-fonts/dist/styles/innomoticsHaffer';
 @forward '@innomotics/ix-icons/dist/styles/innomoticsIcons';
 @forward './colors';
+@forward './componentmixins';
 
 body{
     font-family: 'InnomoticsHafferSQ-Light';
