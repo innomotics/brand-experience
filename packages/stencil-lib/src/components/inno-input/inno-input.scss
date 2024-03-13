@@ -1,67 +1,129 @@
 @use '@innomotics/ix/styles/colors';
 
-:host {
-  .input-container {
-    height: 56px;
-    padding: 0px 16px 0px 16px;
-    margin: 2px;
-    border: 1px solid colors.$primary-black;
-    &.light {
-      background-color: colors.$primary-white;
-      color: colors.$primary-black;
-      &:hover &.isactive {
-        border: 2px solid colors.$primary-black;
-        margin: 1px;
-      }
-    }
+@mixin focus{
+  outline: colors.$blue-focus;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
 
-    &.focused {
-      outline: colors.$blue-focus;
-      outline-style: solid;
-      outline-width: 2px;
-      outline-offset: 2px;
-      &.dark{
-        border: 2px solid colors.$primary-yellow;
-        margin: 1px;
+@mixin light-base
+{
+  background-color: colors.$primary-white;
+  color: colors.$primary-black;
+}
+
+@mixin dark-base
+{
+  background-color: colors.$primary-black;
+  color: colors.$gray-400;
+}
+
+:host {
+  display: block;
+  height: 56px;
+  padding: 0px 16px 0px 16px;
+  margin: 5px;
+  border: 1px solid colors.$gray-400;
+
+  &.light {
+    @include light-base;
+
+    &:hover:not(.disabled):not(:disabled) {
+      border: 1px solid colors.$gray-400;
+      box-shadow: 0px 0px 0px 1px colors.$gray-400;
+    }
+    input {
+      @include light-base;
+      &.disabled:disabled{
+        background-color: colors.$gray-200;
+      }
+
+    }
+    &.isactive{
+      &:hover:not(.disabled):not(:disabled) {
+        box-shadow: 0px 0px 0px 1px colors.$gray-400;
+        border: 1px solid colors.$gray-400;
+      }
+      border: 1px solid colors.$primary-black;
+      box-shadow: 0px 0px 0px 1px colors.$primary-black;
+      &.disabled:disabled{
+        box-shadow: 0px 0px 0px 1px colors.$gray-400;
+        border: 1px solid colors.$gray-400;
+        background-color: colors.$gray-200;
       }
     }
-    &.dark {
-      background-color: colors.$primary-black;
-      color: colors.$primary-white;
-      &.isactive {
-        border: 2px solid colors.$primary-yellow;
-        margin: 1px;
-      }
+    &.focused{
+      @include focus;
+    }
+  }
+
+  &.dark {
+    @include dark-base;
+    &:hover:not(.disabled):not(:disabled) {
+      box-shadow: 0px 0px 0px 1px colors.$gray-400;
+    }
+    &.disabled{
+      background-color: colors.$gray-800;
     }
 
     input {
-      cursor: default;
-      width: 100%;
-      border: none;
-      outline: none;
-      margin-top: calc(56px - 30px);
-      &.ligth {
-        background-color: colors.$primary-white;
-        color: colors.$primary-black;
-      }
-      &.dark {
-        background-color: colors.$primary-black;
+      @include dark-base;
+      &.disabled{
+        background-color: colors.$gray-800;
         color: colors.$primary-white;
       }
     }
+    &.isactive{
+      &:hover:not(.disabled):not(:disabled) {
+        box-shadow: 0px 0px 0px 1px colors.$gray-400;
+        border: 1px solid colors.$gray-400;
 
-    .label {
-      left: auto;
-      right: auto;
-      z-index: 1;
-      pointer-events: none;
-      transition: 0.2s ease all;
-      transform: translate(0rem, 1.2rem) scale(1);
-      position: absolute;
+      }
+      border: 1px solid colors.$primary-yellow;
+      box-shadow: 0px 0px 0px 1px colors.$primary-yellow;
+      &.disabled:disabled{
+        box-shadow: 0px 0px 0px 1px colors.$gray-400;
+        border: 1px solid colors.$gray-400;
+      }
     }
-    .float {
-      transform: translate(0rem, 0.5rem) scale(1);
-      font-size: small;
+    &.focused{
+      @include focus;
     }
+  }
+
+  input {
+    cursor: default;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: calc(56px - 30px);
+  }
+
+  .label {
+    left: auto;
+    right: auto;
+    z-index: 1;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    transform: translate(0rem, 1.2rem) scale(1);
+    position: absolute;
+    &.light {
+      &.disabled {
+        color: colors.$gray-800;
+      }
+    }
+    &.dark {
+      &.disabled {
+        color: colors.$gray-400;
+      }
+    }
+  }
+  .float {
+    transform: translate(0rem, 0.5rem) scale(1);
+    font-size: small;
+  }
+  &.disabled {
+    border: 1px solid colors.$gray-400;
   }
 }

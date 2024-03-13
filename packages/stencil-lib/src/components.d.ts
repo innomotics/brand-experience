@@ -50,9 +50,12 @@ export namespace Components {
         "theme": 'light' | 'dark';
     }
     interface InnoInput {
+        "disabled": boolean;
         "isActive": boolean;
         "isFocused": boolean;
         "label": string;
+        "name": string;
+        "value": string;
         "variant": string;
     }
     interface InnoPane {
@@ -231,9 +234,12 @@ declare namespace LocalJSX {
         "theme"?: 'light' | 'dark';
     }
     interface InnoInput {
+        "disabled"?: boolean;
         "isActive"?: boolean;
         "isFocused"?: boolean;
         "label"?: string;
+        "name"?: string;
+        "value"?: string;
         "variant"?: string;
     }
     interface InnoPane {
