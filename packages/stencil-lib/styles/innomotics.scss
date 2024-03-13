@@ -1,3 +1,11 @@
 @forward '@innomotics/ix-fonts/dist/styles/innomoticsHaffer';
 @forward '@innomotics/ix-icons/dist/styles/innomoticsIcons';
 @forward './colors';
+
+body{
+    font-family: 'InnomoticsHafferSQ-Light';
+}
+
+input{
+    font-family: 'InnomoticsHafferSQ-Light';
+}

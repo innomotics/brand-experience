@@ -1,3 +1,41 @@
+@use '@innomotics/ix/styles/colors';
+
 :host {
-  display: block;
+  .input-container {
+    height:56px;
+    padding:0px 16px 0px 16px;
+    margin: 2px;
+    border: 1px solid colors.$primary-black;
+    &:hover {
+      border: 2px solid colors.$primary-black;
+      margin: 1px;
+    }
+    &.focused{
+      outline: colors.$blue-focus;
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      margin-top:calc(56px - 30px);
+    }
+
+    .label {
+      left: auto;
+      right: auto;
+      z-index: 1;
+      pointer-events: none;
+      transition: 0.2s ease all;
+      color: colors.$primary-black;
+      transform: translate(0rem, 1.2rem) scale(1);
+      position: absolute;
+    }
+    .float {
+      transform: translate(0rem, 0.5rem) scale(1);
+      font-size: small;
+    }
+  }
 }

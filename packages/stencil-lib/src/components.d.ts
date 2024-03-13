@@ -35,10 +35,6 @@ export namespace Components {
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
-    interface InnoFloatingLabel {
-        "activeState": boolean;
-        "label": string;
-    }
     interface InnoIcon {
         /**
           * The icon name
@@ -48,6 +44,8 @@ export namespace Components {
     }
     interface InnoInput {
         "isActive": boolean;
+        "isFocused": boolean;
+        "label": string;
     }
     interface InnoPane {
         "closeOnBackdropClick": boolean;
@@ -125,12 +123,6 @@ declare global {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
     };
-    interface HTMLInnoFloatingLabelElement extends Components.InnoFloatingLabel, HTMLStencilElement {
-    }
-    var HTMLInnoFloatingLabelElement: {
-        prototype: HTMLInnoFloatingLabelElement;
-        new (): HTMLInnoFloatingLabelElement;
-    };
     interface HTMLInnoIconElement extends Components.InnoIcon, HTMLStencilElement {
     }
     var HTMLInnoIconElement: {
@@ -170,7 +162,6 @@ declare global {
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
-        "inno-floating-label": HTMLInnoFloatingLabelElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
@@ -210,10 +201,6 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
-    interface InnoFloatingLabel {
-        "activeState"?: boolean;
-        "label"?: string;
-    }
     interface InnoIcon {
         /**
           * The icon name
@@ -223,6 +210,8 @@ declare namespace LocalJSX {
     }
     interface InnoInput {
         "isActive"?: boolean;
+        "isFocused"?: boolean;
+        "label"?: string;
     }
     interface InnoPane {
         "closeOnBackdropClick"?: boolean;
@@ -251,7 +240,6 @@ declare namespace LocalJSX {
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
-        "inno-floating-label": InnoFloatingLabel;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
@@ -265,7 +253,6 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
-            "inno-floating-label": LocalJSX.InnoFloatingLabel & JSXBase.HTMLAttributes<HTMLInnoFloatingLabelElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
