@@ -21,7 +21,7 @@
     font-weight: bold;
     margin-bottom: 12px;
     border: none;
-    color: colors.$primary-black;
+    color: colors.$interaction-light-default;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,43 +37,43 @@
 
     &.primary {
       &.light-bgc {
-        color: colors.$primary-yellow;
-        background-color: colors.$primary-black;
+        color: colors.$highlight-light-200;
+        background-color: colors.$highlight-light-100;
 
         &:hover:not(.disabled):not(:disabled) {
-          color: colors.$primary-white;
-          background-color: colors.$gray-800;
+          color: colors.$text-light-buttonlabel;
+          background-color: colors.$interaction-light-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
-          color: colors.$primary-white;
-          background-color: colors.$gray-900;
+          color: colors.$text-light-buttonlabel;
+          background-color: colors.$interaction-light-pressed;
         }
 
         &:disabled,
         &.disabled {
-          color: colors.$gray-400;
-          background-color: colors.$gray-200;
+          color: colors.$interaction-light-disabled;
+          background-color: colors.$additional-light-200;
           pointer-events: none;
         }
       }
 
       &.dark-bgc {
-        color: colors.$primary-black;
-        background-color: colors.$primary-yellow;
+        color: colors.$highlight-dark-200;
+        background-color: colors.$primary-100;
 
         &:hover:not(.disabled):not(:disabled) {
-          background-color: colors.$gray-300;
+          background-color: colors.$background-dark-300;
         }
 
         &:active:not(.disabled):not(:disabled) {
-          background-color: colors.$gray-400;
+          background-color: colors.$additional-dark-300;
         }
 
         &:disabled,
         &.disabled {
-          color: colors.$gray-400;
-          background-color: colors.$gray-800;
+          color: colors.$interaction-dark-disabled;
+          background-color: colors.$additional-dark-200;
           pointer-events: none;
         }
       }
@@ -83,49 +83,50 @@
       background-color: transparent;
 
       &.light-bgc {
-        border: 2px solid colors.$primary-black;
+        border: 2px solid colors.$interaction-light-default;
+        color: colors.$interaction-light-default;
 
         &:hover:not(.disabled):not(:disabled) {
           border-color: transparent;
-          color: colors.$primary-white;
-          background-color: colors.$gray-800;
+          color: colors.$text-light-buttonlabel;
+          background-color: colors.$interaction-light-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
           border-color: transparent;
-          color: colors.$primary-white;
-          background-color: colors.$gray-900;
+          color: colors.$text-light-buttonlabel;
+          background-color: colors.$additional-light-400;
         }
       }
 
       &.dark-bgc {
-        color: colors.$primary-white;
-        border: 2px solid colors.$primary-white;
+        color: colors.$interaction-dark-default;
+        border: 2px solid colors.$interaction-dark-default;
 
         &:hover:not(.disabled):not(:disabled) {
           border-color: transparent;
-          color: colors.$primary-black;
-          background-color: colors.$gray-300;
+          color: colors.$text-dark-buttonlabel;
+          background-color: colors.$interaction-dark-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
           border-color: transparent;
-          color: colors.$primary-black;
-          background-color: colors.$gray-400;
+          color: colors.$text-dark-buttonlabel;
+          background-color: colors.$interaction-dark-hover;
         }
       }
 
       &:disabled,
       &.disabled {
-        color: colors.$gray-400;
-        border: 2px solid colors.$gray-400;
+        color: colors.$interaction-dark-disabled;
+        border: 2px solid colors.$interaction-dark-disabled;
         pointer-events: none;
       }
     }
 
     &.tertiary {
       padding: 0;
-      border-bottom: 5px solid colors.$primary-black;
+      border-bottom: 5px solid colors.$interaction-light-default;
       background-color: transparent;
 
       &.icon-only {
@@ -133,36 +134,37 @@
       }
 
       &.light-bgc {
+        color:colors.$interaction-light-default;
         &:hover:not(.disabled):not(:disabled) {
-          color: colors.$gray-800;
-          border-color: colors.$gray-800;
+          color: colors.$interaction-light-hover;
+          border-color: colors.$interaction-light-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
-          color: colors.$gray-900;
-          border-color: colors.$gray-900;
+          color: colors.$interaction-light-pressed;
+          border-color: colors.$interaction-light-pressed;
         }
       }
 
       &.dark-bgc {
-        color: colors.$primary-white;
-        border-color: colors.$primary-white;
+        color: colors.$text-light-buttonlabel;
+        border-color: colors.$primary-300;
 
         &:hover:not(.disabled):not(:disabled) {
-          color: colors.$gray-300;
-          border-color: colors.$gray-300;
+          color: colors.$interaction-dark-hover;
+          border-color: colors.$interaction-dark-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
-          color: colors.$gray-400;
-          border-color: colors.$gray-400;
+          color: colors.$interaction-dark-pressed;
+          border-color: colors.$interaction-dark-pressed;
         }
       }
 
       &:disabled,
       &.disabled {
-        color: colors.$gray-400;
-        border-color: colors.$gray-400;
+        color: colors.$interaction-light-disabled;
+        border-color: colors.$interaction-light-disabled;
         pointer-events: none;
       }
     }
@@ -178,22 +180,22 @@
       max-width: 80px;
       border-radius: 50%;
       padding: 0;
-      background-color: colors.$primary-white;
+      background-color: colors.$background-light-200;
       box-shadow: 0px 4px 20px 0px #00000033;
-      color: colors.$primary-black;
+      color: colors.$primary-200;
 
       &:hover:not(.disabled):not(:disabled) {
-        color: colors.$gray-800;
+        color: colors.$interaction-light-hover;
       }
 
       &:active:not(.disabled):not(:disabled) {
-        color: colors.$gray-900;
+        color: colors.$interaction-light-pressed;
       }
 
       &:disabled,
       &.disabled {
         pointer-events: none;
-        color: colors.$gray-400;
+        color: colors.$interaction-light-disabled;
       }
     }
 
@@ -203,21 +205,21 @@
       min-width: 32px;
       max-width: 32px;
       padding: 0;
-      background-color: colors.$primary-white;
+      background-color: colors.$background-light-200;
       box-shadow: 0px 4px 20px 0px #00000033;
 
       &:hover:not(.disabled):not(:disabled) {
-        color: colors.$gray-800;
+        color: colors.$interaction-light-default;
       }
 
       &:active:not(.disabled):not(:disabled) {
-        color: colors.$gray-900;
+        color: colors.$interaction-light-pressed;
       }
 
       &:disabled,
       &.disabled {
         pointer-events: none;
-        color: colors.$gray-400;
+        color: colors.$interaction-light-disabled;
       }
     }
 

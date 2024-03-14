@@ -1,22 +1,33 @@
+@use '@innomotics/ix/styles/base';
 @use '@innomotics/ix/styles/colors';
 @use '@innomotics/ix/styles/componentmixins';
 
 :host {
   display: flex;
 
+  a,
+  a:visited,
+  a:hover {
+    &.light {
+      color: colors.$text-light-highemphasis;
+    }
+    &.dark{
+      color: colors.$text-dark-highemphasis;
+    }
+  }
+
   .accordion {
     text-decoration: none;
-
     width: 100%;
-    border-top: 1px solid colors.$gray-400;
+    border-top: 1px solid colors.$additional-light-300;
 
     &.light {
-      background-color: colors.$primary-white;
+      background-color: colors.$primary-300;
 
       &:hover {
-        background-color: #F0F0F0;
-        border-top: 1px solid colors.$primary-black;
-        border-bottom: 1px solid colors.$primary-black;
+        background-color: #f0f0f0;
+        border-top: 1px solid colors.$transparency-light-200;
+        border-bottom: 1px solid colors.$transparency-light-200;
       }
 
       &:focus {
@@ -25,10 +36,10 @@
     }
 
     &.dark {
-      background-color: colors.$primary-black;
+      background-color: colors.$primary-200;
 
       &:hover {
-        background-color: colors.$gray-800;
+        background-color: colors.$interaction-dark-hover;
         border-top: 1px solid rgba(225, 240, 0, 1);
         border-bottom: 1px solid rgba(225, 240, 0, 1);
       }
@@ -59,14 +70,13 @@
 
     font-weight: bold;
     font-size: 16px;
-    font-family: 'InnomoticsHafferSQ-Bold';
 
     &.light {
-      color: colors.$primary-black;
+      color: colors.$text-light-highemphasis;
     }
 
     &.dark {
-      color: colors.$primary-white;
+      color: colors.$text-dark-highemphasis;
     }
   }
 
@@ -76,11 +86,11 @@
     padding-bottom: 24px;
 
     &.light {
-      color: colors.$primary-black;
+      color: colors.$primary-200;
     }
 
     &.dark {
-      color: colors.$primary-white;
+      color: colors.$primary-300;
     }
 
     display: block;

@@ -47,10 +47,10 @@
     flex-direction: column;
     position: fixed;
     z-index: 1001;
-    background-color: colors.$primary-black;
+    background-color: innomotics.$primary-200;
     padding: 15px;
     font-family: 'InnomoticsHafferSQ-Bold';
-    color: colors.$primary-white;
+    color: innomotics.$primary-300;
 
     .pane-title-container {
       display: flex;

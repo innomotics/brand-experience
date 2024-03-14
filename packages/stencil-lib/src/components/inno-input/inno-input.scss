@@ -1,16 +1,14 @@
 @use '@innomotics/ix/styles/colors';
 @use '@innomotics/ix/styles/componentmixins';
 
-@mixin light-base
-{
-  background-color: colors.$primary-white;
-  color: colors.$primary-black;
+@mixin light-base {
+  background-color: colors.$background-light-200;
+  color: colors.$text-light-lowemphasis;
 }
 
-@mixin dark-base
-{
-  background-color: colors.$primary-black;
-  color: colors.$gray-400;
+@mixin dark-base {
+  background-color: colors.$background-dark-200;
+  color: colors.$text-dark-lowemphasis;
 }
 
 :host {
@@ -18,36 +16,36 @@
   height: 56px;
   padding: 0px 16px 0px 16px;
   margin: 5px;
-  border: 1px solid colors.$gray-400;
+  border: 1px solid colors.$additional-light-300;
 
   &.light {
     @include light-base;
 
     &:hover:not(.disabled):not(:disabled) {
-      border: 1px solid colors.$gray-400;
-      box-shadow: 0px 0px 0px 1px colors.$gray-400;
+      border: 1px solid colors.$interaction-light-hover;
+      box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
     }
     input {
       @include light-base;
-      &.disabled:disabled{
-        background-color: colors.$gray-200;
+      color: colors.$text-light-highemphasis;
+      &.disabled:disabled {
+        background-color: rgba(colors.$transparency-light-100,0);
       }
-
     }
-    &.isactive{
+    &.isactive {
       &:hover:not(.disabled):not(:disabled) {
-        box-shadow: 0px 0px 0px 1px colors.$gray-400;
-        border: 1px solid colors.$gray-400;
+        box-shadow: 0px 0px 0px 1px colors.$highlight-light-100;
+        border: 1px solid colors.$highlight-light-100;
       }
-      border: 1px solid colors.$primary-black;
-      box-shadow: 0px 0px 0px 1px colors.$primary-black;
-      &.disabled:disabled{
-        box-shadow: 0px 0px 0px 1px colors.$gray-400;
-        border: 1px solid colors.$gray-400;
-        background-color: colors.$gray-200;
+      border: 1px solid colors.$highlight-light-100;
+      box-shadow: 0px 0px 0px 1px colors.$highlight-light-100;
+      &.disabled:disabled {
+        box-shadow: 0px 0px 0px 1px colors.$additional-light-300;
+        border: 1px solid colors.$additional-light-300;
+        background-color: colors.$transparency-light-100;
       }
     }
-    &.focused{
+    &.focused {
       @include componentmixins.focus;
     }
   }
@@ -55,33 +53,33 @@
   &.dark {
     @include dark-base;
     &:hover:not(.disabled):not(:disabled) {
-      box-shadow: 0px 0px 0px 1px colors.$gray-400;
+      box-shadow: 0px 0px 0px 1px colors.$interaction-dark-hover;
     }
-    &.disabled{
-      background-color: colors.$gray-800;
+    &.disabled {
+      background-color: colors.$transparency-dark-100;
     }
 
     input {
       @include dark-base;
-      &.disabled{
-        background-color: colors.$gray-800;
-        color: colors.$primary-white;
+      color: colors.$text-dark-highemphasis;
+      &.disabled {
+        background-color: rgba(colors.$transparency-dark-100,0);
+        color: colors.$text-dark-highemphasis;
       }
     }
-    &.isactive{
+    &.isactive {
       &:hover:not(.disabled):not(:disabled) {
-        box-shadow: 0px 0px 0px 1px colors.$gray-400;
-        border: 1px solid colors.$gray-400;
-
+        box-shadow: 0px 0px 0px 1px colors.$additional-dark-300;
+        border: 1px solid colors.$additional-dark-300;
       }
-      border: 1px solid colors.$primary-yellow;
-      box-shadow: 0px 0px 0px 1px colors.$primary-yellow;
-      &.disabled:disabled{
-        box-shadow: 0px 0px 0px 1px colors.$gray-400;
-        border: 1px solid colors.$gray-400;
+      border: 1px solid colors.$highlight-dark-100;
+      box-shadow: 0px 0px 0px 1px colors.$highlight-dark-100;
+      &.disabled:disabled {
+        box-shadow: 0px 0px 0px 1px colors.$additional-dark-300;
+        border: 1px solid colors.$additional-dark-300;
       }
     }
-    &.focused{
+    &.focused {
       @include componentmixins.focus;
     }
   }
@@ -104,12 +102,12 @@
     position: absolute;
     &.light {
       &.disabled {
-        color: colors.$gray-800;
+        color: colors.$text-light-lowemphasis;
       }
     }
     &.dark {
       &.disabled {
-        color: colors.$gray-400;
+        color: colors.$text-dark-lowemphasis;
       }
     }
   }
@@ -118,6 +116,6 @@
     font-size: small;
   }
   &.disabled {
-    border: 1px solid colors.$gray-400;
+    border: 1px solid colors.$interaction-light-disabled;
   }
 }

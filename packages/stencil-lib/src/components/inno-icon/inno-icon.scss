@@ -1,11 +1,11 @@
-@use '@innomotics/ix/styles/colors' as innomotics;
+@use '@innomotics/ix/styles/colors';
 
 :host {
     .icon-light {
-        color: innomotics.$primary-black;
+        color: inherit;
     }
     
     .icon-dark {
-        color: innomotics.$primary-white;
+        color: inherit;
     }
 }

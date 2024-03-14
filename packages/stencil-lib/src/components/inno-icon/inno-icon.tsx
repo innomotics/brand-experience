@@ -16,7 +16,7 @@ export class InnoIcon {
    */
   @Prop() size: number = 16;
 
-  @Prop({ mutable: true }) theme: 'light' | 'dark' = 'light';
+  @Prop() theme: 'light' | 'dark' = 'light';
 
   @State() svgContent?: string;
 
