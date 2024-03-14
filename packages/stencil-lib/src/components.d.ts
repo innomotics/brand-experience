@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
+import { Placement } from "@floating-ui/dom";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
+export { Placement } from "@floating-ui/dom";
 export namespace Components {
     interface InnoAccordion {
         "collapsed": boolean;
