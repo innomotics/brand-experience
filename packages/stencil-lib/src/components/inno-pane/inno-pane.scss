@@ -38,7 +38,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(colors.$primary-200,.99);
+    background: colors.$backdrop;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: 1000;
