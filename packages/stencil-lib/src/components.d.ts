@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
+import { Placement } from "@floating-ui/dom";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
+export { Placement } from "@floating-ui/dom";
 export namespace Components {
     interface InnoAccordion {
         "collapsed": boolean;
@@ -65,6 +67,16 @@ export namespace Components {
         "paneSize": string;
         "position": 'top' | 'left' | 'bottom' | 'right';
         "titleText": string;
+    }
+    interface InnoPopover {
+        "animationFrame": boolean;
+        "for": string;
+        "hideTooltip": () => Promise<void>;
+        "placement": Placement;
+        "showTooltip": (anchorElement: any) => Promise<void>;
+        "titleContent": string;
+        "trigger": 'hover' | 'click' | 'manual';
+        "visible": boolean;
     }
     interface MyComponent {
         /**
@@ -169,6 +181,12 @@ declare global {
         prototype: HTMLInnoPaneElement;
         new (): HTMLInnoPaneElement;
     };
+    interface HTMLInnoPopoverElement extends Components.InnoPopover, HTMLStencilElement {
+    }
+    var HTMLInnoPopoverElement: {
+        prototype: HTMLInnoPopoverElement;
+        new (): HTMLInnoPopoverElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -183,6 +201,7 @@ declare global {
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
+        "inno-popover": HTMLInnoPopoverElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -251,6 +270,14 @@ declare namespace LocalJSX {
         "position"?: 'top' | 'left' | 'bottom' | 'right';
         "titleText"?: string;
     }
+    interface InnoPopover {
+        "animationFrame"?: boolean;
+        "for"?: string;
+        "placement"?: Placement;
+        "titleContent"?: string;
+        "trigger"?: 'hover' | 'click' | 'manual';
+        "visible"?: boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -273,6 +300,7 @@ declare namespace LocalJSX {
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
+        "inno-popover": InnoPopover;
         "my-component": MyComponent;
     }
 }
@@ -287,6 +315,7 @@ declare module "@stencil/core" {
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
+            "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

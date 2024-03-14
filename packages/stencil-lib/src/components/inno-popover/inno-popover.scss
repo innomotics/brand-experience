@@ -1,0 +1,57 @@
+@use '@innomotics/ix/styles/colors';
+
+:host {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 50;
+  color: colors.$primary-white;
+  font-family: 'InnomoticsHafferSQ-Bold';
+  max-width: 18.25rem;
+  font-size: 14px;
+  opacity: 0;
+  visibility: collapse !important;
+  overflow-wrap: break-word;
+  width: max-content;
+
+  background-color: colors.$gray-900;
+  padding: 16px;
+
+  box-shadow: 0px 2px 5px 0px #00000080;
+
+  .tooltip-title {
+    display: flex;
+    align-items: center;
+
+    ::slotted(ix-icon) {
+      margin-right: 0.35rem;
+    }
+  }
+}
+
+:host(.visible) {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+:host(.visible) {
+  .arrow,
+  .arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+  }
+
+  .arrow {
+    visibility: hidden;
+  }
+
+  .arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+    background-color: colors.$gray-900;
+  }
+}

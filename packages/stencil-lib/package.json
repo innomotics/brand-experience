@@ -32,6 +32,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.6.3",
     "@innomotics/ix-fonts": "*",
     "@innomotics/ix-icons": "*",
     "@stencil/core": "^4.12.5",

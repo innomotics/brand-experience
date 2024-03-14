@@ -7,23 +7,16 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      | Default     |
-| ---------- | ----------- | ----------- | --------- | ----------- |
-| `isActive` | `is-active` |             | `boolean` | `undefined` |
+| Property    | Attribute    | Description | Type      | Default     |
+| ----------- | ------------ | ----------- | --------- | ----------- |
+| `disabled`  | `disabled`   |             | `boolean` | `false`     |
+| `isActive`  | `is-active`  |             | `boolean` | `undefined` |
+| `isFocused` | `is-focused` |             | `boolean` | `undefined` |
+| `label`     | `label`      |             | `string`  | `undefined` |
+| `name`      | `name`       |             | `string`  | `undefined` |
+| `value`     | `value`      |             | `string`  | `undefined` |
+| `variant`   | `variant`    |             | `string`  | `undefined` |
 
-
-## Dependencies
-
-### Depends on
-
-- [inno-floating-label](../inno-floating-label)
-
-### Graph
-```mermaid
-graph TD;
-  inno-input --> inno-floating-label
-  style inno-input fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

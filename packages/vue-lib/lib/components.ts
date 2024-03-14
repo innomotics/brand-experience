@@ -8,7 +8,12 @@ import type { JSX } from '@innomotics/ix';
 
 
 
-export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('inno-accordion', undefined);
+export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('inno-accordion', undefined, [
+  'variant',
+  'icon',
+  'collapsed',
+  'label'
+]);
 
 
 export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>('inno-breadcrumb', undefined, [
@@ -40,20 +45,21 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 ]);
 
 
-export const InnoFloatingLabel = /*@__PURE__*/ defineContainer<JSX.InnoFloatingLabel>('inno-floating-label', undefined, [
-  'label',
-  'activeState'
-]);
-
-
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
-  'size'
+  'size',
+  'theme'
 ]);
 
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
-  'isActive'
+  'name',
+  'value',
+  'isActive',
+  'isFocused',
+  'disabled',
+  'label',
+  'variant'
 ]);
 
 
@@ -65,6 +71,16 @@ export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane',
   'closeOnBackdropClick',
   'paneSize',
   'expandedChanged'
+]);
+
+
+export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-popover', undefined, [
+  'trigger',
+  'for',
+  'titleContent',
+  'placement',
+  'visible',
+  'animationFrame'
 ]);
 
 

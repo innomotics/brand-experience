@@ -1,4 +1,4 @@
-@use '@innomotics/ix/styles/colors' as innomotics;
+@use '@innomotics/ix/styles/colors';
 
 :host {
   display: block;
@@ -47,10 +47,10 @@
     flex-direction: column;
     position: fixed;
     z-index: 1001;
-    background-color: innomotics.$primary-black;
+    background-color: colors.$primary-black;
     padding: 15px;
     font-family: 'InnomoticsHafferSQ-Bold';
-    color: innomotics.$primary-white;
+    color: colors.$primary-white;
 
     .pane-title-container {
       display: flex;
