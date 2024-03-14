@@ -18,8 +18,8 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: dist-build
           path: packages
