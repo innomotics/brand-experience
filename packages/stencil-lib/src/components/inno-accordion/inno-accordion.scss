@@ -7,7 +7,7 @@
 
   a,
   a:visited,
-  a:hover {
+  a.hovered {
     &.light {
       color: colors.$text-light-highemphasis;
     }
@@ -24,7 +24,7 @@
     &.light {
       background-color: colors.$primary-300;
 
-      &:hover {
+      &.hovered {
         background-color: #f0f0f0;
         border-top: 1px solid colors.$transparency-light-200;
         border-bottom: 1px solid colors.$transparency-light-200;
@@ -38,7 +38,7 @@
     &.dark {
       background-color: colors.$primary-200;
 
-      &:hover {
+      &.hovered {
         background-color: colors.$interaction-dark-hover;
         border-top: 1px solid rgba(225, 240, 0, 1);
         border-bottom: 1px solid rgba(225, 240, 0, 1);
@@ -84,6 +84,7 @@
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 24px;
+    cursor: default;
 
     &.light {
       color: colors.$primary-200;

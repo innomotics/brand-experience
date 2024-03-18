@@ -13,8 +13,18 @@ export class InnoAccordion {
 
   @Element() hostElement!: HTMLInnoAccordionElement;
 
+  private anchorElementRef: HTMLAnchorElement;
+
   private onHeaderClick() {
     this.collapsed = !this.collapsed;
+  }
+
+  private toggleHoveredClass(hovered: boolean) {
+    if (hovered) {
+      this.anchorElementRef.classList.add("hovered");
+    } else {
+      this.anchorElementRef.classList.remove("hovered");
+    }
   }
 
   render() {
@@ -22,17 +32,24 @@ export class InnoAccordion {
     let icon: string = this.collapsed ? 'plus' : 'minus';
     return (
       <Host>
-        <a href='#' class={{
-          'accordion': true,
-          'light': this.variant === 'light',
-          'dark': this.variant === 'dark',
-        }}>
+        <a href='#'
+          class={{
+            'accordion': true,
+            'light': this.variant === 'light',
+            'dark': this.variant === 'dark',
+          }}
+          ref={(ref) => (this.anchorElementRef = ref)}
+        >
 
           <div class={{
             'accordion-header': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
-          }} onClick={() => this.onHeaderClick()}>
+          }}
+            onClick={() => this.onHeaderClick()}
+            onMouseEnter={() => this.toggleHoveredClass(true)}
+            onMouseLeave={() => this.toggleHoveredClass(false)}
+          >
 
             <span class={{
               'accordion-header-title': true,
