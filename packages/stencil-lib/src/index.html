@@ -14,10 +14,10 @@
 <body>
   <span id="onclickspan" style="background-color: black; color: white;">tooltip on click</span>
   <span id="onhoverspan" style="background-color: black; color: white;">tooltip on hover</span>
-  <span id="manualspan" style="background-color: black; color: white;">manual tooltip, click on the button</span>
+  <span id="manualspan" style="background-color: black; color: white;">manual tooltip, click on the button --&gt;</span>
   <button id="manualbtn">click me!</button>
-  <inno-popover for="#onclickspan" placement="right">
-    <p style="color: red;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+  <inno-popover for="#onclickspan" placement="right" title-content="title">
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
       quam, feugiat vitae,
       ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
       est. Mauris placerat eleifend leo.
@@ -29,8 +29,8 @@
       erat volutpat. Nam dui mi,
       tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
   </inno-popover>
-  <inno-popover for="#onhoverspan" placement="bottom" trigger="hover">
-    <p style="color:blueviolet;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+  <inno-popover for="#onhoverspan" placement="bottom" trigger="hover" title-content="title" variant="light">
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
       quam, feugiat vitae,
       ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
       est. Mauris placerat eleifend leo.
@@ -42,7 +42,7 @@
       erat volutpat. Nam dui mi,
       tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
   </inno-popover>
-  <inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual">
+  <inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual" title-content="title">
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
       quam, feugiat vitae,
       ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae

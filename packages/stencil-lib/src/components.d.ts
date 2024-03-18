@@ -77,6 +77,7 @@ export namespace Components {
         "showTooltip": () => Promise<void>;
         "titleContent": string;
         "trigger": 'hover' | 'click' | 'manual';
+        "variant": 'light' | 'dark';
         "visible": boolean;
     }
 }
@@ -273,6 +274,7 @@ declare namespace LocalJSX {
         "placement"?: Placement;
         "titleContent"?: string;
         "trigger"?: 'hover' | 'click' | 'manual';
+        "variant"?: 'light' | 'dark';
         "visible"?: boolean;
     }
     interface IntrinsicElements {

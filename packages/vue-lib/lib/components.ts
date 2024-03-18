@@ -78,6 +78,7 @@ export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane',
 
 export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-popover', undefined, [
   'trigger',
+  'variant',
   'for',
   'titleContent',
   'placement',

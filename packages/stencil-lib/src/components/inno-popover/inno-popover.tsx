@@ -37,11 +37,13 @@ export class InnoPopover {
 
   @Prop() trigger: 'hover' | 'click' | 'manual' = 'click';
 
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'dark';
+
   @Prop() for: string;
 
-  @Prop() titleContent: string;
+  @Prop({ mutable: true }) titleContent: string;
 
-  @Prop() placement: Placement = 'top';
+  @Prop({ mutable: true }) placement: Placement = 'top';
 
   @Prop({ mutable: true }) visible = false;
 
@@ -269,8 +271,13 @@ export class InnoPopover {
 
   render() {
     return (
-      <Host class={{ visible: this.visible }}>
+      <Host class={{
+        visible: this.visible,
+        'light': this.variant === 'light',
+        'dark': this.variant === 'dark'
+      }}>
         <div class="tooltip-content">
+          {this.titleContent != null ? <div class="tooltip-title" innerHTML={this.titleContent}></div> : null}
           <slot></slot>
         </div>
         <div class="arrow"></div>
