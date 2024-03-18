@@ -73,7 +73,7 @@ export namespace Components {
         "for": string;
         "hideTooltip": () => Promise<void>;
         "placement": Placement;
-        "showTooltip": (anchorElement: any) => Promise<void>;
+        "showTooltip": () => Promise<void>;
         "titleContent": string;
         "trigger": 'hover' | 'click' | 'manual';
         "visible": boolean;

@@ -28,15 +28,9 @@ Type: `Promise<void>`
 
 
 
-### `showTooltip(anchorElement: any) => Promise<void>`
+### `showTooltip() => Promise<void>`
 
 
-
-#### Parameters
-
-| Name            | Type  | Description |
-| --------------- | ----- | ----------- |
-| `anchorElement` | `any` |             |
 
 #### Returns
 

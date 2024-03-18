@@ -50,16 +50,18 @@ export class InnoPopover {
 
   @Element() hostElement: HTMLInnoPopoverElement;
 
-  private onEnterElementBind = this.onTooltipShow.bind(this);
-  private onLeaveElementBind = this.onTooltipHide.bind(this);
+  private showBind = this.onTooltipShow.bind(this);
+  private hideBind = this.onTooltipHide.bind(this);
   private disposeAutoUpdate?: () => void;
 
   private disposeListener: Function;
 
-  private forElement: HTMLElement;
-
   private get arrowElement() {
     return this.hostElement.querySelector('.arrow') as HTMLElement;
+  }
+
+  private get forElement() {
+    return document.querySelector(this.for);
   }
 
   private destroyAutoUpdate() {
@@ -68,8 +70,10 @@ export class InnoPopover {
     }
   }
 
-  private onTooltipShow(e: Event) {
-    this.showTooltip(e.target as Element);
+  private onTooltipShow() {
+    if (!this.visible) {
+      this.showTooltip();
+    }
   }
 
   private onTooltipHide() {
@@ -77,9 +81,12 @@ export class InnoPopover {
   }
 
   @Method()
-  async showTooltip(anchorElement: any) {
-    await this.computeTooltipPosition(anchorElement);
-    this.visible = true;
+  async showTooltip() {
+    const anchorElement = this.forElement;
+    if (!!anchorElement) {
+      await this.computeTooltipPosition(anchorElement);
+      this.visible = true;
+    }
   }
 
   @Method()
@@ -92,8 +99,7 @@ export class InnoPopover {
   visibleChanged() {
     if (this.trigger === 'manual') {
       if (this.visible) {
-        let anchorEelement = document.querySelector(this.for);
-        this.showTooltip(anchorEelement);
+        this.showTooltip();
       } else {
         this.hideTooltip();
       }
@@ -202,49 +208,55 @@ export class InnoPopover {
 
   private registerHoverListeners() {
     if (this.trigger === 'hover') {
-      this.forElement.addEventListener('mouseenter', this.onEnterElementBind);
-      this.forElement.addEventListener('mouseleave', this.onLeaveElementBind);
-      this.forElement.addEventListener('focusin', this.onEnterElementBind);
-      this.forElement.addEventListener('focusout', this.onLeaveElementBind);
+      const forElement = this.forElement;
+      forElement.addEventListener('mouseenter', this.showBind);
+      forElement.addEventListener('mouseleave', this.hideBind);
+      forElement.addEventListener('focusin', this.showBind);
+      forElement.addEventListener('focusout', this.hideBind);
 
       this.disposeListener = () => {
-        this.forElement.removeEventListener('mouseenter', this.onEnterElementBind);
-        this.forElement.removeEventListener('mouseleave', this.onLeaveElementBind);
-        this.forElement.removeEventListener('focusin', this.onEnterElementBind);
-        this.forElement.removeEventListener('focusout', this.onLeaveElementBind);
+        const forElement = this.forElement;
+        forElement?.removeEventListener('mouseenter', this.showBind);
+        forElement?.removeEventListener('mouseleave', this.hideBind);
+        forElement?.removeEventListener('focusin', this.showBind);
+        forElement?.removeEventListener('focusout', this.hideBind);
       };
     };
+  }
+
+  private registerClickListener() {
+    if (this.trigger === 'click') {
+      this.forElement.addEventListener('click', this.showBind);
+
+      this.disposeListener = () => {
+        this.forElement?.removeEventListener('click', this.showBind);
+      };
+    }
   }
 
   @Listen('keydown', { target: 'window' })
   async onKeydown(event: KeyboardEvent) {
     if (this.visible && event.code === 'Escape') {
-      this.onTooltipHide();
+      this.hideTooltip();
     }
   }
 
   @Listen('click', { target: 'window' })
   async onClick(event: globalThis.Event) {
-    if (this.trigger === 'click') {
-      if (this.visible) {
-        if (event.target !== this.hostElement && !this.hostElement.contains(event.target as Node)) {
-          this.onTooltipHide();
-        }
-      } else {
-        if (event.target === this.forElement || this.forElement.contains(event.target as Node)) {
-          this.onTooltipShow(event);
-        }
+    if (this.visible && this.trigger === 'click') {
+      if (event.target !== this.hostElement && !this.hostElement.contains(event.target as Node)) {
+        this.hideTooltip();
       }
     }
   }
 
   componentDidLoad() {
-    this.forElement = document.querySelector(this.for);
     if (this.forElement == null) {
       throw "No valid html element found for the css selector in the 'for' property!"
     }
 
     this.registerHoverListeners();
+    this.registerClickListener();
   }
 
   disconnectedCallback() {
