@@ -5,8 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FooterText } from "./components/inno-footer/inno-footer.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
+export { FooterText } from "./components/inno-footer/inno-footer.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
@@ -42,6 +44,23 @@ export namespace Components {
         "tabIdx": number;
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface InnoFooter {
+        /**
+          * The copyright label.
+         */
+        "copyright": string;
+        /**
+          * Generalized entries for the application.
+         */
+        "entries": ReadonlyArray<FooterText>;
+        /**
+          * Theme variant property.
+         */
+        "variant": 'light' | 'dark';
     }
     interface InnoIcon {
         /**
@@ -152,6 +171,15 @@ declare global {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
     };
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface HTMLInnoFooterElement extends Components.InnoFooter, HTMLStencilElement {
+    }
+    var HTMLInnoFooterElement: {
+        prototype: HTMLInnoFooterElement;
+        new (): HTMLInnoFooterElement;
+    };
     interface HTMLInnoIconElement extends Components.InnoIcon, HTMLStencilElement {
     }
     var HTMLInnoIconElement: {
@@ -198,6 +226,7 @@ declare global {
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
+        "inno-footer": HTMLInnoFooterElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
@@ -243,6 +272,23 @@ declare namespace LocalJSX {
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface InnoFooter {
+        /**
+          * The copyright label.
+         */
+        "copyright"?: string;
+        /**
+          * Generalized entries for the application.
+         */
+        "entries"?: ReadonlyArray<FooterText>;
+        /**
+          * Theme variant property.
+         */
+        "variant"?: 'light' | 'dark';
     }
     interface InnoIcon {
         /**
@@ -297,6 +343,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
+        "inno-footer": InnoFooter;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
@@ -312,6 +359,10 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            /**
+             * Represents the general footer for the Innomotics applications.
+             */
+            "inno-footer": LocalJSX.InnoFooter & JSXBase.HTMLAttributes<HTMLInnoFooterElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;

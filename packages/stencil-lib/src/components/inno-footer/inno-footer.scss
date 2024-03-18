@@ -1,0 +1,13 @@
+@use '@innomotics/ix/styles/innomotics';
+
+:host {
+  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: black;
+  font-family: 'InnomoticsHafferSQ-Bold';
+}
+
+.copyright-text {
+  font-family: 'InnomoticsHafferSQ-Bold';
+}
