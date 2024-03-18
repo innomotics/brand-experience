@@ -9,6 +9,5 @@ export const DIRECTIVES = [
   d.InnoIcon,
   d.InnoInput,
   d.InnoPane,
-  d.InnoPopover,
-  d.MyComponent
+  d.InnoPopover
 ];

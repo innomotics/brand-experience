@@ -15,4 +15,3 @@ export const InnoIcon = /*@__PURE__*/createReactComponent<JSX.InnoIcon, HTMLInno
 export const InnoInput = /*@__PURE__*/createReactComponent<JSX.InnoInput, HTMLInnoInputElement>('inno-input');
 export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInnoPaneElement>('inno-pane');
 export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HTMLInnoPopoverElement>('inno-popover');
-export const MyComponent = /*@__PURE__*/createReactComponent<JSX.MyComponent, HTMLMyComponentElement>('my-component');

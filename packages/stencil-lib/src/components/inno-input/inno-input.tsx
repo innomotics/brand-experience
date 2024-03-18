@@ -1,4 +1,4 @@
-import { State, Prop, Component, Host, h, AttachInternals } from '@stencil/core';
+import { Event, Prop, Component, Host, h, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'inno-input',
@@ -9,27 +9,33 @@ import { State, Prop, Component, Host, h, AttachInternals } from '@stencil/core'
 export class InnoInput {
   private inputElementRef?: HTMLInputElement;
   @Prop() name: string;
+  @Prop() type: 'text' | 'number' = 'text';
   @Prop({ mutable: true }) value: string;
+  @Event() valueChanged: EventEmitter<string>;
+
   @Prop({ mutable: true }) isActive: boolean;
   @Prop({ mutable: true }) isFocused: boolean;
   @Prop({ reflect: true }) disabled: boolean = false;
   @Prop() label: string;
   @Prop() variant: string;
-  @State() internalValue: string;
 
-  @AttachInternals() internals: ElementInternals;
+  
+  inputChanged(event) {
+    this.value = event.target.value;
+    this.valueChanged.emit(this.value);
+    console.log("dafuck");
+  }
 
-  componentWillLoad() {
+  componentDidLoad() {
     if (this.value) {
-      this.internalValue = this.value;
       this.isActive = true;
-      this.internals.setFormValue(this.value);
     }
   }
 
   onBlur() {
-    if (this.internalValue === '' || this.internalValue === undefined) {
+    if (this.value === '' || this.value === undefined) {
       this.isActive = false;
+      console.log('cerce');
     }
   }
 
@@ -38,10 +44,6 @@ export class InnoInput {
     this.isFocused = true;
   }
 
-  inputChanged(event) {
-    this.internalValue = event.target.value;
-    this.internals.setFormValue(event.target.value);
-  }
 
   onFocusout() {
     this.isFocused = false;
@@ -72,7 +74,7 @@ export class InnoInput {
           onBlur={() => this.onBlur()}
           onFocus={() => this.onFocus()}
           onFocusout={() => this.onFocusout()}
-          value={this.internalValue}
+          value={this.value}
           onInput={event => this.inputChanged(event)}
         />
       </Host>

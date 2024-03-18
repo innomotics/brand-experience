@@ -1,4 +1,5 @@
-<my-component first="Retek"></my-component>
 <inno-icon icon="home"></inno-icon>
-
-asda
+<form [formGroup]="innomoticsForm">
+    <inno-input name="bubu" label="Inputbox" [formControl]="innoInput"></inno-input>
+</form>
+{{innoInput.value}}

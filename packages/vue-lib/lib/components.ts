@@ -54,12 +54,14 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
   'name',
+  'type',
   'value',
   'isActive',
   'isFocused',
   'disabled',
   'label',
-  'variant'
+  'variant',
+  'valueChanged'
 ]);
 
 
@@ -81,12 +83,5 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'placement',
   'visible',
   'animationFrame'
-]);
-
-
-export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
-  'first',
-  'middle',
-  'last'
 ]);
 

@@ -57,6 +57,7 @@ export namespace Components {
         "isFocused": boolean;
         "label": string;
         "name": string;
+        "type": 'text' | 'number';
         "value": string;
         "variant": string;
     }
@@ -78,20 +79,6 @@ export namespace Components {
         "trigger": 'hover' | 'click' | 'manual';
         "visible": boolean;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -100,6 +87,10 @@ export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
 export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbItemElement;
+}
+export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoInputElement;
 }
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -158,7 +149,18 @@ declare global {
         prototype: HTMLInnoIconElement;
         new (): HTMLInnoIconElement;
     };
+    interface HTMLInnoInputElementEventMap {
+        "valueChanged": string;
+    }
     interface HTMLInnoInputElement extends Components.InnoInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoInputElementEventMap>(type: K, listener: (this: HTMLInnoInputElement, ev: InnoInputCustomEvent<HTMLInnoInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoInputElementEventMap>(type: K, listener: (this: HTMLInnoInputElement, ev: InnoInputCustomEvent<HTMLInnoInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoInputElement: {
         prototype: HTMLInnoInputElement;
@@ -187,12 +189,6 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "inno-accordion": HTMLInnoAccordionElement;
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
@@ -202,7 +198,6 @@ declare global {
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -258,6 +253,8 @@ declare namespace LocalJSX {
         "isFocused"?: boolean;
         "label"?: string;
         "name"?: string;
+        "onValueChanged"?: (event: InnoInputCustomEvent<string>) => void;
+        "type"?: 'text' | 'number';
         "value"?: string;
         "variant"?: string;
     }
@@ -278,20 +275,6 @@ declare namespace LocalJSX {
         "trigger"?: 'hover' | 'click' | 'manual';
         "visible"?: boolean;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "inno-accordion": InnoAccordion;
         "inno-breadcrumb": InnoBreadcrumb;
@@ -301,7 +284,6 @@ declare namespace LocalJSX {
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -316,7 +298,6 @@ declare module "@stencil/core" {
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }
