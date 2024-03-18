@@ -1,5 +1,5 @@
-import { Component, Host, Prop, h } from '@stencil/core';
-import { FooterText } from './inno-footer.model';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
+import { FooterContent, FooterIcon, FooterText } from './inno-footer.model';
 
 /**
  * Represents the general footer for the Innomotics applications.
@@ -7,7 +7,7 @@ import { FooterText } from './inno-footer.model';
 @Component({
   tag: 'inno-footer',
   styleUrl: 'inno-footer.scss',
-  shadow: true,
+  scoped: true,
 })
 export class InnoFooter {
   /**
@@ -20,22 +20,84 @@ export class InnoFooter {
    * The copyright label.
    */
   @Prop()
-  copyright = '@ Innomotics 2024';
+  copyright = '';
 
   /**
    * Generalized entries for the application.
    */
   @Prop()
-  entries: ReadonlyArray<FooterText> = [];
+  entries: ReadonlyArray<FooterContent> = [];
+
+  @Event()
+  contentSelected: EventEmitter<string>;
 
   render() {
-    const sadsa = this.entries?.map(entry => <div>{entry.text}</div>);
+    const hostClasses = {
+      ...this.variantStyle(),
+    };
 
     return (
-      <Host>
-        <div>{this.copyright}</div>
-        {sadsa}
+      <Host class={hostClasses}>
+        {this.createCopyrightNode()}
+        {this.createContentNodes()}
       </Host>
     );
+  }
+
+  private createCopyrightNode() {
+    const classes = {
+      'ix-footer-copyright': true,
+      ...this.variantStyle(),
+    };
+
+    return <div class={classes}>{this.copyright}</div>;
+  }
+
+  private createContentNodes() {
+    return this.entries.map(entry => {
+      switch (entry.type) {
+        case 'footer:text':
+          return this.createTextNode(entry);
+        default:
+          return this.createIconNode(entry);
+      }
+    });
+  }
+
+  private createTextNode(entry: FooterText) {
+    const classes = {
+      'ix-footer-text': true,
+      ...this.variantStyle(),
+    };
+
+    return (
+      <div class={classes} key={entry.selector} onClick={() => this.sendEvent(entry)}>
+        {entry.text}
+      </div>
+    );
+  }
+
+  private createIconNode(entry: FooterIcon) {
+    const classes = {
+      'ix-footer-icon': true,
+      ...this.variantStyle(),
+    };
+
+    return (
+      <div class={classes}>
+        <inno-icon icon={entry.icon} size={24} theme={this.variant} onClick={() => this.sendEvent(entry)}></inno-icon>
+      </div>
+    );
+  }
+
+  private variantStyle() {
+    return {
+      light: this.variant === 'light',
+      dark: this.variant === 'dark',
+    };
+  }
+
+  private sendEvent(content: FooterContent) {
+    this.contentSelected.emit(content.selector);
   }
 }

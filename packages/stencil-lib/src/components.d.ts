@@ -5,10 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { FooterText } from "./components/inno-footer/inno-footer.model";
+import { FooterContent } from "./components/inno-footer/inno-footer.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
-export { FooterText } from "./components/inno-footer/inno-footer.model";
+export { FooterContent } from "./components/inno-footer/inno-footer.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
@@ -56,7 +56,7 @@ export namespace Components {
         /**
           * Generalized entries for the application.
          */
-        "entries": ReadonlyArray<FooterText>;
+        "entries": ReadonlyArray<FooterContent>;
         /**
           * Theme variant property.
          */
@@ -120,6 +120,10 @@ export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbItemElement;
 }
+export interface InnoFooterCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoFooterElement;
+}
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
@@ -171,10 +175,21 @@ declare global {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
     };
+    interface HTMLInnoFooterElementEventMap {
+        "contentSelected": string;
+    }
     /**
      * Represents the general footer for the Innomotics applications.
      */
     interface HTMLInnoFooterElement extends Components.InnoFooter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoFooterElement: {
         prototype: HTMLInnoFooterElement;
@@ -284,7 +299,8 @@ declare namespace LocalJSX {
         /**
           * Generalized entries for the application.
          */
-        "entries"?: ReadonlyArray<FooterText>;
+        "entries"?: ReadonlyArray<FooterContent>;
+        "onContentSelected"?: (event: InnoFooterCustomEvent<string>) => void;
         /**
           * Theme variant property.
          */

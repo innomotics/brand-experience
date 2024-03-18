@@ -139,7 +139,11 @@
     </inno-breadcrumb>
     <inno-input label="Power" variant="light"></inno-input>
 
-    <inno-footer id="in-footer"></inno-footer>
+    <inno-footer id="in-footer-dark" variant="dark" copyright="@ Innomotics 2024"></inno-footer>
+
+    <div style="border: 1px solid black; margin: 5px">Footer separator dummy</div>
+
+    <inno-footer id="in-footer-light" variant="light" copyright="@ Innomotics 2024"></inno-footer>
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -179,11 +183,44 @@
       }
     });
 
-    document.getElementById('in-footer').entries = [
+    /* inno-footer relatd context */
+
+    const footerEntries = [
       {
         type: 'footer:text',
+        selector: 'corporate_information',
         text: 'Corporate information',
       },
+      {
+        type: 'footer:text',
+        selector: 'privacy',
+        text: 'Privacy Notice',
+      },
+      {
+        type: 'footer:text',
+        selector: 'cookie',
+        text: 'Cookie Notice',
+      },
+      {
+        type: 'footer:text',
+        selector: 'terms',
+        text: 'Terms of use',
+      },
+      {
+        type: 'footer:text',
+        selector: 'whistleblowing',
+        text: 'Whistleblowing',
+      },
+      {
+        type: 'footer:icon',
+        selector: 'about',
+        icon: 'about',
+      },
     ];
+
+    document.getElementById('in-footer-dark').entries = footerEntries;
+    document.getElementById('in-footer-light').entries = footerEntries;
+
+    document.getElementById('in-footer-dark').addEventListener('contentSelected', event => console.log(event));
   </script>
 </html>
