@@ -100,7 +100,7 @@ export class InnoPane {
             hidden={!this.showContent || !this.expanded}>
             {this.titleText != null ? <h2>{this.titleText}</h2> : null}
             {!this.hideCloseButton
-              ? <inno-button icon='close' variant='tertiary' iconOnly={true} parentBackgroundColor='dark'
+              ? <inno-button icon='close' variant='tertiary' iconOnly={true} colorVariant='light'
                 onClick={() => this.expanded = !this.expanded}></inno-button>
               : null}
           </div>

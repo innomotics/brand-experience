@@ -34,7 +34,7 @@ export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcru
 
 export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-button', undefined, [
   'variant',
-  'parentBackgroundColor',
+  'colorVariant',
   'type',
   'tabIdx',
   'disabled',

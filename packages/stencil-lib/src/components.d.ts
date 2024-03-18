@@ -33,12 +33,12 @@ export namespace Components {
         "visible": boolean;
     }
     interface InnoButton {
+        "colorVariant": 'light' | 'dark';
         "disabled": boolean;
         "icon": string;
         "iconOnly": boolean;
         "iconPosition": 'left' | 'right';
         "navDirection": 'left' | 'right';
-        "parentBackgroundColor": 'light' | 'dark';
         "tabIdx": number;
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
@@ -229,12 +229,12 @@ declare namespace LocalJSX {
         "visible"?: boolean;
     }
     interface InnoButton {
+        "colorVariant"?: 'light' | 'dark';
         "disabled"?: boolean;
         "icon"?: string;
         "iconOnly"?: boolean;
         "iconPosition"?: 'left' | 'right';
         "navDirection"?: 'left' | 'right';
-        "parentBackgroundColor"?: 'light' | 'dark';
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
