@@ -14,6 +14,7 @@ export namespace Components {
         "collapsed": boolean;
         "icon": string;
         "label": string;
+        "last": string;
         "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumb {
@@ -206,6 +207,7 @@ declare namespace LocalJSX {
         "collapsed"?: boolean;
         "icon"?: string;
         "label"?: string;
+        "last"?: string;
         "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumb {

@@ -9,6 +9,7 @@ export class InnoAccordion {
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
   @Prop({ mutable: true }) icon: string;
   @Prop({ mutable: true }) collapsed = false;
+  @Prop() last: string;
   @Prop() label: string;
 
   @Element() hostElement!: HTMLInnoAccordionElement;
@@ -37,6 +38,7 @@ export class InnoAccordion {
             'accordion': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
+            'last': this.last === 'last',
           }}
           ref={(ref) => (this.anchorElementRef = ref)}
         >
