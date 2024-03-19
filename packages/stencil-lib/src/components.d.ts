@@ -300,6 +300,9 @@ declare namespace LocalJSX {
           * Generalized entries for the application.
          */
         "entries"?: ReadonlyArray<FooterContent>;
+        /**
+          * The selector value is emitted if the given content is clicked.
+         */
         "onContentSelected"?: (event: InnoFooterCustomEvent<string>) => void;
         /**
           * Theme variant property.

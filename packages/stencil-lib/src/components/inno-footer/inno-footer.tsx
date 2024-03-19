@@ -28,6 +28,9 @@ export class InnoFooter {
   @Prop()
   entries: ReadonlyArray<FooterContent> = [];
 
+  /**
+   * The selector value is emitted if the given content is clicked.
+   */
   @Event()
   contentSelected: EventEmitter<string>;
 

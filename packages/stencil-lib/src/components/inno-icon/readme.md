@@ -21,6 +21,7 @@
  - [inno-accordion](../inno-accordion)
  - [inno-breadcrumb-item](../inno-breadcrumb-item)
  - [inno-button](../inno-button)
+ - [inno-footer](../inno-footer)
 
 ### Graph
 ```mermaid
@@ -28,6 +29,7 @@ graph TD;
   inno-accordion --> inno-icon
   inno-breadcrumb-item --> inno-icon
   inno-button --> inno-icon
+  inno-footer --> inno-icon
   style inno-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

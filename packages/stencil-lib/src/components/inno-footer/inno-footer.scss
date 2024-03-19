@@ -41,11 +41,7 @@
   &.light {
     color: colors.$primary-200;
 
-    &:link,
-    &:visited,
-    &:hover,
-    &:focus,
-    &:active {
+    &:hover {
       color: colors.$highlight-light-200;
     }
   }
@@ -53,11 +49,7 @@
   &.dark {
     color: colors.$primary-300;
 
-    &:link,
-    &:visited,
-    &:hover,
-    &:focus,
-    &:active {
+    &:focus {
       color: colors.$primary-300;
     }
   }

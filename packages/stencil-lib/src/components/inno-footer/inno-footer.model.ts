@@ -1,22 +1,21 @@
 /**
- * Union type to model the available footer entries.
+ * Models the available footer content types.
  */
 export type FooterContent = FooterText | FooterIcon;
 
 /**
- * Contains the details of the text footer entry.
+ * Text based footer content.
  */
 export interface FooterText {
   /**
-   * Type information for the union type.
+   * Type discriminator.
    */
   readonly type: 'footer:text';
 
   /**
-   * User defined custom variables for the given entry.
-   * Should be unique among the entries.
-   * Unique identifier for the given text.
-   * Will be emitted by the footer selection event.
+   * User defined custom value which is emitted when
+   * the given element is clicked.
+   * Should be unique among the content entries.
    */
   readonly selector: string;
 
@@ -27,21 +26,24 @@ export interface FooterText {
 }
 
 /**
- *
+ * Icon based footer content.
  */
 export interface FooterIcon {
   /**
-   *
+   * Type discriminator.
    */
   readonly type: 'footer:icon';
 
   /**
-   * Emitted value when the user clicks on the given entry.
+   * User defined custom value which is emitted when
+   * the given element is clicked.
+   * Should be unique among the content entries.
    */
   readonly selector: string;
 
   /**
-   *
+   * Name of the icon.
+   * On of the available ix icon names.
    */
   readonly icon: string;
 }
