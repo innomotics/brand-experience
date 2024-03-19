@@ -39,7 +39,8 @@ export class InnoAccordion {
             'accordion': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
-            'last': isLast === 'last'
+            'last': isLast === 'last',
+            'open': !this.collapsed,
           }}
           ref={(ref) => (this.anchorElementRef = ref)}
         >

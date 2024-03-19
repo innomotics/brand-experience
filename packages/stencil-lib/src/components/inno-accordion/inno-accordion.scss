@@ -29,12 +29,16 @@
       background-color: colors.$primary-300;
 
       &.hovered {
-        background-color: #f0f0f0;
+        background-color: colors.$secondary-100;
         border-top: 1px solid colors.$transparency-light-200;
       }
 
       &:focus {
         @include componentmixins.focus;
+      }
+
+      &.open {
+        background-color: colors.$secondary-100;
       }
     }
 
