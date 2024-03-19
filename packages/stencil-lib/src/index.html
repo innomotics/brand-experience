@@ -55,20 +55,20 @@
       erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
     </p>
   </inno-popover>
-  <br>
+  <br />
   <inno-accordion variant="light" label="Example">first accordion</inno-accordion>
-  <inno-accordion variant="light" label="Example2" collapsed >
+  <inno-accordion variant="light" label="Example2" collapsed>
     second accordion
     <inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
   </inno-accordion>
   <inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
-  <br><br>
+  <br /> <br />
   <inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
   <inno-accordion variant="dark" label="Example2" collapsed>
     second accordion
   </inno-accordion>
   <inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
-  <br>
+  <br />
   <inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with
     buttons)</inno-button>
   <inno-button id="left-toggle" variant="primary" color-variant="dark">left pane</inno-button>
@@ -180,6 +180,12 @@
     <inno-select-item value="124">4321</inno-select-item>
     <inno-select-item value="124321">431</inno-select-item>
   </inno-select>
+
+  <inno-footer id="in-footer-dark" variant="dark" copyright="@ Innomotics 2024"></inno-footer>
+
+  <div style="border: 1px solid black; margin: 5px">Footer separator dummy</div>
+
+  <inno-footer id="in-footer-light" variant="light" copyright="@ Innomotics 2024"></inno-footer>
 </body>
 <script>
   const pane1 = document.getElementById('button-showcase');
@@ -218,6 +224,45 @@
       popover.visible = true;
     }
   });
+
+  /* inno-footer related context */
+
+  const footerEntries = [
+    {
+      type: 'footer:text',
+      selector: 'corporate_information',
+      text: 'Corporate information',
+    },
+    {
+      type: 'footer:text',
+      selector: 'privacy',
+      text: 'Privacy Notice',
+    },
+    {
+      type: 'footer:text',
+      selector: 'cookie',
+      text: 'Cookie Notice',
+    },
+    {
+      type: 'footer:text',
+      selector: 'terms',
+      text: 'Terms of use',
+    },
+    {
+      type: 'footer:text',
+      selector: 'whistleblowing',
+      text: 'Whistleblowing',
+    },
+    {
+      type: 'footer:icon',
+      selector: 'about',
+      icon: 'about',
+    },
+  ];
+
+  document.getElementById('in-footer-dark').entries = footerEntries;
+  document.getElementById('in-footer-light').entries = footerEntries;
+  document.getElementById('in-footer-dark').addEventListener('contentSelected', event => console.log(event));
 </script>
 
 </html>

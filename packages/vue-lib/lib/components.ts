@@ -46,6 +46,14 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 ]);
 
 
+export const InnoFooter = /*@__PURE__*/ defineContainer<JSX.InnoFooter>('inno-footer', undefined, [
+  'variant',
+  'copyright',
+  'entries',
+  'contentSelected'
+]);
+
+
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
   'size',

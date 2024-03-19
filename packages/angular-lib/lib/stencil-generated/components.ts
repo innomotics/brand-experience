@@ -101,6 +101,34 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
+  inputs: ['copyright', 'entries', 'variant']
+})
+@Component({
+  selector: 'inno-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['copyright', 'entries', 'variant'],
+})
+export class InnoFooter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['contentSelected']);
+  }
+}
+
+
+export declare interface InnoFooter extends Components.InnoFooter {
+  /**
+   * The selector value is emitted if the given content is clicked.
+   */
+  contentSelected: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
   inputs: ['icon', 'size', 'theme']
 })
 @Component({
