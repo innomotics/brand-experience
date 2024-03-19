@@ -14,10 +14,7 @@ export class InnoSelect {
   @Prop() name: string;
   @Prop() type: 'text' | 'number' = 'text';
 
-  @State() selectedItem: { value: string; label: string };
-
   @Prop({ mutable: true }) value: string;
-
   @Prop({ mutable: true }) isActive: boolean;
   @Prop({ mutable: true }) isFocused: boolean;
   @Prop({ reflect: true }) disabled: boolean = false;
@@ -35,14 +32,14 @@ export class InnoSelect {
   componentDidLoad() {
     if (this.value) {
       let initSelection = this.items.filter(i => i.value == this.value);
-      this.selectedItem = { value: initSelection[0].value, label : initSelection[0].innerText };
+      this.value = initSelection[0].value;
       initSelection[0].selected = true;
     }
     this.setActiveState();
   }
 
   setActiveState() {
-    if (this.selectedItem !== undefined) {
+    if (this.value !== undefined) {
       this.isActive = true;
     }
   }
@@ -70,12 +67,11 @@ export class InnoSelect {
   }
 
   @Listen('itemSelected')
-  itemSelected(event: CustomEvent<{ value: string; label: string }>) {
-    this.selectedItem = event.detail;
-    this.value = this.selectedItem.value;
+  itemSelected(event: CustomEvent<string>) {
+    this.value =event.detail;
     this.valueChanged.emit(this.value);
     this.items.forEach(i => {
-      if (i.value === this.selectedItem.value) {
+      if (i.value === this.value) {
         i.selected = true;
       } else {
         i.selected = false;
@@ -83,21 +79,14 @@ export class InnoSelect {
     });
   }
 
-  @Listen('keydown')
-  async onKeyDown(event: KeyboardEvent) {
-
-    if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-
-      this.isOpen = !this.isOpen;
-    }
-
-    if (event.code === 'Escape') {
-      this.isOpen = false;
-    }
-  }
-
   get items() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
+  }
+
+  get selectedLabel()
+  {
+    let selected = this.items.find(i=> i.value == this.value);
+    return selected?.innerText;
   }
 
   render() {
@@ -118,7 +107,7 @@ export class InnoSelect {
         <div class="select-header">
           <div class={{ content: true, filled: this.isActive }}>
             <span class={{ label: true, float: this.isActive, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
-            <span>{this.selectedItem?.label}</span>
+            <span>{this.selectedLabel}</span>
           </div>
           <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>
         </div>

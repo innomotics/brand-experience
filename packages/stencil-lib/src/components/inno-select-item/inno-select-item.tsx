@@ -9,16 +9,16 @@ import { Element, Event, EventEmitter, Component, Host, Prop, h } from '@stencil
 export class InnoSelectItem {
   @Prop() value: string;
   @Prop() selected: boolean = false;
-  @Event() itemSelected: EventEmitter<{ value: string; label: string }>;
+  @Event() itemSelected: EventEmitter<string>;
   @Element() host: HTMLInnoSelectElement;
 
   selectItem() {
-    this.itemSelected.emit({ value: this.value, label: this.host.innerText });
+    this.itemSelected.emit(this.value);
   }
   
   render() {
     return (
-      <Host tabindex="0" class={{selected: this.selected}} onClick={() => this.selectItem()}>
+      <Host class={{selected: this.selected}} onClick={() => this.selectItem()}>
         <slot></slot>
         { this.selected? <inno-icon icon='check' size={16}></inno-icon>: null}
       </Host>

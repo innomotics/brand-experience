@@ -13,6 +13,7 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'icon',
   'collapsed',
   'last',
+  'inner',
   'label'
 ]);
 
@@ -46,6 +47,12 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 ]);
 
 
+export const InnoError = /*@__PURE__*/ defineContainer<JSX.InnoError>('inno-error', undefined, [
+  'active',
+  'type'
+]);
+
+
 export const InnoFooter = /*@__PURE__*/ defineContainer<JSX.InnoFooter>('inno-footer', undefined, [
   'variant',
   'copyright',
@@ -63,9 +70,7 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
   'name',
-  'type',
   'value',
-  'isActive',
   'isFocused',
   'disabled',
   'label',

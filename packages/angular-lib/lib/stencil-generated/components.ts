@@ -8,14 +8,14 @@ import { Components } from '@innomotics/ix';
 
 
 @ProxyCmp({
-  inputs: ['collapsed', 'icon', 'label', 'last', 'variant']
+  inputs: ['collapsed', 'icon', 'inner', 'label', 'last', 'variant']
 })
 @Component({
   selector: 'inno-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['collapsed', 'icon', 'label', 'last', 'variant'],
+  inputs: ['collapsed', 'icon', 'inner', 'label', 'last', 'variant'],
 })
 export class InnoAccordion {
   protected el: HTMLElement;
@@ -101,6 +101,28 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
+  inputs: ['active', 'type']
+})
+@Component({
+  selector: 'inno-error',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'type'],
+})
+export class InnoError {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoError extends Components.InnoError {}
+
+
+@ProxyCmp({
   inputs: ['copyright', 'entries', 'variant']
 })
 @Component({
@@ -151,14 +173,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+  inputs: ['disabled', 'isFocused', 'label', 'name', 'value', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'isFocused', 'label', 'name', 'value', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;
@@ -172,7 +194,7 @@ export class InnoInput {
 
 export declare interface InnoInput extends Components.InnoInput {
 
-  valueChanged: EventEmitter<CustomEvent<string>>;
+  valueChanged: EventEmitter<CustomEvent<string | number>>;
 }
 
 
@@ -275,7 +297,7 @@ export class InnoSelectItem {
 
 export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
-  itemSelected: EventEmitter<CustomEvent<{ value: string; label: string }>>;
+  itemSelected: EventEmitter<CustomEvent<string>>;
 }
 
 

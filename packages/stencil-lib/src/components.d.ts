@@ -47,6 +47,10 @@ export namespace Components {
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
+    interface InnoError {
+        "active": boolean;
+        "type": 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing';
+    }
     /**
      * Represents the general footer for the Innomotics applications.
      */
@@ -74,12 +78,10 @@ export namespace Components {
     }
     interface InnoInput {
         "disabled": boolean;
-        "isActive": boolean;
         "isFocused": boolean;
         "label": string;
         "name": string;
-        "type": 'text' | 'number';
-        "value": string;
+        "value": string | number;
         "variant": 'light' | 'dark';
     }
     interface InnoPane {
@@ -191,6 +193,12 @@ declare global {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
     };
+    interface HTMLInnoErrorElement extends Components.InnoError, HTMLStencilElement {
+    }
+    var HTMLInnoErrorElement: {
+        prototype: HTMLInnoErrorElement;
+        new (): HTMLInnoErrorElement;
+    };
     interface HTMLInnoFooterElementEventMap {
         "contentSelected": string;
     }
@@ -218,7 +226,7 @@ declare global {
         new (): HTMLInnoIconElement;
     };
     interface HTMLInnoInputElementEventMap {
-        "valueChanged": string;
+        "valueChanged": string | number;
     }
     interface HTMLInnoInputElement extends Components.InnoInput, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoInputElementEventMap>(type: K, listener: (this: HTMLInnoInputElement, ev: InnoInputCustomEvent<HTMLInnoInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -275,7 +283,7 @@ declare global {
         new (): HTMLInnoSelectElement;
     };
     interface HTMLInnoSelectItemElementEventMap {
-        "itemSelected": { value: string; label: string };
+        "itemSelected": string;
     }
     interface HTMLInnoSelectItemElement extends Components.InnoSelectItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -296,6 +304,7 @@ declare global {
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
+        "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
@@ -346,6 +355,10 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
+    interface InnoError {
+        "active"?: boolean;
+        "type"?: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing';
+    }
     /**
      * Represents the general footer for the Innomotics applications.
      */
@@ -377,13 +390,11 @@ declare namespace LocalJSX {
     }
     interface InnoInput {
         "disabled"?: boolean;
-        "isActive"?: boolean;
         "isFocused"?: boolean;
         "label"?: string;
         "name"?: string;
-        "onValueChanged"?: (event: InnoInputCustomEvent<string>) => void;
-        "type"?: 'text' | 'number';
-        "value"?: string;
+        "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
+        "value"?: string | number;
         "variant"?: 'light' | 'dark';
     }
     interface InnoPane {
@@ -416,7 +427,7 @@ declare namespace LocalJSX {
         "variant"?: 'light' | 'dark';
     }
     interface InnoSelectItem {
-        "onItemSelected"?: (event: InnoSelectItemCustomEvent<{ value: string; label: string }>) => void;
+        "onItemSelected"?: (event: InnoSelectItemCustomEvent<string>) => void;
         "selected"?: boolean;
         "value"?: string;
     }
@@ -425,6 +436,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
+        "inno-error": InnoError;
         "inno-footer": InnoFooter;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
@@ -442,6 +454,7 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
              * Represents the general footer for the Innomotics applications.
              */

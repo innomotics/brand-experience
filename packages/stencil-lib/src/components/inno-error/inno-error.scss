@@ -1,0 +1,15 @@
+@use '@innomotics/ix/styles/colors';
+:host {
+  display: none;
+  font-size: 12px;
+  &[active] {
+    display: block;
+    transform: translate(-16px, 1rem) scale(1);
+    &.light {
+      color: colors.$status-light-error;
+    }
+    &.dark {
+      color: colors.$status-dark-error;
+    }
+  }
+}

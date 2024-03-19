@@ -15,7 +15,7 @@
   display: block;
   height: 56px;
   padding: 0px 16px 0px 16px;
-  margin: 5px;
+  margin: 5px 5px 23px 5px;
   border: 1px solid colors.$additional-light-300;
   cursor: text;
 
@@ -30,7 +30,7 @@
       @include light-base;
       color: colors.$text-light-highemphasis;
       &.disabled:disabled {
-        background-color: rgba(colors.$transparency-light-100,0);
+        background-color: rgba(colors.$transparency-light-100, 0);
       }
     }
     &.isactive {
@@ -49,6 +49,10 @@
     &.focused {
       @include componentmixins.focus;
     }
+    &.invalid {
+      box-shadow: 0px 0px 0px 1px colors.$status-light-error;
+      border: 1px solid colors.$status-light-error;
+    }
   }
 
   &.dark {
@@ -64,7 +68,7 @@
       @include dark-base;
       color: colors.$text-dark-highemphasis;
       &.disabled {
-        background-color: rgba(colors.$transparency-dark-100,0);
+        background-color: rgba(colors.$transparency-dark-100, 0);
         color: colors.$text-dark-highemphasis;
       }
     }
@@ -83,9 +87,13 @@
     &.focused {
       @include componentmixins.focus;
     }
+    &.invalid {
+      box-shadow: 0px 0px 0px 1px colors.$status-dark-error;
+      border: 1px solid colors.$status-dark-error;
+    }
   }
 
-  input {
+  ::slotted(input) {
     width: 100%;
     border: none;
     outline: none;

@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event          | Description | Type                                             |
-| -------------- | ----------- | ------------------------------------------------ |
-| `itemSelected` |             | `CustomEvent<{ value: string; label: string; }>` |
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `itemSelected` |             | `CustomEvent<string>` |
 
 
 ## Dependencies
