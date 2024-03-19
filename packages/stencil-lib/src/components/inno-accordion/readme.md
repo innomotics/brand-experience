@@ -12,6 +12,7 @@
 | `collapsed` | `collapsed` |             | `boolean`           | `false`     |
 | `icon`      | `icon`      |             | `string`            | `undefined` |
 | `label`     | `label`     |             | `string`            | `undefined` |
+| `last`      | `last`      |             | `boolean`           | `false`     |
 | `variant`   | `variant`   |             | `"dark" \| "light"` | `'light'`   |
 
 

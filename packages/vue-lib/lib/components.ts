@@ -12,6 +12,7 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'variant',
   'icon',
   'collapsed',
+  'last',
   'label'
 ]);
 
@@ -84,5 +85,25 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'placement',
   'visible',
   'animationFrame'
+]);
+
+
+export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
+  'name',
+  'type',
+  'value',
+  'isActive',
+  'isFocused',
+  'disabled',
+  'label',
+  'variant',
+  'valueChanged'
+]);
+
+
+export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>('inno-select-item', undefined, [
+  'value',
+  'selected',
+  'itemSelected'
 ]);
 

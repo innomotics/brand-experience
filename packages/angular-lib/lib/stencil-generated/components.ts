@@ -8,14 +8,14 @@ import { Components } from '@innomotics/ix';
 
 
 @ProxyCmp({
-  inputs: ['collapsed', 'icon', 'label', 'variant']
+  inputs: ['collapsed', 'icon', 'label', 'last', 'variant']
 })
 @Component({
   selector: 'inno-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['collapsed', 'icon', 'label', 'variant'],
+  inputs: ['collapsed', 'icon', 'label', 'last', 'variant'],
 })
 export class InnoAccordion {
   protected el: HTMLElement;
@@ -197,5 +197,57 @@ export class InnoPopover {
 
 
 export declare interface InnoPopover extends Components.InnoPopover {}
+
+
+@ProxyCmp({
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+})
+@Component({
+  selector: 'inno-select',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
+})
+export class InnoSelect {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChanged']);
+  }
+}
+
+
+export declare interface InnoSelect extends Components.InnoSelect {
+
+  valueChanged: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['selected', 'value']
+})
+@Component({
+  selector: 'inno-select-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['selected', 'value'],
+})
+export class InnoSelectItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['itemSelected']);
+  }
+}
+
+
+export declare interface InnoSelectItem extends Components.InnoSelectItem {
+
+  itemSelected: EventEmitter<CustomEvent<{ value: string; label: string }>>;
+}
 
 

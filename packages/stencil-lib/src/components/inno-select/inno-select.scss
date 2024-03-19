@@ -1,0 +1,80 @@
+@use '@innomotics/ix/styles/colors';
+@use '@innomotics/ix/styles/componentmixins';
+
+:host {
+  cursor:pointer;
+
+  &:focus-visible {
+    @include componentmixins.focus;
+  }
+
+  &.light {
+    &:hover:not(.disabled):not(:disabled) {
+      border: 1px solid colors.$interaction-light-hover;
+      box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
+    }
+  }
+  
+  &.dark {
+    &:hover:not(.disabled):not(:disabled) {
+      border: 1px solid colors.$highlight-dark-100;
+      box-shadow: 0px 0px 0px 1px colors.$highlight-dark-100;
+    }
+  }
+
+  &.input-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid colors.$additional-light-300;
+    margin: 5px 5px 0px 5px;
+
+    .select-header {
+      padding: 0px 16px 0px 16px;
+      box-sizing: border-box;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .content {
+        display: flex;
+        &.filled {
+          flex-direction: column;
+        }
+      }
+    }
+    &.dark{
+      background-color: colors.$background-dark-200;
+    }
+  }
+
+  .label {
+    &.light {
+      &.disabled {
+        color: colors.$text-light-lowemphasis;
+      }
+    }
+    &.dark {
+      color: colors.$text-dark-lowemphasis;
+      &.disabled {
+        color: colors.$text-dark-lowemphasis;
+      }
+    }
+  }
+  .float {
+    transform: translate(0rem, -0.3rem) scale(1);
+    font-size: small;
+  }
+
+  .items {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    &.opened {
+      display: block;
+    }
+  }
+
+  &.disabled {
+    border: 1px solid colors.$interaction-light-disabled;
+  }
+}
