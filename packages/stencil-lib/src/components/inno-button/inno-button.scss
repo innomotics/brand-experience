@@ -63,7 +63,7 @@
         background-color: colors.$primary-100;
 
         &:hover:not(.disabled):not(:disabled) {
-          background-color: colors.$background-dark-300;
+          background-color: colors.$secondary-300;
         }
 
         &:active:not(.disabled):not(:disabled) {
