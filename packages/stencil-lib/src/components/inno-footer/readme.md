@@ -26,6 +26,7 @@ Show the selected icon.
 
 <!-- Auto Generated Below -->
 
+
 ## Overview
 
 Represents the general footer for the Innomotics applications.
@@ -38,11 +39,13 @@ Represents the general footer for the Innomotics applications.
 | `entries`   | --          | Generalized entries for the application. | `readonly FooterContent[]` | `[]`      |
 | `variant`   | `variant`   | Theme variant property.                  | `"dark" \| "light"`        | `'light'` |
 
+
 ## Events
 
 | Event             | Description                                                    | Type                  |
 | ----------------- | -------------------------------------------------------------- | --------------------- |
 | `contentSelected` | The selector value is emitted if the given content is clicked. | `CustomEvent<string>` |
+
 
 ## Dependencies
 
@@ -51,13 +54,12 @@ Represents the general footer for the Innomotics applications.
 - [inno-icon](../inno-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   inno-footer --> inno-icon
   style inno-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
