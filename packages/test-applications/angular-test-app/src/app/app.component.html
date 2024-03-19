@@ -1,5 +1,17 @@
 <inno-icon icon="home"></inno-icon>
 <form [formGroup]="innomoticsForm">
-    <inno-input name="bubu" label="Inputbox" [formControl]="innoInput"></inno-input>
+    <inno-input name="bubu" label="Inputbox" [formControl]="innoInput" variant="light"></inno-input>
+    <inno-select name="dew" type="text" label="SelectBox" [formControl]="innoSelect">
+        <inno-select-item value="12">12</inno-select-item>
+        <inno-select-item value="132">213</inno-select-item>
+    </inno-select>
+    <!-- <inno-button type="primary">dfewf4e</inno-button> -->
 </form>
+
+<inno-breadcrumb>
+    <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
+    <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+</inno-breadcrumb>
+
 {{innoInput.value}}
+{{innoSelect.value}}

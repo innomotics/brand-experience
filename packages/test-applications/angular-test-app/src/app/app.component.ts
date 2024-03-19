@@ -16,10 +16,15 @@ export class AppComponent {
     return this.innomoticsForm.get("innoInput") as UntypedFormControl;
   }
 
+  public get innoSelect(): UntypedFormControl {
+    return this.innomoticsForm.get("innoSelect") as UntypedFormControl;
+  }
+
   constructor(public formBuilder: UntypedFormBuilder){
     this.innomoticsForm = this.formBuilder.group(
       {
-        innoInput:[0]
+        innoInput:[0],
+        innoSelect:['']
       }
     )
 

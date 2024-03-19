@@ -19,8 +19,14 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     event: 'valueChanged',
     targetAttr: 'value',
     type: 'text',
-
   },
+  {
+    elementSelectors: ['inno-select[formControl]'],
+    event: 'valueChanged',
+    targetAttr: 'value',
+    type: 'select',
+  },
+
 ];
 
 export const config: Config = {

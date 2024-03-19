@@ -17,13 +17,12 @@ export class InnoInput {
   @Prop({ mutable: true }) isFocused: boolean;
   @Prop({ reflect: true }) disabled: boolean = false;
   @Prop() label: string;
-  @Prop() variant: string;
+  @Prop() variant: 'light' | 'dark' = 'light';
 
   
   inputChanged(event) {
     this.value = event.target.value;
     this.valueChanged.emit(this.value);
-    console.log("dafuck");
   }
 
   componentDidLoad() {
@@ -35,7 +34,6 @@ export class InnoInput {
   onBlur() {
     if (this.value === '' || this.value === undefined) {
       this.isActive = false;
-      console.log('cerce');
     }
   }
 

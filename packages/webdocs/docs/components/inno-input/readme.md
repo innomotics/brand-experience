@@ -16,7 +16,7 @@
 | `name`      | `name`       |             | `string`             | `undefined` |
 | `type`      | `type`       |             | `"number" \| "text"` | `'text'`    |
 | `value`     | `value`      |             | `string`             | `undefined` |
-| `variant`   | `variant`    |             | `string`             | `undefined` |
+| `variant`   | `variant`    |             | `"dark" \| "light"`  | `'light'`   |
 
 
 ## Events

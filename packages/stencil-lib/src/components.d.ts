@@ -60,7 +60,7 @@ export namespace Components {
         "name": string;
         "type": 'text' | 'number';
         "value": string;
-        "variant": string;
+        "variant": 'light' | 'dark';
     }
     interface InnoPane {
         "closeOnBackdropClick": boolean;
@@ -81,6 +81,20 @@ export namespace Components {
         "variant": 'light' | 'dark';
         "visible": boolean;
     }
+    interface InnoSelect {
+        "disabled": boolean;
+        "isActive": boolean;
+        "isFocused": boolean;
+        "label": string;
+        "name": string;
+        "type": 'text' | 'number';
+        "value": string;
+        "variant": 'light' | 'dark';
+    }
+    interface InnoSelectItem {
+        "selected": boolean;
+        "value": string;
+    }
 }
 export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -97,6 +111,14 @@ export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
+}
+export interface InnoSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoSelectElement;
+}
+export interface InnoSelectItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoSelectItemElement;
 }
 declare global {
     interface HTMLInnoAccordionElement extends Components.InnoAccordion, HTMLStencilElement {
@@ -191,6 +213,40 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
+    interface HTMLInnoSelectElementEventMap {
+        "valueChanged": string;
+    }
+    interface HTMLInnoSelectElement extends Components.InnoSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoSelectElementEventMap>(type: K, listener: (this: HTMLInnoSelectElement, ev: InnoSelectCustomEvent<HTMLInnoSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoSelectElementEventMap>(type: K, listener: (this: HTMLInnoSelectElement, ev: InnoSelectCustomEvent<HTMLInnoSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoSelectElement: {
+        prototype: HTMLInnoSelectElement;
+        new (): HTMLInnoSelectElement;
+    };
+    interface HTMLInnoSelectItemElementEventMap {
+        "itemSelected": { value: string; label: string };
+    }
+    interface HTMLInnoSelectItemElement extends Components.InnoSelectItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoSelectItemElement: {
+        prototype: HTMLInnoSelectItemElement;
+        new (): HTMLInnoSelectItemElement;
+    };
     interface HTMLElementTagNameMap {
         "inno-accordion": HTMLInnoAccordionElement;
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
@@ -200,6 +256,8 @@ declare global {
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
+        "inno-select": HTMLInnoSelectElement;
+        "inno-select-item": HTMLInnoSelectItemElement;
     }
 }
 declare namespace LocalJSX {
@@ -259,7 +317,7 @@ declare namespace LocalJSX {
         "onValueChanged"?: (event: InnoInputCustomEvent<string>) => void;
         "type"?: 'text' | 'number';
         "value"?: string;
-        "variant"?: string;
+        "variant"?: 'light' | 'dark';
     }
     interface InnoPane {
         "closeOnBackdropClick"?: boolean;
@@ -279,6 +337,22 @@ declare namespace LocalJSX {
         "variant"?: 'light' | 'dark';
         "visible"?: boolean;
     }
+    interface InnoSelect {
+        "disabled"?: boolean;
+        "isActive"?: boolean;
+        "isFocused"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onValueChanged"?: (event: InnoSelectCustomEvent<string>) => void;
+        "type"?: 'text' | 'number';
+        "value"?: string;
+        "variant"?: 'light' | 'dark';
+    }
+    interface InnoSelectItem {
+        "onItemSelected"?: (event: InnoSelectItemCustomEvent<{ value: string; label: string }>) => void;
+        "selected"?: boolean;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "inno-accordion": InnoAccordion;
         "inno-breadcrumb": InnoBreadcrumb;
@@ -288,6 +362,8 @@ declare namespace LocalJSX {
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
+        "inno-select": InnoSelect;
+        "inno-select-item": InnoSelectItem;
     }
 }
 export { LocalJSX as JSX };
@@ -302,6 +378,8 @@ declare module "@stencil/core" {
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
+            "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
+            "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
         }
     }
 }
