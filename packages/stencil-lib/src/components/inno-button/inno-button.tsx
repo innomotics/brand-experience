@@ -7,7 +7,7 @@ import { Component, Element, Host, Prop, h } from '@stencil/core';
 })
 export class InnoButton {
   @Prop({ mutable: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' = 'primary';
-  @Prop({ mutable: true }) parentBackgroundColor: 'light' | 'dark' = 'light';
+  @Prop({ mutable: true }) colorVariant: 'light' | 'dark' = 'light';
   @Prop() type: 'button' | 'submit' = 'button';
   @Prop({ mutable: true }) tabIdx: number = 0;
   @Prop({ reflect: true, mutable: true }) disabled = false;
@@ -57,8 +57,8 @@ export class InnoButton {
               'media': this.variant === 'media',
               'navigation': this.variant === 'navigation',
               'icon-only': this.iconOnly,
-              'light-bgc': this.parentBackgroundColor === 'light',
-              'dark-bgc': this.parentBackgroundColor === 'dark',
+              'light': this.colorVariant === 'light',
+              'dark': this.colorVariant === 'dark',
               'display-reverse': this.iconPosition === 'left',
               disabled: this.disabled
             }
@@ -68,7 +68,7 @@ export class InnoButton {
           tabIndex={this.disabled ? -1 : this.tabIdx ?? 0}
         >
           <slot></slot>
-          {hasIcon ? <inno-icon icon={icon} size={iconSize} theme={this.parentBackgroundColor}></inno-icon> : null}
+          {hasIcon ? <inno-icon icon={icon} size={iconSize} theme={this.colorVariant}></inno-icon> : null}
         </button>
       </Host>
     );

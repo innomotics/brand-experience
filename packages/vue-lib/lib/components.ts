@@ -12,6 +12,7 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'variant',
   'icon',
   'collapsed',
+  'last',
   'label'
 ]);
 
@@ -34,7 +35,7 @@ export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcru
 
 export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-button', undefined, [
   'variant',
-  'parentBackgroundColor',
+  'colorVariant',
   'type',
   'tabIdx',
   'disabled',
@@ -54,12 +55,14 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
   'name',
+  'type',
   'value',
   'isActive',
   'isFocused',
   'disabled',
   'label',
-  'variant'
+  'variant',
+  'valueChanged'
 ]);
 
 
@@ -76,6 +79,7 @@ export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane',
 
 export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-popover', undefined, [
   'trigger',
+  'variant',
   'for',
   'titleContent',
   'placement',
@@ -84,9 +88,22 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
 ]);
 
 
-export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
-  'first',
-  'middle',
-  'last'
+export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
+  'name',
+  'type',
+  'value',
+  'isActive',
+  'isFocused',
+  'disabled',
+  'label',
+  'variant',
+  'valueChanged'
+]);
+
+
+export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>('inno-select-item', undefined, [
+  'value',
+  'selected',
+  'itemSelected'
 ]);
 

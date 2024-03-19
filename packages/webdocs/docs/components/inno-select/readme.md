@@ -1,4 +1,4 @@
-# inno-input
+# inno-select
 
 
 
@@ -25,6 +25,19 @@
 | -------------- | ----------- | --------------------- |
 | `valueChanged` |             | `CustomEvent<string>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [inno-icon](../inno-icon)
+
+### Graph
+```mermaid
+graph TD;
+  inno-select --> inno-icon
+  style inno-select fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

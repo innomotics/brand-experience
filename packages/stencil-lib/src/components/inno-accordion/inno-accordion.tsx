@@ -9,6 +9,7 @@ export class InnoAccordion {
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
   @Prop({ mutable: true }) icon: string;
   @Prop({ mutable: true }) collapsed = false;
+  @Prop({ mutable: true }) last = false;
   @Prop() label: string;
 
   @Element() hostElement!: HTMLInnoAccordionElement;
@@ -30,6 +31,7 @@ export class InnoAccordion {
   render() {
     let iconSize: number = 24;
     let icon: string = this.collapsed ? 'plus' : 'minus';
+    let isLast: string = this.last ? 'last' : '';
     return (
       <Host>
         <a href='#'
@@ -37,6 +39,8 @@ export class InnoAccordion {
             'accordion': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
+            'last': isLast === 'last',
+            'open': !this.collapsed,
           }}
           ref={(ref) => (this.anchorElementRef = ref)}
         >

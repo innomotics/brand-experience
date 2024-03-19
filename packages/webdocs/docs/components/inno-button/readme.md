@@ -32,17 +32,17 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property                | Attribute                 | Description | Type                                                                | Default     |
-| ----------------------- | ------------------------- | ----------- | ------------------------------------------------------------------- | ----------- |
-| `disabled`              | `disabled`                |             | `boolean`                                                           | `false`     |
-| `icon`                  | `icon`                    |             | `string`                                                            | `undefined` |
-| `iconOnly`              | `icon-only`               |             | `boolean`                                                           | `false`     |
-| `iconPosition`          | `icon-position`           |             | `"left" \| "right"`                                                 | `'right'`   |
-| `navDirection`          | `nav-direction`           |             | `"left" \| "right"`                                                 | `'right'`   |
-| `parentBackgroundColor` | `parent-background-color` |             | `"dark" \| "light"`                                                 | `'light'`   |
-| `tabIdx`                | `tab-idx`                 |             | `number`                                                            | `0`         |
-| `type`                  | `type`                    |             | `"button" \| "submit"`                                              | `'button'`  |
-| `variant`               | `variant`                 |             | `"media" \| "navigation" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
+| Property       | Attribute       | Description | Type                                                                | Default     |
+| -------------- | --------------- | ----------- | ------------------------------------------------------------------- | ----------- |
+| `colorVariant` | `color-variant` |             | `"dark" \| "light"`                                                 | `'light'`   |
+| `disabled`     | `disabled`      |             | `boolean`                                                           | `false`     |
+| `icon`         | `icon`          |             | `string`                                                            | `undefined` |
+| `iconOnly`     | `icon-only`     |             | `boolean`                                                           | `false`     |
+| `iconPosition` | `icon-position` |             | `"left" \| "right"`                                                 | `'right'`   |
+| `navDirection` | `nav-direction` |             | `"left" \| "right"`                                                 | `'right'`   |
+| `tabIdx`       | `tab-idx`       |             | `number`                                                            | `0`         |
+| `type`         | `type`          |             | `"button" \| "submit"`                                              | `'button'`  |
+| `variant`      | `variant`       |             | `"media" \| "navigation" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
 
 ## Dependencies

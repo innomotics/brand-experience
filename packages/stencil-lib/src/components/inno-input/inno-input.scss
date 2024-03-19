@@ -17,6 +17,7 @@
   padding: 0px 16px 0px 16px;
   margin: 5px;
   border: 1px solid colors.$additional-light-300;
+  cursor: text;
 
   &.light {
     @include light-base;
@@ -85,7 +86,6 @@
   }
 
   input {
-    cursor: default;
     width: 100%;
     border: none;
     outline: none;

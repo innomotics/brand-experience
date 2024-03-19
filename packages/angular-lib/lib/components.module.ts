@@ -3,9 +3,14 @@ import { DIRECTIVES } from "./stencil-generated";
 import { appInitialize } from "./app-initialize";
 import { DOCUMENT } from '@angular/common';
 import { defineCustomElements } from "@innomotics/ix/loader";
+import { TextValueAccessor } from "./stencil-generated/text-value-accessor";
+import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
+
 
 const DECLARATIONS = [
-    ...DIRECTIVES
+    ...DIRECTIVES,
+    TextValueAccessor,
+    SelectValueAccessor
 ];
 
 @NgModule({

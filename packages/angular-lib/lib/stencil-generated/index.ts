@@ -10,5 +10,6 @@ export const DIRECTIVES = [
   d.InnoInput,
   d.InnoPane,
   d.InnoPopover,
-  d.MyComponent
+  d.InnoSelect,
+  d.InnoSelectItem
 ];

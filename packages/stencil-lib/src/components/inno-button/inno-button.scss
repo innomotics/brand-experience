@@ -36,7 +36,7 @@
     }
 
     &.primary {
-      &.light-bgc {
+      &.dark {
         color: colors.$highlight-light-200;
         background-color: colors.$highlight-light-100;
 
@@ -58,12 +58,12 @@
         }
       }
 
-      &.dark-bgc {
+      &.light {
         color: colors.$highlight-dark-200;
         background-color: colors.$primary-100;
 
         &:hover:not(.disabled):not(:disabled) {
-          background-color: colors.$background-dark-300;
+          background-color: colors.$secondary-300;
         }
 
         &:active:not(.disabled):not(:disabled) {
@@ -82,7 +82,7 @@
     &.secondary {
       background-color: transparent;
 
-      &.light-bgc {
+      &.dark {
         border: 2px solid colors.$interaction-light-default;
         color: colors.$interaction-light-default;
 
@@ -99,7 +99,7 @@
         }
       }
 
-      &.dark-bgc {
+      &.light {
         color: colors.$interaction-dark-default;
         border: 2px solid colors.$interaction-dark-default;
 
@@ -133,7 +133,7 @@
         border: none !important;
       }
 
-      &.light-bgc {
+      &.dark {
         color:colors.$interaction-light-default;
         &:hover:not(.disabled):not(:disabled) {
           color: colors.$interaction-light-hover;
@@ -146,7 +146,7 @@
         }
       }
 
-      &.dark-bgc {
+      &.light {
         color: colors.$text-light-buttonlabel;
         border-color: colors.$primary-300;
 

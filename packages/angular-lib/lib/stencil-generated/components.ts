@@ -8,14 +8,14 @@ import { Components } from '@innomotics/ix';
 
 
 @ProxyCmp({
-  inputs: ['collapsed', 'icon', 'label', 'variant']
+  inputs: ['collapsed', 'icon', 'label', 'last', 'variant']
 })
 @Component({
   selector: 'inno-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['collapsed', 'icon', 'label', 'variant'],
+  inputs: ['collapsed', 'icon', 'label', 'last', 'variant'],
 })
 export class InnoAccordion {
   protected el: HTMLElement;
@@ -79,14 +79,14 @@ export declare interface InnoBreadcrumbItem extends Components.InnoBreadcrumbIte
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'parentBackgroundColor', 'tabIdx', 'type', 'variant']
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'tabIdx', 'type', 'variant']
 })
 @Component({
   selector: 'inno-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'parentBackgroundColor', 'tabIdx', 'type', 'variant'],
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'tabIdx', 'type', 'variant'],
 })
 export class InnoButton {
   protected el: HTMLElement;
@@ -123,25 +123,29 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'value', 'variant']
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'value', 'variant'],
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChanged']);
   }
 }
 
 
-export declare interface InnoInput extends Components.InnoInput {}
+export declare interface InnoInput extends Components.InnoInput {
+
+  valueChanged: EventEmitter<CustomEvent<string>>;
+}
 
 
 @ProxyCmp({
@@ -173,7 +177,7 @@ export declare interface InnoPane extends Components.InnoPane {
 
 
 @ProxyCmp({
-  inputs: ['for', 'placement', 'titleContent', 'trigger', 'visible'],
+  inputs: ['for', 'placement', 'titleContent', 'trigger', 'variant', 'visible'],
   methods: ['showTooltip', 'hideTooltip']
 })
 @Component({
@@ -181,7 +185,7 @@ export declare interface InnoPane extends Components.InnoPane {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['for', 'placement', 'titleContent', 'trigger', 'visible'],
+  inputs: ['for', 'placement', 'titleContent', 'trigger', 'variant', 'visible'],
 })
 export class InnoPopover {
   protected el: HTMLElement;
@@ -196,24 +200,54 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['first', 'last', 'middle']
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
 })
 @Component({
-  selector: 'my-component',
+  selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['first', 'last', 'middle'],
+  inputs: ['disabled', 'isActive', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
 })
-export class MyComponent {
+export class InnoSelect {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChanged']);
   }
 }
 
 
-export declare interface MyComponent extends Components.MyComponent {}
+export declare interface InnoSelect extends Components.InnoSelect {
+
+  valueChanged: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['selected', 'value']
+})
+@Component({
+  selector: 'inno-select-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['selected', 'value'],
+})
+export class InnoSelectItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['itemSelected']);
+  }
+}
+
+
+export declare interface InnoSelectItem extends Components.InnoSelectItem {
+
+  itemSelected: EventEmitter<CustomEvent<{ value: string; label: string }>>;
+}
 
 
