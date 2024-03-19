@@ -1,7 +1,5 @@
 # inno-icon
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -21,6 +19,7 @@
  - [inno-accordion](../inno-accordion)
  - [inno-breadcrumb-item](../inno-breadcrumb-item)
  - [inno-button](../inno-button)
+ - [inno-footer](../inno-footer)
  - [inno-select](../inno-select)
  - [inno-select-item](../inno-select-item)
 
@@ -30,6 +29,7 @@ graph TD;
   inno-accordion --> inno-icon
   inno-breadcrumb-item --> inno-icon
   inno-button --> inno-icon
+  inno-footer --> inno-icon
   inno-select --> inno-icon
   inno-select-item --> inno-icon
   style inno-icon fill:#f9f,stroke:#333,stroke-width:4px
