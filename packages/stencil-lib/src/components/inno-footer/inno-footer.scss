@@ -88,23 +88,15 @@
     &.light {
       color: colors.$primary-200;
 
-      &:link,
-      &:visited,
-      &:hover,
-      &:focus,
-      &:active {
-        color: colors.$highlight-light-200;
+      &:hover {
+        color: colors.$primary-200;
       }
     }
 
     &.dark {
       color: colors.$primary-100;
 
-      &:link,
-      &:visited,
-      &:hover,
-      &:focus,
-      &:active {
+      &:hover {
         color: colors.$primary-100;
       }
     }
