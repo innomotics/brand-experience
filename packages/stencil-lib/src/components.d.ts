@@ -5,8 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FooterContent } from "./components/inno-footer/inno-footer.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
+export { FooterContent } from "./components/inno-footer/inno-footer.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
@@ -43,6 +45,23 @@ export namespace Components {
         "tabIdx": number;
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface InnoFooter {
+        /**
+          * The copyright label.
+         */
+        "copyright": string;
+        /**
+          * Generalized entries for the application.
+         */
+        "entries": ReadonlyArray<FooterContent>;
+        /**
+          * Theme variant property.
+         */
+        "variant": 'light' | 'dark';
     }
     interface InnoIcon {
         /**
@@ -103,6 +122,10 @@ export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
 export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbItemElement;
+}
+export interface InnoFooterCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoFooterElement;
 }
 export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -166,6 +189,26 @@ declare global {
     var HTMLInnoButtonElement: {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
+    };
+    interface HTMLInnoFooterElementEventMap {
+        "contentSelected": string;
+    }
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface HTMLInnoFooterElement extends Components.InnoFooter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoFooterElement: {
+        prototype: HTMLInnoFooterElement;
+        new (): HTMLInnoFooterElement;
     };
     interface HTMLInnoIconElement extends Components.InnoIcon, HTMLStencilElement {
     }
@@ -252,6 +295,7 @@ declare global {
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
+        "inno-footer": HTMLInnoFooterElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
@@ -299,6 +343,27 @@ declare namespace LocalJSX {
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    /**
+     * Represents the general footer for the Innomotics applications.
+     */
+    interface InnoFooter {
+        /**
+          * The copyright label.
+         */
+        "copyright"?: string;
+        /**
+          * Generalized entries for the application.
+         */
+        "entries"?: ReadonlyArray<FooterContent>;
+        /**
+          * The selector value is emitted if the given content is clicked.
+         */
+        "onContentSelected"?: (event: InnoFooterCustomEvent<string>) => void;
+        /**
+          * Theme variant property.
+         */
+        "variant"?: 'light' | 'dark';
     }
     interface InnoIcon {
         /**
@@ -358,6 +423,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
+        "inno-footer": InnoFooter;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
@@ -374,6 +440,10 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            /**
+             * Represents the general footer for the Innomotics applications.
+             */
+            "inno-footer": LocalJSX.InnoFooter & JSXBase.HTMLAttributes<HTMLInnoFooterElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
