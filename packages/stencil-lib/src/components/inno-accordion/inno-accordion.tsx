@@ -10,6 +10,7 @@ export class InnoAccordion {
   @Prop({ mutable: true }) icon: string;
   @Prop({ mutable: true }) collapsed = false;
   @Prop({ mutable: true }) last = false;
+  @Prop({ mutable: true }) inner = false;
   @Prop() label: string;
 
   @Element() hostElement!: HTMLInnoAccordionElement;
@@ -30,8 +31,7 @@ export class InnoAccordion {
 
   render() {
     let iconSize: number = 24;
-    let icon: string = this.collapsed ? 'plus' : 'minus';
-    let isLast: string = this.last ? 'last' : '';
+    let icon: string = this.collapsed ? this.inner ? 'arrow-down' : 'plus' : this.inner ? 'arrow-up' : 'minus';
     return (
       <Host>
         <a href='#'
@@ -39,14 +39,16 @@ export class InnoAccordion {
             'accordion': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
-            'last': isLast === 'last',
+            'last': this.last,
             'open': !this.collapsed,
+            'inner': this.inner,
           }}
           ref={(ref) => (this.anchorElementRef = ref)}
         >
 
           <div class={{
             'accordion-header': true,
+            'inner': this.inner,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
           }}
@@ -59,14 +61,26 @@ export class InnoAccordion {
               'accordion-header-title': true,
               'light': this.variant === 'light',
               'dark': this.variant === 'dark',
+              hide: this.inner,
             }}>{this.label}</span>
 
-            <inno-icon icon={icon} size={iconSize} theme={this.variant}></inno-icon>
+            <inno-icon class={{
+              'inner': this.inner,
+            }} icon={icon} size={iconSize} theme={this.variant}></inno-icon>
+
+            <span class={{
+              'accordion-header-title': true,
+              'inner': this.inner,
+              'light': this.variant === 'light',
+              'dark': this.variant === 'dark',
+              hide: !this.inner,
+            }}>{this.label}</span>
 
           </div>
 
           <section class={{
             'accordion-content': true,
+            'inner': this.inner,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
             hide: this.collapsed,

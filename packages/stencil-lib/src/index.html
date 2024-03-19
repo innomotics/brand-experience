@@ -56,13 +56,18 @@
     </p>
   </inno-popover>
   <br>
-  <inno-accordion variant="light" label="Example">asd</inno-accordion>
-  <inno-accordion variant="light" collapsed label="Example2">asd2</inno-accordion>
-  <inno-accordion variant="light" collapsed label="Example3" last>asd3</inno-accordion>
+  <inno-accordion variant="light" label="Example">first accordion</inno-accordion>
+  <inno-accordion variant="light" label="Example2" collapsed >
+    second accordion
+    <inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
+  </inno-accordion>
+  <inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
   <br><br>
-  <inno-accordion variant="dark" label="Example">asd</inno-accordion>
-  <inno-accordion variant="dark" collapsed label="Example2">asd2</inno-accordion>
-  <inno-accordion variant="dark" collapsed label="Example3" last>asd3</inno-accordion>
+  <inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
+  <inno-accordion variant="dark" label="Example2" collapsed>
+    second accordion
+  </inno-accordion>
+  <inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
   <br>
   <inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with
     buttons)</inno-button>

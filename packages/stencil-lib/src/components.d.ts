@@ -13,6 +13,7 @@ export namespace Components {
     interface InnoAccordion {
         "collapsed": boolean;
         "icon": string;
+        "inner": boolean;
         "label": string;
         "last": boolean;
         "variant": 'light' | 'dark';
@@ -264,6 +265,7 @@ declare namespace LocalJSX {
     interface InnoAccordion {
         "collapsed"?: boolean;
         "icon"?: string;
+        "inner"?: boolean;
         "label"?: string;
         "last"?: boolean;
         "variant"?: 'light' | 'dark';
