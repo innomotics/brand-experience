@@ -301,3 +301,31 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 }
 
 
+@ProxyCmp({
+  inputs: ['checked', 'disabled', 'tabIdx', 'variant']
+})
+@Component({
+  selector: 'inno-toggle',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'disabled', 'tabIdx', 'variant'],
+})
+export class InnoToggle {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['checkedChange']);
+  }
+}
+
+
+export declare interface InnoToggle extends Components.InnoToggle {
+  /**
+   * An event will be dispatched each time the slide-toggle changes its value.
+   */
+  checkedChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+

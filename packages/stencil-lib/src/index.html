@@ -12,6 +12,16 @@
 </head>
 
 <body>
+  <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
+      <inno-toggle></inno-toggle>
+      <inno-toggle disabled></inno-toggle>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; background-color: #08191f; padding: 10px;">
+      <inno-toggle variant="light"></inno-toggle>
+      <inno-toggle variant="light" disabled></inno-toggle>
+    </div>
+  </div>
   <span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
   <span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
   <span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
@@ -176,9 +186,9 @@
     <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
   </inno-breadcrumb>
   <inno-input label="Power" variant="light">
-      <input type="number"/>
-      <inno-error type="badInput">Not valid</inno-error>
-    </inno-input>
+    <input type="number" />
+    <inno-error type="badInput">Not valid</inno-error>
+  </inno-input>
   <inno-select label="Select">
     <inno-select-item value="124">4321</inno-select-item>
     <inno-select-item value="124321">431</inno-select-item>

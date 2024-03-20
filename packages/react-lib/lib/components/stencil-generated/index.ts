@@ -19,3 +19,4 @@ export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInno
 export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HTMLInnoPopoverElement>('inno-popover');
 export const InnoSelect = /*@__PURE__*/createReactComponent<JSX.InnoSelect, HTMLInnoSelectElement>('inno-select');
 export const InnoSelectItem = /*@__PURE__*/createReactComponent<JSX.InnoSelectItem, HTMLInnoSelectItemElement>('inno-select-item');
+export const InnoToggle = /*@__PURE__*/createReactComponent<JSX.InnoToggle, HTMLInnoToggleElement>('inno-toggle');

@@ -26,7 +26,13 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     targetAttr: 'value',
     type: 'select',
   },
-
+  {
+    elementSelectors:
+      'inno-toggle[ngModel],inno-toggle[formControlName],inno-toggle[formControl]',
+    event: 'checkedChange',
+    targetAttr: 'checked',
+    type: 'boolean',
+  }
 ];
 
 export const config: Config = {

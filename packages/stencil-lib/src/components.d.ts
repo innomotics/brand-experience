@@ -117,6 +117,24 @@ export namespace Components {
         "selected": boolean;
         "value": string;
     }
+    interface InnoToggle {
+        /**
+          * Whether the slide-toggle element is checked or not.
+         */
+        "checked": boolean;
+        /**
+          * Whether the slide-toggle element is disabled or not.
+         */
+        "disabled": boolean;
+        /**
+          * The tab index of the toggle
+         */
+        "tabIdx": number;
+        /**
+          * Color variant of the toggle component.
+         */
+        "variant": 'dark' | 'light';
+    }
 }
 export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -145,6 +163,10 @@ export interface InnoSelectCustomEvent<T> extends CustomEvent<T> {
 export interface InnoSelectItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoSelectItemElement;
+}
+export interface InnoToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoToggleElement;
 }
 declare global {
     interface HTMLInnoAccordionElement extends Components.InnoAccordion, HTMLStencilElement {
@@ -299,6 +321,23 @@ declare global {
         prototype: HTMLInnoSelectItemElement;
         new (): HTMLInnoSelectItemElement;
     };
+    interface HTMLInnoToggleElementEventMap {
+        "checkedChange": boolean;
+    }
+    interface HTMLInnoToggleElement extends Components.InnoToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoToggleElementEventMap>(type: K, listener: (this: HTMLInnoToggleElement, ev: InnoToggleCustomEvent<HTMLInnoToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoToggleElementEventMap>(type: K, listener: (this: HTMLInnoToggleElement, ev: InnoToggleCustomEvent<HTMLInnoToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoToggleElement: {
+        prototype: HTMLInnoToggleElement;
+        new (): HTMLInnoToggleElement;
+    };
     interface HTMLElementTagNameMap {
         "inno-accordion": HTMLInnoAccordionElement;
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
@@ -312,6 +351,7 @@ declare global {
         "inno-popover": HTMLInnoPopoverElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
+        "inno-toggle": HTMLInnoToggleElement;
     }
 }
 declare namespace LocalJSX {
@@ -431,6 +471,28 @@ declare namespace LocalJSX {
         "selected"?: boolean;
         "value"?: string;
     }
+    interface InnoToggle {
+        /**
+          * Whether the slide-toggle element is checked or not.
+         */
+        "checked"?: boolean;
+        /**
+          * Whether the slide-toggle element is disabled or not.
+         */
+        "disabled"?: boolean;
+        /**
+          * An event will be dispatched each time the slide-toggle changes its value.
+         */
+        "onCheckedChange"?: (event: InnoToggleCustomEvent<boolean>) => void;
+        /**
+          * The tab index of the toggle
+         */
+        "tabIdx"?: number;
+        /**
+          * Color variant of the toggle component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
     interface IntrinsicElements {
         "inno-accordion": InnoAccordion;
         "inno-breadcrumb": InnoBreadcrumb;
@@ -444,6 +506,7 @@ declare namespace LocalJSX {
         "inno-popover": InnoPopover;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
+        "inno-toggle": InnoToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -465,6 +528,7 @@ declare module "@stencil/core" {
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
+            "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
         }
     }
 }

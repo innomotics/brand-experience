@@ -1,0 +1,120 @@
+@use '@innomotics/ix/styles/colors';
+
+:host {
+  display: inline-flex;
+  position: relative;
+  height: 24px;
+  justify-content: flex-start;
+  align-items: center;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    min-width: 48px;
+    max-width: 48px;
+    height: 20px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 300ms ease-in-out;
+    border-radius: 14px;
+
+    &.dark {
+      background-color: colors.$secondary-200;
+    }
+
+    &.light {
+      background-color: colors.$secondary-800;
+    }
+  }
+
+  .slider::before {
+    position: absolute;
+    content: '';
+    height: 24px;
+    width: 24px;
+    left: -2px;
+    bottom: -2px;
+    background-color: colors.$primary-300;
+    box-shadow: 0px 0px 3px 0px #08191F66;
+    transition: 300ms ease-in-out;
+    border-radius: 50%;
+  }
+
+  input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  input:focus-visible+.switch>.slider {
+    outline: 2px solid colors.$focus-100;
+    outline-offset: 5px;
+  }
+
+  input:checked+.switch>.slider {
+    &.dark {
+      background-color: colors.$primary-200;
+    }
+
+    &.light {
+      background-color: colors.$primary-100;
+    }
+  }
+
+  input:checked+.switch>.slider::before {
+    transform: translateX(28px);
+  }
+
+  input+.switch:hover>.slider {
+    &.dark {
+      background-color: colors.$secondary-800;
+    }
+
+    &.light {
+      background-color: colors.$secondary-300;
+    }
+  }
+}
+
+:host(.disabled) {
+  pointer-events: none;
+
+  input+.switch>.slider {
+    &.dark {
+      background-color: colors.$secondary-200;
+    }
+
+    &.light {
+      background-color: colors.$secondary-800;
+    }
+  }
+
+  input+.switch>.slider::before {
+    background-color: colors.$secondary-400;
+  }
+}
