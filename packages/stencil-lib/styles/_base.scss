@@ -1,8 +1,6 @@
-
-body{
-    font-family: 'InnomoticsHafferSQ-Light';
-}
-
-input{
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
     font-family: 'InnomoticsHafferSQ-Light';
 }
