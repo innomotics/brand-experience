@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'inno-select[formControl]',
+  selector: 'inno-select[formControl], inno-select[formControlName], inno-select[ngModel]',
   host: {
     '(valueChanged)': 'handleChangeEvent($event.target.value)'
   },

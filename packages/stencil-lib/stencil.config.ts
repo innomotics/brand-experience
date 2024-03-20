@@ -15,13 +15,7 @@ const copyAssets = [
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ['inno-input[formControl]'],
-    event: 'valueChanged',
-    targetAttr: 'value',
-    type: 'text',
-  },
-  {
-    elementSelectors: ['inno-select[formControl]'],
+    elementSelectors: ['inno-select[formControl]','inno-select[formControlName]','inno-select[ngModel]'],
     event: 'valueChanged',
     targetAttr: 'value',
     type: 'select',
