@@ -21,7 +21,8 @@
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "components/"
   ],
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",

@@ -105,7 +105,6 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'name',
   'type',
   'value',
-  'isActive',
   'isFocused',
   'disabled',
   'label',
@@ -116,6 +115,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
 
 export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>('inno-select-item', undefined, [
   'value',
+  'label',
   'selected',
   'itemSelected'
 ]);
