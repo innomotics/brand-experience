@@ -25,9 +25,13 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "dependencies": {
+    "@innomotics/ix": "^0.0.1-alpha.2"
+  },
   "peerDependencies": {
-    "@innomotics/ix": "*",
-    "@innomotics/ix-fonts": "*"
+    "@innomotics/ix": "^0.0.1-alpha.2",
+    "@innomotics/ix-fonts": "^0.0.1-alpha.2",
+    "@innomotics/ix-icons": "^0.0.1-alpha.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.60",

@@ -33,13 +33,17 @@
     }
   },
 
+  "dependencies": {
+    "@innomotics/ix": "^0.0.1-alpha.2"
+  },
   "devDependencies": {
     "ng-packagr": "^17.2.0"
   },
   "peerDependencies": {
     "@angular/core": "17.2.3",
-    "@innomotics/ix": "*",
-    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix": "^0.0.1-alpha.2",
+    "@innomotics/ix-fonts": "^0.0.1-alpha.2",
+    "@innomotics/ix-icons": "^0.0.1-alpha.2",
     "typescript": "^5.3.3"
   },
   "publishConfig": {

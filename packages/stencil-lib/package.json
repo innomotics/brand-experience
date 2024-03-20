@@ -21,8 +21,7 @@
   },
   "files": [
     "dist/",
-    "loader/",
-    "components/"
+    "loader/"
   ],
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
@@ -35,7 +34,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.3",
-    "@innomotics/ix-fonts": "*",
+    "@innomotics/ix-fonts": "^0.0.1-alpha.2",
     "@innomotics/ix-icons": "^0.0.1-alpha.2",
     "@stencil/core": "^4.12.5",
     "@stencil/sass": "^3.0.10",
@@ -56,7 +55,8 @@
     "puppeteer": "^21.9.0"
   },
   "peerDependencies": {
-    "@innomotics/ix-icons": "*"
+    "@innomotics/ix-fonts": "^0.0.1-alpha.2",
+    "@innomotics/ix-icons": "^0.0.1-alpha.2"
   },
   "license": "MIT"
 }
