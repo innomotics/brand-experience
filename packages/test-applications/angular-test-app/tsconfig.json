@@ -25,7 +25,7 @@
       "dom"
     ],
     "paths": {
-      "@innomotics/ix-angular-lib" :["./../../angular-lib/dist"]
+      "@innomotics/ix-angular-lib" :["../../../node_modules/@innomotics/ix-angular-lib/dist"]
     }
   },
   "angularCompilerOptions": {
