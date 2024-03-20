@@ -13,9 +13,7 @@ export class InnoSelect {
 
   @Prop() name: string;
   @Prop() type: 'text' | 'number' = 'text';
-
   @Prop({ mutable: true }) value: string;
-  @Prop({ mutable: true }) isActive: boolean;
   @Prop({ mutable: true }) isFocused: boolean;
   @Prop({ reflect: true }) disabled: boolean = false;
   @Prop() label: string;
@@ -25,28 +23,16 @@ export class InnoSelect {
 
   selectClicked() {
     this.isOpen = !this.isOpen;
-    this.setActiveState();
-    console.log(`isopen: ${this.isOpen}`);
   }
 
   componentDidLoad() {
     if (this.value) {
-      let initSelection = this.items.filter(i => i.value == this.value);
-      this.value = initSelection[0].value;
-      initSelection[0].selected = true;
-    }
-    this.setActiveState();
-  }
-
-  setActiveState() {
-    if (this.value !== undefined) {
-      this.isActive = true;
+      this.selectitem(this.value);
     }
   }
 
   onFocusout() {
     this.isFocused = false;
-    this.setActiveState();
     this.isOpen = false;
   }
 
@@ -68,7 +54,11 @@ export class InnoSelect {
 
   @Listen('itemSelected')
   itemSelected(event: CustomEvent<string>) {
-    this.value =event.detail;
+    this.selectitem(event.detail);
+  }
+
+  selectitem(value: string) {
+    this.value = value;
     this.valueChanged.emit(this.value);
     this.items.forEach(i => {
       if (i.value === this.value) {
@@ -79,14 +69,62 @@ export class InnoSelect {
     });
   }
 
+  clearFocus() {
+    let focusdItems = this.items.filter(si => si.classList.contains('focused'));
+    focusdItems.forEach(fi => fi.classList.remove('focused'));
+  }
+
+  @Listen('keydown')
+  keyboardHandler(ev: KeyboardEvent) {
+    if (ev.key === 'Enter' || ev.key == 'NumpadEnter') {
+      this.isOpen = !this.isOpen;
+      if (!this.isOpen) {
+        this.clearFocus();
+        if (this.navigationItem) {
+          this.selectitem(this.navigationItem.value);
+        }
+        this.navigationItem = undefined;
+      }
+    }
+    if ((ev.key == 'ArrowDown' || ev.key == 'ArrowUp') && this.isOpen) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      this.clearFocus();
+
+      if (this.navigationItem) {
+        let index = this.items.indexOf(this.navigationItem);
+        switch (ev.key) {
+          case 'ArrowUp': {
+            if (index - 1 >= 0) {
+              this.navigationItem = this.items[index - 1];
+            }
+            break;
+          }
+          case 'ArrowDown': {
+            if (index + 1 < this.items.length) {
+              this.navigationItem = this.items[index + 1];
+            }
+            break;
+          }
+        }
+      } else {
+        if (this.items.length > 0) {
+          this.navigationItem = this.items[0];
+        }
+      }
+      if (this.navigationItem) {
+        this.navigationItem.classList.add('focused');
+      }
+    }
+  }
+
   get items() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
 
-  get selectedLabel()
-  {
-    let selected = this.items.find(i=> i.value == this.value);
-    return selected?.innerText;
+  get selectedLabel() {
+    let selected = this.items.find(i => i.value == this.value);
+    return selected.label;
   }
 
   render() {
@@ -95,7 +133,7 @@ export class InnoSelect {
         tabindex={0}
         class={{
           'input-container': true,
-          'isactive': this.isActive,
+          'isactive': this.value != undefined,
           'focused': this.isFocused,
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
@@ -105,8 +143,10 @@ export class InnoSelect {
         onClick={() => this.selectClicked()}
       >
         <div class="select-header">
-          <div class={{ content: true, filled: this.isActive }}>
-            <span class={{ label: true, float: this.isActive, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
+          <div class={{ content: true, filled: this.value != undefined }}>
+            <span class={{ label: true, float: this.value != undefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
+              {this.label}
+            </span>
             <span>{this.selectedLabel}</span>
           </div>
           <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>

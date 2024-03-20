@@ -15,6 +15,13 @@
     background-color: colors.$text-dark-lowemphasis;
     color:colors.$text-light-highemphasis;
   }
+
+  &.focused{
+    background-color: colors.$text-dark-lowemphasis;
+    color:colors.$text-light-highemphasis;
+
+  }
+
   &.selected{
     color:colors.$highlight-light-200;
   }

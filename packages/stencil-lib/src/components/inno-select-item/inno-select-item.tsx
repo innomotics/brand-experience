@@ -4,10 +4,11 @@ import { Element, Event, EventEmitter, Component, Host, Prop, h } from '@stencil
   tag: 'inno-select-item',
   styleUrl: 'inno-select-item.scss',
   scoped: true,
-  formAssociated: true
+  formAssociated: true,
 })
 export class InnoSelectItem {
   @Prop() value: string;
+  @Prop() label : string
   @Prop() selected: boolean = false;
   @Event() itemSelected: EventEmitter<string>;
   @Element() host: HTMLInnoSelectElement;
@@ -15,12 +16,12 @@ export class InnoSelectItem {
   selectItem() {
     this.itemSelected.emit(this.value);
   }
-  
+
   render() {
     return (
-      <Host class={{selected: this.selected}} onClick={() => this.selectItem()}>
-        <slot></slot>
-        { this.selected? <inno-icon icon='check' size={16}></inno-icon>: null}
+      <Host class={{ selected: this.selected }} onClick={() => this.selectItem()}>
+        <div class="content-wrapper">{this.label}</div>
+        {this.selected ? <inno-icon icon="check" size={16}></inno-icon> : null}
       </Host>
     );
   }
