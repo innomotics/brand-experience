@@ -1,11 +1,11 @@
 {
   "name": "@innomotics/ix-fonts",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
   "license": "MIT",
-  "private":false,
+  "private": false,
   "directories": {
     "lib": "lib"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-icons",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.2",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "https://github.com/innomotics/IX#readme",
@@ -20,7 +20,7 @@
     "build": "npm run generateIconModule && npm run sassbuild && npm run copyoutputs",
     "sassbuild": "npx sass --style=compressed ./lib/styles",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
-    "generateIconModule":"npx ts-node generator.ts"
+    "generateIconModule": "npx ts-node generator.ts"
   },
   "bugs": {
     "url": "https://github.com/innomotics/IX/issues"
