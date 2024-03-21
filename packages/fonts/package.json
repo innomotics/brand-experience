@@ -17,15 +17,14 @@
     "url": "https://Innomotics-AKS@dev.azure.com/Innomotics-AKS/InnomoticsSalesTools/_git/inno-UX"
   },
   "scripts": {
-    "build": "npm run sassbuild && npm run copyoutputs && npm run copyreadme && npm run copyfonts",
+    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
     "sassbuild": "npx sass --style=compressed ./lib/styles",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\""
   },
   "devDependencies": {
-    "cpx2": "^7.0.1",
-    "sass": "^1.71.1"
+    "cpx2": "^7.0.1"
   },
   "publishConfig": {
     "access": "public",

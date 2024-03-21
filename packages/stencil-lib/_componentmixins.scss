@@ -1,0 +1,8 @@
+@use './colors';
+
+@mixin focus{
+    outline: colors.$interaction-light-focus;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+  }

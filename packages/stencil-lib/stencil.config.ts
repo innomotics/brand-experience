@@ -13,6 +13,13 @@ const copyAssets = [
   }
 ];
 
+const copyGlobalStyles = [
+  {
+    src: '../styles',
+    dest: 'dist/styles'
+  }
+];
+
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: ['inno-select[formControl]','inno-select[formControlName]','inno-select[ngModel]'],
@@ -44,6 +51,9 @@ export const config: Config = {
     },
     {
       type: 'docs-readme'
+    },
+    { type: 'dist-custom-elements',
+      copy: copyGlobalStyles
     },
     {
       type: 'www',
