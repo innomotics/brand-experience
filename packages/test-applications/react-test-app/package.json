@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "@innomotics/ix":"*",
     "@innomotics/ix-react-lib":"*",
     "@innomotics/ix-fonts":"*"
   },
