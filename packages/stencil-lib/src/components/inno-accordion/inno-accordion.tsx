@@ -34,8 +34,7 @@ export class InnoAccordion {
     let icon: string = this.collapsed ? this.inner ? 'arrow-down' : 'plus' : this.inner ? 'arrow-up' : 'minus';
     return (
       <Host>
-        <a href='#'
-          class={{
+        <a class={{
             'accordion': true,
             'light': this.variant === 'light',
             'dark': this.variant === 'dark',
