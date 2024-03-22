@@ -169,8 +169,6 @@ export namespace Components {
         "variant": 'light' | 'dark';
         "visible": boolean;
     }
-    interface InnoRadioButton {
-    }
     interface InnoSelect {
         "disabled": boolean;
         "iconDriven": boolean;
@@ -378,12 +376,6 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
-    interface HTMLInnoRadioButtonElement extends Components.InnoRadioButton, HTMLStencilElement {
-    }
-    var HTMLInnoRadioButtonElement: {
-        prototype: HTMLInnoRadioButtonElement;
-        new (): HTMLInnoRadioButtonElement;
-    };
     interface HTMLInnoSelectElementEventMap {
         "valueChanged": string;
     }
@@ -447,7 +439,6 @@ declare global {
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
-        "inno-radio-button": HTMLInnoRadioButtonElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
         "inno-toggle": HTMLInnoToggleElement;
@@ -586,8 +577,6 @@ declare namespace LocalJSX {
         "variant"?: 'light' | 'dark';
         "visible"?: boolean;
     }
-    interface InnoRadioButton {
-    }
     interface InnoSelect {
         "disabled"?: boolean;
         "iconDriven"?: boolean;
@@ -640,7 +629,6 @@ declare namespace LocalJSX {
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
-        "inno-radio-button": InnoRadioButton;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
         "inno-toggle": InnoToggle;
@@ -664,7 +652,6 @@ declare module "@stencil/core" {
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
-            "inno-radio-button": LocalJSX.InnoRadioButton & JSXBase.HTMLAttributes<HTMLInnoRadioButtonElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
