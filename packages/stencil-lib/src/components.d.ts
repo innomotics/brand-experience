@@ -48,6 +48,33 @@ export namespace Components {
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
+    interface InnoCheckbox {
+        /**
+          * Whether the slide-toggle element is checked or not.
+         */
+        "checked": boolean | undefined;
+        /**
+          * Whether the slide-toggle element is disabled or not.
+         */
+        "disabled": boolean;
+        /**
+          * Represents the indeterminate state.
+         */
+        "indeterminate": boolean;
+        /**
+          * Label to show.
+         */
+        "label": string;
+        "readonly": boolean;
+        /**
+          * The tab index of the toggle.
+         */
+        "tabIdx": number;
+        /**
+          * Color variant of the toggle component.
+         */
+        "variant": 'dark' | 'light';
+    }
     /**
      * Checkbox for Innomatics design system.
      */
@@ -141,6 +168,8 @@ export namespace Components {
         "trigger": 'hover' | 'click' | 'manual';
         "variant": 'light' | 'dark';
         "visible": boolean;
+    }
+    interface InnoRadioButton {
     }
     interface InnoSelect {
         "disabled": boolean;
@@ -261,11 +290,8 @@ declare global {
         new (): HTMLInnoButtonElement;
     };
     interface HTMLInnoCheckboxElementEventMap {
-        "valueChange": boolean;
+        "checkedChange": boolean;
     }
-    /**
-     * Checkbox for Innomatics design system.
-     */
     interface HTMLInnoCheckboxElement extends Components.InnoCheckbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoCheckboxElementEventMap>(type: K, listener: (this: HTMLInnoCheckboxElement, ev: InnoCheckboxCustomEvent<HTMLInnoCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -352,6 +378,12 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
+    interface HTMLInnoRadioButtonElement extends Components.InnoRadioButton, HTMLStencilElement {
+    }
+    var HTMLInnoRadioButtonElement: {
+        prototype: HTMLInnoRadioButtonElement;
+        new (): HTMLInnoRadioButtonElement;
+    };
     interface HTMLInnoSelectElementEventMap {
         "valueChanged": string;
     }
@@ -415,6 +447,7 @@ declare global {
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
+        "inno-radio-button": HTMLInnoRadioButtonElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
         "inno-toggle": HTMLInnoToggleElement;
@@ -462,40 +495,34 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
-    /**
-     * Checkbox for Innomatics design system.
-     */
     interface InnoCheckbox {
         /**
-          * Whether element is checked.
+          * Whether the slide-toggle element is checked or not.
          */
         "checked"?: boolean | undefined;
         /**
-          * Whether component is disabled.
+          * Whether the slide-toggle element is disabled or not.
          */
         "disabled"?: boolean;
+        /**
+          * Represents the indeterminate state.
+         */
+        "indeterminate"?: boolean;
         /**
           * Label to show.
          */
         "label"?: string;
         /**
-          * Checked status has been changed.
+          * An event will be dispatched each time the slide-toggle changes its value.
          */
-        "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
-        /**
-          * Whether the component is readonly.
-         */
+        "onCheckedChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
         "readonly"?: boolean;
         /**
-          * Whether the checkbox have to be selected.
-         */
-        "required"?: boolean;
-        /**
-          * The tab index.
+          * The tab index of the toggle.
          */
         "tabIdx"?: number;
         /**
-          * Theme variant of the component.
+          * Color variant of the toggle component.
          */
         "variant"?: 'dark' | 'light';
     }
@@ -559,6 +586,8 @@ declare namespace LocalJSX {
         "variant"?: 'light' | 'dark';
         "visible"?: boolean;
     }
+    interface InnoRadioButton {
+    }
     interface InnoSelect {
         "disabled"?: boolean;
         "iconDriven"?: boolean;
@@ -611,6 +640,7 @@ declare namespace LocalJSX {
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
+        "inno-radio-button": InnoRadioButton;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
         "inno-toggle": InnoToggle;
@@ -624,9 +654,6 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
-            /**
-             * Checkbox for Innomatics design system.
-             */
             "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
@@ -637,6 +664,7 @@ declare module "@stencil/core" {
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
+            "inno-radio-button": LocalJSX.InnoRadioButton & JSXBase.HTMLAttributes<HTMLInnoRadioButtonElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
