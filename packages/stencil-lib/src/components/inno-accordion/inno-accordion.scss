@@ -39,12 +39,16 @@
         @include componentmixins.focus;
       }*/
 
-      &.open {
+      &.open.hovered {
         background-color: colors.$secondary-100;
       }
 
       &.inner {
         border: 0;
+        background-color: transparent;
+      }
+
+      &.inner.hovered {
         background-color: colors.$secondary-100;
       }
     }

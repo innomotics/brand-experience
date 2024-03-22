@@ -31,7 +31,7 @@ export class InnoAccordion {
 
   render() {
     let iconSize: number = 24;
-    let icon: string = this.collapsed ? this.inner ? 'arrow-down' : 'plus' : this.inner ? 'arrow-up' : 'minus';
+    let icon: string = this.collapsed ? this.inner ? 'chevron-down-small' : 'plus' : this.inner ? 'chevron-up-small' : 'minus';
     return (
       <Host>
         <a class={{
