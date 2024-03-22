@@ -1,0 +1,298 @@
+@use './../colors';
+
+$size: 20px;
+$border-size: 1px;
+
+.inno-checkbox {
+  height: 25px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  [type='checkbox']:not(:checked),
+  [type='checkbox']:checked {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    max-height: 1px;
+    max-width: 1px;
+    min-height: 0px;
+    min-width: 0px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    appearance: none;
+  }
+
+  [type='checkbox']:not(:checked) + label,
+  [type='checkbox']:checked + label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    color: colors.$primary-200;
+    height: $size;
+    min-height: $size;
+    max-height: $size;
+  }
+
+  [type='checkbox']:not(:disabled) + label {
+    cursor: pointer;
+  }
+
+  [type='checkbox'] + label:before {
+    content: '';
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+    max-width: $size;
+    max-height: $size;
+    float: left;
+    margin-right: 0.5rem;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+  }
+
+  [type='checkbox'] + label:focus-visible {
+    &:before {
+      outline: 1px solid colors.$focus-100;
+      outline-offset: 2px;
+    }
+  }
+
+  [type='checkbox']:focus-visible + label {
+    &:before {
+      outline: 1px solid colors.$focus-100;
+      outline-offset: 2px;
+    }
+  }
+
+  [type='checkbox']:not(:checked) {
+    & + label:before {
+      background-color: colors.$primary-300;
+      border: 1px solid colors.$primary-200;
+    }
+
+    &:hover + label:before {
+      background-color: colors.$primary-300;
+      border: 1px solid colors.$secondary-600;
+    }
+
+    &:active + label:before {
+      background-color: colors.$primary-300;
+      border: 1px solid colors.$primary-200;
+    }
+
+    &:required + label:before,
+    &[required] + label:before {
+      background-color: colors.$primary-300;
+      border: 1px solid colors.$error-200;
+    }
+
+    &:required + label,
+    &[required] + label {
+      color: colors.$error-200;
+    }
+
+    &:disabled + label::before {
+      background-color: colors.$primary-300;
+      border: 1px solid colors.$secondary-400;
+    }
+  }
+
+  [type='checkbox']:checked {
+    & + label:before {
+      background-color: colors.$primary-200;
+      border: 1px solid colors.$primary-200;
+    }
+
+    & + label:after {
+      content: '';
+      width: 6px;
+      height: 3px;
+      display: block;
+      border-top: none;
+      border-right: none;
+      border-bottom: 0.0825rem solid colors.$primary-300;
+      border-left: 0.0825rem solid colors.$primary-300;
+      position: absolute;
+      margin: 0.31rem 0.42rem 0.1875rem;
+      transform: translate(0.5px, -2px) rotate(-53deg) scale(2) skew(-8deg, -3deg);
+    }
+
+    &:hover + label:before {
+      background-color: colors.$secondary-600;
+      border: 1px solid colors.$secondary-600;
+    }
+
+    &:active + label:before {
+      background-color: colors.$primary-200;
+      border: 1px solid colors.$primary-200;
+    }
+
+    &:disabled + label:before {
+      background-color: colors.$secondary-200;
+      border: 1px solid colors.$secondary-200;
+    }
+
+    &:disabled + label::after {
+      border-color: colors.$secondary-400;
+    }
+  }
+
+  [type='checkbox']:disabled + label:before {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  [type='checkbox']:indeterminate {
+    & + label:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 2px;
+      border-bottom: 0.125rem solid colors.$primary-300;
+      position: absolute;
+      margin: 0 0 0 0.3rem;
+    }
+
+    & + label:before {
+      background-color: colors.$primary-200;
+      border: $border-size solid colors.$primary-200;
+    }
+
+    &:hover + label:before {
+      background-color: colors.$secondary-600;
+      border: $border-size solid colors.$secondary-600;
+    }
+
+    &:active + label:before {
+      background-color: colors.$primary-200;
+      border: $border-size solid colors.$primary-200;
+    }
+
+    &:disabled + label::before {
+      background-color: colors.$secondary-200;
+      border: $border-size solid colors.$secondary-200;
+    }
+
+    &:disabled + label::after {
+      border-color: colors.$secondary-400;
+    }
+  }
+
+  [type='checkbox']:disabled + label {
+    color: colors.$secondary-400;
+  }
+
+  /*** dark mode part ***/
+
+  &.inno-dark {
+    [type='checkbox']:not(:checked) + label,
+    [type='checkbox']:checked + label {
+      color: colors.$primary-300;
+    }
+
+    [type='checkbox']:not(:checked) {
+      & + label:before {
+        background-color: colors.$primary-200;
+        border: $border-size solid colors.$primary-300;
+      }
+
+      &:hover + label:before {
+        background-color: colors.$primary-200;
+        border: $border-size solid colors.$primary-300;
+      }
+
+      &:active + label:before {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+
+      &:required + label:before,
+      &[required] + label:before {
+        background-color: colors.$primary-200;
+        border: 1px solid colors.$error-100;
+      }
+
+      &:required + label,
+      &[required] + label {
+        color: colors.$error-100;
+      }
+
+      &:disabled + label::before {
+        background-color: colors.$primary-200;
+        border: $border-size solid colors.$secondary-300;
+      }
+    }
+
+    [type='checkbox']:checked {
+      & + label:before {
+        background-color: colors.$primary-100;
+        border: $border-size solid colors.$primary-200;
+      }
+
+      & + label:after {
+        border-bottom-color: colors.$primary-200;
+        border-left-color: colors.$primary-200;
+      }
+
+      &:hover + label:before {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+
+      &:active + label:before {
+        background-color: colors.$primary-100;
+        border: $border-size solid colors.$primary-200;
+      }
+
+      &:disabled + label:before {
+        background-color: colors.$secondary-800;
+        border: $border-size solid colors.$secondary-800;
+      }
+
+      &:disabled + label::after {
+        border-color: colors.$secondary-400;
+      }
+    }
+
+    [type='checkbox']:indeterminate {
+      & + label:after {
+        border-bottom-color: colors.$primary-200;
+      }
+
+      & + label:before {
+        background-color: colors.$primary-100;
+        border: $border-size solid colors.$primary-100;
+      }
+
+      &:hover + label:before {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+
+      &:active + label:before {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+
+      &:disabled + label::before {
+        background-color: colors.$secondary-800;
+        border: $border-size solid colors.$secondary-800;
+      }
+
+      &:disabled + label::after {
+        border-color: colors.$secondary-400;
+      }
+    }
+
+    [type='checkbox']:disabled + label {
+      color: colors.$secondary-400;
+    }
+  }
+}

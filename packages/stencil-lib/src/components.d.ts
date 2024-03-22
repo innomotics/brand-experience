@@ -48,6 +48,39 @@ export namespace Components {
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
+    /**
+     * Checkbox for Innomatics design system.
+     */
+    interface InnoCheckbox {
+        /**
+          * Whether element is checked.
+         */
+        "checked": boolean | undefined;
+        /**
+          * Whether component is disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Label to show.
+         */
+        "label": string;
+        /**
+          * Whether the component is readonly.
+         */
+        "readonly": boolean;
+        /**
+          * Whether the checkbox have to be selected.
+         */
+        "required": boolean;
+        /**
+          * The tab index.
+         */
+        "tabIdx": number;
+        /**
+          * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
     interface InnoError {
         "active": boolean;
         "type": 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing';
@@ -147,6 +180,10 @@ export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbItemElement;
 }
+export interface InnoCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoCheckboxElement;
+}
 export interface InnoFooterCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoFooterElement;
@@ -217,6 +254,26 @@ declare global {
     var HTMLInnoButtonElement: {
         prototype: HTMLInnoButtonElement;
         new (): HTMLInnoButtonElement;
+    };
+    interface HTMLInnoCheckboxElementEventMap {
+        "valueChange": boolean;
+    }
+    /**
+     * Checkbox for Innomatics design system.
+     */
+    interface HTMLInnoCheckboxElement extends Components.InnoCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoCheckboxElementEventMap>(type: K, listener: (this: HTMLInnoCheckboxElement, ev: InnoCheckboxCustomEvent<HTMLInnoCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoCheckboxElementEventMap>(type: K, listener: (this: HTMLInnoCheckboxElement, ev: InnoCheckboxCustomEvent<HTMLInnoCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoCheckboxElement: {
+        prototype: HTMLInnoCheckboxElement;
+        new (): HTMLInnoCheckboxElement;
     };
     interface HTMLInnoErrorElement extends Components.InnoError, HTMLStencilElement {
     }
@@ -346,6 +403,7 @@ declare global {
         "inno-breadcrumb": HTMLInnoBreadcrumbElement;
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
+        "inno-checkbox": HTMLInnoCheckboxElement;
         "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
         "inno-icon": HTMLInnoIconElement;
@@ -398,6 +456,43 @@ declare namespace LocalJSX {
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+    }
+    /**
+     * Checkbox for Innomatics design system.
+     */
+    interface InnoCheckbox {
+        /**
+          * Whether element is checked.
+         */
+        "checked"?: boolean | undefined;
+        /**
+          * Whether component is disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to show.
+         */
+        "label"?: string;
+        /**
+          * Checked status has been changed.
+         */
+        "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
+        /**
+          * Whether the component is readonly.
+         */
+        "readonly"?: boolean;
+        /**
+          * Whether the checkbox have to be selected.
+         */
+        "required"?: boolean;
+        /**
+          * The tab index.
+         */
+        "tabIdx"?: number;
+        /**
+          * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
     }
     interface InnoError {
         "active"?: boolean;
@@ -504,6 +599,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb": InnoBreadcrumb;
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
+        "inno-checkbox": InnoCheckbox;
         "inno-error": InnoError;
         "inno-footer": InnoFooter;
         "inno-icon": InnoIcon;
@@ -523,6 +619,10 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            /**
+             * Checkbox for Innomatics design system.
+             */
+            "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
              * Represents the general footer for the Innomotics applications.
