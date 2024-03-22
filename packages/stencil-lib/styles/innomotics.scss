@@ -1,5 +1,8 @@
 @forward '@innomotics/ix-fonts/dist/styles/innomoticsHaffer';
 @forward '@innomotics/ix-icons/dist/styles/innomoticsIcons';
-@forward './colors';
+// @forward './colors';
 @forward './componentmixins';
 @forward './base';
+
+@import './components/inno-checkbox';
+@import './components/inno-radiobutton';
