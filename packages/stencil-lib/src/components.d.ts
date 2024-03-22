@@ -42,6 +42,7 @@ export namespace Components {
         "icon": string;
         "iconOnly": boolean;
         "iconPosition": 'left' | 'right';
+        "listType": boolean;
         "navDirection": 'left' | 'right';
         "tabIdx": number;
         "type": 'button' | 'submit';
@@ -390,6 +391,7 @@ declare namespace LocalJSX {
         "icon"?: string;
         "iconOnly"?: boolean;
         "iconPosition"?: 'left' | 'right';
+        "listType"?: boolean;
         "navDirection"?: 'left' | 'right';
         "tabIdx"?: number;
         "type"?: 'button' | 'submit';

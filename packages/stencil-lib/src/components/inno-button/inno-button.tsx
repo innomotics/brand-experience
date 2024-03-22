@@ -15,6 +15,7 @@ export class InnoButton {
   @Prop({ mutable: true }) iconPosition: 'left' | 'right' = 'right';
   @Prop({ mutable: true }) navDirection: 'left' | 'right' = 'right';
   @Prop() iconOnly: boolean = false;
+  @Prop({reflect: true}) listType : boolean = false
 
   @Element() hostElement: HTMLInnoButtonElement;
   submitButtonElement: HTMLButtonElement;
@@ -46,7 +47,8 @@ export class InnoButton {
 
     return (
       <Host class={{
-        disabled: this.disabled
+        disabled: this.disabled,
+        'list-type': this.listType
       }}>
         <button
           class={
@@ -60,6 +62,7 @@ export class InnoButton {
               'light': this.colorVariant === 'light',
               'dark': this.colorVariant === 'dark',
               'display-reverse': this.iconPosition === 'left',
+              'list-type': this.listType,
               disabled: this.disabled
             }
           }

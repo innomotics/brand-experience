@@ -5,6 +5,10 @@
   display: block;
   width: max-content;
 
+  &.list-type{
+    width:100%
+  }
+
   &.disabled,
   &:disabled {
     pointer-events: none;
@@ -30,6 +34,12 @@
     font-size: 16px;
     font-family: 'InnomoticsHafferSQ-Bold';
     cursor: pointer;
+    
+    &.list-type{
+      justify-content: space-between;
+      gap:unset;
+      width:100%;
+    }
 
     &.display-reverse {
       flex-direction: row-reverse;
