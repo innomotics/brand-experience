@@ -34,6 +34,7 @@
     font-size: 16px;
     font-family: 'InnomoticsHafferSQ-Bold';
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.84, 0, 0.58, 1);
     
     &.list-type{
       justify-content: space-between;
@@ -136,7 +137,7 @@
 
     &.tertiary {
       padding: 0;
-      border-bottom: 5px solid colors.$interaction-light-default;
+      box-shadow: 0px -5px colors.$interaction-light-default inset;
       background-color: transparent;
 
       &.icon-only {
@@ -145,29 +146,34 @@
 
       &.dark {
         color:colors.$interaction-light-default;
+        box-shadow: 0px -5px colors.$interaction-light-default inset;
+        
         &:hover:not(.disabled):not(:disabled) {
           color: colors.$interaction-light-hover;
-          border-color: colors.$interaction-light-hover;
+          box-shadow: 0 -8px colors.$interaction-light-hover inset;
         }
 
         &:active:not(.disabled):not(:disabled) {
           color: colors.$interaction-light-pressed;
           border-color: colors.$interaction-light-pressed;
+          box-shadow: 0 -8px colors.$interaction-light-pressed inset;
         }
       }
 
       &.light {
         color: colors.$text-light-buttonlabel;
         border-color: colors.$primary-300;
+        box-shadow:inset 0 -5px colors.$primary-300;
 
         &:hover:not(.disabled):not(:disabled) {
           color: colors.$interaction-dark-hover;
-          border-color: colors.$interaction-dark-hover;
+          box-shadow:inset 0 -8px colors.$interaction-dark-hover;
         }
 
         &:active:not(.disabled):not(:disabled) {
           color: colors.$interaction-dark-pressed;
           border-color: colors.$interaction-dark-pressed;
+          box-shadow:inset 0 -8px colors.$interaction-dark-pressed;
         }
       }
 
@@ -175,6 +181,7 @@
       &.disabled {
         color: colors.$interaction-light-disabled;
         border-color: colors.$interaction-light-disabled;
+        box-shadow:inset 0 -5px colors.$interaction-light-disabled;
         pointer-events: none;
       }
     }
