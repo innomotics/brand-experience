@@ -1,6 +1,41 @@
 # inno-breadcrumb
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
 
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoBreadcrumb>
+    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+  </InnoBreadcrumb>
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js
+  <inno-breadcrumb>
+    <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
+    <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+  </inno-breadcrumb>    
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+    <InnoBreadcrumb>
+    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+  </InnoBreadcrumb>
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+    <InnoBreadcrumb>
+    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+  </InnoBreadcrumb>
+    ```
+  </TabItem>
+</Tabs>
 
 <!-- Auto Generated Below -->
 

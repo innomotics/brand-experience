@@ -43,7 +43,8 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
   'icon',
   'iconPosition',
   'navDirection',
-  'iconOnly'
+  'iconOnly',
+  'listType'
 ]);
 
 

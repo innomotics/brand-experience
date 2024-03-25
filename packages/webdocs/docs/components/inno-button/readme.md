@@ -39,6 +39,7 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 | `icon`         | `icon`          |             | `string`                                                            | `undefined` |
 | `iconOnly`     | `icon-only`     |             | `boolean`                                                           | `false`     |
 | `iconPosition` | `icon-position` |             | `"left" \| "right"`                                                 | `'right'`   |
+| `listType`     | `list-type`     |             | `boolean`                                                           | `false`     |
 | `navDirection` | `nav-direction` |             | `"left" \| "right"`                                                 | `'right'`   |
 | `tabIdx`       | `tab-idx`       |             | `number`                                                            | `0`         |
 | `type`         | `type`          |             | `"button" \| "submit"`                                              | `'button'`  |

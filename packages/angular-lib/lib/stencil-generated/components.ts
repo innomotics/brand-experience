@@ -79,14 +79,14 @@ export declare interface InnoBreadcrumbItem extends Components.InnoBreadcrumbIte
 
 
 @ProxyCmp({
-  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'tabIdx', 'type', 'variant']
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant']
 })
 @Component({
   selector: 'inno-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'navDirection', 'tabIdx', 'type', 'variant'],
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant'],
 })
 export class InnoButton {
   protected el: HTMLElement;
