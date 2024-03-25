@@ -478,6 +478,9 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
+        /**
+          * Checked status has been changed.
+         */
         "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
         /**
           * Whether the component is readonly.
