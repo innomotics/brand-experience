@@ -54,9 +54,9 @@ Checkbox for Innomatics design system.
 
 ## Events
 
-| Event         | Description | Type                   |
-| ------------- | ----------- | ---------------------- |
-| `valueChange` |             | `CustomEvent<boolean>` |
+| Event         | Description                      | Type                   |
+| ------------- | -------------------------------- | ---------------------- |
+| `valueChange` | Checked status has been changed. | `CustomEvent<boolean>` |
 
 
 ----------------------------------------------

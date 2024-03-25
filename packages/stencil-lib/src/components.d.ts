@@ -48,47 +48,15 @@ export namespace Components {
         "type": 'button' | 'submit';
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
-    interface InnoCheckbox {
-        /**
-          * Whether the slide-toggle element is checked or not.
-         */
-        "checked": boolean | undefined;
-        /**
-          * Whether the slide-toggle element is disabled or not.
-         */
-        "disabled": boolean;
-        /**
-          * Represents the indeterminate state.
-         */
-        "indeterminate": boolean;
-        /**
-          * Label to show.
-         */
-        "label": string;
-        "readonly": boolean;
-        /**
-          * The tab index of the toggle.
-         */
-        "tabIdx": number;
-        /**
-          * Color variant of the toggle component.
-         */
-        "variant": 'dark' | 'light';
-    }
-    /**
-     * Checkbox for Innomatics design system.
-     */
     /**
      * Checkbox for Innomatics design system.
      */
     interface InnoCheckbox {
         /**
           * Whether element is checked.
-          * Whether element is checked.
          */
         "checked": boolean | undefined;
         /**
-          * Whether component is disabled.
           * Whether component is disabled.
          */
         "disabled": boolean;
@@ -288,8 +256,11 @@ declare global {
         new (): HTMLInnoButtonElement;
     };
     interface HTMLInnoCheckboxElementEventMap {
-        "checkedChange": boolean;
+        "valueChange": boolean;
     }
+    /**
+     * Checkbox for Innomatics design system.
+     */
     interface HTMLInnoCheckboxElement extends Components.InnoCheckbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoCheckboxElementEventMap>(type: K, listener: (this: HTMLInnoCheckboxElement, ev: InnoCheckboxCustomEvent<HTMLInnoCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -486,34 +457,40 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit';
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
+    /**
+     * Checkbox for Innomatics design system.
+     */
     interface InnoCheckbox {
         /**
-          * Whether the slide-toggle element is checked or not.
+          * Whether element is checked.
          */
         "checked"?: boolean | undefined;
         /**
-          * Whether the slide-toggle element is disabled or not.
+          * Whether component is disabled.
          */
         "disabled"?: boolean;
-        /**
-          * Represents the indeterminate state.
-         */
-        "indeterminate"?: boolean;
         /**
           * Label to show.
          */
         "label"?: string;
         /**
-          * An event will be dispatched each time the slide-toggle changes its value.
+          * Checked status has been changed.
          */
-        "onCheckedChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
+        "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
+        /**
+          * Whether the component is readonly.
+         */
         "readonly"?: boolean;
         /**
-          * The tab index of the toggle.
+          * Whether the checkbox have to be selected.
+         */
+        "required"?: boolean;
+        /**
+          * The tab index.
          */
         "tabIdx"?: number;
         /**
-          * Color variant of the toggle component.
+          * Theme variant of the component.
          */
         "variant"?: 'dark' | 'light';
     }
@@ -642,6 +619,9 @@ declare module "@stencil/core" {
             "inno-breadcrumb": LocalJSX.InnoBreadcrumb & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbElement>;
             "inno-breadcrumb-item": LocalJSX.InnoBreadcrumbItem & JSXBase.HTMLAttributes<HTMLInnoBreadcrumbItemElement>;
             "inno-button": LocalJSX.InnoButton & JSXBase.HTMLAttributes<HTMLInnoButtonElement>;
+            /**
+             * Checkbox for Innomatics design system.
+             */
             "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**

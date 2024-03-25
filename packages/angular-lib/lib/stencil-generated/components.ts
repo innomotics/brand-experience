@@ -121,7 +121,9 @@ export class InnoCheckbox {
 
 
 export declare interface InnoCheckbox extends Components.InnoCheckbox {
-
+  /**
+   * Checked status has been changed.
+   */
   valueChange: EventEmitter<CustomEvent<boolean>>;
 }
 
