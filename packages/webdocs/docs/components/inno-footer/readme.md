@@ -4,7 +4,7 @@
 
 Models the available footer content types.
 
-### Footer text content
+### Footer text based content
 
 Show the defined text value.
 
@@ -13,16 +13,25 @@ Show the defined text value.
 | `type`     | `footer:text`  | Type discriminator.                                                  | `string` |
 | `selector` | `user defined` | User defined value which is emitted if the given content is clicked. | `string` |
 | `text`     | `user defined` | Raw text to show.                                                    | `string` |
+| `rel`      | `user defined` | Link relation type. Custom string or HTML specs defined types.       | `string` |
 
-### Footer icon content
+### Footer icon based content
 
 Show the selected icon.
 
-| Property   | Value         | Description                                                          | Type     |
-| ---------- | ------------- | -------------------------------------------------------------------- | -------- |
-| `type`     | `footer:icon` | Type discriminator.                                                  | `string` |
-| `selector` | user defined  | User defined value which is emitted if the given content is clicked. | `string` |
-| `icon`     | icon name     | One of the defined icon name provided by the library.                | `string` |
+| Property   | Value          | Description                                                          | Type     |
+| ---------- | -------------- | -------------------------------------------------------------------- | -------- |
+| `type`     | `footer:icon`  | Type discriminator.                                                  | `string` |
+| `selector` | user defined   | User defined value which is emitted if the given content is clicked. | `string` |
+| `icon`     | icon name      | One of the defined icon name provided by the library.                | `string` |
+| `rel`      | `user defined` | Link relation type. Custom string or HTML specs defined types.       | `string` |
+
+### Link relation types
+
+Ther link relation type can be a custom user defined value or
+one of the defined types in the WHATWG HTML specification.
+
+[https://html.spec.whatwg.org/multipage/links.html#linkTypes](https://html.spec.whatwg.org/multipage/links.html#linkTypes)
 
 <!-- Auto Generated Below -->
 

@@ -51,12 +51,17 @@ export namespace Components {
     /**
      * Checkbox for Innomatics design system.
      */
+    /**
+     * Checkbox for Innomatics design system.
+     */
     interface InnoCheckbox {
         /**
+          * Whether element is checked.
           * Whether element is checked.
          */
         "checked": boolean | undefined;
         /**
+          * Whether component is disabled.
           * Whether component is disabled.
          */
         "disabled": boolean;
@@ -473,9 +478,6 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
-        /**
-          * Checked status has been changed.
-         */
         "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
         /**
           * Whether the component is readonly.
