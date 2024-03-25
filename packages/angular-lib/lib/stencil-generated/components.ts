@@ -101,6 +101,32 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
+  inputs: ['checked', 'disabled', 'label', 'readonly', 'required', 'tabIdx', 'variant']
+})
+@Component({
+  selector: 'inno-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'disabled', 'label', 'readonly', 'required', 'tabIdx', 'variant'],
+})
+export class InnoCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface InnoCheckbox extends Components.InnoCheckbox {
+
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
   inputs: ['active', 'type']
 })
 @Component({

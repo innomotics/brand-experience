@@ -61,12 +61,19 @@ export class InnoCheckbox {
   @Prop({ mutable: true, reflect: true })
   required = false;
 
+  /**
+   * Checked status has been changed.
+   */
   @Event()
   valueChange: EventEmitter<boolean>;
 
   @Listen('focusin')
   onFocus() {
-    this.isFocused = true;
+    if (this.elementInDisabledInteractionMode()) {
+      this.isFocused = false;
+    } else {
+      this.isFocused = true;
+    }
   }
 
   @Listen('focusout')
@@ -86,7 +93,7 @@ export class InnoCheckbox {
   }
 
   // Check whether the component cannot be interacted
-  // Like in disabled or readonly modes.
+  // Like disabled or readonly modes.
   elementInDisabledInteractionMode() {
     return this.disabled || this.readonly;
   }
@@ -114,6 +121,13 @@ export class InnoCheckbox {
 
   checkErrorState(): boolean {
     if (this.elementInDisabledInteractionMode()) {
+      return false;
+    }
+
+    // No error state for checked state
+    // Only valid error state for now is the required and not checked case
+    // The error class interferes with the hover and active classes
+    if (this.checked) {
       return false;
     }
 
@@ -184,8 +198,10 @@ export class InnoCheckbox {
   }
 
   render() {
+    const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
+
     return (
-      <Host tabIndex={this.tabIdx} role="checkbox" ariaChecked={this.checked}>
+      <Host tabIndex={tabIndexValue} role="checkbox" ariaChecked={this.checked}>
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>
