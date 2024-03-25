@@ -1,5 +1,41 @@
-# inno-accordion
+# inno-accordion 
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoAccordion} from '@innomotics/ix-react-lib';
+
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js
+    <inno-accordion variant="light" label="Title">example</inno-accordion>
+    <inno-accordion variant="light" label="Title2" collapsed>example</inno-accordion>
+    <inno-accordion variant="dark" label="Title">example</inno-accordion>
+    <inno-accordion variant="dark" label="Title2" collapsed>example</inno-accordion>  
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+    ```
+  </TabItem>
+  <TabItem value="Vue" label="Vue">
+    ```js
+    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>    
+    ```
+  </TabItem>
+</Tabs> 
 
 
 <!-- Auto Generated Below -->

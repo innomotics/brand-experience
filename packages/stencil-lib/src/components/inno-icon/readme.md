@@ -1,5 +1,38 @@
 # inno-icon
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoIcon} from '@innomotics/ix-react-lib';
+
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js  
+    <inno-icon icon='home' size='16' theme='light'></inno-icon>
+    <inno-icon icon='home' size='24' theme='light'></inno-icon>
+    <inno-icon icon='home' size='32' theme='light'></inno-icon> 
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    ```
+  </TabItem>
+</Tabs>
+
 <!-- Auto Generated Below -->
 
 
