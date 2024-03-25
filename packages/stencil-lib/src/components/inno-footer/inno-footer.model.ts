@@ -1,3 +1,5 @@
+import { AvailableLinkRelTypes } from '../../utils/link/link.model';
+
 /**
  * Models the available footer content types.
  */
@@ -23,6 +25,11 @@ export interface FooterText {
    * Text to show.
    */
   readonly text: string;
+
+  /**
+   * Represents the relation type of the link.
+   */
+  readonly rel: AvailableLinkRelTypes | string;
 }
 
 /**
@@ -46,4 +53,9 @@ export interface FooterIcon {
    * On of the available ix icon names.
    */
   readonly icon: string;
+
+  /**
+   * Represents the relation type of the link.
+   */
+  readonly rel: AvailableLinkRelTypes | string;
 }
