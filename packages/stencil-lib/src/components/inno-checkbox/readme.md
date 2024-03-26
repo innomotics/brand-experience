@@ -15,38 +15,18 @@ The component is compatible with the Angular reactive form
 and can be used as a standalone form control element
 or can be integrated into a group or array.
 
-Optional required state or validator can be added if checkbox is required.
-
 Standalone form usage example:
 
 ```html
-<inno-checkbox label="label" [formControl]="controlRef"> </inno-checkbox>
-```
-
-```ts
-class Component {
-  exampleInit() {
-    controlRef: new FormControl(initValue, [Validators.requiredTrue]),
-  }
-}
+<inno-checkbox label="checkbox label" variant="light" [formControl]="controlRef"> </inno-checkbox>
 ```
 
 Group usage example:
 
 ```html
 <form [formGroup]="formRef">
-  <inno-checkbox label="label" formControlName="definedName"> </inno-checkbox>
+  <inno-checkbox label="checkbox label" variant="light" formControlName="definedName"> </inno-checkbox>
 </form>
-```
-
-```ts
-class Component {
-  exampleInit() {
-    controlRef = new FormGroup({
-      definedName: new FormControl(initValue, [Validators.requiredTrue]),
-    });
-  }
-}
 ```
 
 
@@ -55,15 +35,11 @@ class Component {
 Component can be used as a form element
 and it integrates with the host form.
 
-The official custom element form association is used in this case:
-
-[https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-elements](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-elements)
-
 Form usage example:
 
 ```html
 <form>
-  <inno-checkbox label="label" name="definedName"> </inno-checkbox>
+  <inno-checkbox label="checkbox label" variant="light" name="definedName"> </inno-checkbox>
 </form>
 ```
 
@@ -75,23 +51,17 @@ if form integration is not required.
 
 Angular usage:
 
-Angular provided property and event binding should be used.
-
 ```html
 <inno-checkbox label="angular usage" (valueChange)="handler($event.detail)" [checked]="value"></inno-checkbox>
 ```
 
 JSX usage:
 
-JSX provided property and event binding should be used.
-
 ```jsx
 <inno-checkbox label="jsx usage" onValueChange="{event => ...}" checked={value}></inno-checkbox>
 ```
 
 Direct Javascript usage:
-
-Provided attributes and DOM event handling should be used.
 
 ```html
 <inno-checkbox id="cb1" label="js usage" checked="true"></inno-checkbox>
