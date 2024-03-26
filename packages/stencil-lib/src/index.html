@@ -382,67 +382,6 @@
     <div class="separator-dummy">separator dummy</div>
 
     <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div class="inno-checkbox">
-        <input type="checkbox" id="lw1" required />
-        <label for="lw1">unchecked</label>
-      </div>
-
-      <div class="inno-checkbox">
-        <input type="checkbox" id="lw2" disabled />
-        <label for="lw2">disabled</label>
-      </div>
-
-      <div class="inno-checkbox">
-        <input type="checkbox" id="lw3" checked />
-        <label for="lw3">checked</label>
-      </div>
-
-      <div class="inno-checkbox">
-        <input type="checkbox" id="lw4" checked disabled />
-        <label for="lw4">checked disabled</label>
-      </div>
-
-      <div class="inno-checkbox">
-        <input type="checkbox" id="lw5" checked disabled />
-        <label for="lw5">indeterminate</label>
-      </div>
-    </div>
-
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld1" />
-        <label for="ld1">unchecked</label>
-      </div>
-
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld2" disabled />
-        <label for="ld2">disabled</label>
-      </div>
-
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld3" checked forn />
-        <label for="ld3">checked</label>
-      </div>
-
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld4" checked disabled />
-        <label for="ld4">checked disabled</label>
-      </div>
-
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld5" checked />
-        <label for="ld5">indeterminate</label>
-      </div>
-
-      <div class="inno-checkbox inno-dark">
-        <input type="checkbox" id="ld6" required />
-        <label for="ld6">unchecked</label>
-      </div>
-    </div>
-
-    <div class="separator-dummy">inno radiobutton</div>
-
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
       <div class="inno-radiobutton">
         <input type="radio" id="rw1" />
         <label for="rw1">unchecked</label>
@@ -493,6 +432,42 @@
       <div class="inno-radiobutton inno-dark">
         <input type="radio" id="rd5" required />
         <label for="rd5">error</label>
+      </div>
+    </div>
+
+    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
+      <div>
+        <inno-checkbox label="Label" checked="true" variant="light"></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="readonly" checked="true" variant="light" readonly></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="disabled" checked="true" variant="light" disabled></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="required" checked="true" variant="light" required></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="error" checked="true" variant="light" required class="ng-invalid"></inno-checkbox>
+      </div>
+    </div>
+
+    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
+      <div>
+        <inno-checkbox label="normal" checked="true" variant="dark"></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="readonly" checked="true" variant="dark" readonly></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="disabled" checked="true" variant="dark" disabled></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="required" checked="true" variant="dark" required></inno-checkbox>
+      </div>
+      <div>
+        <inno-checkbox label="error" checked="true" variant="dark" required class="ng-invalid"></inno-checkbox>
       </div>
     </div>
   </body>

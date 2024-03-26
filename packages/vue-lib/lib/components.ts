@@ -68,9 +68,12 @@ export const InnoError = /*@__PURE__*/ defineContainer<JSX.InnoError>('inno-erro
 
 export const InnoFooter = /*@__PURE__*/ defineContainer<JSX.InnoFooter>('inno-footer', undefined, [
   'variant',
-  'copyright',
-  'entries',
-  'contentSelected'
+  'copyright'
+]);
+
+
+export const InnoFooterItem = /*@__PURE__*/ defineContainer<JSX.InnoFooterItem>('inno-footer-item', undefined, [
+  'variant'
 ]);
 
 

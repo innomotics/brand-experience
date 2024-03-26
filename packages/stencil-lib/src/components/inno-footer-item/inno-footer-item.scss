@@ -1,11 +1,34 @@
+@use '@innomotics/ix/styles/colors';
+
 :host {
   display: block;
 
   margin-bottom: 32px;
   cursor: pointer;
 
+  font-family: 'InnomoticsHafferSQ-Light';
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &.light {
+    color: colors.$primary-200;
+
+    &:hover {
+      color: colors.$highlight-light-200;
+    }
+  }
+
+  &.dark {
+    color: colors.$primary-300;
+
+    &:focus {
+      color: colors.$primary-300;
+    }
   }
 }
 
@@ -13,5 +36,21 @@
   :host {
     margin-bottom: 0;
     margin-right: 32px;
+
+    &.light {
+      color: colors.$primary-200;
+
+      &:hover {
+        color: colors.$primary-200;
+      }
+    }
+
+    &.dark {
+      color: colors.$primary-100;
+
+      &:hover {
+        color: colors.$primary-100;
+      }
+    }
   }
 }
