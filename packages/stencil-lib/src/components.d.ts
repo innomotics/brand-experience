@@ -98,7 +98,6 @@ export namespace Components {
     }
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
      */
     interface InnoFooterItem {
         /**
@@ -292,7 +291,6 @@ declare global {
     };
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
      */
     interface HTMLInnoFooterItemElement extends Components.InnoFooterItem, HTMLStencilElement {
     }
@@ -513,7 +511,6 @@ declare namespace LocalJSX {
     }
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
      */
     interface InnoFooterItem {
         /**
@@ -633,7 +630,6 @@ declare module "@stencil/core" {
             "inno-footer": LocalJSX.InnoFooter & JSXBase.HTMLAttributes<HTMLInnoFooterElement>;
             /**
              * Represents an inno-footer item.
-             * @example Example are defined in the footer element.
              */
             "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;

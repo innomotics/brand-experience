@@ -17,6 +17,36 @@
   }
 }
 
+inno-footer-item {
+  margin-bottom: 32px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.light {
+    color: colors.$primary-200;
+
+    &:hover {
+      color: colors.$highlight-light-200;
+    }
+  }
+
+  &.dark {
+    color: colors.$primary-300;
+
+    &:focus {
+      color: colors.$primary-300;
+    }
+  }
+
+  font-family: 'InnomoticsHafferSQ-Light';
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
 .ix-footer-copyright {
   margin-bottom: 32px;
   font-family: 'InnomoticsHafferSQ-Bold';
@@ -43,5 +73,26 @@
   .ix-footer-copyright {
     margin-right: auto;
     margin-bottom: 0;
+  }
+
+  inno-footer-item {
+    margin-bottom: 0;
+    margin-right: 32px;
+
+    &.light {
+      color: colors.$primary-200;
+
+      &:hover {
+        color: colors.$primary-200;
+      }
+    }
+
+    &.dark {
+      color: colors.$primary-100;
+
+      &:hover {
+        color: colors.$primary-100;
+      }
+    }
   }
 }
