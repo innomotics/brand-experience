@@ -15,6 +15,24 @@
     margin-bottom: 0;
   }
 
+  // &.light {
+  //   color: colors.$primary-200;
+
+  //   &:hover {
+  //     color: colors.$highlight-light-200;
+  //   }
+  // }
+
+  // &.dark {
+  //   color: colors.$primary-300;
+
+  //   &:focus {
+  //     color: colors.$primary-300;
+  //   }
+  // }
+}
+
+.inno-footer-item-style {
   &.light {
     color: colors.$primary-200;
 
@@ -36,21 +54,40 @@
   :host {
     margin-bottom: 0;
     margin-right: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    max-height: 60px;
 
-    &.light {
-      color: colors.$primary-200;
-
-      &:hover {
-        color: colors.$primary-200;
-      }
-    }
-
-    &.dark {
+    a {
       color: colors.$primary-100;
 
       &:hover {
         color: colors.$primary-100;
       }
     }
+
+    // &.light {
+    //   & > a,
+    //   & > p {
+    //     color: colors.$primary-200;
+
+    //     &:hover {
+    //       color: colors.$primary-200;
+    //     }
+    //   }
+    // }
+
+    // &.dark {
+    //   & > a,
+    //   & > p {
+    //     color: colors.$primary-100;
+
+    //     &:hover {
+    //       color: colors.$primary-100;
+    //     }
+    //   }
+    // }
   }
 }
