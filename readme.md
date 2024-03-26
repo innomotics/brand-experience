@@ -14,7 +14,7 @@ You can build any package in the package folder by npm run build
 
 You can run the test apps in their folder by
 - npm run dev (Vue and React)
-- ng serve (Angular)
+- npm run start (Angular to clear cache before serve)
 - npm start (Stencil)
 
 You can start docusaurus in the webdocs package
