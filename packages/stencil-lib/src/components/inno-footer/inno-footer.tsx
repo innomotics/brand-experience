@@ -25,7 +25,13 @@ export class InnoFooter {
   copyright = '';
 
   componentDidLoad() {
-    this.hostElement.querySelectorAll('inno-footer-item').forEach(item => (item.variant = this.variant));
+    this.hostElement.querySelectorAll('inno-footer-item').forEach(item => {
+      // Set only for those children which not specified explicitly
+      if (!item.hasAttribute('variant')) {
+        // item.setAttribute('variant', this.variant);
+        item.variant = this.variant;
+      }
+    });
   }
 
   createCopyrightNode() {

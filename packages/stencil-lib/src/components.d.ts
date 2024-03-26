@@ -98,11 +98,12 @@ export namespace Components {
     }
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
+     * Wrap an element for the inno-footer parent.
+     * Example are defined in the footer element.
      */
     interface InnoFooterItem {
         /**
-          * Theme variant property.
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
          */
         "variant": 'light' | 'dark';
     }
@@ -292,7 +293,8 @@ declare global {
     };
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
+     * Wrap an element for the inno-footer parent.
+     * Example are defined in the footer element.
      */
     interface HTMLInnoFooterItemElement extends Components.InnoFooterItem, HTMLStencilElement {
     }
@@ -513,11 +515,12 @@ declare namespace LocalJSX {
     }
     /**
      * Represents an inno-footer item.
-     * @example Example are defined in the footer element.
+     * Wrap an element for the inno-footer parent.
+     * Example are defined in the footer element.
      */
     interface InnoFooterItem {
         /**
-          * Theme variant property.
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
          */
         "variant"?: 'light' | 'dark';
     }
@@ -633,7 +636,8 @@ declare module "@stencil/core" {
             "inno-footer": LocalJSX.InnoFooter & JSXBase.HTMLAttributes<HTMLInnoFooterElement>;
             /**
              * Represents an inno-footer item.
-             * @example Example are defined in the footer element.
+             * Wrap an element for the inno-footer parent.
+             * Example are defined in the footer element.
              */
             "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;

@@ -1,44 +1,40 @@
 # inno-footer
 
-## Footer content model
-
-Models the available footer content types.
-
-### Footer text based content
-
-Show the defined text value.
-
-| Property   | Value          | Description                                                          | Type     |
-| ---------- | -------------- | -------------------------------------------------------------------- | -------- |
-| `type`     | `footer:text`  | Type discriminator.                                                  | `string` |
-| `selector` | `user defined` | User defined value which is emitted if the given content is clicked. | `string` |
-| `text`     | `user defined` | Raw text to show.                                                    | `string` |
-| `rel`      | `user defined` | Link relation type. Custom string or HTML specs defined types.       | `string` |
-
-### Footer icon based content
-
-Show the selected icon.
-
-| Property   | Value          | Description                                                          | Type     |
-| ---------- | -------------- | -------------------------------------------------------------------- | -------- |
-| `type`     | `footer:icon`  | Type discriminator.                                                  | `string` |
-| `selector` | user defined   | User defined value which is emitted if the given content is clicked. | `string` |
-| `icon`     | icon name      | One of the defined icon name provided by the library.                | `string` |
-| `rel`      | `user defined` | Link relation type. Custom string or HTML specs defined types.       | `string` |
-
-### Link relation types
-
-Ther link relation type can be a custom user defined value or
-one of the defined types in the WHATWG HTML specification.
-
-[https://html.spec.whatwg.org/multipage/links.html#linkTypes](https://html.spec.whatwg.org/multipage/links.html#linkTypes)
-
 <!-- Auto Generated Below -->
 
 
 ## Overview
 
 Represents the general footer for the Innomotics applications.
+
+## Usage
+
+### General-usage
+
+Child items can be defined to show then in the footer.
+
+Currently supported footer elements:
+
+- link element (a)
+- paragraph (p)
+- inno-icon element
+
+Other elements can be used but there is no explicit support
+and these elements may need manual configuration like theme support.
+
+For custom elements the `data-inno-footer-item-style` attribute is set with the given variant.
+
+Usage example:
+
+```html
+<inno-footer variant="dark" copyright="@ Innomotics 2024">
+  <inno-footer-item><p>Privacy Notice</p></inno-footer-item>
+  <inno-footer-item><a>Term of use</a></inno-footer-item>
+  <inno-footer-item><inno-icon icon="about"></inno-icon></inno-footer-item>
+</inno-footer>
+```
+
+
 
 ## Properties
 
