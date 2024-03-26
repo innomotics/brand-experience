@@ -27,7 +27,7 @@ export class AppComponent {
   constructor(public formBuilder: UntypedFormBuilder) {
     this.innomoticsForm = this.formBuilder.group({
       innoInput: [0],
-      innoSelect: [''],
+      innoSelect: [undefined],
       checkboxtest1: this.formBuilder.control(undefined, [
         Validators.requiredTrue,
       ]),

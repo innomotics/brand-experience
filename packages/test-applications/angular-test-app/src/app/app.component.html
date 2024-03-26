@@ -1,27 +1,15 @@
 <inno-icon icon="home"></inno-icon>
 <form [formGroup]="innomoticsForm">
-  <inno-input
-    name="bubu"
-    label="Inputbox"
-    [formControl]="innoInput"
-    variant="light"
-  ></inno-input>
-  <inno-select
-    name="dew"
-    type="text"
-    label="SelectBox"
-    [formControl]="innoSelect"
-  >
-    <inno-select-item value="12">12</inno-select-item>
-    <inno-select-item value="132">32</inno-select-item>
+  <inno-input name="bubu" label="Inputbox" value="0"  variant="light">
+    <input type="number" [formControl]="innoInput" />
+    <inno-error type="badInput">Not valid</inno-error></inno-input>
+   <inno-select name="dew" label="SelectBox" [formControl]="innoSelect" value="12">
+    <inno-select-item label="dewde" value="12"></inno-select-item>
+    <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>
   <!-- <inno-button type="primary">dfewf4e</inno-button> -->
   <div>
-    <inno-checkbox
-      variant="light"
-      formControlName="checkboxtest1"
-      label="checkbox label"
-    ></inno-checkbox>
+    <!-- <inno-checkbox variant="light" formControlName="checkboxtest1" label="checkbox label"></inno-checkbox> -->
   </div>
 </form>
 
@@ -33,8 +21,4 @@
 <div class="container">
   {{ innoInput.value }}
   {{ innoSelect.value }}
-</div>
-
-<div class="container">
-  {{ formValue }}
 </div>
