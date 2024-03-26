@@ -333,11 +333,51 @@
       <inno-select-item value="124321" label ="1342"></inno-select-item>
     </inno-select>
 
-    <inno-footer id="in-footer-dark" variant="dark" copyright="@ Innomotics 2024"></inno-footer>
+    <div class="separator-dummy">separator dummy</div>
+
+    <inno-footer variant="dark" copyright="@ Innomotics 2024">
+      <inno-footer-item>
+        <a>Corporate Information</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Privacy Notice</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Cookie Notice</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Term of use</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Whistleblowing</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <inno-icon icon="about" theme="dark"></inno-icon>
+      </inno-footer-item>
+    </inno-footer>
 
     <div class="separator-dummy">separator dummy</div>
 
-    <inno-footer id="in-footer-light" variant="light" copyright="@ Innomotics 2024"></inno-footer>
+    <inno-footer variant="light" copyright="@ Innomotics 2024">
+      <inno-footer-item>
+        <a>Corporate Information</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Privacy Notice</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Cookie Notice</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Term of use</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <a>Whistleblowing</a>
+      </inno-footer-item>
+      <inno-footer-item>
+        <inno-icon icon="about" theme="dark"></inno-icon>
+      </inno-footer-item>
+    </inno-footer>
 
     <div class="separator-dummy">separator dummy</div>
 
@@ -493,49 +533,5 @@
         popover.visible = true;
       }
     });
-
-    /* inno-footer related context */
-
-    const footerEntries = [
-      {
-        type: 'footer:text',
-        selector: 'corporate_information',
-        text: 'Corporate information',
-      },
-      {
-        type: 'footer:text',
-        selector: 'privacy',
-        text: 'Privacy Notice',
-      },
-      {
-        type: 'footer:text',
-        selector: 'cookie',
-        text: 'Cookie Notice',
-      },
-      {
-        type: 'footer:text',
-        selector: 'terms',
-        text: 'Terms of use',
-      },
-      {
-        type: 'footer:text',
-        selector: 'whistleblowing',
-        text: 'Whistleblowing',
-      },
-      {
-        type: 'footer:icon',
-        selector: 'about',
-        icon: 'about',
-      },
-    ];
-
-    document.getElementById('in-footer-dark').entries = footerEntries;
-    document.getElementById('in-footer-light').entries = footerEntries;
-    document.getElementById('in-footer-dark').addEventListener('contentSelected', event => console.log(event));
-
-    /* inno-checkbox part */
-
-    document.getElementById('lw5').indeterminate = true;
-    document.getElementById('ld5').indeterminate = true;
   </script>
 </html>

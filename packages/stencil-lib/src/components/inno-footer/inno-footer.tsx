@@ -1,5 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
-import { FooterContent, FooterIcon, FooterText } from './inno-footer.model';
+import { Component, Host, Prop, h, Element } from '@stencil/core';
 
 /**
  * Represents the general footer for the Innomotics applications.
@@ -10,6 +9,9 @@ import { FooterContent, FooterIcon, FooterText } from './inno-footer.model';
   scoped: true,
 })
 export class InnoFooter {
+  @Element()
+  hostElement: HTMLElement;
+
   /**
    * Theme variant property.
    */
@@ -22,85 +24,69 @@ export class InnoFooter {
   @Prop()
   copyright = '';
 
-  /**
-   * Generalized entries for the application.
-   */
-  @Prop()
-  entries: ReadonlyArray<FooterContent> = [];
-
-  /**
-   * The selector value is emitted if the given content is clicked.
-   */
-  @Event()
-  contentSelected: EventEmitter<string>;
+  componentDidLoad() {
+    console.log('InnoFooter :: componentDidLoad');
+  }
 
   render() {
-    const hostClasses = {
-      ...this.variantStyle(),
-    };
-
     return (
-      <Host class={hostClasses}>
+      <Host class={this.variantStyle()}>
         {this.createCopyrightNode()}
-        {this.createContentNodes()}
+        <slot></slot>
       </Host>
     );
   }
 
   private createCopyrightNode() {
     const classes = {
-      'ix-footer-copyright': true,
       ...this.variantStyle(),
+      'ix-footer-copyright': true,
     };
 
     return <div class={classes}>{this.copyright}</div>;
   }
 
-  private createContentNodes() {
-    return this.entries.map(entry => {
-      switch (entry.type) {
-        case 'footer:text':
-          return this.createTextNode(entry);
-        default:
-          return this.createIconNode(entry);
-      }
-    });
-  }
+  // private createContentNodes() {
+  //   return this.entries.map(entry => {
+  //     switch (entry.type) {
+  //       case 'footer:text':
+  //         return this.createTextNode(entry);
+  //       default:
+  //         return this.createIconNode(entry);
+  //     }
+  //   });
+  // }
 
-  private createTextNode(entry: FooterText) {
-    const classes = {
-      'ix-footer-text': true,
-      ...this.variantStyle(),
-    };
+  // private createTextNode(entry: FooterText) {
+  //   const classes = {
+  //     'ix-footer-text': true,
+  //     ...this.variantStyle(),
+  //   };
 
-    return (
-      <a class={classes} rel={entry.rel} key={entry.selector} onClick={() => this.sendEvent(entry)}>
-        {entry.text}
-      </a>
-    );
-  }
+  //   return (
+  //     <a class={classes} rel={entry.rel} key={entry.selector} onClick={() => this.sendEvent(entry)}>
+  //       {entry.text}
+  //     </a>
+  //   );
+  // }
 
-  private createIconNode(entry: FooterIcon) {
-    const classes = {
-      'ix-footer-icon': true,
-      ...this.variantStyle(),
-    };
+  // private createIconNode(entry: FooterIcon) {
+  //   const classes = {
+  //     'ix-footer-icon': true,
+  //     ...this.variantStyle(),
+  //   };
 
-    return (
-      <a class={classes} rel={entry.rel}>
-        <inno-icon icon={entry.icon} size={24} theme={this.variant} onClick={() => this.sendEvent(entry)}></inno-icon>
-      </a>
-    );
-  }
+  //   return (
+  //     <a class={classes} rel={entry.rel}>
+  //       <inno-icon icon={entry.icon} size={24} theme={this.variant} onClick={() => this.sendEvent(entry)}></inno-icon>
+  //     </a>
+  //   );
+  // }
 
   private variantStyle() {
     return {
       light: this.variant === 'light',
       dark: this.variant === 'dark',
     };
-  }
-
-  private sendEvent(content: FooterContent) {
-    this.contentSelected.emit(content.selector);
   }
 }
