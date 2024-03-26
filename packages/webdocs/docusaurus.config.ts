@@ -11,7 +11,7 @@ const config: Config = {
   url: 'https://innomotics-ix-stage.westeurope.cloudapp.azure.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/IX/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
