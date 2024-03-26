@@ -25,7 +25,23 @@ export class InnoFooter {
   copyright = '';
 
   componentDidLoad() {
-    console.log('InnoFooter :: componentDidLoad');
+    this.hostElement.querySelectorAll('inno-footer-item').forEach(item => (item.variant = this.variant));
+  }
+
+  createCopyrightNode() {
+    const classes = {
+      ...this.variantStyle(),
+      'ix-footer-copyright': true,
+    };
+
+    return <div class={classes}>{this.copyright}</div>;
+  }
+
+  variantStyle() {
+    return {
+      light: this.variant === 'light',
+      dark: this.variant === 'dark',
+    };
   }
 
   render() {
@@ -35,58 +51,5 @@ export class InnoFooter {
         <slot></slot>
       </Host>
     );
-  }
-
-  private createCopyrightNode() {
-    const classes = {
-      ...this.variantStyle(),
-      'ix-footer-copyright': true,
-    };
-
-    return <div class={classes}>{this.copyright}</div>;
-  }
-
-  // private createContentNodes() {
-  //   return this.entries.map(entry => {
-  //     switch (entry.type) {
-  //       case 'footer:text':
-  //         return this.createTextNode(entry);
-  //       default:
-  //         return this.createIconNode(entry);
-  //     }
-  //   });
-  // }
-
-  // private createTextNode(entry: FooterText) {
-  //   const classes = {
-  //     'ix-footer-text': true,
-  //     ...this.variantStyle(),
-  //   };
-
-  //   return (
-  //     <a class={classes} rel={entry.rel} key={entry.selector} onClick={() => this.sendEvent(entry)}>
-  //       {entry.text}
-  //     </a>
-  //   );
-  // }
-
-  // private createIconNode(entry: FooterIcon) {
-  //   const classes = {
-  //     'ix-footer-icon': true,
-  //     ...this.variantStyle(),
-  //   };
-
-  //   return (
-  //     <a class={classes} rel={entry.rel}>
-  //       <inno-icon icon={entry.icon} size={24} theme={this.variant} onClick={() => this.sendEvent(entry)}></inno-icon>
-  //     </a>
-  //   );
-  // }
-
-  private variantStyle() {
-    return {
-      light: this.variant === 'light',
-      dark: this.variant === 'dark',
-    };
   }
 }

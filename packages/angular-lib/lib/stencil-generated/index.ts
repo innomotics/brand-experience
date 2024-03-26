@@ -9,6 +9,7 @@ export const DIRECTIVES = [
   d.InnoCheckbox,
   d.InnoError,
   d.InnoFooter,
+  d.InnoFooterItem,
   d.InnoIcon,
   d.InnoInput,
   d.InnoPane,

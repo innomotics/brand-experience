@@ -15,9 +15,16 @@ export class InnoFooterItem {
   @Prop({ mutable: true })
   variant: 'light' | 'dark' = 'light';
 
+  variantStyle() {
+    return {
+      light: this.variant === 'light',
+      dark: this.variant === 'dark',
+    };
+  }
+
   render() {
     return (
-      <Host>
+      <Host class={this.variantStyle()}>
         <slot></slot>
       </Host>
     );

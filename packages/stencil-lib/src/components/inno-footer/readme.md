@@ -42,32 +42,11 @@ Represents the general footer for the Innomotics applications.
 
 ## Properties
 
-| Property    | Attribute   | Description                              | Type                       | Default   |
-| ----------- | ----------- | ---------------------------------------- | -------------------------- | --------- |
-| `copyright` | `copyright` | The copyright label.                     | `string`                   | `''`      |
-| `entries`   | --          | Generalized entries for the application. | `readonly FooterContent[]` | `[]`      |
-| `variant`   | `variant`   | Theme variant property.                  | `"dark" \| "light"`        | `'light'` |
+| Property    | Attribute   | Description             | Type                | Default   |
+| ----------- | ----------- | ----------------------- | ------------------- | --------- |
+| `copyright` | `copyright` | The copyright label.    | `string`            | `''`      |
+| `variant`   | `variant`   | Theme variant property. | `"dark" \| "light"` | `'light'` |
 
-
-## Events
-
-| Event             | Description                                                    | Type                  |
-| ----------------- | -------------------------------------------------------------- | --------------------- |
-| `contentSelected` | The selector value is emitted if the given content is clicked. | `CustomEvent<string>` |
-
-
-## Dependencies
-
-### Depends on
-
-- [inno-icon](../inno-icon)
-
-### Graph
-```mermaid
-graph TD;
-  inno-footer --> inno-icon
-  style inno-footer fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

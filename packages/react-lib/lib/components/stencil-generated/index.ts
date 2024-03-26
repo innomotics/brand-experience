@@ -14,6 +14,7 @@ export const InnoButton = /*@__PURE__*/createReactComponent<JSX.InnoButton, HTML
 export const InnoCheckbox = /*@__PURE__*/createReactComponent<JSX.InnoCheckbox, HTMLInnoCheckboxElement>('inno-checkbox');
 export const InnoError = /*@__PURE__*/createReactComponent<JSX.InnoError, HTMLInnoErrorElement>('inno-error');
 export const InnoFooter = /*@__PURE__*/createReactComponent<JSX.InnoFooter, HTMLInnoFooterElement>('inno-footer');
+export const InnoFooterItem = /*@__PURE__*/createReactComponent<JSX.InnoFooterItem, HTMLInnoFooterItemElement>('inno-footer-item');
 export const InnoIcon = /*@__PURE__*/createReactComponent<JSX.InnoIcon, HTMLInnoIconElement>('inno-icon');
 export const InnoInput = /*@__PURE__*/createReactComponent<JSX.InnoInput, HTMLInnoInputElement>('inno-input');
 export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInnoPaneElement>('inno-pane');
