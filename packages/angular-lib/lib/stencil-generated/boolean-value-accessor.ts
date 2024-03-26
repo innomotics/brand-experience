@@ -5,9 +5,10 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'inno-toggle[ngModel],inno-toggle[formControlName],inno-toggle[formControl]',
+  selector: 'inno-toggle[ngModel],inno-toggle[formControlName],inno-toggle[formControl], inno-checkbox[ngModel],inno-checkbox[formControlName],inno-checkbox[formControl]',
   host: {
-    '(checkedChange)': 'handleChangeEvent($event.target.checked)'
+    '(checkedChange)': 'handleChangeEvent($event.target.checked)',
+    '(valueChange)': 'handleChangeEvent($event.target.checked)'
   },
   providers: [
     {

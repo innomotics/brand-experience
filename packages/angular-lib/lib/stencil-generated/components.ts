@@ -101,6 +101,34 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
+  inputs: ['checked', 'disabled', 'label', 'readonly', 'required', 'tabIdx', 'variant']
+})
+@Component({
+  selector: 'inno-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'disabled', 'label', 'readonly', 'required', 'tabIdx', 'variant'],
+})
+export class InnoCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface InnoCheckbox extends Components.InnoCheckbox {
+  /**
+   * Checked status has been changed.
+   */
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
   inputs: ['active', 'type']
 })
 @Component({
@@ -250,14 +278,14 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
@@ -276,14 +304,14 @@ export declare interface InnoSelect extends Components.InnoSelect {
 
 
 @ProxyCmp({
-  inputs: ['label', 'selected', 'value']
+  inputs: ['icon', 'label', 'selected', 'value']
 })
 @Component({
   selector: 'inno-select-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'selected', 'value'],
+  inputs: ['icon', 'label', 'selected', 'value'],
 })
 export class InnoSelectItem {
   protected el: HTMLElement;

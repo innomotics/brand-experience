@@ -9,8 +9,8 @@ import autoprefixer from 'autoprefixer';
 const copyAssets = [
   {
     src: './../../../node_modules/@innomotics/ix-fonts/dist',
-    dest: ''
-  }
+    dest: '',
+  },
 ];
 
 const copyGlobalStyles = [
@@ -22,25 +22,30 @@ const copyGlobalStyles = [
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ['inno-select[formControl]','inno-select[formControlName]','inno-select[ngModel]'],
+    elementSelectors: ['inno-select[formControl]', 'inno-select[formControlName]', 'inno-select[ngModel]'],
     event: 'valueChanged',
     targetAttr: 'value',
     type: 'select',
   },
   {
-    elementSelectors:
-      'inno-toggle[ngModel],inno-toggle[formControlName],inno-toggle[formControl]',
+    elementSelectors: 'inno-toggle[ngModel],inno-toggle[formControlName],inno-toggle[formControl]',
     event: 'checkedChange',
     targetAttr: 'checked',
     type: 'boolean',
-  }
+  },
+  {
+    elementSelectors: 'inno-checkbox[ngModel],inno-checkbox[formControlName],inno-checkbox[formControl]',
+    event: 'valueChange',
+    targetAttr: 'checked',
+    type: 'boolean',
+  },
 ];
 
 export const config: Config = {
   namespace: 'innomotics-ix',
-  plugins: [sass({ includePaths: ['styles','../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
-  srcDir:'./src',
-  globalStyle:'./styles/innomotics.scss',
+  plugins: [sass({ includePaths: ['styles', '../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
+  srcDir: './src',
+  globalStyle: './styles/innomotics.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -50,7 +55,7 @@ export const config: Config = {
       type: 'dist-custom-elements',
     },
     {
-      type: 'docs-readme'
+      type: 'docs-readme',
     },
     { type: 'dist-custom-elements',
       copy: copyGlobalStyles
@@ -58,14 +63,14 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null,
-      copy: copyAssets
+      copy: copyAssets,
     },
     angularOutputTarget({
       componentCorePackage: '@innomotics/ix',
       outputType: 'component',
       directivesProxyFile: '../angular-lib/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular-lib/lib/stencil-generated/index.ts',
-      valueAccessorConfigs: angularValueAccessorBindings
+      valueAccessorConfigs: angularValueAccessorBindings,
     }),
     reactOutputTarget({
       componentCorePackage: '@innomotics/ix',

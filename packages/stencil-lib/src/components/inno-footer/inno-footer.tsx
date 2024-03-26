@@ -74,9 +74,9 @@ export class InnoFooter {
     };
 
     return (
-      <div class={classes} key={entry.selector} onClick={() => this.sendEvent(entry)}>
+      <a class={classes} rel={entry.rel} key={entry.selector} onClick={() => this.sendEvent(entry)}>
         {entry.text}
-      </div>
+      </a>
     );
   }
 
@@ -87,9 +87,9 @@ export class InnoFooter {
     };
 
     return (
-      <div class={classes}>
+      <a class={classes} rel={entry.rel}>
         <inno-icon icon={entry.icon} size={24} theme={this.variant} onClick={() => this.sendEvent(entry)}></inno-icon>
-      </div>
+      </a>
     );
   }
 
