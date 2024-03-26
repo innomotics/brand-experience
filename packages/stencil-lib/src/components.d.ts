@@ -5,10 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { FooterContent } from "./components/inno-footer/inno-footer.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
-export { FooterContent } from "./components/inno-footer/inno-footer.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
@@ -94,9 +92,14 @@ export namespace Components {
          */
         "copyright": string;
         /**
-          * Generalized entries for the application.
+          * Theme variant property.
          */
-        "entries": ReadonlyArray<FooterContent>;
+        "variant": 'light' | 'dark';
+    }
+    /**
+     * Represents an inno-footer item.
+     */
+    interface InnoFooterItem {
         /**
           * Theme variant property.
          */
@@ -183,10 +186,6 @@ export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
 export interface InnoCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoCheckboxElement;
-}
-export interface InnoFooterCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLInnoFooterElement;
 }
 export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -281,25 +280,23 @@ declare global {
         prototype: HTMLInnoErrorElement;
         new (): HTMLInnoErrorElement;
     };
-    interface HTMLInnoFooterElementEventMap {
-        "contentSelected": string;
-    }
     /**
      * Represents the general footer for the Innomotics applications.
      */
     interface HTMLInnoFooterElement extends Components.InnoFooter, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLInnoFooterElementEventMap>(type: K, listener: (this: HTMLInnoFooterElement, ev: InnoFooterCustomEvent<HTMLInnoFooterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoFooterElement: {
         prototype: HTMLInnoFooterElement;
         new (): HTMLInnoFooterElement;
+    };
+    /**
+     * Represents an inno-footer item.
+     */
+    interface HTMLInnoFooterItemElement extends Components.InnoFooterItem, HTMLStencilElement {
+    }
+    var HTMLInnoFooterItemElement: {
+        prototype: HTMLInnoFooterItemElement;
+        new (): HTMLInnoFooterItemElement;
     };
     interface HTMLInnoIconElement extends Components.InnoIcon, HTMLStencilElement {
     }
@@ -406,6 +403,7 @@ declare global {
         "inno-checkbox": HTMLInnoCheckboxElement;
         "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
+        "inno-footer-item": HTMLInnoFooterItemElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-pane": HTMLInnoPaneElement;
@@ -507,13 +505,14 @@ declare namespace LocalJSX {
          */
         "copyright"?: string;
         /**
-          * Generalized entries for the application.
+          * Theme variant property.
          */
-        "entries"?: ReadonlyArray<FooterContent>;
-        /**
-          * The selector value is emitted if the given content is clicked.
-         */
-        "onContentSelected"?: (event: InnoFooterCustomEvent<string>) => void;
+        "variant"?: 'light' | 'dark';
+    }
+    /**
+     * Represents an inno-footer item.
+     */
+    interface InnoFooterItem {
         /**
           * Theme variant property.
          */
@@ -602,6 +601,7 @@ declare namespace LocalJSX {
         "inno-checkbox": InnoCheckbox;
         "inno-error": InnoError;
         "inno-footer": InnoFooter;
+        "inno-footer-item": InnoFooterItem;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-pane": InnoPane;
@@ -628,6 +628,10 @@ declare module "@stencil/core" {
              * Represents the general footer for the Innomotics applications.
              */
             "inno-footer": LocalJSX.InnoFooter & JSXBase.HTMLAttributes<HTMLInnoFooterElement>;
+            /**
+             * Represents an inno-footer item.
+             */
+            "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
