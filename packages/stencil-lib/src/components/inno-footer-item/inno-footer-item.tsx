@@ -1,9 +1,10 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Watch } from '@stencil/core';
 
 /**
  * Represents an inno-footer item.
  *
- * @example
+ * Wrap an element for the inno-footer parent.
+ *
  * Example are defined in the footer element.
  */
 @Component({
@@ -15,10 +16,12 @@ export class InnoFooterItem {
   @Element()
   hostElement: HTMLElement;
 
-  static tags = ['A', 'P'];
+  static tags = ['A', 'P', 'inno-icon'];
 
   /**
    * Theme variant property.
+   * Inherited from the parent.
+   * Can be overridden if explicitly defined.
    */
   @Prop({ mutable: true })
   variant: 'light' | 'dark' = 'light';
@@ -30,21 +33,24 @@ export class InnoFooterItem {
     };
   }
 
+  @Watch('variant')
+  watchVariant() {
+    console.log('didrender');
+
+    const children = this.hostElement.children;
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index];
+      if (element?.tagName && !InnoFooterItem.tags.includes(element.tagName)) {
+        (element as HTMLElement).dataset.innoFooterItemStyle = this.variant;
+      }
+    }
+  }
+
   render() {
     return (
       <Host class={this.variantStyle()}>
         <slot></slot>
       </Host>
     );
-  }
-
-  componentDidLoad() {
-    // const children = this.hostElement.children;
-    // for (let index = 0; index < children.length; index++) {
-    //   const element = children[index];
-    //   if (element?.tagName && InnoFooterItem.tags.includes(element.tagName)) {
-    //     element.classList.add('inno-footer-item-style');
-    //   }
-    // }
   }
 }
