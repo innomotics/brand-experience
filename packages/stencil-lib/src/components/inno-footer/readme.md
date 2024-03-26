@@ -40,6 +40,23 @@ one of the defined types in the WHATWG HTML specification.
 
 Represents the general footer for the Innomotics applications.
 
+## Usage
+
+### General-usage
+
+```html
+<inno-footer variant="dark" copyright="@ Innomotics 2024">
+  <inno-footer-item><a>Corporate Information</a></inno-footer-item>
+  <inno-footer-item><a>Privacy Notice</a></inno-footer-item>
+  <inno-footer-item><a>Cookie Notice</a></inno-footer-item>
+  <inno-footer-item><a>Term of use</a></inno-footer-item>
+  <inno-footer-item><a>Whistleblowing</a></inno-footer-item>
+  <inno-footer-item><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
+</inno-footer>
+```
+
+
+
 ## Properties
 
 | Property    | Attribute   | Description             | Type                | Default   |

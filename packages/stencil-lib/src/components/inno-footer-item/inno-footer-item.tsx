@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 /**
  * Represents an inno-footer item.
@@ -12,6 +12,11 @@ import { Component, Host, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class InnoFooterItem {
+  @Element()
+  hostElement: HTMLElement;
+
+  static tags = ['A', 'P'];
+
   /**
    * Theme variant property.
    */
@@ -31,5 +36,15 @@ export class InnoFooterItem {
         <slot></slot>
       </Host>
     );
+  }
+
+  componentDidLoad() {
+    // const children = this.hostElement.children;
+    // for (let index = 0; index < children.length; index++) {
+    //   const element = children[index];
+    //   if (element?.tagName && InnoFooterItem.tags.includes(element.tagName)) {
+    //     element.classList.add('inno-footer-item-style');
+    //   }
+    // }
   }
 }

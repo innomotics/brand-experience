@@ -1,5 +1,4 @@
 import { Component, Host, Prop, h, Element } from '@stencil/core';
-import { Component, Host, Prop, h, Element } from '@stencil/core';
 
 /**
  * Represents the general footer for the Innomotics applications.
