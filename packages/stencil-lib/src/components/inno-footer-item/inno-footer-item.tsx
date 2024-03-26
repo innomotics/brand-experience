@@ -2,6 +2,9 @@ import { Component, Host, h, Prop } from '@stencil/core';
 
 /**
  * Represents an inno-footer item.
+ *
+ * @example
+ * Example are defined in the footer element.
  */
 @Component({
   tag: 'inno-footer-item',
