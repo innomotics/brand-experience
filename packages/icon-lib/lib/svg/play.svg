@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M0,4.26325641e-14 L298.666667,149.333333 L0,298.666667 L0,4.26325641e-14 Z M42.6666667,64 L42.6666667,234.666667 L213.333333,149.343338 L42.6666667,64 Z" transform="translate(128 106.667)"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#08191F;}
+	.st1{clip-path:url(#SVGID_00000149360068807484759080000011719491096830311586_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
+</style>
+<g>
+	<path class="st0" d="M6,4.8L11.1,8L6,11.2V4.8 M5,3v10l8-5L5,3L5,3z"/>
+</g>
+</svg>

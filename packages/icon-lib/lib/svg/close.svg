@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Combined-Shape" fill="#000000" transform="translate(91.581722, 91.581722)">
-            <path d="M298.666667,4.26325641e-14 L328.836556,30.1698893 L194.587,164.418 L328.836556,298.666667 L298.666667,328.836556 L164.418,194.587 L30.1698893,328.836556 L9.9475983e-14,298.666667 L134.248,164.418 L7.10542736e-14,30.1698893 L30.1698893,4.26325641e-14 L164.418,134.248 L298.666667,4.26325641e-14 Z" transform="translate(164.418278, 164.418278) rotate(-360.000000) translate(-164.418278, -164.418278) "></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#08191F;}
+	.st1{clip-path:url(#SVGID_00000171699910387268732360000004818631875322889386_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
+</style>
+<g>
+	<rect x="7.5" y="2.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3137 8)" class="st0" width="1" height="11.3"/>
+</g>
+<g>
+	<rect x="2.3" y="7.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3137 8)" class="st0" width="11.3" height="1"/>
+</g>
 </svg>

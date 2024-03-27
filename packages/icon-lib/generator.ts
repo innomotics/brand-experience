@@ -5,7 +5,7 @@ const directoryPath = './lib/svg';
 //passsing directoryPath and callback function
 let moduleContent = ""; 
 let clearName = (name: string) =>{
-    return name.replace(/\-/g,'');
+    return name.replace(/\-{1,}|\s{1,}/g,'').toLowerCase();
 }
 
 let optimizeSvg = (content: Buffer) =>{

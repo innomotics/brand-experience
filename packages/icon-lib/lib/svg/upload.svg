@@ -1,8 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon" fill="#000000" transform="translate(85.333333, 64.000000)">
-            <path d="M170.666667,0 L28.992,118.037333 L56.32,150.826667 L149.333333,73.3226667 L149.333333,283.776 L192,283.776 L192,73.3226667 L284.992,150.826667 L312.32,118.037333 L170.666667,0 Z M1.42108547e-14,384 L341.333333,384 L341.333333,341.333333 L1.42108547e-14,341.333333 L1.42108547e-14,384 Z" id="Mask"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#08191F;}
+	.st1{clip-path:url(#SVGID_00000067922023146005640050000014480271814417942708_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
+</style>
+<g>
+	<rect x="7.5" y="4" class="st0" width="1" height="7"/>
+</g>
+<g>
+	<rect x="6.4" y="2.7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 8.2678 13.1317)" class="st0" width="1" height="4.2"/>
+</g>
+<g>
+	<rect x="8.6" y="2.7" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 19.0459 1.818)" class="st0" width="1" height="4.2"/>
+</g>
+<g>
+	<rect x="3" y="12" class="st0" width="10" height="1"/>
+</g>
 </svg>

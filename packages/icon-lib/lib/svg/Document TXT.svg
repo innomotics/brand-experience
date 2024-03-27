@@ -4,10 +4,13 @@
 	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#08191F;}
-	.st1{clip-path:url(#SVGID_00000173855690385957455820000016676125461335781822_);}
+	.st1{clip-path:url(#SVGID_00000007426368890585995480000006593388041381704071_);}
 	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
 </style>
+<polygon class="st0" points="9,11 9,12 3,12 3,4 9,4 9,5 10,5 10,3 2,3 2,13 10,13 10,11 "/>
 <g>
-	<path class="st0" d="M5,2v10.6V14l1-1l2-2l2,2l1,1v-1.4V2H5z M8,9.6l-2,2V3h4v8.6L8,9.6z"/>
+	<path class="st0" d="M5.6,7.1h-1V6.2h3v0.9h-1v2.7h-1V7.1z"/>
+	<path class="st0" d="M9.3,8.9L8.8,9.8H7.7l1.1-1.8l-1-1.7h1.2l0.4,0.7l0.4-0.7h1.1l-1,1.7L11,9.8H9.8L9.3,8.9z"/>
+	<path class="st0" d="M12,7.1h-1V6.2h3v0.9h-1v2.7h-1V7.1z"/>
 </g>
 </svg>

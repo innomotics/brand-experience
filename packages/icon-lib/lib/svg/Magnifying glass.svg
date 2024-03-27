@@ -4,10 +4,14 @@
 	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#08191F;}
-	.st1{clip-path:url(#SVGID_00000173855690385957455820000016676125461335781822_);}
+	.st1{clip-path:url(#SVGID_00000103242224386571085430000004025359362428478874_);}
 	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
 </style>
 <g>
-	<path class="st0" d="M5,2v10.6V14l1-1l2-2l2,2l1,1v-1.4V2H5z M8,9.6l-2,2V3h4v8.6L8,9.6z"/>
+	<rect x="10.4" y="9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.7028 10.9393)" class="st0" width="1" height="4.2"/>
+</g>
+<g>
+	<path class="st0" d="M7,4c1.7,0,3,1.3,3,3s-1.3,3-3,3S4,8.7,4,7S5.3,4,7,4 M7,3C4.8,3,3,4.8,3,7s1.8,4,4,4s4-1.8,4-4S9.2,3,7,3L7,3
+		z"/>
 </g>
 </svg>
