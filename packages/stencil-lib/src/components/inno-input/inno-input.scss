@@ -26,7 +26,7 @@
       border: 1px solid colors.$interaction-light-hover;
       box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
     }
-    input {
+    ::slotted(input) {
       @include light-base;
       color: colors.$text-light-highemphasis;
       &.disabled:disabled {
@@ -64,7 +64,7 @@
       background-color: colors.$transparency-dark-100;
     }
 
-    input {
+    ::slotted(input) {
       @include dark-base;
       color: colors.$text-dark-highemphasis;
       &.disabled {
