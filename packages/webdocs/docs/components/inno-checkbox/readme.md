@@ -1,15 +1,46 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoIcon} from '@innomotics/ix-react-lib';
+
 # inno-checkbox
-
-<!-- Auto Generated Below -->
-
-
-## Overview
-
-Checkbox for Innomatics design system.
 
 ## Usage
 
-### Angular-form-usage
+<Tabs>
+  <TabItem value="standalone" label="Standalone" default>
+The component can be used as a standalone component
+if form integration is not required.
+
+Angular usage:
+
+Angular provided property and event binding should be used.
+
+```html
+<inno-checkbox label="angular usage" (valueChange)="handler($event.detail)" [checked]="value"></inno-checkbox>
+```
+
+JSX usage:
+
+JSX provided property and event binding should be used.
+
+```jsx
+<inno-checkbox label="jsx usage" onValueChange="{event => ...}" checked={value}></inno-checkbox>
+```
+
+Direct Javascript usage:
+
+Provided attributes and DOM event handling should be used.
+
+```html
+<inno-checkbox id="cb1" label="js usage" checked="true"></inno-checkbox>
+```
+
+```javascript
+document.getElementById('cb1').addEventListener('valueChange', ...);
+```
+
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
 
 The component is compatible with the Angular reactive form
 and can be used as a standalone form control element
@@ -49,9 +80,8 @@ class Component {
 }
 ```
 
-
-### Html-form-usage
-
+  </TabItem>
+  <TabItem value="HTML" label="HTML">
 Component can be used as a form element
 and it integrates with the host form.
 
@@ -67,41 +97,15 @@ Form usage example:
 </form>
 ```
 
+  </TabItem>
+</Tabs>
 
-### Standalone-usage
-
-The component can be used as a standalone component
-if form integration is not required.
-
-Angular usage:
-
-Angular provided property and event binding should be used.
-
-```html
-<inno-checkbox label="angular usage" (valueChange)="handler($event.detail)" [checked]="value"></inno-checkbox>
-```
-
-JSX usage:
-
-JSX provided property and event binding should be used.
-
-```jsx
-<inno-checkbox label="jsx usage" onValueChange="{event => ...}" checked={value}></inno-checkbox>
-```
-
-Direct Javascript usage:
-
-Provided attributes and DOM event handling should be used.
-
-```html
-<inno-checkbox id="cb1" label="js usage" checked="true"></inno-checkbox>
-```
-
-```javascript
-document.getElementById('cb1').addEventListener('valueChange', ...);
-```
+<!-- Auto Generated Below -->
 
 
+## Overview
+
+Checkbox for Innomatics design system.
 
 ## Properties
 
