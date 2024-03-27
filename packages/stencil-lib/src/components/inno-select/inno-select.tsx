@@ -129,6 +129,10 @@ export class InnoSelect {
     return this.items.find(i => i.value == this.value);
   }
 
+  get valueIsUndefined()
+  {
+    return this.value === undefined || this.value === '' || this.value === null;
+  }
   render() {
     return (
       <Host
@@ -147,11 +151,11 @@ export class InnoSelect {
         <div>
           {!this.iconDriven ? (
             <div class="select-header">
-              <div class={{ content: true, filled: this.value != undefined }}>
-                <span class={{ label: true, float: this.value != undefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
+              <div class={{ content: true, filled: !this.valueIsUndefined }}>
+                <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
                   {this.label}
                 </span>
-                <span>{this.selectedItem.label}</span>
+                <span>{this.selectedItem?.label}</span>
               </div>
               <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>

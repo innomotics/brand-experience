@@ -1,6 +1,33 @@
 # inno-toggle
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoToggle} from '@innomotics/ix-react-lib';
 
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoToggle variant="light"></InnoToggle>
+    <InnoToggle variant="light" disabled></InnoToggle>
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js
+    <inno-toggle variant="light"></inno-toggle >
+    <inno-toggle  variant="light" disabled></inno-toggle >
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+    <InnoToggle variant="light"></InnoToggle>
+    <InnoToggle variant="light" disabled></InnoToggle>
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+    <InnoToggle variant="light"></InnoToggle>
+    <InnoToggle variant="light" disabled></InnoToggle>
+    ```
+  </TabItem>
+</Tabs>
 
 <!-- Auto Generated Below -->
 

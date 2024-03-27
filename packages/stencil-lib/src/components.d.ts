@@ -81,7 +81,7 @@ export namespace Components {
     }
     interface InnoError {
         "active": boolean;
-        "type": 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing';
+        "type": 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
     }
     /**
      * Represents the general footer for the Innomotics applications.
@@ -498,7 +498,7 @@ declare namespace LocalJSX {
     }
     interface InnoError {
         "active"?: boolean;
-        "type"?: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing';
+        "type"?: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
     }
     /**
      * Represents the general footer for the Innomotics applications.

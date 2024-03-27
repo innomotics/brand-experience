@@ -13,10 +13,10 @@ import {InnoAccordion} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-accordion variant="light" label="Title">example</inno-accordion>
-    <inno-accordion variant="light" label="Title2" collapsed>example</inno-accordion>
-    <inno-accordion variant="dark" label="Title">example</inno-accordion>
-    <inno-accordion variant="dark" label="Title2" collapsed>example</inno-accordion>  
+    <inno-accordion variant="light" label="Title">Text</inno-accordion>
+    <inno-accordion variant="light" label="Title2" collapsed>Text</inno-accordion>
+    <inno-accordion variant="dark" label="Title">Text</inno-accordion>
+    <inno-accordion variant="dark" label="Title2" collapsed>Text</inno-accordion>  
     ```
   </TabItem>
   <TabItem value="React" label="React">
