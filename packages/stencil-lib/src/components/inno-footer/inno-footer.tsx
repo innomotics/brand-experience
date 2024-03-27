@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, Element } from '@stencil/core';
+import { Component, Host, Prop, h, Element, Watch } from '@stencil/core';
 
 /**
  * Represents the general footer for the Innomotics applications.
@@ -24,14 +24,29 @@ export class InnoFooter {
   @Prop()
   copyright = '';
 
+  @Watch('variant')
+  watchVariant() {
+    this.cascadeFooterStyle();
+  }
+
   componentDidLoad() {
+    this.cascadeFooterStyle();
+  }
+
+  cascadeFooterStyle() {
     this.hostElement.querySelectorAll('inno-footer-item').forEach(item => {
       // Set only for those children which not specified explicitly
       if (!item.hasAttribute('variant')) {
-        // item.setAttribute('variant', this.variant);
         item.variant = this.variant;
       }
     });
+  }
+
+  variantStyle() {
+    return {
+      light: this.variant === 'light',
+      dark: this.variant === 'dark',
+    };
   }
 
   createCopyrightNode() {
@@ -41,13 +56,6 @@ export class InnoFooter {
     };
 
     return <div class={classes}>{this.copyright}</div>;
-  }
-
-  variantStyle() {
-    return {
-      light: this.variant === 'light',
-      dark: this.variant === 'dark',
-    };
   }
 
   render() {

@@ -1,5 +1,7 @@
 import { Component, Host, h, Prop, Element, Watch } from '@stencil/core';
 
+const IGNORED_ELEMENTS = ['A', 'P', 'inno-icon'];
+
 /**
  * Represents an inno-footer item.
  *
@@ -16,8 +18,6 @@ export class InnoFooterItem {
   @Element()
   hostElement: HTMLElement;
 
-  static tags = ['A', 'P', 'inno-icon'];
-
   /**
    * Theme variant property.
    * Inherited from the parent.
@@ -26,24 +26,31 @@ export class InnoFooterItem {
   @Prop({ mutable: true })
   variant: 'light' | 'dark' = 'light';
 
+  @Watch('variant')
+  watchVariant(newVariant: 'light' | 'dark') {
+    this.variant = newVariant;
+    this.propagateStyle();
+  }
+
+  componentDidLoad() {
+    this.propagateStyle();
+  }
+
+  propagateStyle() {
+    const children = this.hostElement.children;
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index];
+      if (element?.tagName && !IGNORED_ELEMENTS.includes(element.tagName)) {
+        (element as HTMLElement).dataset.innoFooterItemStyle = this.variant;
+      }
+    }
+  }
+
   variantStyle() {
     return {
       light: this.variant === 'light',
       dark: this.variant === 'dark',
     };
-  }
-
-  @Watch('variant')
-  watchVariant() {
-    console.log('didrender');
-
-    const children = this.hostElement.children;
-    for (let index = 0; index < children.length; index++) {
-      const element = children[index];
-      if (element?.tagName && !InnoFooterItem.tags.includes(element.tagName)) {
-        (element as HTMLElement).dataset.innoFooterItemStyle = this.variant;
-      }
-    }
   }
 
   render() {
