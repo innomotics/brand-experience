@@ -54,10 +54,11 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.docsdeployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4  
+        id: docsdeployment
 
   upload-artifacts:
     runs-on: ubuntu-latest
