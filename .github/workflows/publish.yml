@@ -3,9 +3,6 @@ name: Publish
 on:
   workflow_dispatch:
 
-permissions:
-  pages: write      # to deploy to Pages
-  id-token: write   # to verify the deployment originates from an appropriate source
 concurrency:
   group: publish-${{ github.sha }}
   cancel-in-progress: true
@@ -13,6 +10,9 @@ concurrency:
 jobs:
   build-lib:
     uses: ./.github/workflows/build.yml
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
   deploy:
     needs: [build-lib]
     runs-on: ubuntu-latest
