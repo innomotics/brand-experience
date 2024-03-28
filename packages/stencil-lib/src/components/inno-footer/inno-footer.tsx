@@ -58,11 +58,38 @@ export class InnoFooter {
     return <div class={classes}>{this.copyright}</div>;
   }
 
+  linkNodes(fullScreen) {
+    if (fullScreen) {
+      return <slot name="links"></slot>;
+    } else {
+      return (
+        <div class={{ links: true }}>
+          <slot name="links"></slot>
+        </div>
+      );
+    }
+  }
+
+  iconNodes(fullScreen: boolean) {
+    if (fullScreen) {
+      return <slot name="icons"></slot>;
+    } else {
+      return (
+        <div class={{ icons: true }}>
+          <slot name="icons"></slot>
+        </div>
+      );
+    }
+  }
+
   render() {
+    const matches = window.matchMedia('(min-width: 768px)').matches;
+
     return (
       <Host class={this.variantStyle()}>
         {this.createCopyrightNode()}
-        <slot></slot>
+        {this.linkNodes(matches)}
+        {this.iconNodes(matches)}
       </Host>
     );
   }
