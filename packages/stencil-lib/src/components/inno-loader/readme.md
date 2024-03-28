@@ -3,7 +3,7 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoButton} from '@innomotics/ix-react-lib';
+import {InnoLoader} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
@@ -28,6 +28,13 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 
 <!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property | Attribute | Description | Type     | Default |
+| -------- | --------- | ----------- | -------- | ------- |
+| `size`   | `size`    |             | `number` | `64`    |
 
 
 ----------------------------------------------
