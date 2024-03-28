@@ -123,6 +123,9 @@ export namespace Components {
         "value": string | number;
         "variant": 'light' | 'dark';
     }
+    interface InnoLoader {
+        "size": number;
+    }
     interface InnoPane {
         "closeOnBackdropClick": boolean;
         "expanded": boolean;
@@ -325,6 +328,12 @@ declare global {
         prototype: HTMLInnoInputElement;
         new (): HTMLInnoInputElement;
     };
+    interface HTMLInnoLoaderElement extends Components.InnoLoader, HTMLStencilElement {
+    }
+    var HTMLInnoLoaderElement: {
+        prototype: HTMLInnoLoaderElement;
+        new (): HTMLInnoLoaderElement;
+    };
     interface HTMLInnoPaneElementEventMap {
         "expandedChanged": ExpandedChangedEvent;
     }
@@ -410,6 +419,7 @@ declare global {
         "inno-footer-item": HTMLInnoFooterItemElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
+        "inno-loader": HTMLInnoLoaderElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
         "inno-select": HTMLInnoSelectElement;
@@ -541,6 +551,9 @@ declare namespace LocalJSX {
         "value"?: string | number;
         "variant"?: 'light' | 'dark';
     }
+    interface InnoLoader {
+        "size"?: number;
+    }
     interface InnoPane {
         "closeOnBackdropClick"?: boolean;
         "expanded"?: boolean;
@@ -610,6 +623,7 @@ declare namespace LocalJSX {
         "inno-footer-item": InnoFooterItem;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
+        "inno-loader": InnoLoader;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
         "inno-select": InnoSelect;
@@ -642,6 +656,7 @@ declare module "@stencil/core" {
             "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
+            "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;

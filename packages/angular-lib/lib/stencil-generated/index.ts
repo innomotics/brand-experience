@@ -12,6 +12,7 @@ export const DIRECTIVES = [
   d.InnoFooterItem,
   d.InnoIcon,
   d.InnoInput,
+  d.InnoLoader,
   d.InnoPane,
   d.InnoPopover,
   d.InnoSelect,

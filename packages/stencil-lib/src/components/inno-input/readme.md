@@ -1,6 +1,6 @@
 # inno-input
 
-
+<inno-loader></inno-loader>
 
 <!-- Auto Generated Below -->
 
