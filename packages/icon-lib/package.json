@@ -17,8 +17,7 @@
     "url": "git+https://github.com/innomotics/IX.git"
   },
   "scripts": {
-    "build": "npm run generateIconModule && npm run sassbuild && npm run copyoutputs && npm run copyreadme",
-    "sassbuild": "npx sass --style=compressed ./lib/styles",
+    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyreadme",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "generateIconModule": "npx ts-node generator.ts",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\""
