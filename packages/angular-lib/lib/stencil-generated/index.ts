@@ -14,6 +14,7 @@ export const DIRECTIVES = [
   d.InnoInput,
   d.InnoPane,
   d.InnoPopover,
+  d.InnoRadio,
   d.InnoSelect,
   d.InnoSelectItem,
   d.InnoToggle

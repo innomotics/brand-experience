@@ -1,15 +1,15 @@
-import { Component, Host, Prop, h, Event, EventEmitter, Element, Listen, State, AttachInternals } from '@stencil/core';
+import { Component, Host, h, Prop, AttachInternals, State, Element, Event, EventEmitter, Listen } from '@stencil/core';
 
 /**
- * Checkbox for Innomatics design system.
+ * Represents the default radiobutton for the Innomics applications.
  */
 @Component({
-  tag: 'inno-checkbox',
-  styleUrl: 'inno-checkbox.scss',
-  shadow: true,
+  tag: 'inno-radio',
+  styleUrl: 'inno-radio.scss',
+  scoped: true,
   formAssociated: true,
 })
-export class InnoCheckbox {
+export class InnoRadio {
   @Element()
   hostElement: HTMLElement;
 
@@ -38,7 +38,19 @@ export class InnoCheckbox {
   label = '';
 
   @Prop()
+  type: string;
+
+  /**
+   *
+   */
+  @Prop()
   name: string;
+
+  /**
+   * Radio button value.
+   */
+  @Prop()
+  value: string;
 
   /**
    * Whether element is checked.
@@ -87,7 +99,7 @@ export class InnoCheckbox {
   @Listen('keydown')
   handleKeyDown(ev: KeyboardEvent) {
     if (ev.key === 'Enter') {
-      this.changeCheckedState(!this.checked);
+      this.changeCheckedState();
     }
   }
 
@@ -101,14 +113,27 @@ export class InnoCheckbox {
     return this.disabled || this.readonly;
   }
 
-  changeCheckedState(newState: boolean) {
+  changeCheckedState() {
+    console.log('inno-radio :: changeCheckedState');
+
     if (this.elementInDisabledInteractionMode()) {
       return;
     }
 
-    this.checked = newState;
-    this.valueChange.emit(this.checked);
-    this.elementInternals.setFormValue(this.checked ? 'on' : 'off');
+    // if (this.checked) {
+    //   return;
+    // }
+
+    // const x = this.elementInternals.form.elements.namedItem('radioGroup1') as RadioNodeList;
+
+    // x.value = this.value;
+
+    this.checked = true;
+    // this.valueChange.emit(this.checked);
+    // console.log(this.value);
+
+    // this.elementInternals.setFormValue('checked');
+    this.elementInternals.setFormValue(this.value);
   }
 
   checkRequiredState(): boolean {
@@ -173,7 +198,7 @@ export class InnoCheckbox {
     };
 
     return (
-      <div class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
+      <div class={classes} onClick={() => this.changeCheckedState()}>
         {this.checkSignComponent()}
       </div>
     );
@@ -193,47 +218,24 @@ export class InnoCheckbox {
       ...this.commonStyles(),
       label: true,
     };
+
     return (
-      <span class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
+      <span class={classes} onClick={() => this.changeCheckedState()}>
         {this.label}
       </span>
     );
   }
 
   render() {
+    console.log(`Value: ${this.value}, Checked: ${this.checked}`);
+
     const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
 
     return (
-      <Host tabIndex={tabIndexValue} role="checkbox" ariaChecked={this.checked}>
+      <Host role="radio" tabIndex={tabIndexValue} ariaChecked={this.checked}>
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>
     );
-  }
-
-  get value() {
-    return this.value;
-  }
-  set value(v) {
-    this.value = v;
-  }
-
-  get form() {
-    return this.elementInternals.form;
-  }
-  // get name() {
-  //   return this.hostElement.getAttribute('name');
-  // }
-  get type() {
-    return this.type;
-  }
-  get validity() {
-    return this.elementInternals.validity;
-  }
-  get validationMessage() {
-    return this.elementInternals.validationMessage;
-  }
-  get willValidate() {
-    return this.elementInternals.willValidate;
   }
 }
