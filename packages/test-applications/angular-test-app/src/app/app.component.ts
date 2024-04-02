@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  FormControl,
   UntypedFormBuilder,
   UntypedFormControl,
   UntypedFormGroup,
@@ -31,6 +32,7 @@ export class AppComponent {
       checkboxtest1: this.formBuilder.control(undefined, [
         Validators.requiredTrue,
       ]),
+      radioGroup1: new FormControl(),
     });
 
     this.innomoticsForm.valueChanges.subscribe(

@@ -1,15 +1,47 @@
 <inno-icon icon="home"></inno-icon>
+
 <form [formGroup]="innomoticsForm">
-  <inno-input name="bubu" label="Inputbox" value="0"  variant="light">
+  <inno-input name="bubu" label="Inputbox" value="0" variant="light">
     <input type="number" [formControl]="innoInput" />
-    <inno-error type="badInput">Not valid</inno-error></inno-input>
-   <inno-select name="dew" label="SelectBox" [formControl]="innoSelect" value="12">
+    <inno-error type="badInput">Not valid</inno-error></inno-input
+  >
+  <inno-select
+    name="dew"
+    label="SelectBox"
+    [formControl]="innoSelect"
+    value="12"
+  >
     <inno-select-item label="dewde" value="12"></inno-select-item>
     <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>
   <!-- <inno-button type="primary">dfewf4e</inno-button> -->
   <div>
     <!-- <inno-checkbox variant="light" formControlName="checkboxtest1" label="checkbox label"></inno-checkbox> -->
+  </div>
+
+  <div>
+    <!-- <input type="radio" formControlName="radioGroup1" value="val1" /> -->
+    <inno-radio
+      name="radioGroup1"
+      label="value1"
+      value="val1"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
+    <inno-radio
+      name="radioGroup1"
+      label="value2"
+      value="val2"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
+    <inno-radio
+      name="radioGroup1"
+      label="value3"
+      value="val3"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
   </div>
 </form>
 
@@ -21,4 +53,8 @@
 <div class="container">
   {{ innoInput.value }}
   {{ innoSelect.value }}
+</div>
+
+<div class="container">
+  {{ formValue }}
 </div>

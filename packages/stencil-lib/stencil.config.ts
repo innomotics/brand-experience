@@ -16,8 +16,8 @@ const copyAssets = [
 const copyGlobalStyles = [
   {
     src: '../styles',
-    dest: 'dist/styles'
-  }
+    dest: 'dist/styles',
+  },
 ];
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
@@ -39,6 +39,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     targetAttr: 'checked',
     type: 'boolean',
   },
+  {
+    elementSelectors: 'inno-radio[ngModel],inno-radio[formControlName],inno-radio[formControl]',
+    event: 'valueChange',
+    targetAttr: 'checked',
+    type: 'radio',
+  },
 ];
 
 export const config: Config = {
@@ -57,9 +63,7 @@ export const config: Config = {
     {
       type: 'docs-readme',
     },
-    { type: 'dist-custom-elements',
-      copy: copyGlobalStyles
-    },
+    { type: 'dist-custom-elements', copy: copyGlobalStyles },
     {
       type: 'www',
       serviceWorker: null,

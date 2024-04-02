@@ -20,6 +20,7 @@ export const InnoInput = /*@__PURE__*/createReactComponent<JSX.InnoInput, HTMLIn
 export const InnoLoader = /*@__PURE__*/createReactComponent<JSX.InnoLoader, HTMLInnoLoaderElement>('inno-loader');
 export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInnoPaneElement>('inno-pane');
 export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HTMLInnoPopoverElement>('inno-popover');
+export const InnoRadio = /*@__PURE__*/createReactComponent<JSX.InnoRadio, HTMLInnoRadioElement>('inno-radio');
 export const InnoSelect = /*@__PURE__*/createReactComponent<JSX.InnoSelect, HTMLInnoSelectElement>('inno-select');
 export const InnoSelectItem = /*@__PURE__*/createReactComponent<JSX.InnoSelectItem, HTMLInnoSelectItemElement>('inno-select-item');
 export const InnoToggle = /*@__PURE__*/createReactComponent<JSX.InnoToggle, HTMLInnoToggleElement>('inno-toggle');

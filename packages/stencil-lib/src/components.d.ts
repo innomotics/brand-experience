@@ -106,6 +106,7 @@ export namespace Components {
           * Label to show.
          */
         "label": string;
+        "name": string;
         /**
           * Whether the component is readonly.
          */
@@ -251,6 +252,45 @@ export namespace Components {
          */
         "visible": boolean;
     }
+    /**
+     * Represents the default radiobutton for the Innomics applications.
+     */
+    interface InnoRadio {
+        /**
+          * Whether element is checked.
+         */
+        "checked": boolean | undefined;
+        /**
+          * Whether component is disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Label to show.
+         */
+        "label": string;
+        "name": string;
+        /**
+          * Whether the component is readonly.
+         */
+        "readonly": boolean;
+        /**
+          * Whether the checkbox have to be selected.
+         */
+        "required": boolean;
+        /**
+          * The tab index.
+         */
+        "tabIdx": number;
+        "type": string;
+        /**
+          * Radio button value.
+         */
+        "value": string;
+        /**
+          * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
     interface InnoSelect {
         /**
           * Whether the select is disabled or not.
@@ -338,6 +378,10 @@ export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
+}
+export interface InnoRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoRadioElement;
 }
 export interface InnoSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -507,6 +551,26 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
+    interface HTMLInnoRadioElementEventMap {
+        "valueChange": boolean;
+    }
+    /**
+     * Represents the default radiobutton for the Innomics applications.
+     */
+    interface HTMLInnoRadioElement extends Components.InnoRadio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoRadioElementEventMap>(type: K, listener: (this: HTMLInnoRadioElement, ev: InnoRadioCustomEvent<HTMLInnoRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoRadioElementEventMap>(type: K, listener: (this: HTMLInnoRadioElement, ev: InnoRadioCustomEvent<HTMLInnoRadioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoRadioElement: {
+        prototype: HTMLInnoRadioElement;
+        new (): HTMLInnoRadioElement;
+    };
     interface HTMLInnoSelectElementEventMap {
         "valueChanged": string;
     }
@@ -572,6 +636,7 @@ declare global {
         "inno-loader": HTMLInnoLoaderElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
+        "inno-radio": HTMLInnoRadioElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
         "inno-toggle": HTMLInnoToggleElement;
@@ -683,6 +748,7 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
+        "name"?: string;
         /**
           * Checked status has been changed.
          */
@@ -832,6 +898,49 @@ declare namespace LocalJSX {
          */
         "visible"?: boolean;
     }
+    /**
+     * Represents the default radiobutton for the Innomics applications.
+     */
+    interface InnoRadio {
+        /**
+          * Whether element is checked.
+         */
+        "checked"?: boolean | undefined;
+        /**
+          * Whether component is disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to show.
+         */
+        "label"?: string;
+        "name"?: string;
+        /**
+          * Checked status has been changed.
+         */
+        "onValueChange"?: (event: InnoRadioCustomEvent<boolean>) => void;
+        /**
+          * Whether the component is readonly.
+         */
+        "readonly"?: boolean;
+        /**
+          * Whether the checkbox have to be selected.
+         */
+        "required"?: boolean;
+        /**
+          * The tab index.
+         */
+        "tabIdx"?: number;
+        "type"?: string;
+        /**
+          * Radio button value.
+         */
+        "value"?: string;
+        /**
+          * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
     interface InnoSelect {
         /**
           * Whether the select is disabled or not.
@@ -921,6 +1030,7 @@ declare namespace LocalJSX {
         "inno-loader": InnoLoader;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
+        "inno-radio": InnoRadio;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
         "inno-toggle": InnoToggle;
@@ -954,6 +1064,10 @@ declare module "@stencil/core" {
             "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
+            /**
+             * Represents the default radiobutton for the Innomics applications.
+             */
+            "inno-radio": LocalJSX.InnoRadio & JSXBase.HTMLAttributes<HTMLInnoRadioElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
