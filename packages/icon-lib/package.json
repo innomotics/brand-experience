@@ -10,7 +10,7 @@
     "lib": "lib"
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "repository": {
     "type": "git",

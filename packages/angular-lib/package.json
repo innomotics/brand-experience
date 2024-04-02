@@ -10,7 +10,7 @@
     "url": ""
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "private": false,
   "scripts": {

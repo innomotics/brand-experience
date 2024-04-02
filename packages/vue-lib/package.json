@@ -13,7 +13,7 @@
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "scripts": {
     "test": "node ./__tests__/vue-lib.test.js",
