@@ -131,6 +131,7 @@ Checkbox for Innomatics design system.
 | `checked`  | `checked`  | Whether element is checked.               | `boolean`           | `undefined` |
 | `disabled` | `disabled` | Whether component is disabled.            | `boolean`           | `false`     |
 | `label`    | `label`    | Label to show.                            | `string`            | `''`        |
+| `name`     | `name`     |                                           | `string`            | `undefined` |
 | `readonly` | `readonly` | Whether the component is readonly.        | `boolean`           | `false`     |
 | `required` | `required` | Whether the checkbox have to be selected. | `boolean`           | `false`     |
 | `tabIdx`   | `tab-idx`  | The tab index.                            | `number`            | `0`         |

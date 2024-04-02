@@ -32,7 +32,7 @@ export class AppComponent {
       checkboxtest1: this.formBuilder.control(undefined, [
         Validators.requiredTrue,
       ]),
-      radioGroup1: new FormControl(),
+      radioGroup1: new FormControl('value1'),
     });
 
     this.innomoticsForm.valueChanges.subscribe(
