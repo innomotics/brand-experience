@@ -7,9 +7,9 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
 <Tabs>
   <TabItem value="preview" label="Preview" default>
     <InnoBreadcrumb>
-    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-  </InnoBreadcrumb>
+      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+    </InnoBreadcrumb>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
@@ -22,17 +22,17 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
   <TabItem value="React" label="React">
     ```js
     <InnoBreadcrumb>
-    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-  </InnoBreadcrumb>
+      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+    </InnoBreadcrumb>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
     <InnoBreadcrumb>
-    <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-    <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-  </InnoBreadcrumb>
+      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+    </InnoBreadcrumb>
     ```
   </TabItem>
 </Tabs>
