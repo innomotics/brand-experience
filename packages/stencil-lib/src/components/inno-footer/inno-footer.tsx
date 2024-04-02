@@ -24,12 +24,12 @@ export class InnoFooter {
   @Prop()
   copyright = '';
 
-  @Watch('variant')
-  watchVariant() {
+  componentDidLoad() {
     this.cascadeFooterStyle();
   }
 
-  componentDidLoad() {
+  @Watch('variant')
+  watchVariant() {
     this.cascadeFooterStyle();
   }
 
@@ -58,38 +58,28 @@ export class InnoFooter {
     return <div class={classes}>{this.copyright}</div>;
   }
 
-  linkNodes(fullScreen) {
-    if (fullScreen) {
-      return <slot name="links"></slot>;
-    } else {
-      return (
-        <div class={{ links: true }}>
-          <slot name="links"></slot>
-        </div>
-      );
-    }
+  linkNodes() {
+    return (
+      <div class={{ links: true }}>
+        <slot name="links"></slot>
+      </div>
+    );
   }
 
-  iconNodes(fullScreen: boolean) {
-    if (fullScreen) {
-      return <slot name="icons"></slot>;
-    } else {
-      return (
-        <div class={{ icons: true }}>
-          <slot name="icons"></slot>
-        </div>
-      );
-    }
+  iconNodes() {
+    return (
+      <div class={{ icons: true }}>
+        <slot name="icons"></slot>
+      </div>
+    );
   }
 
   render() {
-    const matches = window.matchMedia('(min-width: 768px)').matches;
-
     return (
       <Host class={this.variantStyle()}>
         {this.createCopyrightNode()}
-        {this.linkNodes(matches)}
-        {this.iconNodes(matches)}
+        {this.linkNodes()}
+        {this.iconNodes()}
       </Host>
     );
   }
