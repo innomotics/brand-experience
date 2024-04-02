@@ -264,13 +264,13 @@ export namespace Components {
      */
     interface InnoRadio {
         /**
+          * Whether element is checked.
+         */
+        "checked": boolean | undefined;
+        /**
           * Whether component is disabled.
          */
         "disabled": boolean;
-        /**
-          * Current form value for the connected radio button elements.
-         */
-        "formValue": string | undefined;
         /**
           * Label to show.
          */
@@ -288,7 +288,7 @@ export namespace Components {
           * The tab index.
          */
         "tabIdx": number;
-        "unselect": (formValue: string) => Promise<void>;
+        "type": string;
         /**
           * Radio button value.
          */
@@ -299,7 +299,7 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
     interface InnoSelect {
-        /**
+      /**
           * Whether the select is disabled or not.
          */
         "disabled": boolean;
@@ -559,7 +559,7 @@ declare global {
         new (): HTMLInnoPopoverElement;
     };
     interface HTMLInnoRadioElementEventMap {
-        "valueChange": string;
+        "valueChange": boolean;
     }
     /**
      * Represents the default radiobutton for the Innomics applications.
@@ -759,6 +759,7 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
+        "name"?: string;
         /**
           * Form entry name.
          */
@@ -917,9 +918,47 @@ declare namespace LocalJSX {
      */
     interface InnoRadio {
         /**
+          * Whether element is checked.
+         */
+        "checked"?: boolean | undefined;
+        /**
           * Whether component is disabled.
          */
         "disabled"?: boolean;
+        /**
+          * Label to show.
+         */
+        "label"?: string;
+        "name"?: string;
+        /**
+          * Checked status has been changed.
+         */
+        "onValueChange"?: (event: InnoRadioCustomEvent<boolean>) => void;
+        /**
+          * Whether the component is readonly.
+         */
+        "readonly"?: boolean;
+        /**
+          * Whether the checkbox have to be selected.
+         */
+        "required"?: boolean;
+        /**
+          * The tab index.
+         */
+        "tabIdx"?: number;
+        "type"?: string;
+        /**
+          * Radio button value.
+         */
+        "value"?: string;
+        /**
+          * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
+    interface InnoSelect {
+        
+      "disabled"?: boolean;
         /**
           * Current form value for the connected radio button elements.
          */

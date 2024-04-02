@@ -257,24 +257,8 @@
         <inno-checkbox label="error" checked="true" variant="dark" required class="ng-invalid"></inno-checkbox>
       </div>
     </div>
-
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="normal" indeterminate="true" variant="dark"></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" indeterminate="true" variant="dark" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" indeterminate="true" variant="dark" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" indeterminate="true" variant="dark" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" indeterminate="true" variant="dark" required class="ng-invalid"></inno-checkbox>
-      </div>
-    </div>
+<<<<<<< Updated upstream
+=======
 
     <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
       <div>
@@ -313,15 +297,40 @@
       </div>
     </div>
 
-    <form id="testform">
-      <div><inno-checkbox name="cb1" label="checkbox1"></inno-checkbox></div>
-      <div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
+    <form action="" id="form111">
+    <input type="radio" name="radioGroup1" value="val4" />
 
-      <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
-      <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
-      <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
-      <button type="submit">submit</button>
+    <div>
+     <inno-radio
+     type="radio"
+      name="radioGroup1"
+      label="value1"
+      value="val1"
+    >
+    </inno-radio>
+    <inno-radio
+    type="radio"
+      name="radioGroup1"
+      label="value2"
+      value="val2"
+    >
+    </inno-radio>
+    <inno-radio
+    type="radio"
+      name="radioGroup1"
+      label="value3"
+      value="val3"
+    >
+    </inno-radio>
+
+    <inno-checkbox name="ch" label="disabled"></inno-checkbox>
+
+    <button type="submit">submit</button>
     </form>
+
+
+    </div>
+>>>>>>> Stashed changes
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -361,13 +370,14 @@
       }
     });
 
-    document.getElementById('testform').addEventListener('submit', event => {
+    document.getElementById('form111').addEventListener('submit', event => {
       event.preventDefault();
       console.log(event);
-
-      const formData = new FormData(event.target);
-      const formProps = Object.fromEntries(formData);
-      console.log(formProps);
+             const form = event.target;
+       // get the field that you want
+       console.log(form.elements);
+       const userInputField = form.elements['ch']; // radioGroup1
+       alert(userInputField.value);
     })
   </script>
 </html>

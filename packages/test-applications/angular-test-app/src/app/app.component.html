@@ -1,12 +1,5 @@
 <inno-icon icon="home"></inno-icon>
 
-<inno-breadcrumb>
-  <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
-  <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
-</inno-breadcrumb>
-
-<!-- <inno-button type="primary">dfewf4e</inno-button> -->
-
 <form [formGroup]="innomoticsForm">
   <inno-input name="bubu" label="Inputbox" value="0" variant="light">
     <input type="number" [formControl]="innoInput" />
@@ -21,59 +14,47 @@
     <inno-select-item label="dewde" value="12"></inno-select-item>
     <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>
-
-  <div class="container">
-    <div>
-      <inno-checkbox
-        variant="light"
-        name="checkboxtest1"
-        formControlName="checkboxtest1"
-        label="checkbox label"
-        indeterminate="true"
-      ></inno-checkbox>
-    </div>
-    <div>
-      <inno-checkbox
-        name="checkboxtest2"
-        variant="light"
-        formControlName="checkboxtest2"
-        label="checkbox label"
-      ></inno-checkbox>
-    </div>
+  <!-- <inno-button type="primary">dfewf4e</inno-button> -->
+  <div>
+    <!-- <inno-checkbox variant="light" formControlName="checkboxtest1" label="checkbox label"></inno-checkbox> -->
   </div>
 
-  <div class="container">
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value1"
-        value="value1"
-        formControlName="radioGroup1"
-      ></inno-radio>
-    </div>
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value2"
-        value="value2"
-        formControlName="radioGroup1"
-      >
-      </inno-radio>
-    </div>
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value3"
-        value="value3"
-        formControlName="radioGroup1"
-      >
-      </inno-radio>
-    </div>
+  <div>
+    <!-- <input type="radio" formControlName="radioGroup1" value="val1" /> -->
+    <inno-radio
+      name="radioGroup1"
+      label="value1"
+      value="val1"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
+    <inno-radio
+      name="radioGroup1"
+      label="value2"
+      value="val2"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
+    <inno-radio
+      name="radioGroup1"
+      label="value3"
+      value="val3"
+      formControlName="radioGroup1"
+    >
+    </inno-radio>
   </div>
 </form>
 
-<div class="container">InnoInput value: {{ innoInput.value }}</div>
+<inno-breadcrumb>
+  <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
+  <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+</inno-breadcrumb>
 
-<div class="container">InnoSelect value: {{ innoSelect.value }}</div>
+<div class="container">
+  {{ innoInput.value }}
+  {{ innoSelect.value }}
+</div>
 
-<div class="container">Form value: {{ formValue }}</div>
+<div class="container">
+  {{ formValue }}
+</div>

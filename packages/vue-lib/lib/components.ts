@@ -126,6 +126,18 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
 export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radio', undefined, [
   'variant',
   'tabIdx',
+  'label',
+  'name',
+  'value',
+  'checked',
+  'disabled',
+  'readonly',
+  'required',
+  'valueChange'
+]);
+
+
+export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
   'name',
   'value',
   'label',

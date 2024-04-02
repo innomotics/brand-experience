@@ -45,6 +45,9 @@ export class InnoCheckbox {
   @Prop()
   label = '';
 
+  @Prop()
+  name: string;
+
   /**
    * Whether element is checked.
    */
@@ -240,29 +243,29 @@ export class InnoCheckbox {
     );
   }
 
-  // get value() {
-  //   return this.value;
-  // }
-  // set value(v) {
-  //   this.value = v;
-  // }
+  get value() {
+    return this.value;
+  }
+  set value(v) {
+    this.value = v;
+  }
 
-  // get form() {
-  //   return this.elementInternals.form;
+  get form() {
+    return this.elementInternals.form;
+  }
+  // get name() {
+  //   return this.hostElement.getAttribute('name');
   // }
-  // // get name() {
-  // //   return this.hostElement.getAttribute('name');
-  // // }
-  // get type() {
-  //   return this.type;
-  // }
-  // get validity() {
-  //   return this.elementInternals.validity;
-  // }
-  // get validationMessage() {
-  //   return this.elementInternals.validationMessage;
-  // }
-  // get willValidate() {
-  //   return this.elementInternals.willValidate;
-  // }
+  get type() {
+    return this.type;
+  }
+  get validity() {
+    return this.elementInternals.validity;
+  }
+  get validationMessage() {
+    return this.elementInternals.validationMessage;
+  }
+  get willValidate() {
+    return this.elementInternals.willValidate;
+  }
 }
