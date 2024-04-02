@@ -148,13 +148,13 @@ export namespace Components {
      */
     interface InnoRadio {
         /**
-          * Whether element is checked.
-         */
-        "checked": boolean | undefined;
-        /**
           * Whether component is disabled.
          */
         "disabled": boolean;
+        /**
+          * Current form value for the connected radio button elements.
+         */
+        "formValue": string | undefined;
         /**
           * Label to show.
          */
@@ -172,7 +172,7 @@ export namespace Components {
           * The tab index.
          */
         "tabIdx": number;
-        "type": string;
+        "unselect": (formValue: string) => Promise<void>;
         /**
           * Radio button value.
          */
@@ -393,7 +393,7 @@ declare global {
         new (): HTMLInnoPopoverElement;
     };
     interface HTMLInnoRadioElementEventMap {
-        "valueChange": boolean;
+        "valueChange": string;
     }
     /**
      * Represents the default radiobutton for the Innomics applications.
@@ -630,13 +630,13 @@ declare namespace LocalJSX {
      */
     interface InnoRadio {
         /**
-          * Whether element is checked.
-         */
-        "checked"?: boolean | undefined;
-        /**
           * Whether component is disabled.
          */
         "disabled"?: boolean;
+        /**
+          * Current form value for the connected radio button elements.
+         */
+        "formValue"?: string | undefined;
         /**
           * Label to show.
          */
@@ -645,7 +645,7 @@ declare namespace LocalJSX {
         /**
           * Checked status has been changed.
          */
-        "onValueChange"?: (event: InnoRadioCustomEvent<boolean>) => void;
+        "onValueChange"?: (event: InnoRadioCustomEvent<string>) => void;
         /**
           * Whether the component is readonly.
          */
@@ -658,7 +658,6 @@ declare namespace LocalJSX {
           * The tab index.
          */
         "tabIdx"?: number;
-        "type"?: string;
         /**
           * Radio button value.
          */

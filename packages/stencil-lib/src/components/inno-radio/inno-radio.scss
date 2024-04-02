@@ -4,10 +4,14 @@ $checkbox-size: 20px;
 $border-size: 1.5px;
 
 @mixin checkmark-base {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   background-color: colors.$primary-200;
   border-radius: 50%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 :host {
@@ -190,10 +194,11 @@ $border-size: 1.5px;
 .checksign {
   @include checkmark-base;
 
-  display: none;
+  display: inline-block;
+  visibility: hidden;
 
   &.checked {
-    display: block;
+    visibility: visible;
 
     &.light {
       background-color: colors.$primary-200;
