@@ -29,3 +29,24 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.icon-wrapper{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:7px;
+
+  .icon-item{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    min-width: 200px;
+    border: 1px solid innomotics.$interaction-dark-default;
+    &:hover
+    {
+      border: 1px solid innomotics.$interaction-dark-hover;
+    }
+  }
+}

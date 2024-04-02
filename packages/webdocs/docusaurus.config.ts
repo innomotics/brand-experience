@@ -75,6 +75,12 @@ const config: Config = {
           label: 'Fonts',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'iconsSidebar',
+          position: 'left',
+          label: 'Icons',
+        },
+        {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',

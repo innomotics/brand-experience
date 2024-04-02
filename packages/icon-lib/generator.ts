@@ -12,6 +12,9 @@ const regexes: RegExp[] = [
 ];
 //passsing directoryPath and callback function
 let moduleContent = "";
+
+let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/ix-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div class='icon-wrapper'>";
+
 let clearName = (name: string) => {
   return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();
 };
@@ -36,7 +39,11 @@ fs.readdir(directoryPath, (err, files) => {
     // Do whatever you want to do with the file
     let content = fs.readFileSync(path.join(directoryPath, file));
     let name = path.parse(path.join(directoryPath, file)).name;
-    moduleContent += `export const inno_${clearName(name)} = "${optimizeSvg(content)}";\n`;
+    let clearedName = clearName(name);
+    moduleContent += `export const inno_${clearedName} = "${optimizeSvg(content)}";\n`;
+    readmeContent += `<div class="icon-item"><InnoIcon icon="${clearedName}" size="64"></InnoIcon><div>${clearedName}</div></div>`;
   });
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
+  readmeContent += "</div>";
+  fs.writeFileSync("./readme.md",readmeContent);
 });
