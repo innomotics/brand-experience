@@ -326,6 +326,34 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant']
+})
+@Component({
+  selector: 'inno-radio',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
+})
+export class InnoRadio {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface InnoRadio extends Components.InnoRadio {
+  /**
+   * Checked status has been changed.
+   */
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
   inputs: ['disabled', 'formValue', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
   methods: ['unselect']
 })

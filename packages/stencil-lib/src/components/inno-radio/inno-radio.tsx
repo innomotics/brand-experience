@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, AttachInternals, State, Element, Event, EventEmitter, Listen, Method } from '@stencil/core';
+import { Component, Host, h, Prop, AttachInternals, State, Element, Event, EventEmitter, Listen } from '@stencil/core';
 
 /**
  * Represents the default radiobutton for the Innomics applications.
@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, AttachInternals, State, Element, Event, Event
 @Component({
   tag: 'inno-radio',
   styleUrl: 'inno-radio.scss',
-  shadow: true,
+  scoped: true,
   formAssociated: true,
 })
 export class InnoRadio {
@@ -32,6 +32,15 @@ export class InnoRadio {
   tabIdx: number = 0;
 
   /**
+   * Label to show.
+   */
+  @Prop()
+  label = '';
+
+  @Prop()
+  type: string;
+
+  /**
    *
    */
   @Prop()
@@ -44,16 +53,10 @@ export class InnoRadio {
   value: string;
 
   /**
-   * Label to show.
+   * Whether element is checked.
    */
-  @Prop()
-  label = '';
-
-  /**
-   * Current form value for the connected radio button elements.
-   */
-  @Prop({ mutable: true })
-  formValue: string | undefined;
+  @Prop({ mutable: true, reflect: true })
+  checked: boolean | undefined;
 
   /**
    * Whether component is disabled.
@@ -77,15 +80,7 @@ export class InnoRadio {
    * Checked status has been changed.
    */
   @Event()
-  valueChange: EventEmitter<string>;
-
-  get form() {
-    return this.elementInternals.form;
-  }
-
-  get type() {
-    return this.hostElement.localName;
-  }
+  valueChange: EventEmitter<boolean>;
 
   @Listen('focusin')
   onFocus() {
@@ -96,14 +91,6 @@ export class InnoRadio {
     }
   }
 
-  // Update the form value
-  // and remove the selection for the given control
-  @Method()
-  async unselect(formValue: string) {
-    this.formValue = formValue;
-    this.elementInternals.setFormValue(null);
-  }
-
   @Listen('focusout')
   onFocusOut() {
     this.isFocused = false;
@@ -112,46 +99,12 @@ export class InnoRadio {
   @Listen('keydown')
   handleKeyDown(ev: KeyboardEvent) {
     if (ev.key === 'Enter') {
-      this.dispatchSelection();
+      this.changeCheckedState();
     }
-  }
-
-  isChecked() {
-    return this.value === this.formValue;
   }
 
   formDisabledCallback(disabled: boolean) {
     this.disabled = disabled;
-  }
-
-  getTarget() {
-    if (this.hostElement.hasAttribute('formControlName')) {
-      return 'angular';
-    } else {
-      return 'html';
-    }
-  }
-
-  // Dispatch the form value among the normal form elements
-  // Iterate over the control which have the same name as this control
-  // and clear the form state and selection
-  handleHtmlForm() {
-    console.log('handle form');
-
-    const elements = this.elementInternals.form.elements.namedItem(this.name) as RadioNodeList;
-    elements.forEach(node => {
-      // Double cast because of typescript casting error
-      const radioControl = node as any as InnoRadio;
-
-      if (radioControl.value !== this.value) {
-        radioControl.unselect(this.value);
-      }
-    });
-  }
-
-  handleAngularForm() {
-    // Angular form is handled by a custom radio button
-    // which will dispatch the value for the given
   }
 
   // Check whether the component cannot be interacted
@@ -160,22 +113,27 @@ export class InnoRadio {
     return this.disabled || this.readonly;
   }
 
-  dispatchSelection() {
+  changeCheckedState() {
+    console.log('inno-radio :: changeCheckedState');
+
     if (this.elementInDisabledInteractionMode()) {
       return;
     }
 
-    console.log('DISPATCH ' + this.value);
+    // if (this.checked) {
+    //   return;
+    // }
 
-    this.formValue = this.value;
-    this.elementInternals.setFormValue(this.value, 'checked');
-    this.valueChange.emit(this.value);
+    // const x = this.elementInternals.form.elements.namedItem('radioGroup1') as RadioNodeList;
 
-    if (this.getTarget() === 'html') {
-      this.handleHtmlForm();
-    } else {
-      this.handleAngularForm();
-    }
+    // x.value = this.value;
+
+    this.checked = true;
+    // this.valueChange.emit(this.checked);
+    // console.log(this.value);
+
+    // this.elementInternals.setFormValue('checked');
+    this.elementInternals.setFormValue(this.value);
   }
 
   checkRequiredState(): boolean {
@@ -197,7 +155,7 @@ export class InnoRadio {
     // No error state for checked state
     // Only valid error state for now is the required and not checked case
     // The error class interferes with the hover and active classes
-    if (this.isChecked()) {
+    if (this.checked) {
       return false;
     }
 
@@ -224,7 +182,7 @@ export class InnoRadio {
     return {
       light: this.variant === 'light',
       dark: this.variant === 'dark',
-      checked: this.isChecked(),
+      checked: this.checked,
       focus: this.isFocused,
       disabled: this.disabled,
       error: this.checkErrorState(),
@@ -240,7 +198,7 @@ export class InnoRadio {
     };
 
     return (
-      <div class={classes} onClick={() => this.dispatchSelection()}>
+      <div class={classes} onClick={() => this.changeCheckedState()}>
         {this.checkSignComponent()}
       </div>
     );
@@ -262,17 +220,19 @@ export class InnoRadio {
     };
 
     return (
-      <span class={classes} onClick={() => this.dispatchSelection()}>
+      <span class={classes} onClick={() => this.changeCheckedState()}>
         {this.label}
       </span>
     );
   }
 
   render() {
+    console.log(`Value: ${this.value}, Checked: ${this.checked}`);
+
     const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
 
     return (
-      <Host role="radio" tabIndex={tabIndexValue} ariaChecked={this.isChecked()}>
+      <Host role="radio" tabIndex={tabIndexValue} ariaChecked={this.checked}>
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>

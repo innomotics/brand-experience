@@ -257,71 +257,6 @@
         <inno-checkbox label="error" checked="true" variant="dark" required class="ng-invalid"></inno-checkbox>
       </div>
     </div>
-
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="normal" indeterminate="true" variant="dark"></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" indeterminate="true" variant="dark" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" indeterminate="true" variant="dark" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" indeterminate="true" variant="dark" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" indeterminate="true" variant="dark" required class="ng-invalid"></inno-checkbox>
-      </div>
-    </div>
-
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div>
-        <inno-radio label="Label" checked="true" variant="light"></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="readonly" checked="true" variant="light" readonly></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="disabled" checked="true" variant="light" disabled></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="required" checked="true" variant="light" required></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="error" checked="true" variant="light" required class="ng-invalid"></inno-radio>
-      </div>
-    </div>
-
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-radio label="normal" checked="false" variant="dark"></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="readonly" checked="false" variant="dark" readonly></inno-radio>
-
-      </div>
-      <div>
-        <inno-radio label="disabled" checked="false" variant="dark" disabled></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="required" checked="false" variant="dark" required></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="error" checked="false" variant="dark" required class="ng-invalid"></inno-radio>
-      </div>
-    </div>
-
-    <form id="testform">
-      <div><inno-checkbox name="cb1" label="checkbox1"></inno-checkbox></div>
-      <div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
-
-      <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
-      <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
-      <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
-      <button type="submit">submit</button>
-    </form>
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -360,14 +295,5 @@
         popover.visible = true;
       }
     });
-
-    document.getElementById('testform').addEventListener('submit', event => {
-      event.preventDefault();
-      console.log(event);
-
-      const formData = new FormData(event.target);
-      const formProps = Object.fromEntries(formData);
-      console.log(formProps);
-    })
   </script>
 </html>
