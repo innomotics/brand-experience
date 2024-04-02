@@ -295,35 +295,12 @@
       </div>
     </div>
 
-    <form action="" id="form111">
-    <input type="radio" name="radioGroup1" value="val4" />
-
-    <div>
-     <inno-radio
-     type="radio"
-      name="radioGroup1"
-      label="value1"
-      value="val1"
-    >
-    </inno-radio>
-    <inno-radio
-    type="radio"
-      name="radioGroup1"
-      label="value2"
-      value="val2"
-    >
-    </inno-radio>
-    <inno-radio
-    type="radio"
-      name="radioGroup1"
-      label="value3"
-      value="val3"
-    >
-    </inno-radio>
-
+    <form id="form111">
+      <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
+      <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
+      <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
       <button type="submit">submit</button>
     </form>
-    </div>
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -366,11 +343,10 @@
     document.getElementById('form111').addEventListener('submit', event => {
       event.preventDefault();
       console.log(event);
-             const form = event.target;
-       // get the field that you want
-       console.log(form.elements);
-       const userInputField = form.elements['ch']; // radioGroup1
-       alert(userInputField.value);
+
+      const formData = new FormData(event.target);
+      const formProps = Object.fromEntries(formData);
+      console.log(formProps);
     })
   </script>
 </html>
