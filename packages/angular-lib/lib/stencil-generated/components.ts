@@ -107,14 +107,14 @@ export declare interface InnoButton extends Components.InnoButton {}
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'indeterminate', 'label', 'name', 'readonly', 'required', 'tabIdx', 'variant']
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'variant']
 })
 @Component({
   selector: 'inno-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'indeterminate', 'label', 'name', 'readonly', 'required', 'tabIdx', 'variant'],
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'variant'],
 })
 export class InnoCheckbox {
   protected el: HTMLElement;
@@ -326,14 +326,15 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant']
+  inputs: ['disabled', 'formValue', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
+  methods: ['unselect']
 })
 @Component({
   selector: 'inno-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
+  inputs: ['disabled', 'formValue', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
 })
 export class InnoRadio {
   protected el: HTMLElement;
@@ -349,7 +350,7 @@ export declare interface InnoRadio extends Components.InnoRadio {
   /**
    * Checked status has been changed.
    */
-  valueChange: EventEmitter<CustomEvent<boolean>>;
+  valueChange: EventEmitter<CustomEvent<string>>;
 }
 
 
