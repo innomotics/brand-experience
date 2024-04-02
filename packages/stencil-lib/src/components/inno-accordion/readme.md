@@ -53,6 +53,13 @@ import {InnoAccordion} from '@innomotics/ix-react-lib';
 | `variant`   | `variant`   |             | `"dark" \| "light"` | `'light'`   |
 
 
+## Events
+
+| Event              | Description                                                  | Type                                                                      |
+| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| `collapsedChanged` | This event is fired whenever the accordion is opened/closed. | `CustomEvent<{ element: HTMLInnoAccordionElement; collapsed: boolean; }>` |
+
+
 ## Dependencies
 
 ### Depends on

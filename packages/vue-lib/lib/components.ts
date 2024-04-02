@@ -14,7 +14,8 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'collapsed',
   'last',
   'inner',
-  'label'
+  'label',
+  'collapsedChanged'
 ]);
 
 

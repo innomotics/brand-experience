@@ -180,6 +180,10 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
 }
+export interface InnoAccordionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoAccordionElement;
+}
 export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbElement;
@@ -213,7 +217,18 @@ export interface InnoToggleCustomEvent<T> extends CustomEvent<T> {
     target: HTMLInnoToggleElement;
 }
 declare global {
+    interface HTMLInnoAccordionElementEventMap {
+        "collapsedChanged": { element: HTMLInnoAccordionElement, collapsed: boolean };
+    }
     interface HTMLInnoAccordionElement extends Components.InnoAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoAccordionElementEventMap>(type: K, listener: (this: HTMLInnoAccordionElement, ev: InnoAccordionCustomEvent<HTMLInnoAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoAccordionElementEventMap>(type: K, listener: (this: HTMLInnoAccordionElement, ev: InnoAccordionCustomEvent<HTMLInnoAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoAccordionElement: {
         prototype: HTMLInnoAccordionElement;
@@ -434,6 +449,10 @@ declare namespace LocalJSX {
         "inner"?: boolean;
         "label"?: string;
         "last"?: boolean;
+        /**
+          * This event is fired whenever the accordion is opened/closed.
+         */
+        "onCollapsedChanged"?: (event: InnoAccordionCustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>) => void;
         "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumb {

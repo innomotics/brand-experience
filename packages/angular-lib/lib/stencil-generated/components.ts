@@ -22,11 +22,17 @@ export class InnoAccordion {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['collapsedChanged']);
   }
 }
 
 
-export declare interface InnoAccordion extends Components.InnoAccordion {}
+export declare interface InnoAccordion extends Components.InnoAccordion {
+  /**
+   * This event is fired whenever the accordion is opened/closed.
+   */
+  collapsedChanged: EventEmitter<CustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>>;
+}
 
 
 @ProxyCmp({
