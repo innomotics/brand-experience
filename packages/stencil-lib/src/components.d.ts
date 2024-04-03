@@ -99,7 +99,7 @@ export namespace Components {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface InnoFooterItem {
         /**
@@ -312,7 +312,7 @@ declare global {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface HTMLInnoFooterItemElement extends Components.InnoFooterItem, HTMLStencilElement {
     }
@@ -545,7 +545,7 @@ declare namespace LocalJSX {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface InnoFooterItem {
         /**
@@ -670,7 +670,7 @@ declare module "@stencil/core" {
             /**
              * Represents an inno-footer item.
              * Wrap an element for the inno-footer parent.
-             * Example are defined in the footer element.
+             * See the InnoFooter docs for more information.
              */
             "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;

@@ -11,7 +11,7 @@ Represents an inno-footer item.
 
 Wrap an element for the inno-footer parent.
 
-Example are defined in the footer element.
+See the InnoFooter docs for more information.
 
 ## Properties
 

@@ -1,13 +1,13 @@
 import { Component, Host, h, Prop, Element, Watch } from '@stencil/core';
 
-const IGNORED_ELEMENTS = ['A', 'P', 'inno-icon'];
+const IGNORED_ELEMENTS = ['A', 'P', 'inno-icon', 'SPAN'];
 
 /**
  * Represents an inno-footer item.
  *
  * Wrap an element for the inno-footer parent.
  *
- * Example are defined in the footer element.
+ * See the InnoFooter docs for more information.
  */
 @Component({
   tag: 'inno-footer-item',

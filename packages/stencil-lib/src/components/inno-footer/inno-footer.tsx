@@ -2,6 +2,9 @@ import { Component, Host, Prop, h, Element, Watch } from '@stencil/core';
 
 /**
  * Represents the general footer for the Innomotics applications.
+ *
+ * @slot links - containing the links elements
+ * @slot icons - containing the icon elements
  */
 @Component({
   tag: 'inno-footer',

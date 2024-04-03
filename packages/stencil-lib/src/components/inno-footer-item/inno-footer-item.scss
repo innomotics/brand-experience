@@ -24,7 +24,7 @@
     }
   }
 
-  &.dark :where(::slotted(a), ::slotted(p), ::slotted(inno-icon)) {
+  &.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
     @include labels;
 
     margin-block-start: 0;
@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
 
-    &.light :where(::slotted(a), ::slotted(p), ::slotted(inno-icon)) {
+    &.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
       color: colors.$primary-200;
 
       &:hover {
@@ -52,7 +52,7 @@
       }
     }
 
-    &.dark :where(::slotted(a), ::slotted(p), ::slotted(inno-icon)) {
+    &.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
       color: colors.$primary-100;
 
       &:hover {
