@@ -119,6 +119,7 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
 <!-- Auto Generated Below -->
 
+
 ## Overview
 
 Checkbox for Innomatics design system.
@@ -135,12 +136,14 @@ Checkbox for Innomatics design system.
 | `tabIdx`   | `tab-idx`  | The tab index.                            | `number`            | `0`         |
 | `variant`  | `variant`  | Theme variant of the component.           | `"dark" \| "light"` | `'light'`   |
 
+
 ## Events
 
 | Event         | Description                      | Type                   |
 | ------------- | -------------------------------- | ---------------------- |
 | `valueChange` | Checked status has been changed. | `CustomEvent<boolean>` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

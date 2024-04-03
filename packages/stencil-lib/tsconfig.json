@@ -6,11 +6,11 @@
     "experimentalDecorators": true,
     "lib": [
       "dom",
-      "es2017"
+      "ES2019"
     ],
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "es2017",
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "ESNext",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",

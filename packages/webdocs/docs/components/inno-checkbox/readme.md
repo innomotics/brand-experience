@@ -6,7 +6,7 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoCheckbox label="value1" variant="dark"></InnoCheckbox>
+    <InnoCheckbox label="checkbox label" variant="dark"></InnoCheckbox>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ## Standalone usage

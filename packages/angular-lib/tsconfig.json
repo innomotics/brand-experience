@@ -19,13 +19,13 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "importHelpers": true,
-    "target": "ES2017",
+    "target": "ESNext",
     "module": "ESNext",
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
+      "ESNext",
       "dom"
     ]
   },
