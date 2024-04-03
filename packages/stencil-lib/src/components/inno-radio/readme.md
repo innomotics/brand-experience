@@ -1,4 +1,24 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoRadio} from '@innomotics/ix-react-lib';
+
 # Inno-radio
+
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <form>
+      <div><InnoRadio name="group" value="value1" label="option 1" variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group" value="value2" label="option 2" variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group" value="value3" label="option 3" variant="dark"></InnoRadio></div>
+    </form>
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+
+  </TabItem>
+  <TabItem value="React" label="React">
+
+  </TabItem>
+</Tabs>
 
 <!-- Auto Generated Below -->
 
