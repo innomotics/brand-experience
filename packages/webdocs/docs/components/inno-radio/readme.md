@@ -13,9 +13,50 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
     </form>
   </TabItem>
   <TabItem value="Angular" label="Angular">
+    The component is compatible with the Angular reactive form.
+
+    Optional required state or validator can be added if control is required.
+
+    ```html
+    <form [formGroup]="form">
+      <div><inno-radio name="radioGroup1" value="value1" label="option 1" formControlName="radioGroup1"></inno-radio></div>
+      <div><inno-radio name="radioGroup1" value="value3" label="option 2" formControlName="radioGroup1"></inno-radio></div>
+      <div><inno-radio name="radioGroup1" value="value2" label="option 3" formControlName="radioGroup1"></inno-radio></div>
+    </form>
+    ```
+
+    ```ts
+    class Component {
+      form: FormGroup;
+
+      exampleInit() {
+        this.form = new FormGroup({
+          radioGroup1: new FormControl('value1', [Validators.required]),
+        });
+      }
+    }
+    ```
 
   </TabItem>
   <TabItem value="React" label="React">
+    ```jsx
+    <form>
+      <div><InnoRadio name="group" value="value1" label="option 1"></InnoRadio></div>
+      <div><InnoRadio name="group" value="value2" label="option 2"></InnoRadio></div>
+      <div><InnoRadio name="group" value="value3" label="option 3"></InnoRadio></div>
+    </form>
+    ```
+  </TabItem>
+  <TabItem value="Javascript" label="Javascript">
+    The component is compatible with normal html based form.
+
+    ```html
+    <form >
+      <div><inno-radio name="radioGroup1" value="value1" label="option 1"></inno-radio></div>
+      <div><inno-radio name="radioGroup1" value="value3" label="option 2"></inno-radio></div>
+      <div><inno-radio name="radioGroup1" value="value2" label="option 3"></inno-radio></div>
+    </form>
+    ```
 
   </TabItem>
 </Tabs>
