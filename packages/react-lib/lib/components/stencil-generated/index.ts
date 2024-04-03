@@ -17,6 +17,7 @@ export const InnoFooter = /*@__PURE__*/createReactComponent<JSX.InnoFooter, HTML
 export const InnoFooterItem = /*@__PURE__*/createReactComponent<JSX.InnoFooterItem, HTMLInnoFooterItemElement>('inno-footer-item');
 export const InnoIcon = /*@__PURE__*/createReactComponent<JSX.InnoIcon, HTMLInnoIconElement>('inno-icon');
 export const InnoInput = /*@__PURE__*/createReactComponent<JSX.InnoInput, HTMLInnoInputElement>('inno-input');
+export const InnoLoader = /*@__PURE__*/createReactComponent<JSX.InnoLoader, HTMLInnoLoaderElement>('inno-loader');
 export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInnoPaneElement>('inno-pane');
 export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HTMLInnoPopoverElement>('inno-popover');
 export const InnoRadio = /*@__PURE__*/createReactComponent<JSX.InnoRadio, HTMLInnoRadioElement>('inno-radio');

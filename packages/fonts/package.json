@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-fonts",
-  "version": "0.0.1-alpha.10",
+  "version": "0.0.1-alpha.15",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -10,7 +10,7 @@
     "lib": "lib"
   },
   "files": [
-    "lib"
+    "dist/"
   ],
   "repository": {
     "type": "git",
@@ -18,7 +18,6 @@
   },
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
-    "sassbuild": "npx sass --style=compressed ./lib/styles",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\""

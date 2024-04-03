@@ -22,11 +22,17 @@ export class InnoAccordion {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['collapsedChanged']);
   }
 }
 
 
-export declare interface InnoAccordion extends Components.InnoAccordion {}
+export declare interface InnoAccordion extends Components.InnoAccordion {
+  /**
+   * This event is fired whenever the accordion is opened/closed.
+   */
+  collapsedChanged: EventEmitter<CustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>>;
+}
 
 
 @ProxyCmp({
@@ -240,6 +246,28 @@ export declare interface InnoInput extends Components.InnoInput {
 
   valueChanged: EventEmitter<CustomEvent<string | number>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['size']
+})
+@Component({
+  selector: 'inno-loader',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['size'],
+})
+export class InnoLoader {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoLoader extends Components.InnoLoader {}
 
 
 @ProxyCmp({

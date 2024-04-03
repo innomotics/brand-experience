@@ -1,6 +1,37 @@
 # inno-input
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoInput} from '@innomotics/ix-react-lib';
 
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+    <InnoInput label="Power" variant="dark">
+     <input type="number" />
+    </InnoInput> 
+  </TabItem>
+  <TabItem value="Angular" label="Angular">
+    ```js
+    <inno-input label="Power" variant="dark">
+     <input type="number" />
+    </inno-input>  
+    ```
+  </TabItem>
+  <TabItem value="React" label="React">
+    ```js
+    <InnoInput label="Power" variant="dark">
+     <input type="number" />
+    </InnoInput> 
+    ```
+  </TabItem>
+    <TabItem value="Vue" label="Vue">
+    ```js
+    <InnoInput label="Power" variant="dark">
+     <input type="number" />
+    </InnoInput> 
+    ```
+  </TabItem>
+</Tabs>
 
 <!-- Auto Generated Below -->
 

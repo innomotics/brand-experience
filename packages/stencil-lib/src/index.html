@@ -14,10 +14,6 @@
         border: 1px solid black;
         margin: 5px;
       }
-
-      [data-inno-footer-item-style="dark"] {
-        color: red;
-      }
     </style>
   </head>
 
@@ -32,6 +28,10 @@
         <inno-toggle variant="light" disabled></inno-toggle>
       </div>
     </div>
+    <div>
+      <inno-loader size="88"></inno-loader>
+    </div>
+
     <span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
     <span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
     <span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
@@ -326,102 +326,30 @@
     <div class="separator-dummy">separator dummy</div>
 
     <inno-footer variant="dark" copyright="@ Innomotics 2024">
-      <!-- <inno-footer-item>
-        <inno-button variant="secondary" icon="arrow-right" color-variant="light">tertiary button</inno-button>
-      </inno-footer-item> -->
-      <inno-footer-item><div>attribute?</div></inno-footer-item>
-      <inno-footer-item><p>Corporate Information</p></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><inno-icon icon="applications" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item><inno-icon icon="car" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item><inno-icon icon="capture" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item><inno-icon icon="cloud-filled" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item><a>Privacy Notice</a></inno-footer-item>
-      <inno-footer-item><a>Cookie Notice</a></inno-footer-item>
-      <inno-footer-item><a>Term of use</a></inno-footer-item>
-      <inno-footer-item><a>Whistleblowing</a></inno-footer-item>
-      <inno-footer-item><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+      <inno-footer-item slot="links"><span>Whistleblowing</span></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="applications" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="car" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="capture" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="cloud-filled" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
     </inno-footer>
 
     <div class="separator-dummy">separator dummy</div>
 
     <inno-footer variant="light" copyright="@ Innomotics 2024">
-      <!-- <inno-footer-item>
-        <inno-button variant="secondary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
-      </inno-footer-item> -->
-      <inno-footer-item><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item><a>Privacy Notice</a></inno-footer-item>
-      <inno-footer-item><a>Cookie Notice</a></inno-footer-item>
-      <inno-footer-item><a>Term of use</a></inno-footer-item>
-      <inno-footer-item><a>Whistleblowing</a></inno-footer-item>
-      <inno-footer-item>
-        <inno-icon icon="about" theme="dark"></inno-icon>
-      </inno-footer-item>
+      <inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>Whistleblowing</a></inno-footer-item>
+      <inno-footer-item  slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
     </inno-footer>
 
     <div class="separator-dummy">separator dummy</div>
-
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div class="inno-radiobutton">
-        <input type="radio" id="rw1" />
-        <label for="rw1">unchecked</label>
-      </div>
-
-      <div class="inno-radiobutton">
-        <input type="radio" id="rw2" checked />
-        <label for="rw2">checked</label>
-      </div>
-
-      <div class="inno-radiobutton">
-        <input type="radio" id="rw3" disabled />
-        <label for="rw3">disabled</label>
-      </div>
-
-      <div class="inno-radiobutton">
-        <input type="radio" id="rw4" checked disabled />
-        <label for="rw4">checked disabled</label>
-      </div>
-
-      <div class="inno-radiobutton">
-        <input type="radio" id="rw5" required />
-        <label for="rw5">error</label>
-      </div>
-    </div>
-
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div class="inno-radiobutton inno-dark">
-        <input type="radio" id="rd1" />
-        <label for="rd1">unchecked</label>
-      </div>
-
-      <div class="inno-radiobutton inno-dark">
-        <input type="radio" id="rd2" checked />
-        <label for="rd2">checked</label>
-      </div>
-
-      <div class="inno-radiobutton inno-dark">
-        <input type="radio" id="rd3" disabled />
-        <label for="rd3">disabled</label>
-      </div>
-
-      <div class="inno-radiobutton inno-dark">
-        <input type="radio" id="rd4" checked disabled />
-        <label for="rd4">checked disabled</label>
-      </div>
-
-      <div class="inno-radiobutton inno-dark">
-        <input type="radio" id="rd5" required />
-        <label for="rd5">error</label>
-      </div>
-    </div>
 
     <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
       <div>

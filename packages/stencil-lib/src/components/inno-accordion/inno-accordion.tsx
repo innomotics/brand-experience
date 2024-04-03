@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'inno-accordion',
@@ -13,12 +13,18 @@ export class InnoAccordion {
   @Prop({ mutable: true }) inner = false;
   @Prop() label: string;
 
+  /**
+   * This event is fired whenever the accordion is opened/closed.
+   */
+  @Event() collapsedChanged: EventEmitter<{ element: HTMLInnoAccordionElement, collapsed: boolean }>;
+
   @Element() hostElement!: HTMLInnoAccordionElement;
 
   private anchorElementRef: HTMLAnchorElement;
 
   private onHeaderClick() {
     this.collapsed = !this.collapsed;
+    this.collapsedChanged.emit({ element: this.hostElement, collapsed: this.collapsed });
   }
 
   private toggleHoveredClass(hovered: boolean) {
@@ -35,13 +41,13 @@ export class InnoAccordion {
     return (
       <Host>
         <a class={{
-            'accordion': true,
-            'light': this.variant === 'light',
-            'dark': this.variant === 'dark',
-            'last': this.last,
-            'open': !this.collapsed,
-            'inner': this.inner,
-          }}
+          'accordion': true,
+          'light': this.variant === 'light',
+          'dark': this.variant === 'dark',
+          'last': this.last,
+          'open': !this.collapsed,
+          'inner': this.inner,
+        }}
           ref={(ref) => (this.anchorElementRef = ref)}
         >
 

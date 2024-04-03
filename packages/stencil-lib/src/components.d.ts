@@ -100,7 +100,7 @@ export namespace Components {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface InnoFooterItem {
         /**
@@ -123,6 +123,9 @@ export namespace Components {
         "name": string;
         "value": string | number;
         "variant": 'light' | 'dark';
+    }
+    interface InnoLoader {
+        "size": number;
     }
     interface InnoPane {
         "closeOnBackdropClick": boolean;
@@ -217,6 +220,10 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
 }
+export interface InnoAccordionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoAccordionElement;
+}
 export interface InnoBreadcrumbCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoBreadcrumbElement;
@@ -254,7 +261,18 @@ export interface InnoToggleCustomEvent<T> extends CustomEvent<T> {
     target: HTMLInnoToggleElement;
 }
 declare global {
+    interface HTMLInnoAccordionElementEventMap {
+        "collapsedChanged": { element: HTMLInnoAccordionElement, collapsed: boolean };
+    }
     interface HTMLInnoAccordionElement extends Components.InnoAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoAccordionElementEventMap>(type: K, listener: (this: HTMLInnoAccordionElement, ev: InnoAccordionCustomEvent<HTMLInnoAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoAccordionElementEventMap>(type: K, listener: (this: HTMLInnoAccordionElement, ev: InnoAccordionCustomEvent<HTMLInnoAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoAccordionElement: {
         prototype: HTMLInnoAccordionElement;
@@ -338,7 +356,7 @@ declare global {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface HTMLInnoFooterItemElement extends Components.InnoFooterItem, HTMLStencilElement {
     }
@@ -368,6 +386,12 @@ declare global {
     var HTMLInnoInputElement: {
         prototype: HTMLInnoInputElement;
         new (): HTMLInnoInputElement;
+    };
+    interface HTMLInnoLoaderElement extends Components.InnoLoader, HTMLStencilElement {
+    }
+    var HTMLInnoLoaderElement: {
+        prototype: HTMLInnoLoaderElement;
+        new (): HTMLInnoLoaderElement;
     };
     interface HTMLInnoPaneElementEventMap {
         "expandedChanged": ExpandedChangedEvent;
@@ -474,6 +498,7 @@ declare global {
         "inno-footer-item": HTMLInnoFooterItemElement;
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
+        "inno-loader": HTMLInnoLoaderElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
         "inno-radio": HTMLInnoRadioElement;
@@ -489,6 +514,10 @@ declare namespace LocalJSX {
         "inner"?: boolean;
         "label"?: string;
         "last"?: boolean;
+        /**
+          * This event is fired whenever the accordion is opened/closed.
+         */
+        "onCollapsedChanged"?: (event: InnoAccordionCustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>) => void;
         "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumb {
@@ -582,7 +611,7 @@ declare namespace LocalJSX {
     /**
      * Represents an inno-footer item.
      * Wrap an element for the inno-footer parent.
-     * Example are defined in the footer element.
+     * See the InnoFooter docs for more information.
      */
     interface InnoFooterItem {
         /**
@@ -606,6 +635,9 @@ declare namespace LocalJSX {
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
         "value"?: string | number;
         "variant"?: 'light' | 'dark';
+    }
+    interface InnoLoader {
+        "size"?: number;
     }
     interface InnoPane {
         "closeOnBackdropClick"?: boolean;
@@ -718,6 +750,7 @@ declare namespace LocalJSX {
         "inno-footer-item": InnoFooterItem;
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
+        "inno-loader": InnoLoader;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
         "inno-radio": InnoRadio;
@@ -746,11 +779,12 @@ declare module "@stencil/core" {
             /**
              * Represents an inno-footer item.
              * Wrap an element for the inno-footer parent.
-             * Example are defined in the footer element.
+             * See the InnoFooter docs for more information.
              */
             "inno-footer-item": LocalJSX.InnoFooterItem & JSXBase.HTMLAttributes<HTMLInnoFooterItemElement>;
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
+            "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             /**

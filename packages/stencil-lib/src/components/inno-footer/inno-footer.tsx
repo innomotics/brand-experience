@@ -2,6 +2,9 @@ import { Component, Host, Prop, h, Element, Watch } from '@stencil/core';
 
 /**
  * Represents the general footer for the Innomotics applications.
+ *
+ * @slot links - containing the links elements
+ * @slot icons - containing the icon elements
  */
 @Component({
   tag: 'inno-footer',
@@ -24,12 +27,12 @@ export class InnoFooter {
   @Prop()
   copyright = '';
 
-  @Watch('variant')
-  watchVariant() {
+  componentDidLoad() {
     this.cascadeFooterStyle();
   }
 
-  componentDidLoad() {
+  @Watch('variant')
+  watchVariant() {
     this.cascadeFooterStyle();
   }
 
@@ -58,11 +61,28 @@ export class InnoFooter {
     return <div class={classes}>{this.copyright}</div>;
   }
 
+  linkNodes() {
+    return (
+      <div class={{ links: true }}>
+        <slot name="links"></slot>
+      </div>
+    );
+  }
+
+  iconNodes() {
+    return (
+      <div class={{ icons: true }}>
+        <slot name="icons"></slot>
+      </div>
+    );
+  }
+
   render() {
     return (
       <Host class={this.variantStyle()}>
         {this.createCopyrightNode()}
-        <slot></slot>
+        {this.linkNodes()}
+        {this.iconNodes()}
       </Host>
     );
   }

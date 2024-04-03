@@ -83,3 +83,4 @@ jobs:
             packages/vue-lib/dist
             packages/angular-lib/dist
             packages/fonts/dist
+            packages/icon-lib/dist

@@ -1,6 +1,6 @@
 # inno-radiobutton
 
-Represents the default radiobutton for the Innomics applications.
+Radio button for the Innomics applications.
 
 ## Classes
 

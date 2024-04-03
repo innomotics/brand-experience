@@ -14,7 +14,8 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'collapsed',
   'last',
   'inner',
-  'label'
+  'label',
+  'collapsedChanged'
 ]);
 
 
@@ -93,6 +94,11 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'label',
   'variant',
   'valueChanged'
+]);
+
+
+export const InnoLoader = /*@__PURE__*/ defineContainer<JSX.InnoLoader>('inno-loader', undefined, [
+  'size'
 ]);
 
 
