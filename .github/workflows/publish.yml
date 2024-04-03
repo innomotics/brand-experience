@@ -10,9 +10,6 @@ concurrency:
 jobs:
   build-lib:
     uses: ./.github/workflows/build.yml
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
   deploy:
     needs: [build-lib]
     runs-on: ubuntu-latest
@@ -39,3 +36,20 @@ jobs:
         run: |
           echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
           lerna publish from-package --no-private --yes
+
+  deploy-docs:
+    if: ${{ (github.repository == 'innomotics/IX') && (github.ref == 'refs/heads/main') }}
+    runs-on: ubuntu-latest
+    needs: [build-lib]
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.docsdeployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4  
+        id: docsdeployment
+        
+                  
