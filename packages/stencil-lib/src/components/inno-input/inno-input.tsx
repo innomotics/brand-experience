@@ -95,19 +95,6 @@ export class InnoInput {
       >
         <span class={{ label: true, float: this.isActive, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
         <slot></slot>
-        {/* <input
-          ref={el => (this.inputElementRef = el as HTMLInputElement)}
-          type={this.type}
-          min={this.min}
-          max={this.max}
-          class={{ light: this.variant === 'light', dark: this.variant === 'dark', disabled: this.disabled }}
-          disabled={this.disabled}
-          onBlur={() => this.onBlur()}
-          onFocus={() => this.onFocus()}
-          onFocusout={() => this.onFocusout()}
-          value={this.value}
-          onInput={event => this.inputChanged(event)}
-        /> */}
       </Host>
     );
   }
