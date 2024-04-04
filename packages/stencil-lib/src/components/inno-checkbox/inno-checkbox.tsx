@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h, Event, EventEmitter, Element, Listen, State, AttachInternals } from '@stencil/core';
 import { a11yBoolean } from '../../utils/a11y';
-import { isNotPresent } from '../../utils/utils';
+import { isPresent } from '../../utils/utils';
 
 /**
  * Checkbox for Innomatics design system.
@@ -45,6 +45,9 @@ export class InnoCheckbox {
   @Prop()
   label = '';
 
+  /**
+   *
+   */
   @Prop()
   name: string;
 
@@ -171,7 +174,7 @@ export class InnoCheckbox {
   // Value is undefined (no exact value or interaction)
   // and indeterminate is explicitly requested
   checkIndeterminateState(): boolean {
-    return isNotPresent(this.checked) && this.indeterminate;
+    return !isPresent(this.checked) && this.indeterminate;
   }
 
   commonStyles() {
@@ -193,6 +196,8 @@ export class InnoCheckbox {
       ...this.commonStyles(),
       checkbox: true,
     };
+
+    console.log(classes);
 
     return (
       <div class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
@@ -227,16 +232,7 @@ export class InnoCheckbox {
 
     return (
       <Host tabIndex={tabIndexValue} role="checkbox" aria-checked={a11yBoolean(this.checked)}>
-        <input
-          type="checkbox"
-          aria-checked={a11yBoolean(this.checked)}
-          tabindex={-1}
-          name={this.name}
-          disabled={this.disabled}
-          checked={this.checked}
-          required={this.required}
-          onChange={event => this.changeCheckedState((event.target as any).checked)}
-        />
+        <input type="checkbox" disabled={this.disabled} checked={this.checked} aria-checked={a11yBoolean(this.checked)} tabindex={-1} />
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>
