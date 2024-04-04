@@ -759,6 +759,9 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
+        /**
+          * Form entry name.
+         */
         "name"?: string;
         /**
           * Form entry name.

@@ -67,6 +67,7 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 
 <!-- Auto Generated Below -->
 
+
 ## Overview
 
 Represents the default radiobutton for the Innomics applications.
@@ -85,15 +86,19 @@ Represents the default radiobutton for the Innomics applications.
 | `value`     | `value`      | Radio button value.                                         | `string`            | `undefined` |
 | `variant`   | `variant`    | Theme variant of the component.                             | `"dark" \| "light"` | `'light'`   |
 
+
 ## Events
 
 | Event         | Description                      | Type                  |
 | ------------- | -------------------------------- | --------------------- |
 | `valueChange` | Checked status has been changed. | `CustomEvent<string>` |
 
+
 ## Methods
 
 ### `unselect(formValue: string) => Promise<void>`
+
+
 
 #### Parameters
 
@@ -105,6 +110,9 @@ Represents the default radiobutton for the Innomics applications.
 
 Type: `Promise<void>`
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
