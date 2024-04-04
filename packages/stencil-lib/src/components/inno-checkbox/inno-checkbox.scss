@@ -38,6 +38,17 @@ $border-size: 1px;
     position: absolute;
     width: 1px;
   }
+
+  input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
 }
 
 .checkbox {
@@ -491,18 +502,6 @@ $border-size: 1px;
 
   &.checked {
     &.error {
-      &.light {
-        color: colors.$primary-200;
-      }
-
-      &.dark {
-        color: colors.$primary-300;
-      }
-    }
-  }
-
-  &.indeterminate {
-    &.readonly {
       &.light {
         color: colors.$primary-200;
       }
