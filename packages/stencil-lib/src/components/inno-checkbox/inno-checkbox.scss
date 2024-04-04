@@ -511,4 +511,16 @@ $border-size: 1px;
       }
     }
   }
+
+  &.indeterminate {
+    &.readonly {
+      &.light {
+        color: colors.$primary-200;
+      }
+
+      &.dark {
+        color: colors.$primary-300;
+      }
+    }
+  }
 }

@@ -53,7 +53,6 @@ export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inn
   'tabIdx',
   'name',
   'label',
-  'name',
   'checked',
   'disabled',
   'readonly',

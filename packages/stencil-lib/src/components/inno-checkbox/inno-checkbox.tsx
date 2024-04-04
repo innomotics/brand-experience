@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h, Event, EventEmitter, Element, Listen, State, AttachInternals } from '@stencil/core';
 import { a11yBoolean } from '../../utils/a11y';
-import { isPresent } from '../../utils/utils';
+import { isNotPresent } from '../../utils/utils';
 
 /**
  * Checkbox for Innomatics design system.
@@ -44,12 +44,6 @@ export class InnoCheckbox {
    */
   @Prop()
   label = '';
-
-  /**
-   *
-   */
-  @Prop()
-  name: string;
 
   /**
    * Whether element is checked.
@@ -174,7 +168,7 @@ export class InnoCheckbox {
   // Value is undefined (no exact value or interaction)
   // and indeterminate is explicitly requested
   checkIndeterminateState(): boolean {
-    return !isPresent(this.checked) && this.indeterminate;
+    return isNotPresent(this.checked) && this.indeterminate;
   }
 
   commonStyles() {
@@ -196,8 +190,6 @@ export class InnoCheckbox {
       ...this.commonStyles(),
       checkbox: true,
     };
-
-    console.log(classes);
 
     return (
       <div class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
@@ -232,36 +224,45 @@ export class InnoCheckbox {
 
     return (
       <Host tabIndex={tabIndexValue} role="checkbox" aria-checked={a11yBoolean(this.checked)}>
-        <input type="checkbox" disabled={this.disabled} checked={this.checked} aria-checked={a11yBoolean(this.checked)} tabindex={-1} />
+        <input
+          type="checkbox"
+          aria-checked={a11yBoolean(this.checked)}
+          tabindex={-1}
+          name={this.name}
+          disabled={this.disabled}
+          checked={this.checked}
+          required={this.required}
+          onChange={event => this.changeCheckedState((event.target as any).checked)}
+        />
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>
     );
   }
 
-  get value() {
-    return this.value;
-  }
-  set value(v) {
-    this.value = v;
-  }
-
-  get form() {
-    return this.elementInternals.form;
-  }
-  // get name() {
-  //   return this.hostElement.getAttribute('name');
+  // get value() {
+  //   return this.value;
   // }
-  get type() {
-    return this.type;
-  }
-  get validity() {
-    return this.elementInternals.validity;
-  }
-  get validationMessage() {
-    return this.elementInternals.validationMessage;
-  }
-  get willValidate() {
-    return this.elementInternals.willValidate;
-  }
+  // set value(v) {
+  //   this.value = v;
+  // }
+
+  // get form() {
+  //   return this.elementInternals.form;
+  // }
+  // // get name() {
+  // //   return this.hostElement.getAttribute('name');
+  // // }
+  // get type() {
+  //   return this.type;
+  // }
+  // get validity() {
+  //   return this.elementInternals.validity;
+  // }
+  // get validationMessage() {
+  //   return this.elementInternals.validationMessage;
+  // }
+  // get willValidate() {
+  //   return this.elementInternals.willValidate;
+  // }
 }
