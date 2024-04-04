@@ -27,7 +27,7 @@ export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>(
 export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumbItem>('inno-breadcrumb-item', undefined, [
   'label',
   'icon',
-  'orderId',
+  'itemIndex',
   'iconSize',
   'visible',
   'showChevron',

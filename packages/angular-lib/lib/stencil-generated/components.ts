@@ -56,21 +56,21 @@ export class InnoBreadcrumb {
 
 export declare interface InnoBreadcrumb extends Components.InnoBreadcrumb {
   /**
-   * Crumb item clicked event
+   * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
    */
-  itemClick: EventEmitter<CustomEvent<string>>;
+  itemClick: EventEmitter<CustomEvent<{itemIndex: number, label: string}>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['icon', 'iconSize', 'label', 'orderId']
+  inputs: ['icon', 'iconSize', 'label']
 })
 @Component({
   selector: 'inno-breadcrumb-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'iconSize', 'label', 'orderId'],
+  inputs: ['icon', 'iconSize', 'label'],
 })
 export class InnoBreadcrumbItem {
   protected el: HTMLElement;

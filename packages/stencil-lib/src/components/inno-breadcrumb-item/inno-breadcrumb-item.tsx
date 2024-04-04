@@ -25,10 +25,9 @@ export class BreadcrumbItem {
    * Icon to be displayed next ot the label
    */
   @Prop() icon: string;
-  /*
-  * Id to use in click event (optional will be generated automatically)
-  */
-  @Prop() orderId?: number;
+
+  /** @internal */ //will be generated automatically
+  @Prop() itemIndex: number;
   /*
   * The size of the icon if the icon property is not empty
   */
@@ -41,11 +40,7 @@ export class BreadcrumbItem {
   @Prop() showChevron = true;
 
   /**@internal */
-  @Event() breadcrumbItemClick: EventEmitter<number>;
-
-  componentDidLoad() {}
-
-  componentWillLoad() {}
+  @Event() breadcrumbItemClick: EventEmitter<{ itemIndex: number, label: string }>;
 
   render() {
     if (!this.visible) {
@@ -57,13 +52,13 @@ export class BreadcrumbItem {
         class={{
           'hide-chevron': !this.showChevron,
         }}
-        onClick={() => this.breadcrumbItemClick.emit(this.orderId)}
+        onClick={() => this.breadcrumbItemClick.emit({ itemIndex: this.itemIndex, label: this.label })}
       >
         <li>
           <a>
             {this.icon ? (<inno-icon icon={this.icon} size={this.iconSize}></inno-icon>) : this.label}
             <slot></slot>
-            {this.showChevron? (<inno-icon icon="chevron-right" class="chevron" size={this.iconSize}></inno-icon>): null}
+            {this.showChevron ? (<inno-icon icon="chevron-right" class="chevron" size={this.iconSize}></inno-icon>) : null}
           </a>
         </li>
       </Host>

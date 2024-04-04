@@ -15,13 +15,14 @@
   flex-wrap: nowrap;
   align-items: center;
   margin-right: 0.25rem;
-  max-width: 15rem;
+  white-space: nowrap;
   min-width: 0;
 
-  li{
+  li {
     display: contents;
     cursor: pointer;
-    a{
+
+    a {
       display: contents;
     }
   }

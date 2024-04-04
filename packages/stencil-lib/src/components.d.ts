@@ -26,11 +26,11 @@ export namespace Components {
          */
         "icon": string;
         "iconSize": number;
+        "itemIndex": number;
         /**
           * Breadcrumb label
          */
         "label": string;
-        "orderId"?: number;
         "showChevron": boolean;
         "visible": boolean;
     }
@@ -235,7 +235,7 @@ declare global {
         new (): HTMLInnoAccordionElement;
     };
     interface HTMLInnoBreadcrumbElementEventMap {
-        "itemClick": string;
+        "itemClick": {itemIndex: number, label: string};
     }
     interface HTMLInnoBreadcrumbElement extends Components.InnoBreadcrumb, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoBreadcrumbElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbElement, ev: InnoBreadcrumbCustomEvent<HTMLInnoBreadcrumbElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -252,7 +252,7 @@ declare global {
         new (): HTMLInnoBreadcrumbElement;
     };
     interface HTMLInnoBreadcrumbItemElementEventMap {
-        "breadcrumbItemClick": number;
+        "breadcrumbItemClick": { itemIndex: number, label: string };
     }
     interface HTMLInnoBreadcrumbItemElement extends Components.InnoBreadcrumbItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoBreadcrumbItemElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbItemElement, ev: InnoBreadcrumbItemCustomEvent<HTMLInnoBreadcrumbItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -457,9 +457,9 @@ declare namespace LocalJSX {
     }
     interface InnoBreadcrumb {
         /**
-          * Crumb item clicked event
+          * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
          */
-        "onItemClick"?: (event: InnoBreadcrumbCustomEvent<string>) => void;
+        "onItemClick"?: (event: InnoBreadcrumbCustomEvent<{itemIndex: number, label: string}>) => void;
     }
     interface InnoBreadcrumbItem {
         /**
@@ -467,12 +467,12 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         "iconSize"?: number;
+        "itemIndex"?: number;
         /**
           * Breadcrumb label
          */
         "label"?: string;
-        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<number>) => void;
-        "orderId"?: number;
+        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<{ itemIndex: number, label: string }>) => void;
         "showChevron"?: boolean;
         "visible"?: boolean;
     }
