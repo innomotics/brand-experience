@@ -32,8 +32,11 @@ export class AppComponent {
       checkboxtest1: this.formBuilder.control(undefined, [
         Validators.requiredTrue,
       ]),
+      checkboxtest2: this.formBuilder.control(undefined),
       radioGroup1: new FormControl('value1'),
     });
+
+    this.formValue = JSON.stringify(this.innomoticsForm.value);
 
     this.innomoticsForm.valueChanges.subscribe(
       () => (this.formValue = JSON.stringify(this.innomoticsForm.value)),

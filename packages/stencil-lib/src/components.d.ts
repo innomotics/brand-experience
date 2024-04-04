@@ -66,6 +66,9 @@ export namespace Components {
           * Label to show.
          */
         "label": string;
+        /**
+          * Form entry name.
+         */
         "name": string;
         /**
           * Whether the component is readonly.
@@ -577,6 +580,9 @@ declare namespace LocalJSX {
           * Label to show.
          */
         "label"?: string;
+        /**
+          * Form entry name.
+         */
         "name"?: string;
         /**
           * Checked status has been changed.

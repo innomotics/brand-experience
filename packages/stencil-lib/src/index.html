@@ -460,7 +460,10 @@
       </div>
     </div>
 
-    <form id="form111">
+    <form id="testform">
+      <div><inno-checkbox name="cb1" label="checkbox1"></inno-checkbox></div>
+      <div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
+
       <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
       <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
       <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
@@ -505,7 +508,7 @@
       }
     });
 
-    document.getElementById('form111').addEventListener('submit', event => {
+    document.getElementById('testform').addEventListener('submit', event => {
       event.preventDefault();
       console.log(event);
 
