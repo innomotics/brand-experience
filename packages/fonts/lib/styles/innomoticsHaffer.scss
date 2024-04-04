@@ -1,14 +1,8 @@
 
-$font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
-  InnomoticsHafferSQ-Heavy, InnomoticsHafferSQ-HeavyItalic,
-  InnomoticsHafferSQ-Light, InnomoticsHafferSQ-LightItalic,
-  InnomoticsHafferSQ-Medium, InnomoticsHafferSQ-MediumItalic,
-  InnomoticsHafferSQ-Regular, InnomoticsHafferSQ-RegularItalic,
-  InnomoticsHafferSQ-SemiBold, InnomoticsHafferSQ-SemiBoldItalic,
-  InnomoticsHafferSQ-Thin, InnomoticsHafferSQ-ThinItalic;
+$font-families: InnomoticsHafferSQ;
 
 @font-face {
-  font-family: "InnomoticsHafferSQ-Bold";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Bold"),
     local("InnomoticsHafferSQ-Bold"),
@@ -19,7 +13,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-BoldItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Bold Italic"),
     local("InnomoticsHafferSQ-BoldItalic"),
@@ -30,7 +24,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-Heavy";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Heavy"),
     local("InnomoticsHafferSQ-Heavy"),
@@ -41,7 +35,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-HeavyItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Heavy Italic"),
     local("InnomoticsHafferSQ-HeavyItalic"),
@@ -52,7 +46,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-Light";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Light"),
     local("InnomoticsHafferSQ-Light"),
@@ -63,7 +57,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-LightItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Light Italic"),
     local("InnomoticsHafferSQ-LightItalic"),
@@ -74,7 +68,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-Medium";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Medium"),
     local("InnomoticsHafferSQ-Medium"),
@@ -85,7 +79,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-MediumItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Medium Italic"),
     local("InnomoticsHafferSQ-MediumItalic"),
@@ -96,7 +90,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-Regular";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Regular"),
     local("InnomoticsHafferSQ-Regular"),
@@ -107,7 +101,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-RegularItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Regular Italic"),
     local("InnomoticsHafferSQ-RegularItalic"),
@@ -118,7 +112,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-SemiBold";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ SemiBold"),
     local("InnomoticsHafferSQ-SemiBold"),
@@ -129,7 +123,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-SemiBoldItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ SemiBold Italic"),
     local("InnomoticsHafferSQ-SemiBoldItalic"),
@@ -140,7 +134,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-Thin";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Thin"),
     local("InnomoticsHafferSQ-Thin"),
@@ -151,7 +145,7 @@ $font-families: InnomoticsHafferSQ-Bold, InnomoticsHafferSQ-BoldItalic,
   font-display: swap;
 }
 @font-face {
-  font-family: "InnomoticsHafferSQ-ThinItalic";
+  font-family: "InnomoticsHafferSQ";
   src:
     local("Innomotics Haffer SQ Thin Italic"),
     local("InnomoticsHafferSQ-ThinItalic"),
