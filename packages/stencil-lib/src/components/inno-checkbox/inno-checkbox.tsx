@@ -1,4 +1,6 @@
 import { Component, Host, Prop, h, Event, EventEmitter, Element, Listen, State, AttachInternals } from '@stencil/core';
+import { a11yBoolean } from '../../utils/a11y';
+import { isPresent } from '../../utils/utils';
 
 /**
  * Checkbox for Innomatics design system.
@@ -6,7 +8,7 @@ import { Component, Host, Prop, h, Event, EventEmitter, Element, Listen, State, 
 @Component({
   tag: 'inno-checkbox',
   styleUrl: 'inno-checkbox.scss',
-  shadow: true,
+  scoped: true,
   formAssociated: true,
 })
 export class InnoCheckbox {
@@ -37,6 +39,9 @@ export class InnoCheckbox {
   @Prop()
   label = '';
 
+  /**
+   *
+   */
   @Prop()
   name: string;
 
@@ -63,6 +68,13 @@ export class InnoCheckbox {
    */
   @Prop({ mutable: true, reflect: true })
   required = false;
+
+  /**
+   * Whether indeterminate state is enabled for the component.
+   * The component is in indeterminate state if
+   */
+  @Prop()
+  indeterminate: boolean = false;
 
   /**
    * Checked status has been changed.
@@ -130,7 +142,7 @@ export class InnoCheckbox {
     // No error state for checked state
     // Only valid error state for now is the required and not checked case
     // The error class interferes with the hover and active classes
-    if (this.checked) {
+    if (this.checked || this.checkIndeterminateState()) {
       return false;
     }
 
@@ -153,6 +165,12 @@ export class InnoCheckbox {
     return this.disabled ? false : this.readonly;
   }
 
+  // Value is undefined (no exact value or interaction)
+  // and indeterminate is explicitly requested
+  checkIndeterminateState(): boolean {
+    return !isPresent(this.checked) && this.indeterminate;
+  }
+
   commonStyles() {
     return {
       light: this.variant === 'light',
@@ -163,6 +181,7 @@ export class InnoCheckbox {
       error: this.checkErrorState(),
       readonly: this.checkReadonlyState(),
       required: this.checkRequiredState(),
+      indeterminate: this.checkIndeterminateState(),
     };
   }
 
@@ -171,6 +190,8 @@ export class InnoCheckbox {
       ...this.commonStyles(),
       checkbox: true,
     };
+
+    console.log(classes);
 
     return (
       <div class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
@@ -204,7 +225,8 @@ export class InnoCheckbox {
     const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
 
     return (
-      <Host tabIndex={tabIndexValue} role="checkbox" ariaChecked={this.checked}>
+      <Host tabIndex={tabIndexValue} role="checkbox" aria-checked={a11yBoolean(this.checked)}>
+        <input type="checkbox" disabled={this.disabled} checked={this.checked} aria-checked={a11yBoolean(this.checked)} tabindex={-1} />
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>

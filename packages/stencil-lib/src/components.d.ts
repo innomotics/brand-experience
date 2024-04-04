@@ -59,6 +59,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if
+         */
+        "indeterminate": boolean;
+        /**
           * Label to show.
          */
         "label": string;
@@ -565,6 +569,10 @@ declare namespace LocalJSX {
           * Whether component is disabled.
          */
         "disabled"?: boolean;
+        /**
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if
+         */
+        "indeterminate"?: boolean;
         /**
           * Label to show.
          */

@@ -26,6 +26,17 @@ $border-size: 1px;
 
   // Remove focus default style
   outline-width: 0;
+
+  input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
 }
 
 .checkbox {
@@ -106,17 +117,93 @@ $border-size: 1px;
     cursor: none;
 
     &.light {
-      background-color: colors.$primary-300;
-      border: 1px solid colors.$secondary-400;
+      background-color: colors.$secondary-200;
+      border: 1px solid colors.$secondary-200;
     }
 
     &.dark {
-      background-color: colors.$primary-200;
-      border: $border-size solid colors.$secondary-300;
+      background-color: colors.$secondary-800;
+      border: $border-size solid colors.$secondary-800;
     }
   }
 
   &.checked {
+    &.light {
+      background-color: colors.$primary-200;
+      border: $border-size solid colors.$primary-200;
+    }
+
+    &.dark {
+      background-color: colors.$primary-100;
+      border: $border-size solid colors.$primary-200;
+    }
+
+    &:hover {
+      &.light {
+        background-color: colors.$secondary-600;
+        border: $border-size solid colors.$secondary-600;
+      }
+
+      &.dark {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+    }
+
+    &.error {
+      &.light {
+        background-color: colors.$primary-200;
+        border: $border-size solid colors.$primary-200;
+      }
+
+      &.dark {
+        background-color: colors.$primary-100;
+        border: $border-size solid colors.$primary-100;
+      }
+    }
+
+    &:active {
+      &.light {
+        background-color: colors.$secondary-600;
+        border: $border-size solid colors.$secondary-600;
+      }
+
+      &.dark {
+        background-color: colors.$secondary-300;
+        border: $border-size solid colors.$secondary-300;
+      }
+    }
+
+    &.readonly {
+      cursor: none;
+
+      &.light {
+        background-color: colors.$primary-300;
+        border: $border-size solid colors.$primary-300;
+      }
+
+      &.dark {
+        background-color: colors.$primary-200;
+        border: $border-size solid colors.$primary-200;
+      }
+    }
+
+    &.disabled {
+      cursor: none;
+
+      &.light {
+        background-color: colors.$secondary-200;
+        border: $border-size solid colors.$secondary-200;
+      }
+
+      &.dark {
+        background-color: colors.$secondary-800;
+        border: $border-size solid colors.$secondary-800;
+      }
+    }
+  }
+
+  &.indeterminate {
     &.light {
       background-color: colors.$primary-200;
       border: 1px solid colors.$primary-200;
@@ -194,11 +281,10 @@ $border-size: 1px;
 }
 
 .checksign {
-  @include checkmark-base;
-
   display: none;
 
   &.checked {
+    @include checkmark-base;
     display: unset;
 
     &.light {
@@ -275,6 +361,77 @@ $border-size: 1px;
       }
     }
   }
+
+  &.indeterminate {
+    display: block;
+    width: 10px;
+    height: 2px;
+    border: none;
+    position: absolute;
+    transform: none;
+
+    &.light {
+      background-color: colors.$primary-300;
+    }
+
+    &.dark {
+      background-color: colors.$primary-200;
+    }
+
+    &:hover {
+      &.light {
+        background-color: colors.$primary-300;
+      }
+
+      &.dark {
+        background-color: colors.$primary-200;
+      }
+    }
+
+    &:active {
+      &.light {
+        background-color: colors.$primary-300;
+      }
+
+      &.dark {
+        background-color: colors.$primary-200;
+      }
+    }
+
+    &.readonly {
+      cursor: none;
+
+      &.light {
+        background-color: colors.$primary-200;
+      }
+
+      &.dark {
+        background-color: colors.$primary-300;
+      }
+    }
+
+    &.error {
+      &.light {
+        background-color: colors.$primary-300;
+      }
+
+      &.dark {
+        background-color: colors.$primary-200;
+      }
+    }
+
+    &.disabled {
+      cursor: none;
+
+      &.light {
+        background-color: colors.$secondary-400;
+      }
+
+      &.dark {
+        background-color: colors.$secondary-400;
+      }
+    }
+  }
 }
 
 .label {
@@ -341,14 +498,4 @@ $border-size: 1px;
       }
     }
   }
-}
-
-// Currently not implemented should not be deleted
-.indeterminate {
-  display: block;
-  width: 0.625rem;
-  height: 0.125rem;
-  border-bottom: 0.125rem solid colors.$primary-300;
-  position: absolute;
-  margin: 6px 0 0 0.25rem;
 }
