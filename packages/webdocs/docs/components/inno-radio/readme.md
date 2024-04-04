@@ -15,7 +15,7 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
   <TabItem value="Angular" label="Angular">
     The component is compatible with the Angular reactive form.
 
-    Optional required state or validator can be added if control is required.
+    Validator can be added if control is required.
 
     ```html
     <form [formGroup]="form">
@@ -39,6 +39,9 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 
   </TabItem>
   <TabItem value="React" label="React">
+    The component is compatible with normal html based form
+    and it is compatible with high-level form libraries.
+
     ```jsx
     <form>
       <div><InnoRadio name="group" value="value1" label="option 1"></InnoRadio></div>
@@ -46,6 +49,7 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
       <div><InnoRadio name="group" value="value3" label="option 3"></InnoRadio></div>
     </form>
     ```
+
   </TabItem>
   <TabItem value="Javascript" label="Javascript">
     The component is compatible with normal html based form.

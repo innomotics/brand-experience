@@ -51,12 +51,13 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
 export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inno-checkbox', undefined, [
   'variant',
   'tabIdx',
-  'label',
   'name',
+  'label',
   'checked',
   'disabled',
   'readonly',
   'required',
+  'indeterminate',
   'valueChange'
 ]);
 

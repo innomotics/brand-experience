@@ -4,8 +4,8 @@ $checkbox-size: 20px;
 $border-size: 1px;
 
 @mixin checkmark-base {
-  width: 4px;
-  height: 2px;
+  width: 5px;
+  height: 3px;
   display: block;
   position: absolute;
   border-top: none;
@@ -14,7 +14,7 @@ $border-size: 1px;
   border-bottom-style: solid;
   border-left-width: 0.0825rem;
   border-left-style: solid;
-  transform: translate(0.5px, -1px) rotate(-53deg) scale(2) skew(-8deg, -3deg);
+  transform: translate(0px, -1px) rotate(-53deg) scale(2) skew(-8deg, -3deg);
 }
 
 :host {
@@ -50,6 +50,7 @@ $border-size: 1px;
   cursor: pointer;
 
   &.focus {
+    transition: outline 300ms ease-in-out;
     outline: $border-size solid colors.$focus-100;
     outline-offset: 2px;
   }
@@ -490,6 +491,18 @@ $border-size: 1px;
 
   &.checked {
     &.error {
+      &.light {
+        color: colors.$primary-200;
+      }
+
+      &.dark {
+        color: colors.$primary-300;
+      }
+    }
+  }
+
+  &.indeterminate {
+    &.readonly {
       &.light {
         color: colors.$primary-200;
       }
