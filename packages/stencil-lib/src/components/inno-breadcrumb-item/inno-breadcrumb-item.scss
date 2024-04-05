@@ -14,9 +14,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  margin-right: 0.25rem;
   white-space: nowrap;
   min-width: 0;
+  gap: 4px;
 
   li {
     display: contents;
@@ -29,8 +29,6 @@
 
   .chevron {
     pointer-events: none;
-    margin-left: 0.5rem;
-    margin-right: 0rem;
   }
 
   ::slotted(a[href]) {
