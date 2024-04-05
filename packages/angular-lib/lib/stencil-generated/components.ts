@@ -326,7 +326,7 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'formValue', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
   methods: ['unselect']
 })
 @Component({
@@ -334,7 +334,7 @@ export declare interface InnoPopover extends Components.InnoPopover {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'formValue', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
+  inputs: ['checked', 'disabled', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
 })
 export class InnoRadio {
   protected el: HTMLElement;

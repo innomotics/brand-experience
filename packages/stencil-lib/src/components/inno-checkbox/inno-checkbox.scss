@@ -182,8 +182,8 @@ $border-size: 1px;
       }
 
       &.dark {
-        background-color: colors.$secondary-300;
-        border: $border-size solid colors.$secondary-300;
+        background-color: colors.$secondary-400;
+        border: $border-size solid colors.$secondary-400;
       }
     }
 
@@ -258,8 +258,8 @@ $border-size: 1px;
       }
 
       &.dark {
-        background-color: colors.$secondary-300;
-        border: $border-size solid colors.$secondary-300;
+        background-color: colors.$secondary-400;
+        border: $border-size solid colors.$secondary-400;
       }
     }
 
@@ -484,7 +484,7 @@ $border-size: 1px;
     }
 
     &.dark {
-      color: colors.$secondary-400;
+      color: colors.$primary-300;
     }
   }
 
