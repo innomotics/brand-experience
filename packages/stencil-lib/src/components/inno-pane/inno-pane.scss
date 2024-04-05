@@ -1,7 +1,6 @@
 @use '@innomotics/ix/styles/base';
 @use '@innomotics/ix/styles/colors';
 
-
 :host {
   display: block;
 
@@ -19,7 +18,6 @@
     visibility: hidden;
 
     .pane-content-container {
-
       &.pane-pos-top,
       &.pane-pos-bottom {
         height: 0 !important;
@@ -51,7 +49,7 @@
     z-index: 1001;
     background-color: colors.$primary-200;
     padding: 15px;
-    font-family: 'InnomoticsHafferSQ-Bold';
+    font-weight: bold;
     color: colors.$primary-300;
 
     .pane-title-container {

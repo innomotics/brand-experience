@@ -19,13 +19,14 @@
   }
 
   ol {
+    list-style:none;
     display: flex;
+    align-items:center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px;
 
     ::slotted(inno-breadcrumb-item:last-of-type) {
-      font-family: 'InnomoticsHafferSQ';
       font-weight: bold;
     }
   }

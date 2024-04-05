@@ -1,9 +1,9 @@
 @use '@innomotics/ix/styles/colors';
 
 @mixin labels {
-  font-family: 'InnomoticsHafferSQ-Light';
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
-  font-weight: 400;
   text-decoration: underline;
 }
 
