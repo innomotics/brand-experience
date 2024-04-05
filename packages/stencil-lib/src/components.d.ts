@@ -59,7 +59,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicityle requested and the checked status is not defined
          */
         "indeterminate": boolean;
         /**
@@ -157,18 +157,18 @@ export namespace Components {
      * Represents the default radiobutton for the Innomics applications.
      */
     interface InnoRadio {
+        "checked": boolean;
         /**
           * Whether component is disabled.
          */
         "disabled": boolean;
         /**
-          * Current form value for the connected radio button elements.
-         */
-        "formValue": string | undefined;
-        /**
           * Label to show.
          */
         "label": string;
+        /**
+          * Form entry name.
+         */
         "name": string;
         /**
           * Whether the component is readonly.
@@ -182,7 +182,7 @@ export namespace Components {
           * The tab index.
          */
         "tabIdx": number;
-        "unselect": (formValue: string) => Promise<void>;
+        "unselect": (_formValue: string) => Promise<void>;
         /**
           * Radio button value.
          */
@@ -573,7 +573,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicityle requested and the checked status is not defined
          */
         "indeterminate"?: boolean;
         /**
@@ -675,18 +675,18 @@ declare namespace LocalJSX {
      * Represents the default radiobutton for the Innomics applications.
      */
     interface InnoRadio {
+        "checked"?: boolean;
         /**
           * Whether component is disabled.
          */
         "disabled"?: boolean;
         /**
-          * Current form value for the connected radio button elements.
-         */
-        "formValue"?: string | undefined;
-        /**
           * Label to show.
          */
         "label"?: string;
+        /**
+          * Form entry name.
+         */
         "name"?: string;
         /**
           * Checked status has been changed.

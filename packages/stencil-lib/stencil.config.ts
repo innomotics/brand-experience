@@ -39,6 +39,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     targetAttr: 'checked',
     type: 'boolean',
   },
+  {
+    elementSelectors: 'inno-radio[ngModel],inno-radio[formControlName],inno-radio[formControl]',
+    event: 'valueChange',
+    targetAttr: 'value',
+    type: 'radio',
+  },
 ];
 
 export const config: Config = {

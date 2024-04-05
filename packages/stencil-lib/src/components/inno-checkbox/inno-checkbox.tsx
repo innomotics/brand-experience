@@ -72,6 +72,8 @@ export class InnoCheckbox {
   /**
    * Whether indeterminate state is enabled for the component.
    * The component is in indeterminate state if
+   * it is explicityle requested
+   * and the checked status is not defined
    */
   @Prop()
   indeterminate: boolean = false;
@@ -239,30 +241,4 @@ export class InnoCheckbox {
       </Host>
     );
   }
-
-  // get value() {
-  //   return this.value;
-  // }
-  // set value(v) {
-  //   this.value = v;
-  // }
-
-  // get form() {
-  //   return this.elementInternals.form;
-  // }
-  // // get name() {
-  // //   return this.hostElement.getAttribute('name');
-  // // }
-  // get type() {
-  //   return this.type;
-  // }
-  // get validity() {
-  //   return this.elementInternals.validity;
-  // }
-  // get validationMessage() {
-  //   return this.elementInternals.validationMessage;
-  // }
-  // get willValidate() {
-  //   return this.elementInternals.willValidate;
-  // }
 }

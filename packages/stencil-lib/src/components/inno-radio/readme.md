@@ -74,17 +74,17 @@ Represents the default radiobutton for the Innomics applications.
 
 ## Properties
 
-| Property    | Attribute    | Description                                                 | Type                | Default     |
-| ----------- | ------------ | ----------------------------------------------------------- | ------------------- | ----------- |
-| `disabled`  | `disabled`   | Whether component is disabled.                              | `boolean`           | `false`     |
-| `formValue` | `form-value` | Current form value for the connected radio button elements. | `string`            | `undefined` |
-| `label`     | `label`      | Label to show.                                              | `string`            | `''`        |
-| `name`      | `name`       |                                                             | `string`            | `undefined` |
-| `readonly`  | `readonly`   | Whether the component is readonly.                          | `boolean`           | `false`     |
-| `required`  | `required`   | Whether the checkbox have to be selected.                   | `boolean`           | `false`     |
-| `tabIdx`    | `tab-idx`    | The tab index.                                              | `number`            | `0`         |
-| `value`     | `value`      | Radio button value.                                         | `string`            | `undefined` |
-| `variant`   | `variant`    | Theme variant of the component.                             | `"dark" \| "light"` | `'light'`   |
+| Property   | Attribute  | Description                               | Type                | Default     |
+| ---------- | ---------- | ----------------------------------------- | ------------------- | ----------- |
+| `checked`  | `checked`  |                                           | `boolean`           | `undefined` |
+| `disabled` | `disabled` | Whether component is disabled.            | `boolean`           | `false`     |
+| `label`    | `label`    | Label to show.                            | `string`            | `''`        |
+| `name`     | `name`     | Form entry name.                          | `string`            | `undefined` |
+| `readonly` | `readonly` | Whether the component is readonly.        | `boolean`           | `false`     |
+| `required` | `required` | Whether the checkbox have to be selected. | `boolean`           | `false`     |
+| `tabIdx`   | `tab-idx`  | The tab index.                            | `number`            | `0`         |
+| `value`    | `value`    | Radio button value.                       | `string`            | `undefined` |
+| `variant`  | `variant`  | Theme variant of the component.           | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events
@@ -96,15 +96,15 @@ Represents the default radiobutton for the Innomics applications.
 
 ## Methods
 
-### `unselect(formValue: string) => Promise<void>`
+### `unselect(_formValue: string) => Promise<void>`
 
 
 
 #### Parameters
 
-| Name        | Type     | Description |
-| ----------- | -------- | ----------- |
-| `formValue` | `string` |             |
+| Name         | Type     | Description |
+| ------------ | -------- | ----------- |
+| `_formValue` | `string` |             |
 
 #### Returns
 

@@ -131,7 +131,7 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
   'name',
   'value',
   'label',
-  'formValue',
+  'checked',
   'disabled',
   'readonly',
   'required',

@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'inno-radio[ngModel],inno-radio[formControlName],inno-radio[formControl]',
   host: {
-    '(valueChange)': 'handleChangeEvent($event.target.checked)'
+    '(valueChange)': 'handleChangeEvent($event.target.value)'
   },
   providers: [
     {
