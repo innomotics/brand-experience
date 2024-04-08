@@ -53,10 +53,10 @@
     }
 
     &.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
-      color: colors.$primary-100;
+      color: colors.$primary-300;
 
       &:hover {
-        color: colors.$primary-100;
+        color: colors.$primary-300;
       }
     }
   }
