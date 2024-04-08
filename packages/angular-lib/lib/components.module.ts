@@ -5,15 +5,13 @@ import { DOCUMENT } from "@angular/common";
 import { defineCustomElements } from "@innomotics/ix/loader";
 import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
 import { BooleanValueAccessor } from "./stencil-generated/boolean-value-accessor";
-import { RadioValueAccessor } from "../public-api";
-// import { InnoRadioValueAccessor } from "../public-api";
+import { InnoRadioValueAccessor } from "../public-api";
 
 const DECLARATIONS = [
   ...DIRECTIVES,
   SelectValueAccessor,
   BooleanValueAccessor,
-  RadioValueAccessor,
-  // InnoRadioValueAccessor,
+  InnoRadioValueAccessor,
 ];
 
 @NgModule({

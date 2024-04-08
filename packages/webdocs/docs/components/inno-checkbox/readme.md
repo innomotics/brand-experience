@@ -6,7 +6,13 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoCheckbox label="checkbox label" variant="dark"></InnoCheckbox>
+    <div><InnoCheckbox label="unchecked" variant="dark"></InnoCheckbox></div>
+    <div><InnoCheckbox label="checked" variant="dark" checked></InnoCheckbox></div>
+    <div><InnoCheckbox label="required" variant="dark" required></InnoCheckbox></div>
+    <div><InnoCheckbox label="error" variant="dark" required error></InnoCheckbox></div>
+    <div><InnoCheckbox label="indeterminate" variant="dark" indeterminate></InnoCheckbox></div>
+    <div><InnoCheckbox label="readonly" variant="dark" readonly checked></InnoCheckbox></div>
+    <div><InnoCheckbox label="disabled" variant="dark" disabled checked></InnoCheckbox></div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ## Standalone usage
@@ -22,16 +28,20 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
     ## Form usage
 
-    The component is compatible with the Angular reactive form
-    and can be used as a standalone form control element
+    The component is compatible with the Angular reactive form and can be used as a standalone form control element
     or can be integrated into a group or array.
 
-    Optional required state or validator can be added if checkbox is required.
+    If error status is needed then the validity state of the given control should be used
+    as input for the error state property.
 
     ### Standalone form usage example:
 
     ```html
     <inno-checkbox label="label" [formControl]="controlRef"> </inno-checkbox>
+    ```
+
+    ```html
+    <inno-checkbox label="label" [formControl]="controlRef" required [error]="controlRef.valid" > </inno-checkbox>
     ```
 
     ```ts
@@ -75,15 +85,13 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
     ## Form usage
 
-    The component is compatible with normal html based form
-    and it is compatible with high-level form libraries.
+    The component is compatible with normal html based form and it is compatible with high-level form libraries.
 
   </TabItem>
   <TabItem value="Javascript" label="Javascript">
     ## Standalone usage
 
-    The component can be used as a standalone component
-    if form integration is not required.
+    The component can be used as a standalone component if form integration is not required.
 
     Direct Javascript usage:
 
@@ -99,12 +107,7 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 
     ## Form usage
 
-    Component can be used as a form element
-    and it integrates with the host form.
-
-    The official custom element form association is used in this case:
-
-    [https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-elements](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-elements)
+    Component can be used as a form element and it integrates with the host form.
 
     Form usage example:
 
@@ -126,17 +129,18 @@ Checkbox for Innomatics design system.
 
 ## Properties
 
-| Property        | Attribute       | Description                                                                                                                                                            | Type                | Default     |
-| --------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
-| `checked`       | `checked`       | Whether element is checked.                                                                                                                                            | `boolean`           | `undefined` |
-| `disabled`      | `disabled`      | Whether component is disabled.                                                                                                                                         | `boolean`           | `false`     |
-| `indeterminate` | `indeterminate` | Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicityle requested and the checked status is not defined | `boolean`           | `false`     |
-| `label`         | `label`         | Label to show.                                                                                                                                                         | `string`            | `''`        |
-| `name`          | `name`          | Form entry name.                                                                                                                                                       | `string`            | `undefined` |
-| `readonly`      | `readonly`      | Whether the component is readonly.                                                                                                                                     | `boolean`           | `false`     |
-| `required`      | `required`      | Whether the checkbox have to be selected.                                                                                                                              | `boolean`           | `false`     |
-| `tabIdx`        | `tab-idx`       | The tab index.                                                                                                                                                         | `number`            | `0`         |
-| `variant`       | `variant`       | Theme variant of the component.                                                                                                                                        | `"dark" \| "light"` | `'light'`   |
+| Property        | Attribute       | Description                                                                                                                                                          | Type                | Default     |
+| --------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| `checked`       | `checked`       | Whether element is checked.                                                                                                                                          | `boolean`           | `undefined` |
+| `disabled`      | `disabled`      | Whether component is disabled. In this state no other state effects are applied to the element like error.                                                           | `boolean`           | `false`     |
+| `error`         | `error`         | Whether the element is in error state. Error state can be defined if manual error handling is required.                                                              | `boolean`           | `false`     |
+| `indeterminate` | `indeterminate` | Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicity requested and the checked status is not defined | `boolean`           | `false`     |
+| `label`         | `label`         | Label to show.                                                                                                                                                       | `string`            | `''`        |
+| `name`          | `name`          | Form entry name.                                                                                                                                                     | `string`            | `undefined` |
+| `readonly`      | `readonly`      | Whether the component is readonly. In this state no other state effects are applied to the element like error.                                                       | `boolean`           | `false`     |
+| `required`      | `required`      | Mark the component as required and show the required marker. Validation is performed with this property.                                                             | `boolean`           | `false`     |
+| `tabIdx`        | `tab-idx`       | The tab index.                                                                                                                                                       | `number`            | `0`         |
+| `variant`       | `variant`       | Theme variant of the component.                                                                                                                                      | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events

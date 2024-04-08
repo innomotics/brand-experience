@@ -55,11 +55,15 @@ export namespace Components {
          */
         "checked": boolean | undefined;
         /**
-          * Whether component is disabled.
+          * Whether component is disabled. In this state no other state effects are applied to the element like error.
          */
         "disabled": boolean;
         /**
-          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicityle requested and the checked status is not defined
+          * Whether the element is in error state. Error state can be defined if manual error handling is required.
+         */
+        "error": boolean;
+        /**
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicity requested and the checked status is not defined
          */
         "indeterminate": boolean;
         /**
@@ -71,11 +75,11 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Whether the component is readonly.
+          * Whether the component is readonly. In this state no other state effects are applied to the element like error.
          */
         "readonly": boolean;
         /**
-          * Whether the checkbox have to be selected.
+          * Mark the component as required and show the required marker. Validation is performed with this property.
          */
         "required": boolean;
         /**
@@ -154,35 +158,39 @@ export namespace Components {
         "visible": boolean;
     }
     /**
-     * Represents the default radiobutton for the Innomics applications.
+     * Represents the default radio button for the Innomics applications.
      */
     interface InnoRadio {
         "checked": boolean;
         /**
-          * Whether component is disabled.
+          * Whether component is disabled. In this state no other state effects are applied to the element like error.
          */
         "disabled": boolean;
+        /**
+          * Whether the element is in error state. Error state can be defined if manual error handling is required.
+         */
+        "error": boolean;
         /**
           * Label to show.
          */
         "label": string;
         /**
-          * Form entry name.
+          * Form entry group name.
          */
         "name": string;
         /**
-          * Whether the component is readonly.
+          * Whether the component is readonly. In this state no other state effects are applied to the element like error.
          */
         "readonly": boolean;
         /**
-          * Whether the checkbox have to be selected.
+          * Mark the component as required and show the required marker. Validation is performed with this property.
          */
         "required": boolean;
         /**
           * The tab index.
          */
         "tabIdx": number;
-        "unselect": (_formValue: string) => Promise<void>;
+        "unselect": () => Promise<void>;
         /**
           * Radio button value.
          */
@@ -427,7 +435,7 @@ declare global {
         "valueChange": string;
     }
     /**
-     * Represents the default radiobutton for the Innomics applications.
+     * Represents the default radio button for the Innomics applications.
      */
     interface HTMLInnoRadioElement extends Components.InnoRadio, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoRadioElementEventMap>(type: K, listener: (this: HTMLInnoRadioElement, ev: InnoRadioCustomEvent<HTMLInnoRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -569,11 +577,15 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean | undefined;
         /**
-          * Whether component is disabled.
+          * Whether component is disabled. In this state no other state effects are applied to the element like error.
          */
         "disabled"?: boolean;
         /**
-          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicityle requested and the checked status is not defined
+          * Whether the element is in error state. Error state can be defined if manual error handling is required.
+         */
+        "error"?: boolean;
+        /**
+          * Whether indeterminate state is enabled for the component. The component is in indeterminate state if it is explicity requested and the checked status is not defined
          */
         "indeterminate"?: boolean;
         /**
@@ -589,11 +601,11 @@ declare namespace LocalJSX {
          */
         "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
         /**
-          * Whether the component is readonly.
+          * Whether the component is readonly. In this state no other state effects are applied to the element like error.
          */
         "readonly"?: boolean;
         /**
-          * Whether the checkbox have to be selected.
+          * Mark the component as required and show the required marker. Validation is performed with this property.
          */
         "required"?: boolean;
         /**
@@ -672,32 +684,36 @@ declare namespace LocalJSX {
         "visible"?: boolean;
     }
     /**
-     * Represents the default radiobutton for the Innomics applications.
+     * Represents the default radio button for the Innomics applications.
      */
     interface InnoRadio {
         "checked"?: boolean;
         /**
-          * Whether component is disabled.
+          * Whether component is disabled. In this state no other state effects are applied to the element like error.
          */
         "disabled"?: boolean;
+        /**
+          * Whether the element is in error state. Error state can be defined if manual error handling is required.
+         */
+        "error"?: boolean;
         /**
           * Label to show.
          */
         "label"?: string;
         /**
-          * Form entry name.
+          * Form entry group name.
          */
         "name"?: string;
         /**
-          * Checked status has been changed.
+          * Emits the associated value.
          */
         "onValueChange"?: (event: InnoRadioCustomEvent<string>) => void;
         /**
-          * Whether the component is readonly.
+          * Whether the component is readonly. In this state no other state effects are applied to the element like error.
          */
         "readonly"?: boolean;
         /**
-          * Whether the checkbox have to be selected.
+          * Mark the component as required and show the required marker. Validation is performed with this property.
          */
         "required"?: boolean;
         /**
@@ -802,7 +818,7 @@ declare module "@stencil/core" {
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             /**
-             * Represents the default radiobutton for the Innomics applications.
+             * Represents the default radio button for the Innomics applications.
              */
             "inno-radio": LocalJSX.InnoRadio & JSXBase.HTMLAttributes<HTMLInnoRadioElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
