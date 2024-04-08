@@ -16,6 +16,9 @@ export class InnoIcon {
    */
   @Prop() size: number = 16;
 
+  /**
+   * Color style of the icon.
+   */
   @Prop() theme: 'light' | 'dark' = 'light';
 
   @State() svgContent?: string;

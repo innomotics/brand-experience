@@ -11,15 +11,41 @@ export class InnoSelect {
   private itemsContainerRef?: HTMLDivElement;
   @State() navigationItem: HTMLInnoSelectItemElement;
 
-  @Prop() name: string;
+  /**
+   * Type of the select.
+   */
   @Prop() type: 'text' | 'number' = 'text';
+
+  /**
+   * Value of the select.
+   */
   @Prop({ mutable: true }) value: string;
+
+  /**
+   * Whether the select is focused or not.
+   */
   @Prop({ mutable: true }) isFocused: boolean;
-  @Prop({ reflect: true }) disabled: boolean = false;
-  @Prop() label: string;
-  @Prop() variant: 'light' | 'dark' = 'light';
+
+  /**
+   * Whether the select is disabled or not.
+   */
+  @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
+
+  /**
+   * Label for the select.
+   */
+  @Prop({ mutable: true }) label: string;
+
+  /**
+   * Color variant of the select.
+   */
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
   @State() isOpen: boolean = false;
   @Prop() iconDriven: boolean = false;
+
+  /**
+   * This event is fired when the value changes.
+   */
   @Event() valueChanged: EventEmitter<string>;
 
   selectClicked() {
@@ -129,8 +155,7 @@ export class InnoSelect {
     return this.items.find(i => i.value == this.value);
   }
 
-  get valueIsUndefined()
-  {
+  get valueIsUndefined() {
     return this.value === undefined || this.value === '' || this.value === null;
   }
   render() {

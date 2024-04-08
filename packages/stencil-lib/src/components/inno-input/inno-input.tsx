@@ -10,15 +10,37 @@ export class InnoInput {
   @Element() hostElement!: HTMLInnoInputElement;
   private inputElementRef?: HTMLInputElement;
 
-  @Prop() name: string;
+  /**
+   * Value of the input.
+   */
   @Prop({ mutable: true }) value: string | number;
+
+  /**
+   * Fired when the new value is valid.
+   */
   @Event() valueChanged: EventEmitter<string | number>;
 
   @State() isActive: boolean;
+
+  /**
+   * Whether the input is focused or not.
+   */
   @Prop({ mutable: true }) isFocused: boolean;
-  @Prop({ reflect: true }) disabled: boolean = false;
-  @Prop() label: string;
-  @Prop() variant: 'light' | 'dark' = 'light';
+
+  /**
+   * Whether the input is disabled or not.
+   */
+  @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
+  
+  /**
+   * Floating label for the input.
+   */
+  @Prop({ mutable: true }) label: string;
+
+  /**
+   * Color variant of the input.
+   */
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
   @State() isValid: boolean = true;
 
   get errorElements() {
@@ -54,7 +76,7 @@ export class InnoInput {
 
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
-    this.errorElements.forEach(ee=> ee.classList.add(this.variant));
+    this.errorElements.forEach(ee => ee.classList.add(this.variant));
     if (this.value) {
       this.isActive = true;
     }

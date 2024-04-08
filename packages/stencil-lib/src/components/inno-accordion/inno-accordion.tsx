@@ -6,15 +6,33 @@ import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil
   scoped: true
 })
 export class InnoAccordion {
+  /**
+   * Color variant of the accordion.
+   */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
-  @Prop({ mutable: true }) icon: string;
-  @Prop({ mutable: true }) collapsed = false;
-  @Prop({ mutable: true }) last = false;
-  @Prop({ mutable: true }) inner = false;
-  @Prop() label: string;
 
   /**
-   * This event is fired whenever the accordion is opened/closed.
+   * You can programatically open/close the accordion with this property.
+   */
+  @Prop({ mutable: true }) collapsed = false;
+
+  /**
+   * Whether the accordion is the last in a group of accordions. Needed for styling.
+   */
+  @Prop({ mutable: true }) last = false;
+
+  /**
+   * Whether it is an accordion inside another accordion. Gives a different style then the main one.
+   */
+  @Prop({ mutable: true }) inner = false;
+
+  /**
+   * Text to display for the accordion. Always visible whether the accordion is opened or closed.
+   */
+  @Prop({ mutable: true }) label: string;
+
+  /**
+   * This event is fired whenever the accordion is opened/closed via user interaction.
    */
   @Event() collapsedChanged: EventEmitter<{ element: HTMLInnoAccordionElement, collapsed: boolean }>;
 

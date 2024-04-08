@@ -6,15 +6,54 @@ import { Component, Element, Host, Prop, h } from '@stencil/core';
   scoped: true
 })
 export class InnoButton {
+  /**
+   * Variant of the button.
+   */
   @Prop({ mutable: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' = 'primary';
+
+  /**
+   * Color variant of the button.
+   */
   @Prop({ mutable: true }) colorVariant: 'light' | 'dark' = 'light';
+
+  /**
+   * Type of the button.
+   */
   @Prop() type: 'button' | 'submit' = 'button';
+
+  /**
+   * Tab index of the button.
+   */
   @Prop({ mutable: true }) tabIdx: number = 0;
+
+  /**
+   * Whether the button is disabled or not.
+   */
   @Prop({ reflect: true, mutable: true }) disabled = false;
+
+  /**
+   * Icon to use inside the button.
+   */
   @Prop({ mutable: true }) icon: string;
+
+  /**
+   * Where to put the icon relative to the text.
+   */
   @Prop({ mutable: true }) iconPosition: 'left' | 'right' = 'right';
+
+  /**
+   * Direction of the navigation button. Only has effect if the variant is 'navigation'.
+   */
   @Prop({ mutable: true }) navDirection: 'left' | 'right' = 'right';
+
+  /**
+   * Only show an icon.
+   */
   @Prop() iconOnly: boolean = false;
+
+  /**
+   * Special style for button lists.
+   */
   @Prop({reflect: true}) listType : boolean = false
 
   @Element() hostElement: HTMLInnoButtonElement;

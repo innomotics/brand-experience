@@ -10,7 +10,6 @@ import type { JSX } from '@innomotics/ix';
 
 export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('inno-accordion', undefined, [
   'variant',
-  'icon',
   'collapsed',
   'last',
   'inner',
@@ -86,7 +85,6 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
-  'name',
   'value',
   'isFocused',
   'disabled',
@@ -124,7 +122,6 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
 
 
 export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
-  'name',
   'type',
   'value',
   'isFocused',

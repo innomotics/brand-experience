@@ -13,13 +13,39 @@ export type ExpandedChangedEvent = {
 export class InnoPane {
   @Element() hostElement: HTMLInnoPaneElement;
 
-  @Prop() position: 'top' | 'left' | 'bottom' | 'right' = 'right';
+  /**
+   * Position of the pane.
+   */
+  @Prop({ mutable: true }) position: 'top' | 'left' | 'bottom' | 'right' = 'right';
+
+  /**
+   * Programatically control whether the pane is opened or closed.
+   */
   @Prop({ mutable: true }) expanded: boolean = false;
+
+  /**
+   * The pane comes with a close button by default. Hide it with this property.
+   */
   @Prop({ mutable: true }) hideCloseButton: boolean = false;
+
+  /**
+   * Title of the pane.
+   */
   @Prop({ mutable: true }) titleText: string;
+
+  /**
+   * Whether the pane is closeable by clicking outside of it.
+   */
   @Prop({ mutable: true }) closeOnBackdropClick: boolean = true;
+
+  /**
+   * Size of the pane.
+   */
   @Prop({ mutable: true }) paneSize: string = '100%';
 
+  /**
+   * This event is fired when the pane is opened or closed.
+   */
   @Event() expandedChanged: EventEmitter<ExpandedChangedEvent>;
 
   @State() private showContent = false;

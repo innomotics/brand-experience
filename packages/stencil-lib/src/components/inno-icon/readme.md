@@ -38,11 +38,11 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property | Attribute | Description   | Type                | Default     |
-| -------- | --------- | ------------- | ------------------- | ----------- |
-| `icon`   | `icon`    | The icon name | `string`            | `undefined` |
-| `size`   | `size`    |               | `number`            | `16`        |
-| `theme`  | `theme`   |               | `"dark" \| "light"` | `'light'`   |
+| Property | Attribute | Description              | Type                | Default     |
+| -------- | --------- | ------------------------ | ------------------- | ----------- |
+| `icon`   | `icon`    | The icon name            | `string`            | `undefined` |
+| `size`   | `size`    |                          | `number`            | `16`        |
+| `theme`  | `theme`   | Color style of the icon. | `"dark" \| "light"` | `'light'`   |
 
 
 ## Dependencies

@@ -8,14 +8,14 @@ import { Components } from '@innomotics/ix';
 
 
 @ProxyCmp({
-  inputs: ['collapsed', 'icon', 'inner', 'label', 'last', 'variant']
+  inputs: ['collapsed', 'inner', 'label', 'last', 'variant']
 })
 @Component({
   selector: 'inno-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['collapsed', 'icon', 'inner', 'label', 'last', 'variant'],
+  inputs: ['collapsed', 'inner', 'label', 'last', 'variant'],
 })
 export class InnoAccordion {
   protected el: HTMLElement;
@@ -29,7 +29,7 @@ export class InnoAccordion {
 
 export declare interface InnoAccordion extends Components.InnoAccordion {
   /**
-   * This event is fired whenever the accordion is opened/closed.
+   * This event is fired whenever the accordion is opened/closed via user interaction.
    */
   collapsedChanged: EventEmitter<CustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>>;
 }
@@ -223,14 +223,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'value', 'variant']
+  inputs: ['disabled', 'isFocused', 'label', 'value', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isFocused', 'label', 'name', 'value', 'variant'],
+  inputs: ['disabled', 'isFocused', 'label', 'value', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;
@@ -243,7 +243,9 @@ export class InnoInput {
 
 
 export declare interface InnoInput extends Components.InnoInput {
-
+  /**
+   * Fired when the new value is valid.
+   */
   valueChanged: EventEmitter<CustomEvent<string | number>>;
 }
 
@@ -293,7 +295,9 @@ export class InnoPane {
 import type { ExpandedChangedEvent as IInnoPaneExpandedChangedEvent } from '@innomotics/ix';
 
 export declare interface InnoPane extends Components.InnoPane {
-
+  /**
+   * This event is fired when the pane is opened or closed.
+   */
   expandedChanged: EventEmitter<CustomEvent<IInnoPaneExpandedChangedEvent>>;
 }
 
@@ -322,14 +326,14 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'type', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
@@ -342,7 +346,9 @@ export class InnoSelect {
 
 
 export declare interface InnoSelect extends Components.InnoSelect {
-
+  /**
+   * This event is fired when the value changes.
+   */
   valueChanged: EventEmitter<CustomEvent<string>>;
 }
 
@@ -368,7 +374,9 @@ export class InnoSelectItem {
 
 
 export declare interface InnoSelectItem extends Components.InnoSelectItem {
-
+  /**
+   * This event is fired whenever an item is selected.
+   */
   itemSelected: EventEmitter<CustomEvent<string>>;
 }
 
