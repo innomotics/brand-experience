@@ -38,21 +38,20 @@ import {InnoInput} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                | Default     |
-| ----------- | ------------ | ----------- | ------------------- | ----------- |
-| `disabled`  | `disabled`   |             | `boolean`           | `false`     |
-| `isFocused` | `is-focused` |             | `boolean`           | `undefined` |
-| `label`     | `label`      |             | `string`            | `undefined` |
-| `name`      | `name`       |             | `string`            | `undefined` |
-| `value`     | `value`      |             | `number \| string`  | `undefined` |
-| `variant`   | `variant`    |             | `"dark" \| "light"` | `'light'`   |
+| Property    | Attribute    | Description                           | Type                | Default     |
+| ----------- | ------------ | ------------------------------------- | ------------------- | ----------- |
+| `disabled`  | `disabled`   | Whether the input is disabled or not. | `boolean`           | `false`     |
+| `isFocused` | `is-focused` | Whether the input is focused or not.  | `boolean`           | `undefined` |
+| `label`     | `label`      | Floating label for the input.         | `string`            | `undefined` |
+| `value`     | `value`      | Value of the input.                   | `number \| string`  | `undefined` |
+| `variant`   | `variant`    | Color variant of the input.           | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events
 
-| Event          | Description | Type                            |
-| -------------- | ----------- | ------------------------------- |
-| `valueChanged` |             | `CustomEvent<number \| string>` |
+| Event          | Description                        | Type                            |
+| -------------- | ---------------------------------- | ------------------------------- |
+| `valueChanged` | Fired when the new value is valid. | `CustomEvent<number \| string>` |
 
 
 ----------------------------------------------

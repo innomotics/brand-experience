@@ -42,9 +42,9 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
 
 ## Events
 
-| Event       | Description              | Type                  |
-| ----------- | ------------------------ | --------------------- |
-| `itemClick` | Crumb item clicked event | `CustomEvent<string>` |
+| Event       | Description                                                                                                                   | Type                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `itemClick` | Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb. | `CustomEvent<{ itemIndex: number; label: string; }>` |
 
 
 ## Dependencies

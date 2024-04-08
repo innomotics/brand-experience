@@ -10,7 +10,6 @@ import type { JSX } from '@innomotics/ix';
 
 export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('inno-accordion', undefined, [
   'variant',
-  'icon',
   'collapsed',
   'last',
   'inner',
@@ -27,7 +26,7 @@ export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>(
 export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumbItem>('inno-breadcrumb-item', undefined, [
   'label',
   'icon',
-  'orderId',
+  'itemIndex',
   'iconSize',
   'visible',
   'showChevron',
@@ -89,7 +88,6 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
-  'name',
   'value',
   'isFocused',
   'disabled',
@@ -142,7 +140,6 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
 
 
 export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
-  'name',
   'type',
   'value',
   'isFocused',

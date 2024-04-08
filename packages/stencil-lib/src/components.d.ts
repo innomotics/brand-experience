@@ -11,11 +11,25 @@ export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
     interface InnoAccordion {
+        /**
+          * You can programatically open/close the accordion with this property.
+         */
         "collapsed": boolean;
-        "icon": string;
+        /**
+          * Whether it is an accordion inside another accordion. Gives a different style then the main one.
+         */
         "inner": boolean;
+        /**
+          * Text to display for the accordion. Always visible whether the accordion is opened or closed.
+         */
         "label": string;
+        /**
+          * Whether the accordion is the last in a group of accordions. Needed for styling.
+         */
         "last": boolean;
+        /**
+          * Color variant of the accordion.
+         */
         "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumb {
@@ -26,24 +40,54 @@ export namespace Components {
          */
         "icon": string;
         "iconSize": number;
+        "itemIndex": number;
         /**
           * Breadcrumb label
          */
         "label": string;
-        "orderId"?: number;
         "showChevron": boolean;
         "visible": boolean;
     }
     interface InnoButton {
+        /**
+          * Color variant of the button.
+         */
         "colorVariant": 'light' | 'dark';
+        /**
+          * Whether the button is disabled or not.
+         */
         "disabled": boolean;
+        /**
+          * Icon to use inside the button.
+         */
         "icon": string;
+        /**
+          * Only show an icon.
+         */
         "iconOnly": boolean;
+        /**
+          * Where to put the icon relative to the text.
+         */
         "iconPosition": 'left' | 'right';
+        /**
+          * Special style for button lists.
+         */
         "listType": boolean;
+        /**
+          * Direction of the navigation button. Only has effect if the variant is 'navigation'.
+         */
         "navDirection": 'left' | 'right';
+        /**
+          * Tab index of the button.
+         */
         "tabIdx": number;
+        /**
+          * Type of the button.
+         */
         "type": 'button' | 'submit';
+        /**
+          * Variant of the button.
+         */
         "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
     /**
@@ -125,36 +169,98 @@ export namespace Components {
          */
         "icon": string;
         "size": number;
+        /**
+          * Color style of the icon.
+         */
         "theme": 'light' | 'dark';
     }
     interface InnoInput {
+        /**
+          * Whether the input is disabled or not.
+         */
         "disabled": boolean;
+        /**
+          * Whether the input is focused or not.
+         */
         "isFocused": boolean;
+        /**
+          * Floating label for the input.
+         */
         "label": string;
-        "name": string;
+        /**
+          * Value of the input.
+         */
         "value": string | number;
+        /**
+          * Color variant of the input.
+         */
         "variant": 'light' | 'dark';
     }
     interface InnoLoader {
+        /**
+          * Size of the loader. Valid values are: 16, 24, 32, 64.
+         */
         "size": number;
     }
     interface InnoPane {
+        /**
+          * Whether the pane is closeable by clicking outside of it.
+         */
         "closeOnBackdropClick": boolean;
+        /**
+          * Programatically control whether the pane is opened or closed.
+         */
         "expanded": boolean;
+        /**
+          * The pane comes with a close button by default. Hide it with this property.
+         */
         "hideCloseButton": boolean;
+        /**
+          * Size of the pane.
+         */
         "paneSize": string;
+        /**
+          * Position of the pane.
+         */
         "position": 'top' | 'left' | 'bottom' | 'right';
+        /**
+          * Title of the pane.
+         */
         "titleText": string;
     }
     interface InnoPopover {
         "animationFrame": boolean;
+        /**
+          * Css selector of the element the popover is for.
+         */
         "for": string;
+        /**
+          * Hide the tooltip.
+         */
         "hideTooltip": () => Promise<void>;
+        /**
+          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+         */
         "placement": Placement;
+        /**
+          * Show the tooltip.
+         */
         "showTooltip": () => Promise<void>;
+        /**
+          * Contents of the title. Can be either html or a simple string.
+         */
         "titleContent": string;
+        /**
+          * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
+         */
         "trigger": 'hover' | 'click' | 'manual';
+        /**
+          * Color variant of the popover.
+         */
         "variant": 'light' | 'dark';
+        /**
+          * Programatically change whether the popover is visible or not.
+         */
         "visible": boolean;
     }
     /**
@@ -201,19 +307,48 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
     interface InnoSelect {
+        /**
+          * Whether the select is disabled or not.
+         */
         "disabled": boolean;
         "iconDriven": boolean;
+        /**
+          * Whether the select is focused or not.
+         */
         "isFocused": boolean;
+        /**
+          * Label for the select.
+         */
         "label": string;
-        "name": string;
+        /**
+          * Type of the select.
+         */
         "type": 'text' | 'number';
+        /**
+          * Value of the select.
+         */
         "value": string;
+        /**
+          * Color variant of the select.
+         */
         "variant": 'light' | 'dark';
     }
     interface InnoSelectItem {
+        /**
+          * Optional icon for the label.
+         */
         "icon": string;
+        /**
+          * Label of the item, can be different from the value.
+         */
         "label": string;
+        /**
+          * Whether the item is selected or not.
+         */
         "selected": boolean;
+        /**
+          * Value of the item.
+         */
         "value": string;
     }
     interface InnoToggle {
@@ -294,7 +429,7 @@ declare global {
         new (): HTMLInnoAccordionElement;
     };
     interface HTMLInnoBreadcrumbElementEventMap {
-        "itemClick": string;
+        "itemClick": {itemIndex: number, label: string};
     }
     interface HTMLInnoBreadcrumbElement extends Components.InnoBreadcrumb, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoBreadcrumbElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbElement, ev: InnoBreadcrumbCustomEvent<HTMLInnoBreadcrumbElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -311,7 +446,7 @@ declare global {
         new (): HTMLInnoBreadcrumbElement;
     };
     interface HTMLInnoBreadcrumbItemElementEventMap {
-        "breadcrumbItemClick": number;
+        "breadcrumbItemClick": { itemIndex: number, label: string };
     }
     interface HTMLInnoBreadcrumbItemElement extends Components.InnoBreadcrumbItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoBreadcrumbItemElementEventMap>(type: K, listener: (this: HTMLInnoBreadcrumbItemElement, ev: InnoBreadcrumbItemCustomEvent<HTMLInnoBreadcrumbItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -524,22 +659,36 @@ declare global {
 }
 declare namespace LocalJSX {
     interface InnoAccordion {
+        /**
+          * You can programatically open/close the accordion with this property.
+         */
         "collapsed"?: boolean;
-        "icon"?: string;
+        /**
+          * Whether it is an accordion inside another accordion. Gives a different style then the main one.
+         */
         "inner"?: boolean;
+        /**
+          * Text to display for the accordion. Always visible whether the accordion is opened or closed.
+         */
         "label"?: string;
+        /**
+          * Whether the accordion is the last in a group of accordions. Needed for styling.
+         */
         "last"?: boolean;
         /**
-          * This event is fired whenever the accordion is opened/closed.
+          * This event is fired whenever the accordion is opened/closed via user interaction.
          */
         "onCollapsedChanged"?: (event: InnoAccordionCustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>) => void;
+        /**
+          * Color variant of the accordion.
+         */
         "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumb {
         /**
-          * Crumb item clicked event
+          * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
          */
-        "onItemClick"?: (event: InnoBreadcrumbCustomEvent<string>) => void;
+        "onItemClick"?: (event: InnoBreadcrumbCustomEvent<{itemIndex: number, label: string}>) => void;
     }
     interface InnoBreadcrumbItem {
         /**
@@ -547,25 +696,55 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         "iconSize"?: number;
+        "itemIndex"?: number;
         /**
           * Breadcrumb label
          */
         "label"?: string;
-        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<number>) => void;
-        "orderId"?: number;
+        "onBreadcrumbItemClick"?: (event: InnoBreadcrumbItemCustomEvent<{ itemIndex: number, label: string }>) => void;
         "showChevron"?: boolean;
         "visible"?: boolean;
     }
     interface InnoButton {
+        /**
+          * Color variant of the button.
+         */
         "colorVariant"?: 'light' | 'dark';
+        /**
+          * Whether the button is disabled or not.
+         */
         "disabled"?: boolean;
+        /**
+          * Icon to use inside the button.
+         */
         "icon"?: string;
+        /**
+          * Only show an icon.
+         */
         "iconOnly"?: boolean;
+        /**
+          * Where to put the icon relative to the text.
+         */
         "iconPosition"?: 'left' | 'right';
+        /**
+          * Special style for button lists.
+         */
         "listType"?: boolean;
+        /**
+          * Direction of the navigation button. Only has effect if the variant is 'navigation'.
+         */
         "navDirection"?: 'left' | 'right';
+        /**
+          * Tab index of the button.
+         */
         "tabIdx"?: number;
+        /**
+          * Type of the button.
+         */
         "type"?: 'button' | 'submit';
+        /**
+          * Variant of the button.
+         */
         "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
     }
     /**
@@ -651,36 +830,98 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         "size"?: number;
+        /**
+          * Color style of the icon.
+         */
         "theme"?: 'light' | 'dark';
     }
     interface InnoInput {
+        /**
+          * Whether the input is disabled or not.
+         */
         "disabled"?: boolean;
+        /**
+          * Whether the input is focused or not.
+         */
         "isFocused"?: boolean;
+        /**
+          * Floating label for the input.
+         */
         "label"?: string;
-        "name"?: string;
+        /**
+          * Fired when the new value is valid.
+         */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
+        /**
+          * Value of the input.
+         */
         "value"?: string | number;
+        /**
+          * Color variant of the input.
+         */
         "variant"?: 'light' | 'dark';
     }
     interface InnoLoader {
+        /**
+          * Size of the loader. Valid values are: 16, 24, 32, 64.
+         */
         "size"?: number;
     }
     interface InnoPane {
+        /**
+          * Whether the pane is closeable by clicking outside of it.
+         */
         "closeOnBackdropClick"?: boolean;
+        /**
+          * Programatically control whether the pane is opened or closed.
+         */
         "expanded"?: boolean;
+        /**
+          * The pane comes with a close button by default. Hide it with this property.
+         */
         "hideCloseButton"?: boolean;
+        /**
+          * This event is fired when the pane is opened or closed.
+         */
         "onExpandedChanged"?: (event: InnoPaneCustomEvent<ExpandedChangedEvent>) => void;
+        /**
+          * Size of the pane.
+         */
         "paneSize"?: string;
+        /**
+          * Position of the pane.
+         */
         "position"?: 'top' | 'left' | 'bottom' | 'right';
+        /**
+          * Title of the pane.
+         */
         "titleText"?: string;
     }
     interface InnoPopover {
         "animationFrame"?: boolean;
+        /**
+          * Css selector of the element the popover is for.
+         */
         "for"?: string;
+        /**
+          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+         */
         "placement"?: Placement;
+        /**
+          * Contents of the title. Can be either html or a simple string.
+         */
         "titleContent"?: string;
+        /**
+          * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
+         */
         "trigger"?: 'hover' | 'click' | 'manual';
+        /**
+          * Color variant of the popover.
+         */
         "variant"?: 'light' | 'dark';
+        /**
+          * Programatically change whether the popover is visible or not.
+         */
         "visible"?: boolean;
     }
     /**
@@ -730,21 +971,56 @@ declare namespace LocalJSX {
         "variant"?: 'dark' | 'light';
     }
     interface InnoSelect {
+        /**
+          * Whether the select is disabled or not.
+         */
         "disabled"?: boolean;
         "iconDriven"?: boolean;
+        /**
+          * Whether the select is focused or not.
+         */
         "isFocused"?: boolean;
+        /**
+          * Label for the select.
+         */
         "label"?: string;
-        "name"?: string;
+        /**
+          * This event is fired when the value changes.
+         */
         "onValueChanged"?: (event: InnoSelectCustomEvent<string>) => void;
+        /**
+          * Type of the select.
+         */
         "type"?: 'text' | 'number';
+        /**
+          * Value of the select.
+         */
         "value"?: string;
+        /**
+          * Color variant of the select.
+         */
         "variant"?: 'light' | 'dark';
     }
     interface InnoSelectItem {
+        /**
+          * Optional icon for the label.
+         */
         "icon"?: string;
+        /**
+          * Label of the item, can be different from the value.
+         */
         "label"?: string;
+        /**
+          * This event is fired whenever an item is selected.
+         */
         "onItemSelected"?: (event: InnoSelectItemCustomEvent<string>) => void;
+        /**
+          * Whether the item is selected or not.
+         */
         "selected"?: boolean;
+        /**
+          * Value of the item.
+         */
         "value"?: string;
     }
     interface InnoToggle {

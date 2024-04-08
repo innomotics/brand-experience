@@ -7,9 +7,12 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 <Tabs>
   <TabItem value="preview" label="Preview" default>
     <form>
-      <div><InnoRadio name="group" value="value1" label="option 1" variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group" value="value2" label="option 2" variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group" value="value3" label="option 3" variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group1" value="value1" label="unchecked" variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group2" value="value2" label="checked" checked variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group3" value="value3" label="required" required variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group4" value="value4" label="error" required error variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group5" value="value5" label="readonly" readonly variant="dark"></InnoRadio></div>
+      <div><InnoRadio name="group6" value="value6" label="disabled" disabled variant="dark"></InnoRadio></div>
     </form>
   </TabItem>
   <TabItem value="Angular" label="Angular">
@@ -67,7 +70,6 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 
 <!-- Auto Generated Below -->
 
-
 ## Overview
 
 Represents the default radio button for the Innomics applications.
@@ -87,27 +89,20 @@ Represents the default radio button for the Innomics applications.
 | `value`    | `value`    | Radio button value.                                                                                            | `string`            | `undefined` |
 | `variant`  | `variant`  | Theme variant of the component.                                                                                | `"dark" \| "light"` | `'light'`   |
 
-
 ## Events
 
 | Event         | Description                 | Type                  |
 | ------------- | --------------------------- | --------------------- |
 | `valueChange` | Emits the associated value. | `CustomEvent<string>` |
 
-
 ## Methods
 
 ### `unselect() => Promise<void>`
-
-
 
 #### Returns
 
 Type: `Promise<void>`
 
+---
 
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

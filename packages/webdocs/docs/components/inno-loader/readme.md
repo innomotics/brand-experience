@@ -32,9 +32,9 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default |
-| -------- | --------- | ----------- | -------- | ------- |
-| `size`   | `size`    |             | `number` | `64`    |
+| Property | Attribute | Description                                           | Type     | Default |
+| -------- | --------- | ----------------------------------------------------- | -------- | ------- |
+| `size`   | `size`    | Size of the loader. Valid values are: 16, 24, 32, 64. | `number` | `64`    |
 
 
 ----------------------------------------------

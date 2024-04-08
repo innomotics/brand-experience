@@ -43,21 +43,20 @@ import {InnoAccordion} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                | Default     |
-| ----------- | ----------- | ----------- | ------------------- | ----------- |
-| `collapsed` | `collapsed` |             | `boolean`           | `false`     |
-| `icon`      | `icon`      |             | `string`            | `undefined` |
-| `inner`     | `inner`     |             | `boolean`           | `false`     |
-| `label`     | `label`     |             | `string`            | `undefined` |
-| `last`      | `last`      |             | `boolean`           | `false`     |
-| `variant`   | `variant`   |             | `"dark" \| "light"` | `'light'`   |
+| Property    | Attribute   | Description                                                                                     | Type                | Default     |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| `collapsed` | `collapsed` | You can programatically open/close the accordion with this property.                            | `boolean`           | `false`     |
+| `inner`     | `inner`     | Whether it is an accordion inside another accordion. Gives a different style then the main one. | `boolean`           | `false`     |
+| `label`     | `label`     | Text to display for the accordion. Always visible whether the accordion is opened or closed.    | `string`            | `undefined` |
+| `last`      | `last`      | Whether the accordion is the last in a group of accordions. Needed for styling.                 | `boolean`           | `false`     |
+| `variant`   | `variant`   | Color variant of the accordion.                                                                 | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events
 
-| Event              | Description                                                  | Type                                                                      |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------- |
-| `collapsedChanged` | This event is fired whenever the accordion is opened/closed. | `CustomEvent<{ element: HTMLInnoAccordionElement; collapsed: boolean; }>` |
+| Event              | Description                                                                       | Type                                                                      |
+| ------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `collapsedChanged` | This event is fired whenever the accordion is opened/closed via user interaction. | `CustomEvent<{ element: HTMLInnoAccordionElement; collapsed: boolean; }>` |
 
 
 ## Dependencies

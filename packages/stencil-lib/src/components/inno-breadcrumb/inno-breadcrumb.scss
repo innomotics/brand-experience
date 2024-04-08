@@ -10,19 +10,24 @@
 :host {
   display: flex;
   justify-content: flex-start;
-  height: 2.5rem;
   align-items: center;
   background-color: transparent;
   overflow: hidden;
 
-    inno-icon {
-      padding-top: 2px;
-    }
-  
+  inno-icon {
+    padding-top: 2px;
+  }
 
-  nav,
-  ol,
-  .crumb-items {
+  ol {
+    list-style:none;
     display: flex;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    ::slotted(inno-breadcrumb-item:last-of-type) {
+      font-weight: bold;
+    }
   }
 }

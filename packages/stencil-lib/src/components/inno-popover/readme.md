@@ -63,21 +63,21 @@ import {InnoPopover} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                                                                                                                                                                 | Default     |
-| -------------- | --------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `for`          | `for`           |             | `string`                                                                                                                                                             | `undefined` |
-| `placement`    | `placement`     |             | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`     |
-| `titleContent` | `title-content` |             | `string`                                                                                                                                                             | `undefined` |
-| `trigger`      | `trigger`       |             | `"click" \| "hover" \| "manual"`                                                                                                                                     | `'click'`   |
-| `variant`      | `variant`       |             | `"dark" \| "light"`                                                                                                                                                  | `'dark'`    |
-| `visible`      | `visible`       |             | `boolean`                                                                                                                                                            | `false`     |
+| Property       | Attribute       | Description                                                                                                         | Type                                                                                                                                                                 | Default     |
+| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `for`          | `for`           | Css selector of the element the popover is for.                                                                     | `string`                                                                                                                                                             | `undefined` |
+| `placement`    | `placement`     | Position of the popover. If there is not enough space it will be automatically placed to where it has enough place. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`     |
+| `titleContent` | `title-content` | Contents of the title. Can be either html or a simple string.                                                       | `string`                                                                                                                                                             | `undefined` |
+| `trigger`      | `trigger`       | How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.        | `"click" \| "hover" \| "manual"`                                                                                                                                     | `'click'`   |
+| `variant`      | `variant`       | Color variant of the popover.                                                                                       | `"dark" \| "light"`                                                                                                                                                  | `'dark'`    |
+| `visible`      | `visible`       | Programatically change whether the popover is visible or not.                                                       | `boolean`                                                                                                                                                            | `false`     |
 
 
 ## Methods
 
 ### `hideTooltip() => Promise<void>`
 
-
+Hide the tooltip.
 
 #### Returns
 
@@ -87,7 +87,7 @@ Type: `Promise<void>`
 
 ### `showTooltip() => Promise<void>`
 
-
+Show the tooltip.
 
 #### Returns
 

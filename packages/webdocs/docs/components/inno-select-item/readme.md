@@ -7,19 +7,19 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default     |
-| ---------- | ---------- | ----------- | --------- | ----------- |
-| `icon`     | `icon`     |             | `string`  | `undefined` |
-| `label`    | `label`    |             | `string`  | `undefined` |
-| `selected` | `selected` |             | `boolean` | `false`     |
-| `value`    | `value`    |             | `string`  | `undefined` |
+| Property   | Attribute  | Description                                         | Type      | Default     |
+| ---------- | ---------- | --------------------------------------------------- | --------- | ----------- |
+| `icon`     | `icon`     | Optional icon for the label.                        | `string`  | `undefined` |
+| `label`    | `label`    | Label of the item, can be different from the value. | `string`  | `undefined` |
+| `selected` | `selected` | Whether the item is selected or not.                | `boolean` | `false`     |
+| `value`    | `value`    | Value of the item.                                  | `string`  | `undefined` |
 
 
 ## Events
 
-| Event          | Description | Type                  |
-| -------------- | ----------- | --------------------- |
-| `itemSelected` |             | `CustomEvent<string>` |
+| Event          | Description                                       | Type                  |
+| -------------- | ------------------------------------------------- | --------------------- |
+| `itemSelected` | This event is fired whenever an item is selected. | `CustomEvent<string>` |
 
 
 ## Dependencies

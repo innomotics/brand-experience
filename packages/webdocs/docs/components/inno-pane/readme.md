@@ -7,21 +7,21 @@
 
 ## Properties
 
-| Property               | Attribute                 | Description | Type                                     | Default     |
-| ---------------------- | ------------------------- | ----------- | ---------------------------------------- | ----------- |
-| `closeOnBackdropClick` | `close-on-backdrop-click` |             | `boolean`                                | `true`      |
-| `expanded`             | `expanded`                |             | `boolean`                                | `false`     |
-| `hideCloseButton`      | `hide-close-button`       |             | `boolean`                                | `false`     |
-| `paneSize`             | `pane-size`               |             | `string`                                 | `'100%'`    |
-| `position`             | `position`                |             | `"bottom" \| "left" \| "right" \| "top"` | `'right'`   |
-| `titleText`            | `title-text`              |             | `string`                                 | `undefined` |
+| Property               | Attribute                 | Description                                                                | Type                                     | Default     |
+| ---------------------- | ------------------------- | -------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
+| `closeOnBackdropClick` | `close-on-backdrop-click` | Whether the pane is closeable by clicking outside of it.                   | `boolean`                                | `true`      |
+| `expanded`             | `expanded`                | Programatically control whether the pane is opened or closed.              | `boolean`                                | `false`     |
+| `hideCloseButton`      | `hide-close-button`       | The pane comes with a close button by default. Hide it with this property. | `boolean`                                | `false`     |
+| `paneSize`             | `pane-size`               | Size of the pane.                                                          | `string`                                 | `'100%'`    |
+| `position`             | `position`                | Position of the pane.                                                      | `"bottom" \| "left" \| "right" \| "top"` | `'right'`   |
+| `titleText`            | `title-text`              | Title of the pane.                                                         | `string`                                 | `undefined` |
 
 
 ## Events
 
-| Event             | Description | Type                                  |
-| ----------------- | ----------- | ------------------------------------- |
-| `expandedChanged` |             | `CustomEvent<{ expanded: boolean; }>` |
+| Event             | Description                                            | Type                                  |
+| ----------------- | ------------------------------------------------------ | ------------------------------------- |
+| `expandedChanged` | This event is fired when the pane is opened or closed. | `CustomEvent<{ expanded: boolean; }>` |
 
 
 ## Dependencies

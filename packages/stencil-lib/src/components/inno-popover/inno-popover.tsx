@@ -35,16 +35,34 @@ const numberToPixel = (value: number) => (value != null ? `${value}px` : '');
 })
 export class InnoPopover {
 
+  /**
+   * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
+   */
   @Prop() trigger: 'hover' | 'click' | 'manual' = 'click';
 
+  /**
+   * Color variant of the popover.
+   */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'dark';
 
+  /**
+   * Css selector of the element the popover is for.
+   */
   @Prop() for: string;
 
+  /**
+   * Contents of the title. Can be either html or a simple string.
+   */
   @Prop({ mutable: true }) titleContent: string;
 
+  /**
+   * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+   */
   @Prop({ mutable: true }) placement: Placement = 'top';
 
+  /**
+   * Programatically change whether the popover is visible or not.
+   */
   @Prop({ mutable: true }) visible = false;
 
   /** @internal */
@@ -82,6 +100,9 @@ export class InnoPopover {
     this.hideTooltip();
   }
 
+  /**
+   * Show the tooltip.
+   */
   @Method()
   async showTooltip() {
     const anchorElement = this.forElement;
@@ -91,6 +112,9 @@ export class InnoPopover {
     }
   }
 
+  /**
+   * Hide the tooltip.
+   */
   @Method()
   async hideTooltip() {
     this.visible = false;

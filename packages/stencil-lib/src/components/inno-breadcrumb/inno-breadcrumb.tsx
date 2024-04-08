@@ -18,32 +18,24 @@ export class Breadcrumb {
   @Element() hostElement!: HTMLInnoBreadcrumbElement;
 
   /**
-   * Crumb item clicked event
+   * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
    */
-  @Event() itemClick: EventEmitter<string>;
+  @Event() itemClick: EventEmitter<{itemIndex: number, label: string}>;
 
   @Listen('breadcrumbItemClick')
-  onBreadcrumbItemClicked(event: CustomEvent<string>) {
-    const label = event.detail;
-    console.log('Item clicked' + label);
-    this.itemClick.emit(label);
+  onBreadcrumbItemClicked(event: CustomEvent<{itemIndex: number, label: string}>) {
+    this.itemClick.emit(event.detail);
   }
-
-  componentDidLoad() {}
-
-  componentWillLoad() {}
 
   get items() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-breadcrumb-item'))];
   }
 
-  removeLastItemChevron(children: HTMLInnoBreadcrumbItemElement[])
-  {
-    if(children.length>0)
-    {
-      children[children.length-1].showChevron = false;
-      let childrenId : number = 0;
-      children.forEach(c=>c.orderId = childrenId++);
+  removeLastItemChevron(children: HTMLInnoBreadcrumbItemElement[]) {
+    if (children.length > 0) {
+      children[children.length - 1].showChevron = false;
+      let childrenId: number = 1;
+      children.forEach(c => c.itemIndex = childrenId++);
     }
   }
 
@@ -52,7 +44,7 @@ export class Breadcrumb {
     return (
       <Host>
         <ol>
-          {this.items?.length > 0 ? (<inno-breadcrumb-item label="..." icon="home" showChevron={this.items.length>0}></inno-breadcrumb-item>) : null}
+          {this.items?.length > 0 ? (<inno-breadcrumb-item label="home" icon="home" itemIndex={0} showChevron={this.items.length > 0}></inno-breadcrumb-item>) : null}
           <slot></slot>
         </ol>
       </Host>
