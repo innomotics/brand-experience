@@ -57,12 +57,6 @@ export class InnoRadio {
   @Prop({ mutable: true, reflect: true })
   checked: boolean;
 
-  // /**
-  //  * Current form value for the connected radio button elements.
-  //  */
-  // @Prop({ mutable: true })
-  // formValue: string | undefined;
-
   /**
    * Whether component is disabled.
    * In this state no other state effects are applied to the element like error.
@@ -184,15 +178,15 @@ export class InnoRadio {
       return false;
     }
 
-    if (this.error) {
-      return true;
-    }
-
     // No error state for checked state
     // Only valid error state for now is the required and not checked case
     // The error class interferes with the hover and active classes
     if (this.checked) {
       return false;
+    }
+
+    if (this.error) {
+      return true;
     }
 
     return !this.elementInternals.validity.valid;
