@@ -199,7 +199,7 @@
       <inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
       <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
       <inno-footer-item slot="links"><a>Whistleblowing</a></inno-footer-item>
-      <inno-footer-item  slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
     </inno-footer>
 
     <div class="separator-dummy">separator dummy</div>
@@ -272,7 +272,7 @@
         <inno-checkbox label="required" indeterminate="true" variant="dark" required></inno-checkbox>
       </div>
       <div>
-        <inno-checkbox label="error" indeterminate="true" variant="dark" required class="ng-invalid"></inno-checkbox>
+        <inno-checkbox label="error" indeterminate="true" variant="dark" required error></inno-checkbox>
       </div>
     </div>
 
@@ -290,7 +290,7 @@
         <inno-radio label="required" checked="true" variant="light" required></inno-radio>
       </div>
       <div>
-        <inno-radio label="error" checked="true" variant="light" required class="ng-invalid"></inno-radio>
+        <inno-radio label="error" checked="true" variant="light" required error></inno-radio>
       </div>
     </div>
 
@@ -300,7 +300,6 @@
       </div>
       <div>
         <inno-radio label="readonly" checked="false" variant="dark" readonly></inno-radio>
-
       </div>
       <div>
         <inno-radio label="disabled" checked="false" variant="dark" disabled></inno-radio>
@@ -309,7 +308,7 @@
         <inno-radio label="required" checked="false" variant="dark" required></inno-radio>
       </div>
       <div>
-        <inno-radio label="error" checked="false" variant="dark" required class="ng-invalid"></inno-radio>
+        <inno-radio label="error" checked="false" variant="dark" required error></inno-radio>
       </div>
     </div>
 
@@ -369,6 +368,6 @@
       const formData = new FormData(event.target);
       const formProps = Object.fromEntries(formData);
       console.log(formProps);
-    })
+    });
   </script>
 </html>

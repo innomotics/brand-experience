@@ -147,15 +147,15 @@ export class InnoCheckbox {
       return false;
     }
 
-    if (this.error) {
-      return true;
-    }
-
     // No error state for checked state
     // Only valid error state for now is the required and not checked case
     // The error class interferes with the hover and active classes
     if (this.checked || this.checkIndeterminateState()) {
       return false;
+    }
+
+    if (this.error) {
+      return true;
     }
 
     return !this.elementInternals.validity.valid;
