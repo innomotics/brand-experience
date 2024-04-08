@@ -54,10 +54,11 @@ export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inn
   'name',
   'label',
   'checked',
+  'indeterminate',
   'disabled',
   'readonly',
   'required',
-  'indeterminate',
+  'error',
   'valueChange'
 ]);
 
@@ -133,6 +134,7 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
   'disabled',
   'readonly',
   'required',
+  'error',
   'valueChange'
 ]);
 

@@ -70,41 +70,36 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 
 ## Overview
 
-Represents the default radiobutton for the Innomics applications.
+Represents the default radio button for the Innomics applications.
 
 ## Properties
 
-| Property   | Attribute  | Description                               | Type                | Default     |
-| ---------- | ---------- | ----------------------------------------- | ------------------- | ----------- |
-| `checked`  | `checked`  |                                           | `boolean`           | `undefined` |
-| `disabled` | `disabled` | Whether component is disabled.            | `boolean`           | `false`     |
-| `label`    | `label`    | Label to show.                            | `string`            | `''`        |
-| `name`     | `name`     | Form entry name.                          | `string`            | `undefined` |
-| `readonly` | `readonly` | Whether the component is readonly.        | `boolean`           | `false`     |
-| `required` | `required` | Whether the checkbox have to be selected. | `boolean`           | `false`     |
-| `tabIdx`   | `tab-idx`  | The tab index.                            | `number`            | `0`         |
-| `value`    | `value`    | Radio button value.                       | `string`            | `undefined` |
-| `variant`  | `variant`  | Theme variant of the component.           | `"dark" \| "light"` | `'light'`   |
+| Property   | Attribute  | Description                                                                                                    | Type                | Default     |
+| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| `checked`  | `checked`  |                                                                                                                | `boolean`           | `undefined` |
+| `disabled` | `disabled` | Whether component is disabled. In this state no other state effects are applied to the element like error.     | `boolean`           | `false`     |
+| `error`    | `error`    | Whether the element is in error state. Error state can be defined if manual error handling is required.        | `boolean`           | `false`     |
+| `label`    | `label`    | Label to show.                                                                                                 | `string`            | `''`        |
+| `name`     | `name`     | Form entry group name.                                                                                         | `string`            | `undefined` |
+| `readonly` | `readonly` | Whether the component is readonly. In this state no other state effects are applied to the element like error. | `boolean`           | `false`     |
+| `required` | `required` | Mark the component as required and show the required marker. Validation is performed with this property.       | `boolean`           | `false`     |
+| `tabIdx`   | `tab-idx`  | The tab index.                                                                                                 | `number`            | `0`         |
+| `value`    | `value`    | Radio button value.                                                                                            | `string`            | `undefined` |
+| `variant`  | `variant`  | Theme variant of the component.                                                                                | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events
 
-| Event         | Description                      | Type                  |
-| ------------- | -------------------------------- | --------------------- |
-| `valueChange` | Checked status has been changed. | `CustomEvent<string>` |
+| Event         | Description                 | Type                  |
+| ------------- | --------------------------- | --------------------- |
+| `valueChange` | Emits the associated value. | `CustomEvent<string>` |
 
 
 ## Methods
 
-### `unselect(_formValue: string) => Promise<void>`
+### `unselect() => Promise<void>`
 
 
-
-#### Parameters
-
-| Name         | Type     | Description |
-| ------------ | -------- | ----------- |
-| `_formValue` | `string` |             |
 
 #### Returns
 

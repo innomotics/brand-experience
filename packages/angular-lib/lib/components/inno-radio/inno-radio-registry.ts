@@ -9,7 +9,7 @@ import { Injectable } from "@angular/core";
  * The original Angular registry was modified to store the inno radio controls.
  * https://github.com/angular/angular/blob/main/packages/forms/src/directives/radio_control_value_accessor.ts
  */
-@Injectable({ providedIn: "root" })
+// @Injectable({ providedIn: "root" })
 export class InnoRadioControlRegistry {
   private accessors: any[] = [];
 

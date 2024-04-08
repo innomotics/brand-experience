@@ -52,37 +52,51 @@ export class InnoCheckbox {
   checked: boolean | undefined;
 
   /**
-   * Whether component is disabled.
-   */
-  @Prop({ mutable: true, reflect: true })
-  disabled = false;
-
-  /**
-   * Whether the component is readonly.
-   */
-  @Prop({ mutable: true, reflect: true })
-  readonly = false;
-
-  /**
-   * Whether the checkbox have to be selected.
-   */
-  @Prop({ mutable: true, reflect: true })
-  required = false;
-
-  /**
    * Whether indeterminate state is enabled for the component.
    * The component is in indeterminate state if
-   * it is explicityle requested
+   * it is explicity requested
    * and the checked status is not defined
    */
   @Prop()
   indeterminate: boolean = false;
 
   /**
+   * Whether component is disabled.
+   * In this state no other state effects are applied to the element like error.
+   */
+  @Prop({ mutable: true, reflect: true })
+  disabled = false;
+
+  /**
+   * Whether the component is readonly.
+   * In this state no other state effects are applied to the element like error.
+   */
+  @Prop({ mutable: true, reflect: true })
+  readonly = false;
+
+  /**
+   * Mark the component as required and show the required marker.
+   * Validation is performed with this property.
+   */
+  @Prop({ mutable: true, reflect: true })
+  required = false;
+
+  /**
+   * Whether the element is in error state.
+   * Error state can be defined if manual error handling is required.
+   */
+  @Prop()
+  error = false;
+
+  /**
    * Checked status has been changed.
    */
   @Event()
   valueChange: EventEmitter<boolean>;
+
+  formDisabledCallback(disabled: boolean) {
+    this.disabled = disabled;
+  }
 
   @Listen('focusin')
   onFocus() {
@@ -105,10 +119,6 @@ export class InnoCheckbox {
     }
   }
 
-  formDisabledCallback(disabled: boolean) {
-    this.disabled = disabled;
-  }
-
   // Check whether the component cannot be interacted
   // Like disabled or readonly modes.
   elementInDisabledInteractionMode() {
@@ -122,16 +132,12 @@ export class InnoCheckbox {
 
     this.checked = newState;
     this.valueChange.emit(this.checked);
-    // this.elementInternals.setFormValue(this.checked ? 'on' : 'off');
   }
 
   checkRequiredState(): boolean {
     if (this.elementInDisabledInteractionMode()) {
       return false;
     }
-
-    // Further processing may required
-    // Different targets set the status differently
 
     return this.required;
   }
@@ -141,6 +147,10 @@ export class InnoCheckbox {
       return false;
     }
 
+    if (this.error) {
+      return true;
+    }
+
     // No error state for checked state
     // Only valid error state for now is the required and not checked case
     // The error class interferes with the hover and active classes
@@ -148,19 +158,7 @@ export class InnoCheckbox {
       return false;
     }
 
-    if (!this.elementInternals.validity.valid) {
-      return true;
-    }
-
-    // Angular reactive form compatibility
-    if (this.hostElement.classList.contains('ng-invalid')) {
-      return true;
-    }
-
-    // Further processing may required
-    // Different targets set the status differently
-
-    return false;
+    return !this.elementInternals.validity.valid;
   }
 
   checkReadonlyState(): boolean {
@@ -185,6 +183,21 @@ export class InnoCheckbox {
       required: this.checkRequiredState(),
       indeterminate: this.checkIndeterminateState(),
     };
+  }
+
+  inputElement() {
+    return (
+      <input
+        type="checkbox"
+        aria-checked={a11yBoolean(this.checked)}
+        tabIndex={-1}
+        name={this.name}
+        disabled={this.disabled}
+        checked={this.checked}
+        required={this.required}
+        onChange={event => this.changeCheckedState((event.target as any).checked)}
+      />
+    );
   }
 
   checkboxComponent() {
@@ -226,16 +239,7 @@ export class InnoCheckbox {
 
     return (
       <Host tabIndex={tabIndexValue} role="checkbox" aria-checked={a11yBoolean(this.checked)}>
-        <input
-          type="checkbox"
-          aria-checked={a11yBoolean(this.checked)}
-          tabindex={-1}
-          name={this.name}
-          disabled={this.disabled}
-          checked={this.checked}
-          required={this.required}
-          onChange={event => this.changeCheckedState((event.target as any).checked)}
-        />
+        {this.inputElement()}
         {this.checkboxComponent()}
         {this.labelComponent()}
       </Host>

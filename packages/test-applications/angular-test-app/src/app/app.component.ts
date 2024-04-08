@@ -42,4 +42,8 @@ export class AppComponent {
       () => (this.formValue = JSON.stringify(this.innomoticsForm.value)),
     );
   }
+
+  checkboxValid() {
+    this.innomoticsForm.get('checkboxtest1')?.valid;
+  }
 }

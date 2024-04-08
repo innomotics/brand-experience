@@ -242,7 +242,7 @@
 
     <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
       <div>
-        <inno-checkbox label="normal" checked="true" variant="dark"></inno-checkbox>
+        <inno-checkbox label="normal" checked="true" variant="dark" error></inno-checkbox>
       </div>
       <div>
         <inno-checkbox label="readonly" checked="true" variant="dark" readonly></inno-checkbox>
@@ -314,12 +314,13 @@
     </div>
 
     <form id="testform">
-      <div><inno-checkbox name="cb1" label="checkbox1"></inno-checkbox></div>
+      <div><inno-checkbox name="cb1" label="checkbox1" checked="true"></inno-checkbox></div>
       <div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
 
       <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
       <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
       <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
+
       <button type="submit">submit</button>
     </form>
   </body>
