@@ -31,7 +31,7 @@ export class InnoInput {
    * Whether the input is disabled or not.
    */
   @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
-  
+
   /**
    * Floating label for the input.
    */
@@ -71,15 +71,28 @@ export class InnoInput {
     if (this.isValid) {
       this.value = event.target.value;
       this.valueChanged.emit(this.value);
-    }
-    else{
-      this.isActive= true;
+    } else {
+      this.isActive = true;
     }
   }
 
+  activated() {
+    if ((this.value === '' || this.value === undefined) && this.isValid) {
+      return false;
+    }
+    return true;
+  }
+  componentWillLoad() {
+    if (this.activated()) {
+      this.isActive = true;
+    }
+  }
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
+    if (this.isActive) {
+      this.inputElementRef.value = this.value.toString();
+    }
   }
 
   @Listen('focusin')
