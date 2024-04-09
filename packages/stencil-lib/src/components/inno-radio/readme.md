@@ -30,8 +30,10 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
     ```
     ```html
     <form [formGroup]="form">
-      <div><inno-radio name="radioGroup1" value="value1" label="option 1" formControlName="radioGroup1" required [error]="hasError">
-      </inno-radio></div>
+      <div>
+        <inno-radio name="radioGroup1" value="value1" label="option 1" formControlName="radioGroup1" required [error]="hasError">
+        </inno-radio>
+      </div>
     </form>
     ```
 
@@ -65,7 +67,7 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
     The component is compatible with normal html based form.
 
     ```html
-    <form >
+    <form>
       <div><inno-radio name="radioGroup1" value="value1" label="option 1"></inno-radio></div>
       <div><inno-radio name="radioGroup1" value="value3" label="option 2"></inno-radio></div>
       <div><inno-radio name="radioGroup1" value="value2" label="option 3"></inno-radio></div>
@@ -76,7 +78,6 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 </Tabs>
 
 <!-- Auto Generated Below -->
-
 
 ## Overview
 
@@ -97,27 +98,20 @@ Represents the default radio button for the Innomics applications.
 | `value`    | `value`    | Radio button value.                                                                                            | `string`            | `undefined` |
 | `variant`  | `variant`  | Theme variant of the component.                                                                                | `"dark" \| "light"` | `'light'`   |
 
-
 ## Events
 
 | Event         | Description                 | Type                  |
 | ------------- | --------------------------- | --------------------- |
 | `valueChange` | Emits the associated value. | `CustomEvent<string>` |
 
-
 ## Methods
 
 ### `unselect() => Promise<void>`
-
-
 
 #### Returns
 
 Type: `Promise<void>`
 
+---
 
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
