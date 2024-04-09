@@ -86,7 +86,7 @@ export class InnoRadio {
   error = false;
 
   /**
-   * Emits the associated value.
+   * Emits the associated value when the element is clicked.
    */
   @Event()
   valueChange: EventEmitter<string>;
@@ -112,12 +112,14 @@ export class InnoRadio {
     }
   }
 
-  // Update the form value
-  // and remove the selection for the given control
+  /**
+   * Remove the selection from the given control.
+   * Can be used to synchronize the selection state
+   * between the radio group elements if manual control is required.
+   */
   @Method()
   async unselect() {
     this.checked = false;
-    // this.elementInternals.setFormValue(null);
   }
 
   formDisabledCallback(disabled: boolean) {
