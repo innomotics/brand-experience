@@ -355,7 +355,7 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'name', 'type', 'value', 'variant']
+  inputs: ['disabled', 'iconDriven', 'isFocused', 'label', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
