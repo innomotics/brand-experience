@@ -348,7 +348,7 @@ export class InnoRadio {
 
 export declare interface InnoRadio extends Components.InnoRadio {
   /**
-   * Emits the associated value.
+   * Emits the associated value when the element is clicked.
    */
   valueChange: EventEmitter<CustomEvent<string>>;
 }

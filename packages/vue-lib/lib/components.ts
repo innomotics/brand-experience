@@ -140,18 +140,6 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
 
 
 export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
-  'name',
-  'value',
-  'label',
-  'formValue',
-  'disabled',
-  'readonly',
-  'required',
-  'valueChange'
-]);
-
-
-export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
   'type',
   'value',
   'isFocused',

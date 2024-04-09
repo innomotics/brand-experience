@@ -30,8 +30,10 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
     ```
     ```html
     <form [formGroup]="form">
-      <div><inno-radio name="radioGroup1" value="value1" label="option 1" formControlName="radioGroup1" required [error]="hasError">
-      </inno-radio></div>
+      <div>
+        <inno-radio name="radioGroup1" value="value1" label="option 1" formControlName="radioGroup1" required [error]="hasError">
+        </inno-radio>
+      </div>
     </form>
     ```
 
@@ -65,7 +67,7 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
     The component is compatible with normal html based form.
 
     ```html
-    <form >
+    <form>
       <div><inno-radio name="radioGroup1" value="value1" label="option 1"></inno-radio></div>
       <div><inno-radio name="radioGroup1" value="value3" label="option 2"></inno-radio></div>
       <div><inno-radio name="radioGroup1" value="value2" label="option 3"></inno-radio></div>
@@ -100,16 +102,18 @@ Represents the default radio button for the Innomics applications.
 
 ## Events
 
-| Event         | Description                 | Type                  |
-| ------------- | --------------------------- | --------------------- |
-| `valueChange` | Emits the associated value. | `CustomEvent<string>` |
+| Event         | Description                                             | Type                  |
+| ------------- | ------------------------------------------------------- | --------------------- |
+| `valueChange` | Emits the associated value when the element is clicked. | `CustomEvent<string>` |
 
 
 ## Methods
 
 ### `unselect() => Promise<void>`
 
-
+Remove the selection from the given control.
+Can be used to synchronize the selection state
+between the radio group elements if manual control is required.
 
 #### Returns
 

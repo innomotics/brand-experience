@@ -10,14 +10,13 @@
 <form [formGroup]="innomoticsForm">
   <inno-input name="bubu" label="Inputbox" value="0" variant="light">
     <input type="number" [formControl]="innoInput" />
-    <inno-error type="badInput">Not valid</inno-error></inno-input
-  >
+    <inno-error type="badInput">Not valid</inno-error>
+  </inno-input>
   <inno-select
     name="dew"
     label="SelectBox"
     [formControl]="innoSelect"
-    value="12"
-  >
+    value="12">
     <inno-select-item label="dewde" value="12"></inno-select-item>
     <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>

@@ -296,6 +296,9 @@ export namespace Components {
           * The tab index.
          */
         "tabIdx": number;
+        /**
+          * Remove the selection from the given control. Can be used to synchronize the selection state between the radio group elements if manual control is required.
+         */
         "unselect": () => Promise<void>;
         /**
           * Radio button value.
@@ -307,7 +310,7 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
     interface InnoSelect {
-      /**
+        /**
           * Whether the select is disabled or not.
          */
         "disabled": boolean;
@@ -776,10 +779,6 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Form entry name.
-         */
-        "name"?: string;
-        /**
           * Checked status has been changed.
          */
         "onValueChange"?: (event: InnoCheckboxCustomEvent<boolean>) => void;
@@ -950,7 +949,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emits the associated value.
+          * Emits the associated value when the element is clicked.
          */
         "onValueChange"?: (event: InnoRadioCustomEvent<string>) => void;
         /**
@@ -959,43 +958,6 @@ declare namespace LocalJSX {
         "readonly"?: boolean;
         /**
           * Mark the component as required and show the required marker. Validation is performed with this property.
-         */
-        "required"?: boolean;
-        /**
-          * The tab index.
-         */
-        "tabIdx"?: number;
-        /**
-          * Radio button value.
-         */
-        "value"?: string;
-        /**
-          * Theme variant of the component.
-         */
-        "variant"?: 'dark' | 'light';
-    }
-    interface InnoSelect {
-        
-      "disabled"?: boolean;
-        /**
-          * Current form value for the connected radio button elements.
-         */
-        "formValue"?: string | undefined;
-        /**
-          * Label to show.
-         */
-        "label"?: string;
-        "name"?: string;
-        /**
-          * Checked status has been changed.
-         */
-        "onValueChange"?: (event: InnoRadioCustomEvent<string>) => void;
-        /**
-          * Whether the component is readonly.
-         */
-        "readonly"?: boolean;
-        /**
-          * Whether the checkbox have to be selected.
          */
         "required"?: boolean;
         /**
