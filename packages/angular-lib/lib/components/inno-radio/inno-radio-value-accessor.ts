@@ -15,7 +15,7 @@ import { InnoRadioControlRegistry } from "./inno-radio-registry";
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: "inno-radio[formControlName]",
+  selector: "inno-radio[formControlName], inno-radio[ngModel], inno-radio[formControl]",
   host: {
     "(valueChange)": "handleChangeEvent($event.target.value)",
   },
