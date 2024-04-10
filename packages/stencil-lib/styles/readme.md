@@ -83,6 +83,6 @@
 
  ## Usage 
 Import the colors either by 
-```js @use @innomotics/ix/dist/styles/colors ```
+```@use @innomotics/ix/dist/styles/colors; ```
  or 
-```js @use @innomotics/ix/styles/inomotics ``` file
+``` @use @innomotics/ix/dist/styles/innomotics; ```

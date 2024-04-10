@@ -52,5 +52,5 @@ lines.forEach(line => {
 //    console.log(line);
   }
 });
-readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/ix/dist/styles/colors ```\n or \n``` @use @innomotics/ix/styles/innomotics ```';
+readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/ix/dist/styles/colors; ```\n or \n``` @use @innomotics/ix/dist/styles/innomotics; ```';
 fs.writeFileSync('./styles/readme.md', readmeContent);
