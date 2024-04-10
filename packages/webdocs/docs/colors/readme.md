@@ -53,7 +53,7 @@
 <div class="color-item light"><div id="colorcube" style={{"background-color": "#007f57" }}></div><div id="name">$status-light-success</div></div>
 <div class="color-item light"><div id="colorcube" style={{"background-color": "#e96401" }}></div><div id="name">$status-ligth-warning</div></div>
 <div class="color-item light"><div id="colorcube" style={{"background-color": "#c263ed" }}></div><div id="name">$status-light-internal</div></div>
-<div class="color-item light"><div id="colorcube" style={{"background-color": "#08191f" ,"opacity": "0.0"}}></div><div id="name">$transparency-light-100</div></div>
+<div class="color-item light"><div id="colorcube" style={{"background-color": "#08191f" ,"opacity": "0.05"}}></div><div id="name">$transparency-light-100</div></div>
 <div class="color-item light"><div id="colorcube" style={{"background-color": "#08191f" ,"opacity": "0.2"}}></div><div id="name">$transparency-light-200</div></div>
 <div class="color-item dark"><div id="colorcube" style={{"background-color": "#ffffff" }}></div><div id="name">$text-dark-highemphasis</div></div>
 <div class="color-item dark"><div id="colorcube" style={{"background-color": "#b2c1c7" }}></div><div id="name">$text-dark-lowemphasis</div></div>

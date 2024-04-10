@@ -33,7 +33,7 @@ lines.forEach(line => {
     let hasopacity = splittedVariable[1].includes("rgba(");
     let opacityValue = "1";
     if(hasopacity){
-      let opacityRegex = /\d\.\d/g;
+      let opacityRegex = /\d\.\d{1,2}/g;
       let opacity = opacityRegex.exec(splittedVariable[1]);
       if(opacity != null){
         opacityValue = opacity[0].toString();
