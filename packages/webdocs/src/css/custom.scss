@@ -46,14 +46,14 @@
   justify-items: center;
   align-items: center;
   min-width: 220px;
-  min-height: 100px;
+  min-height: 110px;
   border: 1px solid innomotics.$interaction-dark-default;
   &:hover {
     border: 1px solid innomotics.$interaction-dark-hover;
   }
   #colorcube{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
   }
   &.light {

@@ -53,18 +53,6 @@ For custom elements the `data-inno-footer-item-style` attribute is set with the 
     </InnoFooter>
     ```
   </TabItem>
-  <TabItem value="Vue" label="Vue">
-    ```tsx
-    <InnoFooter copyright={copyrightVar}>
-      <InnoFooterItem slot="links"><a>{privacyNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{termsOfUse}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{cookieNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-    </InnoFooter>
-    ```
-  </TabItem>
 </Tabs>
 
 <!-- Auto Generated Below -->

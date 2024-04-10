@@ -3,7 +3,7 @@ import * as fs from 'fs';
 const filePath = './styles/_colors.scss';
 const cleanerregex = /\r|\n|\s{1,}|;/g;
 //passsing directoryPath and callback function
-let readmeContent = "# `Colors`\n Available Innomotics colors when using '@innomotics/ix/dist/styles/colors'\n\n<div class='color-wrapper'>\n";
+let readmeContent = "# `Colors`\n Available Innomotics colors'\n\n<div class='color-wrapper'>\n";
 
 //listing all files using forEach
 // Do whatever you want to do with the file
@@ -52,5 +52,5 @@ lines.forEach(line => {
 //    console.log(line);
   }
 });
-readmeContent += '</div>';
+readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/ix/dist/styles/colors ```\n or \n``` @use @innomotics/ix/styles/innomotics ```';
 fs.writeFileSync('./styles/readme.md', readmeContent);

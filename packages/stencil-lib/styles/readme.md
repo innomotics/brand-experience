@@ -1,5 +1,5 @@
 # `Colors`
- Available Innomotics colors when using '@innomotics/ix/dist/styles/colors'
+ Available Innomotics colors'
 
 <div class='color-wrapper'>
 <div class="color-item light"><div id="colorcube" style={{"background-color": "#e1f000" }}></div><div id="name">$primary-100</div></div>
@@ -80,3 +80,9 @@
 <div class="color-item dark"><div id="colorcube" style={{"background-color": "#ffffff" ,"opacity": "0.1"}}></div><div id="name">$transparency-dark-100</div></div>
 <div class="color-item dark"><div id="colorcube" style={{"background-color": "#ffffff" ,"opacity": "0.4"}}></div><div id="name">$transparency-dark-200</div></div>
 </div>
+
+ ## Usage 
+Import the colors either by 
+```js @use @innomotics/ix/dist/styles/colors ```
+ or 
+```js @use @innomotics/ix/styles/inomotics ``` file

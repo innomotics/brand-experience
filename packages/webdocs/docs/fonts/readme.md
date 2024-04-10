@@ -19,4 +19,4 @@
 
 ## Usage
 
-Import the @innomotics/ix-fonts package to your application and use one of the font families above.
+Import the @innomotics/ix-fonts package to your application and use 'InnomoticsHafferSQ' as a font-family
