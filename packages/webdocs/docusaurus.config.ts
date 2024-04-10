@@ -81,6 +81,12 @@ const config: Config = {
           label: 'Icons',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'colorsSidebar',
+          position: 'left',
+          label: 'Colors',
+        },
+        {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',

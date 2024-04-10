@@ -5,7 +5,7 @@
  * work well for content-centric websites.
  */
 
- /* You can override the default Infima variables here. */
+/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #{innomotics.$background-light-100};
   --ifm-color-primary-dark: #29784c;
@@ -19,7 +19,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #{innomotics.$background-light-100};
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -30,80 +30,107 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.icon-wrapper{
-  display:flex;
+.icon-wrapper {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap:7px;
+  gap: 7px;
+}
 
-  .icon-item{
-    display:grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    justify-items: center;
-    min-width: 200px;
-    border: 1px solid innomotics.$interaction-dark-default;
-    &:hover
-    {
-      border: 1px solid innomotics.$interaction-dark-hover;
+.icon-item,
+.color-item {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  min-width: 220px;
+  min-height: 100px;
+  border: 1px solid innomotics.$interaction-dark-default;
+  &:hover {
+    border: 1px solid innomotics.$interaction-dark-hover;
+  }
+  #colorcube{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  &.light {
+    background-color: innomotics.$primary-300;
+    color: innomotics.$primary-200;
+    #colorcube {
+      box-shadow: 0px 0px 5px 0px innomotics.$primary-200;
+    }
+  }
+  &.dark {
+    background-color: innomotics.$primary-200;
+    color: innomotics.$primary-300;
+    #colorcube {
+      box-shadow: 0px 0px 5px 0px innomotics.$primary-300;
     }
   }
 }
 
-.InnomoticsHafferSQ-Bold{
+.InnomoticsHafferSQ-Bold {
   font-weight: bold;
 }
-.InnomoticsHafferSQ-BoldItalic{
+.InnomoticsHafferSQ-BoldItalic {
   font-weight: bold;
   font-style: italic;
 }
-.InnomoticsHafferSQ-HeavyItalic{
+.InnomoticsHafferSQ-HeavyItalic {
   font-weight: 900;
   font-style: italic;
 }
-.InnomoticsHafferSQ-Light{
+.InnomoticsHafferSQ-Light {
   font-weight: 300;
   font-style: normal;
 }
-.InnomoticsHafferSQ-Heavy{
+.InnomoticsHafferSQ-Heavy {
   font-weight: 900;
   font-style: normal;
 }
-.InnomoticsHafferSQ-LightItalic{
+.InnomoticsHafferSQ-LightItalic {
   font-weight: 300;
   font-style: italic;
 }
-.InnomoticsHafferSQ-Medium{
+.InnomoticsHafferSQ-Medium {
   font-weight: 500;
   font-style: normal;
 }
-.InnomoticsHafferSQ-MediumItalic{
+.InnomoticsHafferSQ-MediumItalic {
   font-weight: 500;
   font-style: italic;
 }
-.InnomoticsHafferSQ-Regular{
+.InnomoticsHafferSQ-Regular {
   font-weight: normal;
   font-style: normal;
 }
-.InnomoticsHafferSQ-RegularItalic{
+.InnomoticsHafferSQ-RegularItalic {
   font-weight: normal;
   font-style: italic;
 }
-.InnomoticsHafferSQ-SemiBold{
+.InnomoticsHafferSQ-SemiBold {
   font-weight: 600;
   font-style: normal;
 }
-.InnomoticsHafferSQ-SemiBoldItalic{
+.InnomoticsHafferSQ-SemiBoldItalic {
   font-weight: 600;
   font-style: italic;
 }
-.InnomoticsHafferSQ-Thin{
+.InnomoticsHafferSQ-Thin {
   font-weight: 100;
   font-style: normal;
 }
-.InnomoticsHafferSQ-ThinItalic{
+.InnomoticsHafferSQ-ThinItalic {
   font-weight: 100;
   font-style: italic;
+}
 
+.color-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
