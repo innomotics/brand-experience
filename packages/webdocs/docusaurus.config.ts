@@ -85,6 +85,12 @@ const config: Config = {
           label: "Icons",
         },
         {
+          type: "docSidebar",
+          sidebarId: "colorsSidebar",
+          position: "left",
+          label: "Colors",
+        },
+        {
           href: "https://github.com/innomotics/IX",
           label: "GitHub",
           position: "right",

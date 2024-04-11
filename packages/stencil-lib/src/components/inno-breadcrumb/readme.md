@@ -13,10 +13,10 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-  <inno-breadcrumb>
-    <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
-    <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
-  </inno-breadcrumb>    
+    <inno-breadcrumb>
+      <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
+      <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+    </inno-breadcrumb>    
     ```
   </TabItem>
   <TabItem value="React" label="React">
