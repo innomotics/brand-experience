@@ -11,7 +11,7 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-loader>Button</inno-loader>
+    <inno-loader></inno-loader>
     ```
   </TabItem>
   <TabItem value="React" label="React">
