@@ -411,6 +411,31 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
 
 @ProxyCmp({
+})
+@Component({
+  selector: 'inno-tab',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoTab {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['tabChanged']);
+  }
+}
+
+
+export declare interface InnoTab extends Components.InnoTab {
+
+  tabChanged: EventEmitter<CustomEvent<number>>;
+}
+
+
+@ProxyCmp({
   inputs: ['checked', 'disabled', 'tabIdx', 'variant']
 })
 @Component({

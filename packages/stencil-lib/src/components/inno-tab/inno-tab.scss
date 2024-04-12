@@ -1,0 +1,145 @@
+@use '@innomotics/ix/styles/colors';
+
+// @import 'common-variables';
+
+// @import 'mixins/text-truncation';
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// @import 'mixins/shadow-dom/component';
+
+@mixin scrollbar() {
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #eff0f1;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: #e2e4e6;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #cfd2d5;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c2c6ca;
+  }
+
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+}
+
+@mixin ix-component() {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  @include scrollbar();
+}
+
+:host {
+  @include ix-component;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: auto;
+
+  background-color: colors.$primary-200;
+  font-family: 'InnomoticsHafferSQ-Bold';
+
+  &.light {
+    background-color: colors.$primary-300;
+  }
+
+  &.dark {
+    background-color: colors.$primary-200;
+  }
+
+  .tab-items {
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+
+    .items-content {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    border-radius: 4px;
+    color: colors.$primary-300;
+    background-color: colors.$primary-200;
+    z-index: 2;
+    cursor: pointer;
+    pointer-events: auto;
+
+    &:hover {
+      color: colors.$primary-300;
+      background-color: colors.$primary-200;
+    }
+
+    &:active {
+      color: colors.$primary-300;
+      background-color: colors.$primary-200;
+    }
+
+    &.right {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .overflow-shadow {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+
+    &.shadow-left {
+      mask-image: linear-gradient(90deg, transparent 0px, black 45px);
+    }
+
+    &.shadow-right {
+      mask-image: linear-gradient(90deg, black calc(100% - 45px), transparent 100%);
+    }
+
+    &.shadow-both {
+      mask-image: linear-gradient(90deg, transparent 0px, black 45px, black calc(100% - 45px), transparent 100%);
+    }
+  }
+}

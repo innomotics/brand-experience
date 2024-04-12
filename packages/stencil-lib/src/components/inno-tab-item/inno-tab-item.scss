@@ -1,0 +1,163 @@
+@use '@innomotics/ix/styles/colors';
+
+$large-space: 1.5rem;
+$default-space: 1rem;
+$small-space: 0.5rem;
+$tiny-space: 0.25rem;
+
+$item-active-height: 8px;
+
+@mixin scrollbar() {
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #eff0f1;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: #e2e4e6;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #cfd2d5;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c2c6ca;
+  }
+
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+}
+
+:host {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  @include scrollbar();
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 16px 0px 16px;
+  height: 60px;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: colors.$primary-200;
+  color: colors.$secondary-300;
+  font-family: 'InnomoticsHafferSQ-Bold';
+
+  ::after {
+    content: '';
+    position: absolute;
+    background-color: colors.$primary-300;
+    opacity: 0.4;
+    width: 100%;
+    height: 1px;
+    left: 0;
+  }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span,
+    span::before {
+      pointer-events: none;
+    }
+
+    vertical-align: middle;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+:host(.top) {
+  ::after {
+    top: 0;
+  }
+}
+
+:host(.bottom) {
+  ::after {
+    bottom: 0;
+  }
+}
+
+:host(.stretched) {
+  flex-basis: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host(:hover) {
+  background-color: colors.$primary-200;
+  color: colors.$secondary-300;
+  cursor: pointer;
+
+  ::after {
+    height: 8px;
+    background-color: colors.$secondary-300;
+    opacity: 1;
+  }
+}
+
+:host(:active) {
+  background-color: colors.$primary-200;
+  color: colors.$primary-100;
+
+  ::after {
+    opacity: 1;
+    height: 8px;
+    background-color: colors.$primary-100;
+  }
+}
+
+:host(:focus-visible) {
+  outline-width: 0px;
+}
+
+:host(.disabled) {
+  pointer-events: none;
+  color: #000a1466;
+  background-color: #00000000;
+
+  ::after {
+    background-color: #00142833;
+  }
+}
+
+:host(.selected:not(.disabled)) {
+  background-color: colors.$primary-200;
+  color: colors.$primary-100;
+
+  ::after {
+    height: 8px;
+    opacity: 1;
+    background-color: colors.$primary-100;
+  }
+}

@@ -160,6 +160,11 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
 ]);
 
 
+export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', undefined, [
+  'tabChanged'
+]);
+
+
 export const InnoToggle = /*@__PURE__*/ defineContainer<JSX.InnoToggle>('inno-toggle', undefined, [
   'checked',
   'disabled',
