@@ -1,16 +1,10 @@
 @use '@innomotics/ix/styles/colors';
 
-// @import 'common-variables';
-
-// @import 'mixins/text-truncation';
-
 @mixin ellipsis() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-// @import 'mixins/shadow-dom/component';
 
 @mixin scrollbar() {
   ::-webkit-scrollbar-button {
@@ -49,25 +43,20 @@
   }
 }
 
-@mixin ix-component() {
+:host {
   *,
   *::after,
   *::before {
     box-sizing: border-box;
   }
 
-  @include scrollbar();
-}
-
-:host {
-  @include ix-component;
+  @include scrollbar;
 
   display: flex;
   align-items: center;
-  position: relative;
   width: auto;
+  position: relative;
 
-  background-color: colors.$primary-200;
   font-family: 'InnomoticsHafferSQ-Bold';
 
   &.light {
@@ -79,9 +68,9 @@
   }
 
   .tab-items {
+    width: 100%;
     overflow: hidden;
     scroll-behavior: smooth;
-    width: 100%;
 
     .items-content {
       display: flex;
@@ -90,19 +79,22 @@
   }
 
   .arrow {
+    width: 24px;
+    height: 24px;
+    margin: auto 0;
+    border-radius: 4px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    margin: auto 0;
-    border-radius: 4px;
-    color: colors.$primary-300;
+
     background-color: colors.$primary-200;
+    color: colors.$primary-300;
     z-index: 2;
     cursor: pointer;
     pointer-events: auto;
@@ -124,10 +116,10 @@
   }
 
   .overflow-shadow {
-    display: block;
-    position: relative;
     height: 100%;
     width: 100%;
+    display: block;
+    position: relative;
     pointer-events: all;
 
     &.shadow-left {

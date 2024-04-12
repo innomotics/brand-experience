@@ -4,6 +4,15 @@ export type TabClickDetail = {
   nativeEvent: MouseEvent;
 };
 
+type HostClasses = { selected: boolean; disabled: boolean; stretched: boolean };
+
+/**
+ * Represents an inno-tab item.
+ *
+ * Wraps the provided content.
+ *
+ * See the InnoTab component for more information about how to use the tab component.
+ */
 @Component({
   tag: 'inno-tab-item',
   styleUrl: 'inno-tab-item.scss',
@@ -11,49 +20,46 @@ export type TabClickDetail = {
 })
 export class InnoTabItem {
   /**
-   * Set selected tab
+   * Theme variant property.
+   * Inherited from the parent.
+   * Can be overridden if explicitly defined.
    */
-  @Prop() selected = false;
+  @Prop() theme: 'light' | 'dark' = 'light';
 
   /**
-   * Set disabled tab
-   */
-  @Prop() disabled = false;
-
-  /**
-   * Set layout width style
+   * Set layout width style.
+   * Auto: Item has the same width as the enclosed item in slot.
+   * Stretched: Item has the maximum available width.
    */
   @Prop() layout: 'auto' | 'stretched' = 'auto';
 
   /**
-   * Set selected placement
+   * Set selected tab.
    */
-  @Prop() placement: 'bottom' | 'top' = 'bottom';
+  @Prop() selected = false;
 
   /**
-   * On tab click
+   * Set disabled tab.
+   */
+  @Prop() disabled = false;
+
+  /**
+   * On tab click.
    */
   @Event() tabClick: EventEmitter<TabClickDetail>;
 
-  private tabItemClasses(props: { selected: boolean; disabled: boolean; layout: 'auto' | 'stretched'; placement: 'bottom' | 'top' }) {
+  private hostClasses(): HostClasses {
     return {
-      selected: props.selected,
-      disabled: props.disabled,
-      stretched: props.layout === 'stretched',
-      bottom: props.placement === 'bottom',
-      top: props.placement === 'top',
+      selected: this.selected,
+      disabled: this.disabled,
+      stretched: this.layout === 'stretched' ? true : false,
     };
   }
 
   render() {
     return (
       <Host
-        class={this.tabItemClasses({
-          selected: this.selected,
-          disabled: this.disabled,
-          layout: this.layout,
-          placement: this.placement,
-        })}
+        class={this.hostClasses()}
         tabIndex={0}
         onClick={(event: MouseEvent) => {
           const clientEvent = this.tabClick.emit({

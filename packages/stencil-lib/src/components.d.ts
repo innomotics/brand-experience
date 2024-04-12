@@ -362,40 +362,33 @@ export namespace Components {
          */
         "layout": 'auto' | 'stretched';
         /**
-          * Set placement style
-         */
-        "placement": 'bottom' | 'top';
-        /**
-          * Set rounded tabs
-         */
-        "rounded": boolean;
-        /**
           * Set default selected tab by index
          */
         "selected": number;
-        /**
-          * Set tab items to small size
-         */
-        "small": boolean;
         "theme": 'light' | 'dark';
     }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
     interface InnoTabItem {
         /**
-          * Set disabled tab
+          * Set disabled tab.
          */
         "disabled": boolean;
         /**
-          * Set layout width style
+          * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
          */
         "layout": 'auto' | 'stretched';
         /**
-          * Set selected placement
-         */
-        "placement": 'bottom' | 'top';
-        /**
-          * Set selected tab
+          * Set selected tab.
          */
         "selected": boolean;
+        /**
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
+         */
+        "theme": 'light' | 'dark';
     }
     interface InnoToggle {
         /**
@@ -694,6 +687,11 @@ declare global {
     interface HTMLInnoTabItemElementEventMap {
         "tabClick": TabClickDetail;
     }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
     interface HTMLInnoTabItemElement extends Components.InnoTabItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoTabItemElementEventMap>(type: K, listener: (this: HTMLInnoTabItemElement, ev: InnoTabItemCustomEvent<HTMLInnoTabItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1120,48 +1118,40 @@ declare namespace LocalJSX {
         "layout"?: 'auto' | 'stretched';
         /**
           * `selected` property changed
-          * @since 2.0.0
          */
         "onSelectedChange"?: (event: InnoTabCustomEvent<number>) => void;
-        /**
-          * Set placement style
-         */
-        "placement"?: 'bottom' | 'top';
-        /**
-          * Set rounded tabs
-         */
-        "rounded"?: boolean;
         /**
           * Set default selected tab by index
          */
         "selected"?: number;
-        /**
-          * Set tab items to small size
-         */
-        "small"?: boolean;
         "theme"?: 'light' | 'dark';
     }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
     interface InnoTabItem {
         /**
-          * Set disabled tab
+          * Set disabled tab.
          */
         "disabled"?: boolean;
         /**
-          * Set layout width style
+          * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
          */
         "layout"?: 'auto' | 'stretched';
         /**
-          * On tab click
+          * On tab click.
          */
         "onTabClick"?: (event: InnoTabItemCustomEvent<TabClickDetail>) => void;
         /**
-          * Set selected placement
-         */
-        "placement"?: 'bottom' | 'top';
-        /**
-          * Set selected tab
+          * Set selected tab.
          */
         "selected"?: boolean;
+        /**
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
+         */
+        "theme"?: 'light' | 'dark';
     }
     interface InnoToggle {
         /**
@@ -1242,6 +1232,11 @@ declare module "@stencil/core" {
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
             "inno-tab": LocalJSX.InnoTab & JSXBase.HTMLAttributes<HTMLInnoTabElement>;
+            /**
+             * Represents an inno-tab item.
+             * Wraps the provided content.
+             * See the InnoTab component for more information about how to use the tab component.
+             */
             "inno-tab-item": LocalJSX.InnoTabItem & JSXBase.HTMLAttributes<HTMLInnoTabItemElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
         }

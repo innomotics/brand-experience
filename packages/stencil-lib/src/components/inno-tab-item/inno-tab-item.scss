@@ -1,11 +1,6 @@
 @use '@innomotics/ix/styles/colors';
 
-$large-space: 1.5rem;
-$default-space: 1rem;
-$small-space: 0.5rem;
-$tiny-space: 0.25rem;
-
-$item-active-height: 8px;
+$bar-active-height: 8px;
 
 @mixin scrollbar() {
   ::-webkit-scrollbar-button {
@@ -45,35 +40,41 @@ $item-active-height: 8px;
 }
 
 :host {
+  @include scrollbar();
+
   *,
   *::after,
   *::before {
     box-sizing: border-box;
   }
 
-  @include scrollbar();
+  height: 60px;
+  padding: 16px 16px 16px 16px;
 
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 16px 0px 16px;
-  height: 60px;
+
+  position: relative;
+
   line-height: 25px;
   font-size: 16px;
   font-weight: bold;
+
   background-color: colors.$primary-200;
   color: colors.$secondary-300;
   font-family: 'InnomoticsHafferSQ-Bold';
 
   ::after {
     content: '';
-    position: absolute;
-    background-color: colors.$primary-300;
-    opacity: 0.4;
     width: 100%;
     height: 1px;
+    position: absolute;
+    bottom: 0;
     left: 0;
+    background-color: colors.$primary-300;
+    opacity: 0.4;
+    transition: height 300ms cubic-bezier(0.84, 0, 0.58, 1);
   }
 
   .text {
@@ -94,16 +95,8 @@ $item-active-height: 8px;
   }
 }
 
-:host(.top) {
-  ::after {
-    top: 0;
-  }
-}
-
-:host(.bottom) {
-  ::after {
-    bottom: 0;
-  }
+:host(:focus-visible) {
+  outline-width: 0px;
 }
 
 :host(.stretched) {
@@ -120,9 +113,9 @@ $item-active-height: 8px;
   cursor: pointer;
 
   ::after {
-    height: 8px;
-    background-color: colors.$secondary-300;
+    height: $bar-active-height;
     opacity: 1;
+    background-color: colors.$secondary-300;
   }
 }
 
@@ -131,23 +124,20 @@ $item-active-height: 8px;
   color: colors.$primary-100;
 
   ::after {
+    height: $bar-active-height;
     opacity: 1;
-    height: 8px;
     background-color: colors.$primary-100;
   }
 }
 
-:host(:focus-visible) {
-  outline-width: 0px;
-}
-
 :host(.disabled) {
   pointer-events: none;
-  color: #000a1466;
-  background-color: #00000000;
+  color: colors.$secondary-800;
+  background-color: colors.$primary-200;
 
   ::after {
-    background-color: #00142833;
+    opacity: 1;
+    background-color: colors.$secondary-800;
   }
 }
 
@@ -156,7 +146,7 @@ $item-active-height: 8px;
   color: colors.$primary-100;
 
   ::after {
-    height: 8px;
+    height: $bar-active-height;
     opacity: 1;
     background-color: colors.$primary-100;
   }

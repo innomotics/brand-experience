@@ -3,6 +3,16 @@ import { requestAnimationFrameNoNgZone } from '../../utils/siemensix/requestAnim
 import { InnoTabItem } from '../inno-tab-item/inno-tab-item';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tab component implementation is based on the Siemend IX implementation and on a custom implementation.
+//
+// Tab is modified to align with the Innomotics design. (fetures removed, added, etc.)
+//
+// Ref: https://github.com/siemens/ix/blob/main/packages/core/src/components/tabs/tabs.tsx
+// Ref: https://github.com/siemens/ix/blob/main/packages/core/src/components/tab-item/tab-item.tsx
+// Ref: https://github.com/livebloggerofficial/Scrollable-Tabs-Slider/tree/main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 type InnoTabItemHtmlElement = HTMLElement & InnoTabItem & HTMLStencilElement & any;
 
 /**
@@ -14,20 +24,9 @@ type InnoTabItemHtmlElement = HTMLElement & InnoTabItem & HTMLStencilElement & a
   scoped: true,
 })
 export class InnoTab {
-  @Prop()
-  theme: 'light' | 'dark' = 'light';
+  @Prop() theme: 'light' | 'dark' = 'light';
 
   @Element() hostElement!: HTMLElement & InnoTab;
-
-  /**
-   * Set tab items to small size
-   */
-  @Prop() small = false;
-
-  /**
-   * Set rounded tabs
-   */
-  @Prop() rounded = false;
 
   /**
    * Set default selected tab by index
@@ -40,14 +39,7 @@ export class InnoTab {
   @Prop() layout: 'auto' | 'stretched' = 'auto';
 
   /**
-   * Set placement style
-   */
-  @Prop() placement: 'bottom' | 'top' = 'bottom';
-
-  /**
    * `selected` property changed
-   *
-   * @since 2.0.0
    */
   @Event() selectedChange: EventEmitter<number>;
 
@@ -210,14 +202,8 @@ export class InnoTab {
     const tabs = this.getTabs();
 
     tabs.map((element, index) => {
-      if (this.small) element.setAttribute('small', 'true');
-
-      if (this.rounded) element.setAttribute('rounded', 'true');
-
       element.setAttribute('layout', this.layout);
       element.setAttribute('selected', index === this.selected ? 'true' : 'false');
-
-      element.setAttribute('placement', this.placement);
     });
   }
 
@@ -263,9 +249,16 @@ export class InnoTab {
     });
   }
 
+  commonStyles() {
+    return {
+      light: this.theme === 'light',
+      dark: this.theme === 'dark',
+    };
+  }
+
   render() {
     return (
-      <Host>
+      <Host class={this.commonStyles()}>
         <div class="arrow" data-arrow-left onClick={() => this.move(this.scrollAmount, true)}>
           <inno-icon icon="chevronleft" size={32}></inno-icon>
         </div>
