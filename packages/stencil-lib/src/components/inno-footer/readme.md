@@ -19,8 +19,18 @@ and these elements may need manual configuration like theme support.
 For custom elements the `data-inno-footer-item-style` attribute is set with the given variant.
 
 <Tabs>
-  <TabItem value="preview" label="Preview" default>
+  <TabItem value="preview-dark" label="Preview (dark)" default>
     <InnoFooter variant="dark" copyright="@ Copyright My company">
+      <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+      <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+      <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+    </InnoFooter>
+  </TabItem>
+  <TabItem value="preview-light" label="Preview (light)">
+    <InnoFooter variant="light" copyright="@ Copyright My company">
       <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
       <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
       <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
@@ -63,6 +73,18 @@ For custom elements the `data-inno-footer-item-style` attribute is set with the 
       <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
       <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
     </InnoFooter>
+    ```
+  </TabItem>
+  <TabItem value="webcomponent" label="Web component">
+    ```html
+    <inno-footer [copyright]="copyright">
+      <inno-footer-item slot="links"><a>{{privacyNotice}}</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>{{termsOfUse}}</a></inno-footer-item>
+      <inno-footer-item slot="links"><a>{{cookieNotice}}</a></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
+      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
+    </inno-footer> 
     ```
   </TabItem>
 </Tabs>

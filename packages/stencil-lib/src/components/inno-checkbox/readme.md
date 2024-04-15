@@ -5,7 +5,8 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 # inno-checkbox
 
 <Tabs>
-  <TabItem value="preview" label="Preview" default>
+  <TabItem value="preview-dark" label="Preview (dark)" default>
+    <div style={{paddingLeft: '20px'}}>
     <div><InnoCheckbox label="unchecked" variant="dark"></InnoCheckbox></div>
     <div><InnoCheckbox label="checked" variant="dark" checked></InnoCheckbox></div>
     <div><InnoCheckbox label="required" variant="dark" required></InnoCheckbox></div>
@@ -13,6 +14,18 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
     <div><InnoCheckbox label="indeterminate" variant="dark" indeterminate></InnoCheckbox></div>
     <div><InnoCheckbox label="readonly" variant="dark" readonly checked></InnoCheckbox></div>
     <div><InnoCheckbox label="disabled" variant="dark" disabled checked></InnoCheckbox></div>
+    </div>
+  </TabItem>
+  <TabItem value="preview-light" label="Preview (light)">
+    <div style={{backgroundColor: 'white', paddingLeft: '20px'}}>
+    <div><InnoCheckbox label="unchecked" variant="light"></InnoCheckbox></div>
+    <div><InnoCheckbox label="checked" variant="light" checked></InnoCheckbox></div>
+    <div><InnoCheckbox label="required" variant="light" required></InnoCheckbox></div>
+    <div><InnoCheckbox label="error" variant="light" required error></InnoCheckbox></div>
+    <div><InnoCheckbox label="indeterminate" variant="light" indeterminate></InnoCheckbox></div>
+    <div><InnoCheckbox label="readonly" variant="light" readonly checked></InnoCheckbox></div>
+    <div><InnoCheckbox label="disabled" variant="light" disabled checked></InnoCheckbox></div>
+    </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ## Standalone usage
