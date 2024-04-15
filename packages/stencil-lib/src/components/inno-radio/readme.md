@@ -6,26 +6,34 @@ import {InnoRadio} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview-dark" label="Preview (dark)" default>
-    <div style={{paddingLeft: '20px'}}>
-    <form>
-      <div><InnoRadio name="group1" value="value1" label="unchecked" variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group2" value="value2" label="checked" checked variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group3" value="value3" label="required" required variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group4" value="value4" label="error" required error variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group5" value="value5" label="readonly" checked readonly variant="dark"></InnoRadio></div>
-      <div><InnoRadio name="group6" value="value6" label="disabled" checked disabled variant="dark"></InnoRadio></div>
-    </form>
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <form>
+          <div><InnoRadio name="group1" value="value1" label="unchecked" variant="light"></InnoRadio></div>
+          <div><InnoRadio name="group2" value="value2" label="checked" checked variant="light"></InnoRadio></div>
+          <div><InnoRadio name="group3" value="value3" label="required" required variant="light"></InnoRadio></div>
+          <div><InnoRadio name="group4" value="value4" label="error" required error variant="light"></InnoRadio></div>
+          <div><InnoRadio name="group5" value="value5" label="readonly" checked readonly variant="light"></InnoRadio></div>
+          <div><InnoRadio name="group6" value="value6" label="disabled" checked disabled variant="light"></InnoRadio></div>
+        </form>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+          <form>
+            <div><InnoRadio name="group1" value="value1" label="unchecked" variant="dark"></InnoRadio></div>
+            <div><InnoRadio name="group2" value="value2" label="checked" checked variant="dark"></InnoRadio></div>
+            <div><InnoRadio name="group3" value="value3" label="required" required variant="dark"></InnoRadio></div>
+            <div><InnoRadio name="group4" value="value4" label="error" required error variant="dark"></InnoRadio></div>
+            <div><InnoRadio name="group5" value="value5" label="readonly" checked readonly variant="dark"></InnoRadio></div>
+            <div><InnoRadio name="group6" value="value6" label="disabled" checked disabled variant="dark"></InnoRadio></div>
+          </form>
+      </div>
     </div>
   </TabItem>
   <TabItem value="preview-light" label="Preview (light)">
     <div style={{backgroundColor: 'white', paddingLeft: '20px'}}>
     <form>
-      <div><InnoRadio name="group1" value="value1" label="unchecked" variant="light"></InnoRadio></div>
-      <div><InnoRadio name="group2" value="value2" label="checked" checked variant="light"></InnoRadio></div>
-      <div><InnoRadio name="group3" value="value3" label="required" required variant="light"></InnoRadio></div>
-      <div><InnoRadio name="group4" value="value4" label="error" required error variant="light"></InnoRadio></div>
-      <div><InnoRadio name="group5" value="value5" label="readonly" checked readonly variant="light"></InnoRadio></div>
-      <div><InnoRadio name="group6" value="value6" label="disabled" checked disabled variant="light"></InnoRadio></div>
     </form>
     </div>
   </TabItem>

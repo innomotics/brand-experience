@@ -20,17 +20,44 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-loader></inno-loader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <inno-loader></inno-loader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <inno-loader variant="dark"></inno-loader>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoLoader></InnoLoader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoLoader></InnoLoader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoLoader variant="dark"></InnoLoader>
+    </div>
+  </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoLoader></InnoLoader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoLoader></InnoLoader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoLoader variant="dark"></InnoLoader>
+    </div>
+  </div>
     ```
   </TabItem>
 </Tabs>
