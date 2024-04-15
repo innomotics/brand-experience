@@ -6,7 +6,57 @@ import {InnoButton} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoButton variant="primary">Button</InnoButton>
+          <div>
+        <h1>regular buttons</h1>
+        <div style={{"display": "flex", "flex-direction": "row"}}>
+          <div style={{"background-color": "white", "padding": "15px"}}>
+            <span style={{"display": "block", "margin-bottom": "25px", "color": "black"}}>light background</span>
+            <inno-button variant="primary" icon="arrow-right" color-variant="dark">primary button</inno-button>
+            <inno-button variant="secondary" icon="arrow-right" color-variant="dark">secondary button</inno-button>
+            <inno-button variant="tertiary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
+            <inno-button variant="primary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="secondary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="tertiary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+          </div>
+          <div style={{"background-color": "#08191f", "padding": "15px"}}>
+            <span style={{"display": "block", "margin-bottom": "25px", "color": "white"}}>dark background</span>
+            <inno-button variant="primary" icon="arrow-right">primary button</inno-button>
+            <inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
+            <inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
+            <inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
+            <inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
+            <inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
+          </div>
+          <div style={{"background-color": "white", "padding": "15px"}}>
+            <span style={{"display": "block", "margin-bottom": "25px", "color": "black"}}>disabled light background</span>
+            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+          </div>
+          <div style={{"background-color": "#08191f", "padding": "15px"}}>
+            <span style={{"display": "block", "margin-bottom": "25px", "color": "white"}}>disabled dark background</span>
+            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
+            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
+            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
+          </div>
+        </div>
+        <h1>media buttons</h1>
+        <div style={{"display": "flex", "flex-direction": "row", "gap": "40px"}}>
+          <inno-button variant="media" icon="share"></inno-button>
+          <inno-button variant="media" icon="pause" disabled></inno-button>
+        </div>
+        <h1>navigation buttons</h1>
+        <div style={{"display": "flex", "flex-direction": "row", "gap": "40px"}}>
+          <inno-button variant="navigation" nav-direction="left"></inno-button>
+          <inno-button variant="navigation" disabled></inno-button>
+        </div>
+      </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
