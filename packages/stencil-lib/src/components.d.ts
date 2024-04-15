@@ -369,6 +369,9 @@ export namespace Components {
           * Show the navigation arrow for desktop.
          */
         "showArrow": boolean;
+        /**
+          * Theme variant of the component.
+         */
         "theme": 'light' | 'dark';
     }
     /**
@@ -1132,6 +1135,9 @@ declare namespace LocalJSX {
           * Show the navigation arrow for desktop.
          */
         "showArrow"?: boolean;
+        /**
+          * Theme variant of the component.
+         */
         "theme"?: 'light' | 'dark';
     }
     /**

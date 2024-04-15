@@ -24,9 +24,12 @@ type InnoTabItemHtmlElement = HTMLElement & InnoTabItem & HTMLStencilElement & a
   scoped: true,
 })
 export class InnoTab {
-  @Prop() theme: 'light' | 'dark' = 'light';
-
   @Element() hostElement!: HTMLElement & InnoTab;
+
+  /**
+   * Theme variant of the component.
+   */
+  @Prop() theme: 'light' | 'dark' = 'light';
 
   /**
    * Set default selected tab by index

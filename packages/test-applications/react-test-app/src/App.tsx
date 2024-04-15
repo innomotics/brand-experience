@@ -1,20 +1,29 @@
-import './App.css'
-import { defineCustomElements, InnoBreadcrumb, InnoBreadcrumbItem, InnoIcon } from '@innomotics/ix-react-lib';
+import "./App.css";
+import {
+  defineCustomElements,
+  InnoBreadcrumb,
+  InnoBreadcrumbItem,
+  InnoIcon,
+} from "@innomotics/ix-react-lib";
+import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
 
 defineCustomElements();
 
 function App() {
-
   return (
     <>
-    <InnoBreadcrumb>
-      <InnoBreadcrumbItem icon="about" label="Item 1"></InnoBreadcrumbItem>
-      <InnoBreadcrumbItem label="Item 2"></InnoBreadcrumbItem>
-      <InnoBreadcrumbItem label="Item 3"></InnoBreadcrumbItem>
-    </InnoBreadcrumb>
-    <InnoIcon icon="add-circle"></InnoIcon>
+      <div className="tab-container">
+        <InnoTabExample></InnoTabExample>
+      </div>
+
+      <InnoBreadcrumb>
+        <InnoBreadcrumbItem icon="about" label="Item 1"></InnoBreadcrumbItem>
+        <InnoBreadcrumbItem label="Item 2"></InnoBreadcrumbItem>
+        <InnoBreadcrumbItem label="Item 3"></InnoBreadcrumbItem>
+      </InnoBreadcrumb>
+      <InnoIcon icon="youtubelogo"></InnoIcon>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
