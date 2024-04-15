@@ -84,7 +84,7 @@ export const InnoFooterItem = /*@__PURE__*/ defineContainer<JSX.InnoFooterItem>(
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
   'size',
-  'theme'
+  'variant'
 ]);
 
 
@@ -99,7 +99,8 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
 
 
 export const InnoLoader = /*@__PURE__*/ defineContainer<JSX.InnoLoader>('inno-loader', undefined, [
-  'size'
+  'size',
+  'variant'
 ]);
 
 

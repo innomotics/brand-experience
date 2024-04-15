@@ -110,7 +110,7 @@ export class InnoButton {
           tabIndex={this.disabled ? -1 : this.tabIdx ?? 0}
         >
           <slot></slot>
-          {hasIcon ? <inno-icon icon={icon} size={iconSize} theme={this.colorVariant}></inno-icon> : null}
+          {hasIcon ? <inno-icon icon={icon} size={iconSize} variant={this.colorVariant}></inno-icon> : null}
         </button>
       </Host>
     );

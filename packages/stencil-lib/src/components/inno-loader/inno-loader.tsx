@@ -12,6 +12,18 @@ export class InnoLoader {
    */
   @Prop({mutable : true}) size: number = 64;
 
+    /**
+   * Theme variant property.
+   */
+  @Prop({ mutable: true })
+  variant: 'light' | 'dark' = 'light';
+
+  getStlyes()
+  {
+    let classes = this.variant == "light"?"light":"dark";
+    return classes +` icon-${this.size}`;
+  }
+
   componentWillLoad()
   {
     if(this.size > 64)
@@ -21,8 +33,7 @@ export class InnoLoader {
   }
   render() {
     return (
-      <Host class={`icon-${this.size}`}>
-       
+      <Host class={this.getStlyes()}>
       </Host>
     );
   }

@@ -6,7 +6,7 @@ import {InnoInput} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <div class="component-display">
+  <div class="component-display">
     <div class="light-bg">
       <span class="bg-title">light background</span>
       <InnoInput label="Power" variant="light">
@@ -20,27 +20,59 @@ import {InnoInput} from '@innomotics/ix-react-lib';
       </InnoInput> 
     </div>
   </div>
-
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-input label="Power" variant="dark">
-     <input type="number" />
-    </inno-input>  
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <inno-input label="Power" variant="light">
+        <input type="number" />
+      </inno-input> 
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <inno-input label="Power" variant="dark">
+        <input type="number" />
+      </inno-input> 
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoInput label="Power" variant="dark">
-     <input type="number" />
-    </InnoInput> 
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoInput label="Power" variant="light">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoInput label="Power" variant="dark">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+  </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoInput label="Power" variant="dark">
-     <input type="number" />
-    </InnoInput> 
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoInput label="Power" variant="light">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoInput label="Power" variant="dark">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+  </div>
     ```
   </TabItem>
 </Tabs>
