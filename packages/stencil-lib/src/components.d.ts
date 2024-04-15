@@ -365,6 +365,10 @@ export namespace Components {
           * Set default selected tab by index
          */
         "selected": number;
+        /**
+          * Show the navigation arrow for desktop.
+         */
+        "showArrow": boolean;
         "theme": 'light' | 'dark';
     }
     /**
@@ -1124,6 +1128,10 @@ declare namespace LocalJSX {
           * Set default selected tab by index
          */
         "selected"?: number;
+        /**
+          * Show the navigation arrow for desktop.
+         */
+        "showArrow"?: boolean;
         "theme"?: 'light' | 'dark';
     }
     /**

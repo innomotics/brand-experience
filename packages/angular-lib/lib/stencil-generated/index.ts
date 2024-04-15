@@ -19,5 +19,6 @@ export const DIRECTIVES = [
   d.InnoSelect,
   d.InnoSelectItem,
   d.InnoTab,
+  d.InnoTabItem,
   d.InnoToggle
 ];

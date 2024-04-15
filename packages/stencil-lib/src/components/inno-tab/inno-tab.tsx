@@ -6,7 +6,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Tab component implementation is based on the Siemend IX implementation and on a custom implementation.
 //
-// Tab is modified to align with the Innomotics design. (fetures removed, added, etc.)
+// Tab is modified to align with the Innomotics design.
 //
 // Ref: https://github.com/siemens/ix/blob/main/packages/core/src/components/tabs/tabs.tsx
 // Ref: https://github.com/siemens/ix/blob/main/packages/core/src/components/tab-item/tab-item.tsx
@@ -39,6 +39,11 @@ export class InnoTab {
   @Prop() layout: 'auto' | 'stretched' = 'auto';
 
   /**
+   * Show the navigation arrow for desktop.
+   */
+  @Prop() showArrow = true;
+
+  /**
    * `selected` property changed
    */
   @Event() selectedChange: EventEmitter<number>;
@@ -46,18 +51,11 @@ export class InnoTab {
   @State() totalItems = 0;
   @State() currentScrollAmount = 0;
   @State() scrollAmount = 100;
-
   @State() scrollActionAmount = 0;
 
   private windowStartSize = window.innerWidth;
-
-  private get arrowLeftElement() {
-    return this.hostElement.querySelector('[data-arrow-left]') as HTMLElement;
-  }
-
-  private get arrowRightElement() {
-    return this.hostElement.querySelector('[data-arrow-right]') as HTMLElement;
-  }
+  private arrowLeftElement: HTMLElement;
+  private arrowRightElement: HTMLElement;
 
   private clickAction: {
     timeout: NodeJS.Timeout;
@@ -72,7 +70,10 @@ export class InnoTab {
     this.totalItems = 0;
     this.totalItems = this.getTabs().length;
 
-    if (this.windowStartSize === 0) return (this.windowStartSize = window.innerWidth);
+    if (this.windowStartSize === 0) {
+      this.windowStartSize = window.innerWidth;
+      return;
+    }
     this.move(this.windowStartSize - window.innerWidth);
     this.windowStartSize = window.innerWidth;
   }
@@ -90,8 +91,13 @@ export class InnoTab {
   }
 
   private showArrows() {
+    if (!this.showArrow) {
+      return false;
+    }
+
     try {
       const tabWrapper = this.getTabsWrapper();
+      // Check whether the wrapper width is less than the width of the scrollable content
       return tabWrapper.scrollWidth > Math.ceil(tabWrapper.getBoundingClientRect().width) && this.layout === 'auto';
     } catch (error) {
       return false;
@@ -202,6 +208,7 @@ export class InnoTab {
     const tabs = this.getTabs();
 
     tabs.map((element, index) => {
+      element.setAttribute('theme', this.theme);
       element.setAttribute('layout', this.layout);
       element.setAttribute('selected', index === this.selected ? 'true' : 'false');
     });
@@ -249,35 +256,54 @@ export class InnoTab {
     });
   }
 
-  commonStyles() {
+  private themeClasses() {
     return {
       light: this.theme === 'light',
       dark: this.theme === 'dark',
     };
   }
 
+  private arrowStyle(left: boolean) {
+    return {
+      ...this.themeClasses(),
+      'arrow': true,
+      'arrow-left': left,
+      'arrow-right': !left,
+    };
+  }
+
+  private leftArrow() {
+    return (
+      <div class={this.arrowStyle(true)} onClick={() => this.move(this.scrollAmount, true)} ref={ref => (this.arrowLeftElement = ref)}>
+        <inno-icon icon="chevronleftsmall" size={24}></inno-icon>
+      </div>
+    );
+  }
+
+  private scrollContent() {
+    return (
+      <div class={{ 'tab-items': true }}>
+        <div class={{ 'items-content': true }}>
+          <slot></slot>
+        </div>
+      </div>
+    );
+  }
+
+  private rightArrow() {
+    return (
+      <div class={this.arrowStyle(false)} onClick={() => this.move(-this.scrollAmount, true)} ref={ref => (this.arrowRightElement = ref)}>
+        <inno-icon icon="chevronrightsmall" size={24}></inno-icon>
+      </div>
+    );
+  }
+
   render() {
     return (
-      <Host class={this.commonStyles()}>
-        <div class="arrow" data-arrow-left onClick={() => this.move(this.scrollAmount, true)}>
-          <inno-icon icon="chevronleft" size={32}></inno-icon>
-        </div>
-        <div
-          class={{
-            'tab-items': true,
-            'overflow-shadow': true,
-            'shadow-left': this.showPreviousArrow(),
-            'shadow-right': this.showNextArrow(),
-            'shadow-both': this.showNextArrow() && this.showPreviousArrow(),
-          }}
-        >
-          <div class="items-content">
-            <slot></slot>
-          </div>
-        </div>
-        <div class="arrow right" data-arrow-right onClick={() => this.move(-this.scrollAmount, true)}>
-          <inno-icon icon="chevronright" size={32}></inno-icon>
-        </div>
+      <Host class={this.themeClasses()}>
+        {this.leftArrow()}
+        {this.scrollContent()}
+        {this.rightArrow()}
       </Host>
     );
   }

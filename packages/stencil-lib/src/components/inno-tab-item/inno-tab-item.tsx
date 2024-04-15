@@ -48,11 +48,28 @@ export class InnoTabItem {
    */
   @Event() tabClick: EventEmitter<TabClickDetail>;
 
+  private themeClasses() {
+    return {
+      light: this.theme === 'light',
+      dark: this.theme === 'dark',
+    };
+  }
+
   private hostClasses(): HostClasses {
     return {
+      ...this.themeClasses(),
       selected: this.selected,
       disabled: this.disabled,
-      stretched: this.layout === 'stretched' ? true : false,
+      stretched: this.layout === 'stretched',
+    };
+  }
+
+  private slotClasses() {
+    return {
+      ...this.themeClasses(),
+      text: true,
+      selected: this.selected,
+      disabled: this.disabled,
     };
   }
 
@@ -71,13 +88,7 @@ export class InnoTabItem {
           }
         }}
       >
-        <div
-          class={{
-            text: true,
-            selected: this.selected,
-            disabled: this.disabled,
-          }}
-        >
+        <div class={this.slotClasses()}>
           <slot></slot>
         </div>
       </Host>

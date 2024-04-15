@@ -411,27 +411,60 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
 
 @ProxyCmp({
+  inputs: ['layout', 'selected', 'showArrow', 'theme']
 })
 @Component({
   selector: 'inno-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['layout', 'selected', 'showArrow', 'theme'],
 })
 export class InnoTab {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['tabChanged']);
+    proxyOutputs(this, this.el, ['selectedChange']);
   }
 }
 
 
 export declare interface InnoTab extends Components.InnoTab {
+  /**
+   * `selected` property changed
+   */
+  selectedChange: EventEmitter<CustomEvent<number>>;
+}
 
-  tabChanged: EventEmitter<CustomEvent<number>>;
+
+@ProxyCmp({
+  inputs: ['disabled', 'layout', 'selected', 'theme']
+})
+@Component({
+  selector: 'inno-tab-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'layout', 'selected', 'theme'],
+})
+export class InnoTabItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['tabClick']);
+  }
+}
+
+
+import type { TabClickDetail as IInnoTabItemTabClickDetail } from '@innomotics/ix';
+
+export declare interface InnoTabItem extends Components.InnoTabItem {
+  /**
+   * On tab click.
+   */
+  tabClick: EventEmitter<CustomEvent<IInnoTabItemTabClickDetail>>;
 }
 
 

@@ -161,7 +161,20 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
 
 
 export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', undefined, [
-  'tabChanged'
+  'theme',
+  'selected',
+  'layout',
+  'showArrow',
+  'selectedChange'
+]);
+
+
+export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-tab-item', undefined, [
+  'theme',
+  'layout',
+  'selected',
+  'disabled',
+  'tabClick'
 ]);
 
 

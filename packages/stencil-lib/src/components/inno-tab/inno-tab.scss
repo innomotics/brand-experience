@@ -1,47 +1,5 @@
 @use '@innomotics/ix/styles/colors';
-
-@mixin ellipsis() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin scrollbar() {
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background: #eff0f1;
-  }
-
-  ::-webkit-scrollbar-track:hover {
-    background: #e2e4e6;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: #cfd2d5;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #c2c6ca;
-  }
-
-  ::-webkit-scrollbar-corner {
-    display: none;
-  }
-}
+@use '../../../styles/siemens-ix/scrollbar.scss' as ixscrollbar;
 
 :host {
   *,
@@ -50,7 +8,7 @@
     box-sizing: border-box;
   }
 
-  @include scrollbar;
+  @include ixscrollbar.scrollbar;
 
   display: flex;
   align-items: center;
@@ -67,71 +25,82 @@
     background-color: colors.$primary-200;
   }
 
+  // Content main wrapper
+  // slice the overflow content
   .tab-items {
     width: 100%;
     overflow: hidden;
     scroll-behavior: smooth;
 
+    // Stores the provided items
     .items-content {
       display: flex;
       align-items: center;
     }
   }
 
+  // Left and right arrow base
   .arrow {
-    width: 24px;
-    height: 24px;
-    margin: auto 0;
-    border-radius: 4px;
+    width: 100px;
+    height: 100%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
 
-    background-color: colors.$primary-200;
-    color: colors.$primary-300;
     z-index: 2;
     cursor: pointer;
-    pointer-events: auto;
 
-    &:hover {
-      color: colors.$primary-300;
-      background-color: colors.$primary-200;
+    pointer-events: none;
+
+    & > inno-icon {
+      pointer-events: auto;
     }
 
-    &:active {
-      color: colors.$primary-300;
-      background-color: colors.$primary-200;
+    &.light > inno-icon {
+      color: colors.$primary-200;
+
+      &:hover {
+        color: colors.$secondary-800;
+      }
     }
 
-    &.right {
-      left: auto;
-      right: 0;
+    &.dark > inno-icon {
+      color: colors.$primary-300;
+
+      &:hover {
+        color: colors.$secondary-300;
+      }
     }
   }
 
-  .overflow-shadow {
-    height: 100%;
-    width: 100%;
-    display: block;
-    position: relative;
-    pointer-events: all;
+  .arrow-left {
+    justify-content: flex-start;
 
-    &.shadow-left {
-      mask-image: linear-gradient(90deg, transparent 0px, black 45px);
+    &.light {
+      background: linear-gradient(to right, colors.$primary-300, transparent);
     }
 
-    &.shadow-right {
-      mask-image: linear-gradient(90deg, black calc(100% - 45px), transparent 100%);
+    &.dark {
+      background: linear-gradient(to right, colors.$primary-200, transparent);
+    }
+  }
+
+  .arrow-right {
+    justify-content: flex-end;
+    left: auto;
+    right: 0;
+
+    &.light {
+      background: linear-gradient(to left, colors.$primary-300, transparent);
     }
 
-    &.shadow-both {
-      mask-image: linear-gradient(90deg, transparent 0px, black 45px, black calc(100% - 45px), transparent 100%);
+    &.dark {
+      background: linear-gradient(to left, colors.$primary-200, transparent);
     }
   }
 }
