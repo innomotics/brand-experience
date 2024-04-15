@@ -33,6 +33,10 @@ export namespace Components {
         "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumb {
+        /**
+          * Color variant of the accordion.
+         */
+        "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumbItem {
         /**
@@ -692,6 +696,10 @@ declare namespace LocalJSX {
           * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
          */
         "onItemClick"?: (event: InnoBreadcrumbCustomEvent<{itemIndex: number, label: string}>) => void;
+        /**
+          * Color variant of the accordion.
+         */
+        "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumbItem {
         /**

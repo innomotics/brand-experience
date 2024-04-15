@@ -1,11 +1,4 @@
-/*
- * SPDX-FileCopyrightText: 2024 Innomotics GmbH
- *
- * SPDX-License-Identifier: MIT
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+@use '@innomotics/ix/styles/colors';
 
 :host {
   display: flex;
@@ -16,7 +9,12 @@
   inno-icon {
     padding-top: 2px;
   }
-
+  &.light {
+    color: colors.$interaction-light-default;
+  }
+  &.dark {
+    color: colors.$interaction-dark-default;
+  }
   ol {
     list-style: none;
     display: flex;
@@ -24,7 +22,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px;
-
     ::slotted(inno-breadcrumb-item:last-of-type) {
       font-weight: bold;
     }

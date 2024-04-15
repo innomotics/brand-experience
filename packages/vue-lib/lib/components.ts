@@ -19,6 +19,7 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
 
 
 export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>('inno-breadcrumb', undefined, [
+  'variant',
   'itemClick'
 ]);
 

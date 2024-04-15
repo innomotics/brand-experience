@@ -51,7 +51,7 @@
   &:hover {
     border: 1px solid innomotics.$interaction-dark-hover;
   }
-  #colorcube{
+  #colorcube {
     width: 60px;
     height: 60px;
     border-radius: 5px;
@@ -133,4 +133,36 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
+}
+
+.component-display {
+  display: flex;
+  flex-direction: row;
+  &.columns
+  {
+    flex-direction: column;
+  }
+  gap: 10px;
+  .light-bg {
+    color: innomotics.$primary-200;
+    flex-grow:1;
+    padding: 1em;
+    background-color: innomotics.$primary-300;
+    padding: 1em;
+    .bg-title {
+      display: block;
+      margin-bottom: 25px;
+    }
+  }
+  .dark-bg {
+    color: innomotics.$primary-300;
+    flex-grow:1;
+    padding: 1em;
+    background-color: innomotics.$primary-200;
+    .bg-title {
+      display: block;
+      margin-bottom: 25px;
+    }
+
+  }
 }

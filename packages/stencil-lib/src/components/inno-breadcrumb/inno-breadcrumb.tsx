@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { Component, Element, Event, EventEmitter, h, Host, Listen } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'inno-breadcrumb',
@@ -17,6 +17,11 @@ import { Component, Element, Event, EventEmitter, h, Host, Listen } from '@stenc
 export class Breadcrumb {
   @Element() hostElement!: HTMLInnoBreadcrumbElement;
 
+  /**
+   * Color variant of the accordion.
+   */
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
+  
   /**
    * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
    */
@@ -42,7 +47,9 @@ export class Breadcrumb {
   render() {
     this.removeLastItemChevron(this.items);
     return (
-      <Host>
+      <Host class={{
+        'light': this.variant === 'light',
+        'dark': this.variant === 'dark'}}>
         <ol>
           {this.items?.length > 0 ? (<inno-breadcrumb-item label="home" icon="home" itemIndex={0} showChevron={this.items.length > 0}></inno-breadcrumb-item>) : null}
           <slot></slot>

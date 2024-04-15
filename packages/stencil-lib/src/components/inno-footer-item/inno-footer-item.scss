@@ -11,7 +11,7 @@
   display: block;
   cursor: pointer;
 
-  &.light :where(::slotted(a), ::slotted(p), ::slotted(inno-icon)) {
+  &.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
     @include labels;
 
     // Paragraph has an implicit relative start and block margin

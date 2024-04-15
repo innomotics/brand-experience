@@ -1,4 +1,4 @@
-# inno-accordion 
+# inno-accordion
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -6,37 +6,68 @@ import {InnoAccordion} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+    <div class="component-display columns">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+      </div>
+    </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
-    ```js
-    <inno-accordion variant="light" label="Title">Text</inno-accordion>
-    <inno-accordion variant="light" label="Title2" collapsed>Text</inno-accordion>
-    <inno-accordion variant="dark" label="Title">Text</inno-accordion>
-    <inno-accordion variant="dark" label="Title2" collapsed>Text</inno-accordion>  
+    ```tsx
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <inno-accordion variant='light' label="Title">Text</inno-accordion>
+        <inno-accordion variant='light' label="Title2" collapsed>Text</inno-accordion>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <inno-accordion variant='dark' label="Title">Text</inno-accordion>
+        <inno-accordion variant='dark' label="Title2" collapsed>Text</inno-accordion>  
+      </div>
+    </div>  
     ```
   </TabItem>
   <TabItem value="React" label="React">
-    ```js
-    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+    ```tsx
+     <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+      </div>
+    </div>
     ```
   </TabItem>
   <TabItem value="Vue" label="Vue">
-    ```js
-    <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
-    <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>    
+    ```tsx
+     <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoAccordion variant='light' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='light' label="Title2" collapsed>Text</InnoAccordion>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoAccordion variant='dark' label="Title">Text</InnoAccordion>
+        <InnoAccordion variant='dark' label="Title2" collapsed>Text</InnoAccordion>  
+      </div>
+    </div>    
     ```
   </TabItem>
-</Tabs> 
-
+</Tabs>
 
 <!-- Auto Generated Below -->
 

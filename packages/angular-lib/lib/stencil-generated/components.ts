@@ -36,13 +36,14 @@ export declare interface InnoAccordion extends Components.InnoAccordion {
 
 
 @ProxyCmp({
+  inputs: ['variant']
 })
 @Component({
   selector: 'inno-breadcrumb',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['variant'],
 })
 export class InnoBreadcrumb {
   protected el: HTMLElement;

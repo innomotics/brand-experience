@@ -6,9 +6,21 @@ import {InnoInput} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoInput label="Power" variant="dark">
-     <input type="number" />
-    </InnoInput> 
+    <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoInput label="Power" variant="light">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoInput label="Power" variant="dark">
+        <input type="number" />
+      </InnoInput> 
+    </div>
+  </div>
+
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
