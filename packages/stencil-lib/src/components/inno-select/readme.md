@@ -6,33 +6,82 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoSelect label="Select" value="item1">
-      <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-      <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
-    </InnoSelect>
+    <div class="component-display">
+        <div class="light-bg">
+          <span class="bg-title">light background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+        <div class="dark-bg">
+          <span class="bg-title">dark background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+    </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-select label="Select" value="item1">
-      <inno-select-item value="item1" label="item1"></inno-select-item>
-      <inno-select-item value="item2" label="item2"></inno-select-item>
-    </inno-select>
+      <div class="component-display">
+        <div class="light-bg">
+          <span class="bg-title">light background</span>
+          <inno-select label="Select" value="item1">
+            <inno-select-item value="item1" label="item1"></inno-select-item>
+            <inno-select-item value="item2" label="item2"></inno-select-item>
+          </InnoSelect>
+        </div>
+        <div class="dark-bg">
+          <span class="bg-title">dark background</span>
+          <inno-select label="Select" value="item1">
+            <inno-select-item value="item1" label="item1"></inno-select-item>
+            <inno-select-item value="item2" label="item2"></inno-select-item>
+          </inno-select>
+        </div>
+    </div>
+
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoSelect label="Select" value="item1">
-      <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-      <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
-    </InnoSelect>
+        <div class="component-display">
+        <div class="light-bg">
+          <span class="bg-title">light background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+        <div class="dark-bg">
+          <span class="bg-title">dark background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+    </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoSelect label="Select" value="item1">
-      <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-      <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
-    </InnoSelect>
+    <div class="component-display">
+        <div class="light-bg">
+          <span class="bg-title">light background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+        <div class="dark-bg">
+          <span class="bg-title">dark background</span>
+          <InnoSelect label="Select" value="item1">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+        </div>
+    </div>
     ```
   </TabItem>
 </Tabs>

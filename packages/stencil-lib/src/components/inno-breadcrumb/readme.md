@@ -6,38 +6,93 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoBreadcrumb>
-      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-    </InnoBreadcrumb>
+   <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoBreadcrumb>
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoBreadcrumb variant="dark">
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+    </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-breadcrumb>
-      <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
-    </inno-breadcrumb>    
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoBreadcrumb>
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoBreadcrumb variant="dark">
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+    </div>   
     ```
   </TabItem>
   <TabItem value="React" label="React">
-    ```js
-    <InnoBreadcrumb>
-      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-    </InnoBreadcrumb>
+    ```tsx
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <inno-breadcrumb>
+          <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
+          <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+        </inno-breadcrumb>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <inno-breadcrumb variant="dark">
+          <inno-breadcrumb-item label="One"></inno-breadcrumb-item>
+          <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
+        </inno-breadcrumb>
+      </div>
+    </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
-    ```js
-    <InnoBreadcrumb>
-      <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
-      <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
-    </InnoBreadcrumb>
+    ```tsx
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoBreadcrumb>
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoBreadcrumb variant="dark">
+          <InnoBreadcrumbItem label="One"></InnoBreadcrumbItem>
+          <InnoBreadcrumbItem label="two"></InnoBreadcrumbItem>
+        </InnoBreadcrumb>
+      </div>
+    </div>
     ```
   </TabItem>
 </Tabs>
 
 <!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property  | Attribute | Description                     | Type                | Default   |
+| --------- | --------- | ------------------------------- | ------------------- | --------- |
+| `variant` | `variant` | Color variant of the accordion. | `"dark" \| "light"` | `'light'` |
 
 
 ## Events

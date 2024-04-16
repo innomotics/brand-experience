@@ -6,25 +6,65 @@ import {InnoToggle} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoToggle variant="light"></InnoToggle>
-    <InnoToggle variant="light" disabled></InnoToggle>
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoToggle variant="light"></InnoToggle>
+        <InnoToggle variant="light" disabled></InnoToggle>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoToggle variant="dark"></InnoToggle>
+        <InnoToggle variant="dark" disabled></InnoToggle>
+      </div>
+    </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-toggle variant="light"></inno-toggle >
-    <inno-toggle  variant="light" disabled></inno-toggle >
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <inno-toggle variant="light"></inno-toggle>
+        <inno-toggle variant="light" disabled></inno-toggle>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <inno-toggle variant="dark"></inno-toggle>
+        <inno-toggle variant="dark" disabled></inno-toggle>
+      </div>
+    </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoToggle variant="light"></InnoToggle>
-    <InnoToggle variant="light" disabled></InnoToggle>
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoToggle variant="light"></InnoToggle>
+        <InnoToggle variant="light" disabled></InnoToggle>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoToggle variant="dark"></InnoToggle>
+        <InnoToggle variant="dark" disabled></InnoToggle>
+      </div>
+    </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoToggle variant="light"></InnoToggle>
-    <InnoToggle variant="light" disabled></InnoToggle>
+    <div class="component-display">
+      <div class="light-bg">
+        <span class="bg-title">light background</span>
+        <InnoToggle variant="light"></InnoToggle>
+        <InnoToggle variant="light" disabled></InnoToggle>
+      </div>
+      <div class="dark-bg">
+        <span class="bg-title">dark background</span>
+        <InnoToggle variant="dark"></InnoToggle>
+        <InnoToggle variant="dark" disabled></InnoToggle>
+      </div>
+    </div>
     ```
   </TabItem>
 </Tabs>

@@ -19,60 +19,114 @@ and these elements may need manual configuration like theme support.
 For custom elements the `data-inno-footer-item-style` attribute is set with the given variant.
 
 <Tabs>
-  <TabItem value="preview-dark" label="Preview (dark)" default>
-    <InnoFooter variant="dark" copyright="@ Copyright My company">
-      <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-    </InnoFooter>
-  </TabItem>
-  <TabItem value="preview-light" label="Preview (light)">
-    <InnoFooter variant="light" copyright="@ Copyright My company">
-      <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
-    </InnoFooter>
+  <TabItem value="preview" label="Preview" default>
+  <div class="component-display columns">
+    <div class="light-bg">
+       <span class="bg-title">light background</span>
+       <InnoFooter variant="light" copyright="@ Copyright My company">
+         <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+       </InnoFooter>
+    </div>
+    <div class="dark-bg">
+       <span class="bg-title">dark background</span>
+        <InnoFooter variant="dark" copyright="@ Copyright My company">
+          <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+        </InnoFooter>
+    </div>
+  </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```html
-    <inno-footer [copyright]="copyright">
-      <inno-footer-item slot="links"><a>{{privacyNotice}}</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>{{termsOfUse}}</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>{{cookieNotice}}</a></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="home"></inno-icon></inno-footer-item>
-    </inno-footer> 
+    <div class="component-display columns">
+      <div class="light-bg">
+       <span class="bg-title">light background</span>
+       <inno-footer variant="light" copyright="@ Copyright My company">
+         <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+         <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+         <inno-footer-item slot="links"><span>Cookie Notice</span></inno-footer-item>
+         <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+         <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+         <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+       </inno-footer>
+    </div>
+    <div class="dark-bg">
+       <span class="bg-title">dark background</span>
+        <inno-footer variant="dark" copyright="@ Copyright My company">
+          <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+          <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+          <inno-footer-item slot="links"><span>Cookie Notice</span></inno-footer-item>
+          <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+          <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+          <inno-footer-item slot="icons"><InnoIcon icon='home'></InnoIcon></inno-footer-item>
+        </inno-footer>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```tsx
-    <InnoFooter copyright={copyrightVar}>
-      <InnoFooterItem slot="links"><a>{privacyNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{termsOfUse}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{cookieNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-    </InnoFooter>
+  <div class="component-display columns">
+    <div class="light-bg">
+       <span class="bg-title">light background</span>
+       <InnoFooter variant="light" copyright="@ Copyright My company">
+         <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+       </InnoFooter>
+    </div>
+    <div class="dark-bg">
+       <span class="bg-title">dark background</span>
+        <InnoFooter variant="dark" copyright="@ Copyright My company">
+          <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+        </InnoFooter>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="Vue" label="Vue">
     ```tsx
-    <InnoFooter copyright={copyrightVar}>
-      <InnoFooterItem slot="links"><a>{privacyNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{termsOfUse}</a></InnoFooterItem>
-      <InnoFooterItem slot="links"><a>{cookieNotice}</a></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-      <InnoFooterItem slot="icons"><InnoIcon icon="home"></InnoIcon></InnoFooterItem>
-    </InnoFooter>
+  <div class="component-display columns">
+    <div class="light-bg">
+       <span class="bg-title">light background</span>
+       <InnoFooter variant="light" copyright="@ Copyright My company">
+         <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+         <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+         <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+       </InnoFooter>
+    </div>
+    <div class="dark-bg">
+       <span class="bg-title">dark background</span>
+        <InnoFooter variant="dark" copyright="@ Copyright My company">
+          <InnoFooterItem slot="links"><a>Privacy Notice</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><a>Term of use</a></InnoFooterItem>
+          <InnoFooterItem slot="links"><span>Cookie Notice</span></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+          <InnoFooterItem slot="icons"><InnoIcon icon='home'></InnoIcon></InnoFooterItem>
+        </InnoFooter>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="webcomponent" label="Web component">

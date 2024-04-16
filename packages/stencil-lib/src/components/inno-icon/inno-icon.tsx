@@ -19,7 +19,7 @@ export class InnoIcon {
   /**
    * Color style of the icon.
    */
-  @Prop() theme: 'light' | 'dark' = 'light';
+  @Prop() variant: 'light' | 'dark' = 'light';
 
   @State() svgContent?: string;
 
@@ -35,7 +35,7 @@ export class InnoIcon {
   
   render() {
     return <Host class={`icon-${this.size} icon-inno-${this.icon}`}>
-      <div class={`icon-${this.size} icon-${this.theme}` } innerHTML={this.svgContent}></div>
+      <div class={`icon-${this.size} icon-${this.variant}` } innerHTML={this.svgContent}></div>
     </Host>;
   }
 

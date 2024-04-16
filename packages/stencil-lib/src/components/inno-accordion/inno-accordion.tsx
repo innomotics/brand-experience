@@ -89,7 +89,7 @@ export class InnoAccordion {
 
             <inno-icon class={{
               'inner': this.inner,
-            }} icon={icon} size={iconSize} theme={this.variant}></inno-icon>
+            }} icon={icon} size={iconSize} variant={this.variant}></inno-icon>
 
             <span class={{
               'accordion-header-title': true,

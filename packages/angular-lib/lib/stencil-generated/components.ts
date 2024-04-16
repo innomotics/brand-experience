@@ -36,13 +36,14 @@ export declare interface InnoAccordion extends Components.InnoAccordion {
 
 
 @ProxyCmp({
+  inputs: ['variant']
 })
 @Component({
   selector: 'inno-breadcrumb',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['variant'],
 })
 export class InnoBreadcrumb {
   protected el: HTMLElement;
@@ -201,14 +202,14 @@ export declare interface InnoFooterItem extends Components.InnoFooterItem {}
 
 
 @ProxyCmp({
-  inputs: ['icon', 'size', 'theme']
+  inputs: ['icon', 'size', 'variant']
 })
 @Component({
   selector: 'inno-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'size', 'theme'],
+  inputs: ['icon', 'size', 'variant'],
 })
 export class InnoIcon {
   protected el: HTMLElement;
@@ -251,14 +252,14 @@ export declare interface InnoInput extends Components.InnoInput {
 
 
 @ProxyCmp({
-  inputs: ['size']
+  inputs: ['size', 'variant']
 })
 @Component({
   selector: 'inno-loader',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['size'],
+  inputs: ['size', 'variant'],
 })
 export class InnoLoader {
   protected el: HTMLElement;

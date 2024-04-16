@@ -6,29 +6,73 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+  </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js  
-    <inno-icon icon='home' size='16' theme='light'></inno-icon>
-    <inno-icon icon='home' size='24' theme='light'></inno-icon>
-    <inno-icon icon='home' size='32' theme='light'></inno-icon> 
+   <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <inno-icon icon='home' size='16' theme='light'></inno-icon>
+      <inno-icon icon='home' size='24' theme='light'></inno-icon>
+      <inno-icon icon='home' size='32' theme='light'></inno-icon>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <inno-icon icon='home' size='16' theme='light'></inno-icon>
+      <inno-icon icon='home' size='24' theme='light'></inno-icon>
+      <inno-icon icon='home' size='32' theme='light'></inno-icon>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+  </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
-    <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
+      <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+    </div>
+  </div>
     ```
   </TabItem>
 </Tabs>
@@ -38,11 +82,11 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property | Attribute | Description              | Type                | Default     |
-| -------- | --------- | ------------------------ | ------------------- | ----------- |
-| `icon`   | `icon`    | The icon name            | `string`            | `undefined` |
-| `size`   | `size`    |                          | `number`            | `16`        |
-| `theme`  | `theme`   | Color style of the icon. | `"dark" \| "light"` | `'light'`   |
+| Property  | Attribute | Description              | Type                | Default     |
+| --------- | --------- | ------------------------ | ------------------- | ----------- |
+| `icon`    | `icon`    | The icon name            | `string`            | `undefined` |
+| `size`    | `size`    |                          | `number`            | `16`        |
+| `variant` | `variant` | Color style of the icon. | `"dark" \| "light"` | `'light'`   |
 
 
 ## Dependencies

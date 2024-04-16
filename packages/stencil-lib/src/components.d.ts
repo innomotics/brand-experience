@@ -35,6 +35,10 @@ export namespace Components {
         "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumb {
+        /**
+          * Color variant of the accordion.
+         */
+        "variant": 'light' | 'dark';
     }
     interface InnoBreadcrumbItem {
         /**
@@ -174,7 +178,7 @@ export namespace Components {
         /**
           * Color style of the icon.
          */
-        "theme": 'light' | 'dark';
+        "variant": 'light' | 'dark';
     }
     interface InnoInput {
         /**
@@ -203,6 +207,10 @@ export namespace Components {
           * Size of the loader. Valid values are: 16, 24, 32, 64.
          */
         "size": number;
+        /**
+          * Theme variant property.
+         */
+        "variant": 'light' | 'dark';
     }
     interface InnoPane {
         /**
@@ -784,6 +792,10 @@ declare namespace LocalJSX {
           * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
          */
         "onItemClick"?: (event: InnoBreadcrumbCustomEvent<{itemIndex: number, label: string}>) => void;
+        /**
+          * Color variant of the accordion.
+         */
+        "variant"?: 'light' | 'dark';
     }
     interface InnoBreadcrumbItem {
         /**
@@ -928,7 +940,7 @@ declare namespace LocalJSX {
         /**
           * Color style of the icon.
          */
-        "theme"?: 'light' | 'dark';
+        "variant"?: 'light' | 'dark';
     }
     interface InnoInput {
         /**
@@ -961,6 +973,10 @@ declare namespace LocalJSX {
           * Size of the loader. Valid values are: 16, 24, 32, 64.
          */
         "size"?: number;
+        /**
+          * Theme variant property.
+         */
+        "variant"?: 'light' | 'dark';
     }
     interface InnoPane {
         /**

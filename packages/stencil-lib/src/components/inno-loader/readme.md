@@ -7,21 +7,57 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
-    <InnoLoader></InnoLoader>
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoLoader></InnoLoader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoLoader variant="dark"></InnoLoader>
+    </div>
+  </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
     ```js
-    <inno-loader></inno-loader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <inno-loader></inno-loader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <inno-loader variant="dark"></inno-loader>
+    </div>
+  </div>
     ```
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-    <InnoLoader></InnoLoader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoLoader></InnoLoader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoLoader variant="dark"></InnoLoader>
+    </div>
+  </div>
     ```
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-    <InnoLoader></InnoLoader>
+    div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background</span>
+      <InnoLoader></InnoLoader>
+    </div>
+    <div class="dark-bg">
+      <span class="bg-title">dark background</span>
+      <InnoLoader variant="dark"></InnoLoader>
+    </div>
+  </div>
     ```
   </TabItem>
 </Tabs>
@@ -32,9 +68,10 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property | Attribute | Description                                           | Type     | Default |
-| -------- | --------- | ----------------------------------------------------- | -------- | ------- |
-| `size`   | `size`    | Size of the loader. Valid values are: 16, 24, 32, 64. | `number` | `64`    |
+| Property  | Attribute | Description                                           | Type                | Default   |
+| --------- | --------- | ----------------------------------------------------- | ------------------- | --------- |
+| `size`    | `size`    | Size of the loader. Valid values are: 16, 24, 32, 64. | `number`            | `64`      |
+| `variant` | `variant` | Theme variant property.                               | `"dark" \| "light"` | `'light'` |
 
 
 ----------------------------------------------
