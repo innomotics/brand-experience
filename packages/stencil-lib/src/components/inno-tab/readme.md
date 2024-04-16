@@ -14,7 +14,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
       <InnoTabItem>Device details</InnoTabItem>
     </InnoTab>
     </div>
-    <p>Layout auto with scroll</p>
+    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
     <div style={{ backgroundColor: '#08191f', padding: '20px', marginTop: '20px' }}>
     <InnoTab theme="dark" layout="auto">
       <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
@@ -34,7 +34,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
       <InnoTabItem>Device details</InnoTabItem>
     </InnoTab>
     </div>
-    <p>Layout auto with scroll</p>
+    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
     <div style={{ backgroundColor: 'white', padding: '20px', marginTop: '20px' }}>
     <InnoTab theme="light" layout="auto">
       <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
@@ -125,6 +125,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description                            | Type                    | Default   |
@@ -134,11 +135,13 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
 | `showArrow` | `show-arrow` | Show the navigation arrow for desktop. | `boolean`               | `true`    |
 | `theme`     | `theme`      | Theme variant of the component.        | `"dark" \| "light"`     | `'light'` |
 
+
 ## Events
 
 | Event            | Description                 | Type                  |
 | ---------------- | --------------------------- | --------------------- |
 | `selectedChange` | `selected` property changed | `CustomEvent<number>` |
+
 
 ## Dependencies
 
@@ -147,13 +150,12 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
 - [inno-icon](../inno-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   inno-tab --> inno-icon
   style inno-tab fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

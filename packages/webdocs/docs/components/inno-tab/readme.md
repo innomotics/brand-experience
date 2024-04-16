@@ -14,7 +14,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
       <InnoTabItem>Device details</InnoTabItem>
     </InnoTab>
     </div>
-    <p>Layout auto with scroll</p>
+    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
     <div style={{ backgroundColor: '#08191f', padding: '20px', marginTop: '20px' }}>
     <InnoTab theme="dark" layout="auto">
       <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
@@ -34,7 +34,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
       <InnoTabItem>Device details</InnoTabItem>
     </InnoTab>
     </div>
-    <p>Layout auto with scroll</p>
+    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
     <div style={{ backgroundColor: 'white', padding: '20px', marginTop: '20px' }}>
     <InnoTab theme="light" layout="auto">
       <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
@@ -103,12 +103,12 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
         import { ref } from 'vue';
 
         const selectedTab = ref(0);
-        const changeTab = (event: Event) => (selectedTab.value = event.detail);
+        const changeTab = (tabId: number) => (selectedTab.value = tabId);
       </script>
 
       <template>
         <div>
-          <InnoTab :selected="selectedTab" @selected-change="changeTab">
+          <InnoTab :selected="selectedTab">
             <InnoTabItem @click="changeTab(0)">Tab 1</InnoTabItem>
             <InnoTabItem @click="changeTab(1)">Tab 2</InnoTabItem>
             <InnoTabItem @click="changeTab(2)">Tab 3</InnoTabItem>
