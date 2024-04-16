@@ -1,5 +1,6 @@
 @use '@innomotics/ix/styles/colors';
 @use '../../../styles/siemens-ix/scrollbar.scss' as ixscrollbar;
+@use '../../../styles/breakpoints' as breakpoints;
 
 :host {
   *,
@@ -24,83 +25,90 @@
   &.dark {
     background-color: colors.$primary-200;
   }
+}
 
-  // Content main wrapper
-  // slice the overflow content
-  .tab-items {
-    width: 100%;
-    overflow: hidden;
-    scroll-behavior: smooth;
+// Content main wrapper
+// slice the overflow content
+.tab-items {
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
 
-    // Stores the provided items
-    .items-content {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  // Left and right arrow base
-  .arrow {
-    width: 100px;
-    height: 100%;
-
+  // Stores the provided items
+  .items-content {
     display: flex;
     align-items: center;
+  }
+}
 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+// Left and right arrow base
+.arrow {
+  width: 100px;
+  height: 100%;
 
-    z-index: 2;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
 
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 
-    & > inno-icon {
-      pointer-events: auto;
-    }
+  z-index: 2;
+  cursor: pointer;
 
-    &.light > inno-icon {
-      color: colors.$primary-200;
+  pointer-events: none;
 
-      &:hover {
-        color: colors.$secondary-800;
-      }
-    }
+  & > inno-icon {
+    pointer-events: auto;
+  }
 
-    &.dark > inno-icon {
-      color: colors.$primary-300;
+  &.light > inno-icon {
+    color: colors.$primary-200;
 
-      &:hover {
-        color: colors.$secondary-300;
-      }
+    &:hover {
+      color: colors.$secondary-800;
     }
   }
 
-  .arrow-left {
-    justify-content: flex-start;
+  &.dark > inno-icon {
+    color: colors.$primary-300;
 
-    &.light {
-      background: linear-gradient(to right, colors.$primary-300, transparent);
-    }
-
-    &.dark {
-      background: linear-gradient(to right, colors.$primary-200, transparent);
+    &:hover {
+      color: colors.$secondary-300;
     }
   }
+}
 
-  .arrow-right {
-    justify-content: flex-end;
-    left: auto;
-    right: 0;
+.arrow-left {
+  justify-content: flex-start;
 
-    &.light {
-      background: linear-gradient(to left, colors.$primary-300, transparent);
-    }
+  &.light {
+    background: linear-gradient(to right, colors.$primary-300, transparent);
+  }
 
-    &.dark {
-      background: linear-gradient(to left, colors.$primary-200, transparent);
-    }
+  &.dark {
+    background: linear-gradient(to right, colors.$primary-200, transparent);
+  }
+}
+
+.arrow-right {
+  justify-content: flex-end;
+  left: auto;
+  right: 0;
+
+  &.light {
+    background: linear-gradient(to left, colors.$primary-300, transparent);
+  }
+
+  &.dark {
+    background: linear-gradient(to left, colors.$primary-200, transparent);
+  }
+}
+
+// Should not show the navigation arrows on small screen
+@media screen and (max-width: breakpoints.$desktop) {
+  .arrow {
+    display: none;
   }
 }
