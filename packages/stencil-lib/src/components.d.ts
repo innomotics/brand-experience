@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
+import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
+export { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
 export namespace Components {
     interface InnoAccordion {
         /**
@@ -362,6 +364,47 @@ export namespace Components {
          */
         "value": string;
     }
+    interface InnoTab {
+        /**
+          * Set layout width style
+         */
+        "layout": 'auto' | 'stretched';
+        /**
+          * Set default selected tab by index
+         */
+        "selected": number;
+        /**
+          * Show the navigation arrow for desktop.
+         */
+        "showArrow": boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "theme": 'light' | 'dark';
+    }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
+    interface InnoTabItem {
+        /**
+          * Set disabled tab.
+         */
+        "disabled": boolean;
+        /**
+          * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
+         */
+        "layout": 'auto' | 'stretched';
+        /**
+          * Set selected tab.
+         */
+        "selected": boolean;
+        /**
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
+         */
+        "theme": 'light' | 'dark';
+    }
     interface InnoToggle {
         /**
           * Whether the slide-toggle element is checked or not.
@@ -416,6 +459,14 @@ export interface InnoSelectCustomEvent<T> extends CustomEvent<T> {
 export interface InnoSelectItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoSelectItemElement;
+}
+export interface InnoTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoTabElement;
+}
+export interface InnoTabItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoTabItemElement;
 }
 export interface InnoToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -631,6 +682,45 @@ declare global {
         prototype: HTMLInnoSelectItemElement;
         new (): HTMLInnoSelectItemElement;
     };
+    interface HTMLInnoTabElementEventMap {
+        "selectedChange": number;
+    }
+    interface HTMLInnoTabElement extends Components.InnoTab, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoTabElementEventMap>(type: K, listener: (this: HTMLInnoTabElement, ev: InnoTabCustomEvent<HTMLInnoTabElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoTabElementEventMap>(type: K, listener: (this: HTMLInnoTabElement, ev: InnoTabCustomEvent<HTMLInnoTabElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoTabElement: {
+        prototype: HTMLInnoTabElement;
+        new (): HTMLInnoTabElement;
+    };
+    interface HTMLInnoTabItemElementEventMap {
+        "tabClick": TabClickDetail;
+    }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
+    interface HTMLInnoTabItemElement extends Components.InnoTabItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoTabItemElementEventMap>(type: K, listener: (this: HTMLInnoTabItemElement, ev: InnoTabItemCustomEvent<HTMLInnoTabItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoTabItemElementEventMap>(type: K, listener: (this: HTMLInnoTabItemElement, ev: InnoTabItemCustomEvent<HTMLInnoTabItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoTabItemElement: {
+        prototype: HTMLInnoTabItemElement;
+        new (): HTMLInnoTabItemElement;
+    };
     interface HTMLInnoToggleElementEventMap {
         "checkedChange": boolean;
     }
@@ -665,6 +755,8 @@ declare global {
         "inno-radio": HTMLInnoRadioElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
+        "inno-tab": HTMLInnoTabElement;
+        "inno-tab-item": HTMLInnoTabItemElement;
         "inno-toggle": HTMLInnoToggleElement;
     }
 }
@@ -1042,6 +1134,55 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface InnoTab {
+        /**
+          * Set layout width style
+         */
+        "layout"?: 'auto' | 'stretched';
+        /**
+          * `selected` property changed
+         */
+        "onSelectedChange"?: (event: InnoTabCustomEvent<number>) => void;
+        /**
+          * Set default selected tab by index
+         */
+        "selected"?: number;
+        /**
+          * Show the navigation arrow for desktop.
+         */
+        "showArrow"?: boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "theme"?: 'light' | 'dark';
+    }
+    /**
+     * Represents an inno-tab item.
+     * Wraps the provided content.
+     * See the InnoTab component for more information about how to use the tab component.
+     */
+    interface InnoTabItem {
+        /**
+          * Set disabled tab.
+         */
+        "disabled"?: boolean;
+        /**
+          * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
+         */
+        "layout"?: 'auto' | 'stretched';
+        /**
+          * On tab click.
+         */
+        "onTabClick"?: (event: InnoTabItemCustomEvent<TabClickDetail>) => void;
+        /**
+          * Set selected tab.
+         */
+        "selected"?: boolean;
+        /**
+          * Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.
+         */
+        "theme"?: 'light' | 'dark';
+    }
     interface InnoToggle {
         /**
           * Whether the slide-toggle element is checked or not.
@@ -1081,6 +1222,8 @@ declare namespace LocalJSX {
         "inno-radio": InnoRadio;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
+        "inno-tab": InnoTab;
+        "inno-tab-item": InnoTabItem;
         "inno-toggle": InnoToggle;
     }
 }
@@ -1118,6 +1261,13 @@ declare module "@stencil/core" {
             "inno-radio": LocalJSX.InnoRadio & JSXBase.HTMLAttributes<HTMLInnoRadioElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
+            "inno-tab": LocalJSX.InnoTab & JSXBase.HTMLAttributes<HTMLInnoTabElement>;
+            /**
+             * Represents an inno-tab item.
+             * Wraps the provided content.
+             * See the InnoTab component for more information about how to use the tab component.
+             */
+            "inno-tab-item": LocalJSX.InnoTabItem & JSXBase.HTMLAttributes<HTMLInnoTabItemElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
         }
     }

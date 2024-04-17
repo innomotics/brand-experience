@@ -98,6 +98,7 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
  - [inno-button](../inno-button)
  - [inno-select](../inno-select)
  - [inno-select-item](../inno-select-item)
+ - [inno-tab](../inno-tab)
 
 ### Graph
 ```mermaid
@@ -107,6 +108,7 @@ graph TD;
   inno-button --> inno-icon
   inno-select --> inno-icon
   inno-select-item --> inno-icon
+  inno-tab --> inno-icon
   style inno-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

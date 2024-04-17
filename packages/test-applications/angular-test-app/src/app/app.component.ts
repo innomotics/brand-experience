@@ -15,6 +15,8 @@ import {
 export class AppComponent {
   formValue = '';
 
+  activeTabIndex = 1;
+
   public innomoticsForm!: UntypedFormGroup;
 
   public get innoInput(): UntypedFormControl {
@@ -45,5 +47,9 @@ export class AppComponent {
 
   checkboxValid() {
     this.innomoticsForm.get('checkboxtest1')?.valid;
+  }
+
+  handleTabChange(index: number) {
+    this.activeTabIndex = index;
   }
 }

@@ -23,4 +23,6 @@ export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HT
 export const InnoRadio = /*@__PURE__*/createReactComponent<JSX.InnoRadio, HTMLInnoRadioElement>('inno-radio');
 export const InnoSelect = /*@__PURE__*/createReactComponent<JSX.InnoSelect, HTMLInnoSelectElement>('inno-select');
 export const InnoSelectItem = /*@__PURE__*/createReactComponent<JSX.InnoSelectItem, HTMLInnoSelectItemElement>('inno-select-item');
+export const InnoTab = /*@__PURE__*/createReactComponent<JSX.InnoTab, HTMLInnoTabElement>('inno-tab');
+export const InnoTabItem = /*@__PURE__*/createReactComponent<JSX.InnoTabItem, HTMLInnoTabItemElement>('inno-tab-item');
 export const InnoToggle = /*@__PURE__*/createReactComponent<JSX.InnoToggle, HTMLInnoToggleElement>('inno-toggle');

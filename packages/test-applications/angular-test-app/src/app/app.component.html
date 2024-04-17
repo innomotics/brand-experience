@@ -16,7 +16,8 @@
     name="dew"
     label="SelectBox"
     [formControl]="innoSelect"
-    value="12">
+    value="12"
+  >
     <inno-select-item label="dewde" value="12"></inno-select-item>
     <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>
@@ -77,3 +78,21 @@
 <div class="container">InnoSelect value: {{ innoSelect.value }}</div>
 
 <div class="container">Form value: {{ formValue }}</div>
+
+<div class="container">
+  <inno-tab
+    [selected]="activeTabIndex"
+    layout="stretched"
+    (selectedChange)="handleTabChange($event.detail)"
+  >
+    <inno-tab-item><span>tab 1</span></inno-tab-item>
+    <inno-tab-item><span>tab 2</span></inno-tab-item>
+    <inno-tab-item><span>tab 3</span></inno-tab-item>
+  </inno-tab>
+</div>
+
+<div class="container">
+  <div *ngIf="activeTabIndex === 0">Tab 1 active</div>
+  <div *ngIf="activeTabIndex === 1">Tab 2 active</div>
+  <div *ngIf="activeTabIndex === 2">Tab 3 active</div>
+</div>

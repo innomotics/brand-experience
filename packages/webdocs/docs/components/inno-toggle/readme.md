@@ -37,7 +37,7 @@ import {InnoToggle} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="React" label="React">
     ```js
-        <div class="component-display">
+    <div class="component-display">
       <div class="light-bg">
         <span class="bg-title">light background</span>
         <InnoToggle variant="light"></InnoToggle>
@@ -53,7 +53,7 @@ import {InnoToggle} from '@innomotics/ix-react-lib';
   </TabItem>
     <TabItem value="Vue" label="Vue">
     ```js
-        <div class="component-display">
+    <div class="component-display">
       <div class="light-bg">
         <span class="bg-title">light background</span>
         <InnoToggle variant="light"></InnoToggle>
