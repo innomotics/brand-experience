@@ -5,45 +5,54 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
 # inno-tab
 
 <Tabs>
-  <TabItem value="preview-dark" label="Preview (dark)" default>
-    <p>Layout stretched</p>
-    <div style={{ backgroundColor: '#08191f', padding: '20px', marginTop: '20px' }}>
-    <InnoTab theme="dark" layout="stretched">
-      <InnoTabItem>High emphasis item</InnoTabItem>
-      <InnoTabItem>Device overview</InnoTabItem>
-      <InnoTabItem>Device details</InnoTabItem>
-    </InnoTab>
+  <TabItem value="preview" label="Preview" default>
+  <div class="component-display">
+    <div class="light-bg">
+      <span class="bg-title">light background, layout stretched</span>
+      <InnoTab theme="light" layout="stretched">
+        <InnoTabItem>High emphasis item</InnoTabItem>
+        <InnoTabItem>Device overview</InnoTabItem>
+        <InnoTabItem>Device details</InnoTabItem>
+      </InnoTab>
     </div>
-    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
-    <div style={{ backgroundColor: '#08191f', padding: '20px', marginTop: '20px' }}>
-    <InnoTab theme="dark" layout="auto">
-      <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
-      <InnoTabItem>Tab label 4</InnoTabItem><InnoTabItem>Tab label 5</InnoTabItem><InnoTabItem>Tab label 6</InnoTabItem>
-      <InnoTabItem>Tab label 7</InnoTabItem><InnoTabItem>Tab label 8</InnoTabItem><InnoTabItem>Tab label 9</InnoTabItem>
-      <InnoTabItem>Tab label 10</InnoTabItem><InnoTabItem>Tab label 11</InnoTabItem><InnoTabItem>Tab label 12</InnoTabItem>
-      <InnoTabItem>Tab label 13</InnoTabItem><InnoTabItem>Tab label 14</InnoTabItem><InnoTabItem>Tab label 15</InnoTabItem>
-    </InnoTab>
+  </div>
+
+  <div class="component-display" style={{display: 'block'}}>
+    <div class="light-bg">
+      <span class="bg-title">light background, layout auto</span>
+      <InnoTab theme="light" layout="auto">
+        <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
+        <InnoTabItem>Tab label 4</InnoTabItem><InnoTabItem>Tab label 5</InnoTabItem><InnoTabItem>Tab label 6</InnoTabItem>
+        <InnoTabItem>Tab label 7</InnoTabItem><InnoTabItem>Tab label 8</InnoTabItem><InnoTabItem>Tab label 9</InnoTabItem>
+        <InnoTabItem>Tab label 10</InnoTabItem><InnoTabItem>Tab label 11</InnoTabItem><InnoTabItem>Tab label 12</InnoTabItem>
+        <InnoTabItem>Tab label 13</InnoTabItem><InnoTabItem>Tab label 14</InnoTabItem><InnoTabItem>Tab label 15</InnoTabItem>
+      </InnoTab>
     </div>
-  </TabItem>
-  <TabItem value="preview-light" label="Preview (light)">
-    <p>Layout stretched</p>
-    <div style={{ backgroundColor: 'white', padding: '20px', marginTop: '20px' }}>
-    <InnoTab theme="light">
-      <InnoTabItem>High emphasis item</InnoTabItem>
-      <InnoTabItem>Device overview</InnoTabItem>
-      <InnoTabItem>Device details</InnoTabItem>
-    </InnoTab>
+  </div>
+
+  <div class="component-display">
+    <div class="dark-bg">
+      <span class="bg-title">dark background, layout stretched</span>
+      <InnoTab theme="dark" layout="stretched">
+        <InnoTabItem>High emphasis item</InnoTabItem>
+        <InnoTabItem>Device overview</InnoTabItem>
+        <InnoTabItem>Device details</InnoTabItem>
+      </InnoTab>
     </div>
-    <p style={{ marginTop: '20px' }}>Layout auto with scroll</p>
-    <div style={{ backgroundColor: 'white', padding: '20px', marginTop: '20px' }}>
-    <InnoTab theme="light" layout="auto">
-      <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
-      <InnoTabItem>Tab label 4</InnoTabItem><InnoTabItem>Tab label 5</InnoTabItem><InnoTabItem>Tab label 6</InnoTabItem>
-      <InnoTabItem>Tab label 7</InnoTabItem><InnoTabItem>Tab label 8</InnoTabItem><InnoTabItem>Tab label 9</InnoTabItem>
-      <InnoTabItem>Tab label 10</InnoTabItem><InnoTabItem>Tab label 11</InnoTabItem><InnoTabItem>Tab label 12</InnoTabItem>
-      <InnoTabItem>Tab label 13</InnoTabItem><InnoTabItem>Tab label 14</InnoTabItem><InnoTabItem>Tab label 15</InnoTabItem>
-    </InnoTab>
+  </div>
+
+  <div class="component-display" style={{display: 'block'}}>
+    <div class="dark-bg">
+      <span class="bg-title">dark background, layout auto</span>
+      <InnoTab theme="dark" layout="auto">
+        <InnoTabItem>Tab label 1</InnoTabItem><InnoTabItem>Tab label 2</InnoTabItem><InnoTabItem>Tab label 3</InnoTabItem>
+        <InnoTabItem>Tab label 4</InnoTabItem><InnoTabItem>Tab label 5</InnoTabItem><InnoTabItem>Tab label 6</InnoTabItem>
+        <InnoTabItem>Tab label 7</InnoTabItem><InnoTabItem>Tab label 8</InnoTabItem><InnoTabItem>Tab label 9</InnoTabItem>
+        <InnoTabItem>Tab label 10</InnoTabItem><InnoTabItem>Tab label 11</InnoTabItem><InnoTabItem>Tab label 12</InnoTabItem>
+        <InnoTabItem>Tab label 13</InnoTabItem><InnoTabItem>Tab label 14</InnoTabItem><InnoTabItem>Tab label 15</InnoTabItem>
+      </InnoTab>
     </div>
+  </div>
   </TabItem>
   <TabItem value="angular" label="Angular">
     ```html
