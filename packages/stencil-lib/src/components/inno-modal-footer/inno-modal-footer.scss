@@ -1,0 +1,11 @@
+@import '../../../styles/siemens-ix/shadow-dom/component';
+
+:host {
+  @include inno-component;
+  display: flex;
+  padding: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}

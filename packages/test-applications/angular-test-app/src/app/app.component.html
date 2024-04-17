@@ -16,7 +16,8 @@
     name="dew"
     label="SelectBox"
     [formControl]="innoSelect"
-    value="12">
+    value="12"
+  >
     <inno-select-item label="dewde" value="12"></inno-select-item>
     <inno-select-item label="refre" value="132"></inno-select-item>
   </inno-select>
@@ -77,3 +78,16 @@
 <div class="container">InnoSelect value: {{ innoSelect.value }}</div>
 
 <div class="container">Form value: {{ formValue }}</div>
+
+<button type="button" (click)="openModal()">open modal</button>
+
+<ng-template #customModal let-modal>
+  <inno-modal>
+    <inno-modal-header>modal title</inno-modal-header>
+    <inno-modal-content>content</inno-modal-content>
+    <inno-modal-footer>footer</inno-modal-footer>
+  </inno-modal>
+  <!-- <ix-button (click)="modal.dismiss('dismiss')"
+    >Modal with size {{ modal.data }}</ix-button
+  > -->
+</ng-template>

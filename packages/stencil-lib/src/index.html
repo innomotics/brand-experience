@@ -18,6 +18,23 @@
   </head>
 
   <body>
+    <inno-modal id="innomodal1">
+      <inno-modal-header
+        >A very long headline, which we unfortunately have to cut off, otherwise our model will be too big, otherwise our model will be too big, otherwise our model will be too
+        big</inno-modal-header
+      >
+      <inno-modal-content
+        >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua lorem ipsum
+        dolor sit.
+      </inno-modal-content>
+      <inno-modal-footer>
+        <inno-button theme="dark" variant="secondary">Close</inno-button>
+        <inno-button theme="dark" variant="primary">Accept</inno-button>
+      </inno-modal-footer>
+    </inno-modal>
+
+    <div><button id="modalbutton1" type="button">Open modal</button></div>
+
     <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px">
       <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
         <inno-toggle></inno-toggle>
@@ -175,7 +192,7 @@
       <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
     </inno-breadcrumb>
-    <inno-breadcrumb variant="dark" style="background-color: #08191f;">
+    <inno-breadcrumb variant="dark" style="background-color: #08191f">
       <inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
@@ -374,6 +391,10 @@
       const formData = new FormData(event.target);
       const formProps = Object.fromEntries(formData);
       console.log(formProps);
+    });
+
+    document.getElementById('modalbutton1').addEventListener('click', () => {
+      document.getElementById('innomodal1').showModal();
     });
   </script>
 </html>

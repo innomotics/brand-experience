@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import {
   FormControl,
   UntypedFormBuilder,
@@ -6,6 +6,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
+import { InnoModalService } from '@innomotics/ix-angular-lib';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,9 @@ import {
 })
 export class AppComponent {
   formValue = '';
+
+  @ViewChild('customModal', { read: TemplateRef })
+  customModalRef!: TemplateRef<any>;
 
   public innomoticsForm!: UntypedFormGroup;
 
@@ -25,7 +29,10 @@ export class AppComponent {
     return this.innomoticsForm.get('innoSelect') as UntypedFormControl;
   }
 
-  constructor(public formBuilder: UntypedFormBuilder) {
+  constructor(
+    public formBuilder: UntypedFormBuilder,
+    private readonly modalService: InnoModalService,
+  ) {
     this.innomoticsForm = this.formBuilder.group({
       innoInput: [0],
       innoSelect: [undefined],
@@ -45,5 +52,11 @@ export class AppComponent {
 
   checkboxValid() {
     this.innomoticsForm.get('checkboxtest1')?.valid;
+  }
+
+  openModal() {
+    this.modalService.open({
+      content: this.customModalRef,
+    });
   }
 }

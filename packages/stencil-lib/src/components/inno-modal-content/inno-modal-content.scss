@@ -1,0 +1,16 @@
+@use '@innomotics/ix/styles/colors';
+@import '../../../styles/siemens-ix/shadow-dom/component';
+
+:host {
+  @include inno-component;
+
+  display: block;
+  position: relative;
+  overflow: auto;
+  padding: 32px;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'InnomoticsHafferSQ-Light';
+  color: colors.$primary-300;
+}

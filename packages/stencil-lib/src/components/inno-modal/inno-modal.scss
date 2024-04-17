@@ -1,0 +1,120 @@
+::backdrop {
+  --ix-dialog-backdrop: #000000a6;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+
+:host {
+  display: none;
+
+  dialog {
+    margin: 0;
+    padding: 0;
+    left: 50%;
+  }
+
+  dialog::backdrop {
+    // backdrop-filter: blur(2.7182817459106445px);
+    backdrop-filter: blur(10px);
+    color: #000;
+    mask: 60%;
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: none;
+    border-radius: 0.25rem;
+    background: #283236;
+    box-shadow:
+      0px 12px 18px #00000099,
+      0px 4px 8px #00000099,
+      0px 0px 2px #000000;
+    color: var(--theme-color-std-text);
+    overflow: visible;
+    max-height: 80vh;
+    pointer-events: all;
+  }
+
+  .modal-size-360 {
+    width: 22.5rem;
+  }
+
+  .modal-size-480 {
+    width: 30rem;
+  }
+
+  .modal-size-600 {
+    width: 37.5rem;
+  }
+
+  .modal-size-720 {
+    width: 45rem;
+  }
+
+  .modal-size-840 {
+    width: 52.5rem;
+  }
+
+  .modal-size-full-width {
+    width: 95%;
+  }
+
+  .modal-size-full-screen {
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+
+    width: calc(100% - 28px);
+    min-width: calc(100% - 28px);
+    max-width: calc(100% - 28px);
+
+    height: calc(100% - 28px);
+    min-height: calc(100% - 28px);
+    max-height: calc(100% - 28px);
+  }
+
+  .dialog-backdrop {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+  }
+
+  ::slotted(ix-modal-footer) {
+    margin-top: auto;
+  }
+}
+
+:host(.visible) {
+  display: block;
+}
+
+:host(.align-center) {
+  dialog {
+    margin: 0;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+:host(.no-backdrop) {
+  dialog::backdrop {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+  }
+}
+
+:host(.with-icon) {
+  ::slotted(ix-modal-footer),
+  ::slotted(ix-modal-content) {
+    margin-left: 2.5rem;
+  }
+}

@@ -7,7 +7,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, ComponentsModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ComponentsModule,
+    ComponentsModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

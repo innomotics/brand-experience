@@ -1,4 +1,9 @@
-import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
+import {
+  APP_INITIALIZER,
+  ModuleWithProviders,
+  NgModule,
+  NgZone,
+} from "@angular/core";
 import { DIRECTIVES } from "./stencil-generated";
 import { appInitialize } from "./app-initialize";
 import { DOCUMENT } from "@angular/common";
@@ -6,6 +11,7 @@ import { defineCustomElements } from "@innomotics/ix/loader";
 import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
 import { BooleanValueAccessor } from "./stencil-generated/boolean-value-accessor";
 import { InnoRadioValueAccessor } from "../public-api";
+import { InnoModalService } from "./components/inno-modal/inno-modal.service";
 
 const DECLARATIONS = [
   ...DIRECTIVES,
@@ -31,4 +37,11 @@ const DECLARATIONS = [
     },
   ],
 })
-export class ComponentsModule {}
+export class ComponentsModule {
+  static forRoot(): ModuleWithProviders<ComponentsModule> {
+    return {
+      ngModule: ComponentsModule,
+      providers: [{ provide: InnoModalService }],
+    };
+  }
+}
