@@ -34,7 +34,7 @@
     "stencil": "stencil"
   },
   "dependencies": {
-    "@floating-ui/dom": "1.6.3",
+    "@floating-ui/dom": "^1.6.3",
     "@innomotics/ix-fonts": "^0.0.1-alpha-25",
     "@innomotics/ix-icons": "^0.0.1-alpha-25",
     "@stencil/core": "^4.12.5",
@@ -42,10 +42,10 @@
     "animejs": "^3.2.2"
   },
   "devDependencies": {
-    "@stencil-community/postcss": "2.2.0",
-    "@stencil/angular-output-target": "0.8.4",
-    "@stencil/react-output-target": "0.5.3",
-    "@stencil/vue-output-target": "0.8.8",
+    "@stencil-community/postcss": "^2.2.0",
+    "@stencil/angular-output-target": "^0.8.4",
+    "@stencil/react-output-target": "^0.5.3",
+    "@stencil/vue-output-target": "^0.8.8",
     "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",

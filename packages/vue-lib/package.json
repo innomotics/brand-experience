@@ -24,7 +24,7 @@
     "@innomotics/ix": "^0.0.1-alpha-25"
   },
   "devDependencies": {
-    "vue": "3.4.21"
+    "vue": "^3.4.21"
   },
   "publishConfig": {
     "access": "public",
