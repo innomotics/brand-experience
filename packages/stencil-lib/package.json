@@ -34,7 +34,7 @@
     "stencil": "stencil"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.3",
+    "@floating-ui/dom": "1.6.3",
     "@innomotics/ix-fonts": "^0.0.1-alpha-25",
     "@innomotics/ix-icons": "^0.0.1-alpha-25",
     "@stencil/core": "^4.12.5",
