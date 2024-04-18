@@ -295,7 +295,7 @@ export namespace Components {
          */
         "trailingZeroes": boolean;
         /**
-          * Color variant of the accordion.
+          * Color variant of the progress bar.
          */
         "variant": 'light' | 'dark';
     }
@@ -1093,7 +1093,7 @@ declare namespace LocalJSX {
          */
         "trailingZeroes"?: boolean;
         /**
-          * Color variant of the accordion.
+          * Color variant of the progress bar.
          */
         "variant"?: 'light' | 'dark';
     }

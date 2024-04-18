@@ -8,7 +8,7 @@ import { Component, Host, Prop, Watch, h } from '@stencil/core';
 export class InnoProgressBar {
 
   /**
-   * Color variant of the accordion.
+   * Color variant of the progress bar.
    */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
 
