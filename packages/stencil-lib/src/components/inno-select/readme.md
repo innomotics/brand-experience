@@ -94,9 +94,9 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
 | Property     | Attribute     | Description                            | Type                 | Default     |
 | ------------ | ------------- | -------------------------------------- | -------------------- | ----------- |
 | `disabled`   | `disabled`    | Whether the select is disabled or not. | `boolean`            | `false`     |
-| `iconDriven` | `icon-driven` |                                        | `boolean`            | `false`     |
 | `isFocused`  | `is-focused`  | Whether the select is focused or not.  | `boolean`            | `undefined` |
 | `label`      | `label`       | Label for the select.                  | `string`             | `undefined` |
+| `selectIcon` | `select-icon` |                                        | `string`             | `undefined` |
 | `type`       | `type`        | Type of the select.                    | `"number" \| "text"` | `'text'`    |
 | `value`      | `value`       | Value of the select.                   | `string`             | `undefined` |
 | `variant`    | `variant`     | Color variant of the select.           | `"dark" \| "light"`  | `'light'`   |

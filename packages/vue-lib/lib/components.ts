@@ -148,7 +148,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'disabled',
   'label',
   'variant',
-  'iconDriven',
+  'selectIcon',
   'valueChanged'
 ]);
 

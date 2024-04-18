@@ -324,13 +324,16 @@ export namespace Components {
           * Whether the select is disabled or not.
          */
         "disabled": boolean;
-        "iconDriven": boolean;
+        /**
+          * Icon for select when no item selected When icon is present the label is not behaves as floating
+         */
+        "icon": string;
         /**
           * Whether the select is focused or not.
          */
         "isFocused": boolean;
         /**
-          * Label for the select.
+          * Label for the select when no item selected.
          */
         "label": string;
         /**
@@ -1086,13 +1089,16 @@ declare namespace LocalJSX {
           * Whether the select is disabled or not.
          */
         "disabled"?: boolean;
-        "iconDriven"?: boolean;
+        /**
+          * Icon for select when no item selected When icon is present the label is not behaves as floating
+         */
+        "icon"?: string;
         /**
           * Whether the select is focused or not.
          */
         "isFocused"?: boolean;
         /**
-          * Label for the select.
+          * Label for the select when no item selected.
          */
         "label"?: string;
         /**
