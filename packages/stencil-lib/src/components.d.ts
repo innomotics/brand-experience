@@ -263,6 +263,32 @@ export namespace Components {
          */
         "visible": boolean;
     }
+    interface InnoProgressBar {
+        /**
+          * If the percentage number is shown, how many decimal places should be visible
+         */
+        "percentagePrecision": number;
+        /**
+          * Progress in percentage. Must be a number between 0 and 100.
+         */
+        "progressPercentage": number;
+        /**
+          * Text to display for the progress bar.
+         */
+        "progressText": string;
+        /**
+          * Show the percentage number on the progress bar. The value is rounded according to the 'percentagePrecision' and 'trailingZeroes' properties.
+         */
+        "showPercentage": boolean;
+        /**
+          * If 'percentagePrecision' is larger than 0, should we display the trailing zeroes. For example if the progress is 1.5% and the 'percentagePrecision' is 2 then the displayed text will be '1.50%'  if trailing zeroes are enabled and '1.5%' if trailing zeroes are disabled. Uses the toFixed(..) function in the background.
+         */
+        "trailingZeroes": boolean;
+        /**
+          * Color variant of the accordion.
+         */
+        "variant": 'light' | 'dark';
+    }
     /**
      * Represents the default radio button for the Innomics applications.
      */
@@ -569,6 +595,12 @@ declare global {
         prototype: HTMLInnoPopoverElement;
         new (): HTMLInnoPopoverElement;
     };
+    interface HTMLInnoProgressBarElement extends Components.InnoProgressBar, HTMLStencilElement {
+    }
+    var HTMLInnoProgressBarElement: {
+        prototype: HTMLInnoProgressBarElement;
+        new (): HTMLInnoProgressBarElement;
+    };
     interface HTMLInnoRadioElementEventMap {
         "valueChange": string;
     }
@@ -654,6 +686,7 @@ declare global {
         "inno-loader": HTMLInnoLoaderElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
+        "inno-progress-bar": HTMLInnoProgressBarElement;
         "inno-radio": HTMLInnoRadioElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
@@ -927,6 +960,32 @@ declare namespace LocalJSX {
          */
         "visible"?: boolean;
     }
+    interface InnoProgressBar {
+        /**
+          * If the percentage number is shown, how many decimal places should be visible
+         */
+        "percentagePrecision"?: number;
+        /**
+          * Progress in percentage. Must be a number between 0 and 100.
+         */
+        "progressPercentage"?: number;
+        /**
+          * Text to display for the progress bar.
+         */
+        "progressText"?: string;
+        /**
+          * Show the percentage number on the progress bar. The value is rounded according to the 'percentagePrecision' and 'trailingZeroes' properties.
+         */
+        "showPercentage"?: boolean;
+        /**
+          * If 'percentagePrecision' is larger than 0, should we display the trailing zeroes. For example if the progress is 1.5% and the 'percentagePrecision' is 2 then the displayed text will be '1.50%'  if trailing zeroes are enabled and '1.5%' if trailing zeroes are disabled. Uses the toFixed(..) function in the background.
+         */
+        "trailingZeroes"?: boolean;
+        /**
+          * Color variant of the accordion.
+         */
+        "variant"?: 'light' | 'dark';
+    }
     /**
      * Represents the default radio button for the Innomics applications.
      */
@@ -1062,6 +1121,7 @@ declare namespace LocalJSX {
         "inno-loader": InnoLoader;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
+        "inno-progress-bar": InnoProgressBar;
         "inno-radio": InnoRadio;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
@@ -1096,6 +1156,7 @@ declare module "@stencil/core" {
             "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
+            "inno-progress-bar": LocalJSX.InnoProgressBar & JSXBase.HTMLAttributes<HTMLInnoProgressBarElement>;
             /**
              * Represents the default radio button for the Innomics applications.
              */

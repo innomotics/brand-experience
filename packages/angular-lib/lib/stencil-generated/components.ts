@@ -326,6 +326,28 @@ export declare interface InnoPopover extends Components.InnoPopover {}
 
 
 @ProxyCmp({
+  inputs: ['percentagePrecision', 'progressPercentage', 'progressText', 'showPercentage', 'trailingZeroes', 'variant']
+})
+@Component({
+  selector: 'inno-progress-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['percentagePrecision', 'progressPercentage', 'progressText', 'showPercentage', 'trailingZeroes', 'variant'],
+})
+export class InnoProgressBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoProgressBar extends Components.InnoProgressBar {}
+
+
+@ProxyCmp({
   inputs: ['checked', 'disabled', 'error', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
   methods: ['unselect']
 })
