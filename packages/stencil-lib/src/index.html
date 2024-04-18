@@ -19,17 +19,11 @@
 
   <body>
     <inno-modal id="innomodal1">
-      <inno-modal-header
-        >A very long headline, which we unfortunately have to cut off, otherwise our model will be too big, otherwise our model will be too big, otherwise our model will be too
-        big</inno-modal-header
-      >
-      <inno-modal-content
-        >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua lorem ipsum
-        dolor sit.
-      </inno-modal-content>
+      <inno-modal-header></inno-modal-header>
+      <inno-modal-content>This is a non-critical modal</inno-modal-content>
       <inno-modal-footer>
-        <inno-button theme="dark" variant="secondary">Close</inno-button>
-        <inno-button theme="dark" variant="primary">Accept</inno-button>
+        <inno-button colorVariant="light" variant="secondary"> Close </inno-button>
+        <inno-button colorVariant="light" variant="primary"> Accept </inno-button>
       </inno-modal-footer>
     </inno-modal>
 
@@ -393,8 +387,17 @@
       console.log(formProps);
     });
 
-    document.getElementById('modalbutton1').addEventListener('click', () => {
-      document.getElementById('innomodal1').showModal();
+    document.getElementById('modalbutton1').addEventListener('click', async () => {
+      const modal = document.getElementById('innomodal1');
+      await modal.showModal();
+      modal.addEventListener('dialogDismiss', event => {
+        console.log(event);
+      });
+      modal.addEventListener('dialogClose', event => {
+        console.log(event);
+      });
     });
+
+    console.log(openModal);
   </script>
 </html>

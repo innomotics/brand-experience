@@ -1,5 +1,8 @@
 import { Component, Host, h } from '@stencil/core';
 
+/**
+ *
+ */
 @Component({
   tag: 'inno-modal-footer',
   styleUrl: 'inno-modal-footer.scss',

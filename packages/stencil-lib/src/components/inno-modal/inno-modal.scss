@@ -1,6 +1,5 @@
-::backdrop {
-  --ix-dialog-backdrop: #000000a6;
-}
+@use '@innomotics/ix/styles/colors';
+@use '../../../styles/breakpoints' as breakpoints;
 
 :focus-visible {
   outline: none !important;
@@ -16,10 +15,9 @@
   }
 
   dialog::backdrop {
-    // backdrop-filter: blur(2.7182817459106445px);
-    backdrop-filter: blur(10px);
-    color: #000;
-    mask: 60%;
+    backdrop-filter: blur(4px);
+    // Using the direct value from the design document
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .modal {
@@ -27,13 +25,7 @@
     flex-direction: column;
     position: relative;
     border: none;
-    border-radius: 0.25rem;
-    background: #283236;
-    box-shadow:
-      0px 12px 18px #00000099,
-      0px 4px 8px #00000099,
-      0px 0px 2px #000000;
-    color: var(--theme-color-std-text);
+    background: colors.$primary-200;
     overflow: visible;
     max-height: 80vh;
     pointer-events: all;
@@ -88,7 +80,7 @@
     pointer-events: none;
   }
 
-  ::slotted(ix-modal-footer) {
+  ::slotted(inno-modal-footer) {
     margin-top: auto;
   }
 }
@@ -113,8 +105,23 @@
 }
 
 :host(.with-icon) {
-  ::slotted(ix-modal-footer),
-  ::slotted(ix-modal-content) {
+  ::slotted(inno-modal-footer),
+  ::slotted(inno-modal-content) {
     margin-left: 2.5rem;
+  }
+}
+
+@media screen and (max-width: breakpoints.$desktop) {
+  :host {
+    dialog {
+      margin: 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .modal {
+      width: 95%;
+    }
   }
 }

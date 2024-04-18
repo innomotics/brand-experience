@@ -1,13 +1,13 @@
-import { Component, Host, h, Element, Prop, State, Event, EventEmitter, Method } from '@stencil/core';
+import { Component, Host, h, Element, Prop, State, Event, EventEmitter, Method, Listen } from '@stencil/core';
 import anime from 'animejs';
 import { A11yAttributes, a11yBoolean, a11yHostAttributes } from '../../utils/a11y';
 import Animation from '../../utils/animation';
 import { waitForElement } from '../../utils/waitForElement';
+import { InnoModalSize } from './inno-modal.model';
 
-export type IxModalFixedSize = '360' | '480' | '600' | '720' | '840';
-export type IxModalDynamicSize = 'full-width' | 'full-screen';
-export type IxModalSize = IxModalFixedSize | IxModalDynamicSize;
-
+/**
+ * Represents the main frame of the modal component.
+ */
 @Component({
   tag: 'inno-modal',
   styleUrl: 'inno-modal.scss',
@@ -16,7 +16,10 @@ export type IxModalSize = IxModalFixedSize | IxModalDynamicSize;
 export class InnoModal {
   private ariaAttributes: A11yAttributes = {};
 
-  @Element() hostElement!: any;
+  @Element() hostElement!: HTMLElement;
+
+  @State() modalVisible = false;
+  currentCause?: any;
 
   /**
    * Theme variant of the component.
@@ -26,7 +29,7 @@ export class InnoModal {
   /**
    * Modal size
    */
-  @Prop() size: IxModalSize = '720';
+  @Prop() size: InnoModalSize = '720';
 
   /**
    * Should the modal be animated
@@ -44,23 +47,9 @@ export class InnoModal {
   @Prop() closeOnBackdropClick = true;
 
   /**
-   * Is called before the modal is dismissed.
-   *
-   * - Return `true` to proceed in dismissing the modal
-   * - Return `false` to abort in dismissing the modal
-   */
-  @Prop() beforeDismiss: (reason?: any) => boolean | Promise<boolean>;
-
-  /**
    * Centered modal
    */
   @Prop() centered = false;
-
-  /**
-   * Use ESC to dismiss the modal
-   * @deprecated - Use closeOnEscape instead
-   */
-  @Prop() keyboard = true;
 
   /**
    * If set to true the modal can be closed by pressing the Escape key
@@ -77,69 +66,32 @@ export class InnoModal {
    */
   @Event() dialogDismiss: EventEmitter;
 
-  @State() modalVisible = false;
-
-  // @OnListener<Modal>('keydown', self => !self.closeOnEscape || !self.keyboard)
-  onKey(e: KeyboardEvent) {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-    }
-  }
-
   get dialog() {
     return this.hostElement.querySelector('dialog');
   }
 
-  private slideInModal() {
-    const duration = this.animation ? Animation.mediumTime : 0;
-
-    let transformY = this.centered ? '-50%' : 40;
-
-    anime({
-      targets: this.dialog,
-      duration,
-      opacity: [0, 1],
-      translateY: [0, transformY],
-      translateX: ['-50%', '-50%'],
-      easing: 'easeOutSine',
-    });
+  componentDidLoad() {
+    this.slideInModal();
   }
 
-  private slideOutModal(completeCallback: Function) {
-    const duration = this.animation ? Animation.mediumTime : 0;
-
-    let transformY = this.centered ? '-50%' : 40;
-
-    anime({
-      targets: this.dialog,
-      duration,
-      opacity: [1, 0],
-      translateY: [transformY, 0],
-      translateX: ['-50%', '-50%'],
-      easing: 'easeInSine',
-      complete: () => {
-        if (completeCallback) {
-          completeCallback();
-        }
-      },
-    });
+  componentWillLoad() {
+    this.ariaAttributes = a11yHostAttributes(this.hostElement);
   }
 
-  private onModalClick(event: MouseEvent) {
-    if (event.target !== this.dialog) {
-      return;
-    }
-
-    const rect = this.dialog.getBoundingClientRect();
-    const isClickOutside = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
-
-    if (!isClickOutside && this.closeOnBackdropClick) {
+  // Handle keydown on modal content window
+  @Listen('keydown')
+  onKey(e: KeyboardEvent) {
+    if (e.key === 'Escape' && this.closeOnEscape) {
+      e.preventDefault();
       this.dismissModal();
+    } else {
+      e.stopPropagation();
+      e.preventDefault();
     }
   }
 
   /**
-   * Show the dialog
+   * Show the dialog.
    */
   @Method()
   async showModal() {
@@ -157,30 +109,9 @@ export class InnoModal {
    */
   @Method()
   async dismissModal<T = any>(reason?: T) {
-    console.log('CALLED!');
-
-    let allowDismiss = true;
-
-    if (this.beforeDismiss !== undefined) {
-      allowDismiss = await this.beforeDismiss(reason);
-    }
-    if (!allowDismiss) {
-      return;
-    }
-
     this.slideOutModal(() => {
       this.modalVisible = false;
-      this.dialog.close(
-        JSON.stringify(
-          {
-            type: 'dismiss',
-            reason,
-          },
-          null,
-          2,
-        ),
-      );
-
+      this.dialog.close(JSON.stringify({ type: 'dismiss', reason }));
       this.dialogDismiss.emit(reason);
     });
   }
@@ -191,58 +122,98 @@ export class InnoModal {
   @Method()
   async closeModal<T = any>(reason: T) {
     this.slideOutModal(() => {
-      this.dialog.close(
-        JSON.stringify(
-          {
-            type: 'close',
-            reason,
-          },
-          null,
-          2,
-        ),
-      );
-
+      this.dialog.close(JSON.stringify({ type: 'close', reason }));
       this.dialogClose.emit(reason);
     });
   }
 
-  componentDidLoad() {
-    this.slideInModal();
+  private slideInModal() {
+    const duration = this.animation ? Animation.mediumTime : 0;
+    let transformY = this.centered ? '-50%' : 40;
+
+    anime({
+      targets: this.dialog,
+      duration,
+      opacity: [0, 1],
+      translateY: [0, transformY],
+      translateX: ['-50%', '-50%'],
+      easing: 'easeOutSine',
+    });
   }
 
-  componentWillLoad() {
-    this.ariaAttributes = a11yHostAttributes(this.hostElement);
+  private slideOutModal(completeCallback: Function) {
+    const duration = this.animation ? Animation.mediumTime : 0;
+    let transformY = this.centered ? '-50%' : 40;
+
+    anime({
+      targets: this.dialog,
+      duration,
+      opacity: [1, 0],
+      translateY: [transformY, 0],
+      translateX: ['-50%', '-50%'],
+      easing: 'easeInSine',
+      complete: () => {
+        if (completeCallback) {
+          completeCallback();
+        }
+      },
+    });
+  }
+
+  private onDialogCancel(event: Event) {
+    // Check escape default behavior on modal backdrop
+    if (!this.closeOnEscape) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    event.preventDefault();
+    this.dismissModal();
+  }
+
+  private onModalClick(event: MouseEvent) {
+    if (event.target !== this.dialog) {
+      return;
+    }
+
+    const rect = this.dialog.getBoundingClientRect();
+    const isClickOutside = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+
+    if (!isClickOutside && this.closeOnBackdropClick) {
+      this.dismissModal();
+    }
+  }
+
+  private dialogElement() {
+    const classes = {
+      modal: true,
+      [`modal-size-${this.size}`]: true,
+    };
+
+    return (
+      <div class="dialog-backdrop">
+        <dialog
+          aria-modal={a11yBoolean(true)}
+          aria-describedby={this.ariaAttributes['aria-describedby']}
+          aria-labelledby={this.ariaAttributes['aria-labelledby']}
+          class={classes}
+          onClick={e => this.onModalClick(e)}
+          onCancel={e => this.onDialogCancel(e)}
+        >
+          <slot></slot>
+        </dialog>
+      </div>
+    );
   }
 
   render() {
-    return (
-      <Host
-        class={{
-          'visible': this.modalVisible,
-          'no-backdrop': this.backdrop === false,
-          'align-center': this.centered,
-        }}
-      >
-        <div class="dialog-backdrop">
-          <dialog
-            aria-modal={a11yBoolean(true)}
-            aria-describedby={this.ariaAttributes['aria-describedby']}
-            aria-labelledby={this.ariaAttributes['aria-labelledby']}
-            class={{
-              modal: true,
-              [`modal-size-${this.size}`]: true,
-            }}
-            onClose={() => this.dismissModal()}
-            onClick={event => this.onModalClick(event)}
-            onCancel={e => {
-              e.preventDefault();
-              this.dismissModal();
-            }}
-          >
-            <slot></slot>
-          </dialog>
-        </div>
-      </Host>
-    );
+    const hostClasses = {
+      'visible': this.modalVisible,
+      'no-backdrop': !this.backdrop,
+      'align-center': this.centered,
+    };
+
+    return <Host class={hostClasses}>{this.dialogElement()}</Host>;
   }
 }

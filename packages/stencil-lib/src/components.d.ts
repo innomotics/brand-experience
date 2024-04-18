@@ -5,10 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IxModalSize } from "./components/inno-modal/inno-modal";
+import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
-export { IxModalSize } from "./components/inno-modal/inno-modal";
+export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export namespace Components {
@@ -212,6 +212,9 @@ export namespace Components {
          */
         "variant": 'light' | 'dark';
     }
+    /**
+     * Represents the main frame of the modal component.
+     */
     interface InnoModal {
         /**
           * Should the modal be animated
@@ -221,10 +224,6 @@ export namespace Components {
           * Show a backdrop behind the modal dialog
          */
         "backdrop": boolean;
-        /**
-          * Is called before the modal is dismissed.  - Return `true` to proceed in dismissing the modal - Return `false` to abort in dismissing the modal
-         */
-        "beforeDismiss": (reason?: any) => boolean | Promise<boolean>;
         /**
           * Centered modal
          */
@@ -246,18 +245,13 @@ export namespace Components {
          */
         "dismissModal": <T = any>(reason?: T) => Promise<void>;
         /**
-          * Use ESC to dismiss the modal
-          * @deprecated - Use closeOnEscape instead
-         */
-        "keyboard": boolean;
-        /**
-          * Show the dialog
+          * Show the dialog.
          */
         "showModal": () => Promise<void>;
         /**
           * Modal size
          */
-        "size": IxModalSize;
+        "size": InnoModalSize;
         /**
           * Theme variant of the component.
          */
@@ -267,15 +261,18 @@ export namespace Components {
     }
     interface InnoModalFooter {
     }
+    /**
+     * Represents the header of the inno-modal component.
+     */
     interface InnoModalHeader {
+        /**
+          * Icon of the Header, optional.
+         */
+        "icon"?: string;
         /**
           * Hide the close button.
          */
-        "hideClose": boolean;
-        /**
-          * Icon of the Header
-         */
-        "icon": string;
+        "showClose": boolean;
         /**
           * Theme variant of the component.
          */
@@ -637,6 +634,9 @@ declare global {
         "dialogClose": any;
         "dialogDismiss": any;
     }
+    /**
+     * Represents the main frame of the modal component.
+     */
     interface HTMLInnoModalElement extends Components.InnoModal, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoModalElementEventMap>(type: K, listener: (this: HTMLInnoModalElement, ev: InnoModalCustomEvent<HTMLInnoModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -664,8 +664,11 @@ declare global {
         new (): HTMLInnoModalFooterElement;
     };
     interface HTMLInnoModalHeaderElementEventMap {
-        "closeClick": MouseEvent;
+        "closeClick": Event;
     }
+    /**
+     * Represents the header of the inno-modal component.
+     */
     interface HTMLInnoModalHeaderElement extends Components.InnoModalHeader, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoModalHeaderElementEventMap>(type: K, listener: (this: HTMLInnoModalHeaderElement, ev: InnoModalHeaderCustomEvent<HTMLInnoModalHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1016,6 +1019,9 @@ declare namespace LocalJSX {
          */
         "variant"?: 'light' | 'dark';
     }
+    /**
+     * Represents the main frame of the modal component.
+     */
     interface InnoModal {
         /**
           * Should the modal be animated
@@ -1025,10 +1031,6 @@ declare namespace LocalJSX {
           * Show a backdrop behind the modal dialog
          */
         "backdrop"?: boolean;
-        /**
-          * Is called before the modal is dismissed.  - Return `true` to proceed in dismissing the modal - Return `false` to abort in dismissing the modal
-         */
-        "beforeDismiss"?: (reason?: any) => boolean | Promise<boolean>;
         /**
           * Centered modal
          */
@@ -1042,11 +1044,6 @@ declare namespace LocalJSX {
          */
         "closeOnEscape"?: boolean;
         /**
-          * Use ESC to dismiss the modal
-          * @deprecated - Use closeOnEscape instead
-         */
-        "keyboard"?: boolean;
-        /**
           * Dialog close
          */
         "onDialogClose"?: (event: InnoModalCustomEvent<any>) => void;
@@ -1057,7 +1054,7 @@ declare namespace LocalJSX {
         /**
           * Modal size
          */
-        "size"?: IxModalSize;
+        "size"?: InnoModalSize;
         /**
           * Theme variant of the component.
          */
@@ -1067,19 +1064,22 @@ declare namespace LocalJSX {
     }
     interface InnoModalFooter {
     }
+    /**
+     * Represents the header of the inno-modal component.
+     */
     interface InnoModalHeader {
         /**
-          * Hide the close button.
-         */
-        "hideClose"?: boolean;
-        /**
-          * Icon of the Header
+          * Icon of the Header, optional.
          */
         "icon"?: string;
         /**
           * Emits when close icon is clicked and closes the modal Can be prevented, in which case only the event is triggered, and the modal remains open
          */
-        "onCloseClick"?: (event: InnoModalHeaderCustomEvent<MouseEvent>) => void;
+        "onCloseClick"?: (event: InnoModalHeaderCustomEvent<Event>) => void;
+        /**
+          * Hide the close button.
+         */
+        "showClose"?: boolean;
         /**
           * Theme variant of the component.
          */
@@ -1313,9 +1313,15 @@ declare module "@stencil/core" {
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
+            /**
+             * Represents the main frame of the modal component.
+             */
             "inno-modal": LocalJSX.InnoModal & JSXBase.HTMLAttributes<HTMLInnoModalElement>;
             "inno-modal-content": LocalJSX.InnoModalContent & JSXBase.HTMLAttributes<HTMLInnoModalContentElement>;
             "inno-modal-footer": LocalJSX.InnoModalFooter & JSXBase.HTMLAttributes<HTMLInnoModalFooterElement>;
+            /**
+             * Represents the header of the inno-modal component.
+             */
             "inno-modal-header": LocalJSX.InnoModalHeader & JSXBase.HTMLAttributes<HTMLInnoModalHeaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;

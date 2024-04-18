@@ -274,7 +274,7 @@ export declare interface InnoLoader extends Components.InnoLoader {}
 
 
 @ProxyCmp({
-  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'keyboard', 'size', 'variant'],
+  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
   methods: ['showModal', 'dismissModal', 'closeModal']
 })
 @Component({
@@ -282,7 +282,7 @@ export declare interface InnoLoader extends Components.InnoLoader {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'keyboard', 'size', 'variant'],
+  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
 })
 export class InnoModal {
   protected el: HTMLElement;
@@ -349,14 +349,14 @@ export declare interface InnoModalFooter extends Components.InnoModalFooter {}
 
 
 @ProxyCmp({
-  inputs: ['hideClose', 'icon', 'variant']
+  inputs: ['icon', 'showClose', 'variant']
 })
 @Component({
   selector: 'inno-modal-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['hideClose', 'icon', 'variant'],
+  inputs: ['icon', 'showClose', 'variant'],
 })
 export class InnoModalHeader {
   protected el: HTMLElement;
@@ -373,7 +373,7 @@ export declare interface InnoModalHeader extends Components.InnoModalHeader {
    * Emits when close icon is clicked and closes the modal
 Can be prevented, in which case only the event is triggered, and the modal remains open
    */
-  closeClick: EventEmitter<CustomEvent<MouseEvent>>;
+  closeClick: EventEmitter<CustomEvent<Event>>;
 }
 
 

@@ -112,7 +112,6 @@ export const InnoModal = /*@__PURE__*/ defineContainer<JSX.InnoModal>('inno-moda
   'closeOnBackdropClick',
   'beforeDismiss',
   'centered',
-  'keyboard',
   'closeOnEscape',
   'dialogClose',
   'dialogDismiss'
@@ -127,7 +126,7 @@ export const InnoModalFooter = /*@__PURE__*/ defineContainer<JSX.InnoModalFooter
 
 export const InnoModalHeader = /*@__PURE__*/ defineContainer<JSX.InnoModalHeader>('inno-modal-header', undefined, [
   'variant',
-  'hideClose',
+  'showClose',
   'icon',
   'closeClick'
 ]);

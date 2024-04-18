@@ -1,12 +1,34 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Copied from the the original Siemens IX library.
+/// Modified for the Innomotics project.
+/// Provides a publicly available API to manage the modal functionality.
 ///
-/// Refernce: https://github.com/siemens/ix/blob/main/packages/angular/src/modal/modal.service.ts
+/// Reference: https://github.com/siemens/ix/blob/main/packages/core/src/components/utils/modal/modal.ts
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import { IxModalSize } from './inno-modal.model';
+import { InnoModalSize } from './inno-modal.model';
 import { getCoreDelegate, resolveDelegate } from '../../utils/delegate';
 import { TypedEvent } from '../../utils/typed-event';
+
+export interface ModalConfig<CONTENT = any> {
+  animation?: boolean;
+  ariaDescribedby?: string;
+  ariaLabelledby?: string;
+  backdrop?: boolean;
+  closeOnBackdropClick?: boolean;
+  centered?: boolean;
+  container?: string | HTMLElement;
+  content: CONTENT | string;
+  keyboard?: boolean;
+  size?: InnoModalSize;
+  title?: string;
+}
+
+export interface ModalInstance<TReason = any> {
+  htmlElement: HTMLInnoModalElement;
+  onClose: TypedEvent<TReason>;
+  onDismiss: TypedEvent<TReason>;
+}
 
 export function setA11yAttributes(element: HTMLElement, config: ModalConfig) {
   const ariaDescribedby = config.ariaDescribedby;
@@ -24,27 +46,6 @@ export function setA11yAttributes(element: HTMLElement, config: ModalConfig) {
   }
 }
 
-export interface ModalConfig<TReason = any, CONTENT = any> {
-  animation?: boolean;
-  ariaDescribedby?: string;
-  ariaLabelledby?: string;
-  backdrop?: boolean;
-  closeOnBackdropClick?: boolean;
-  beforeDismiss?: (reason?: TReason) => boolean | Promise<boolean>;
-  centered?: boolean;
-  container?: string | HTMLElement;
-  content: CONTENT | string;
-  keyboard?: boolean;
-  size?: IxModalSize;
-  title?: string;
-}
-
-export interface ModalInstance<TReason = any> {
-  htmlElement: HTMLInnoModalElement;
-  onClose: TypedEvent<TReason>;
-  onDismiss: TypedEvent<TReason>;
-}
-
 function getInnoModal(element: Element): HTMLInnoModalElement {
   return element.closest('inno-modal');
 }
@@ -53,7 +54,6 @@ export function closeModal<TClose = any>(element: Element, closeResult: TClose) 
   const dialog = getInnoModal(element);
   if (dialog) {
     dialog.closeModal(closeResult);
-    return;
   }
 }
 
@@ -61,7 +61,6 @@ export function dismissModal(element: Element, dismissResult?: any) {
   const dialog = getInnoModal(element);
   if (dialog) {
     dialog.dismissModal(dismissResult);
-    return;
   }
 }
 
@@ -71,17 +70,21 @@ export async function showModal<T>(config: ModalConfig<T>): Promise<ModalInstanc
   const onClose = new TypedEvent<T>();
   const onDismiss = new TypedEvent<T>();
 
+  // Direct string content to load inticator content
   if (typeof config.content === 'string') {
     const dialog = document.createElement('inno-modal');
     dialog.innerText = config.content;
     dialogRef = await getCoreDelegate().attachView(dialog);
   }
 
+  // Provided only the body of the modal
   if (config.content instanceof HTMLElement && config.content.tagName !== 'INNO-MODAL') {
     const dialog = document.createElement('inno-modal');
     dialog.appendChild(config.content);
     dialogRef = await getCoreDelegate().attachView(dialog);
   }
+
+  // Full inno-modal content is provided
   if (!dialogRef) {
     dialogRef = await delegate.attachView<HTMLInnoModalElement>(config.content);
   }
@@ -90,11 +93,11 @@ export async function showModal<T>(config: ModalConfig<T>): Promise<ModalInstanc
   Object.assign(dialogRef, config);
 
   await dialogRef.showModal();
+
   dialogRef.addEventListener('dialogClose', async ({ detail }: CustomEvent) => {
     onClose.emit(detail);
     await delegate.removeView(dialogRef);
   });
-
   dialogRef.addEventListener('dialogDismiss', async ({ detail }: CustomEvent) => {
     onDismiss.emit(detail);
     await delegate.removeView(dialogRef);
