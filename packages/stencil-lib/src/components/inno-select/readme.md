@@ -91,15 +91,15 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property     | Attribute     | Description                            | Type                 | Default     |
-| ------------ | ------------- | -------------------------------------- | -------------------- | ----------- |
-| `disabled`   | `disabled`    | Whether the select is disabled or not. | `boolean`            | `false`     |
-| `isFocused`  | `is-focused`  | Whether the select is focused or not.  | `boolean`            | `undefined` |
-| `label`      | `label`       | Label for the select.                  | `string`             | `undefined` |
-| `selectIcon` | `select-icon` |                                        | `string`             | `undefined` |
-| `type`       | `type`        | Type of the select.                    | `"number" \| "text"` | `'text'`    |
-| `value`      | `value`       | Value of the select.                   | `string`             | `undefined` |
-| `variant`    | `variant`     | Color variant of the select.           | `"dark" \| "light"`  | `'light'`   |
+| Property    | Attribute    | Description                                                                                     | Type                 | Default     |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------- | -------------------- | ----------- |
+| `disabled`  | `disabled`   | Whether the select is disabled or not.                                                          | `boolean`            | `false`     |
+| `icon`      | `icon`       | Icon for select when no item selected When icon is present the label is not behaves as floating | `string`             | `undefined` |
+| `isFocused` | `is-focused` | Whether the select is focused or not.                                                           | `boolean`            | `undefined` |
+| `label`     | `label`      | Label for the select when no item selected.                                                     | `string`             | `undefined` |
+| `type`      | `type`       | Type of the select.                                                                             | `"number" \| "text"` | `'text'`    |
+| `value`     | `value`      | Value of the select.                                                                            | `string`             | `undefined` |
+| `variant`   | `variant`    | Color variant of the select.                                                                    | `"dark" \| "light"`  | `'light'`   |
 
 
 ## Events

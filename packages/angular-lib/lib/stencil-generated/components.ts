@@ -378,14 +378,14 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isFocused', 'label', 'selectIcon', 'type', 'value', 'variant']
+  inputs: ['disabled', 'icon', 'isFocused', 'label', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isFocused', 'label', 'selectIcon', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'icon', 'isFocused', 'label', 'type', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
