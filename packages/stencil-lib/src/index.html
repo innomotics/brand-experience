@@ -416,6 +416,12 @@
         <inno-tab-item>Tab item 5</inno-tab-item>
       </inno-tab>
     </div>
+
+    <div class="progress-bars" style="display: block; padding-top: 20px;">
+      <button id="progressRandomizer">Randomize progress!</button>
+      <inno-progress-bar style="margin-bottom: 10px;" progress-percentage="50" progress-text="your progress text"></inno-progress-bar>
+      <inno-progress-bar progress-text="your progress text" progress-percentage="50" percentage-precision="2" trailing-zeroes="true" variant="dark"></inno-progress-bar>
+    </div>
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -462,6 +468,13 @@
       const formData = new FormData(event.target);
       const formProps = Object.fromEntries(formData);
       console.log(formProps);
+    });
+
+    const randomizerBtn = document.getElementById('progressRandomizer');
+    randomizerBtn.addEventListener('click', () => {
+      document.querySelectorAll("inno-progress-bar").forEach(el => {
+        el.progressPercentage=Math.random()*100;
+      });
     });
   </script>
 </html>

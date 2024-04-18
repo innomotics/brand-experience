@@ -126,6 +126,16 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
 ]);
 
 
+export const InnoProgressBar = /*@__PURE__*/ defineContainer<JSX.InnoProgressBar>('inno-progress-bar', undefined, [
+  'variant',
+  'progressText',
+  'progressPercentage',
+  'showPercentage',
+  'percentagePrecision',
+  'trailingZeroes'
+]);
+
+
 export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radio', undefined, [
   'variant',
   'tabIdx',
