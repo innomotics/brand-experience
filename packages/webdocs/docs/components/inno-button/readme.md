@@ -29,21 +29,21 @@ import {InnoButton} from '@innomotics/ix-react-lib';
           </div>
           <div class="light-bg">
             <span class="bg-title">disabled light background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
           </div>
           <div class="dark-bg">
             <span class="bg-title">disabled dark background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-position="left">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-position="left">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
           </div>
         </div>
         <h1>media buttons</h1>
@@ -82,21 +82,21 @@ import {InnoButton} from '@innomotics/ix-react-lib';
           </div>
           <div style={{"background-color": "white", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "black"}}>disabled light background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></inno-button>
           </div>
           <div style={{"background-color": "#08191f", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "white"}}>disabled dark background</span>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-position="left">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="secondary" disabled icon="cogwheel" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" disabled icon="cogwheel" icon-only="true"></inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-position="left">primary button</inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-position="left">secondary button</inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left">tertiary button</inno-button>
+            <inno-button variant="primary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
+            <inno-button variant="secondary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
+            <inno-button variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true"></inno-button>
           </div>
         </div>
         <h1>media buttons</h1>
@@ -136,21 +136,21 @@ import {InnoButton} from '@innomotics/ix-react-lib';
           </div>
           <div style={{"background-color": "white", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "black"}}>disabled light background</span>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</InnoButton>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">primary button</InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">secondary button</InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">tertiary button</InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
           </div>
           <div style={{"background-color": "#08191f", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "white"}}>disabled dark background</span>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-position="left">primary button</InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</InnoButton>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-only="true"></InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-only="true"></InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-only="true"></InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-position="left">primary button</InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-position="left">secondary button</InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left">tertiary button</InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
           </div>
         </div>
         <h1>media buttons</h1>
@@ -190,21 +190,21 @@ import {InnoButton} from '@innomotics/ix-react-lib';
           </div>
           <div style={{"background-color": "white", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "black"}}>disabled light background</span>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-position="left" color-variant="dark">primary button</InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-position="left" color-variant="dark">secondary button</InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-position="left" color-variant="dark">tertiary button</InnoButton>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">primary button</InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">secondary button</InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left" color-variant="dark">tertiary button</InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true" color-variant="dark"></InnoButton>
           </div>
           <div style={{"background-color": "#08191f", "padding": "15px"}}>
             <span class="bg-title" style={{"display": "block", "margin-bottom": "25px", "color": "white"}}>disabled dark background</span>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-position="left">primary button</InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-position="left">secondary button</InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-position="left">tertiary button</InnoButton>
-            <InnoButton variant="primary" disabled icon="cogwheel" icon-only="true"></InnoButton>
-            <InnoButton variant="secondary" disabled icon="cogwheel" icon-only="true"></InnoButton>
-            <InnoButton variant="tertiary" disabled icon="cogwheel" icon-only="true"></InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-position="left">primary button</InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-position="left">secondary button</InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-position="left">tertiary button</InnoButton>
+            <InnoButton variant="primary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
+            <InnoButton variant="secondary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
+            <InnoButton variant="tertiary" disabled icon="arrowdoubleleft" icon-only="true"></InnoButton>
           </div>
         </div>
         <h1>media buttons</h1>
