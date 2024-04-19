@@ -274,7 +274,7 @@ export declare interface InnoLoader extends Components.InnoLoader {}
 
 
 @ProxyCmp({
-  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
+  inputs: ['animation', 'backdrop', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
   methods: ['showModal', 'dismissModal', 'closeModal']
 })
 @Component({
@@ -282,7 +282,7 @@ export declare interface InnoLoader extends Components.InnoLoader {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['animation', 'backdrop', 'beforeDismiss', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
+  inputs: ['animation', 'backdrop', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
 })
 export class InnoModal {
   protected el: HTMLElement;

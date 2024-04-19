@@ -26,12 +26,9 @@ type ModalContext<T> = {
 
 @Injectable()
 export class InnoModalService {
-  // private viewContainerRef: ViewContainerRef = inject(ViewContainerRef);
-
   constructor(
     private appRef: ApplicationRef,
     private componentFactoryResolver: ComponentFactoryResolver,
-    // private viewContainerRef: ViewContainerRef,
     private injector: Injector
   ) {}
 
@@ -131,7 +128,7 @@ export class InnoModalService {
 
     viewRef.detectChanges();
 
-    const modalInstance = await showModal<TReason>({
+    const modalInstance = await showModal({
       ...config,
       content: htmlElement,
     });

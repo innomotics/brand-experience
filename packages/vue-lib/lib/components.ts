@@ -110,7 +110,6 @@ export const InnoModal = /*@__PURE__*/ defineContainer<JSX.InnoModal>('inno-moda
   'animation',
   'backdrop',
   'closeOnBackdropClick',
-  'beforeDismiss',
   'centered',
   'closeOnEscape',
   'dialogClose',

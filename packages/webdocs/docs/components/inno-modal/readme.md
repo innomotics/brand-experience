@@ -9,16 +9,15 @@ Represents the main frame of the modal component.
 
 ## Properties
 
-| Property               | Attribute                 | Description                                                                                                                                    | Type                                                                         | Default     |
-| ---------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------- |
-| `animation`            | `animation`               | Should the modal be animated                                                                                                                   | `boolean`                                                                    | `true`      |
-| `backdrop`             | `backdrop`                | Show a backdrop behind the modal dialog                                                                                                        | `boolean`                                                                    | `false`     |
-| `beforeDismiss`        | --                        | Is called before the modal is dismissed.  - Return `true` to proceed in dismissing the modal - Return `false` to abort in dismissing the modal | `(reason?: any) => boolean \| Promise<boolean>`                              | `undefined` |
-| `centered`             | `centered`                | Centered modal                                                                                                                                 | `boolean`                                                                    | `false`     |
-| `closeOnBackdropClick` | `close-on-backdrop-click` | Dismiss modal on backdrop click                                                                                                                | `boolean`                                                                    | `true`      |
-| `closeOnEscape`        | `close-on-escape`         | If set to true the modal can be closed by pressing the Escape key                                                                              | `boolean`                                                                    | `false`     |
-| `size`                 | `size`                    | Modal size                                                                                                                                     | `"360" \| "480" \| "600" \| "720" \| "840" \| "full-screen" \| "full-width"` | `'720'`     |
-| `variant`              | `variant`                 | Theme variant of the component.                                                                                                                | `"dark" \| "light"`                                                          | `'light'`   |
+| Property               | Attribute                 | Description                                                       | Type                                                                         | Default   |
+| ---------------------- | ------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- |
+| `animation`            | `animation`               | Should the modal be animated                                      | `boolean`                                                                    | `true`    |
+| `backdrop`             | `backdrop`                | Show a backdrop behind the modal dialog                           | `boolean`                                                                    | `true`    |
+| `centered`             | `centered`                | Centered modal                                                    | `boolean`                                                                    | `false`   |
+| `closeOnBackdropClick` | `close-on-backdrop-click` | Dismiss modal on backdrop click                                   | `boolean`                                                                    | `true`    |
+| `closeOnEscape`        | `close-on-escape`         | If set to true the modal can be closed by pressing the Escape key | `boolean`                                                                    | `true`    |
+| `size`                 | `size`                    | Modal size                                                        | `"360" \| "480" \| "600" \| "720" \| "840" \| "full-screen" \| "full-width"` | `'720'`   |
+| `variant`              | `variant`                 | Theme variant of the component.                                   | `"dark" \| "light"`                                                          | `'light'` |
 
 
 ## Events
@@ -65,7 +64,7 @@ Type: `Promise<void>`
 
 ### `showModal() => Promise<void>`
 
-Show the dialog
+Show the dialog.
 
 #### Returns
 

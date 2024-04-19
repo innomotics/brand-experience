@@ -54,9 +54,13 @@ export class AppComponent {
     this.innomoticsForm.get('checkboxtest1')?.valid;
   }
 
-  openModal() {
-    this.modalService.open({
+  async openModal() {
+    const ref = await this.modalService.open({
       content: this.customModalRef,
+      closeOnBackdropClick: false,
+      backdrop: true,
+      centered: true,
+      title: 'title',
     });
   }
 }

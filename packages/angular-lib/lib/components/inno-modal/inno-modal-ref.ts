@@ -16,7 +16,7 @@ export class InnoActiveModal<TData = any, TReason = any> {
   }
 
   /**
-   * Close the active modal
+   * Close the active modal.
    *
    * @param reason
    */
@@ -25,7 +25,7 @@ export class InnoActiveModal<TData = any, TReason = any> {
   }
 
   /**
-   * Dismiss the active modal
+   * Dismiss the active modal.
    *
    * @param reason
    */
