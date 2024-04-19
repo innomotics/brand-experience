@@ -10,14 +10,16 @@
 
   dialog {
     margin: 0;
-    padding: 0;
+    padding: 32px;
     left: 50%;
   }
 
   dialog::backdrop {
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     // Using the direct value from the design document
-    background: rgba(0, 0, 0, 0.7);
+    // background: rgba(0, 0, 0, 0.7);
+    background: colors.$backdrop;
   }
 
   .modal {

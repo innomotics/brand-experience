@@ -1,4 +1,83 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@innomotics/ix-react-lib';
+
 # inno-modal
+
+<Tabs>
+  <TabItem value="preview" label="Preview" default>
+  <div class="component-display">
+    <div class="dark-bg">
+    <span class="bg-title">light background, layout auto</span>
+    </div>
+  </div>
+  </TabItem>
+  <TabItem value="angular" label="Angular" default>
+  <div class="component-display">
+    ```ts
+      import { ComponentsModule } from '@innomotics/ix-angular-lib';
+
+      @NgModule({
+        imports: [
+          ComponentsModule,
+          ComponentsModule.forRoot(),
+        ]
+      })
+      export class Module {}
+    ```
+
+    ```html
+      <inno-button (click)="openModal()">Open modal</inno-button>
+
+      <ng-template #modalRef let-modal>
+        <inno-modal>
+          <inno-modal-header>Modal title</inno-modal-header>
+          <inno-modal-content>
+            More details about the modal content {{ modal.data }}
+          </inno-modal-content>
+          <inno-modal-footer>
+            Footer content
+          </inno-modal-footer>
+        </inno-modal>
+      </ng-template>
+    ```
+
+    ```ts
+      import { InnoModalService } from '@innomotics/ix-angular-lib';
+
+      @Component({})
+      export class ModalExampleComponent {
+        @ViewChild('modalRef', { read: TemplateRef })
+        modalRef!: TemplateRef<any>;
+
+        constructor(private readonly modalService: InnoModalService) {}
+
+        async openModal() {
+          const ref = await this.modalService.open({
+            content: this.modalRef,
+            closeOnBackdropClick: false,
+            backdrop: true,
+            centered: true,
+            title: 'title',
+            closeOnEscape: false,
+            data: 'modal data',
+          });
+        }
+      }
+
+    ```
+
+  </div>
+  </TabItem>
+  <TabItem value="react" label="React" default>
+  <div class="component-display">
+  </div>
+  </TabItem>
+  <TabItem value="vue" label="Vue" default>
+  <div class="component-display">
+  </div>
+  </TabItem>
+</Tabs>
 
 <!-- Auto Generated Below -->
 

@@ -1,0 +1,42 @@
+.normal-modal-content {
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.normal-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.with-list-style {
+  margin-left: 0;
+  padding-left: 20px;
+
+  li::marker {
+    color: white;
+  }
+}
+
+.big-text {
+  font-size: 14px;
+  color: white;
+  line-height: 22px;
+}
+
+.new-comparison-entry {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 20px;
+}
+
+.new-comparison-entry-footer {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}

@@ -16,7 +16,7 @@ export interface ModalConfig<CONTENT = any> {
   ariaLabelledby?: string;
   backdrop?: boolean;
   closeOnBackdropClick?: boolean;
-  closeOnEscape: boolean;
+  closeOnEscape?: boolean;
   centered?: boolean;
   container?: string | HTMLElement;
   content: CONTENT | string;
