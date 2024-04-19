@@ -15,6 +15,7 @@ import { InnoModalService } from '@innomotics/ix-angular-lib';
 })
 export class AppComponent {
   formValue = '';
+  activeTabIndex = 1;
 
   @ViewChild('customModal', { read: TemplateRef })
   customModalRef!: TemplateRef<any>;
@@ -62,5 +63,9 @@ export class AppComponent {
       centered: true,
       title: 'title',
     });
+  }
+
+  handleTabChange(index: number) {
+    this.activeTabIndex = index;
   }
 }

@@ -1,0 +1,114 @@
+@use '@innomotics/ix/styles/colors';
+@use '../../../styles/siemens-ix/scrollbar.scss' as ixscrollbar;
+@use '../../../styles/breakpoints' as breakpoints;
+
+:host {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  @include ixscrollbar.scrollbar;
+
+  display: flex;
+  align-items: center;
+  width: auto;
+  position: relative;
+
+  font-family: 'InnomoticsHafferSQ-Bold';
+
+  &.light {
+    background-color: colors.$primary-300;
+  }
+
+  &.dark {
+    background-color: colors.$primary-200;
+  }
+}
+
+// Content main wrapper
+// slice the overflow content
+.tab-items {
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+  // Stores the provided items
+  .items-content {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Left and right arrow base
+.arrow {
+  width: 100px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 2;
+  cursor: pointer;
+
+  pointer-events: none;
+
+  & > inno-icon {
+    pointer-events: auto;
+  }
+
+  &.light > inno-icon {
+    color: colors.$primary-200;
+
+    &:hover {
+      color: colors.$secondary-800;
+    }
+  }
+
+  &.dark > inno-icon {
+    color: colors.$primary-300;
+
+    &:hover {
+      color: colors.$secondary-300;
+    }
+  }
+}
+
+.arrow-left {
+  justify-content: flex-start;
+
+  &.light {
+    background: linear-gradient(to right, colors.$primary-300, transparent);
+  }
+
+  &.dark {
+    background: linear-gradient(to right, colors.$primary-200, transparent);
+  }
+}
+
+.arrow-right {
+  justify-content: flex-end;
+  left: auto;
+  right: 0;
+
+  &.light {
+    background: linear-gradient(to left, colors.$primary-300, transparent);
+  }
+
+  &.dark {
+    background: linear-gradient(to left, colors.$primary-200, transparent);
+  }
+}
+
+// Should not show the navigation arrows on small screen
+@media screen and (max-width: breakpoints.$desktop) {
+  .arrow {
+    display: none;
+  }
+}

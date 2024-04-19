@@ -153,6 +153,16 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
 ]);
 
 
+export const InnoProgressBar = /*@__PURE__*/ defineContainer<JSX.InnoProgressBar>('inno-progress-bar', undefined, [
+  'variant',
+  'progressText',
+  'progressPercentage',
+  'showPercentage',
+  'percentagePrecision',
+  'trailingZeroes'
+]);
+
+
 export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radio', undefined, [
   'variant',
   'tabIdx',
@@ -175,7 +185,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'disabled',
   'label',
   'variant',
-  'iconDriven',
+  'icon',
   'valueChanged'
 ]);
 
@@ -186,6 +196,24 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
   'icon',
   'selected',
   'itemSelected'
+]);
+
+
+export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', undefined, [
+  'theme',
+  'selected',
+  'layout',
+  'showArrow',
+  'selectedChange'
+]);
+
+
+export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-tab-item', undefined, [
+  'theme',
+  'layout',
+  'selected',
+  'disabled',
+  'tabClick'
 ]);
 
 

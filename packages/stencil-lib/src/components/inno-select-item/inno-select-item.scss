@@ -1,20 +1,20 @@
 @use '@innomotics/ix/styles/colors';
 
 :host {
+
   background-color: colors.$additional-light-400;
-  color:colors.$text-light-buttonlabel;
-  &:hover{
+  color: colors.$text-light-buttonlabel;
+  &:hover {
     background-color: colors.$text-dark-lowemphasis;
-    color:colors.$text-light-highemphasis;
+    color: colors.$text-light-highemphasis;
   }
 
-  &.focused{
+  &.focused {
     background-color: colors.$text-dark-lowemphasis;
-    color:colors.$text-light-highemphasis;
-
+    color: colors.$text-light-highemphasis;
   }
 
-  &.selected{
-    color:colors.$highlight-light-200;
+  &.selected {
+    color: colors.$highlight-light-200;
   }
 }

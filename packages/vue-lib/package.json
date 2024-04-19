@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-vue-lib",
-  "version": "0.0.1-alpha-24",
+  "version": "0.0.1-alpha-25",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -21,18 +21,18 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@innomotics/ix": "^0.0.1-alpha-24"
+    "@innomotics/ix": "^0.0.1-alpha-25"
   },
   "devDependencies": {
-    "vue": "3.4.21"
+    "vue": "^3.4.21"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@innomotics/ix": "^0.0.1-alpha-24",
-    "@innomotics/ix-fonts": "^0.0.1-alpha-24",
-    "@innomotics/ix-icons": "^0.0.1-alpha-24"
+    "@innomotics/ix": "^0.0.1-alpha-25",
+    "@innomotics/ix-fonts": "^0.0.1-alpha-25",
+    "@innomotics/ix-icons": "^0.0.1-alpha-25"
   }
 }

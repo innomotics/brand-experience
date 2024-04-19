@@ -2,7 +2,13 @@
 @use '@innomotics/ix/styles/componentmixins';
 
 :host {
-  cursor:pointer;
+  cursor: pointer;
+
+  .icon-driven {
+    span {
+      display: contents;
+    }
+  }
 
   &:focus-visible {
     @include componentmixins.focus;
@@ -14,7 +20,7 @@
       box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
     }
   }
-  
+
   &.dark {
     &:hover:not(.disabled):not(:disabled) {
       border: 1px solid colors.$highlight-dark-100;
@@ -42,7 +48,7 @@
         }
       }
     }
-    &.dark{
+    &.dark {
       background-color: colors.$background-dark-200;
     }
   }
@@ -77,5 +83,4 @@
   &.disabled {
     border: 1px solid colors.$interaction-light-disabled;
   }
-
 }

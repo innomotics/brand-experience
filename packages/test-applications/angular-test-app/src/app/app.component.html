@@ -91,3 +91,21 @@
     >Modal with size {{ modal.data }}</ix-button
   > -->
 </ng-template>
+
+<div class="container">
+  <inno-tab
+    [selected]="activeTabIndex"
+    layout="stretched"
+    (selectedChange)="handleTabChange($event.detail)"
+  >
+    <inno-tab-item><span>tab 1</span></inno-tab-item>
+    <inno-tab-item><span>tab 2</span></inno-tab-item>
+    <inno-tab-item><span>tab 3</span></inno-tab-item>
+  </inno-tab>
+</div>
+
+<div class="container">
+  <div *ngIf="activeTabIndex === 0">Tab 1 active</div>
+  <div *ngIf="activeTabIndex === 1">Tab 2 active</div>
+  <div *ngIf="activeTabIndex === 2">Tab 3 active</div>
+</div>

@@ -32,7 +32,7 @@ export class InnoSelect {
   @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
 
   /**
-   * Label for the select.
+   * Label for the select when no item selected.
    */
   @Prop({ mutable: true }) label: string;
 
@@ -41,7 +41,12 @@ export class InnoSelect {
    */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
   @State() isOpen: boolean = false;
-  @Prop() iconDriven: boolean = false;
+
+  /**
+   * Icon for select when no item selected
+   * When icon is present the label is not behaves as floating
+   */
+  @Prop() icon: string;
 
   /**
    * This event is fired when the value changes.
@@ -158,6 +163,7 @@ export class InnoSelect {
   get valueIsUndefined() {
     return this.value === undefined || this.value === '' || this.value === null;
   }
+
   render() {
     return (
       <Host
@@ -174,7 +180,7 @@ export class InnoSelect {
         onClick={() => this.selectClicked()}
       >
         <div>
-          {!this.iconDriven ? (
+          {!this.icon ? (
             <div class="select-header">
               <div class={{ content: true, filled: !this.valueIsUndefined }}>
                 <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
@@ -186,8 +192,16 @@ export class InnoSelect {
             </div>
           ) : (
             <div class="select-item icon-driven">
-              {this.selectedItem.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}
-              <div class="content-wrapper">{this.selectedItem.label}</div>
+              {this.selectedItem?.icon ? (
+                <span>
+                  <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon>
+                  <div class="content-wrapper">{this.selectedItem.label}</div>
+                </span>
+              ) : (
+                <span>
+                  <inno-icon icon={this.icon} size={32}></inno-icon>Please select
+                </span>
+              )}
               <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           )}

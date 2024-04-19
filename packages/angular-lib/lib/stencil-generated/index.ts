@@ -19,8 +19,11 @@ export const DIRECTIVES = [
   d.InnoModalHeader,
   d.InnoPane,
   d.InnoPopover,
+  d.InnoProgressBar,
   d.InnoRadio,
   d.InnoSelect,
   d.InnoSelectItem,
+  d.InnoTab,
+  d.InnoTabItem,
   d.InnoToggle
 ];

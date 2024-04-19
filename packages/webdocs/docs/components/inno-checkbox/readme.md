@@ -5,7 +5,7 @@ import {InnoCheckbox} from '@innomotics/ix-react-lib';
 # inno-checkbox
 
 <Tabs>
-  <TabItem value="preview-dark" label="Preview" default>
+  <TabItem value="preview" label="Preview" default>
     <div class="component-display">
       <div class="light-bg">
         <span class="bg-title">light background</span>

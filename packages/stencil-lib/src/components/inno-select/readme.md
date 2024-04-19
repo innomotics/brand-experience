@@ -13,12 +13,20 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -31,7 +39,11 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
           <inno-select label="Select" value="item1">
             <inno-select-item value="item1" label="item1"></inno-select-item>
             <inno-select-item value="item2" label="item2"></inno-select-item>
-          </InnoSelect>
+          </inno-select>
+          <inno-select label="Select" icon="home">
+            <inno-select-item value="item1" label="item1" icon="play"></inno-select-item>
+            <inno-select-item value="item2" label="item2" icon="pause"></inno-select-item>
+          </inno-select>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
@@ -39,9 +51,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
             <inno-select-item value="item1" label="item1"></inno-select-item>
             <inno-select-item value="item2" label="item2"></inno-select-item>
           </inno-select>
+          <inno-select label="Select" icon="home">
+            <inno-select-item value="item1" label="item1" icon="play"></inno-select-item>
+            <inno-select-item value="item2" label="item2" icon="pause"></inno-select-item>
+          </inno-select>
         </div>
     </div>
-
     ```
   </TabItem>
   <TabItem value="React" label="React">
@@ -53,12 +68,20 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -73,12 +96,20 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" icon="home">
+            <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -91,15 +122,15 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
 
 ## Properties
 
-| Property     | Attribute     | Description                            | Type                 | Default     |
-| ------------ | ------------- | -------------------------------------- | -------------------- | ----------- |
-| `disabled`   | `disabled`    | Whether the select is disabled or not. | `boolean`            | `false`     |
-| `iconDriven` | `icon-driven` |                                        | `boolean`            | `false`     |
-| `isFocused`  | `is-focused`  | Whether the select is focused or not.  | `boolean`            | `undefined` |
-| `label`      | `label`       | Label for the select.                  | `string`             | `undefined` |
-| `type`       | `type`        | Type of the select.                    | `"number" \| "text"` | `'text'`    |
-| `value`      | `value`       | Value of the select.                   | `string`             | `undefined` |
-| `variant`    | `variant`     | Color variant of the select.           | `"dark" \| "light"`  | `'light'`   |
+| Property    | Attribute    | Description                                                                                     | Type                 | Default     |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------- | -------------------- | ----------- |
+| `disabled`  | `disabled`   | Whether the select is disabled or not.                                                          | `boolean`            | `false`     |
+| `icon`      | `icon`       | Icon for select when no item selected When icon is present the label is not behaves as floating | `string`             | `undefined` |
+| `isFocused` | `is-focused` | Whether the select is focused or not.                                                           | `boolean`            | `undefined` |
+| `label`     | `label`      | Label for the select when no item selected.                                                     | `string`             | `undefined` |
+| `type`      | `type`       | Type of the select.                                                                             | `"number" \| "text"` | `'text'`    |
+| `value`     | `value`      | Value of the select.                                                                            | `string`             | `undefined` |
+| `variant`   | `variant`    | Color variant of the select.                                                                    | `"dark" \| "light"`  | `'light'`   |
 
 
 ## Events
