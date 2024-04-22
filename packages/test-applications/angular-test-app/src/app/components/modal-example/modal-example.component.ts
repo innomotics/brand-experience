@@ -1,5 +1,6 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { InnoModalService } from '@innomotics/ix-angular-lib';
+import { ModalByComponentComponent } from './components/modal-by-component/modal-by-component.component';
 
 @Component({
   selector: 'app-modal-example',
@@ -30,7 +31,6 @@ export class ModalExampleComponent {
       closeOnBackdropClick: false,
       backdrop: true,
       centered: true,
-      title: 'title',
       closeOnEscape: false,
       data: 'modal data',
     });
@@ -44,7 +44,6 @@ export class ModalExampleComponent {
       closeOnBackdropClick: false,
       backdrop: true,
       centered: true,
-      title: 'title',
       closeOnEscape: false,
     });
   }
@@ -55,7 +54,6 @@ export class ModalExampleComponent {
       closeOnBackdropClick: true,
       backdrop: false,
       centered: true,
-      title: 'title',
       closeOnEscape: true,
       size: '600',
     });
@@ -67,7 +65,6 @@ export class ModalExampleComponent {
       closeOnBackdropClick: false,
       backdrop: true,
       centered: true,
-      title: 'title',
       closeOnEscape: false,
     });
   }
@@ -78,8 +75,20 @@ export class ModalExampleComponent {
       closeOnBackdropClick: false,
       backdrop: true,
       centered: true,
-      title: 'title',
       closeOnEscape: false,
+    });
+  }
+
+  async openModalByInstance() {
+    const ref = await this.modalService.open({
+      content: ModalByComponentComponent,
+      animation: true,
+      backdrop: true,
+      centered: true,
+      closeOnBackdropClick: true,
+      closeOnEscape: true,
+      size: '720',
+      data: 'modal data external',
     });
   }
 }

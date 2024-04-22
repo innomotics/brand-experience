@@ -1,19 +1,14 @@
-/*
- * SPDX-FileCopyrightText: 2024 Siemens AG
- *
- * SPDX-License-Identifier: MIT
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Copied from the the original Siemens IX library.
+///
+/// Reference: https://github.com/siemens/ix/blob/main/packages/angular/src/modal/modal.service.ts
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import {
   ModalConfig as InnoModalConfig,
   showModal as _showModal,
 } from "@innomotics/ix";
 export * from "./modal";
-
-import "../../util/delegate";
 
 export type ModalConfig = {
   content: React.ReactNode | string;

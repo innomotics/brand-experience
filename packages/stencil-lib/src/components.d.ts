@@ -259,6 +259,10 @@ export namespace Components {
          */
         "variant": 'dark' | 'light';
     }
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
     interface InnoModalContent {
     }
     /**
@@ -271,7 +275,7 @@ export namespace Components {
      */
     interface InnoModalHeader {
         /**
-          * Icon of the Header, optional.
+          * Icon of the header, optional.
          */
         "icon"?: string;
         /**
@@ -734,6 +738,10 @@ declare global {
         prototype: HTMLInnoModalElement;
         new (): HTMLInnoModalElement;
     };
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
     interface HTMLInnoModalContentElement extends Components.InnoModalContent, HTMLStencilElement {
     }
     var HTMLInnoModalContentElement: {
@@ -1194,6 +1202,10 @@ declare namespace LocalJSX {
          */
         "variant"?: 'dark' | 'light';
     }
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
     interface InnoModalContent {
     }
     /**
@@ -1206,7 +1218,7 @@ declare namespace LocalJSX {
      */
     interface InnoModalHeader {
         /**
-          * Icon of the Header, optional.
+          * Icon of the header, optional.
          */
         "icon"?: string;
         /**
@@ -1535,6 +1547,10 @@ declare module "@stencil/core" {
              * Represents the main frame of the modal component.
              */
             "inno-modal": LocalJSX.InnoModal & JSXBase.HTMLAttributes<HTMLInnoModalElement>;
+            /**
+             * Represents the main content of the modal.
+             * The content is provided by the user.
+             */
             "inno-modal-content": LocalJSX.InnoModalContent & JSXBase.HTMLAttributes<HTMLInnoModalContentElement>;
             /**
              * Represents the footer content for the InnoModal component.

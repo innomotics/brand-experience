@@ -25,7 +25,7 @@ export class InnoModalHeader {
   @Prop() showClose = true;
 
   /**
-   * Icon of the Header, optional.
+   * Icon of the header, optional.
    */
   @Prop() icon?: string;
 

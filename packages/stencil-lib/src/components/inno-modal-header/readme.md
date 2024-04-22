@@ -13,7 +13,7 @@ Represents the header of the inno-modal component.
 
 | Property    | Attribute    | Description                     | Type                | Default     |
 | ----------- | ------------ | ------------------------------- | ------------------- | ----------- |
-| `icon`      | `icon`       | Icon of the Header, optional.   | `string`            | `undefined` |
+| `icon`      | `icon`       | Icon of the header, optional.   | `string`            | `undefined` |
 | `showClose` | `show-close` | Hide the close button.          | `boolean`           | `true`      |
 | `variant`   | `variant`    | Theme variant of the component. | `"dark" \| "light"` | `'light'`   |
 

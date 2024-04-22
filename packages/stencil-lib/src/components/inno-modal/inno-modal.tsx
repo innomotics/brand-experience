@@ -19,7 +19,6 @@ export class InnoModal {
   @Element() hostElement!: HTMLElement;
 
   @State() modalVisible = false;
-  currentCause?: any;
 
   /**
    * Theme variant of the component.
@@ -168,6 +167,7 @@ export class InnoModal {
       return;
     }
 
+    // Cancel the default dialog close behaviour
     event.preventDefault();
     this.dismissModal();
   }

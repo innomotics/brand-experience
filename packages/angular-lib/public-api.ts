@@ -8,4 +8,4 @@ export * from "./lib/components/inno-radio/inno-radio-value-accessor";
 export * from "./lib/components.module";
 export { DIRECTIVES } from "./lib/stencil-generated";
 export * from "./lib/stencil-generated/components";
-export { InnoModalService } from "./lib/components/inno-modal/inno-modal.service";
+export * from "./lib/components/inno-modal";

@@ -6,7 +6,7 @@ import {
   InnoIcon,
 } from "@innomotics/ix-react-lib";
 import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
-import InnoModalExample from "./components/InnoModalExample";
+import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
 
 defineCustomElements();
 

@@ -1,4 +1,4 @@
-@use '@innomotics/ix/styles/colors';
+@use '@innomotics/ix/styles/colors' as colors;
 @use '../../../styles/breakpoints' as breakpoints;
 
 :focus-visible {
@@ -17,8 +17,6 @@
   dialog::backdrop {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    // Using the direct value from the design document
-    // background: rgba(0, 0, 0, 0.7);
     background: colors.$backdrop;
   }
 

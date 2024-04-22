@@ -1,0 +1,17 @@
+:host {
+  color: white;
+  font-size: 16px;
+}
+
+.content-container {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.footer-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}

@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormExampleComponent } from './components/form-example/form-example.component';
 import { GeneralExampleComponent } from './components/general-example/general-example.component';
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
+import { ModalByComponentComponent } from './components/modal-example/components/modal-by-component/modal-by-component.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ModalExampleComponent } from './components/modal-example/modal-example.
     FormExampleComponent,
     GeneralExampleComponent,
     ModalExampleComponent,
+    ModalByComponentComponent,
   ],
   imports: [
     BrowserModule,

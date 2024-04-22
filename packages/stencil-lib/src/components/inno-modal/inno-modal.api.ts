@@ -10,6 +10,9 @@ import { InnoModalSize } from './inno-modal.model';
 import { getCoreDelegate, resolveDelegate } from '../../utils/delegate';
 import { TypedEvent } from '../../utils/typed-event';
 
+/**
+ * Modal instance configuration.
+ */
 export interface ModalConfig<CONTENT = any> {
   animation?: boolean;
   ariaDescribedby?: string;
@@ -20,11 +23,12 @@ export interface ModalConfig<CONTENT = any> {
   centered?: boolean;
   container?: string | HTMLElement;
   content: CONTENT | string;
-  keyboard?: boolean;
   size?: InnoModalSize;
-  title?: string;
 }
 
+/**
+ * Reference to the opened modal instance.
+ */
 export interface ModalInstance<TReason = any> {
   htmlElement: HTMLInnoModalElement;
   onClose: TypedEvent<TReason>;
