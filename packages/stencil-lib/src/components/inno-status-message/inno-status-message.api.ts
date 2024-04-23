@@ -25,6 +25,7 @@ export interface InnoStatusMessageConfig {
   theme?: InnoStatusMessageTheme;
   autoClose?: boolean;
   autoCloseDelay?: number;
+  showProgress?: boolean;
   icon?: string;
   iconColor?: string;
   position?: InnoStatusMessagePosition;

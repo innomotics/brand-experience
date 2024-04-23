@@ -78,12 +78,9 @@ export class InnoStatusMessageContainer {
     if (config.theme) {
       statusMessage.theme = config.theme;
     }
-    if (config.autoClose) {
-      statusMessage.autoClose = config.autoClose;
-    }
-    if (config.autoCloseDelay) {
-      statusMessage.autoCloseDelay = config.autoCloseDelay;
-    }
+    statusMessage.autoClose = config.autoClose;
+    statusMessage.autoCloseDelay = config.autoCloseDelay ?? 3000;
+    statusMessage.showProgress = config.showProgress;
     statusMessage.icon = config.icon;
     statusMessage.iconColor = config.iconColor;
 

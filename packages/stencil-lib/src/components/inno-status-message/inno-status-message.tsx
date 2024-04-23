@@ -27,14 +27,20 @@ export class InnoStatusMessage {
   @Prop() messageType: InnoStatusMessageType = 'info';
 
   /**
+   * Autoclose behavior
+   */
+  @Prop() autoClose = false;
+
+  /**
    * Autoclose title after delay
    */
   @Prop() autoCloseDelay = 3000;
 
   /**
-   * Autoclose behavior
+   * Animate progressbar and close after animation ends.
+   * AutoClose will close message.
    */
-  @Prop() autoClose = true;
+  @Prop() showProgress: boolean = false;
 
   /**
    * Icon of toast
@@ -45,11 +51,6 @@ export class InnoStatusMessage {
    * Icon color of toast
    */
   @Prop() iconColor: string;
-
-  /**
-   * Animate progressbar.
-   */
-  @Prop() showProgress: boolean = false;
 
   /**
    * Status message is closed.

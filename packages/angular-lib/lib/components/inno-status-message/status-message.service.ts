@@ -1,17 +1,9 @@
-/*
- * SPDX-FileCopyrightText: 2024 Siemens AG
- *
- * SPDX-License-Identifier: MIT
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import { Injectable } from "@angular/core";
 import {
   getStatusMessageContainer,
   statusMessage,
   InnoStatusMessageConfig,
+  InnoStatusMessagePosition,
 } from "@innomotics/ix";
 import { StatusMessageConfig } from "./status-message.config";
 
@@ -19,7 +11,7 @@ import { StatusMessageConfig } from "./status-message.config";
   providedIn: "root",
 })
 export class StatusMessageService {
-  setPosition(position: "bottom-right" | "top-right") {
+  setPosition(position: InnoStatusMessagePosition) {
     getStatusMessageContainer().position = position;
   }
 
