@@ -6,6 +6,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
+import { StatusMessageService } from '@innomotics/ix-angular-lib';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,10 @@ export class AppComponent {
     return this.innomoticsForm.get('innoSelect') as UntypedFormControl;
   }
 
-  constructor(public formBuilder: UntypedFormBuilder) {
+  constructor(
+    public formBuilder: UntypedFormBuilder,
+    private messageService: StatusMessageService,
+  ) {
     this.innomoticsForm = this.formBuilder.group({
       innoInput: [0],
       innoSelect: [undefined],
@@ -51,5 +55,14 @@ export class AppComponent {
 
   handleTabChange(index: number) {
     this.activeTabIndex = index;
+  }
+
+  showToast() {
+    this.messageService.show({
+      message: 'my message',
+      theme: 'dark',
+      type: 'warning',
+      position: 'top-right',
+    });
   }
 }

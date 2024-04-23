@@ -172,6 +172,20 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
 ]);
 
 
+export const InnoStatusMessage = /*@__PURE__*/ defineContainer<JSX.InnoStatusMessage>('inno-status-message', undefined, [
+  'theme',
+  'messageType',
+  'closeMessage'
+]);
+
+
+export const InnoStatusMessageContainer = /*@__PURE__*/ defineContainer<JSX.InnoStatusMessageContainer>('inno-status-message-container', undefined, [
+  'containerId',
+  'containerClass',
+  'position'
+]);
+
+
 export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', undefined, [
   'theme',
   'selected',

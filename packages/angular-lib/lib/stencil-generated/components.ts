@@ -434,6 +434,57 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
 
 @ProxyCmp({
+  inputs: ['messageType', 'theme']
+})
+@Component({
+  selector: 'inno-status-message',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['messageType', 'theme'],
+})
+export class InnoStatusMessage {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closeMessage']);
+  }
+}
+
+
+export declare interface InnoStatusMessage extends Components.InnoStatusMessage {
+  /**
+   * Status message is closed.
+   */
+  closeMessage: EventEmitter<CustomEvent<any>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['containerClass', 'containerId', 'position'],
+  methods: ['showToast']
+})
+@Component({
+  selector: 'inno-status-message-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['containerClass', 'containerId', 'position'],
+})
+export class InnoStatusMessageContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoStatusMessageContainer extends Components.InnoStatusMessageContainer {}
+
+
+@ProxyCmp({
   inputs: ['layout', 'selected', 'showArrow', 'theme']
 })
 @Component({

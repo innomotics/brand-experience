@@ -179,7 +179,7 @@
       <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
     </inno-breadcrumb>
-    <inno-breadcrumb variant="dark" style="background-color: #08191f;">
+    <inno-breadcrumb variant="dark" style="background-color: #08191f">
       <inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
       <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
@@ -417,10 +417,24 @@
       </inno-tab>
     </div>
 
-    <div class="progress-bars" style="display: block; padding-top: 20px;">
+    <div class="progress-bars" style="display: block; padding-top: 20px; padding: 10px">
       <button id="progressRandomizer">Randomize progress!</button>
-      <inno-progress-bar style="margin-bottom: 10px;" progress-percentage="50" progress-text="your progress text"></inno-progress-bar>
+      <inno-progress-bar style="margin-bottom: 10px" progress-percentage="50" progress-text="your progress text"></inno-progress-bar>
       <inno-progress-bar progress-text="your progress text" progress-percentage="50" percentage-precision="2" trailing-zeroes="true" variant="dark"></inno-progress-bar>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
+      <inno-status-message message-type="info"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </inno-status-message>
+      <inno-status-message message-type="warning">message</inno-status-message>
+      <inno-status-message message-type="error">message</inno-status-message>
+      <inno-status-message message-type="success">message</inno-status-message>
+    </div>
+
+    <div style="background-color: #08191f; display: flex; flex-direction: column; gap: 10px; padding: 10px">
+      <inno-status-message theme="dark" message-type="info">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</inno-status-message>
+      <inno-status-message theme="dark" message-type="warning">message</inno-status-message>
+      <inno-status-message theme="dark" message-type="error">message</inno-status-message>
+      <inno-status-message theme="dark" message-type="success">message</inno-status-message>
     </div>
   </body>
   <script>
@@ -472,8 +486,8 @@
 
     const randomizerBtn = document.getElementById('progressRandomizer');
     randomizerBtn.addEventListener('click', () => {
-      document.querySelectorAll("inno-progress-bar").forEach(el => {
-        el.progressPercentage=Math.random()*100;
+      document.querySelectorAll('inno-progress-bar').forEach(el => {
+        el.progressPercentage = Math.random() * 100;
       });
     });
   </script>

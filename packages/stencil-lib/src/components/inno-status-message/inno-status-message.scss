@@ -1,0 +1,211 @@
+@use '@innomotics/ix/styles/colors' as colors;
+
+@mixin dasdassdsadsa() {
+  border-width: 1px 1px 5px 1px;
+  border-style: solid;
+}
+
+:host {
+  width: 500px;
+  height: 80px;
+  padding: 16px 24px 16px 24px;
+
+  display: flex;
+  flex-direction: row;
+
+  border-width: 1px 1px 5px 1px;
+  border-style: solid;
+
+  &.type-success {
+    &.light {
+      background-color: colors.$primary-300;
+      border-color: colors.$success-200;
+    }
+
+    &.dark {
+      background-color: colors.$primary-200;
+      border-color: colors.$success-100;
+    }
+  }
+
+  &.type-warning {
+    &.light {
+      background-color: colors.$primary-300;
+      border-color: colors.$warning-100;
+    }
+
+    &.dark {
+      background-color: colors.$primary-200;
+      border-color: colors.$warning-100;
+    }
+  }
+
+  &.type-error {
+    &.light {
+      background-color: colors.$primary-300;
+      border-color: colors.$error-200;
+    }
+
+    &.dark {
+      background-color: colors.$primary-200;
+      border-color: colors.$error-100;
+    }
+  }
+
+  &.type-info {
+    &.light {
+      background-color: colors.$primary-300;
+      border-color: colors.$primary-200;
+    }
+
+    &.dark {
+      background-color: colors.$primary-200;
+      border-color: colors.$primary-300;
+    }
+  }
+}
+
+.icon-container {
+  position: relative;
+
+  & > inno-icon {
+    position: relative;
+    top: -14px;
+    left: -12px;
+  }
+
+  &.type-success {
+    &.light {
+      color: colors.$success-200;
+    }
+
+    &.dark {
+      color: colors.$success-100;
+    }
+  }
+
+  &.type-warning {
+    &.light {
+      color: colors.$warning-100;
+    }
+
+    &.dark {
+      color: colors.$warning-100;
+    }
+  }
+
+  &.type-error {
+    &.light {
+      color: colors.$error-200;
+    }
+
+    &.dark {
+      color: colors.$error-100;
+    }
+  }
+
+  &.type-info {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+}
+
+.message-container {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'InnomoticsHafferSQ';
+  overflow: hidden;
+
+  &.type-success {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-warning {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-error {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-info {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+}
+
+.close-container {
+  margin-left: auto;
+
+  & > inno-icon {
+    cursor: pointer;
+  }
+
+  &.type-success {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-warning {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-error {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.type-info {
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
+  }
+}

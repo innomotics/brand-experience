@@ -1,11 +1,16 @@
-import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
+import {
+  APP_INITIALIZER,
+  ModuleWithProviders,
+  NgModule,
+  NgZone,
+} from "@angular/core";
 import { DIRECTIVES } from "./stencil-generated";
 import { appInitialize } from "./app-initialize";
 import { DOCUMENT } from "@angular/common";
 import { defineCustomElements } from "@innomotics/ix/loader";
 import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
 import { BooleanValueAccessor } from "./stencil-generated/boolean-value-accessor";
-import { InnoRadioValueAccessor } from "../public-api";
+import { InnoRadioValueAccessor, StatusMessageService } from "../public-api";
 
 const DECLARATIONS = [
   ...DIRECTIVES,
@@ -31,4 +36,11 @@ const DECLARATIONS = [
     },
   ],
 })
-export class ComponentsModule {}
+export class ComponentsModule {
+  static forRoot(): ModuleWithProviders<ComponentsModule> {
+    return {
+      ngModule: ComponentsModule,
+      providers: [StatusMessageService],
+    };
+  }
+}
