@@ -1,0 +1,20 @@
+<inno-modal-header> Modal title </inno-modal-header>
+<inno-modal-content>
+  <div class="content-container">
+    Message text from modal data: {{ activeModal.data }}
+  </div>
+</inno-modal-content>
+<inno-modal-footer>
+  <div class="footer-container">
+    <inno-button
+      outline
+      class="dismiss-modal"
+      (click)="activeModal.dismiss('dismiss')"
+    >
+      Cancel
+    </inno-button>
+    <inno-button class="close-modal" (click)="activeModal.close('okay')">
+      OK
+    </inno-button>
+  </div>
+</inno-modal-footer>

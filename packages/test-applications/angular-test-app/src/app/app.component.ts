@@ -11,47 +11,12 @@ import { StatusMessageService } from '@innomotics/ix-angular-lib';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.less',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  formValue = '';
+  activeTabIndex = 2;
 
-  activeTabIndex = 1;
-
-  public innomoticsForm!: UntypedFormGroup;
-
-  public get innoInput(): UntypedFormControl {
-    return this.innomoticsForm.get('innoInput') as UntypedFormControl;
-  }
-
-  public get innoSelect(): UntypedFormControl {
-    return this.innomoticsForm.get('innoSelect') as UntypedFormControl;
-  }
-
-  constructor(
-    public formBuilder: UntypedFormBuilder,
-    private messageService: StatusMessageService,
-  ) {
-    this.innomoticsForm = this.formBuilder.group({
-      innoInput: [0],
-      innoSelect: [undefined],
-      checkboxtest1: this.formBuilder.control(undefined, [
-        Validators.requiredTrue,
-      ]),
-      checkboxtest2: this.formBuilder.control(undefined),
-      radioGroup1: new FormControl('value1'),
-    });
-
-    this.formValue = JSON.stringify(this.innomoticsForm.value);
-
-    this.innomoticsForm.valueChanges.subscribe(
-      () => (this.formValue = JSON.stringify(this.innomoticsForm.value)),
-    );
-  }
-
-  checkboxValid() {
-    this.innomoticsForm.get('checkboxtest1')?.valid;
-  }
+  constructor(private messageService: StatusMessageService) {}
 
   handleTabChange(index: number) {
     this.activeTabIndex = index;

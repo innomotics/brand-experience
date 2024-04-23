@@ -1,100 +1,25 @@
-<inno-icon icon="home"></inno-icon>
-
-<inno-breadcrumb>
-  <inno-breadcrumb-item label="One">yeee</inno-breadcrumb-item>
-  <inno-breadcrumb-item label="two"></inno-breadcrumb-item>
-</inno-breadcrumb>
-
-<!-- <inno-button type="primary">dfewf4e</inno-button> -->
-
-<form [formGroup]="innomoticsForm">
-  <inno-input name="bubu" label="Inputbox" value="0" variant="light">
-    <input type="number" [formControl]="innoInput" />
-    <inno-error type="badInput">Not valid</inno-error>
-  </inno-input>
-  <inno-select
-    name="dew"
-    label="SelectBox"
-    [formControl]="innoSelect"
-    value="12"
-  >
-    <inno-select-item label="dewde" value="12"></inno-select-item>
-    <inno-select-item label="refre" value="132"></inno-select-item>
-  </inno-select>
-
-  <div class="container">
-    <div>
-      <inno-checkbox
-        variant="light"
-        formControlName="checkboxtest1"
-        label="checkbox label"
-        indeterminate="true"
-        required
-        error="checkboxValid()"
-      ></inno-checkbox>
-    </div>
-    <div>
-      <inno-checkbox
-        name="checkboxtest2"
-        variant="light"
-        formControlName="checkboxtest2"
-        label="checkbox label"
-      ></inno-checkbox>
-    </div>
-  </div>
-
-  <div class="container">
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value1"
-        value="value1"
-        formControlName="radioGroup1"
-      ></inno-radio>
-    </div>
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value2"
-        value="value2"
-        formControlName="radioGroup1"
-      >
-      </inno-radio>
-    </div>
-    <div>
-      <inno-radio
-        name="radioGroup1"
-        label="value3"
-        value="value3"
-        formControlName="radioGroup1"
-      >
-      </inno-radio>
-    </div>
-  </div>
-</form>
-
-<div class="container">InnoInput value: {{ innoInput.value }}</div>
-
-<div class="container">InnoSelect value: {{ innoSelect.value }}</div>
-
-<div class="container">Form value: {{ formValue }}</div>
-
-<div class="container">
+<div class="tabs">
   <inno-tab
     [selected]="activeTabIndex"
     layout="stretched"
     (selectedChange)="handleTabChange($event.detail)"
   >
-    <inno-tab-item><span>tab 1</span></inno-tab-item>
-    <inno-tab-item><span>tab 2</span></inno-tab-item>
-    <inno-tab-item><span>tab 3</span></inno-tab-item>
+    <inno-tab-item><span>General</span></inno-tab-item>
+    <inno-tab-item><span>Form</span></inno-tab-item>
+    <inno-tab-item><span>Modal</span></inno-tab-item>
   </inno-tab>
 </div>
 
-<div class="container">
-  <div *ngIf="activeTabIndex === 0">Tab 1 active</div>
-  <div *ngIf="activeTabIndex === 1">Tab 2 active</div>
-  <div *ngIf="activeTabIndex === 2">Tab 3 active</div>
+<div class="tab-content">
+  <div *ngIf="activeTabIndex === 0">
+    <app-general-example></app-general-example>
+  </div>
+  <div *ngIf="activeTabIndex === 1">
+    <app-form-example></app-form-example>
+  </div>
+  <div *ngIf="activeTabIndex === 2">
+    <app-modal-example></app-modal-example>
+  </div>
 </div>
 
 <div>

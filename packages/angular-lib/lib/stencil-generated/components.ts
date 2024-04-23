@@ -274,6 +274,110 @@ export declare interface InnoLoader extends Components.InnoLoader {}
 
 
 @ProxyCmp({
+  inputs: ['animation', 'backdrop', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
+  methods: ['showModal', 'dismissModal', 'closeModal']
+})
+@Component({
+  selector: 'inno-modal',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['animation', 'backdrop', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'size', 'variant'],
+})
+export class InnoModal {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['dialogClose', 'dialogDismiss']);
+  }
+}
+
+
+export declare interface InnoModal extends Components.InnoModal {
+  /**
+   * Dialog close
+   */
+  dialogClose: EventEmitter<CustomEvent<any>>;
+  /**
+   * Dialog cancel
+   */
+  dialogDismiss: EventEmitter<CustomEvent<any>>;
+}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'inno-modal-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoModalContent {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoModalContent extends Components.InnoModalContent {}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'inno-modal-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoModalFooter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoModalFooter extends Components.InnoModalFooter {}
+
+
+@ProxyCmp({
+  inputs: ['icon', 'showClose', 'variant']
+})
+@Component({
+  selector: 'inno-modal-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['icon', 'showClose', 'variant'],
+})
+export class InnoModalHeader {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closeClick']);
+  }
+}
+
+
+export declare interface InnoModalHeader extends Components.InnoModalHeader {
+  /**
+   * Emits when close icon is clicked and closes the modal
+Can be prevented, in which case only the event is triggered, and the modal remains open
+   */
+  closeClick: EventEmitter<CustomEvent<Event>>;
+}
+
+
+@ProxyCmp({
   inputs: ['closeOnBackdropClick', 'expanded', 'hideCloseButton', 'paneSize', 'position', 'titleText']
 })
 @Component({

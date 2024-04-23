@@ -96,6 +96,7 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
  - [inno-accordion](../inno-accordion)
  - [inno-breadcrumb-item](../inno-breadcrumb-item)
  - [inno-button](../inno-button)
+ - [inno-modal-header](../inno-modal-header)
  - [inno-select](../inno-select)
  - [inno-select-item](../inno-select-item)
  - [inno-status-message](../inno-status-message)
@@ -107,6 +108,7 @@ graph TD;
   inno-accordion --> inno-icon
   inno-breadcrumb-item --> inno-icon
   inno-button --> inno-icon
+  inno-modal-header --> inno-icon
   inno-select --> inno-icon
   inno-select-item --> inno-icon
   inno-status-message --> inno-icon
