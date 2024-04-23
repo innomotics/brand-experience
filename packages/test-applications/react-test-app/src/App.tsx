@@ -6,6 +6,7 @@ import {
   InnoIcon,
 } from "@innomotics/ix-react-lib";
 import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
+import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
 
 defineCustomElements();
 
@@ -22,6 +23,8 @@ function App() {
         <InnoBreadcrumbItem label="Item 3"></InnoBreadcrumbItem>
       </InnoBreadcrumb>
       <InnoIcon icon="youtubelogo"></InnoIcon>
+
+      <InnoModalExample></InnoModalExample>
     </>
   );
 }

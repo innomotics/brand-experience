@@ -1,0 +1,255 @@
+<inno-button
+  variant="secondary"
+  (click)="openNormalModal()"
+  color-variant="dark"
+  >Open normal modal</inno-button
+>
+
+<ng-template #normalModal let-modal>
+  <inno-modal>
+    <inno-modal-header>Modal title</inno-modal-header>
+    <inno-modal-content>
+      <span class="normal-modal-content">
+        More details about the modal content {{ modal.data }}</span
+      >
+    </inno-modal-content>
+    <inno-modal-footer>
+      <div class="normal-modal">
+        <inno-button
+          color-variant="dark"
+          theme="primary"
+          (click)="modal.close('closed')"
+        >
+          Cancel
+        </inno-button>
+        <inno-button
+          color-variant="dark"
+          theme="secondary"
+          (click)="modal.dismiss('dismissed')"
+          >Submit</inno-button
+        >
+      </div>
+    </inno-modal-footer>
+  </inno-modal>
+</ng-template>
+
+<inno-button
+  variant="secondary"
+  (click)="openModalWithList()"
+  color-variant="dark"
+  >Open modal with list</inno-button
+>
+
+<ng-template #modalWithList let-modal>
+  <inno-modal>
+    <inno-modal-header>Help | Motors | Operation Profil</inno-modal-header>
+    <inno-modal-content
+      ><ul class="with-list-style">
+        <li>
+          <span style="font-size: 16px; color: white; line-height: 24px">
+            Here, enter the operating states over the course of a typical
+            operating day. Namely, how many hours does the motor operate during
+            the day and with which utilization? The sum of the individual values
+            yields the number of operating hours in a typical working day. It is
+            assumed that "quasi steady state" operating modes are involved. This
+            means: Energy, used for example when braking and accelerating, is
+            not considered in the evaluation.
+          </span>
+        </li>
+        <li>
+          <span style="font-size: 16px; color: white; line-height: 24px">
+            The operating profile is shown as a bar chart on the right side of
+            the tool in the energy saving diagram.
+          </span>
+        </li>
+      </ul></inno-modal-content
+    >
+  </inno-modal>
+</ng-template>
+
+<inno-button
+  variant="secondary"
+  (click)="openModalBigText()"
+  color-variant="dark"
+>
+  Open big text modal
+</inno-button>
+
+<ng-template #modalBigText let-modal>
+  <inno-modal>
+    <inno-modal-header show-close="false">Info</inno-modal-header>
+    <inno-modal-content>
+      <div class="big-text">
+        <span>
+          "VSD only motor" is a term used for motors that are exclusively
+          designed to operate with a variable speed drive. They are not rated
+          for continuous-duty direct-on-line operation. Often, these motors
+          utilize different technologies than induction motors, such as
+          synchronous reluctance or permanent magnet types. However, induction
+          motors can also be specially designed with different winding
+          configurations to be driven exclusively with a VSD.
+        </span>
+      </div>
+      <div style="margin-top: 20px" class="big-text">
+        <span>
+          VSD only motors, including both induction types and other
+          technologies, are not included in the scope of the new regulation as
+          they are specifically designed and specified for operation exclusively
+          with a variable speed drive and are not rated for continuous-duty
+          direct-on-line operation. The VSD-duty-only approach is evident on
+          products and product documentation, clearly distinguishing them from
+          those intended for continuous-duty direct-on-line operation.
+        </span>
+      </div>
+    </inno-modal-content>
+  </inno-modal>
+</ng-template>
+
+<inno-button
+  variant="secondary"
+  (click)="openSettingsModal()"
+  color-variant="dark"
+  >Open settings modal</inno-button
+>
+
+<ng-template #settingsModal let-modal>
+  <inno-modal>
+    <inno-modal-header>Settings</inno-modal-header>
+    <inno-modal-content>
+      <div style="width: 50%; display: flex; flex-direction: column; gap: 20px">
+        <inno-select name="dew" label="SelectBox" value="12">
+          <inno-select-item label="dewde" value="12"></inno-select-item>
+          <inno-select-item label="refre" value="132"></inno-select-item>
+        </inno-select>
+
+        <inno-input name="bubu" label="Inputbox" value="0" variant="dark">
+          <input type="number" />
+        </inno-input>
+        <span>€ / kWh</span>
+
+        <inno-input name="bubu" label="Inputbox" value="0" variant="dark">
+          <input type="number" />
+        </inno-input>
+        <span>g / kWh</span>
+      </div>
+    </inno-modal-content>
+    <inno-modal-footer>
+      <div>
+        <inno-button
+          color-variant="light"
+          theme="primary"
+          (click)="modal.close('closed')"
+          >Save changes</inno-button
+        >
+        <inno-button
+          color-variant="light"
+          theme="secondary"
+          (click)="modal.dismiss('dismissed')"
+          >Cancel</inno-button
+        >
+        <span style="color: white"
+          >Access your Personal default Settings in the Main Menu.</span
+        >
+      </div>
+    </inno-modal-footer>
+  </inno-modal>
+</ng-template>
+
+<inno-button
+  variant="secondary"
+  (click)="openCreateNewComparisonModal()"
+  color-variant="dark"
+  >Open createNewComparison modal</inno-button
+>
+
+<ng-template #createNewComparison let-modal>
+  <inno-modal>
+    <inno-modal-header>Create new Comparison</inno-modal-header>
+    <inno-modal-content>
+      <div style="margin-top: 20px">
+        <inno-input variant="dark" value="" label="Search for comparisons">
+          <input type="text" />
+        </inno-input>
+      </div>
+      <div>
+        <inno-accordion variant="dark" label="Test 1" collapsed>
+          <span>
+            "VSD only motor" is a term used for motors that are exclusively
+            designed to operate with a variable speed drive. They are not rated
+            for continuous-duty direct-on-line operation. Often, these motors
+            utilize different technologies than induction motors, such as
+            synchronous reluctance or permanent magnet types. However, induction
+            motors can also be specially designed with different winding
+            configurations to be driven exclusively with a VSD.
+          </span>
+        </inno-accordion>
+      </div>
+
+      <div>
+        <inno-accordion variant="dark" label="Test 2">
+          <div class="new-comparison-entry">
+            <inno-checkbox variant="dark" label="Comparison 1"></inno-checkbox>
+            <span style="margin-left: auto">Pump</span>
+            <span>4/10/24, 3:39 PM</span>
+          </div>
+
+          <div class="new-comparison-entry">
+            <inno-checkbox variant="dark" label="Comparison 2"></inno-checkbox>
+            <span style="margin-left: auto">Pump</span>
+            <span>4/10/24, 3:39 PM</span>
+          </div>
+
+          <div class="new-comparison-entry">
+            <inno-checkbox variant="dark" label="Comparison 3"></inno-checkbox>
+            <span style="margin-left: auto">Pump</span>
+            <span>4/10/24, 3:39 PM</span>
+          </div>
+
+          <div class="new-comparison-entry">
+            <inno-checkbox variant="dark" label="Comparison 4"></inno-checkbox>
+            <span style="margin-left: auto">Pump</span>
+            <span>4/10/24, 3:39 PM</span>
+          </div>
+        </inno-accordion>
+      </div>
+
+      <div>
+        <inno-accordion variant="dark" label="Test 3" collapsed>
+          <span>
+            VSD only motors, including both induction types and other
+            technologies, are not included in the scope of the new regulation as
+            they are specifically designed and specified for operation
+            exclusively with a variable speed drive and are not rated for
+            continuous-duty direct-on-line operation. The VSD-duty-only approach
+            is evident on products and product documentation, clearly
+            distinguishing them from those intended for continuous-duty
+            direct-on-line operation.
+          </span>
+        </inno-accordion>
+      </div>
+    </inno-modal-content>
+    <inno-modal-footer>
+      <div class="new-comparison-entry-footer">
+        <inno-button
+          color-variant="light"
+          variant="primary"
+          (click)="modal.close('closed')"
+          >Add comparison</inno-button
+        >
+        <inno-button
+          color-variant="light"
+          variant="secondary"
+          (click)="modal.dismiss('dismissed')"
+          >Cancel</inno-button
+        >
+      </div>
+    </inno-modal-footer>
+  </inno-modal>
+</ng-template>
+
+<inno-button
+  variant="secondary"
+  (click)="openModalByInstance()"
+  color-variant="dark"
+  >Open modal by instance</inno-button
+>

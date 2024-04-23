@@ -104,6 +104,33 @@ export const InnoLoader = /*@__PURE__*/ defineContainer<JSX.InnoLoader>('inno-lo
 ]);
 
 
+export const InnoModal = /*@__PURE__*/ defineContainer<JSX.InnoModal>('inno-modal', undefined, [
+  'variant',
+  'size',
+  'animation',
+  'backdrop',
+  'closeOnBackdropClick',
+  'centered',
+  'closeOnEscape',
+  'dialogClose',
+  'dialogDismiss'
+]);
+
+
+export const InnoModalContent = /*@__PURE__*/ defineContainer<JSX.InnoModalContent>('inno-modal-content', undefined);
+
+
+export const InnoModalFooter = /*@__PURE__*/ defineContainer<JSX.InnoModalFooter>('inno-modal-footer', undefined);
+
+
+export const InnoModalHeader = /*@__PURE__*/ defineContainer<JSX.InnoModalHeader>('inno-modal-header', undefined, [
+  'variant',
+  'showClose',
+  'icon',
+  'closeClick'
+]);
+
+
 export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane', undefined, [
   'position',
   'expanded',

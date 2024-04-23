@@ -1,0 +1,127 @@
+@use '@innomotics/ix/styles/colors' as colors;
+@use '../../../styles/breakpoints' as breakpoints;
+
+:focus-visible {
+  outline: none !important;
+}
+
+:host {
+  display: none;
+
+  dialog {
+    margin: 0;
+    padding: 32px;
+    left: 50%;
+  }
+
+  dialog::backdrop {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: colors.$backdrop;
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: none;
+    background: colors.$primary-200;
+    overflow: visible;
+    max-height: 80vh;
+    pointer-events: all;
+  }
+
+  .modal-size-360 {
+    width: 22.5rem;
+  }
+
+  .modal-size-480 {
+    width: 30rem;
+  }
+
+  .modal-size-600 {
+    width: 37.5rem;
+  }
+
+  .modal-size-720 {
+    width: 45rem;
+  }
+
+  .modal-size-840 {
+    width: 52.5rem;
+  }
+
+  .modal-size-full-width {
+    width: 95%;
+  }
+
+  .modal-size-full-screen {
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+
+    width: calc(100% - 28px);
+    min-width: calc(100% - 28px);
+    max-width: calc(100% - 28px);
+
+    height: calc(100% - 28px);
+    min-height: calc(100% - 28px);
+    max-height: calc(100% - 28px);
+  }
+
+  .dialog-backdrop {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+  }
+
+  ::slotted(inno-modal-footer) {
+    margin-top: auto;
+  }
+}
+
+:host(.visible) {
+  display: block;
+}
+
+:host(.align-center) {
+  dialog {
+    margin: 0;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+:host(.no-backdrop) {
+  dialog::backdrop {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+  }
+}
+
+:host(.with-icon) {
+  ::slotted(inno-modal-footer),
+  ::slotted(inno-modal-content) {
+    margin-left: 2.5rem;
+  }
+}
+
+@media screen and (max-width: breakpoints.$desktop) {
+  :host {
+    dialog {
+      margin: 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .modal {
+      width: 95%;
+    }
+  }
+}

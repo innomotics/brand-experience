@@ -5,9 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
+export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
@@ -211,6 +213,79 @@ export namespace Components {
           * Theme variant property.
          */
         "variant": 'light' | 'dark';
+    }
+    /**
+     * Represents the main frame of the modal component.
+     */
+    interface InnoModal {
+        /**
+          * Should the modal be animated
+         */
+        "animation": boolean;
+        /**
+          * Show a backdrop behind the modal dialog
+         */
+        "backdrop": boolean;
+        /**
+          * Centered modal
+         */
+        "centered": boolean;
+        /**
+          * Close the dialog
+         */
+        "closeModal": <T = any>(reason: T) => Promise<void>;
+        /**
+          * Dismiss modal on backdrop click
+         */
+        "closeOnBackdropClick": boolean;
+        /**
+          * If set to true the modal can be closed by pressing the Escape key
+         */
+        "closeOnEscape": boolean;
+        /**
+          * Dismiss the dialog
+         */
+        "dismissModal": <T = any>(reason?: T) => Promise<void>;
+        /**
+          * Show the dialog.
+         */
+        "showModal": () => Promise<void>;
+        /**
+          * Modal size
+         */
+        "size": InnoModalSize;
+        /**
+          * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
+    interface InnoModalContent {
+    }
+    /**
+     * Represents the footer content for the InnoModal component.
+     */
+    interface InnoModalFooter {
+    }
+    /**
+     * Represents the header of the inno-modal component.
+     */
+    interface InnoModalHeader {
+        /**
+          * Icon of the header, optional.
+         */
+        "icon"?: string;
+        /**
+          * Hide the close button.
+         */
+        "showClose": boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
     }
     interface InnoPane {
         /**
@@ -473,6 +548,14 @@ export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoInputElement;
 }
+export interface InnoModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoModalElement;
+}
+export interface InnoModalHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoModalHeaderElement;
+}
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
@@ -634,6 +717,66 @@ declare global {
         prototype: HTMLInnoLoaderElement;
         new (): HTMLInnoLoaderElement;
     };
+    interface HTMLInnoModalElementEventMap {
+        "dialogClose": any;
+        "dialogDismiss": any;
+    }
+    /**
+     * Represents the main frame of the modal component.
+     */
+    interface HTMLInnoModalElement extends Components.InnoModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoModalElementEventMap>(type: K, listener: (this: HTMLInnoModalElement, ev: InnoModalCustomEvent<HTMLInnoModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoModalElementEventMap>(type: K, listener: (this: HTMLInnoModalElement, ev: InnoModalCustomEvent<HTMLInnoModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoModalElement: {
+        prototype: HTMLInnoModalElement;
+        new (): HTMLInnoModalElement;
+    };
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
+    interface HTMLInnoModalContentElement extends Components.InnoModalContent, HTMLStencilElement {
+    }
+    var HTMLInnoModalContentElement: {
+        prototype: HTMLInnoModalContentElement;
+        new (): HTMLInnoModalContentElement;
+    };
+    /**
+     * Represents the footer content for the InnoModal component.
+     */
+    interface HTMLInnoModalFooterElement extends Components.InnoModalFooter, HTMLStencilElement {
+    }
+    var HTMLInnoModalFooterElement: {
+        prototype: HTMLInnoModalFooterElement;
+        new (): HTMLInnoModalFooterElement;
+    };
+    interface HTMLInnoModalHeaderElementEventMap {
+        "closeClick": Event;
+    }
+    /**
+     * Represents the header of the inno-modal component.
+     */
+    interface HTMLInnoModalHeaderElement extends Components.InnoModalHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoModalHeaderElementEventMap>(type: K, listener: (this: HTMLInnoModalHeaderElement, ev: InnoModalHeaderCustomEvent<HTMLInnoModalHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoModalHeaderElementEventMap>(type: K, listener: (this: HTMLInnoModalHeaderElement, ev: InnoModalHeaderCustomEvent<HTMLInnoModalHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoModalHeaderElement: {
+        prototype: HTMLInnoModalHeaderElement;
+        new (): HTMLInnoModalHeaderElement;
+    };
     interface HTMLInnoPaneElementEventMap {
         "expandedChanged": ExpandedChangedEvent;
     }
@@ -785,6 +928,10 @@ declare global {
         "inno-icon": HTMLInnoIconElement;
         "inno-input": HTMLInnoInputElement;
         "inno-loader": HTMLInnoLoaderElement;
+        "inno-modal": HTMLInnoModalElement;
+        "inno-modal-content": HTMLInnoModalContentElement;
+        "inno-modal-footer": HTMLInnoModalFooterElement;
+        "inno-modal-header": HTMLInnoModalHeaderElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
         "inno-progress-bar": HTMLInnoProgressBarElement;
@@ -1013,6 +1160,79 @@ declare namespace LocalJSX {
           * Theme variant property.
          */
         "variant"?: 'light' | 'dark';
+    }
+    /**
+     * Represents the main frame of the modal component.
+     */
+    interface InnoModal {
+        /**
+          * Should the modal be animated
+         */
+        "animation"?: boolean;
+        /**
+          * Show a backdrop behind the modal dialog
+         */
+        "backdrop"?: boolean;
+        /**
+          * Centered modal
+         */
+        "centered"?: boolean;
+        /**
+          * Dismiss modal on backdrop click
+         */
+        "closeOnBackdropClick"?: boolean;
+        /**
+          * If set to true the modal can be closed by pressing the Escape key
+         */
+        "closeOnEscape"?: boolean;
+        /**
+          * Dialog close
+         */
+        "onDialogClose"?: (event: InnoModalCustomEvent<any>) => void;
+        /**
+          * Dialog cancel
+         */
+        "onDialogDismiss"?: (event: InnoModalCustomEvent<any>) => void;
+        /**
+          * Modal size
+         */
+        "size"?: InnoModalSize;
+        /**
+          * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
+    /**
+     * Represents the main content of the modal.
+     * The content is provided by the user.
+     */
+    interface InnoModalContent {
+    }
+    /**
+     * Represents the footer content for the InnoModal component.
+     */
+    interface InnoModalFooter {
+    }
+    /**
+     * Represents the header of the inno-modal component.
+     */
+    interface InnoModalHeader {
+        /**
+          * Icon of the header, optional.
+         */
+        "icon"?: string;
+        /**
+          * Emits when close icon is clicked and closes the modal Can be prevented, in which case only the event is triggered, and the modal remains open
+         */
+        "onCloseClick"?: (event: InnoModalHeaderCustomEvent<Event>) => void;
+        /**
+          * Hide the close button.
+         */
+        "showClose"?: boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
     }
     interface InnoPane {
         /**
@@ -1282,6 +1502,10 @@ declare namespace LocalJSX {
         "inno-icon": InnoIcon;
         "inno-input": InnoInput;
         "inno-loader": InnoLoader;
+        "inno-modal": InnoModal;
+        "inno-modal-content": InnoModalContent;
+        "inno-modal-footer": InnoModalFooter;
+        "inno-modal-header": InnoModalHeader;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
         "inno-progress-bar": InnoProgressBar;
@@ -1319,6 +1543,23 @@ declare module "@stencil/core" {
             "inno-icon": LocalJSX.InnoIcon & JSXBase.HTMLAttributes<HTMLInnoIconElement>;
             "inno-input": LocalJSX.InnoInput & JSXBase.HTMLAttributes<HTMLInnoInputElement>;
             "inno-loader": LocalJSX.InnoLoader & JSXBase.HTMLAttributes<HTMLInnoLoaderElement>;
+            /**
+             * Represents the main frame of the modal component.
+             */
+            "inno-modal": LocalJSX.InnoModal & JSXBase.HTMLAttributes<HTMLInnoModalElement>;
+            /**
+             * Represents the main content of the modal.
+             * The content is provided by the user.
+             */
+            "inno-modal-content": LocalJSX.InnoModalContent & JSXBase.HTMLAttributes<HTMLInnoModalContentElement>;
+            /**
+             * Represents the footer content for the InnoModal component.
+             */
+            "inno-modal-footer": LocalJSX.InnoModalFooter & JSXBase.HTMLAttributes<HTMLInnoModalFooterElement>;
+            /**
+             * Represents the header of the inno-modal component.
+             */
+            "inno-modal-header": LocalJSX.InnoModalHeader & JSXBase.HTMLAttributes<HTMLInnoModalHeaderElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "inno-progress-bar": LocalJSX.InnoProgressBar & JSXBase.HTMLAttributes<HTMLInnoProgressBarElement>;
