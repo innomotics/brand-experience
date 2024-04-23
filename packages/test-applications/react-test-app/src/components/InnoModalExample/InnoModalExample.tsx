@@ -7,7 +7,7 @@ import {
   InnoModalContent,
   InnoModalFooter,
 } from "@innomotics/ix-react-lib";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 export default function InnoModalExample() {
   const modalRef = useRef<ModalRef>(null);
