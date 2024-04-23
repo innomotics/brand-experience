@@ -10,7 +10,7 @@
 import { Injectable } from "@angular/core";
 import {
   getStatusMessageContainer,
-  toast,
+  statusMessage,
   InnoStatusMessageConfig,
 } from "@innomotics/ix";
 import { StatusMessageConfig } from "./status-message.config";
@@ -29,7 +29,7 @@ export class StatusMessageService {
 
   async show(config: StatusMessageConfig) {
     if (typeof config.message === "string") {
-      return toast(config as InnoStatusMessageConfig);
+      return statusMessage(config as InnoStatusMessageConfig);
     }
 
     const context: {
@@ -43,7 +43,7 @@ export class StatusMessageService {
     });
 
     const node: HTMLElement = embeddedView.rootNodes[0];
-    const instance = await toast({
+    const instance = await statusMessage({
       ...config,
       message: node,
     });

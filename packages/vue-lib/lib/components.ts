@@ -175,6 +175,11 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
 export const InnoStatusMessage = /*@__PURE__*/ defineContainer<JSX.InnoStatusMessage>('inno-status-message', undefined, [
   'theme',
   'messageType',
+  'autoCloseDelay',
+  'autoClose',
+  'icon',
+  'iconColor',
+  'showProgress',
   'closeMessage'
 ]);
 

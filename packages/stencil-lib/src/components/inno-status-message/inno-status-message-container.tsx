@@ -1,21 +1,10 @@
-/*
- * SPDX-FileCopyrightText: 2023 Siemens AG
- *
- * SPDX-License-Identifier: MIT
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import { Component, h, Host, Method, Prop, Watch } from '@stencil/core';
 import { TypedEvent } from '../../utils/typed-event';
-import { InnoStatusMessageConfig } from './inno-status-message.api';
+import { InnoStatusMessageConfig, InnoStatusMessagePosition, ShowStatusMessageResult } from './inno-status-message.api';
 
-export type ShowToastResult = {
-  onClose: TypedEvent<any | undefined>;
-  close: (result?: any) => void;
-};
-
+/**
+ * Container to hold the status messages.
+ */
 @Component({
   tag: 'inno-status-message-container',
   styleUrl: './inno-status-message-container.scss',
@@ -23,19 +12,19 @@ export type ShowToastResult = {
 })
 export class InnoStatusMessageContainer {
   /**
-   *
+   * Customizable container id.
    */
   @Prop() containerId = 'status-message-container';
 
   /**
-   *
+   * Customizable container class.
    */
   @Prop() containerClass = 'status-message-container';
 
   /**
-   *
+   * Position of container.
    */
-  @Prop() position: 'bottom-right' | 'top-right' = 'top-right';
+  @Prop() position: InnoStatusMessagePosition = 'top-right';
 
   private readonly PREFIX_POSITION_CLASS = 'status-message-container--';
 
@@ -53,19 +42,19 @@ export class InnoStatusMessageContainer {
 
   componentDidLoad() {
     if (!document.getElementById(this.containerId)) {
-      const toastContainer = document.createElement('div');
-      toastContainer.id = this.containerId;
-      toastContainer.classList.add(this.containerClass);
-      toastContainer.classList.add(`${this.PREFIX_POSITION_CLASS}${this.position}`);
-      document.body.appendChild(toastContainer);
+      const container = document.createElement('div');
+      container.id = this.containerId;
+      container.classList.add(this.containerClass);
+      container.classList.add(`${this.PREFIX_POSITION_CLASS}${this.position}`);
+      document.body.appendChild(container);
     }
   }
 
   @Watch('position')
   onPositionChange(newPosition: string, oldPosition: string) {
-    const toastContainer = document.getElementById(this.containerId);
-    toastContainer.classList.remove(`${this.PREFIX_POSITION_CLASS}${oldPosition}`);
-    toastContainer.classList.add(`${this.PREFIX_POSITION_CLASS}${newPosition}`);
+    const container = document.getElementById(this.containerId);
+    container.classList.remove(`${this.PREFIX_POSITION_CLASS}${oldPosition}`);
+    container.classList.add(`${this.PREFIX_POSITION_CLASS}${newPosition}`);
   }
 
   /**
@@ -73,43 +62,50 @@ export class InnoStatusMessageContainer {
    * @param config
    */
   @Method()
-  async showToast(config: InnoStatusMessageConfig): Promise<ShowToastResult> {
-    const toast = document.createElement('inno-status-message');
+  async showStatusMessage(config: InnoStatusMessageConfig): Promise<ShowStatusMessageResult> {
+    const statusMessage = document.createElement('inno-status-message');
     const onClose = new TypedEvent<any | undefined>();
 
-    function removeToast(result?: any) {
-      toast.remove();
+    function removeStatusMessage(result?: any) {
+      statusMessage.remove();
       onClose.emit(result);
     }
 
-    //toast.title = config.title;
+    // Config status message
     if (config.type) {
-      toast.messageType = config.type;
+      statusMessage.messageType = config.type;
     }
     if (config.theme) {
-      toast.theme = config.theme;
+      statusMessage.theme = config.theme;
     }
-    // toast.autoClose = config.autoClose ?? true;
-    // toast.autoCloseDelay = config.autoCloseDelay ?? 5000;
-    // toast.icon = config.icon;
-    // toast.iconColor = config.iconColor;
-    toast.addEventListener('closeMessage', (event: CustomEvent<any | undefined>) => {
+    if (config.autoClose) {
+      statusMessage.autoClose = config.autoClose;
+    }
+    if (config.autoCloseDelay) {
+      statusMessage.autoCloseDelay = config.autoCloseDelay;
+    }
+    statusMessage.icon = config.icon;
+    statusMessage.iconColor = config.iconColor;
+
+    // Subscribe to close event
+    statusMessage.addEventListener('closeMessage', (event: CustomEvent<any | undefined>) => {
       const { detail } = event;
-      removeToast(detail);
+      removeStatusMessage(detail);
     });
 
+    // Set stasus message content
     if (typeof config.message === 'string') {
-      toast.innerText = config.message;
+      statusMessage.innerText = config.message;
     } else {
-      toast.appendChild(config.message);
+      statusMessage.appendChild(config.message);
     }
 
-    (await this.hostContainer).appendChild(toast);
+    (await this.hostContainer).appendChild(statusMessage);
 
     return {
       onClose,
       close: (result?: any) => {
-        removeToast(result);
+        removeStatusMessage(result);
       },
     };
   }
@@ -118,8 +114,10 @@ export class InnoStatusMessageContainer {
     return (
       <Host
         class={{
-          [`${this.PREFIX_POSITION_CLASS}bottom-right`]: this.position === 'bottom-right',
           [`${this.PREFIX_POSITION_CLASS}top-right`]: this.position === 'top-right',
+          [`${this.PREFIX_POSITION_CLASS}bottom-right`]: this.position === 'bottom-right',
+          [`${this.PREFIX_POSITION_CLASS}bottom-left`]: this.position === 'bottom-left',
+          [`${this.PREFIX_POSITION_CLASS}top-left`]: this.position === 'top-left',
         }}
       >
         <slot></slot>

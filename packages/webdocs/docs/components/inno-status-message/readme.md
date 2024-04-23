@@ -5,18 +5,22 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Container to hold the status messages.
+
 ## Properties
 
-| Property         | Attribute         | Description | Type                            | Default                      |
-| ---------------- | ----------------- | ----------- | ------------------------------- | ---------------------------- |
-| `containerClass` | `container-class` |             | `string`                        | `'status-message-container'` |
-| `containerId`    | `container-id`    |             | `string`                        | `'status-message-container'` |
-| `position`       | `position`        |             | `"bottom-right" \| "top-right"` | `'top-right'`                |
+| Property         | Attribute         | Description                   | Type                                                           | Default                      |
+| ---------------- | ----------------- | ----------------------------- | -------------------------------------------------------------- | ---------------------------- |
+| `containerClass` | `container-class` | Customizable container class. | `string`                                                       | `'status-message-container'` |
+| `containerId`    | `container-id`    | Customizable container id.    | `string`                                                       | `'status-message-container'` |
+| `position`       | `position`        | Position of container.        | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'`                |
 
 
 ## Methods
 
-### `showToast(config: InnoStatusMessageConfig) => Promise<ShowToastResult>`
+### `showStatusMessage(config: InnoStatusMessageConfig) => Promise<ShowStatusMessageResult>`
 
 Display a toast message
 
@@ -28,7 +32,7 @@ Display a toast message
 
 #### Returns
 
-Type: `Promise<ShowToastResult>`
+Type: `Promise<ShowStatusMessageResult>`
 
 
 

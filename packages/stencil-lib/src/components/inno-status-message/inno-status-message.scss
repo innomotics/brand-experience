@@ -1,19 +1,15 @@
 @use '@innomotics/ix/styles/colors' as colors;
 
-@mixin dasdassdsadsa() {
-  border-width: 1px 1px 5px 1px;
-  border-style: solid;
-}
-
 :host {
   width: 500px;
-  height: 80px;
+  height: 83px;
   padding: 16px 24px 16px 24px;
 
   display: flex;
   flex-direction: row;
+  position: relative;
 
-  border-width: 1px 1px 5px 1px;
+  border-width: 1px 1px 1px 1px;
   border-style: solid;
 
   &.type-success {
@@ -208,4 +204,101 @@
       color: colors.$primary-300;
     }
   }
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  z-index: 1;
+  transform-origin: left;
+
+  &--animated {
+    animation: trackProgress linear 1 forwards;
+  }
+
+  &.type-success {
+    &.light {
+      background-color: colors.$success-200;
+    }
+
+    &.dark {
+      background-color: colors.$success-100;
+    }
+  }
+
+  &.type-warning {
+    &.light {
+      background-color: colors.$warning-100;
+    }
+
+    &.dark {
+      background-color: colors.$warning-100;
+    }
+  }
+
+  &.type-error {
+    &.light {
+      background-color: colors.$error-200;
+    }
+
+    &.dark {
+      background-color: colors.$error-100;
+    }
+  }
+
+  &.type-info {
+    &.light {
+      background-color: colors.$primary-200;
+    }
+
+    &.dark {
+      background-color: colors.$primary-300;
+    }
+  }
+}
+
+@keyframes trackProgress {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes statusMessageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.sm-fade-in {
+  // animation-name: statusMessageFadeIn;
+  // animation-duration: 3s;
+  // animation-fill-mode: both;
+  // animation-timing-function: linear;
+  animation: statusMessageFadeIn linear 5 forwards;
+}
+
+@keyframes statusMessageFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: statusMessageFadeOut;
+  animation-duration: 3s;
+  animation-fill-mode: both;
 }

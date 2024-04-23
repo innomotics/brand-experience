@@ -1,20 +1,42 @@
-import { InnoStatusMessageContainer, ShowToastResult } from './inno-status-message-container';
+import { TypedEvent } from '../../utils/typed-event';
+import { InnoStatusMessageContainer } from './inno-status-message-container';
 
+/**
+ * Type of the status messages.
+ */
 export type InnoStatusMessageType = 'info' | 'success' | 'warning' | 'error';
-export type InnoStatusMessagePosition = 'bottom-right' | 'top-right';
+
+/**
+ * Position of the status messages.
+ */
+export type InnoStatusMessagePosition = 'top-right' | 'bottom-right' | 'bottom-left' | 'top-left';
+
+/**
+ * Available status message theme.
+ */
 export type InnoStatusMessageTheme = 'light' | 'dark';
 
+/**
+ * Status message configuration.
+ */
 export interface InnoStatusMessageConfig {
-  // title?: string;
-  theme?: InnoStatusMessageTheme;
   message: string | HTMLElement;
   type?: InnoStatusMessageType;
+  theme?: InnoStatusMessageTheme;
   autoClose?: boolean;
   autoCloseDelay?: number;
-  // icon?: string;
-  // iconColor?: string;
+  icon?: string;
+  iconColor?: string;
   position?: InnoStatusMessagePosition;
 }
+
+/**
+ *
+ */
+export type ShowStatusMessageResult = {
+  onClose: TypedEvent<any | undefined>;
+  close: (result?: any) => void;
+};
 
 export function getStatusMessageContainer(): HTMLElement & InnoStatusMessageContainer {
   const containerList = Array.from(document.querySelectorAll('inno-status-message-container'));
@@ -25,51 +47,50 @@ export function getStatusMessageContainer(): HTMLElement & InnoStatusMessageCont
   }
 
   if (!container) {
-    const toastContainer = document.createElement('inno-status-message-container');
-    document.body.appendChild(toastContainer);
-
-    return toastContainer as any;
+    const statusMessageContainer = document.createElement('inno-status-message-container');
+    document.body.appendChild(statusMessageContainer);
+    return statusMessageContainer as any;
   }
 
   return container as any;
 }
 
-export function setToastPosition(position: InnoStatusMessagePosition) {
+export function setStatusMessagePosition(position: InnoStatusMessagePosition) {
   const container = getStatusMessageContainer();
   container.position = position;
 }
 
-function toast(config: InnoStatusMessageConfig): Promise<ShowToastResult> {
+function statusMessage(config: InnoStatusMessageConfig): Promise<ShowStatusMessageResult> {
   const container = getStatusMessageContainer();
-  return container.showToast(config);
+  return container.showStatusMessage(config);
 }
 
-toast.info = (config: InnoStatusMessageConfig) => {
-  return toast({
+statusMessage.info = (config: InnoStatusMessageConfig) => {
+  return statusMessage({
     ...config,
     type: 'info',
   });
 };
 
-toast.error = (config: InnoStatusMessageConfig) => {
-  return toast({
+statusMessage.error = (config: InnoStatusMessageConfig) => {
+  return statusMessage({
     ...config,
     type: 'error',
   });
 };
 
-toast.success = (config: InnoStatusMessageConfig) => {
-  return toast({
+statusMessage.success = (config: InnoStatusMessageConfig) => {
+  return statusMessage({
     ...config,
     type: 'success',
   });
 };
 
-toast.warning = (config: InnoStatusMessageConfig) => {
-  return toast({
+statusMessage.warning = (config: InnoStatusMessageConfig) => {
+  return statusMessage({
     ...config,
     type: 'warning',
   });
 };
 
-export { toast };
+export { statusMessage };

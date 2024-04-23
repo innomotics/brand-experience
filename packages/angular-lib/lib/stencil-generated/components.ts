@@ -434,14 +434,14 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
 
 @ProxyCmp({
-  inputs: ['messageType', 'theme']
+  inputs: ['autoClose', 'autoCloseDelay', 'icon', 'iconColor', 'messageType', 'showProgress', 'theme']
 })
 @Component({
   selector: 'inno-status-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['messageType', 'theme'],
+  inputs: ['autoClose', 'autoCloseDelay', 'icon', 'iconColor', 'messageType', 'showProgress', 'theme'],
 })
 export class InnoStatusMessage {
   protected el: HTMLElement;
@@ -463,7 +463,7 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
 
 @ProxyCmp({
   inputs: ['containerClass', 'containerId', 'position'],
-  methods: ['showToast']
+  methods: ['showStatusMessage']
 })
 @Component({
   selector: 'inno-status-message-container',

@@ -1,9 +1,9 @@
 import { Component, Element, Event, EventEmitter, Host, Prop, h, State } from '@stencil/core';
-import { getTypeInfo } from './inno-status-message.values';
+import { StatusMessageTypeDetails, getDetailsForStatusMessage } from './inno-status-message.values';
 import { InnoStatusMessageTheme, InnoStatusMessageType } from './inno-status-message.api';
 
 /**
- * Represents the toast message holder.
+ * Represents a status message entry.
  */
 @Component({
   tag: 'inno-status-message',
@@ -56,29 +56,40 @@ export class InnoStatusMessage {
    */
   @Event() closeMessage: EventEmitter;
 
-  private themeClasses() {
+  componentDidLoad() {
+    if (this.autoClose) {
+      setTimeout(() => this.closeProcess(), this.autoCloseDelay);
+    }
+  }
+
+  private themeClasses(): ThemeClasses {
     return {
       light: this.theme === 'light',
       dark: this.theme === 'dark',
     };
   }
 
-  private typeInfo() {
-    return getTypeInfo(this.messageType);
+  private messageTypeDetails() {
+    return getDetailsForStatusMessage(this.messageType);
   }
 
-  private closeMessageProcess() {}
+  private closeProcess() {
+    if (this.hostElement) {
+      this.hostElement.classList.add('fadeOut');
+    }
+    setTimeout(() => {
+      this.closeMessage.emit();
+    }, 250);
+  }
 
-  private messageIcon() {
-    const typeInfo = this.typeInfo();
-
+  private messageIcon(typeInfo: StatusMessageTypeDetails, themeClasses: ThemeClasses) {
     const classes = {
-      ...this.themeClasses(),
+      ...themeClasses,
       'icon-container': true,
       [typeInfo.typeClass]: true,
     };
 
-    const iconName = this.icon ? this.icon : typeInfo.icon;
+    const iconName = this.icon ?? typeInfo.icon;
     const iconStyle = this.iconColor ? { color: this.iconColor } : {};
 
     return (
@@ -88,13 +99,11 @@ export class InnoStatusMessage {
     );
   }
 
-  private messageContainer() {
-    const typeInfo = this.typeInfo();
-
+  private messageContainer(typeDetails: StatusMessageTypeDetails, themeClasses: ThemeClasses) {
     const classes = {
-      ...this.themeClasses(),
+      ...themeClasses,
       'message-container': true,
-      [typeInfo.typeClass]: true,
+      [typeDetails.typeClass]: true,
     };
 
     return (
@@ -104,13 +113,11 @@ export class InnoStatusMessage {
     );
   }
 
-  private closeControl() {
-    const typeInfo = this.typeInfo();
-
+  private closeControl(typeDetails: StatusMessageTypeDetails, themeClasses: ThemeClasses) {
     const classes = {
-      ...this.themeClasses(),
+      ...themeClasses,
       'close-container': true,
-      [typeInfo.typeClass]: true,
+      [typeDetails.typeClass]: true,
     };
 
     return (
@@ -120,19 +127,55 @@ export class InnoStatusMessage {
     );
   }
 
+  private progressBar(typeDetails: StatusMessageTypeDetails, themeClasses: ThemeClasses) {
+    const classes = {
+      ...themeClasses,
+      [typeDetails.typeClass]: true,
+      'progress-bar': true,
+      'progress-bar--animated': this.showProgress,
+    };
+
+    const progressBarStyle: Record<string, string> = {
+      animationDuration: `${this.autoCloseDelay}ms`,
+      animationPlayState: this.touched ? 'paused' : 'running',
+    };
+
+    return (
+      <div
+        class={classes}
+        style={progressBarStyle}
+        onAnimationEnd={() => this.closeProcess()}
+        onTransitionEnd={() => {
+          if (this.progress === 0) {
+            this.closeProcess();
+          }
+        }}
+      ></div>
+    );
+  }
+
   render() {
+    const typeDetails = this.messageTypeDetails();
+    const themeClasses = this.themeClasses();
+
     const hostClasses = {
-      ...this.themeClasses(),
-      [this.typeInfo().typeClass]: true,
+      ...themeClasses,
+      [typeDetails.typeClass]: true,
+      'sm-fade-in': true,
     };
 
     return (
       <Host class={hostClasses} onPointerEnter={() => (this.touched = true)} onPointerLeave={() => (this.touched = false)}>
-        {this.messageIcon()}
-        {this.messageContainer()}
-        {this.closeControl()}
-        {this.touched ? 'touched' : 'not-touched'}
+        {this.messageIcon(typeDetails, themeClasses)}
+        {this.messageContainer(typeDetails, themeClasses)}
+        {this.closeControl(typeDetails, themeClasses)}
+        {this.progressBar(typeDetails, themeClasses)}
       </Host>
     );
   }
+}
+
+interface ThemeClasses {
+  readonly light: boolean;
+  readonly dark: boolean;
 }

@@ -64,5 +64,7 @@ export class AppComponent {
       type: 'warning',
       position: 'top-right',
     });
+
+    this.messageService.setPosition('bottom-right');
   }
 }
