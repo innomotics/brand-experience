@@ -74,6 +74,19 @@ import {InnoLoader} from '@innomotics/ix-react-lib';
 | `variant` | `variant` | Theme variant property.                               | `"dark" \| "light"` | `'light'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [inno-drag-and-drop](../inno-drag-and-drop)
+
+### Graph
+```mermaid
+graph TD;
+  inno-drag-and-drop --> inno-loader
+  style inno-loader fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

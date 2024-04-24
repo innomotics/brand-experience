@@ -7,6 +7,7 @@ export const DIRECTIVES = [
   d.InnoBreadcrumbItem,
   d.InnoButton,
   d.InnoCheckbox,
+  d.InnoDragAndDrop,
   d.InnoError,
   d.InnoFooter,
   d.InnoFooterItem,

@@ -64,6 +64,17 @@ export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inn
 ]);
 
 
+export const InnoDragAndDrop = /*@__PURE__*/ defineContainer<JSX.InnoDragAndDrop>('inno-drag-and-drop', undefined, [
+  'variant',
+  'accept',
+  'multiple',
+  'disabled',
+  'state',
+  'texts',
+  'filesChanged'
+]);
+
+
 export const InnoError = /*@__PURE__*/ defineContainer<JSX.InnoError>('inno-error', undefined, [
   'active',
   'type'

@@ -433,6 +433,23 @@
       <inno-progress-bar style="margin-bottom: 10px" progress-percentage="50" progress-text="your progress text"></inno-progress-bar>
       <inno-progress-bar progress-text="your progress text" progress-percentage="50" percentage-precision="2" trailing-zeroes="true" variant="dark"></inno-progress-bar>
     </div>
+
+    <div class="drag-n-drop" style="display: flex; flex-direction: column; padding-top: 20px; gap: 10px;">
+      <div class="light-bg" style="display: flex; flex-direction: row; gap: 10px; overflow-x: auto;">
+        <inno-drag-and-drop></inno-drag-and-drop>
+        <inno-drag-and-drop state="UPLOAD_FAILED"></inno-drag-and-drop>
+        <inno-drag-and-drop disabled="true"></inno-drag-and-drop>
+        <inno-drag-and-drop state="LOADING"></inno-drag-and-drop>
+        <inno-drag-and-drop state="UPLOAD_SUCCESS"></inno-drag-and-drop>
+      </div>
+      <div class="dark-bg" style="display: flex; flex-direction: row; gap: 10px; padding-top: 20px; overflow-x: auto; background-color: #08191f;">
+        <inno-drag-and-drop variant="light"></inno-drag-and-drop>
+        <inno-drag-and-drop variant="light" state="UPLOAD_FAILED"></inno-drag-and-drop>
+        <inno-drag-and-drop variant="light" disabled="true"></inno-drag-and-drop>
+        <inno-drag-and-drop variant="light" state="LOADING"></inno-drag-and-drop>
+        <inno-drag-and-drop variant="light" state="UPLOAD_SUCCESS"></inno-drag-and-drop>
+      </div>
+    </div>
   </body>
   <script>
     const pane1 = document.getElementById('button-showcase');
@@ -497,6 +514,20 @@
       modal.addEventListener('dialogClose', event => {
         console.log(event);
       });
+    });
+
+    document.querySelectorAll("inno-drag-and-drop").forEach(el => {
+      el.texts = {
+        firstLineText: "Drag & Drop",
+        secondLineText: "Browse files",
+        orText: "or",
+        dragText: "Please drop your files here",
+        loadingText: "Loading...",
+        uploadFailedText: "Something went wrong. Please try again. ",
+        uploadSuccessText: "File uploaded successfully.",
+        acceptedFileTypesText: "*File must be .pdf",
+        uploadDisabledText: "File upload is disabled"
+      }
     });
   </script>
 </html>

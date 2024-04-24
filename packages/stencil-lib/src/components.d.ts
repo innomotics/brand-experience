@@ -5,10 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
+import { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
+export { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
+export { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
@@ -140,6 +144,33 @@ export namespace Components {
         "tabIdx": number;
         /**
           * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
+    interface InnoDragAndDrop {
+        /**
+          * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload). "https://www.w3schools.com/tags/att_input_accept.asp"
+         */
+        "accept": string;
+        /**
+          * Disable all input events
+         */
+        "disabled": boolean;
+        /**
+          * If multiple is true the user can drop or select multiple files
+         */
+        "multiple": boolean;
+        "setFilesToUpload": (obj: any) => Promise<void>;
+        /**
+          * After a file is uploaded you can set the upload component to a defined state
+         */
+        "state": UploadFileState;
+        /**
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, 'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, 'dragText': displayed when file is dragged over the component, 'loadingText': will be used by state = UploadFileState.LOADING, 'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, 'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, 'acceptedFileTypesText': label for accepted file types, 'uploadDisabledText': label for disabled state
+         */
+        "texts": DragAndDropTexts;
+        /**
+          * Color variant of the component.
          */
         "variant": 'dark' | 'light';
     }
@@ -544,6 +575,10 @@ export interface InnoCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoCheckboxElement;
 }
+export interface InnoDragAndDropCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoDragAndDropElement;
+}
 export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoInputElement;
@@ -661,6 +696,23 @@ declare global {
     var HTMLInnoCheckboxElement: {
         prototype: HTMLInnoCheckboxElement;
         new (): HTMLInnoCheckboxElement;
+    };
+    interface HTMLInnoDragAndDropElementEventMap {
+        "filesChanged": Array<File>;
+    }
+    interface HTMLInnoDragAndDropElement extends Components.InnoDragAndDrop, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoDragAndDropElementEventMap>(type: K, listener: (this: HTMLInnoDragAndDropElement, ev: InnoDragAndDropCustomEvent<HTMLInnoDragAndDropElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoDragAndDropElementEventMap>(type: K, listener: (this: HTMLInnoDragAndDropElement, ev: InnoDragAndDropCustomEvent<HTMLInnoDragAndDropElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoDragAndDropElement: {
+        prototype: HTMLInnoDragAndDropElement;
+        new (): HTMLInnoDragAndDropElement;
     };
     interface HTMLInnoErrorElement extends Components.InnoError, HTMLStencilElement {
     }
@@ -922,6 +974,7 @@ declare global {
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
         "inno-checkbox": HTMLInnoCheckboxElement;
+        "inno-drag-and-drop": HTMLInnoDragAndDropElement;
         "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
         "inno-footer-item": HTMLInnoFooterItemElement;
@@ -1083,6 +1136,33 @@ declare namespace LocalJSX {
         "tabIdx"?: number;
         /**
           * Theme variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
+    interface InnoDragAndDrop {
+        /**
+          * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload). "https://www.w3schools.com/tags/att_input_accept.asp"
+         */
+        "accept"?: string;
+        /**
+          * Disable all input events
+         */
+        "disabled"?: boolean;
+        /**
+          * If multiple is true the user can drop or select multiple files
+         */
+        "multiple"?: boolean;
+        "onFilesChanged"?: (event: InnoDragAndDropCustomEvent<Array<File>>) => void;
+        /**
+          * After a file is uploaded you can set the upload component to a defined state
+         */
+        "state"?: UploadFileState;
+        /**
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, 'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, 'dragText': displayed when file is dragged over the component, 'loadingText': will be used by state = UploadFileState.LOADING, 'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, 'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, 'acceptedFileTypesText': label for accepted file types, 'uploadDisabledText': label for disabled state
+         */
+        "texts"?: DragAndDropTexts;
+        /**
+          * Color variant of the component.
          */
         "variant"?: 'dark' | 'light';
     }
@@ -1496,6 +1576,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
         "inno-checkbox": InnoCheckbox;
+        "inno-drag-and-drop": InnoDragAndDrop;
         "inno-error": InnoError;
         "inno-footer": InnoFooter;
         "inno-footer-item": InnoFooterItem;
@@ -1529,6 +1610,7 @@ declare module "@stencil/core" {
              * Checkbox for Innomatics design system.
              */
             "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
+            "inno-drag-and-drop": LocalJSX.InnoDragAndDrop & JSXBase.HTMLAttributes<HTMLInnoDragAndDropElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
              * Represents the general footer for the Innomotics applications.
