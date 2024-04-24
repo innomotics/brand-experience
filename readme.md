@@ -1,3 +1,8 @@
+# Documentation
+
+[The latest webdocs](https://innomotics.github.io/IX/)
+
+# Development
 
 After cloning the repo
 1. run npm install in the root directory
