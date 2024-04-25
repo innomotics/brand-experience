@@ -318,6 +318,17 @@ export namespace Components {
          */
         "variant": 'dark' | 'light';
     }
+    interface InnoPaginator {
+        /**
+          * Total number of pages
+         */
+        "pageCount": number;
+        /**
+          * Zero based index of currently selected page
+         */
+        "selectedPage": number;
+        "variant": 'dark' | 'light';
+    }
     interface InnoPane {
         /**
           * Whether the pane is closeable by clicking outside of it.
@@ -591,6 +602,10 @@ export interface InnoModalHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoModalHeaderElement;
 }
+export interface InnoPaginatorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoPaginatorElement;
+}
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
@@ -829,6 +844,24 @@ declare global {
         prototype: HTMLInnoModalHeaderElement;
         new (): HTMLInnoModalHeaderElement;
     };
+    interface HTMLInnoPaginatorElementEventMap {
+        "pageSelected": number;
+        "itemCountChanged": number;
+    }
+    interface HTMLInnoPaginatorElement extends Components.InnoPaginator, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoPaginatorElementEventMap>(type: K, listener: (this: HTMLInnoPaginatorElement, ev: InnoPaginatorCustomEvent<HTMLInnoPaginatorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoPaginatorElementEventMap>(type: K, listener: (this: HTMLInnoPaginatorElement, ev: InnoPaginatorCustomEvent<HTMLInnoPaginatorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoPaginatorElement: {
+        prototype: HTMLInnoPaginatorElement;
+        new (): HTMLInnoPaginatorElement;
+    };
     interface HTMLInnoPaneElementEventMap {
         "expandedChanged": ExpandedChangedEvent;
     }
@@ -985,6 +1018,7 @@ declare global {
         "inno-modal-content": HTMLInnoModalContentElement;
         "inno-modal-footer": HTMLInnoModalFooterElement;
         "inno-modal-header": HTMLInnoModalHeaderElement;
+        "inno-paginator": HTMLInnoPaginatorElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
         "inno-progress-bar": HTMLInnoProgressBarElement;
@@ -1314,6 +1348,25 @@ declare namespace LocalJSX {
          */
         "variant"?: 'dark' | 'light';
     }
+    interface InnoPaginator {
+        /**
+          * Item count change event
+         */
+        "onItemCountChanged"?: (event: InnoPaginatorCustomEvent<number>) => void;
+        /**
+          * Page selection event
+         */
+        "onPageSelected"?: (event: InnoPaginatorCustomEvent<number>) => void;
+        /**
+          * Total number of pages
+         */
+        "pageCount"?: number;
+        /**
+          * Zero based index of currently selected page
+         */
+        "selectedPage"?: number;
+        "variant"?: 'dark' | 'light';
+    }
     interface InnoPane {
         /**
           * Whether the pane is closeable by clicking outside of it.
@@ -1587,6 +1640,7 @@ declare namespace LocalJSX {
         "inno-modal-content": InnoModalContent;
         "inno-modal-footer": InnoModalFooter;
         "inno-modal-header": InnoModalHeader;
+        "inno-paginator": InnoPaginator;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
         "inno-progress-bar": InnoProgressBar;
@@ -1642,6 +1696,7 @@ declare module "@stencil/core" {
              * Represents the header of the inno-modal component.
              */
             "inno-modal-header": LocalJSX.InnoModalHeader & JSXBase.HTMLAttributes<HTMLInnoModalHeaderElement>;
+            "inno-paginator": LocalJSX.InnoPaginator & JSXBase.HTMLAttributes<HTMLInnoPaginatorElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "inno-progress-bar": LocalJSX.InnoProgressBar & JSXBase.HTMLAttributes<HTMLInnoProgressBarElement>;

@@ -1,0 +1,60 @@
+@use '@innomotics/ix/styles/componentmixins';
+@use '@innomotics/ix/styles/colors';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  height:32px;
+
+  button{
+    font-family: 'InnomoticsHafferSQ';
+    font-size: 16px;
+    font-weight: 430;
+    border: none;
+    width:32px;
+    height:32px;
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    
+    &.dark{
+      color: colors.$interaction-dark-default;
+      &:hover{
+        color:colors.$text-dark-buttonlabel;
+        background-color: colors.$interaction-dark-hover;
+      }
+      &.selected{
+        background-color: colors.$highlight-dark-100;
+        color:colors.$text-dark-buttonlabel;
+      }
+    }
+
+    &:focus:not(.disabled):not(:disabled) {
+      @include componentmixins.focus;
+    }
+
+    &.selected{
+      background-color: colors.$highlight-light-100;
+      color:colors.$text-light-buttonlabel;
+    }
+
+    &:hover{
+      background-color: colors.$interaction-light-hover;
+      color:colors.$text-light-buttonlabel;
+    }
+  }
+  
+  .page-buttons {
+    align-self:center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+}

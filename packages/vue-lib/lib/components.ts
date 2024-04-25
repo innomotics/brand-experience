@@ -142,6 +142,15 @@ export const InnoModalHeader = /*@__PURE__*/ defineContainer<JSX.InnoModalHeader
 ]);
 
 
+export const InnoPaginator = /*@__PURE__*/ defineContainer<JSX.InnoPaginator>('inno-paginator', undefined, [
+  'variant',
+  'pageCount',
+  'selectedPage',
+  'pageSelected',
+  'itemCountChanged'
+]);
+
+
 export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane', undefined, [
   'position',
   'expanded',

@@ -18,6 +18,7 @@ export const DIRECTIVES = [
   d.InnoModalContent,
   d.InnoModalFooter,
   d.InnoModalHeader,
+  d.InnoPaginator,
   d.InnoPane,
   d.InnoPopover,
   d.InnoProgressBar,

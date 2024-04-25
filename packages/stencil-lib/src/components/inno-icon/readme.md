@@ -98,6 +98,7 @@ import {InnoIcon} from '@innomotics/ix-react-lib';
  - [inno-button](../inno-button)
  - [inno-drag-and-drop](../inno-drag-and-drop)
  - [inno-modal-header](../inno-modal-header)
+ - [inno-paginator](../inno-paginator)
  - [inno-select](../inno-select)
  - [inno-select-item](../inno-select-item)
  - [inno-tab](../inno-tab)
@@ -110,6 +111,7 @@ graph TD;
   inno-button --> inno-icon
   inno-drag-and-drop --> inno-icon
   inno-modal-header --> inno-icon
+  inno-paginator --> inno-icon
   inno-select --> inno-icon
   inno-select-item --> inno-icon
   inno-tab --> inno-icon

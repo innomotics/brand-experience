@@ -23,6 +23,7 @@ export const InnoModal = /*@__PURE__*/createReactComponent<JSX.InnoModal, HTMLIn
 export const InnoModalContent = /*@__PURE__*/createReactComponent<JSX.InnoModalContent, HTMLInnoModalContentElement>('inno-modal-content');
 export const InnoModalFooter = /*@__PURE__*/createReactComponent<JSX.InnoModalFooter, HTMLInnoModalFooterElement>('inno-modal-footer');
 export const InnoModalHeader = /*@__PURE__*/createReactComponent<JSX.InnoModalHeader, HTMLInnoModalHeaderElement>('inno-modal-header');
+export const InnoPaginator = /*@__PURE__*/createReactComponent<JSX.InnoPaginator, HTMLInnoPaginatorElement>('inno-paginator');
 export const InnoPane = /*@__PURE__*/createReactComponent<JSX.InnoPane, HTMLInnoPaneElement>('inno-pane');
 export const InnoPopover = /*@__PURE__*/createReactComponent<JSX.InnoPopover, HTMLInnoPopoverElement>('inno-popover');
 export const InnoProgressBar = /*@__PURE__*/createReactComponent<JSX.InnoProgressBar, HTMLInnoProgressBarElement>('inno-progress-bar');

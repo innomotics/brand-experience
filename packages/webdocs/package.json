@@ -30,7 +30,7 @@
     "@docusaurus/tsconfig": "3.2.1",
     "@docusaurus/types": "3.2.1",
     "docusaurus-plugin-sass": "^0.2.5",
-    "typescript": "~5.2.2"
+    "typescript": "5.4.5"
   },
   "peerDependencies": {
     "@innomotics/ix": "*"

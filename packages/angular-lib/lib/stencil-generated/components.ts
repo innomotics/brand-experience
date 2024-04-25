@@ -405,6 +405,38 @@ Can be prevented, in which case only the event is triggered, and the modal remai
 
 
 @ProxyCmp({
+  inputs: ['pageCount', 'selectedPage', 'variant']
+})
+@Component({
+  selector: 'inno-paginator',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['pageCount', 'selectedPage', 'variant'],
+})
+export class InnoPaginator {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['pageSelected', 'itemCountChanged']);
+  }
+}
+
+
+export declare interface InnoPaginator extends Components.InnoPaginator {
+  /**
+   * Page selection event
+   */
+  pageSelected: EventEmitter<CustomEvent<number>>;
+  /**
+   * Item count change event
+   */
+  itemCountChanged: EventEmitter<CustomEvent<number>>;
+}
+
+
+@ProxyCmp({
   inputs: ['closeOnBackdropClick', 'expanded', 'hideCloseButton', 'paneSize', 'position', 'titleText']
 })
 @Component({

@@ -14,7 +14,7 @@ export default defineConfig({
         }
       }
     }),
-    vueJsx(),
+    //vueJsx({}),
   ],
   resolve: {
     alias: {
