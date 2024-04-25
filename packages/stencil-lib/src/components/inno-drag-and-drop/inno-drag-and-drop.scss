@@ -31,7 +31,6 @@
       font-size: 14px;
       font-weight: 790;
       line-height: 21.7px;
-      color: colors.$secondary-800;
       height: 63px;
       width: 140px;
       text-align: center;
@@ -48,11 +47,11 @@
         background-color: colors.$transparency-dark-100;
       }
 
-      .drag-text {
+      .drag-text:not(.hidden) {
         display: block;
       }
 
-      .state .drag-and-drop-texts {
+      .state .drag-and-drop-texts:not(.show-always) {
         display: none;
       }
     }
@@ -116,6 +115,10 @@
         .file-types-text {
           color: colors.$secondary-800;
         }
+
+        .drag-text {
+          color: colors.$secondary-800;
+        }
       }
     }
 
@@ -128,6 +131,10 @@
         }
 
         .file-types-text {
+          color: colors.$secondary-300;
+        }
+
+        .drag-text {
           color: colors.$secondary-300;
         }
       }

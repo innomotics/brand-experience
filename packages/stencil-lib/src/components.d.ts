@@ -166,7 +166,7 @@ export namespace Components {
          */
         "state": UploadFileState;
         /**
-          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, 'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, 'dragText': displayed when file is dragged over the component, 'loadingText': will be used by state = UploadFileState.LOADING, 'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, 'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, 'acceptedFileTypesText': label for accepted file types, 'uploadDisabledText': label for disabled state
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
          */
         "texts": DragAndDropTexts;
         /**
@@ -1158,7 +1158,7 @@ declare namespace LocalJSX {
          */
         "state"?: UploadFileState;
         /**
-          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, 'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, 'dragText': displayed when file is dragged over the component, 'loadingText': will be used by state = UploadFileState.LOADING, 'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, 'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, 'acceptedFileTypesText': label for accepted file types, 'uploadDisabledText': label for disabled state
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
          */
         "texts"?: DragAndDropTexts;
         /**

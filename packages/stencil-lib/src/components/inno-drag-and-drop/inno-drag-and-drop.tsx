@@ -37,13 +37,13 @@ export class InnoDragAndDrop {
 
   /**
    * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE,
-   * 'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,
-   * 'dragText': displayed when file is dragged over the component,
-   * 'loadingText': will be used by state = UploadFileState.LOADING,
-   * 'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED,
-   * 'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED,
-   * 'acceptedFileTypesText': label for accepted file types,
-   * 'uploadDisabledText': label for disabled state
+   * <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,
+   * <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted,
+   * <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING,
+   * <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED,
+   * <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED,
+   * <br/><br/>'acceptedFileTypesText': label for accepted file types,
+   * <br/><br/>'uploadDisabledText': label for disabled state
    */
   @Prop({ mutable: true }) texts: DragAndDropTexts = {
     firstLineText: null,
@@ -136,16 +136,17 @@ export class InnoDragAndDrop {
     let renderSecondLine: boolean = this.texts.secondLineText != null && this.texts.secondLineText.replace(/\s/g, '').length > 0;
     let renderOr: boolean = renderFirstLine && renderSecondLine;
     let renderFileTypesText: boolean = this.texts.acceptedFileTypesText != null && this.texts.acceptedFileTypesText.replace(/\s/g, '').length > 0;
+    let ignoreDragText: boolean = this.texts.dragText == null || this.texts.dragText.replace(/\s/g, '').length === 0
 
     return (
       <div class="state">
         <inno-icon icon='upload' size={48}></inno-icon>
-        <div class="drag-and-drop-texts">
+        <div class={{ "drag-and-drop-texts": true, "show-always": ignoreDragText }}>
           {renderFirstLine ? <span class="first-line-text">{this.texts.firstLineText}</span> : null}
           {renderOr ? <span class="or-text">{this.texts.orText}</span> : null}
           {renderSecondLine ? <span class="second-line-text">{this.texts.secondLineText}</span> : null}
         </div>
-        <div class="drag-text">{this.texts.dragText}</div>
+        <div class={{ "drag-text": true, hidden: ignoreDragText }}>{this.texts.dragText}</div>
         {renderFileTypesText ? <span class="file-types-text">{this.texts.acceptedFileTypesText}</span> : null}
       </div>
     );
