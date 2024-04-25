@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix-angular-lib",
-  "version": "0.0.1-alpha-27",
+  "version": "0.0.1-alpha-28",
   "description": "> TODO: description",
   "author": "",
   "types": "dist/types/index.d.ts",
@@ -30,16 +30,16 @@
     }
   },
   "dependencies": {
-    "@innomotics/ix": "^0.0.1-alpha-27"
+    "@innomotics/ix": "^0.0.1-alpha-28"
   },
   "devDependencies": {
     "ng-packagr": "^17.3.0"
   },
   "peerDependencies": {
     "@angular/core": "^17.3.5",
-    "@innomotics/ix": "^0.0.1-alpha-27",
-    "@innomotics/ix-fonts": "^0.0.1-alpha-27",
-    "@innomotics/ix-icons": "^0.0.1-alpha-27",
+    "@innomotics/ix": "^0.0.1-alpha-28",
+    "@innomotics/ix-fonts": "^0.0.1-alpha-28",
+    "@innomotics/ix-icons": "^0.0.1-alpha-28",
     "typescript": "^5.3.3"
   },
   "publishConfig": {
