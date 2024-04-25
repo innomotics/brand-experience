@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/ix",
-  "version": "0.0.1-alpha-26",
+  "version": "0.0.1-alpha-27",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -35,10 +35,10 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.3",
-    "@innomotics/ix-fonts": "^0.0.1-alpha-26",
-    "@innomotics/ix-icons": "^0.0.1-alpha-26",
-    "@stencil/core": "^4.12.5",
-    "@stencil/sass": "^3.0.10",
+    "@innomotics/ix-fonts": "^0.0.1-alpha-27",
+    "@innomotics/ix-icons": "^0.0.1-alpha-27",
+    "@stencil/core": "^4.17.1",
+    "@stencil/sass": "^3.0.11",
     "animejs": "^3.2.2"
   },
   "devDependencies": {
@@ -56,8 +56,8 @@
     "puppeteer": "^21.9.0"
   },
   "peerDependencies": {
-    "@innomotics/ix-fonts": "^0.0.1-alpha-26",
-    "@innomotics/ix-icons": "^0.0.1-alpha-26"
+    "@innomotics/ix-fonts": "^0.0.1-alpha-27",
+    "@innomotics/ix-icons": "^0.0.1-alpha-27"
   },
   "license": "MIT"
 }
