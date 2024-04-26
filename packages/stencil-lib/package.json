@@ -25,8 +25,8 @@
   ],
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
-    "createcolorsreadme": "npx ts-node colorreadmegenerator.ts && npx cpx \"./styles/readme.md\" \"../webdocs/docs/colors\"",
-    "build": "stencil build && npm run copyreadmes && npm run createcolorsreadme",
+    "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts && npx cpx \"./readmes/**/*.md\" \"../webdocs/docs\"",
+    "build": "stencil build && npm run copyreadmes && npm run createadditionalreadmes",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",

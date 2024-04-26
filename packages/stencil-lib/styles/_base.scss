@@ -1,11 +1,29 @@
+@use 'layoutmixins';
+
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'InnomoticsHafferSQ';
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'InnomoticsHafferSQ';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.inno-main-grid {
+  @include layoutmixins.inno-main-grid;
+
+  .inno-full-content {
+    @include layoutmixins.full-main-grid;
+  }
+
+  .inno-content-grid {
+    @include layoutmixins.inno-content-grid;
+
+    .inno-full-content {
+      @include layoutmixins.full-content-grid;
+    }
+  }
 }
