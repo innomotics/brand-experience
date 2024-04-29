@@ -136,6 +136,33 @@ export declare interface InnoCheckbox extends Components.InnoCheckbox {
 
 
 @ProxyCmp({
+  inputs: ['accept', 'disabled', 'multiple', 'state', 'texts', 'variant'],
+  methods: ['setFilesToUpload']
+})
+@Component({
+  selector: 'inno-drag-and-drop',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['accept', 'disabled', 'multiple', 'state', 'texts', 'variant'],
+})
+export class InnoDragAndDrop {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['filesChanged']);
+  }
+}
+
+
+export declare interface InnoDragAndDrop extends Components.InnoDragAndDrop {
+
+  filesChanged: EventEmitter<CustomEvent<Array<File>>>;
+}
+
+
+@ProxyCmp({
   inputs: ['active', 'type']
 })
 @Component({
@@ -374,6 +401,38 @@ export declare interface InnoModalHeader extends Components.InnoModalHeader {
 Can be prevented, in which case only the event is triggered, and the modal remains open
    */
   closeClick: EventEmitter<CustomEvent<Event>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['pageCount', 'selectedPage', 'variant']
+})
+@Component({
+  selector: 'inno-paginator',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['pageCount', 'selectedPage', 'variant'],
+})
+export class InnoPaginator {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['pageSelected', 'itemCountChanged']);
+  }
+}
+
+
+export declare interface InnoPaginator extends Components.InnoPaginator {
+  /**
+   * Page selection event
+   */
+  pageSelected: EventEmitter<CustomEvent<number>>;
+  /**
+   * Item count change event
+   */
+  itemCountChanged: EventEmitter<CustomEvent<number>>;
 }
 
 

@@ -15,13 +15,10 @@ function replace(variable: string): string {
   let variableregex = /\$.*\-\d{2,3}/g;
   let finds; 
   if ((finds = variableregex.exec(variable)) !== null) {
-    console.log("Testing is positive on "+ variable + " found "+ finds?.length);
     if (finds !== null) {
-      console.log("variable found "+ finds[0] + " in "+variable);
       variable = dict[finds[0]];
     }
   }
-  console.log("After replace: "+ variable);
   return variable;
 }
 
@@ -49,8 +46,7 @@ lines.forEach(line => {
       readmeContent += `,"opacity": "${opacityValue}"`;
     }
     readmeContent += `}}></div><div id="name">${splittedVariable[0]}</div></div>\n`;
-//    console.log(line);
   }
 });
 readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/ix/dist/styles/colors; ```\n or \n``` @use @innomotics/ix/dist/styles/innomotics; ```';
-fs.writeFileSync('./styles/readme.md', readmeContent);
+fs.writeFileSync('./readmes/colors/readme.md', readmeContent);

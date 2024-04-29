@@ -1,26 +1,28 @@
 //divides the page into 36 equal columns
-@mixin main-grid {
+@mixin inno-main-grid {
   display: grid;
-  grid-template-columns: repeat(36, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
-}
-
-// creates a subgrid that uses all 36 columns of the main grid
-@mixin full-width() {
-  display: grid;
-  grid-column: 1 / 37;
-  grid-template-columns: subgrid;
+  grid-template-columns: repeat(36, 1fr);
 }
 
 //creates a subgrid that has the middle 32 columns
-@mixin content-columns {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: 3 / 35;
+@mixin inno-content-grid {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 3 / 35;
 }
 
+// creates a subgrid that uses all 36 columns of the main grid
+@mixin full-main-grid() {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 37;
+}
+
+
 //using all the 32 middle columns
-@mixin full-content() {
-    grid-column: 1 / 33;
-  }
+@mixin full-content-grid() {
+    grid-column-start: 1;
+    grid-column-end: 33;
+    display: grid;
+}
   

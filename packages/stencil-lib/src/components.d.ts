@@ -5,11 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
+import { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
 import { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTheme, InnoStatusMessageType, ShowStatusMessageResult } from "./components/inno-status-message/inno-status-message.api";
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
+export { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
+export { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
@@ -142,6 +146,33 @@ export namespace Components {
         "tabIdx": number;
         /**
           * Theme variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
+    interface InnoDragAndDrop {
+        /**
+          * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload). "https://www.w3schools.com/tags/att_input_accept.asp"
+         */
+        "accept": string;
+        /**
+          * Disable all input events
+         */
+        "disabled": boolean;
+        /**
+          * If multiple is true the user can drop or select multiple files
+         */
+        "multiple": boolean;
+        "setFilesToUpload": (obj: any) => Promise<void>;
+        /**
+          * After a file is uploaded you can set the upload component to a defined state
+         */
+        "state": UploadFileState;
+        /**
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
+         */
+        "texts": DragAndDropTexts;
+        /**
+          * Color variant of the component.
          */
         "variant": 'dark' | 'light';
     }
@@ -287,6 +318,17 @@ export namespace Components {
         /**
           * Theme variant of the component.
          */
+        "variant": 'dark' | 'light';
+    }
+    interface InnoPaginator {
+        /**
+          * Total number of pages
+         */
+        "pageCount": number;
+        /**
+          * Zero based index of currently selected page
+         */
+        "selectedPage": number;
         "variant": 'dark' | 'light';
     }
     interface InnoPane {
@@ -601,6 +643,10 @@ export interface InnoCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoCheckboxElement;
 }
+export interface InnoDragAndDropCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoDragAndDropElement;
+}
 export interface InnoInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoInputElement;
@@ -612,6 +658,10 @@ export interface InnoModalCustomEvent<T> extends CustomEvent<T> {
 export interface InnoModalHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoModalHeaderElement;
+}
+export interface InnoPaginatorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoPaginatorElement;
 }
 export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -722,6 +772,23 @@ declare global {
     var HTMLInnoCheckboxElement: {
         prototype: HTMLInnoCheckboxElement;
         new (): HTMLInnoCheckboxElement;
+    };
+    interface HTMLInnoDragAndDropElementEventMap {
+        "filesChanged": Array<File>;
+    }
+    interface HTMLInnoDragAndDropElement extends Components.InnoDragAndDrop, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoDragAndDropElementEventMap>(type: K, listener: (this: HTMLInnoDragAndDropElement, ev: InnoDragAndDropCustomEvent<HTMLInnoDragAndDropElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoDragAndDropElementEventMap>(type: K, listener: (this: HTMLInnoDragAndDropElement, ev: InnoDragAndDropCustomEvent<HTMLInnoDragAndDropElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoDragAndDropElement: {
+        prototype: HTMLInnoDragAndDropElement;
+        new (): HTMLInnoDragAndDropElement;
     };
     interface HTMLInnoErrorElement extends Components.InnoError, HTMLStencilElement {
     }
@@ -837,6 +904,24 @@ declare global {
     var HTMLInnoModalHeaderElement: {
         prototype: HTMLInnoModalHeaderElement;
         new (): HTMLInnoModalHeaderElement;
+    };
+    interface HTMLInnoPaginatorElementEventMap {
+        "pageSelected": number;
+        "itemCountChanged": number;
+    }
+    interface HTMLInnoPaginatorElement extends Components.InnoPaginator, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoPaginatorElementEventMap>(type: K, listener: (this: HTMLInnoPaginatorElement, ev: InnoPaginatorCustomEvent<HTMLInnoPaginatorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoPaginatorElementEventMap>(type: K, listener: (this: HTMLInnoPaginatorElement, ev: InnoPaginatorCustomEvent<HTMLInnoPaginatorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoPaginatorElement: {
+        prototype: HTMLInnoPaginatorElement;
+        new (): HTMLInnoPaginatorElement;
     };
     interface HTMLInnoPaneElementEventMap {
         "expandedChanged": ExpandedChangedEvent;
@@ -1012,6 +1097,7 @@ declare global {
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
         "inno-checkbox": HTMLInnoCheckboxElement;
+        "inno-drag-and-drop": HTMLInnoDragAndDropElement;
         "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
         "inno-footer-item": HTMLInnoFooterItemElement;
@@ -1022,6 +1108,7 @@ declare global {
         "inno-modal-content": HTMLInnoModalContentElement;
         "inno-modal-footer": HTMLInnoModalFooterElement;
         "inno-modal-header": HTMLInnoModalHeaderElement;
+        "inno-paginator": HTMLInnoPaginatorElement;
         "inno-pane": HTMLInnoPaneElement;
         "inno-popover": HTMLInnoPopoverElement;
         "inno-progress-bar": HTMLInnoProgressBarElement;
@@ -1178,6 +1265,33 @@ declare namespace LocalJSX {
          */
         "variant"?: 'dark' | 'light';
     }
+    interface InnoDragAndDrop {
+        /**
+          * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload). "https://www.w3schools.com/tags/att_input_accept.asp"
+         */
+        "accept"?: string;
+        /**
+          * Disable all input events
+         */
+        "disabled"?: boolean;
+        /**
+          * If multiple is true the user can drop or select multiple files
+         */
+        "multiple"?: boolean;
+        "onFilesChanged"?: (event: InnoDragAndDropCustomEvent<Array<File>>) => void;
+        /**
+          * After a file is uploaded you can set the upload component to a defined state
+         */
+        "state"?: UploadFileState;
+        /**
+          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
+         */
+        "texts"?: DragAndDropTexts;
+        /**
+          * Color variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
     interface InnoError {
         "active"?: boolean;
         "type"?: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
@@ -1324,6 +1438,25 @@ declare namespace LocalJSX {
         /**
           * Theme variant of the component.
          */
+        "variant"?: 'dark' | 'light';
+    }
+    interface InnoPaginator {
+        /**
+          * Item count change event
+         */
+        "onItemCountChanged"?: (event: InnoPaginatorCustomEvent<number>) => void;
+        /**
+          * Page selection event
+         */
+        "onPageSelected"?: (event: InnoPaginatorCustomEvent<number>) => void;
+        /**
+          * Total number of pages
+         */
+        "pageCount"?: number;
+        /**
+          * Zero based index of currently selected page
+         */
+        "selectedPage"?: number;
         "variant"?: 'dark' | 'light';
     }
     interface InnoPane {
@@ -1642,6 +1775,7 @@ declare namespace LocalJSX {
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
         "inno-checkbox": InnoCheckbox;
+        "inno-drag-and-drop": InnoDragAndDrop;
         "inno-error": InnoError;
         "inno-footer": InnoFooter;
         "inno-footer-item": InnoFooterItem;
@@ -1652,6 +1786,7 @@ declare namespace LocalJSX {
         "inno-modal-content": InnoModalContent;
         "inno-modal-footer": InnoModalFooter;
         "inno-modal-header": InnoModalHeader;
+        "inno-paginator": InnoPaginator;
         "inno-pane": InnoPane;
         "inno-popover": InnoPopover;
         "inno-progress-bar": InnoProgressBar;
@@ -1677,6 +1812,7 @@ declare module "@stencil/core" {
              * Checkbox for Innomatics design system.
              */
             "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
+            "inno-drag-and-drop": LocalJSX.InnoDragAndDrop & JSXBase.HTMLAttributes<HTMLInnoDragAndDropElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
              * Represents the general footer for the Innomotics applications.
@@ -1708,6 +1844,7 @@ declare module "@stencil/core" {
              * Represents the header of the inno-modal component.
              */
             "inno-modal-header": LocalJSX.InnoModalHeader & JSXBase.HTMLAttributes<HTMLInnoModalHeaderElement>;
+            "inno-paginator": LocalJSX.InnoPaginator & JSXBase.HTMLAttributes<HTMLInnoPaginatorElement>;
             "inno-pane": LocalJSX.InnoPane & JSXBase.HTMLAttributes<HTMLInnoPaneElement>;
             "inno-popover": LocalJSX.InnoPopover & JSXBase.HTMLAttributes<HTMLInnoPopoverElement>;
             "inno-progress-bar": LocalJSX.InnoProgressBar & JSXBase.HTMLAttributes<HTMLInnoProgressBarElement>;
