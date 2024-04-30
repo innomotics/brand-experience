@@ -625,29 +625,6 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
 
 
 @ProxyCmp({
-  inputs: ['containerClass', 'containerId', 'position'],
-  methods: ['showStatusMessage']
-})
-@Component({
-  selector: 'inno-status-message-container',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['containerClass', 'containerId', 'position'],
-})
-export class InnoStatusMessageContainer {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface InnoStatusMessageContainer extends Components.InnoStatusMessageContainer {}
-
-
-@ProxyCmp({
   inputs: ['layout', 'selected', 'showArrow', 'theme']
 })
 @Component({

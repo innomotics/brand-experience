@@ -27,18 +27,19 @@ export class InnoStatusMessage {
   @Prop() messageType: InnoStatusMessageType = 'info';
 
   /**
-   * Autoclose behavior
+   * Autoclose message after the given delay.
+   * The message will be closed independently from showProgress property.
    */
   @Prop() autoClose = false;
 
   /**
-   * Autoclose title after delay
+   * Autoclose delay.
    */
   @Prop() autoCloseDelay = 3000;
 
   /**
    * Animate progressbar and close after animation ends.
-   * AutoClose will close message.
+   * The message will be closed independently from autoClose property.
    */
   @Prop() showProgress: boolean = false;
 
@@ -95,7 +96,7 @@ export class InnoStatusMessage {
 
     return (
       <div class={classes}>
-        <inno-icon icon={iconName} size={64} style={iconStyle}></inno-icon>
+        <inno-icon icon={iconName} size={48} style={iconStyle}></inno-icon>
       </div>
     );
   }

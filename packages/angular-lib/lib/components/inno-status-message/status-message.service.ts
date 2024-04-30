@@ -4,6 +4,7 @@ import {
   statusMessage,
   InnoStatusMessageConfig,
   InnoStatusMessagePosition,
+  ShowStatusMessageResult,
 } from "@innomotics/ix";
 import { StatusMessageConfig } from "./status-message.config";
 
@@ -11,15 +12,15 @@ import { StatusMessageConfig } from "./status-message.config";
   providedIn: "root",
 })
 export class StatusMessageService {
-  setPosition(position: InnoStatusMessagePosition) {
+  async setPosition(position: InnoStatusMessagePosition): Promise<void> {
     getStatusMessageContainer().position = position;
   }
 
-  getPosition() {
+  async getPosition(): Promise<InnoStatusMessagePosition> {
     return getStatusMessageContainer().position;
   }
 
-  async show(config: StatusMessageConfig) {
+  async show(config: StatusMessageConfig): Promise<ShowStatusMessageResult> {
     if (typeof config.message === "string") {
       return statusMessage(config as InnoStatusMessageConfig);
     }

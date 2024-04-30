@@ -231,13 +231,6 @@ export const InnoStatusMessage = /*@__PURE__*/ defineContainer<JSX.InnoStatusMes
 ]);
 
 
-export const InnoStatusMessageContainer = /*@__PURE__*/ defineContainer<JSX.InnoStatusMessageContainer>('inno-status-message-container', undefined, [
-  'containerId',
-  'containerClass',
-  'position'
-]);
-
-
 export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', undefined, [
   'theme',
   'selected',

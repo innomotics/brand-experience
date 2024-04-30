@@ -14,6 +14,8 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
   </TabItem>
   <TabItem value="angular" label="Angular" default>
   <div class="component-display">
+  <div class="dark-bg">
+    <span class="bg-title">Import the root module to import the service</span>
     ```ts
       import { ComponentsModule } from '@innomotics/ix-angular-lib';
 
@@ -25,6 +27,13 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
       })
       export class Module {}
     ```
+
+  </div>
+  </div>
+
+  <div class="component-display">
+  <div class="dark-bg">
+    <span class="bg-title">Create a template</span>
 
     ```html
       <inno-button (click)="openModal()">Open modal</inno-button>
@@ -41,6 +50,13 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
         </inno-modal>
       </ng-template>
     ```
+
+  </div>
+  </div>
+
+  <div class="component-display">
+  <div class="dark-bg">
+    <span class="bg-title">Import the service and open the modal</span>
 
     ```ts
       import { InnoModalService } from '@innomotics/ix-angular-lib';
@@ -68,9 +84,56 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
     ```
 
   </div>
+  </div>
   </TabItem>
   <TabItem value="react" label="React" default>
   <div class="component-display">
+  <div class="dark-bg">
+    <span class="bg-title">Import the service and open the modal</span>
+
+    ```tsx
+      export default function InnoModalExample() {
+        const modalRef = useRef<ModalRef>(null);
+
+        const open = () => {
+          const content = (
+            <Modal ref={modalRef}>
+              <InnoModalHeader showClose={false}>Header title</InnoModalHeader>
+              <InnoModalContent>
+                <div>
+                  <span>Modal content</span>
+                </div>
+              </InnoModalContent>
+              <InnoModalFooter>
+                <InnoButton onClick={() => modalRef.current?.close(null)}>
+                  Close
+                </InnoButton>
+                <InnoButton onClick={() => modalRef.current?.close(null)}>
+                  Confirm
+                </InnoButton>
+              </InnoModalFooter>
+            </Modal>
+          );
+
+          showModal({
+            size: "720",
+            content: content,
+            backdrop: true,
+            centered: true,
+            closeOnEscape: false,
+            closeOnBackdropClick: false,
+          });
+        };
+
+        return (
+          <div className="modal-sizes-example">
+            <InnoButton onClick={() => open()}>Open modal</InnoButton>
+          </div>
+        );
+      }
+    ```
+
+  </div>
   </div>
   </TabItem>
   <TabItem value="vue" label="Vue" default>

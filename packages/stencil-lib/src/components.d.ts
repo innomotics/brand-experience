@@ -517,11 +517,11 @@ export namespace Components {
      */
     interface InnoStatusMessage {
         /**
-          * Autoclose behavior
+          * Autoclose message after the given delay. The message will be closed independently from showProgress property.
          */
         "autoClose": boolean;
         /**
-          * Autoclose title after delay
+          * Autoclose delay.
          */
         "autoCloseDelay": number;
         /**
@@ -537,7 +537,7 @@ export namespace Components {
          */
         "messageType": InnoStatusMessageType;
         /**
-          * Animate progressbar.
+          * Animate progressbar and close after animation ends. The message will be closed independently from autoClose property.
          */
         "showProgress": boolean;
         /**
@@ -1649,11 +1649,11 @@ declare namespace LocalJSX {
      */
     interface InnoStatusMessage {
         /**
-          * Autoclose behavior
+          * Autoclose message after the given delay. The message will be closed independently from showProgress property.
          */
         "autoClose"?: boolean;
         /**
-          * Autoclose title after delay
+          * Autoclose delay.
          */
         "autoCloseDelay"?: number;
         /**
@@ -1673,7 +1673,7 @@ declare namespace LocalJSX {
          */
         "onCloseMessage"?: (event: InnoStatusMessageCustomEvent<any>) => void;
         /**
-          * Animate progressbar.
+          * Animate progressbar and close after animation ends. The message will be closed independently from autoClose property.
          */
         "showProgress"?: boolean;
         /**
