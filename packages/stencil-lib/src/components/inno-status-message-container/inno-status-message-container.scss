@@ -1,4 +1,6 @@
 #status-message-container {
+  z-index: 1000;
+
   > :not(:last-child) {
     margin-block-end: 1rem;
   }
