@@ -12,7 +12,7 @@ const TYPE_INFO: { [key in InnoStatusMessageType]: StatusMessageTypeDetails } = 
   },
   warning: {
     typeClass: 'type-warning',
-    icon: 'warningwithcircle',
+    icon: 'warning-with-circle',
   },
   error: {
     typeClass: 'type-error',
@@ -20,7 +20,7 @@ const TYPE_INFO: { [key in InnoStatusMessageType]: StatusMessageTypeDetails } = 
   },
   success: {
     typeClass: 'type-success',
-    icon: 'successwithcircle',
+    icon: 'success-with-circle',
   },
 };
 
