@@ -10,12 +10,14 @@ import { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-
 import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
+import { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTheme, InnoStatusMessageType, ShowStatusMessageResult } from "./components/inno-status-message/inno-status-message.api";
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
 export { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
 export { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
+export { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTheme, InnoStatusMessageType, ShowStatusMessageResult } from "./components/inno-status-message/inno-status-message.api";
 export { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
 export namespace Components {
     interface InnoAccordion {
@@ -510,6 +512,61 @@ export namespace Components {
          */
         "value": string;
     }
+    /**
+     * Represents a status message entry.
+     */
+    interface InnoStatusMessage {
+        /**
+          * Autoclose message after the given delay. The message will be closed independently from showProgress property.
+         */
+        "autoClose": boolean;
+        /**
+          * Autoclose delay.
+         */
+        "autoCloseDelay": number;
+        /**
+          * Icon of toast
+         */
+        "icon": string;
+        /**
+          * Icon color of toast
+         */
+        "iconColor": string;
+        /**
+          * Type of the status message.
+         */
+        "messageType": InnoStatusMessageType;
+        /**
+          * Animate progressbar and close after animation ends. The message will be closed independently from autoClose property.
+         */
+        "showProgress": boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "theme": InnoStatusMessageTheme;
+    }
+    /**
+     * Container to hold the status messages.
+     */
+    interface InnoStatusMessageContainer {
+        /**
+          * Customizable container class.
+         */
+        "containerClass": string;
+        /**
+          * Customizable container id.
+         */
+        "containerId": string;
+        /**
+          * Position of container.
+         */
+        "position": InnoStatusMessagePosition;
+        /**
+          * Display a toast message
+          * @param config
+         */
+        "showStatusMessage": (config: InnoStatusMessageConfig) => Promise<ShowStatusMessageResult>;
+    }
     interface InnoTab {
         /**
           * Set layout width style
@@ -621,6 +678,10 @@ export interface InnoSelectCustomEvent<T> extends CustomEvent<T> {
 export interface InnoSelectItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoSelectItemElement;
+}
+export interface InnoStatusMessageCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoStatusMessageElement;
 }
 export interface InnoTabCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -945,6 +1006,35 @@ declare global {
         prototype: HTMLInnoSelectItemElement;
         new (): HTMLInnoSelectItemElement;
     };
+    interface HTMLInnoStatusMessageElementEventMap {
+        "closeMessage": any;
+    }
+    /**
+     * Represents a status message entry.
+     */
+    interface HTMLInnoStatusMessageElement extends Components.InnoStatusMessage, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoStatusMessageElementEventMap>(type: K, listener: (this: HTMLInnoStatusMessageElement, ev: InnoStatusMessageCustomEvent<HTMLInnoStatusMessageElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoStatusMessageElementEventMap>(type: K, listener: (this: HTMLInnoStatusMessageElement, ev: InnoStatusMessageCustomEvent<HTMLInnoStatusMessageElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoStatusMessageElement: {
+        prototype: HTMLInnoStatusMessageElement;
+        new (): HTMLInnoStatusMessageElement;
+    };
+    /**
+     * Container to hold the status messages.
+     */
+    interface HTMLInnoStatusMessageContainerElement extends Components.InnoStatusMessageContainer, HTMLStencilElement {
+    }
+    var HTMLInnoStatusMessageContainerElement: {
+        prototype: HTMLInnoStatusMessageContainerElement;
+        new (): HTMLInnoStatusMessageContainerElement;
+    };
     interface HTMLInnoTabElementEventMap {
         "selectedChange": number;
     }
@@ -1025,6 +1115,8 @@ declare global {
         "inno-radio": HTMLInnoRadioElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
+        "inno-status-message": HTMLInnoStatusMessageElement;
+        "inno-status-message-container": HTMLInnoStatusMessageContainerElement;
         "inno-tab": HTMLInnoTabElement;
         "inno-tab-item": HTMLInnoTabItemElement;
         "inno-toggle": HTMLInnoToggleElement;
@@ -1552,6 +1644,60 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    /**
+     * Represents a status message entry.
+     */
+    interface InnoStatusMessage {
+        /**
+          * Autoclose message after the given delay. The message will be closed independently from showProgress property.
+         */
+        "autoClose"?: boolean;
+        /**
+          * Autoclose delay.
+         */
+        "autoCloseDelay"?: number;
+        /**
+          * Icon of toast
+         */
+        "icon"?: string;
+        /**
+          * Icon color of toast
+         */
+        "iconColor"?: string;
+        /**
+          * Type of the status message.
+         */
+        "messageType"?: InnoStatusMessageType;
+        /**
+          * Status message is closed.
+         */
+        "onCloseMessage"?: (event: InnoStatusMessageCustomEvent<any>) => void;
+        /**
+          * Animate progressbar and close after animation ends. The message will be closed independently from autoClose property.
+         */
+        "showProgress"?: boolean;
+        /**
+          * Theme variant of the component.
+         */
+        "theme"?: InnoStatusMessageTheme;
+    }
+    /**
+     * Container to hold the status messages.
+     */
+    interface InnoStatusMessageContainer {
+        /**
+          * Customizable container class.
+         */
+        "containerClass"?: string;
+        /**
+          * Customizable container id.
+         */
+        "containerId"?: string;
+        /**
+          * Position of container.
+         */
+        "position"?: InnoStatusMessagePosition;
+    }
     interface InnoTab {
         /**
           * Set layout width style
@@ -1647,6 +1793,8 @@ declare namespace LocalJSX {
         "inno-radio": InnoRadio;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
+        "inno-status-message": InnoStatusMessage;
+        "inno-status-message-container": InnoStatusMessageContainer;
         "inno-tab": InnoTab;
         "inno-tab-item": InnoTabItem;
         "inno-toggle": InnoToggle;
@@ -1706,6 +1854,14 @@ declare module "@stencil/core" {
             "inno-radio": LocalJSX.InnoRadio & JSXBase.HTMLAttributes<HTMLInnoRadioElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
+            /**
+             * Represents a status message entry.
+             */
+            "inno-status-message": LocalJSX.InnoStatusMessage & JSXBase.HTMLAttributes<HTMLInnoStatusMessageElement>;
+            /**
+             * Container to hold the status messages.
+             */
+            "inno-status-message-container": LocalJSX.InnoStatusMessageContainer & JSXBase.HTMLAttributes<HTMLInnoStatusMessageContainerElement>;
             "inno-tab": LocalJSX.InnoTab & JSXBase.HTMLAttributes<HTMLInnoTabElement>;
             /**
              * Represents an inno-tab item.

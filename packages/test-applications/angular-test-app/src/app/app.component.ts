@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  activeTabIndex = 2;
+  activeTabIndex = 0;
 
   handleTabChange(index: number) {
     this.activeTabIndex = index;

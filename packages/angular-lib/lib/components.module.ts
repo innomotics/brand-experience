@@ -10,7 +10,7 @@ import { DOCUMENT } from "@angular/common";
 import { defineCustomElements } from "@innomotics/ix/loader";
 import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
 import { BooleanValueAccessor } from "./stencil-generated/boolean-value-accessor";
-import { InnoRadioValueAccessor } from "../public-api";
+import { InnoRadioValueAccessor, StatusMessageService } from "../public-api";
 import { InnoModalService } from "./components/inno-modal/inno-modal.service";
 
 const DECLARATIONS = [
@@ -41,7 +41,7 @@ export class ComponentsModule {
   static forRoot(): ModuleWithProviders<ComponentsModule> {
     return {
       ngModule: ComponentsModule,
-      providers: [{ provide: InnoModalService }],
+      providers: [InnoModalService, StatusMessageService],
     };
   }
 }
