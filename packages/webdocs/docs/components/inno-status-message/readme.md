@@ -1,11 +1,19 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {InnoStatusMessage} from '@innomotics/ix-react-lib';
+import InnoStatusMessageExample from '@site/src/components/InnoStatusMessageExample/InnoStatusMessageExample'
 
 # inno-status-message
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
+  <div class="component-display">
+    <div class="dark-bg component-display columns">
+      <span class="bg-title">status message example</span>
+      <InnoStatusMessageExample></InnoStatusMessageExample>
+    </div>
+  </div>
+
   <div class="component-display">
     <div class="light-bg component-display columns">
       <span class="bg-title">light background</span>

@@ -1,6 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@innomotics/ix-react-lib';
+import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExample'
 
 # inno-modal
 
@@ -8,7 +9,8 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
   <TabItem value="preview" label="Preview" default>
   <div class="component-display">
     <div class="dark-bg">
-    <span class="bg-title">light background, layout auto</span>
+    <span class="bg-title">Modal example</span>
+    <InnoModalExample></InnoModalExample>
     </div>
   </div>
   </TabItem>
@@ -89,7 +91,7 @@ import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@in
   <TabItem value="react" label="React" default>
   <div class="component-display">
   <div class="dark-bg">
-    <span class="bg-title">Import the service and open the modal</span>
+    <span class="bg-title">Use the provided function to show the modal.</span>
 
     ```tsx
       export default function InnoModalExample() {
