@@ -345,7 +345,7 @@ export namespace Components {
          */
         "hideCloseButton": boolean;
         /**
-          * Size of the pane.
+          * Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position.  All css units are supported which are supported by width and height css properties.
          */
         "paneSize": string;
         /**
@@ -1477,7 +1477,7 @@ declare namespace LocalJSX {
          */
         "onExpandedChanged"?: (event: InnoPaneCustomEvent<ExpandedChangedEvent>) => void;
         /**
-          * Size of the pane.
+          * Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position.  All css units are supported which are supported by width and height css properties.
          */
         "paneSize"?: string;
         /**

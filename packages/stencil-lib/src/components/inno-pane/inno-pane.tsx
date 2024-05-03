@@ -39,7 +39,8 @@ export class InnoPane {
   @Prop({ mutable: true }) closeOnBackdropClick: boolean = true;
 
   /**
-   * Size of the pane.
+   * Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position. 
+   * All css units are supported which are supported by width and height css properties.
    */
   @Prop({ mutable: true }) paneSize: string = '100%';
 
@@ -126,7 +127,7 @@ export class InnoPane {
             hidden={!this.showContent || !this.expanded}>
             {this.titleText != null ? <h2>{this.titleText}</h2> : null}
             {!this.hideCloseButton
-              ? <inno-button icon='close' variant='tertiary' iconOnly={true} colorVariant='light'
+              ? <inno-button id='innoPaneClose' icon='close' variant='tertiary' iconOnly={true} colorVariant='light'
                 onClick={() => this.expanded = !this.expanded}></inno-button>
               : null}
           </div>
