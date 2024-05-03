@@ -2,7 +2,7 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoProgressBar} from '@innomotics/ix-react-lib';
+import {InnoProgressBar} from '@innomotics/brand-experience-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>

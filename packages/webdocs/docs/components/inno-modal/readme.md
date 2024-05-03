@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@innomotics/ix-react-lib';
+import {InnoModal, InnoModalHeader, InnoModalContent, InnoModalFooter} from '@innomotics/brand-experience-react-lib';
 import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExample'
 
 # inno-modal
@@ -19,7 +19,7 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
   <div class="dark-bg">
     <span class="bg-title">Import the root module to import the service</span>
     ```ts
-      import { ComponentsModule } from '@innomotics/ix-angular-lib';
+      import { ComponentsModule } from '@innomotics/brand-experience-angular-lib';
 
       @NgModule({
         imports: [
@@ -61,7 +61,7 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
     <span class="bg-title">Import the service and open the modal</span>
 
     ```ts
-      import { InnoModalService } from '@innomotics/ix-angular-lib';
+      import { InnoModalService } from '@innomotics/brand-experience-angular-lib';
 
       @Component({})
       export class ModalExampleComponent {

@@ -1,7 +1,7 @@
-// import { defineCustomElement as defineToastContainer } from "@innomotics/ix/components/inno-status-message-container.js";
-// import { defineCustomElement as defineToast } from "@innomotics/ix/components/inno-status-message.js";
+// import { defineCustomElement as defineToastContainer } from "@innomotics/brand-experience/components/inno-status-message-container.js";
+// import { defineCustomElement as defineToast } from "@innomotics/brand-experience/components/inno-status-message.js";
 
-import { statusMessage, InnoStatusMessageConfig } from "@innomotics/ix";
+import { statusMessage, InnoStatusMessageConfig } from "@innomotics/brand-experience";
 import ReactDOMClient from "react-dom/client";
 
 export type StatusMessageConfig = {

@@ -19,4 +19,4 @@
 
 ## Usage
 
-Import the @innomotics/ix-fonts package to your application and use 'InnomoticsHafferSQ' as a font-family
+Import the @innomotics/brand-experience-fonts package to your application and use 'InnomoticsHafferSQ' as a font-family

@@ -13,7 +13,7 @@ const regexes: RegExp[] = [
 //passsing directoryPath and callback function
 let moduleContent = "";
 
-let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/ix-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div class='icon-wrapper'>";
+let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/brand-experience-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div class='icon-wrapper'>";
 
 let clearName = (name: string) => {
   return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();

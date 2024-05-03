@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoCheckbox} from '@innomotics/ix-react-lib';
+import {InnoCheckbox} from '@innomotics/brand-experience-react-lib';
 
 # inno-checkbox
 

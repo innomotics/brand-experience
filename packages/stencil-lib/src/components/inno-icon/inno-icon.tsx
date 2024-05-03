@@ -40,7 +40,7 @@ export class InnoIcon {
   }
 
   async resolveIcon(icon: string) {
-    const svgIcon = await import(`@innomotics/ix-icons/dist/inno-icons`);
+    const svgIcon = await import(`@innomotics/brand-experience-icons/dist/inno-icons`);
     const iconname = 'inno_' + icon.replace(/\-/g, '');
     return svgIcon[iconname];
   }

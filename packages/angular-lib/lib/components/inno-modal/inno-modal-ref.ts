@@ -4,7 +4,7 @@
 /// Reference: https://github.com/siemens/ix/blob/main/packages/angular/src/modal/modal-ref.ts
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import { closeModal, dismissModal } from "@innomotics/ix";
+import { closeModal, dismissModal } from "@innomotics/brand-experience";
 
 export class InnoActiveModal<TData = any, TReason = any> {
   modalElement!: HTMLElement;

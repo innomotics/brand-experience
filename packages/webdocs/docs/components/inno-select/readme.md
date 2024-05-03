@@ -2,7 +2,7 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoSelect, InnoSelectItem} from '@innomotics/ix-react-lib';
+import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>

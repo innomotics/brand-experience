@@ -1,5 +1,5 @@
 {
-  "name": "@innomotics/ix-fonts",
+  "name": "@innomotics/brand-experience-fonts",
   "version": "0.0.1-alpha-32",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://Innomotics-AKS@dev.azure.com/Innomotics-AKS/InnomoticsSalesTools/_git/inno-UX"
+    "url": "https://github.com/innomotics/brand-experience"
   },
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",

@@ -7,7 +7,7 @@ import {
 import { DIRECTIVES } from "./stencil-generated";
 import { appInitialize } from "./app-initialize";
 import { DOCUMENT } from "@angular/common";
-import { defineCustomElements } from "@innomotics/ix/loader";
+import { defineCustomElements } from "@innomotics/brand-experience/loader";
 import { SelectValueAccessor } from "./stencil-generated/select-value-accessor";
 import { BooleanValueAccessor } from "./stencil-generated/boolean-value-accessor";
 import { InnoRadioValueAccessor, StatusMessageService } from "../public-api";

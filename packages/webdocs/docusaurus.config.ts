@@ -3,15 +3,15 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Innomotics-UX",
+  title: "Innomotics BRAND EXPERIENCE",
   tagline: "UX package",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://innomotics-ix-stage.westeurope.cloudapp.azure.com/",
+  url: "https://innomotics.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/IX/",
+  baseUrl: "/brand-experience/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -101,7 +101,7 @@ const config: Config = {
           label: "Colors",
         },
         {
-          href: "https://github.com/innomotics/IX",
+          href: "https://github.com/innomotics/brand-experience",
           label: "GitHub",
           position: "right",
         },
@@ -136,7 +136,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/innomotics/IX",
+              href: "https://github.com/innomotics/brand-experience",
             },
           ],
         },

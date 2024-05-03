@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoPane, InnoButton} from '@innomotics/ix-react-lib';
+import {InnoPane, InnoButton} from '@innomotics/brand-experience-react-lib';
 
 # inno-pane
 

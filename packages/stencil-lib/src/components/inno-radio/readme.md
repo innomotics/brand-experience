@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoRadio} from '@innomotics/ix-react-lib';
+import {InnoRadio} from '@innomotics/brand-experience-react-lib';
 
 # Inno-radio
 

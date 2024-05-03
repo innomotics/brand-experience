@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoFooter, InnoFooterItem, InnoIcon} from '@innomotics/ix-react-lib';
+import {InnoFooter, InnoFooterItem, InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 # inno-footer
 

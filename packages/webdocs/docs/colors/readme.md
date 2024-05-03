@@ -83,6 +83,6 @@
 
  ## Usage 
 Import the colors either by 
-```@use @innomotics/ix/dist/styles/colors; ```
+```@use @innomotics/brand-experience/dist/styles/colors; ```
  or 
-``` @use @innomotics/ix/dist/styles/innomotics; ```
+``` @use @innomotics/brand-experience/dist/styles/innomotics; ```

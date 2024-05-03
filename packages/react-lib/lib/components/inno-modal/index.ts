@@ -7,7 +7,7 @@
 import {
   ModalConfig as InnoModalConfig,
   showModal as _showModal,
-} from "@innomotics/ix";
+} from "@innomotics/brand-experience";
 export * from "./modal";
 
 export type ModalConfig = {

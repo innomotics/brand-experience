@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
+import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
 
 # inno-tab
 
@@ -81,7 +81,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
   </TabItem>
   <TabItem value="react" label="React">
     ```tsx
-      import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
+      import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
       import { useState } from 'react';
 
       export default () => {
@@ -108,7 +108,7 @@ import {InnoTab, InnoTabItem} from '@innomotics/ix-react-lib';
   <TabItem value="vue" label="Vue">
     ```ts
       <script setup lang="ts">
-        import { InnoTab, InnoTabItem } from '@innomotics/ix-vue-lib';
+        import { InnoTab, InnoTabItem } from '@innomotics/brand-experience-vue-lib';
         import { ref } from 'vue';
 
         const selectedTab = ref(0);

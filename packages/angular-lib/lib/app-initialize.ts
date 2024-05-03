@@ -1,4 +1,4 @@
-import { applyPolyfills, defineCustomElements } from '@innomotics/ix/loader';
+import { applyPolyfills, defineCustomElements } from '@innomotics/brand-experience/loader';
 
 let didInitialize = false;
 

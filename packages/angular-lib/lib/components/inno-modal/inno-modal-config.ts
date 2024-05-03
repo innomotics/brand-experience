@@ -5,7 +5,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import { TemplateRef, Type } from "@angular/core";
-import { ModalConfig as InnoModalConfig } from "@innomotics/ix";
+import { ModalConfig as InnoModalConfig } from "@innomotics/brand-experience";
 
 export type ModalConfig<TDATA = any> = Omit<InnoModalConfig, "content"> & {
   content: TemplateRef<unknown> | Type<unknown>;

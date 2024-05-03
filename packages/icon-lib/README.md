@@ -1,5 +1,5 @@
 # `Icons`
-import {InnoIcon} from '@innomotics/ix-react-lib';
+import {InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 > Innomotics icons for inno-icon component
 

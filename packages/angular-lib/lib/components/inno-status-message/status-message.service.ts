@@ -5,7 +5,7 @@ import {
   InnoStatusMessageConfig,
   InnoStatusMessagePosition,
   ShowStatusMessageResult,
-} from "@innomotics/ix";
+} from "@innomotics/brand-experience";
 import { StatusMessageConfig } from "./status-message.config";
 
 @Injectable({

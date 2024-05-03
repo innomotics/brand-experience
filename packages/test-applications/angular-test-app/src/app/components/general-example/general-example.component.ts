@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StatusMessageService } from '@innomotics/ix-angular-lib';
+import { StatusMessageService } from '@innomotics/brand-experience-angular-lib';
 
 @Component({
   selector: 'app-general-example',

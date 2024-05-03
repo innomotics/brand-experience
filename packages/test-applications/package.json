@@ -16,9 +16,9 @@
     "build": "concurrently \"npm run reactApp\" \"npm run vueApp\" \"npm run angularApp\""
   },
   "peerDependencies": {
-    "@innomotics/ix-angular-lib": "*",
-    "@innomotics/ix-react-lib": "*",
-    "@innomotics/ix-vue-lib": "*",
+    "@innomotics/brand-experience-angular-lib": "*",
+    "@innomotics/brand-experience-react-lib": "*",
+    "@innomotics/brand-experience-vue-lib": "*",
     "vue": "3.4.25"
   },
   "dependencies": {
@@ -30,12 +30,12 @@
     "@angular/platform-browser": "17.3.5",
     "@angular/platform-browser-dynamic": "17.3.5",
     "@angular/router": "17.3.5",
-    "@innomotics/ix": "*",
-    "@innomotics/ix-angular-lib": "*",
-    "@innomotics/ix-fonts": "*",
-    "@innomotics/ix-icons": "*",
-    "@innomotics/ix-react-lib": "*",
-    "@innomotics/ix-vue-lib": "*",
+    "@innomotics/brand-experience": "*",
+    "@innomotics/brand-experience-angular-lib": "*",
+    "@innomotics/brand-experience-fonts": "*",
+    "@innomotics/brand-experience-icons": "*",
+    "@innomotics/brand-experience-react-lib": "*",
+    "@innomotics/brand-experience-vue-lib": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rxjs": "~7.8.0",

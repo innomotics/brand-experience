@@ -48,5 +48,5 @@ lines.forEach(line => {
     readmeContent += `}}></div><div id="name">${splittedVariable[0]}</div></div>\n`;
   }
 });
-readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/ix/dist/styles/colors; ```\n or \n``` @use @innomotics/ix/dist/styles/innomotics; ```';
+readmeContent += '</div>\n\n ## Usage \nImport the colors either by \n```@use @innomotics/brand-experience/dist/styles/colors; ```\n or \n``` @use @innomotics/brand-experience/dist/styles/innomotics; ```';
 fs.writeFileSync('./readmes/colors/readme.md', readmeContent);

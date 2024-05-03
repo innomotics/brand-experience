@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "vue": "^3.4.15",
-    "@innomotics/ix-vue-lib":"*"
+    "@innomotics/brand-experience-vue-lib":"*"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",

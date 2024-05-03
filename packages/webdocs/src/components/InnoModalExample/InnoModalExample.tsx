@@ -6,7 +6,7 @@ import {
   InnoModalHeader,
   InnoModalContent,
   InnoModalFooter,
-} from "@innomotics/ix-react-lib";
+} from "@innomotics/brand-experience-react-lib";
 import { useRef } from "react";
 
 export default function InnoModalExample() {

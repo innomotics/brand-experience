@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoStatusMessage} from '@innomotics/ix-react-lib';
+import {InnoStatusMessage} from '@innomotics/brand-experience-react-lib';
 import InnoStatusMessageExample from '@site/src/components/InnoStatusMessageExample/InnoStatusMessageExample'
 
 # inno-status-message

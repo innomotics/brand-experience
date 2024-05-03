@@ -12,9 +12,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@innomotics/ix":"*",
-    "@innomotics/ix-react-lib":"*",
-    "@innomotics/ix-fonts":"*"
+    "@innomotics/brand-experience":"*",
+    "@innomotics/brand-experience-react-lib":"*",
+    "@innomotics/brand-experience-fonts":"*"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

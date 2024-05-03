@@ -1,6 +1,6 @@
 # Documentation
 
-[The latest webdocs](https://innomotics.github.io/IX/)
+[The latest webdocs](https://innomotics.github.io/brand-experience/)
 
 # Development
 

@@ -1,5 +1,5 @@
 {
-  "name": "@innomotics/ix-angular-lib",
+  "name": "@innomotics/brand-experience-angular-lib",
   "version": "0.0.1-alpha-32",
   "description": "> TODO: description",
   "author": "",
@@ -23,14 +23,14 @@
     },
     "./dist": {
       "types": "./dist/index.d.ts",
-      "esm": "./dist/esm2022/innomotics-ix-angular-lib.mjs",
-      "esm2022": "./dist/esm2022/innomotics-ix-angular-lib.mjs",
-      "fesm2022": "./dist/fesm2022/innomotics-ix-angular-lib.mjs",
-      "default": "./dist/fesm2022/innomotics-ix-angular-lib.mjs"
+      "esm": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "esm2022": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "fesm2022": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs",
+      "default": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs"
     }
   },
   "dependencies": {
-    "@innomotics/ix": "^0.0.1-alpha-32"
+    "@innomotics/brand-experience": "^0.0.1-alpha-32"
   },
   "devDependencies": {
     "ng-packagr": "^17.3.0"
@@ -39,9 +39,9 @@
     "@angular/common": "^17.3.5",
     "@angular/core": "^17.3.5",
     "@angular/forms": "^17.3.5",
-    "@innomotics/ix": "^0.0.1-alpha-32",
-    "@innomotics/ix-fonts": "^0.0.1-alpha-32",
-    "@innomotics/ix-icons": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-32",
     "typescript": "^5.3.3"
   },
   "publishConfig": {

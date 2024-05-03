@@ -1,5 +1,5 @@
 {
-  "name": "@innomotics/ix",
+  "name": "@innomotics/brand-experience",
   "version": "0.0.1-alpha-32",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/innomotix-ix/innomotix-ix.esm.js",
+  "unpkg": "dist/innomotics-brand-experience/innomotics-brand-experience.esm.js",
   "private": false,
   "repository": {
     "type": "git",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.3",
-    "@innomotics/ix-fonts": "^0.0.1-alpha-32",
-    "@innomotics/ix-icons": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-32",
     "@stencil/core": "^4.17.1",
     "@stencil/sass": "^3.0.11",
     "animejs": "^3.2.2"
@@ -56,8 +56,8 @@
     "puppeteer": "^21.9.0"
   },
   "peerDependencies": {
-    "@innomotics/ix-fonts": "^0.0.1-alpha-32",
-    "@innomotics/ix-icons": "^0.0.1-alpha-32"
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-32"
   },
   "license": "MIT"
 }

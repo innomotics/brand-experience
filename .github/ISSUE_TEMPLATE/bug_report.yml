@@ -42,8 +42,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Which version of iX do you use?
-      description: The exact version of Innomotics iX you use.
+      label: Which version of BRAND EXPERIENCE do you use?
+      description: The exact version of Innomotics BRAND EXPERIENCE you use.
       placeholder: v1.x.x
     validations:
       required: true

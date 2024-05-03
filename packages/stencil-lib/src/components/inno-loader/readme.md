@@ -3,7 +3,7 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoLoader} from '@innomotics/ix-react-lib';
+import {InnoLoader} from '@innomotics/brand-experience-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>

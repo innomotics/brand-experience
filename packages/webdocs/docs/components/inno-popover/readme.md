@@ -2,7 +2,7 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoPopover} from '@innomotics/ix-react-lib';
+import {InnoPopover} from '@innomotics/brand-experience-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>

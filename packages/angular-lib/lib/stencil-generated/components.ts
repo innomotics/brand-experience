@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import { Components } from '@innomotics/ix';
+import { Components } from '@innomotics/brand-experience';
 
 
 @ProxyCmp({
@@ -456,7 +456,7 @@ export class InnoPane {
 }
 
 
-import type { ExpandedChangedEvent as IInnoPaneExpandedChangedEvent } from '@innomotics/ix';
+import type { ExpandedChangedEvent as IInnoPaneExpandedChangedEvent } from '@innomotics/brand-experience';
 
 export declare interface InnoPane extends Components.InnoPane {
   /**
@@ -672,7 +672,7 @@ export class InnoTabItem {
 }
 
 
-import type { TabClickDetail as IInnoTabItemTabClickDetail } from '@innomotics/ix';
+import type { TabClickDetail as IInnoTabItemTabClickDetail } from '@innomotics/brand-experience';
 
 export declare interface InnoTabItem extends Components.InnoTabItem {
   /**

@@ -1,5 +1,5 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { InnoModalService } from '@innomotics/ix-angular-lib';
+import { InnoModalService } from '@innomotics/brand-experience-angular-lib';
 import { ModalByComponentComponent } from './components/modal-by-component/modal-by-component.component';
 
 @Component({

@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoDragAndDrop} from '@innomotics/ix-react-lib';
+import {InnoDragAndDrop} from '@innomotics/brand-experience-react-lib';
 
 # inno-drag-and-drop
 

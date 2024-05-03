@@ -1,4 +1,4 @@
-import { InnoTab, InnoTabItem } from "@innomotics/ix-react-lib";
+import { InnoTab, InnoTabItem } from "@innomotics/brand-experience-react-lib";
 import { useState } from "react";
 
 export default function InnoTabExample() {

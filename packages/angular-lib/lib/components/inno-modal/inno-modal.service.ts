@@ -14,7 +14,7 @@ import {
   Type,
   ViewRef,
 } from "@angular/core";
-import { closeModal, dismissModal, showModal } from "@innomotics/ix";
+import { closeModal, dismissModal, showModal } from "@innomotics/brand-experience";
 import { InternalInnoActiveModal, InnoActiveModal } from "./inno-modal-ref";
 import { ModalConfig } from "./inno-modal-config";
 

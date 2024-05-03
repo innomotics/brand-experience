@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InnoActiveModal } from '@innomotics/ix-angular-lib';
+import { InnoActiveModal } from '@innomotics/brand-experience-angular-lib';
 
 @Component({
   selector: 'app-modal-by-component',

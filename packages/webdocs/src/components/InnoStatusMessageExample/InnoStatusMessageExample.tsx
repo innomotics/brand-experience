@@ -1,4 +1,4 @@
-import { InnoButton, showStatusMessage } from "@innomotics/ix-react-lib";
+import { InnoButton, showStatusMessage } from "@innomotics/brand-experience-react-lib";
 
 export default function InnoStatusMessageExample() {
   return (

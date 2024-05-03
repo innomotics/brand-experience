@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer';
 
 const copyAssets = [
   {
-    src: './../../../node_modules/@innomotics/ix-fonts/dist',
+    src: './../../../node_modules/@innomotics/brand-experience-fonts/dist',
     dest: '',
   },
 ];
@@ -43,7 +43,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
 ];
 
 export const config: Config = {
-  namespace: 'innomotics-ix',
+  namespace: 'innomotics-brand-experience',
   plugins: [sass({ includePaths: ['styles', '../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
   srcDir: './src',
   globalStyle: './styles/innomotics.scss',
@@ -65,18 +65,18 @@ export const config: Config = {
       copy: copyAssets,
     },
     angularOutputTarget({
-      componentCorePackage: '@innomotics/ix',
+      componentCorePackage: '@innomotics/brand-experience',
       outputType: 'component',
       directivesProxyFile: '../angular-lib/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular-lib/lib/stencil-generated/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
     reactOutputTarget({
-      componentCorePackage: '@innomotics/ix',
+      componentCorePackage: '@innomotics/brand-experience',
       proxiesFile: '../react-lib/lib/components/stencil-generated/index.ts',
     }),
     vueOutputTarget({
-      componentCorePackage: '@innomotics/ix',
+      componentCorePackage: '@innomotics/brand-experience',
       proxiesFile: '../vue-lib/lib/components.ts',
     }),
   ],

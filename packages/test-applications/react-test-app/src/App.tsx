@@ -4,7 +4,7 @@ import {
   InnoBreadcrumb,
   InnoBreadcrumbItem,
   InnoIcon,
-} from "@innomotics/ix-react-lib";
+} from "@innomotics/brand-experience-react-lib";
 import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
 import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
 import { InnoStatusMessageExample } from "./components/InnoStatusMessageExample/InnoStatusMessageExample";

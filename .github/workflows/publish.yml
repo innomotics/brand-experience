@@ -38,7 +38,7 @@ jobs:
           lerna publish from-package --no-private --yes
 
   deploy-docs:
-    if: ${{ (github.repository == 'innomotics/IX') && (github.ref == 'refs/heads/main') }}
+    if: ${{ (github.repository == 'innomotics/brand-experience') && (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-latest
     needs: [build-lib]
     permissions:
