@@ -10,7 +10,7 @@ import {
 import { useRef } from "react";
 
 export default function InnoModalExample() {
-  const modalRef = useRef<ModalRef>(null);
+  const modalRef = useRef<ModalRef | null>(null);
 
   const open = () => {
     const content = (
