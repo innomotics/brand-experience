@@ -52,6 +52,10 @@ const config: Config = {
       { sassOptions: { includePaths: ["../../node_modules"] } },
     ],
   ],
+  markdown: {
+    mermaid: true
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
@@ -143,6 +147,9 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    mermaid: {
+      theme: { dark: 'neutral' }
+    }
   } satisfies Preset.ThemeConfig,
 };
 
