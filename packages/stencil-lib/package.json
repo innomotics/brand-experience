@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience",
-  "version": "0.0.1-alpha-32",
+  "version": "0.0.1-alpha-33",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.3",
-    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-32",
-    "@innomotics/brand-experience-icons": "^0.0.1-alpha-32",
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-33",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-33",
     "@stencil/core": "^4.17.1",
     "@stencil/sass": "^3.0.11",
     "animejs": "^3.2.2"
@@ -56,8 +56,8 @@
     "puppeteer": "^21.9.0"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-32",
-    "@innomotics/brand-experience-icons": "^0.0.1-alpha-32"
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-33",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-33"
   },
   "license": "MIT"
 }
