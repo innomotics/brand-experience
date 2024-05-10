@@ -1,0 +1,291 @@
+@use './../../../styles/colors' as colors;
+@use './../../../styles/siemens-ix/scrollbar' as ixscrollbar;
+
+:host {
+  display: block;
+  position: relative;
+  width: 22rem;
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :host {
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    padding: 0.25rem 1rem;
+
+    color: colors.$primary-100;
+    font-size: 20px;
+    font-family: 'InnomoticsHafferSQ';
+    cursor: pointer;
+  }
+
+  .navigation {
+    color: colors.$primary-300;
+    cursor: pointer;
+  }
+}
+
+.dropdown {
+  @include ixscrollbar.scrollbar();
+
+  display: none;
+  position: absolute;
+  z-index: 15;
+
+  border-radius: 10px;
+  box-shadow:
+    0 0 2px 0 rgba(0, 0, 0, 0.1),
+    0 4px 8px 0 rgba(0, 0, 0, 0.1),
+    0 12px 18px 0 rgba(0, 0, 0, 0.1);
+
+  background-color: colors.$secondary-900;
+  color: colors.$primary-300;
+
+  font-family: 'InnomoticsHafferSQ';
+  font-size: 14px;
+  line-height: 20px;
+
+  &.show {
+    display: block;
+  }
+
+  .wrapper {
+    display: flex;
+
+    .overflow {
+      overflow-y: scroll;
+      max-height: 250px;
+    }
+  }
+
+  .month-dropdown-item {
+    margin-left: 4px;
+    margin-right: 4px;
+    text-wrap: nowrap;
+
+    &:focus-visible {
+      outline: 1px solid colors.$primary-300;
+      outline-offset: 1px;
+    }
+  }
+
+  .disabled-item {
+    pointer-events: none;
+    background-color: colors.$secondary-700;
+    color: colors.$primary-200;
+    cursor: default;
+  }
+}
+
+.arrowYear {
+  display: flex;
+  position: relative;
+  padding: 0.75rem 2rem;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$secondary-800;
+  }
+
+  &.selected {
+    background-color: colors.$secondary-700;
+  }
+
+  .arrowPosition {
+    position: absolute;
+    left: calc((2rem / 2) - 6px);
+    top: 31%;
+  }
+
+  .checkPosition {
+    position: absolute;
+    left: calc((2rem / 2) - 6px);
+    top: calc(50% - 8px);
+  }
+
+  .monthMargin {
+    margin-left: 10px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(7, 40px);
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  row-gap: 8px;
+
+  color: colors.$primary-300;
+
+  .calendar-item {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 1px solid colors.$secondary-600;
+      outline-offset: 1px;
+    }
+
+    &.today {
+      border: 2px solid colors.$primary-300;
+
+      &:hover {
+        background-color: colors.$secondary-300;
+      }
+
+      &:active {
+        background-color: colors.$primary-100;
+      }
+
+      &.selected {
+        &:hover {
+        }
+
+        &:active {
+        }
+
+        &.disabled {
+          pointer-events: none;
+          color: colors.$primary-200;
+        }
+      }
+
+      &.range {
+        background-color: colors.$secondary-800;
+        color: colors.$primary-300;
+
+        &:hover {
+          background-color: colors.$secondary-300;
+        }
+
+        &:active {
+          background-color: colors.$primary-100;
+        }
+
+        &.disabled {
+          color: colors.$primary-200;
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        color: colors.$primary-200;
+        cursor: default;
+      }
+    }
+
+    &:hover {
+      background-color: colors.$secondary-300;
+      color: colors.$primary-200;
+    }
+
+    &:active {
+      background-color: colors.$primary-100;
+      color: colors.$primary-200;
+    }
+
+    &.selected {
+      background-color: colors.$primary-100;
+      color: colors.$primary-200;
+
+      &:hover {
+        background-color: colors.$primary-100;
+      }
+
+      &:active {
+        background-color: colors.$primary-100;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        background-color: colors.$secondary-900;
+        color: colors.$primary-200;
+      }
+    }
+
+    &.range {
+      background-color: colors.$secondary-800;
+      color: colors.$primary-300;
+
+      &:hover {
+        background-color: colors.$secondary-300;
+        color: colors.$primary-300;
+      }
+
+      &:active {
+        background-color: colors.$secondary-800;
+        color: colors.$primary-300;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        color: colors.$primary-200;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      color: colors.$primary-200;
+    }
+
+    &.week-day {
+      color: colors.$primary-300;
+      font-size: 12px;
+      line-height: 20px;
+      border: none;
+      background: none;
+      cursor: initial;
+    }
+
+    &.empty-day {
+      border: none;
+      background: none;
+      cursor: initial;
+    }
+
+    &.week-number {
+      font-size: 12px;
+      line-height: 14px;
+      color: colors.$secondary-300;
+      border: none;
+      background: none;
+      cursor: initial;
+    }
+
+    &:focus-visible {
+      border: inset 1px solid colors.$secondary-800;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}

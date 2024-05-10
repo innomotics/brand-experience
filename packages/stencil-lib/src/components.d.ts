@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { DateChange } from "./components/inno-date-api/inno-date-api";
+import { InnoDatePickerDropdownSettings } from "./components/inno-date-picker-dropdown/inno-date-picker-dropdown.api";
 import { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
 import { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
@@ -12,6 +14,9 @@ import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 import { Placement } from "@floating-ui/dom";
 import { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTheme, InnoStatusMessageType, ShowStatusMessageResult } from "./components/inno-status-message/inno-status-message.api";
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
+import { InnoTimePickerTexts } from "./components/inno-time-picker/inno-time-picker.api";
+export { DateChange } from "./components/inno-date-api/inno-date-api";
+export { InnoDatePickerDropdownSettings } from "./components/inno-date-picker-dropdown/inno-date-picker-dropdown.api";
 export { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
 export { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
@@ -19,6 +24,7 @@ export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
 export { Placement } from "@floating-ui/dom";
 export { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTheme, InnoStatusMessageType, ShowStatusMessageResult } from "./components/inno-status-message/inno-status-message.api";
 export { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
+export { InnoTimePickerTexts } from "./components/inno-time-picker/inno-time-picker.api";
 export namespace Components {
     interface InnoAccordion {
         /**
@@ -148,6 +154,67 @@ export namespace Components {
           * Theme variant of the component.
          */
         "variant": 'dark' | 'light';
+    }
+    /**
+     * Date picker.
+     */
+    interface InnoDatePicker {
+        /**
+          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "format": string;
+        /**
+          * The selected starting date. If the date-pickeris not in range mode this is the selected date. Format has to match the `format` property.
+         */
+        "from": string | undefined;
+        /**
+          * Get the currently selected date-range.
+         */
+        "getCurrentDate": () => Promise<{ from: string; to: string; }>;
+        /**
+          * Text of date select button
+         */
+        "i18nDone": string;
+        /**
+          * Format of time string See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "locale": string;
+        /**
+          * The latest date that can be selected by the date picker. If not set there will be no restriction.
+         */
+        "maxDate": string;
+        /**
+          * The earliest date that can be selected by the date picker. If not set there will be no restriction.
+         */
+        "minDate": string;
+        /**
+          * If true a date-range can be selected (from/to).
+         */
+        "range": boolean;
+        "standaloneAppearance": boolean;
+        /**
+          * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.
+         */
+        "to": string | undefined;
+        "today": string;
+        /**
+          * The index of which day to start the week on, based on the Locale#weekdays array. E.g. if the locale is en-us, weekStartIndex = 1 results in starting the week on monday.
+         */
+        "weekStartIndex": number;
+    }
+    interface InnoDatePickerDropdown {
+        /**
+          * If true a date-range can be selected.
+         */
+        "range": boolean;
+        "settings"?: InnoDatePickerDropdownSettings;
+        /**
+          * Color variant of the component.
+         */
+        "variant": 'dark' | 'light';
+    }
+    interface InnoDateTimeCard {
+        "standaloneAppearance": boolean;
     }
     interface InnoDragAndDrop {
         /**
@@ -608,6 +675,21 @@ export namespace Components {
          */
         "theme": 'light' | 'dark';
     }
+    interface InnoTimePicker {
+        /**
+          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "format": string;
+        /**
+          * Component text configuration.
+         */
+        "texts"?: InnoTimePickerTexts | undefined;
+        /**
+          * Theme variant of the component.
+         */
+        "theme": 'light' | 'dark';
+        "time": string | undefined;
+    }
     interface InnoToggle {
         /**
           * Whether the slide-toggle element is checked or not.
@@ -642,6 +724,10 @@ export interface InnoBreadcrumbItemCustomEvent<T> extends CustomEvent<T> {
 export interface InnoCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoCheckboxElement;
+}
+export interface InnoDatePickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoDatePickerElement;
 }
 export interface InnoDragAndDropCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -690,6 +776,10 @@ export interface InnoTabCustomEvent<T> extends CustomEvent<T> {
 export interface InnoTabItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoTabItemElement;
+}
+export interface InnoTimePickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoTimePickerElement;
 }
 export interface InnoToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -772,6 +862,40 @@ declare global {
     var HTMLInnoCheckboxElement: {
         prototype: HTMLInnoCheckboxElement;
         new (): HTMLInnoCheckboxElement;
+    };
+    interface HTMLInnoDatePickerElementEventMap {
+        "dateChange": DateChange;
+        "dateRangeChange": DateChange;
+        "dateSelect": DateChange;
+    }
+    /**
+     * Date picker.
+     */
+    interface HTMLInnoDatePickerElement extends Components.InnoDatePicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoDatePickerElementEventMap>(type: K, listener: (this: HTMLInnoDatePickerElement, ev: InnoDatePickerCustomEvent<HTMLInnoDatePickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoDatePickerElementEventMap>(type: K, listener: (this: HTMLInnoDatePickerElement, ev: InnoDatePickerCustomEvent<HTMLInnoDatePickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoDatePickerElement: {
+        prototype: HTMLInnoDatePickerElement;
+        new (): HTMLInnoDatePickerElement;
+    };
+    interface HTMLInnoDatePickerDropdownElement extends Components.InnoDatePickerDropdown, HTMLStencilElement {
+    }
+    var HTMLInnoDatePickerDropdownElement: {
+        prototype: HTMLInnoDatePickerDropdownElement;
+        new (): HTMLInnoDatePickerDropdownElement;
+    };
+    interface HTMLInnoDateTimeCardElement extends Components.InnoDateTimeCard, HTMLStencilElement {
+    }
+    var HTMLInnoDateTimeCardElement: {
+        prototype: HTMLInnoDateTimeCardElement;
+        new (): HTMLInnoDateTimeCardElement;
     };
     interface HTMLInnoDragAndDropElementEventMap {
         "filesChanged": Array<File>;
@@ -1074,6 +1198,23 @@ declare global {
         prototype: HTMLInnoTabItemElement;
         new (): HTMLInnoTabItemElement;
     };
+    interface HTMLInnoTimePickerElementEventMap {
+        "valueChange": any;
+    }
+    interface HTMLInnoTimePickerElement extends Components.InnoTimePicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoTimePickerElementEventMap>(type: K, listener: (this: HTMLInnoTimePickerElement, ev: InnoTimePickerCustomEvent<HTMLInnoTimePickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoTimePickerElementEventMap>(type: K, listener: (this: HTMLInnoTimePickerElement, ev: InnoTimePickerCustomEvent<HTMLInnoTimePickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLInnoTimePickerElement: {
+        prototype: HTMLInnoTimePickerElement;
+        new (): HTMLInnoTimePickerElement;
+    };
     interface HTMLInnoToggleElementEventMap {
         "checkedChange": boolean;
     }
@@ -1097,6 +1238,9 @@ declare global {
         "inno-breadcrumb-item": HTMLInnoBreadcrumbItemElement;
         "inno-button": HTMLInnoButtonElement;
         "inno-checkbox": HTMLInnoCheckboxElement;
+        "inno-date-picker": HTMLInnoDatePickerElement;
+        "inno-date-picker-dropdown": HTMLInnoDatePickerDropdownElement;
+        "inno-date-time-card": HTMLInnoDateTimeCardElement;
         "inno-drag-and-drop": HTMLInnoDragAndDropElement;
         "inno-error": HTMLInnoErrorElement;
         "inno-footer": HTMLInnoFooterElement;
@@ -1119,6 +1263,7 @@ declare global {
         "inno-status-message-container": HTMLInnoStatusMessageContainerElement;
         "inno-tab": HTMLInnoTabElement;
         "inno-tab-item": HTMLInnoTabItemElement;
+        "inno-time-picker": HTMLInnoTimePickerElement;
         "inno-toggle": HTMLInnoToggleElement;
     }
 }
@@ -1264,6 +1409,75 @@ declare namespace LocalJSX {
           * Theme variant of the component.
          */
         "variant"?: 'dark' | 'light';
+    }
+    /**
+     * Date picker.
+     */
+    interface InnoDatePicker {
+        /**
+          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "format"?: string;
+        /**
+          * The selected starting date. If the date-pickeris not in range mode this is the selected date. Format has to match the `format` property.
+         */
+        "from"?: string | undefined;
+        /**
+          * Text of date select button
+         */
+        "i18nDone"?: string;
+        /**
+          * Format of time string See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "locale"?: string;
+        /**
+          * The latest date that can be selected by the date picker. If not set there will be no restriction.
+         */
+        "maxDate"?: string;
+        /**
+          * The earliest date that can be selected by the date picker. If not set there will be no restriction.
+         */
+        "minDate"?: string;
+        /**
+          * Triggers if the date selection changes.
+         */
+        "onDateChange"?: (event: InnoDatePickerCustomEvent<DateChange>) => void;
+        /**
+          * Triggers if the date selection changes. Only triggered if date-picker is in range mode.
+         */
+        "onDateRangeChange"?: (event: InnoDatePickerCustomEvent<DateChange>) => void;
+        /**
+          * Date selection confirmed via button action
+         */
+        "onDateSelect"?: (event: InnoDatePickerCustomEvent<DateChange>) => void;
+        /**
+          * If true a date-range can be selected (from/to).
+         */
+        "range"?: boolean;
+        "standaloneAppearance"?: boolean;
+        /**
+          * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.
+         */
+        "to"?: string | undefined;
+        "today"?: string;
+        /**
+          * The index of which day to start the week on, based on the Locale#weekdays array. E.g. if the locale is en-us, weekStartIndex = 1 results in starting the week on monday.
+         */
+        "weekStartIndex"?: number;
+    }
+    interface InnoDatePickerDropdown {
+        /**
+          * If true a date-range can be selected.
+         */
+        "range"?: boolean;
+        "settings"?: InnoDatePickerDropdownSettings;
+        /**
+          * Color variant of the component.
+         */
+        "variant"?: 'dark' | 'light';
+    }
+    interface InnoDateTimeCard {
+        "standaloneAppearance"?: boolean;
     }
     interface InnoDragAndDrop {
         /**
@@ -1747,6 +1961,22 @@ declare namespace LocalJSX {
          */
         "theme"?: 'light' | 'dark';
     }
+    interface InnoTimePicker {
+        /**
+          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+         */
+        "format"?: string;
+        "onValueChange"?: (event: InnoTimePickerCustomEvent<any>) => void;
+        /**
+          * Component text configuration.
+         */
+        "texts"?: InnoTimePickerTexts | undefined;
+        /**
+          * Theme variant of the component.
+         */
+        "theme"?: 'light' | 'dark';
+        "time"?: string | undefined;
+    }
     interface InnoToggle {
         /**
           * Whether the slide-toggle element is checked or not.
@@ -1775,6 +2005,9 @@ declare namespace LocalJSX {
         "inno-breadcrumb-item": InnoBreadcrumbItem;
         "inno-button": InnoButton;
         "inno-checkbox": InnoCheckbox;
+        "inno-date-picker": InnoDatePicker;
+        "inno-date-picker-dropdown": InnoDatePickerDropdown;
+        "inno-date-time-card": InnoDateTimeCard;
         "inno-drag-and-drop": InnoDragAndDrop;
         "inno-error": InnoError;
         "inno-footer": InnoFooter;
@@ -1797,6 +2030,7 @@ declare namespace LocalJSX {
         "inno-status-message-container": InnoStatusMessageContainer;
         "inno-tab": InnoTab;
         "inno-tab-item": InnoTabItem;
+        "inno-time-picker": InnoTimePicker;
         "inno-toggle": InnoToggle;
     }
 }
@@ -1812,6 +2046,12 @@ declare module "@stencil/core" {
              * Checkbox for Innomatics design system.
              */
             "inno-checkbox": LocalJSX.InnoCheckbox & JSXBase.HTMLAttributes<HTMLInnoCheckboxElement>;
+            /**
+             * Date picker.
+             */
+            "inno-date-picker": LocalJSX.InnoDatePicker & JSXBase.HTMLAttributes<HTMLInnoDatePickerElement>;
+            "inno-date-picker-dropdown": LocalJSX.InnoDatePickerDropdown & JSXBase.HTMLAttributes<HTMLInnoDatePickerDropdownElement>;
+            "inno-date-time-card": LocalJSX.InnoDateTimeCard & JSXBase.HTMLAttributes<HTMLInnoDateTimeCardElement>;
             "inno-drag-and-drop": LocalJSX.InnoDragAndDrop & JSXBase.HTMLAttributes<HTMLInnoDragAndDropElement>;
             "inno-error": LocalJSX.InnoError & JSXBase.HTMLAttributes<HTMLInnoErrorElement>;
             /**
@@ -1869,6 +2109,7 @@ declare module "@stencil/core" {
              * See the InnoTab component for more information about how to use the tab component.
              */
             "inno-tab-item": LocalJSX.InnoTabItem & JSXBase.HTMLAttributes<HTMLInnoTabItemElement>;
+            "inno-time-picker": LocalJSX.InnoTimePicker & JSXBase.HTMLAttributes<HTMLInnoTimePickerElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
         }
     }

@@ -248,6 +248,7 @@ import {InnoButton} from '@innomotics/brand-experience-react-lib';
 ### Used by
 
  - [inno-pane](../inno-pane)
+ - [inno-time-picker](../inno-time-picker)
 
 ### Depends on
 
@@ -258,6 +259,7 @@ import {InnoButton} from '@innomotics/brand-experience-react-lib';
 graph TD;
   inno-button --> inno-icon
   inno-pane --> inno-button
+  inno-time-picker --> inno-button
   style inno-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -136,6 +136,68 @@ export declare interface InnoCheckbox extends Components.InnoCheckbox {
 
 
 @ProxyCmp({
+  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'to', 'weekStartIndex'],
+  methods: ['getCurrentDate']
+})
+@Component({
+  selector: 'inno-date-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'to', 'weekStartIndex'],
+})
+export class InnoDatePicker {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['dateChange', 'dateRangeChange', 'dateSelect']);
+  }
+}
+
+
+import type { DateChange as IInnoDatePickerDateChange } from '@innomotics/brand-experience';
+
+export declare interface InnoDatePicker extends Components.InnoDatePicker {
+  /**
+   * Triggers if the date selection changes.
+   */
+  dateChange: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
+  /**
+   * Triggers if the date selection changes.
+Only triggered if date-picker is in range mode.
+   */
+  dateRangeChange: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
+  /**
+   * Date selection confirmed via button action
+   */
+  dateSelect: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['range', 'settings', 'variant']
+})
+@Component({
+  selector: 'inno-date-picker-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['range', 'settings', 'variant'],
+})
+export class InnoDatePickerDropdown {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoDatePickerDropdown extends Components.InnoDatePickerDropdown {}
+
+
+@ProxyCmp({
   inputs: ['accept', 'disabled', 'multiple', 'state', 'texts', 'variant'],
   methods: ['setFilesToUpload']
 })
@@ -679,6 +741,32 @@ export declare interface InnoTabItem extends Components.InnoTabItem {
    * On tab click.
    */
   tabClick: EventEmitter<CustomEvent<IInnoTabItemTabClickDetail>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['format', 'texts', 'theme', 'time']
+})
+@Component({
+  selector: 'inno-time-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['format', 'texts', 'theme', 'time'],
+})
+export class InnoTimePicker {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface InnoTimePicker extends Components.InnoTimePicker {
+
+  valueChange: EventEmitter<CustomEvent<any>>;
 }
 
 

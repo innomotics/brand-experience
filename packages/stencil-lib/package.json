@@ -39,7 +39,8 @@
     "@innomotics/brand-experience-icons": "^0.0.1-alpha-33",
     "@stencil/core": "^4.17.1",
     "@stencil/sass": "^3.0.11",
-    "animejs": "^3.2.2"
+    "animejs": "^3.2.2",
+    "luxon": "3.4.4"
   },
   "devDependencies": {
     "@stencil-community/postcss": "^2.2.0",
@@ -48,6 +49,7 @@
     "@stencil/vue-output-target": "^0.8.8",
     "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^29.5.6",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^16.18.11",
     "autoprefixer": "^10.4.17",
     "cpx2": "^7.0.1",
