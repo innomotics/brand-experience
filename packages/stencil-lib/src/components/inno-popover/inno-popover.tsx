@@ -182,7 +182,7 @@ export class InnoPopover {
               target,
               this.hostElement,
               {
-                strategy: 'absolute',
+                strategy: 'fixed',
                 placement: this.placement,
                 middleware: [
                   offset({

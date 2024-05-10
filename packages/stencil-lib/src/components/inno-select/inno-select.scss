@@ -71,10 +71,17 @@
     font-size: small;
   }
 
+  .select-wrapper {
+    position: relative;
+  }
+
   .items {
     z-index: 1;
     display: none;
     position: fixed;
+    max-height: 500px;
+    overflow-y: auto;
+
     &.opened {
       display: block;
     }

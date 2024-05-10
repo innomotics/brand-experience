@@ -1,3 +1,4 @@
+import { autoUpdate, computePosition, flip } from '@floating-ui/dom';
 import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen } from '@stencil/core';
 
 @Component({
@@ -9,6 +10,7 @@ export class InnoSelect {
   @Element() hostElement!: HTMLInnoSelectElement;
 
   private itemsContainerRef?: HTMLDivElement;
+  private wrapperRef?: HTMLDivElement;
   @State() navigationItem: HTMLInnoSelectItemElement;
 
   /**
@@ -53,6 +55,8 @@ export class InnoSelect {
    */
   @Event() valueChanged: EventEmitter<string>;
 
+  private disposeAutoUpdate?: () => void;
+
   selectClicked() {
     this.isOpen = !this.isOpen;
   }
@@ -70,18 +74,60 @@ export class InnoSelect {
 
   @Watch('isOpen')
   alignItems() {
-    let selectPacement = this.hostElement.getBoundingClientRect();
-    this.itemsContainerRef.setAttribute('style', `top: ${selectPacement.bottom}px; left: ${selectPacement.left}px; width: ${selectPacement.width}px;`);
+    if (this.isOpen) {
+      this.computeDropdownPosition();
+    } else {
+      this.destroyAutoUpdate();
+    }
   }
 
-  @Listen('resize', { target: 'document' })
-  windowResize() {
-    this.isOpen = false;
+  private destroyAutoUpdate() {
+    if (this.disposeAutoUpdate != undefined) {
+      this.disposeAutoUpdate();
+    }
   }
 
-  @Listen('scroll', { target: 'window' })
-  windowResizea() {
-    this.isOpen = false;
+  private async computeDropdownPosition() {
+    return new Promise<void>((resolve) => {
+      this.disposeAutoUpdate = autoUpdate(
+        this.wrapperRef,
+        this.itemsContainerRef,
+        async () => {
+          setTimeout(async () => {
+            const computeResponse = await computePosition(
+              this.wrapperRef,
+              this.itemsContainerRef,
+              {
+                strategy: 'fixed',
+                placement: 'bottom',
+                middleware: [
+                  flip({
+                    mainAxis: true,
+                    crossAxis: true,
+                    fallbackStrategy: 'bestFit',
+                    padding: 5
+                  })
+                ]
+              }
+            );
+
+            const { x, y } = computeResponse;
+            Object.assign(this.itemsContainerRef.style, {
+              left: x !== null ? `${x}px` : '',
+              top: y !== null ? `${y}px` : '',
+              width: `${this.wrapperRef.getBoundingClientRect().width}px`
+            });
+
+            resolve();
+          });
+        },
+        {
+          ancestorResize: true,
+          ancestorScroll: true,
+          elementResize: true
+        }
+      );
+    });
   }
 
   @Listen('itemSelected')
@@ -152,6 +198,10 @@ export class InnoSelect {
     }
   }
 
+  disconnectedCallback() {
+    this.destroyAutoUpdate();
+  }
+
   get items() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
@@ -179,7 +229,7 @@ export class InnoSelect {
         onFocusout={() => this.onFocusout()}
         onClick={() => this.selectClicked()}
       >
-        <div>
+        <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
           {!this.icon ? (
             <div class="select-header">
               <div class={{ content: true, filled: !this.valueIsUndefined }}>
@@ -205,9 +255,9 @@ export class InnoSelect {
               <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           )}
-        </div>
-        <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isOpen }}>
-          <slot></slot>
+          <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isOpen }}>
+            <slot></slot>
+          </div>
         </div>
       </Host>
     );

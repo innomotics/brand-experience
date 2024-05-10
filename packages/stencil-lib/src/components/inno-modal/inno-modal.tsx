@@ -85,7 +85,6 @@ export class InnoModal {
       this.dismissModal();
     } else {
       e.stopPropagation();
-      e.preventDefault();
     }
   }
 
