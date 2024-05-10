@@ -22,9 +22,10 @@ export class InnoDatePicker {
 
   /**
    * Date format string.
-   * See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+   *
    */
   @Prop() format: string = 'yyyy/LL/dd';
+  // See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
 
   /**
    * If true a date-range can be selected (from/to).
@@ -88,9 +89,10 @@ export class InnoDatePicker {
 
   /**
    * Format of time string
-   * See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+   *
    */
   @Prop() locale: string = undefined;
+  // See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
 
   @Watch('locale')
   onLocaleChange() {

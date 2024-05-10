@@ -78,14 +78,29 @@ export class InnoDatePickerDropdown {
       picker: true,
     };
 
+    const labelClasses = {
+      ...this.variantClasses(),
+      'picker-label': true,
+      'picker-label--hasvalue': this.value !== undefined,
+    };
+
+    const valueClasses = {
+      'picker-value': true,
+    };
+
     const iconName = this.show ? 'chevronupsmall' : 'calendar';
+    const pickerIconClasses = {
+      ...this.variantClasses(),
+      'picker-icon': true,
+    };
 
     return (
       <div class={pickerClasses} ref={ref => (this.dropdownHost = ref)} onClick={_ => this.changeVisibility()}>
-        <div>
-          <span>Starting date*: {this.value}</span>
+        <div class={labelClasses}>
+          <span>Starting date*</span>
         </div>
-        <div class="picker-icon">
+        <div class={valueClasses}>{this.value}</div>
+        <div class={pickerIconClasses}>
           <inno-icon icon={iconName} size={32}></inno-icon>
         </div>
       </div>

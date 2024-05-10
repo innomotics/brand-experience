@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 
   font-size: 16px;
   font-family: 'InnomoticsHafferSQ';
@@ -29,11 +30,32 @@
 
   &.dark {
     border: 1px solid colors.$secondary-400;
-    color: colors.$secondary-800;
+    background-color: colors.$secondary-900;
+    color: colors.$secondary-300;
+  }
+
+  .picker-label--hasvalue {
+    position: absolute;
+    top: 6px;
+    left: 16px;
+    font-size: 12px;
+  }
+
+  .picker-value {
+    position: relative;
+    top: 7px;
   }
 
   .picker-icon {
     margin-left: auto;
+
+    &.light {
+      color: colors.$primary-200;
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+    }
   }
 }
 

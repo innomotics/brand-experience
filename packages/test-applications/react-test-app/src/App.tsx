@@ -4,6 +4,7 @@ import {
   InnoBreadcrumb,
   InnoBreadcrumbItem,
   InnoIcon,
+  InnoDatePicker,
 } from "@innomotics/brand-experience-react-lib";
 import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
 import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
@@ -28,6 +29,8 @@ function App() {
       <InnoModalExample></InnoModalExample>
 
       <InnoStatusMessageExample></InnoStatusMessageExample>
+
+      <InnoDatePicker></InnoDatePicker>
     </>
   );
 }

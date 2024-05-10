@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                                                                                | Type                  | Default      |
-| -------- | --------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------------ |
-| `format` | `format`  | Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens. | `string`              | `'HH:mm:ss'` |
-| `texts`  | --        | Component text configuration.                                                                                              | `InnoTimePickerTexts` | `undefined`  |
-| `theme`  | `theme`   | Theme variant of the component.                                                                                            | `"dark" \| "light"`   | `'light'`    |
-| `time`   | `time`    |                                                                                                                            | `string`              | `undefined`  |
+| Property | Attribute | Description                     | Type                  | Default      |
+| -------- | --------- | ------------------------------- | --------------------- | ------------ |
+| `format` | `format`  | Date format string.             | `string`              | `'HH:mm:ss'` |
+| `texts`  | --        | Component text configuration.   | `InnoTimePickerTexts` | `undefined`  |
+| `theme`  | `theme`   | Theme variant of the component. | `"dark" \| "light"`   | `'light'`    |
+| `time`   | `time`    |                                 | `string`              | `undefined`  |
 
 
 ## Events

@@ -160,7 +160,7 @@ export namespace Components {
      */
     interface InnoDatePicker {
         /**
-          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Date format string.
          */
         "format": string;
         /**
@@ -176,7 +176,7 @@ export namespace Components {
          */
         "i18nDone": string;
         /**
-          * Format of time string See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Format of time string
          */
         "locale": string;
         /**
@@ -677,7 +677,7 @@ export namespace Components {
     }
     interface InnoTimePicker {
         /**
-          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Date format string.
          */
         "format": string;
         /**
@@ -1415,7 +1415,7 @@ declare namespace LocalJSX {
      */
     interface InnoDatePicker {
         /**
-          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Date format string.
          */
         "format"?: string;
         /**
@@ -1427,7 +1427,7 @@ declare namespace LocalJSX {
          */
         "i18nDone"?: string;
         /**
-          * Format of time string See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Format of time string
          */
         "locale"?: string;
         /**
@@ -1963,7 +1963,7 @@ declare namespace LocalJSX {
     }
     interface InnoTimePicker {
         /**
-          * Date format string. See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
+          * Date format string.
          */
         "format"?: string;
         "onValueChange"?: (event: InnoTimePickerCustomEvent<any>) => void;
