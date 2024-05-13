@@ -372,13 +372,17 @@ export namespace Components {
          */
         "placement": Placement;
         /**
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+         */
+        "popoverText": string;
+        /**
+          * Contents of the title. Can be either html or a simple string. Can be omitted.
+         */
+        "popoverTitle": string;
+        /**
           * Show the tooltip.
          */
         "showTooltip": () => Promise<void>;
-        /**
-          * Contents of the title. Can be either html or a simple string.
-         */
-        "titleContent": string;
         /**
           * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
          */
@@ -1500,9 +1504,13 @@ declare namespace LocalJSX {
          */
         "placement"?: Placement;
         /**
-          * Contents of the title. Can be either html or a simple string.
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
          */
-        "titleContent"?: string;
+        "popoverText"?: string;
+        /**
+          * Contents of the title. Can be either html or a simple string. Can be omitted.
+         */
+        "popoverTitle"?: string;
         /**
           * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
          */

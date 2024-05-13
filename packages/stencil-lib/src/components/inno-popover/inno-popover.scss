@@ -25,6 +25,10 @@
     align-items: center;
     font-weight: bold;
   }
+
+  .tooltip-text {
+    display: block;
+  }
 }
 
 :host(.visible) {

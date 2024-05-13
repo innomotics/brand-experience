@@ -166,7 +166,8 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'trigger',
   'variant',
   'for',
-  'titleContent',
+  'popoverTitle',
+  'popoverText',
   'placement',
   'visible',
   'animationFrame'
