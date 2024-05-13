@@ -2,7 +2,7 @@ import { Component, Host, h, Element, Prop, State, Watch, Event, EventEmitter, M
 import { DateTime, Info } from 'luxon';
 import { OnListener } from '../../utils/listener';
 import { computePosition } from '@floating-ui/dom';
-import { DateChange } from '../inno-date-api/inno-date-api';
+import { DateChange } from '../inno-date-context-api/inno-date-api';
 
 interface CalendarWeek {
   weekNumber: number;
@@ -10,7 +10,7 @@ interface CalendarWeek {
 }
 
 /**
- * Date picker.
+ * Innomotics date-picker.
  */
 @Component({
   tag: 'inno-date-picker',
@@ -22,10 +22,9 @@ export class InnoDatePicker {
 
   /**
    * Date format string.
-   *
+   * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
    */
   @Prop() format: string = 'yyyy/LL/dd';
-  // See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
 
   /**
    * If true a date-range can be selected (from/to).
@@ -33,7 +32,7 @@ export class InnoDatePicker {
   @Prop() range: boolean = true;
 
   /**
-   * The selected starting date. If the date-pickeris not in range mode this is the selected date.
+   * The selected starting date. If the date-picker is not in range mode this is the selected date.
    * Format has to match the `format` property.
    */
   @Prop() from: string | undefined;
@@ -89,10 +88,9 @@ export class InnoDatePicker {
 
   /**
    * Format of time string
-   *
+   * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
    */
   @Prop() locale: string = undefined;
-  // See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
 
   @Watch('locale')
   onLocaleChange() {
@@ -109,17 +107,6 @@ export class InnoDatePicker {
    * Triggers if the date selection changes.
    */
   @Event() dateChange: EventEmitter<DateChange>;
-
-  /**
-   * Triggers if the date selection changes.
-   * Only triggered if date-picker is in range mode.
-   */
-  @Event() dateRangeChange: EventEmitter<DateChange>;
-
-  /**
-   * Date selection confirmed via button action
-   */
-  @Event() dateSelect: EventEmitter<DateChange>;
 
   /**
    * Get the currently selected date-range.
@@ -281,11 +268,6 @@ export class InnoDatePicker {
     clone.push(...clone.splice(0, ((-index % len) + len) % len));
     return clone;
   }
-
-  // private async onDone() {
-  //   const date = await this.getCurrentDate();
-  //   this.dateSelect.emit(date);
-  // }
 
   private calculateCalendar() {
     const calendar: CalendarWeek[] = [];
@@ -457,7 +439,7 @@ export class InnoDatePicker {
     this.getCurrentDate().then(date => {
       this.dateChange.emit(date);
       if (this.range) {
-        this.dateRangeChange.emit(date);
+        this.dateChange.emit(date);
       }
     });
   }
@@ -518,12 +500,11 @@ export class InnoDatePicker {
   }
 
   private dropDown() {
-    console.log(`Dropdown: ${this.showDropdown}`);
-
     const classes = {
       dropdown: true,
       show: this.showDropdown,
     };
+
     return (
       <div class={classes} ref={ref => (this.dropdownContainerRef = ref)}>
         <div class="wrapper">

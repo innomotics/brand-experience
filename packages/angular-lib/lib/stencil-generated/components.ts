@@ -151,7 +151,7 @@ export class InnoDatePicker {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['dateChange', 'dateRangeChange', 'dateSelect']);
+    proxyOutputs(this, this.el, ['dateChange']);
   }
 }
 
@@ -163,38 +163,37 @@ export declare interface InnoDatePicker extends Components.InnoDatePicker {
    * Triggers if the date selection changes.
    */
   dateChange: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
-  /**
-   * Triggers if the date selection changes.
-Only triggered if date-picker is in range mode.
-   */
-  dateRangeChange: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
-  /**
-   * Date selection confirmed via button action
-   */
-  dateSelect: EventEmitter<CustomEvent<IInnoDatePickerDateChange>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['range', 'settings', 'variant']
+  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'to', 'variant', 'weekStartIndex']
 })
 @Component({
   selector: 'inno-date-picker-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['range', 'settings', 'variant'],
+  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'to', 'variant', 'weekStartIndex'],
 })
 export class InnoDatePickerDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['dateChange']);
   }
 }
 
 
-export declare interface InnoDatePickerDropdown extends Components.InnoDatePickerDropdown {}
+import type { DateChange as IInnoDatePickerDropdownDateChange } from '@innomotics/brand-experience';
+
+export declare interface InnoDatePickerDropdown extends Components.InnoDatePickerDropdown {
+  /**
+   * Triggers if the date selection changes.
+   */
+  dateChange: EventEmitter<CustomEvent<IInnoDatePickerDropdownDateChange>>;
+}
 
 
 @ProxyCmp({

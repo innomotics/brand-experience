@@ -71,16 +71,16 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
 
 ## Overview
 
-Date picker.
+Innomotics date-picker.
 
 ## Properties
 
 | Property         | Attribute          | Description                                                                                                                                                              | Type      | Default        |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | -------------- |
-| `format`         | `format`           | Date format string.                                                                                                                                                      | `string`  | `'yyyy/LL/dd'` |
-| `from`           | `from`             | The selected starting date. If the date-pickeris not in range mode this is the selected date. Format has to match the `format` property.                                 | `string`  | `undefined`    |
+| `format`         | `format`           | Date format string. See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.                                                       | `string`  | `'yyyy/LL/dd'` |
+| `from`           | `from`             | The selected starting date. If the date-picker is not in range mode this is the selected date. Format has to match the `format` property.                                | `string`  | `undefined`    |
 | `i18nDone`       | `i18n-done`        | Text of date select button                                                                                                                                               | `string`  | `'Done'`       |
-| `locale`         | `locale`           | Format of time string                                                                                                                                                    | `string`  | `undefined`    |
+| `locale`         | `locale`           | Format of time string See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.                                                     | `string`  | `undefined`    |
 | `maxDate`        | `max-date`         | The latest date that can be selected by the date picker. If not set there will be no restriction.                                                                        | `string`  | `undefined`    |
 | `minDate`        | `min-date`         | The earliest date that can be selected by the date picker. If not set there will be no restriction.                                                                      | `string`  | `undefined`    |
 | `range`          | `range`            | If true a date-range can be selected (from/to).                                                                                                                          | `boolean` | `true`         |
@@ -90,11 +90,9 @@ Date picker.
 
 ## Events
 
-| Event             | Description                                                                             | Type                                         |
-| ----------------- | --------------------------------------------------------------------------------------- | -------------------------------------------- |
-| `dateChange`      | Triggers if the date selection changes.                                                 | `CustomEvent<{ from: string; to: string; }>` |
-| `dateRangeChange` | Triggers if the date selection changes. Only triggered if date-picker is in range mode. | `CustomEvent<{ from: string; to: string; }>` |
-| `dateSelect`      | Date selection confirmed via button action                                              | `CustomEvent<{ from: string; to: string; }>` |
+| Event        | Description                             | Type                                         |
+| ------------ | --------------------------------------- | -------------------------------------------- |
+| `dateChange` | Triggers if the date selection changes. | `CustomEvent<{ from: string; to: string; }>` |
 
 
 ## Methods

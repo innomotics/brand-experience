@@ -76,16 +76,22 @@ export const InnoDatePicker = /*@__PURE__*/ defineContainer<JSX.InnoDatePicker>(
   'locale',
   'standaloneAppearance',
   'today',
-  'dateChange',
-  'dateRangeChange',
-  'dateSelect'
+  'dateChange'
 ]);
 
 
 export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDatePickerDropdown>('inno-date-picker-dropdown', undefined, [
   'variant',
+  'format',
   'range',
-  'settings'
+  'from',
+  'to',
+  'minDate',
+  'maxDate',
+  'weekStartIndex',
+  'locale',
+  'label',
+  'dateChange'
 ]);
 
 

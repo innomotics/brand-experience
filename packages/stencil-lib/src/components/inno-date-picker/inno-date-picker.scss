@@ -1,19 +1,14 @@
 @use './../../../styles/colors' as colors;
 @use './../../../styles/siemens-ix/scrollbar' as ixscrollbar;
+@use '../../../styles/breakpoints' as breakpoints;
 
 :host {
   display: block;
   position: relative;
-  width: 22rem;
+  width: 380px;
 
   .hidden {
     display: none;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  :host {
-    width: 100%;
   }
 }
 
@@ -285,7 +280,14 @@
   }
 }
 
+// Close button, TBD whether it is needed
 .button {
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: breakpoints.$desktop) {
+  :host {
+    width: 100%;
+  }
 }

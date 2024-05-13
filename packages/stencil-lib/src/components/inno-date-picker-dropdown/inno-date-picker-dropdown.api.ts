@@ -1,3 +1,3 @@
 export interface InnoDatePickerDropdownSettings {
-  readonly placeholder?: string;
+  readonly label?: string;
 }

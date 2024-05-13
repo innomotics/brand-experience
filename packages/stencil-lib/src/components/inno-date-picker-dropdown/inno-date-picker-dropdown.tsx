@@ -1,10 +1,10 @@
 import { computePosition } from '@floating-ui/dom';
-import { Component, Host, h, Element, State, Prop } from '@stencil/core';
-import { DateChange } from '../inno-date-api/inno-date-api';
-import { InnoDatePickerDropdownSettings } from './inno-date-picker-dropdown.api';
+import { Component, Host, h, Element, State, Prop, Event, EventEmitter } from '@stencil/core';
+import { DateChange } from '../inno-date-context-api/inno-date-api';
+import { isPresent } from '../../utils/utils';
 
 /**
- *
+ * Date-picker with dropdown.
  */
 @Component({
   tag: 'inno-date-picker-dropdown',
@@ -20,11 +20,62 @@ export class InnoDatePickerDropdown {
   @Prop() variant: 'dark' | 'light' = 'dark';
 
   /**
+   * Date format string.
+   * See the date-picker component for more information.
+   */
+  @Prop() format: string = 'yyyy/LL/dd';
+
+  /**
    * If true a date-range can be selected.
+   * See the date-picker component for more information.
    */
   @Prop() range: boolean = false;
 
-  @Prop() settings?: InnoDatePickerDropdownSettings;
+  /**
+   * The selected starting range.
+   * See the date-picker component for more information.
+   */
+  @Prop() from: string | undefined;
+
+  /**
+   * The selected end date.
+   * See the date-picker component for more information.
+   */
+  @Prop() to: string | undefined;
+
+  /**
+   * The earliest date that can be selected by the date picker.
+   * See the date-picker component for more information.
+   */
+  @Prop() minDate: string;
+
+  /**
+   * The latest date that can be selected by the date picker.
+   * See the date-picker component for more information.
+   */
+  @Prop() maxDate: string;
+
+  /**
+   * The index of which day to start the week on.
+   * See the date-picker component for more information.
+   */
+  @Prop() weekStartIndex = 0;
+
+  /**
+   * Format of the date strings.
+   * See the date-picker component for more information.
+   */
+  @Prop() locale: string = undefined;
+
+  /**
+   * Label of the dropdown component.
+   */
+  @Prop() label: string | undefined;
+
+  /**
+   * Triggers if the date selection changes.
+   */
+  @Event() dateChange: EventEmitter<DateChange>;
 
   @State() show: boolean = false;
   @State() value: string | undefined;
@@ -48,12 +99,14 @@ export class InnoDatePickerDropdown {
     this.show = !this.show;
   }
 
-  private onDateRangeChange(range: DateChange) {
+  private onDateChange(range: DateChange) {
     if (range.to) {
       this.value = `${range.from} - ${range.to}`;
     } else {
       this.value = range.from;
     }
+
+    this.dateChange.emit(range);
   }
 
   private variantClasses() {
@@ -63,21 +116,13 @@ export class InnoDatePickerDropdown {
     };
   }
 
-  // private label() {
-  //   if (this.selectedRange) {
-  //     return `${this.selectedRange.from}`;
-  //   }
-  //   if (this.value) {
-  //     return this.value;
-  //   }
-  // }
-
   private picker() {
     const pickerClasses = {
       ...this.variantClasses(),
       picker: true,
     };
 
+    const label = isPresent(this.label) ? this.label : 'Starting date*';
     const labelClasses = {
       ...this.variantClasses(),
       'picker-label': true,
@@ -97,7 +142,7 @@ export class InnoDatePickerDropdown {
     return (
       <div class={pickerClasses} ref={ref => (this.dropdownHost = ref)} onClick={_ => this.changeVisibility()}>
         <div class={labelClasses}>
-          <span>Starting date*</span>
+          <span>{label}</span>
         </div>
         <div class={valueClasses}>{this.value}</div>
         <div class={pickerIconClasses}>
@@ -117,9 +162,15 @@ export class InnoDatePickerDropdown {
     return (
       <div class={dropdownContainerClasses} ref={ref => (this.datePicker = ref)}>
         <inno-date-picker
+          format={this.format}
           range={this.range}
-          onDateRangeChange={event => this.onDateRangeChange(event.detail)}
-          onDateChange={event => this.onDateRangeChange(event.detail)}
+          from={this.from}
+          to={this.to}
+          minDate={this.minDate}
+          maxDate={this.maxDate}
+          weekStartIndex={this.weekStartIndex}
+          locale={this.locale}
+          onDateChange={event => this.onDateChange(event.detail)}
         ></inno-date-picker>
       </div>
     );
