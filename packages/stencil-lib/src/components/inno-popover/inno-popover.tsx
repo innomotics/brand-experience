@@ -275,8 +275,9 @@ export class InnoPopover {
 
   @Listen('click', { target: 'window' })
   async onClick(event: globalThis.Event) {
-    if (this.visible && this.trigger === 'click') {
-      if (event.target !== this.hostElement && !this.hostElement.contains(event.target as Node)) {
+    if (this.visible) {
+      if ((this.trigger === 'click' && event.target !== this.hostElement && !this.hostElement.contains(event.target as Node))
+        || this.trigger === 'hover') {
         this.hideTooltip();
       }
     }
