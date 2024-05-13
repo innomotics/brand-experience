@@ -152,7 +152,7 @@ export class InnoDatePickerDropdown {
     );
   }
 
-  private calenderContainer() {
+  private calendarContainer() {
     const dropdownContainerClasses = {
       ...this.variantClasses(),
       'dropdown-container': true,
@@ -180,7 +180,7 @@ export class InnoDatePickerDropdown {
     return (
       <Host>
         {this.picker()}
-        {this.calenderContainer()}
+        {this.calendarContainer()}
       </Host>
     );
   }
