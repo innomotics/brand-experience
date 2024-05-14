@@ -51,9 +51,15 @@ export class InnoPopover {
   @Prop() for: string;
 
   /**
-   * Contents of the title. Can be either html or a simple string.
+   * Contents of the title. Can be either html or a simple string. Can be omitted.
    */
-  @Prop({ mutable: true }) titleContent: string;
+  @Prop({ mutable: true }) popoverTitle: string;
+
+  /**
+   * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip, 
+   * otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+   */
+  @Prop({ mutable: true }) popoverText: string;
 
   /**
    * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
@@ -182,7 +188,7 @@ export class InnoPopover {
               target,
               this.hostElement,
               {
-                strategy: 'absolute',
+                strategy: 'fixed',
                 placement: this.placement,
                 middleware: [
                   offset({
@@ -269,8 +275,9 @@ export class InnoPopover {
 
   @Listen('click', { target: 'window' })
   async onClick(event: globalThis.Event) {
-    if (this.visible && this.trigger === 'click') {
-      if (event.target !== this.hostElement && !this.hostElement.contains(event.target as Node)) {
+    if (this.visible) {
+      if ((this.trigger === 'click' && event.target !== this.hostElement && !this.hostElement.contains(event.target as Node))
+        || this.trigger === 'hover') {
         this.hideTooltip();
       }
     }
@@ -301,7 +308,8 @@ export class InnoPopover {
         'dark': this.variant === 'dark'
       }}>
         <div class="tooltip-content">
-          {this.titleContent != null ? <div class="tooltip-title" innerHTML={this.titleContent}></div> : null}
+          {this.popoverTitle != null ? <div class="tooltip-title" innerHTML={this.popoverTitle}></div> : null}
+          {this.popoverText != null ? <div class="tooltip-text" innerHTML={this.popoverText}></div> : null}
           <slot></slot>
         </div>
         <div class="arrow"></div>

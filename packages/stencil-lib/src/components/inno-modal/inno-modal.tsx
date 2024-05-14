@@ -85,7 +85,6 @@ export class InnoModal {
       this.dismissModal();
     } else {
       e.stopPropagation();
-      e.preventDefault();
     }
   }
 
@@ -98,6 +97,7 @@ export class InnoModal {
       const dialog = await waitForElement<HTMLDialogElement>('dialog', this.hostElement);
       this.modalVisible = true;
       dialog.showModal();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (e) {
       console.error('HTMLDialogElement not existing');
     }

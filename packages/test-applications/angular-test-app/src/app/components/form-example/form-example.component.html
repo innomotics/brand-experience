@@ -7,10 +7,9 @@
     name="dew"
     label="SelectBox"
     [formControl]="innoSelect"
-    value="12"
+    [keyValueSelector]="keySelector"
   >
-    <inno-select-item label="dewde" value="12"></inno-select-item>
-    <inno-select-item label="refre" value="132"></inno-select-item>
+    <inno-select-item *ngFor="let something of arrayOfSomething" [label]="something.Name" [value]="something"></inno-select-item>
   </inno-select>
 
   <div class="container">

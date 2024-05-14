@@ -10,7 +10,7 @@ export class InnoSelectItem {
   /**
    * Value of the item.
    */
-  @Prop() value: string;
+  @Prop() value: any;
 
   /**
    * Label of the item, can be different from the value.
@@ -30,7 +30,7 @@ export class InnoSelectItem {
   /**
    * This event is fired whenever an item is selected.
    */
-  @Event() itemSelected: EventEmitter<string>;
+  @Event() itemSelected: EventEmitter<any>;
   @Element() host: HTMLInnoSelectElement;
 
   selectItem() {

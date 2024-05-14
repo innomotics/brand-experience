@@ -2,7 +2,7 @@
 
 :host {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
   z-index: 50;
@@ -24,6 +24,10 @@
     display: flex;
     align-items: center;
     font-weight: bold;
+  }
+
+  .tooltip-text {
+    display: block;
   }
 }
 

@@ -528,7 +528,7 @@ export declare interface InnoPane extends Components.InnoPane {
 
 
 @ProxyCmp({
-  inputs: ['for', 'placement', 'titleContent', 'trigger', 'variant', 'visible'],
+  inputs: ['for', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
   methods: ['showTooltip', 'hideTooltip']
 })
 @Component({
@@ -536,7 +536,7 @@ export declare interface InnoPane extends Components.InnoPane {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['for', 'placement', 'titleContent', 'trigger', 'variant', 'visible'],
+  inputs: ['for', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
 })
 export class InnoPopover {
   protected el: HTMLElement;
@@ -602,14 +602,14 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'isFocused', 'label', 'type', 'value', 'variant']
+  inputs: ['disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'isFocused', 'label', 'type', 'value', 'variant'],
+  inputs: ['disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
@@ -653,7 +653,7 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
   /**
    * This event is fired whenever an item is selected.
    */
-  itemSelected: EventEmitter<CustomEvent<string>>;
+  itemSelected: EventEmitter<CustomEvent<any>>;
 }
 
 

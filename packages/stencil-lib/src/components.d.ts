@@ -471,13 +471,17 @@ export namespace Components {
          */
         "placement": Placement;
         /**
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+         */
+        "popoverText": string;
+        /**
+          * Contents of the title. Can be either html or a simple string. Can be omitted.
+         */
+        "popoverTitle": string;
+        /**
           * Show the tooltip.
          */
         "showTooltip": () => Promise<void>;
-        /**
-          * Contents of the title. Can be either html or a simple string.
-         */
-        "titleContent": string;
         /**
           * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
          */
@@ -577,17 +581,17 @@ export namespace Components {
          */
         "isFocused": boolean;
         /**
+          * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
+         */
+        "keyValueSelector": (val: any) => any;
+        /**
           * Label for the select when no item selected.
          */
         "label": string;
         /**
-          * Type of the select.
-         */
-        "type": 'text' | 'number';
-        /**
           * Value of the select.
          */
-        "value": string;
+        "value": any;
         /**
           * Color variant of the select.
          */
@@ -609,7 +613,7 @@ export namespace Components {
         /**
           * Value of the item.
          */
-        "value": string;
+        "value": any;
     }
     /**
      * Represents a status message entry.
@@ -1162,7 +1166,7 @@ declare global {
         new (): HTMLInnoSelectElement;
     };
     interface HTMLInnoSelectItemElementEventMap {
-        "itemSelected": string;
+        "itemSelected": any;
     }
     interface HTMLInnoSelectItemElement extends Components.InnoSelectItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1792,9 +1796,13 @@ declare namespace LocalJSX {
          */
         "placement"?: Placement;
         /**
-          * Contents of the title. Can be either html or a simple string.
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
          */
-        "titleContent"?: string;
+        "popoverText"?: string;
+        /**
+          * Contents of the title. Can be either html or a simple string. Can be omitted.
+         */
+        "popoverTitle"?: string;
         /**
           * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
          */
@@ -1894,6 +1902,10 @@ declare namespace LocalJSX {
          */
         "isFocused"?: boolean;
         /**
+          * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
+         */
+        "keyValueSelector"?: (val: any) => any;
+        /**
           * Label for the select when no item selected.
          */
         "label"?: string;
@@ -1902,13 +1914,9 @@ declare namespace LocalJSX {
          */
         "onValueChanged"?: (event: InnoSelectCustomEvent<string>) => void;
         /**
-          * Type of the select.
-         */
-        "type"?: 'text' | 'number';
-        /**
           * Value of the select.
          */
-        "value"?: string;
+        "value"?: any;
         /**
           * Color variant of the select.
          */
@@ -1926,7 +1934,7 @@ declare namespace LocalJSX {
         /**
           * This event is fired whenever an item is selected.
          */
-        "onItemSelected"?: (event: InnoSelectItemCustomEvent<string>) => void;
+        "onItemSelected"?: (event: InnoSelectItemCustomEvent<any>) => void;
         /**
           * Whether the item is selected or not.
          */
@@ -1934,7 +1942,7 @@ declare namespace LocalJSX {
         /**
           * Value of the item.
          */
-        "value"?: string;
+        "value"?: any;
     }
     /**
      * Represents a status message entry.

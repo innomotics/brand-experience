@@ -197,7 +197,8 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'trigger',
   'variant',
   'for',
-  'titleContent',
+  'popoverTitle',
+  'popoverText',
   'placement',
   'visible',
   'animationFrame'
@@ -230,7 +231,7 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
 
 
 export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-select', undefined, [
-  'type',
+  'keyValueSelector',
   'value',
   'isFocused',
   'disabled',
