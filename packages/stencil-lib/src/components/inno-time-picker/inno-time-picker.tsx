@@ -33,10 +33,9 @@ export class InnoTimePicker {
 
   /**
    * Date format string.
-
+   * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
    */
   @Prop() format: string = 'HH:mm:ss';
-  //    * See {@link "https://moment.github.io/luxon/#/formatting?id=table-of-tokens"} for all available tokens.
 
   /**
    *
