@@ -15,6 +15,12 @@ import {
 export class FormExampleComponent {
   formValue = '';
 
+  public arrayOfSomething: {Name: string, Key: number}[] = [
+    {Name: 'something1', Key: 1},
+    {Name: 'something2', Key: 2},
+    {Name: 'something3', Key: 3}
+  ];
+
   public innomoticsForm!: UntypedFormGroup;
 
   public get innoInput(): UntypedFormControl {
@@ -25,10 +31,14 @@ export class FormExampleComponent {
     return this.innomoticsForm.get('innoSelect') as UntypedFormControl;
   }
 
+  public keySelector(item: any): any {
+    return item.Key;
+  }
+
   constructor(public formBuilder: UntypedFormBuilder) {
     this.innomoticsForm = this.formBuilder.group({
       innoInput: [0],
-      innoSelect: [undefined],
+      innoSelect: [this.arrayOfSomething[0]],
       checkboxtest1: this.formBuilder.control(undefined, [
         Validators.requiredTrue,
       ]),

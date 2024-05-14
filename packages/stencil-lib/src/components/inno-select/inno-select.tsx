@@ -14,14 +14,16 @@ export class InnoSelect {
   @State() navigationItem: HTMLInnoSelectItemElement;
 
   /**
-   * Type of the select.
+   * If you work with object arrays you can set a simple function which returns the unique key value 
+   * so the objects can be differentiated. By default we assume you work with simple arrays
+   * so we simply return the value as it is, in that case you don't have to provide this function.
    */
-  @Prop() type: 'text' | 'number' = 'text';
+  @Prop({ mutable: true }) keyValueSelector: (val: any) => any = (val: any) => { return val; };
 
   /**
    * Value of the select.
    */
-  @Prop({ mutable: true }) value: string;
+  @Prop({ mutable: true }) value: any;
 
   /**
    * Whether the select is focused or not.
@@ -63,7 +65,10 @@ export class InnoSelect {
 
   componentDidLoad() {
     if (this.value) {
-      this.selectitem(this.value, true);
+      let selectedItem = this.items.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
+      if (!!selectedItem) {
+        this.selectitem(selectedItem.value, true);
+      }
     }
   }
 
@@ -131,17 +136,17 @@ export class InnoSelect {
   }
 
   @Listen('itemSelected')
-  itemSelected(event: CustomEvent<string>) {
+  itemSelected(event: CustomEvent<any>) {
     this.selectitem(event.detail);
   }
 
-  selectitem(value: string, init: boolean = false) {
+  selectitem(value: any, init: boolean = false) {
     this.value = value;
     if (!init) {
       this.valueChanged.emit(this.value);
     }
     this.items.forEach(i => {
-      if (i.value === this.value) {
+      if (this.keyValueSelector(i.value) === this.keyValueSelector(this.value)) {
         i.selected = true;
       } else {
         i.selected = false;
@@ -207,7 +212,7 @@ export class InnoSelect {
   }
 
   get selectedItem() {
-    return this.items.find(i => i.value == this.value);
+    return this.items.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
   }
 
   get valueIsUndefined() {
@@ -220,7 +225,7 @@ export class InnoSelect {
         tabindex={0}
         class={{
           'input-container': true,
-          'isactive': this.value != undefined,
+          'isactive': !this.valueIsUndefined,
           'focused': this.isFocused,
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
