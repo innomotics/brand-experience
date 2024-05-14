@@ -12,5 +12,10 @@
 </div>
 
 <div>
-  <inno-date-picker></inno-date-picker>
+  <inno-date-picker
+    [range]="false"
+    (dateChange)="dateChange($event.detail)"
+  ></inno-date-picker>
+
+  Selected date value: {{ selectedDate }}
 </div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { StatusMessageService } from '@innomotics/brand-experience-angular-lib';
+import {
+  DateChange,
+  StatusMessageService,
+} from '@innomotics/brand-experience-angular-lib';
 
 @Component({
   selector: 'app-general-example',
@@ -7,6 +10,8 @@ import { StatusMessageService } from '@innomotics/brand-experience-angular-lib';
   styleUrl: './general-example.component.scss',
 })
 export class GeneralExampleComponent {
+  selectedDate = 'no date selected';
+
   constructor(private messageService: StatusMessageService) {}
 
   async showStatusMessage() {
@@ -23,5 +28,9 @@ export class GeneralExampleComponent {
     this.messageService.setPosition('top-right');
 
     setTimeout(() => ref.close(':('), 2000);
+  }
+
+  dateChange(dateChange: DateChange) {
+    this.selectedDate = `${dateChange.from} - ${dateChange.to}`;
   }
 }

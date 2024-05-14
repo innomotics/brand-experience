@@ -23,7 +23,7 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
   <TabItem value="Angular" label="Angular">
     <div class="component-display">
     <div class="dark-bg">
-      <span class="bg-title">Angular example</span>
+      <span class="bg-title">Component is usable as a normal Angular component.</span>
 
       ```html
       <div>
@@ -37,10 +37,10 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
   <TabItem value="React" label="React">
     <div class="component-display">
     <div class="dark-bg">
-      <span class="bg-title">Inno date picker react</span>
+      <span class="bg-title">Component is usable as a normal React component</span>
 
       ```tsx
-      export function InnoStatusMessageExample() {
+      export function InnoDatePickerExample() {
         return (
           <>
             <InnoDatePicker></InnoDatePicker>

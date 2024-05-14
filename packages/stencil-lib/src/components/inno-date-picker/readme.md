@@ -23,30 +23,55 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
   <TabItem value="Angular" label="Angular">
     <div class="component-display">
     <div class="dark-bg">
-      <span class="bg-title">Angular example</span>
+      <span class="bg-title">Component is usable as a normal Angular component.</span>
 
       ```html
       <div>
-        <inno-date-picker></inno-date-picker>
+        <inno-date-picker [range]="true" (dateChange)="dateChange($event.detail)"></inno-date-picker>
       </div>
       ```
-    </div>
-    </div>
+
+      ```ts
+      @Component()
+      export class ExampleComponent {
+        dateChange(dateChange: DateChange) {
+          // Use the date values
+          const selectedDate = `${dateChange.from} - ${dateChange.to}`;
+        }
+      }
+
+      ```
+
+</div>
+</div>
 
   </TabItem>
   <TabItem value="React" label="React">
     <div class="component-display">
     <div class="dark-bg">
-      <span class="bg-title">Inno date picker react</span>
+      <span class="bg-title">Component is usable as a normal React component</span>
 
       ```tsx
-      export function InnoDatePickerExample() {
+      export default function InnoDatePickerExample() {
+        const [selecedDate, changeDate] = useState<DateChange | undefined>(undefined);
+
+        const handleDateChange = (event: CustomEvent<DateChange>) => {
+          changeDate(event.detail);
+        };
+
         return (
-          <>
-            <InnoDatePicker></InnoDatePicker>
-          </>
+          <div>
+            <InnoDatePicker
+              range={true}
+              onDateChange={(event) => handleDateChange(event)}
+            ></InnoDatePicker>
+
+            <span>Selectes value: </span>
+            {`${selecedDate?.from} - ${selecedDate?.to}`}
+          </div>
         );
       }
+
       ```
     </div>
 

@@ -68,6 +68,7 @@ import {InnoDatePickerDropdown} from '@innomotics/brand-experience-react-lib';
 
 <!-- Auto Generated Below -->
 
+
 ## Overview
 
 Date-picker with dropdown.
@@ -87,11 +88,13 @@ Date-picker with dropdown.
 | `variant`        | `variant`          | Color variant of the component.                                                                                | `"dark" \| "light"` | `'dark'`       |
 | `weekStartIndex` | `week-start-index` | The index of which day to start the week on. See the date-picker component for more information.               | `number`            | `0`            |
 
+
 ## Events
 
 | Event        | Description                             | Type                                         |
 | ------------ | --------------------------------------- | -------------------------------------------- |
 | `dateChange` | Triggers if the date selection changes. | `CustomEvent<{ from: string; to: string; }>` |
+
 
 ## Dependencies
 
@@ -101,7 +104,6 @@ Date-picker with dropdown.
 - [inno-date-picker](../inno-date-picker)
 
 ### Graph
-
 ```mermaid
 graph TD;
   inno-date-picker-dropdown --> inno-icon
@@ -111,6 +113,6 @@ graph TD;
   style inno-date-picker-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

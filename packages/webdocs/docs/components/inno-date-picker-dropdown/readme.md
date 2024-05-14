@@ -40,7 +40,7 @@ import {InnoDatePickerDropdown} from '@innomotics/brand-experience-react-lib';
       <span class="bg-title">Inno date picker react</span>
 
       ```tsx
-      export function InnoStatusMessageExample() {
+      export function InnoDatePickerDropdownExample() {
         return (
           <>
             <InnoDatePickerDropdown></InnoDatePickerDropdown>
