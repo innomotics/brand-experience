@@ -1,4 +1,4 @@
-import { applyPolyfills, defineCustomElements } from '@innomotics/brand-experience/loader';
+import { defineCustomElements } from '@innomotics/brand-experience/loader';
 
 let didInitialize = false;
 
@@ -12,7 +12,6 @@ export const appInitialize = (doc: Document) => {
 
       didInitialize = true;
 
-      await applyPolyfills();
       await defineCustomElements();
     }
   };
