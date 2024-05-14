@@ -709,7 +709,7 @@ export namespace Components {
     }
     interface InnoTimePicker {
         /**
-          * Date format string.
+          * Date format string. See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
          */
         "format": string;
         /**
@@ -2041,7 +2041,7 @@ declare namespace LocalJSX {
     }
     interface InnoTimePicker {
         /**
-          * Date format string.
+          * Date format string. See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
          */
         "format"?: string;
         "onValueChange"?: (event: InnoTimePickerCustomEvent<any>) => void;

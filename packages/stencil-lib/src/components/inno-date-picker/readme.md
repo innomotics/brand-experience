@@ -93,6 +93,7 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
 
 <!-- Auto Generated Below -->
 
+
 ## Overview
 
 Innomotics date-picker.
@@ -111,11 +112,13 @@ Innomotics date-picker.
 | `to`             | `to`               | The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.                                   | `string`  | `undefined`    |
 | `weekStartIndex` | `week-start-index` | The index of which day to start the week on, based on the Locale#weekdays array. E.g. if the locale is en-us, weekStartIndex = 1 results in starting the week on monday. | `number`  | `0`            |
 
+
 ## Events
 
 | Event        | Description                             | Type                                         |
 | ------------ | --------------------------------------- | -------------------------------------------- |
 | `dateChange` | Triggers if the date selection changes. | `CustomEvent<{ from: string; to: string; }>` |
+
 
 ## Methods
 
@@ -127,11 +130,14 @@ Get the currently selected date-range.
 
 Type: `Promise<{ from: string; to: string; }>`
 
+
+
+
 ## Dependencies
 
 ### Used by
 
-- [inno-date-picker-dropdown](../inno-date-picker-dropdown)
+ - [inno-date-picker-dropdown](../inno-date-picker-dropdown)
 
 ### Depends on
 
@@ -139,7 +145,6 @@ Type: `Promise<{ from: string; to: string; }>`
 - inno-date-time-card
 
 ### Graph
-
 ```mermaid
 graph TD;
   inno-date-picker --> inno-icon
@@ -148,6 +153,6 @@ graph TD;
   style inno-date-picker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
