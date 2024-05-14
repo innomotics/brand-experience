@@ -13,6 +13,9 @@ const DEFAULT_TEXTS: InnoTimePickerTexts = {
   secondLabel: 'Sec',
 };
 
+/**
+ *
+ */
 @Component({
   tag: 'inno-time-picker',
   styleUrl: 'inno-time-picker.scss',
