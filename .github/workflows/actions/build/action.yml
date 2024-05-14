@@ -24,5 +24,5 @@ runs:
       shell: bash
 
     - name: build all
-      run: lerna run build --no-private
+      run: lerna run build
       shell: bash
