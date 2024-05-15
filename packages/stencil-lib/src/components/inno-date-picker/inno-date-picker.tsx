@@ -152,7 +152,7 @@ export class InnoDatePicker {
 
   private isDayFocus: boolean;
   private monthChangedFromFocus: boolean;
-  private readonly DAYS_IN_WEEK = 7;
+  //private readonly DAYS_IN_WEEK = 7;
   private calendar: CalendarWeek[];
 
   @OnListener<InnoDatePicker>('keydown')
@@ -273,71 +273,37 @@ export class InnoDatePicker {
     const calendar: CalendarWeek[] = [];
     const month = DateTime.utc(this.selectedYear, this.selectedMonth + 1);
     const monthStart = month.startOf('month');
-    const monthEnd = month.endOf('month');
     let startWeek = monthStart.weekNumber;
-    let endWeek = monthEnd.weekNumber;
     let monthStartWeekDayIndex = monthStart.weekday - 1;
-    let monthEndWeekDayIndex = monthEnd.weekday - 1;
+    let fullmonthDays: number[] = [];
 
     if (this.weekStartIndex !== 0) {
       // Find the positions where to start/stop counting the day-numbers based on which day the week starts
       const weekdays = Info.weekdays();
-      const monthStartWeekDayName = weekdays[monthStart.weekday];
-
+      const monthStartWeekDayName = weekdays[monthStartWeekDayIndex];
       monthStartWeekDayIndex = this.dayNames.findIndex(d => d === monthStartWeekDayName);
-      const monthEndWeekDayName = weekdays[monthEnd.weekday];
-      monthEndWeekDayIndex = this.dayNames.findIndex(d => d === monthEndWeekDayName);
+    }
+    //assemble full month array
+    for (let i = 0; i < monthStartWeekDayIndex; i++) {
+      fullmonthDays.push(undefined);
     }
 
-    let correctLastWeek = false;
-    if (endWeek === 1) {
-      endWeek = monthEnd.weeksInWeekYear + 1;
-      correctLastWeek = true;
+    for (let currDayNumber = 1; currDayNumber <= month.daysInMonth; currDayNumber++) {
+      fullmonthDays.push(currDayNumber);
     }
 
-    let correctFirstWeek = false;
-    if (startWeek === monthStart.weeksInWeekYear) {
-      startWeek = 1;
-      endWeek++;
+    let endFill = fullmonthDays.length % 7;
 
-      correctFirstWeek = true;
-    }
-
-    let currDayNumber = 1;
-    for (let weekIndex = startWeek; weekIndex <= endWeek && currDayNumber <= 31; weekIndex++) {
-      const daysArr: number[] = [];
-
-      for (let j = 0; j < this.DAYS_IN_WEEK && currDayNumber <= 31; j++) {
-        // Display empty cells until the calender starts/has ended
-        if ((weekIndex === startWeek && j < monthStartWeekDayIndex) || (weekIndex === endWeek && j > monthEndWeekDayIndex)) {
-          daysArr.push(undefined);
-        } else {
-          daysArr.push(currDayNumber++);
-        }
+    if (endFill != 0) {
+      for (let i = 0; i < 7 - endFill; i++) {
+        fullmonthDays.push(undefined);
       }
+    }
 
-      if (correctFirstWeek || correctLastWeek) {
-        if (weekIndex === 1) {
-          calendar.push({
-            weekNumber: monthStart.weeksInWeekYear,
-            dayNumbers: daysArr,
-          });
-        } else if (weekIndex === monthEnd.weekNumber) {
-          calendar.push({
-            weekNumber: 1,
-            dayNumbers: daysArr,
-          });
-        } else {
-          calendar.push({
-            weekNumber: weekIndex - 1,
-            dayNumbers: daysArr,
-          });
-        }
-        continue;
-      }
-
+    for (let i = 0; i < fullmonthDays.length; i += 7) {
+      let daysArr = fullmonthDays.slice(i, i + 7);
       calendar.push({
-        weekNumber: weekIndex,
+        weekNumber: startWeek++,
         dayNumbers: daysArr,
       });
     }

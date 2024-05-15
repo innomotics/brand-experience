@@ -22,7 +22,6 @@ import { ModalByComponentComponent } from './components/modal-example/components
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    ComponentsModule,
     ComponentsModule.forRoot(),
   ],
   providers: [],
