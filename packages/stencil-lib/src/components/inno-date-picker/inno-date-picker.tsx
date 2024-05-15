@@ -152,7 +152,7 @@ export class InnoDatePicker {
 
   private isDayFocus: boolean;
   private monthChangedFromFocus: boolean;
-  //private readonly DAYS_IN_WEEK = 7;
+  private readonly DAYS_IN_WEEK = 7;
   private calendar: CalendarWeek[];
 
   @OnListener<InnoDatePicker>('keydown')
@@ -171,10 +171,10 @@ export class InnoDatePicker {
         _focusedDay++;
         break;
       case 'ArrowUp':
-        _focusedDay = _focusedDay - 7;
+        _focusedDay = _focusedDay - this.DAYS_IN_WEEK;
         break;
       case 'ArrowDown':
-        _focusedDay = _focusedDay + 7;
+        _focusedDay = _focusedDay + this.DAYS_IN_WEEK;
         break;
       default:
         return;
@@ -292,16 +292,16 @@ export class InnoDatePicker {
       fullmonthDays.push(currDayNumber);
     }
 
-    let endFill = fullmonthDays.length % 7;
+    let endFill = fullmonthDays.length % this.DAYS_IN_WEEK;
 
     if (endFill != 0) {
-      for (let i = 0; i < 7 - endFill; i++) {
+      for (let i = 0; i < this.DAYS_IN_WEEK - endFill; i++) {
         fullmonthDays.push(undefined);
       }
     }
 
-    for (let i = 0; i < fullmonthDays.length; i += 7) {
-      let daysArr = fullmonthDays.slice(i, i + 7);
+    for (let i = 0; i < fullmonthDays.length; i += this.DAYS_IN_WEEK) {
+      let daysArr = fullmonthDays.slice(i, i + this.DAYS_IN_WEEK);
       calendar.push({
         weekNumber: startWeek++,
         dayNumbers: daysArr,
