@@ -7,6 +7,8 @@ export const DIRECTIVES = [
   d.InnoBreadcrumbItem,
   d.InnoButton,
   d.InnoCheckbox,
+  d.InnoDatePicker,
+  d.InnoDatePickerDropdown,
   d.InnoDragAndDrop,
   d.InnoError,
   d.InnoFooter,
@@ -28,5 +30,6 @@ export const DIRECTIVES = [
   d.InnoStatusMessage,
   d.InnoTab,
   d.InnoTabItem,
+  d.InnoTimePicker,
   d.InnoToggle
 ];

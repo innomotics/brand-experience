@@ -41,35 +41,67 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       .content {
         display: flex;
+
         &.filled {
           flex-direction: column;
         }
+
+        .label {
+          &.light {
+            color: colors.$secondary-800;
+
+            &.disabled {
+              color: colors.$text-light-lowemphasis;
+            }
+          }
+
+          &.dark {
+            color: colors.$text-dark-lowemphasis;
+
+            &.disabled {
+              color: colors.$text-dark-lowemphasis;
+            }
+          }
+        }
+
+        .float {
+          transform: translate(0rem, -0.3rem) scale(1);
+          font-size: small;
+        }
+
+        .label-value {
+          &.light {
+            color: colors.$primary-200;
+          }
+
+          &.dark {
+            color: colors.$primary-300;
+          }
+        }
       }
     }
+
     &.dark {
       background-color: colors.$background-dark-200;
+
+      &.disabled {
+        background-image: linear-gradient(colors.$transparency-dark-100, colors.$transparency-dark-100)
+      }
     }
+
+    &.light {
+      background-color: colors.$primary-300;
+
+      &.disabled {
+        background-color: rgb(colors.$primary-200, 0.1);
+      }
+    }
+
   }
 
-  .label {
-    &.light {
-      &.disabled {
-        color: colors.$text-light-lowemphasis;
-      }
-    }
-    &.dark {
-      color: colors.$text-dark-lowemphasis;
-      &.disabled {
-        color: colors.$text-dark-lowemphasis;
-      }
-    }
-  }
-  .float {
-    transform: translate(0rem, -0.3rem) scale(1);
-    font-size: small;
-  }
 
   .select-wrapper {
     position: relative;
@@ -89,5 +121,31 @@
 
   &.disabled {
     border: 1px solid colors.$interaction-light-disabled;
+    background-color: colors.$transparency-dark-100;
+    pointer-events: none;
+  }
+
+  &.dark {
+    .select-header {
+      inno-icon {
+        color: colors.$primary-300;
+      }
+    }
+
+    .icon-driven {
+      color: colors.$primary-300;
+    }
+  }
+
+  &.light {
+    .select-header {
+      inno-icon {
+        color: colors.$primary-200;
+      }
+    }
+
+    .icon-driven {
+      color: colors.$primary-200;
+    }
   }
 }

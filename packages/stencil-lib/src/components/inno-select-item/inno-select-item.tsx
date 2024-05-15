@@ -42,7 +42,7 @@ export class InnoSelectItem {
       <Host class={{ 'select-item': true, 'icon-driven': this.icon != undefined, selected: this.selected }} onClick={() => this.selectItem()}>
         {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
         <div class="content-wrapper">{this.label}</div>
-        {this.selected && !this.icon ? <inno-icon icon="check" size={16}></inno-icon> : null}
+        {this.selected && !this.icon ? <inno-icon icon="checkcheckbox" size={24}></inno-icon> : null}
       </Host>
     );
   }
