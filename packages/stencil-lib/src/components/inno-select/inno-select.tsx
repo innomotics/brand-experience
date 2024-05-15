@@ -241,7 +241,9 @@ export class InnoSelect {
                 <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
                   {this.label}
                 </span>
-                <span>{this.selectedItem?.label}</span>
+                <span class={{ "label-value": true, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
+                  {this.selectedItem?.label}
+                </span>
               </div>
               <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
