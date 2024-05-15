@@ -11,11 +11,6 @@ export class InnoInput {
   private inputElementRef?: HTMLInputElement;
 
   /**
-   * Value of the input.
-   */
-  @Prop({ mutable: true }) value: string | number;
-
-  /**
    * Fired when the new value is valid.
    */
   @Event() valueChanged: EventEmitter<string | number>;
@@ -68,31 +63,29 @@ export class InnoInput {
       this.isValid = true;
     }
 
+    this.isActive = !this.isValueEmpty();
+
     if (this.isValid) {
-      this.value = event.target.value;
       this.valueChanged.emit(this.value);
-    } else {
-      this.isActive = true;
     }
   }
 
-  activated() {
-    if ((this.value === '' || this.value === undefined) && this.isValid) {
-      return false;
-    }
-    return true;
+  private isValueEmpty(): boolean {
+    return this.value === '' || this.value === undefined || this.value === null;
   }
-  componentWillLoad() {
-    if (this.activated()) {
-      this.isActive = true;
-    }
+
+  private get value(): any {
+    return this.inputElementRef?.value;
   }
+
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
-    this.errorElements.forEach(ee => ee.classList.add(this.variant));
-    if (this.isActive) {
-      this.inputElementRef.value = this.value.toString();
+
+    if (!this.isValueEmpty()) {
+      this.isActive = true;
     }
+
+    this.errorElements.forEach(ee => ee.classList.add(this.variant));
   }
 
   @Listen('focusin')
@@ -103,7 +96,7 @@ export class InnoInput {
 
   @Listen('focusout')
   onFocusout() {
-    if ((this.value === '' || this.value === undefined) && this.isValid) {
+    if (this.isValueEmpty()) {
       this.isActive = false;
     }
     this.isFocused = false;

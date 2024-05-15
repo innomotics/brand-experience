@@ -87,7 +87,6 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
 | `disabled`  | `disabled`   | Whether the input is disabled or not. | `boolean`           | `false`     |
 | `isFocused` | `is-focused` | Whether the input is focused or not.  | `boolean`           | `undefined` |
 | `label`     | `label`      | Floating label for the input.         | `string`            | `undefined` |
-| `value`     | `value`      | Value of the input.                   | `number \| string`  | `undefined` |
 | `variant`   | `variant`    | Color variant of the input.           | `"dark" \| "light"` | `'light'`   |
 
 
