@@ -135,6 +135,7 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'disabled',
   'label',
   'variant',
+  'valuePropReDefine',
   'valueChanged'
 ]);
 

@@ -56,4 +56,8 @@ export class FormExampleComponent {
   checkboxValid() {
     this.innomoticsForm.get('checkboxtest1')?.valid;
   }
+
+  public randomval() {
+    this.innoInput.setValue("" + Date.now());
+  }
 }

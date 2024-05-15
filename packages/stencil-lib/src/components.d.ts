@@ -327,6 +327,7 @@ export namespace Components {
           * Floating label for the input.
          */
         "label": string;
+        "valuePropReDefine": boolean;
         /**
           * Color variant of the input.
          */
@@ -1640,6 +1641,7 @@ declare namespace LocalJSX {
           * Fired when the new value is valid.
          */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
+        "valuePropReDefine"?: boolean;
         /**
           * Color variant of the input.
          */
