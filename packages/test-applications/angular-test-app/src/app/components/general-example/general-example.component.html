@@ -10,3 +10,13 @@
 <div>
   <inno-button (click)="showStatusMessage()">show toast</inno-button>
 </div>
+
+<div>
+  <inno-date-picker
+    [range]="false"
+    (dateChange)="dateChange($event.detail)"
+    weekStartIndex="6"
+  ></inno-date-picker>
+
+  Selected date value: {{ selectedDate }}
+</div>

@@ -5,6 +5,6 @@ import { defineCustomElements } from '@innomotics/brand-experience/loader';
 
 export const ComponentLibrary: Plugin = {
   async install() {
-    defineCustomElements();
-  }
+      defineCustomElements();
+  },
 };

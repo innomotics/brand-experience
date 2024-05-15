@@ -8,6 +8,7 @@ import {
 import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
 import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
 import { InnoStatusMessageExample } from "./components/InnoStatusMessageExample/InnoStatusMessageExample";
+import InnoDatePickerExample from "./components/InnoDatePickerExample/InnoDatePickerExample";
 
 defineCustomElements();
 
@@ -28,6 +29,8 @@ function App() {
       <InnoModalExample></InnoModalExample>
 
       <InnoStatusMessageExample></InnoStatusMessageExample>
+
+      <InnoDatePickerExample></InnoDatePickerExample>
     </>
   );
 }

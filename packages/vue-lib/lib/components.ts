@@ -64,6 +64,37 @@ export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inn
 ]);
 
 
+export const InnoDatePicker = /*@__PURE__*/ defineContainer<JSX.InnoDatePicker>('inno-date-picker', undefined, [
+  'format',
+  'range',
+  'from',
+  'to',
+  'minDate',
+  'maxDate',
+  'i18nDone',
+  'weekStartIndex',
+  'locale',
+  'standaloneAppearance',
+  'today',
+  'dateChange'
+]);
+
+
+export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDatePickerDropdown>('inno-date-picker-dropdown', undefined, [
+  'variant',
+  'format',
+  'range',
+  'from',
+  'to',
+  'minDate',
+  'maxDate',
+  'weekStartIndex',
+  'locale',
+  'label',
+  'dateChange'
+]);
+
+
 export const InnoDragAndDrop = /*@__PURE__*/ defineContainer<JSX.InnoDragAndDrop>('inno-drag-and-drop', undefined, [
   'variant',
   'accept',
@@ -247,6 +278,15 @@ export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-
   'selected',
   'disabled',
   'tabClick'
+]);
+
+
+export const InnoTimePicker = /*@__PURE__*/ defineContainer<JSX.InnoTimePicker>('inno-time-picker', undefined, [
+  'theme',
+  'texts',
+  'format',
+  'time',
+  'valueChange'
 ]);
 
 
