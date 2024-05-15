@@ -151,8 +151,13 @@ export class InnoTab {
   private moveTabToView(tabIndex: number) {
     if (!this.showArrows()) return;
 
-    const tab = this.getTab(tabIndex).getBoundingClientRect();
-    const amount = tab.x * -1;
+    const tab = this.getTab(tabIndex);
+    const dimension = tab.getBoundingClientRect();
+
+    // Adjust the item additionally to calculate with the width of the left and right arrows.
+    // Current value: width of the component divided by 2
+    const adjustment = this.showArrow ? dimension.width / 2 : 0;
+    const amount = (dimension.x - adjustment) * -1;
     this.move(amount, true);
   }
 
@@ -178,16 +183,24 @@ export class InnoTab {
     if (!this.showArrows()) return;
     if (event.button > 0) return;
 
+    // Dragstart is called at start of a drag or click event
+    // Set the click event explicitly for the case if drag stop event target is not on the same component as the dragged item
+    // and the tabClick handler is not invoked and the tab click won't work as the drag mode is on
+    this.clickAction.isClick = true;
     this.clickAction.timeout = this.clickAction.timeout === null ? setTimeout(() => (this.clickAction.isClick = false), 300) : null;
 
     const tabPositionX = parseFloat(window.getComputedStyle(element).left);
     const mousedownPositionX = event.clientX;
     const move = (event: MouseEvent) => this.dragMove(event, tabPositionX, mousedownPositionX);
 
-    window.addEventListener('mouseup', () => {
+    // Refactored to a variable to remove event listener to prevent memory leak
+    const mouseUpListener = () => {
       window.removeEventListener('mousemove', move, false);
+      window.removeEventListener('mouseup', mouseUpListener);
       this.dragStop();
-    });
+    };
+
+    window.addEventListener('mouseup', mouseUpListener);
     window.addEventListener('mousemove', move, false);
   }
 
@@ -195,14 +208,13 @@ export class InnoTab {
     this.move(event.clientX + tabX - mousedownX);
   }
 
-  private dragStop() {
+  private dragStop(): boolean {
     clearTimeout(this.clickAction.timeout);
     this.clickAction.timeout = null;
 
     if (this.clickAction.isClick) return false;
 
     this.currentScrollAmount = this.scrollActionAmount;
-    this.clickAction.isClick = true;
 
     return true;
   }
@@ -245,7 +257,12 @@ export class InnoTab {
 
   @Listen('tabClick')
   onTabClick(event: CustomEvent) {
-    if (event.defaultPrevented) {
+    // Click on the tab is called after the dragStop event
+    // If there is an ongoing drag event then the click on the component should be ignored
+    // not to select and move to the component and the click handler should be reseted
+    // because the normal click will not work
+    if (event.defaultPrevented || this.clickAction.isClick === false) {
+      this.clickAction.isClick = true;
       return;
     }
 
@@ -253,7 +270,7 @@ export class InnoTab {
     const tabs = this.getTabs();
 
     tabs.forEach((tab, index) => {
-      if (!tab.disabled && tab === target) {
+      if (!tab.disabled && tab === target && this.clickAction.isClick) {
         this.clickTab(index);
       }
     });
