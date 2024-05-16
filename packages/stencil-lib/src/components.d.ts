@@ -707,6 +707,9 @@ export namespace Components {
          */
         "theme": 'light' | 'dark';
     }
+    interface InnoTableBase {
+        "variant": 'light' | 'dark';
+    }
     interface InnoTimePicker {
         /**
           * Date format string. See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
@@ -1246,6 +1249,12 @@ declare global {
         prototype: HTMLInnoTabItemElement;
         new (): HTMLInnoTabItemElement;
     };
+    interface HTMLInnoTableBaseElement extends Components.InnoTableBase, HTMLStencilElement {
+    }
+    var HTMLInnoTableBaseElement: {
+        prototype: HTMLInnoTableBaseElement;
+        new (): HTMLInnoTableBaseElement;
+    };
     interface HTMLInnoTimePickerElementEventMap {
         "valueChange": any;
     }
@@ -1311,6 +1320,7 @@ declare global {
         "inno-status-message-container": HTMLInnoStatusMessageContainerElement;
         "inno-tab": HTMLInnoTabElement;
         "inno-tab-item": HTMLInnoTabItemElement;
+        "inno-table-base": HTMLInnoTableBaseElement;
         "inno-time-picker": HTMLInnoTimePickerElement;
         "inno-toggle": HTMLInnoToggleElement;
     }
@@ -2039,6 +2049,9 @@ declare namespace LocalJSX {
          */
         "theme"?: 'light' | 'dark';
     }
+    interface InnoTableBase {
+        "variant"?: 'light' | 'dark';
+    }
     interface InnoTimePicker {
         /**
           * Date format string. See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
@@ -2108,6 +2121,7 @@ declare namespace LocalJSX {
         "inno-status-message-container": InnoStatusMessageContainer;
         "inno-tab": InnoTab;
         "inno-tab-item": InnoTabItem;
+        "inno-table-base": InnoTableBase;
         "inno-time-picker": InnoTimePicker;
         "inno-toggle": InnoToggle;
     }
@@ -2190,6 +2204,7 @@ declare module "@stencil/core" {
              * See the InnoTab component for more information about how to use the tab component.
              */
             "inno-tab-item": LocalJSX.InnoTabItem & JSXBase.HTMLAttributes<HTMLInnoTabItemElement>;
+            "inno-table-base": LocalJSX.InnoTableBase & JSXBase.HTMLAttributes<HTMLInnoTableBaseElement>;
             "inno-time-picker": LocalJSX.InnoTimePicker & JSXBase.HTMLAttributes<HTMLInnoTimePickerElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;
         }

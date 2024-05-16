@@ -744,6 +744,28 @@ export declare interface InnoTabItem extends Components.InnoTabItem {
 
 
 @ProxyCmp({
+  inputs: ['variant']
+})
+@Component({
+  selector: 'inno-table-base',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['variant'],
+})
+export class InnoTableBase {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoTableBase extends Components.InnoTableBase {}
+
+
+@ProxyCmp({
   inputs: ['format', 'texts', 'theme', 'time']
 })
 @Component({

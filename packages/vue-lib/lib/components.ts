@@ -280,6 +280,11 @@ export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-
 ]);
 
 
+export const InnoTableBase = /*@__PURE__*/ defineContainer<JSX.InnoTableBase>('inno-table-base', undefined, [
+  'variant'
+]);
+
+
 export const InnoTimePicker = /*@__PURE__*/ defineContainer<JSX.InnoTimePicker>('inno-time-picker', undefined, [
   'theme',
   'texts',
