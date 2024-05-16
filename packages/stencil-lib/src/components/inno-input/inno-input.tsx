@@ -86,22 +86,23 @@ export class InnoInput {
   }
 
   //when we programatically change the input's value (e.g. with Angular's formControl's setValue(...)), no events are generated
-  //we redefine the input value setter, so a callback function will be called besides the original setter function
+  //we redefine the input value setter, so an event will be fired besides the original setter function
   //if we disable this then we have to manually send input events to the input
-  private reDefineInputValueProperty(callback: Function): void {
+  private reDefineInputValueProperty(): void {
     if (!this.inputElementRef || !this.valuePropReDefine) {
       return;
     }
 
     let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
     let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, "value");
+    let thisref = this;
     Object.defineProperty(this.inputElementRef, "value", {
       get: function () {
         return descriptor.get.apply(this, arguments);
       },
       set: function () {
         descriptor.set.apply(this, arguments);
-        setTimeout(callback.bind(this), 0);
+        setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event("reCheckInnoInputValue", { bubbles: true })), 0);
       }
     });
   }
@@ -109,9 +110,7 @@ export class InnoInput {
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
 
-    this.reDefineInputValueProperty(() => {
-      this.hostElement.dispatchEvent(new globalThis.Event("reCheckInnoInputValue", { bubbles: true }));
-    });
+    this.reDefineInputValueProperty();
 
     if (!this.isValueEmpty()) {
       this.isActive = true;

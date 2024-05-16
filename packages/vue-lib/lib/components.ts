@@ -91,6 +91,7 @@ export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDate
   'maxDate',
   'weekStartIndex',
   'locale',
+  'showOuterDays',
   'label',
   'dateChange'
 ]);
