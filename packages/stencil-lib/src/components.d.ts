@@ -189,6 +189,10 @@ export namespace Components {
           * If true a date-range can be selected (from/to).
          */
         "range": boolean;
+        /**
+          * Show the days outside the selected month.
+         */
+        "showOuterDays": boolean;
         "standaloneAppearance": boolean;
         /**
           * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.
@@ -232,6 +236,10 @@ export namespace Components {
           * If true a date-range can be selected. See the date-picker component for more information.
          */
         "range": boolean;
+        /**
+          * Show the days outside the selected month. See the date-picker component for more information.
+         */
+        "showOuterDays": boolean;
         /**
           * The selected end date. See the date-picker component for more information.
          */
@@ -1504,6 +1512,10 @@ declare namespace LocalJSX {
           * If true a date-range can be selected (from/to).
          */
         "range"?: boolean;
+        /**
+          * Show the days outside the selected month.
+         */
+        "showOuterDays"?: boolean;
         "standaloneAppearance"?: boolean;
         /**
           * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.
@@ -1544,13 +1556,17 @@ declare namespace LocalJSX {
          */
         "minDate"?: string;
         /**
-          * Triggers if the date selection changes.
+          * Triggers if the date selection changes. See the date-picker component for more information.
          */
         "onDateChange"?: (event: InnoDatePickerDropdownCustomEvent<DateChange>) => void;
         /**
           * If true a date-range can be selected. See the date-picker component for more information.
          */
         "range"?: boolean;
+        /**
+          * Show the days outside the selected month. See the date-picker component for more information.
+         */
+        "showOuterDays"?: boolean;
         /**
           * The selected end date. See the date-picker component for more information.
          */
