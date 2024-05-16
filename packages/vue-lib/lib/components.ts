@@ -74,6 +74,7 @@ export const InnoDatePicker = /*@__PURE__*/ defineContainer<JSX.InnoDatePicker>(
   'i18nDone',
   'weekStartIndex',
   'locale',
+  'showOuterDays',
   'standaloneAppearance',
   'today',
   'dateChange'
