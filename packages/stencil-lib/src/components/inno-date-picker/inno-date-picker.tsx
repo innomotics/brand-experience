@@ -6,7 +6,7 @@ import { DateChange } from '../inno-date-context-api/inno-date-api';
 
 interface CalendarWeek {
   weekNumber: number;
-  dayNumbers: number[];
+  days: DateTime[];
 }
 
 /**
@@ -272,42 +272,53 @@ export class InnoDatePicker {
   private calculateCalendar() {
     const calendar: CalendarWeek[] = [];
     const month = DateTime.utc(this.selectedYear, this.selectedMonth + 1);
-    const monthStart = month.startOf('month');
-    let startWeek = monthStart.weekNumber;
-    let monthStartWeekDayIndex = monthStart.weekday - 1;
-    let fullmonthDays: number[] = [];
 
-    if (this.weekStartIndex !== 0) {
-      // Find the positions where to start/stop counting the day-numbers based on which day the week starts
-      const weekdays = Info.weekdays();
-      const monthStartWeekDayName = weekdays[monthStartWeekDayIndex];
-      monthStartWeekDayIndex = this.dayNames.findIndex(d => d === monthStartWeekDayName);
-    }
-    //assemble full month array
-    for (let i = 0; i < monthStartWeekDayIndex; i++) {
-      fullmonthDays.push(undefined);
-    }
+    let monthStartDay = month.startOf('day');
+    let currentWeek: CalendarWeek = { weekNumber: monthStartDay.weekNumber, days: [] };
 
-    for (let currDayNumber = 1; currDayNumber <= month.daysInMonth; currDayNumber++) {
-      fullmonthDays.push(currDayNumber);
-    }
+    // Calculate the missing previous month days if necessary
+    if (monthStartDay.weekdayLong !== this.dayNames[0]) {
+      // Get the index of the start day of the month
+      const index = this.dayNames.indexOf(monthStartDay.weekdayLong);
 
-    let endFill = fullmonthDays.length % this.DAYS_IN_WEEK;
+      // Get the start day of the given week for the calendar from the previous month
+      const day = monthStartDay.minus({ day: index });
 
-    if (endFill != 0) {
-      for (let i = 0; i < this.DAYS_IN_WEEK - endFill; i++) {
-        fullmonthDays.push(undefined);
+      // Create and add the necessary days from previous month
+      for (let i = 0; i < index; i++) {
+        currentWeek.days.push(day.plus({ day: i }));
       }
     }
 
-    for (let i = 0; i < fullmonthDays.length; i += this.DAYS_IN_WEEK) {
-      let daysArr = fullmonthDays.slice(i, i + this.DAYS_IN_WEEK);
-      calendar.push({
-        weekNumber: startWeek++,
-        dayNumbers: daysArr,
-      });
+    // Create weeks from the days of the selected month
+
+    const end = month.endOf('month');
+    let currentDay = monthStartDay;
+
+    while (currentDay <= end) {
+      if (currentWeek.days.length === 7) {
+        calendar.push(currentWeek);
+        currentWeek = { weekNumber: currentWeek.weekNumber + 1, days: [currentDay] };
+      } else {
+        currentWeek.days.push(currentDay);
+      }
+
+      currentDay = currentDay.plus({ day: 1 });
     }
 
+    // Calculate missing next month days if necessary
+    // Add the missing days to the latest week if needed
+    const latestWeek = currentWeek.days;
+    if (latestWeek.length !== 7) {
+      const latestEntry = latestWeek[latestWeek.length - 1];
+      const neededElements = 7 - latestWeek.length;
+
+      for (let i = 0; i < neededElements; i++) {
+        currentWeek.days.push(latestEntry.plus({ day: i + 1 }));
+      }
+    }
+
+    calendar.push(currentWeek);
     this.calendar = calendar;
   }
 
@@ -371,8 +382,8 @@ export class InnoDatePicker {
     this.selectedMonth += number;
   }
 
-  private selectDay(selectedDay: number) {
-    const date = DateTime.fromJSDate(new Date(this.selectedYear, this.selectedMonth, selectedDay));
+  private selectDay(selectedDay: DateTime) {
+    const date = selectedDay;
 
     if (!this.range || this.currFromDate === undefined) {
       this.currFromDate = date;
@@ -410,13 +421,13 @@ export class InnoDatePicker {
     });
   }
 
-  private getDayClasses(day: number): any {
+  private getDayClasses(day: DateTime): any {
     if (!day) {
       return;
     }
 
     const todayObj = this.getDateTimeNow();
-    const selectedDayObj = DateTime.fromJSDate(new Date(this.selectedYear, this.selectedMonth, day));
+    const selectedDayObj = day;
 
     return {
       'calendar-item': true,
@@ -426,6 +437,7 @@ export class InnoDatePicker {
       'range':
         selectedDayObj.startOf('day') > this.currFromDate?.startOf('day') && this.currToDate !== undefined && selectedDayObj.startOf('day') < this.currToDate?.startOf('day'),
       'disabled': !this.isWithinMinMaxDate(selectedDayObj),
+      'outer-day': day.year !== this.selectedYear || day.month - 1 !== this.selectedMonth,
     };
   }
 
@@ -598,20 +610,20 @@ export class InnoDatePicker {
       return (
         <Fragment>
           <div class="calendar-item week-number">{week.weekNumber}</div>
-          {week.dayNumbers.map(day => {
+          {week.days.map(day => {
             return (
               <div
-                key={day}
-                id={`day-cell-${day}`}
                 date-calender-day
+                key={`${day.month}-${day.day}`}
+                id={`day-cell-${day}`}
                 class={this.getDayClasses(day)}
                 onClick={() => this.selectDay(day)}
                 onKeyUp={e => e.key === 'Enter' && this.selectDay(day)}
-                tabIndex={day === this.focusedDay ? 0 : -1}
+                tabIndex={day.day === this.focusedDay ? 0 : -1}
                 onFocus={() => this.onDayFocus()}
                 onBlur={() => this.onDayBlur()}
               >
-                {day}
+                {day.day}
               </div>
             );
           })}
@@ -619,6 +631,8 @@ export class InnoDatePicker {
       );
     });
   }
+
+  // TBD: WHETHER THE BOTTOM CONTROL IS NEEDED
 
   // private footerPart() {
   //   const classes = {
