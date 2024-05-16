@@ -30,6 +30,7 @@ export const DIRECTIVES = [
   d.InnoStatusMessage,
   d.InnoTab,
   d.InnoTabItem,
+  d.InnoTableBase,
   d.InnoTimePicker,
   d.InnoToggle
 ];
