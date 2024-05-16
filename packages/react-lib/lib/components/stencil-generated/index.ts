@@ -35,5 +35,6 @@ export const InnoSelectItem = /*@__PURE__*/createReactComponent<JSX.InnoSelectIt
 export const InnoStatusMessage = /*@__PURE__*/createReactComponent<JSX.InnoStatusMessage, HTMLInnoStatusMessageElement>('inno-status-message');
 export const InnoTab = /*@__PURE__*/createReactComponent<JSX.InnoTab, HTMLInnoTabElement>('inno-tab');
 export const InnoTabItem = /*@__PURE__*/createReactComponent<JSX.InnoTabItem, HTMLInnoTabItemElement>('inno-tab-item');
+export const InnoTableBase = /*@__PURE__*/createReactComponent<JSX.InnoTableBase, HTMLInnoTableBaseElement>('inno-table-base');
 export const InnoTimePicker = /*@__PURE__*/createReactComponent<JSX.InnoTimePicker, HTMLInnoTimePickerElement>('inno-time-picker');
 export const InnoToggle = /*@__PURE__*/createReactComponent<JSX.InnoToggle, HTMLInnoToggleElement>('inno-toggle');
