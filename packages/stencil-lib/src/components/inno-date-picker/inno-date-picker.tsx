@@ -5,12 +5,19 @@ import { computePosition } from '@floating-ui/dom';
 import { DateChange } from '../inno-date-context-api/inno-date-api';
 
 /**
- * Represents a week.
+ * Represents the logical week abstraction which represents a row in the calendar grid.
+ *
+ * This week may represent the same year week as it would be in the calendar
+ * but if the week start day is shifted then the calculated days for the week
+ * may not represents the same week for the given month.
+ *
+ * The weekNumber represents the index of the week for the given year
+ * which is the week for the first day of the selected month and incremented afterwards.
+ *
+ * The days are those days which are calculated for the given week
+ * and they may not belong to the same week.
  */
 interface CalendarWeek {
-  /**
-   * Week number represents the first d
-   */
   weekNumber: number;
   days: DateTime[];
 }
@@ -280,7 +287,6 @@ export class InnoDatePicker {
     return clone;
   }
 
-  // Calculate the calendar grid weeks
   private calculateCalendar() {
     const calendar: CalendarWeek[] = [];
     const month = DateTime.utc(this.selectedYear, this.selectedMonth + 1);
@@ -288,7 +294,7 @@ export class InnoDatePicker {
     let monthStartDay = month.startOf('day');
     let currentWeek: CalendarWeek = { weekNumber: monthStartDay.weekNumber, days: [] };
 
-    // Calculate the missing previous month days if necessary
+    // Calculate the missing previous month days
     if (monthStartDay.weekdayLong !== this.dayNames[0]) {
       // Get the index (offset) for the start day of the selected month
       const index = this.dayNames.indexOf(monthStartDay.weekdayLong);
@@ -296,7 +302,7 @@ export class InnoDatePicker {
       // Calculate the start day for the first week
       const startDay = monthStartDay.minus({ day: index });
 
-      // Create and add the necessary days from previous month
+      // Add the necessary days from previous month
       for (let i = 0; i < index; i++) {
         if (this.showOuterDays) {
           currentWeek.days.push(startDay.plus({ day: i }));
@@ -321,8 +327,7 @@ export class InnoDatePicker {
       currentDay = currentDay.plus({ day: 1 });
     }
 
-    // Calculate missing next month days if necessary
-    // Add the missing days to the latest week if needed
+    // Calculate missing next month days
     const latestWeek = currentWeek.days;
     if (latestWeek.length !== 7 && this.showOuterDays) {
       const latestEntry = latestWeek[latestWeek.length - 1];

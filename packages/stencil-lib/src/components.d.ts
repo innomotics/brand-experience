@@ -237,6 +237,10 @@ export namespace Components {
          */
         "range": boolean;
         /**
+          * Show the days outside the selected month. See the date-picker component for more information.
+         */
+        "showOuterDays": boolean;
+        /**
           * The selected end date. See the date-picker component for more information.
          */
         "to": string | undefined;
@@ -1542,13 +1546,17 @@ declare namespace LocalJSX {
          */
         "minDate"?: string;
         /**
-          * Triggers if the date selection changes.
+          * Triggers if the date selection changes. See the date-picker component for more information.
          */
         "onDateChange"?: (event: InnoDatePickerDropdownCustomEvent<DateChange>) => void;
         /**
           * If true a date-range can be selected. See the date-picker component for more information.
          */
         "range"?: boolean;
+        /**
+          * Show the days outside the selected month. See the date-picker component for more information.
+         */
+        "showOuterDays"?: boolean;
         /**
           * The selected end date. See the date-picker component for more information.
          */
