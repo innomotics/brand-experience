@@ -189,6 +189,10 @@ export namespace Components {
           * If true a date-range can be selected (from/to).
          */
         "range": boolean;
+        /**
+          * Show the days outside the selected month.
+         */
+        "showOuterDays": boolean;
         "standaloneAppearance": boolean;
         /**
           * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.
@@ -1494,6 +1498,10 @@ declare namespace LocalJSX {
           * If true a date-range can be selected (from/to).
          */
         "range"?: boolean;
+        /**
+          * Show the days outside the selected month.
+         */
+        "showOuterDays"?: boolean;
         "standaloneAppearance"?: boolean;
         /**
           * The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.

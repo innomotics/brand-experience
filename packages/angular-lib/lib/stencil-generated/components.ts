@@ -136,7 +136,7 @@ export declare interface InnoCheckbox extends Components.InnoCheckbox {
 
 
 @ProxyCmp({
-  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'to', 'weekStartIndex'],
+  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'weekStartIndex'],
   methods: ['getCurrentDate']
 })
 @Component({
@@ -144,7 +144,7 @@ export declare interface InnoCheckbox extends Components.InnoCheckbox {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'to', 'weekStartIndex'],
+  inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'weekStartIndex'],
 })
 export class InnoDatePicker {
   protected el: HTMLElement;

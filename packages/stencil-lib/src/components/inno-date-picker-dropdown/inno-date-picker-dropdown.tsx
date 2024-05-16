@@ -68,12 +68,19 @@ export class InnoDatePickerDropdown {
   @Prop() locale: string = undefined;
 
   /**
+   * Show the days outside the selected month.
+   * See the date-picker component for more information.
+   */
+  @Prop() showOuterDays: boolean = true;
+
+  /**
    * Label of the dropdown component.
    */
   @Prop() label: string | undefined;
 
   /**
    * Triggers if the date selection changes.
+   * See the date-picker component for more information.
    */
   @Event() dateChange: EventEmitter<DateChange>;
 
@@ -170,6 +177,7 @@ export class InnoDatePickerDropdown {
           maxDate={this.maxDate}
           weekStartIndex={this.weekStartIndex}
           locale={this.locale}
+          showOuterDays={this.showOuterDays}
           onDateChange={event => this.onDateChange(event.detail)}
         ></inno-date-picker>
       </div>

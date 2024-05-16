@@ -4,7 +4,13 @@ import { OnListener } from '../../utils/listener';
 import { computePosition } from '@floating-ui/dom';
 import { DateChange } from '../inno-date-context-api/inno-date-api';
 
+/**
+ * Represents a week.
+ */
 interface CalendarWeek {
+  /**
+   * Week number represents the first d
+   */
   weekNumber: number;
   days: DateTime[];
 }
@@ -91,6 +97,11 @@ export class InnoDatePicker {
    * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
    */
   @Prop() locale: string = undefined;
+
+  /**
+   * Show the days outside the selected month.
+   */
+  @Prop() showOuterDays: boolean = true;
 
   @Watch('locale')
   onLocaleChange() {
@@ -269,6 +280,7 @@ export class InnoDatePicker {
     return clone;
   }
 
+  // Calculate the calendar grid weeks
   private calculateCalendar() {
     const calendar: CalendarWeek[] = [];
     const month = DateTime.utc(this.selectedYear, this.selectedMonth + 1);
@@ -278,20 +290,23 @@ export class InnoDatePicker {
 
     // Calculate the missing previous month days if necessary
     if (monthStartDay.weekdayLong !== this.dayNames[0]) {
-      // Get the index of the start day of the month
+      // Get the index (offset) for the start day of the selected month
       const index = this.dayNames.indexOf(monthStartDay.weekdayLong);
 
-      // Get the start day of the given week for the calendar from the previous month
-      const day = monthStartDay.minus({ day: index });
+      // Calculate the start day for the first week
+      const startDay = monthStartDay.minus({ day: index });
 
       // Create and add the necessary days from previous month
       for (let i = 0; i < index; i++) {
-        currentWeek.days.push(day.plus({ day: i }));
+        if (this.showOuterDays) {
+          currentWeek.days.push(startDay.plus({ day: i }));
+        } else {
+          currentWeek.days.push(undefined);
+        }
       }
     }
 
     // Create weeks from the days of the selected month
-
     const end = month.endOf('month');
     let currentDay = monthStartDay;
 
@@ -309,7 +324,7 @@ export class InnoDatePicker {
     // Calculate missing next month days if necessary
     // Add the missing days to the latest week if needed
     const latestWeek = currentWeek.days;
-    if (latestWeek.length !== 7) {
+    if (latestWeek.length !== 7 && this.showOuterDays) {
       const latestEntry = latestWeek[latestWeek.length - 1];
       const neededElements = 7 - latestWeek.length;
 
@@ -611,6 +626,10 @@ export class InnoDatePicker {
         <Fragment>
           <div class="calendar-item week-number">{week.weekNumber}</div>
           {week.days.map(day => {
+            if (day === undefined) {
+              return <div date-calender-day class={this.getDayClasses(day)}></div>;
+            }
+
             return (
               <div
                 date-calender-day
