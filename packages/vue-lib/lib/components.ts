@@ -131,7 +131,6 @@ export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon',
 
 
 export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-input', undefined, [
-  'value',
   'isFocused',
   'disabled',
   'label',

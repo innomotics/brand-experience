@@ -328,10 +328,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Value of the input.
-         */
-        "value": string | number;
-        /**
           * Color variant of the input.
          */
         "variant": 'light' | 'dark';
@@ -1644,10 +1640,6 @@ declare namespace LocalJSX {
           * Fired when the new value is valid.
          */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
-        /**
-          * Value of the input.
-         */
-        "value"?: string | number;
         /**
           * Color variant of the input.
          */

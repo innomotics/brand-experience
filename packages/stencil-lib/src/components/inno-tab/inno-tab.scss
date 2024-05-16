@@ -16,7 +16,8 @@
   width: auto;
   position: relative;
 
-  font-family: 'InnomoticsHafferSQ-Bold';
+  font-family: 'InnomoticsHafferSQ';
+  font-weight: bold;
 
   &.light {
     background-color: colors.$primary-300;
