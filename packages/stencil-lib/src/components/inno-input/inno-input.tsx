@@ -17,6 +17,8 @@ export class InnoInput {
 
   @State() isActive: boolean;
 
+  @State() shouldFloat: boolean;
+
   /**
    * Whether the input is focused or not.
    */
@@ -48,7 +50,8 @@ export class InnoInput {
 
   @Listen('input')
   inputChanged(event) {
-    this.isActive = !this.isValueEmpty();
+    this.shouldFloat = true;
+    this.isActive = true;
     this.setErrors(event.target);
   }
 
@@ -113,7 +116,7 @@ export class InnoInput {
     this.reDefineInputValueProperty();
 
     if (!this.isValueEmpty()) {
-      this.isActive = true;
+      this.shouldFloat = true;
     }
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
@@ -122,11 +125,12 @@ export class InnoInput {
   @Listen('reCheckInnoInputValue')
   reCheckValue() {
     this.setErrors(this.inputElementRef);
-    this.isActive = !this.isValueEmpty();
+    this.shouldFloat = !this.isValueEmpty();
   }
 
   @Listen('focusin')
   onFocus() {
+    this.shouldFloat = true;
     this.isActive = true;
     this.isFocused = true;
   }
@@ -134,8 +138,9 @@ export class InnoInput {
   @Listen('focusout')
   onFocusout() {
     if (this.isValueEmpty()) {
-      this.isActive = false;
+      this.shouldFloat = false;
     }
+    this.isActive = false;
     this.isFocused = false;
   }
 
@@ -158,7 +163,7 @@ export class InnoInput {
         }}
         onClick={() => this.activateInput()}
       >
-        <span class={{ label: true, float: this.isActive, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
+        <span class={{ label: true, float: this.shouldFloat, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
         <slot></slot>
       </Host>
     );
