@@ -91,6 +91,7 @@ export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDate
   'maxDate',
   'weekStartIndex',
   'locale',
+  'showOuterDays',
   'label',
   'dateChange'
 ]);
@@ -136,6 +137,7 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'disabled',
   'label',
   'variant',
+  'valuePropReDefine',
   'valueChanged'
 ]);
 

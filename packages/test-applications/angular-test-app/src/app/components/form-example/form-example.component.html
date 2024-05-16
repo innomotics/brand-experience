@@ -1,8 +1,9 @@
 <form [formGroup]="innomoticsForm">
-  <inno-input name="bubu" label="Inputbox" value="0" variant="light">
+  <inno-input id="bubu" name="bubu" label="Inputbox" value="0" variant="light">
     <input type="number" [formControl]="innoInput" />
     <inno-error type="badInput">Not valid</inno-error>
   </inno-input>
+  <button (click)="randomval()">randomval</button>
   <inno-select
     name="dew"
     label="SelectBox"

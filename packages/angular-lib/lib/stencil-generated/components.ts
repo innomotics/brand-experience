@@ -167,14 +167,14 @@ export declare interface InnoDatePicker extends Components.InnoDatePicker {
 
 
 @ProxyCmp({
-  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'to', 'variant', 'weekStartIndex']
+  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex']
 })
 @Component({
   selector: 'inno-date-picker-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'to', 'variant', 'weekStartIndex'],
+  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex'],
 })
 export class InnoDatePickerDropdown {
   protected el: HTMLElement;
@@ -191,6 +191,7 @@ import type { DateChange as IInnoDatePickerDropdownDateChange } from '@innomotic
 export declare interface InnoDatePickerDropdown extends Components.InnoDatePickerDropdown {
   /**
    * Triggers if the date selection changes.
+See the date-picker component for more information.
    */
   dateChange: EventEmitter<CustomEvent<IInnoDatePickerDropdownDateChange>>;
 }
