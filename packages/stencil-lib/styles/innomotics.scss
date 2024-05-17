@@ -5,6 +5,7 @@
 @forward './componentmixins';
 @forward './base';
 
+@use 'simplebar/dist/simplebar.min.css';
 @import './components/inno-checkbox';
 @import './components/inno-radiobutton';
 @import './components/inno-pane';

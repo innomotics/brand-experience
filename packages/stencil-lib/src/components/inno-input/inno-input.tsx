@@ -17,6 +17,8 @@ export class InnoInput {
 
   @State() isActive: boolean;
 
+  @State() shouldFloat: boolean;
+
   /**
    * Whether the input is focused or not.
    */
@@ -36,7 +38,13 @@ export class InnoInput {
    * Color variant of the input.
    */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
+
+  /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
+  @Prop() valuePropReDefine: boolean = true;
+
   @State() isValid: boolean = true;
+
+  @State() canShowErrors: boolean = false;
 
   get errorElements() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-error'))];
@@ -44,15 +52,21 @@ export class InnoInput {
 
   @Listen('input')
   inputChanged(event) {
+    this.shouldFloat = true;
+    this.isActive = true;
+    this.setErrors(event.target);
+  }
+
+  private setErrors(element: any) {
     this.errorElements.forEach(ee => (ee.active = false));
-    if (!event.target.validity.valid) {
+    if (!element.validity.valid) {
       this.isValid = false;
       //set everything off;
 
-      let property: keyof typeof event.target.validity; // Type is 'foo' | 'bar'
+      let property: keyof typeof element.validity; // Type is 'foo' | 'bar'
 
-      for (property in event.target.validity) {
-        if (event.target.validity[property]) {
+      for (property in element.validity) {
+        if (element.validity[property]) {
           let definedErrorElement = this.errorElements.find(ee => ee.type == property);
           if (definedErrorElement) {
             definedErrorElement.active = true;
@@ -62,8 +76,6 @@ export class InnoInput {
     } else {
       this.isValid = true;
     }
-
-    this.isActive = !this.isValueEmpty();
 
     if (this.isValid) {
       this.valueChanged.emit(this.value);
@@ -78,18 +90,49 @@ export class InnoInput {
     return this.inputElementRef?.value;
   }
 
+  //when we programatically change the input's value (e.g. with Angular's formControl's setValue(...)), no events are generated
+  //we redefine the input value setter, so an event will be fired besides the original setter function
+  //if we disable this then we have to manually send input events to the input
+  private reDefineInputValueProperty(): void {
+    if (!this.inputElementRef || !this.valuePropReDefine) {
+      return;
+    }
+
+    let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
+    let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, "value");
+    let thisref = this;
+    Object.defineProperty(this.inputElementRef, "value", {
+      get: function () {
+        return descriptor.get.apply(this, arguments);
+      },
+      set: function () {
+        descriptor.set.apply(this, arguments);
+        setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event("reCheckInnoInputValue", { bubbles: true })), 0);
+      }
+    });
+  }
+
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
 
+    this.reDefineInputValueProperty();
+
     if (!this.isValueEmpty()) {
-      this.isActive = true;
+      this.shouldFloat = true;
     }
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
   }
 
+  @Listen('reCheckInnoInputValue')
+  reCheckValue() {
+    this.setErrors(this.inputElementRef);
+    this.shouldFloat = !this.isValueEmpty();
+  }
+
   @Listen('focusin')
   onFocus() {
+    this.shouldFloat = true;
     this.isActive = true;
     this.isFocused = true;
   }
@@ -97,8 +140,9 @@ export class InnoInput {
   @Listen('focusout')
   onFocusout() {
     if (this.isValueEmpty()) {
-      this.isActive = false;
+      this.shouldFloat = false;
     }
+    this.isActive = false;
     this.isFocused = false;
   }
 
@@ -108,6 +152,8 @@ export class InnoInput {
   }
 
   render() {
+    this.canShowErrors = this.errorElements?.length > 0;
+
     return (
       <Host
         class={{
@@ -118,10 +164,11 @@ export class InnoInput {
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
           'invalid': !this.isValid,
+          'can-show-errors': this.canShowErrors
         }}
         onClick={() => this.activateInput()}
       >
-        <span class={{ label: true, float: this.isActive, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
+        <span class={{ label: true, float: this.shouldFloat, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
         <slot></slot>
       </Host>
     );

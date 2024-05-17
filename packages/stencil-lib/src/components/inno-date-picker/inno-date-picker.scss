@@ -148,6 +148,10 @@
       outline-offset: 1px;
     }
 
+    &.outer-day {
+      color: colors.$secondary-300;
+    }
+
     &.today {
       border: 2px solid colors.$primary-300;
 

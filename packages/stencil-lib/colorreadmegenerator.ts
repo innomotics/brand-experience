@@ -3,7 +3,7 @@ import * as fs from 'fs';
 const filePath = './styles/_colors.scss';
 const cleanerregex = /\r|\n|\s{1,}|;/g;
 //passsing directoryPath and callback function
-let readmeContent = "# `Colors`\n Available Innomotics colors'\n\n<div class='color-wrapper'>\n";
+let readmeContent = "# `Colors`\n Available Innomotics colors'\n\n<div className='color-wrapper'>\n";
 
 //listing all files using forEach
 // Do whatever you want to do with the file
@@ -41,7 +41,7 @@ lines.forEach(line => {
 
     dict[splittedVariable[0]] = splittedVariable[1];
     let islight = splittedVariable[0].includes("-light") || !splittedVariable[0].includes("-dark");
-    readmeContent += `<div class="color-item ${islight?'light':'dark'}"><div id="colorcube" style={{"background-color": "${dict[splittedVariable[0]]}" `;
+    readmeContent += `<div className="color-item ${islight?'light':'dark'}"><div id="colorcube" style={{"backgroundColor": "${dict[splittedVariable[0]]}" `;
     if(hasopacity){
       readmeContent += `,"opacity": "${opacityValue}"`;
     }

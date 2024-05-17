@@ -17,14 +17,14 @@
   &.light {
     &:hover:not(.disabled):not(:disabled) {
       border: 1px solid colors.$interaction-light-hover;
-      box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
+      box-shadow: inset 0px 0px 0px 1px colors.$interaction-light-hover;
     }
   }
 
   &.dark {
     &:hover:not(.disabled):not(:disabled) {
       border: 1px solid colors.$highlight-dark-100;
-      box-shadow: 0px 0px 0px 1px colors.$highlight-dark-100;
+      box-shadow: inset 0px 0px 0px 1px colors.$highlight-dark-100;
     }
   }
 
@@ -32,12 +32,18 @@
     display: flex;
     flex-direction: column;
     border: 1px solid colors.$additional-light-300;
-    margin: 5px 5px 0px 5px;
+    margin: 5px 5px 8px 5px;
+    height: 56px;
+    max-height: 56px;
+    min-height: 56px;
 
     .select-header {
       padding: 0px 16px 0px 16px;
       box-sizing: border-box;
       height: 56px;
+      height: 56px;
+      max-height: 56px;
+      min-height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -96,7 +102,7 @@
       background-color: colors.$primary-300;
 
       &.disabled {
-        background-color: rgb(colors.$primary-200, 0.1);
+        background-color: rgb(colors.$primary-200, 0.2);
       }
     }
 

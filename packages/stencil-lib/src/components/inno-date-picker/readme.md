@@ -8,15 +8,23 @@ import {InnoDatePicker} from '@innomotics/brand-experience-react-lib';
   <TabItem value="preview" label="Preview" default>
   <div class="component-display">
     <div class="light-bg component-display columns">
-      <span class="bg-title">Light background</span>
+      <span class="bg-title">Default calendar</span>
       <InnoDatePicker></InnoDatePicker>
+    </div>
+    <div class="light-bg component-display columns">
+    <span class="bg-title">Changed week start day and no outer month days</span>
+      <InnoDatePicker weekStartIndex={6} showOuterDays={false} ></InnoDatePicker>
     </div>
   </div>
 
   <div class="component-display">
     <div class="dark-bg component-display columns">
-      <span class="bg-title">Dark background</span>
+      <span class="bg-title">Default calendar</span>
       <InnoDatePicker></InnoDatePicker>
+    </div>
+    <div class="dark-bg component-display columns">
+      <span class="bg-title">Changed week start day and no outer month days</span>
+      <InnoDatePicker weekStartIndex={6} showOuterDays={false} ></InnoDatePicker>
     </div>
   </div>
   </TabItem>
@@ -109,6 +117,7 @@ Innomotics date-picker.
 | `maxDate`        | `max-date`         | The latest date that can be selected by the date picker. If not set there will be no restriction.                                                                        | `string`  | `undefined`    |
 | `minDate`        | `min-date`         | The earliest date that can be selected by the date picker. If not set there will be no restriction.                                                                      | `string`  | `undefined`    |
 | `range`          | `range`            | If true a date-range can be selected (from/to).                                                                                                                          | `boolean` | `true`         |
+| `showOuterDays`  | `show-outer-days`  | Show the days outside the selected month.                                                                                                                                | `boolean` | `true`         |
 | `to`             | `to`               | The selected end date. If the date-picker is not in range mode this property has no impact. Format has to match the `format` property.                                   | `string`  | `undefined`    |
 | `weekStartIndex` | `week-start-index` | The index of which day to start the week on, based on the Locale#weekdays array. E.g. if the locale is en-us, weekStartIndex = 1 results in starting the week on monday. | `number`  | `0`            |
 

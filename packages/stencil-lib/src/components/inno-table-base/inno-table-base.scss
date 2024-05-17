@@ -1,78 +1,60 @@
 @use '@innomotics/brand-experience/styles/colors';
 
 :host {
-  ::slotted(table) {
-    font-family: 'InnomoticsHafferSQ';
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    color: colors.$text-light-highemphasis;
-    font-size: 16px;
-    background-color: rgba(0,0,0,0);
-    th,
-    td {
-      padding: 16px;
-      min-width: 144px;
-      line-height: 24.8px;
-    }
-    thead {
-      th {
-        text-align: left;
-        font-weight: 790;
-        border-color: colors.$text-light-highemphasis;
-        border-style: solid;
-        border-width: 0px 0px 2px 0px;
-        color: colors.$text-light-highemphasis;
-        background-color: rgba(0,0,0,0);
-      }
-      tr {
-        border: none;
-      }
-    }
-    tbody {
-      th,
-      td {
-        border-color: colors.$transparency-light-200;
-        border-style: solid;
-        border-width: 0px 0px 1px 0px;
-        color: colors.$text-light-highemphasis;
-        background-color: rgba(0,0,0,0);
-      }
-      tr {
-        border: none;
-      }
-    }
-    tr {
-      font-weight: 430;
-    }
-  }
+  // &.scrollcustom {
+  //   display:block;
+  //   /* width */
+  //   &::-webkit-scrollbar {
+  //     width:5px;
+  //     height:5px;
+  //   }
 
-  &.dark {
-    ::slotted(table) {
-      color: colors.$text-dark-highemphasis;
-      background-color: rgba(0,0,0,0);
-      thead {
-        th {
-          border-color: colors.$text-dark-highemphasis;
-          border-style: solid;
-          border-width: 0px 0px 2px 0px;
-          color: colors.$text-dark-highemphasis;
-          background-color: rgba(0,0,0,0);
-        }
+  //   /* Track */
+  //   &::-webkit-scrollbar-track {
+  //     background: colors.$additional-light-200;
+  //   }
+
+  //   /* Handle */
+  //   &::-webkit-scrollbar-thumb {
+  //     background: colors.$interaction-light-hover;
+  //   }
+
+  // }
+  scrollbar-width: thin;
+  .table-wrapper{
+    position:relative;
+    display:block;
+    .mask-layer {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: calc(100% - 25px);
+      background-color: rgba(0, 0, 0, 0);
+      -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      mask-size: contain;
+      --left-mask-color: transparent;
+      --right-mask-color: transparent;
+
+      &.is-left-overflowing {
+        background-color: colors.$primary-300;
+        --left-mask-color: black; //must be a solid color
       }
-      tbody {
-        th,
-        td {
-          border-color: colors.$transparency-dark-200;
-          border-style: solid;
-          border-width: 0px 0px 1px 0px;
-          color: colors.$text-dark-highemphasis;
-          background-color: rgba(0,0,0,0);
-        }
-        tr {
-          border: none;
-        }
+
+      &.is-right-overflowing {
+        background-color: colors.$primary-300;
+        --right-mask-color: black; //must be a solid color
       }
+    }
+    .table-div {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      overflow-x: auto;
+      scrollbar-width: thin;
     }
   }
 }

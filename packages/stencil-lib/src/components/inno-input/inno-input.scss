@@ -14,52 +14,79 @@
 :host {
   display: block;
   height: 56px;
+  min-height: 56px;
+  max-height: 56px;
   padding: 0px 16px 0px 16px;
-  margin: 5px 5px 23px 5px;
+  margin: 5px 5px 8px 5px;
   border: 1px solid colors.$additional-light-300;
   cursor: text;
+
+  &.can-show-errors {
+    margin-bottom: 23px;
+  }
 
   &.light {
     @include light-base;
 
     &:hover:not(.disabled):not(:disabled) {
       border: 1px solid colors.$interaction-light-hover;
-      box-shadow: 0px 0px 0px 1px colors.$interaction-light-hover;
+      box-shadow: inset 0px 0px 0px 1px colors.$interaction-light-hover;
     }
+
     ::slotted(input) {
       @include light-base;
       color: colors.$text-light-highemphasis;
-      &.disabled:disabled {
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: colors.$text-light-highemphasis;
+        -webkit-box-shadow: 0 0 0px 1000px colors.$background-light-200 inset;
+      }
+
+      &.disabled, &:disabled {
         background-color: rgba(colors.$transparency-light-100, 0);
+        -webkit-text-fill-color: unset;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
       }
     }
+
     &.isactive {
       &:hover:not(.disabled):not(:disabled) {
-        box-shadow: 0px 0px 0px 1px colors.$highlight-light-100;
+        box-shadow: inset 0px 0px 0px 1px colors.$highlight-light-100;
         border: 1px solid colors.$highlight-light-100;
       }
+
       border: 1px solid colors.$highlight-light-100;
-      box-shadow: 0px 0px 0px 1px colors.$highlight-light-100;
-      &.disabled:disabled {
-        box-shadow: 0px 0px 0px 1px colors.$additional-light-300;
+      box-shadow: inset 0px 0px 0px 1px colors.$highlight-light-100;
+
+      &.disabled, &:disabled  {
+        box-shadow: inset 0px 0px 0px 1px colors.$additional-light-300;
         border: 1px solid colors.$additional-light-300;
         background-color: colors.$transparency-light-100;
       }
     }
+
     &.focused {
       @include componentmixins.focus;
     }
+
     &.invalid {
-      box-shadow: 0px 0px 0px 1px colors.$status-light-error;
+      box-shadow: inset 0px 0px 0px 1px colors.$status-light-error;
       border: 1px solid colors.$status-light-error;
+    }
+
+    &.disabled {
+      background-color: colors.$transparency-light-200;
     }
   }
 
   &.dark {
     @include dark-base;
+
     &:hover:not(.disabled):not(:disabled) {
-      box-shadow: 0px 0px 0px 1px colors.$interaction-dark-hover;
+      box-shadow: inset 0px 0px 0px 1px colors.$interaction-dark-hover;
     }
+
     &.disabled {
       background-color: colors.$transparency-dark-100;
     }
@@ -67,28 +94,42 @@
     ::slotted(input) {
       @include dark-base;
       color: colors.$text-dark-highemphasis;
-      &.disabled {
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: colors.$text-dark-highemphasis;
+        -webkit-box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
+        box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
+      }
+
+      &.disabled, &:disabled {
         background-color: rgba(colors.$transparency-dark-100, 0);
         color: colors.$text-dark-highemphasis;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
       }
     }
+
     &.isactive {
       &:hover:not(.disabled):not(:disabled) {
-        box-shadow: 0px 0px 0px 1px colors.$additional-dark-300;
+        box-shadow: inset 0px 0px 0px 1px colors.$additional-dark-300;
         border: 1px solid colors.$additional-dark-300;
       }
+
       border: 1px solid colors.$highlight-dark-100;
-      box-shadow: 0px 0px 0px 1px colors.$highlight-dark-100;
-      &.disabled:disabled {
-        box-shadow: 0px 0px 0px 1px colors.$additional-dark-300;
+      box-shadow: inset 0px 0px 0px 1px colors.$highlight-dark-100;
+
+      &.disabled, &:disabled {
+        box-shadow: inset 0px 0px 0px 1px colors.$additional-dark-300;
         border: 1px solid colors.$additional-dark-300;
       }
     }
+
     &.focused {
       @include componentmixins.focus;
     }
+
     &.invalid {
-      box-shadow: 0px 0px 0px 1px colors.$status-dark-error;
+      box-shadow: inset 0px 0px 0px 1px colors.$status-dark-error;
       border: 1px solid colors.$status-dark-error;
     }
   }
@@ -105,24 +146,28 @@
     right: auto;
     z-index: 1;
     pointer-events: none;
-    transition: 0.2s ease all;
+    transition: 0.2s cubic-bezier(0.84, 0, 0.58, 1) all;
     transform: translate(0rem, 1.2rem) scale(1);
     position: absolute;
+
     &.light {
       &.disabled {
         color: colors.$text-light-lowemphasis;
       }
     }
+
     &.dark {
       &.disabled {
         color: colors.$text-dark-lowemphasis;
       }
     }
   }
+
   .float {
     transform: translate(0rem, 0.5rem) scale(1);
     font-size: small;
   }
+
   &.disabled {
     border: 1px solid colors.$interaction-light-disabled;
   }

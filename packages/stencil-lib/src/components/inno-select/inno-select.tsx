@@ -119,7 +119,7 @@ export class InnoSelect {
             const { x, y } = computeResponse;
             Object.assign(this.itemsContainerRef.style, {
               left: x !== null ? `${x}px` : '',
-              top: y !== null ? `${y}px` : '',
+              top: y !== null ? `${y - 1}px` : '',
               width: `${this.wrapperRef.getBoundingClientRect().width}px`
             });
 
