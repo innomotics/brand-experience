@@ -44,6 +44,8 @@ export class InnoInput {
 
   @State() isValid: boolean = true;
 
+  @State() canShowErrors: boolean = false;
+
   get errorElements() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-error'))];
   }
@@ -150,6 +152,8 @@ export class InnoInput {
   }
 
   render() {
+    this.canShowErrors = this.errorElements?.length > 0;
+
     return (
       <Host
         class={{
@@ -160,6 +164,7 @@ export class InnoInput {
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
           'invalid': !this.isValid,
+          'can-show-errors': this.canShowErrors
         }}
         onClick={() => this.activateInput()}
       >

@@ -489,5 +489,85 @@
       <inno-status-message message-type="error">message</inno-status-message>
       <inno-status-message message-type="success">message</inno-status-message>
     </div>
+  </body>
 
+  <script>
+    const pane1 = document.getElementById('button-showcase');
+    const button1 = document.getElementById('button-showcase-toggle');
+
+    button1.addEventListener('click', () => {
+      pane1.expanded = pane1.expanded ? undefined : true;
+    });
+
+    const pane2 = document.getElementById('left-pane');
+    const button2 = document.getElementById('left-toggle');
+
+    button2.addEventListener('click', () => {
+      pane2.expanded = pane2.expanded ? undefined : true;
+    });
+
+    const pane3 = document.getElementById('top-pane');
+    const button3 = document.getElementById('top-toggle');
+
+    button3.addEventListener('click', () => {
+      pane3.expanded = pane1.expanded ? undefined : true;
+    });
+
+    const pane4 = document.getElementById('bottom-pane');
+    const button4 = document.getElementById('bottom-toggle');
+
+    button4.addEventListener('click', () => {
+      pane4.expanded = pane1.expanded ? undefined : true;
+    });
+
+    document.getElementById('manualbtn').addEventListener('click', () => {
+      var popover = document.getElementById('manualpop');
+      if (popover.visible) {
+        popover.visible = false;
+      } else {
+        popover.visible = true;
+      }
+    });
+
+    document.getElementById('testform').addEventListener('submit', event => {
+      event.preventDefault();
+      console.log(event);
+
+      const formData = new FormData(event.target);
+      const formProps = Object.fromEntries(formData);
+      console.log(formProps);
+    });
+
+    const randomizerBtn = document.getElementById('progressRandomizer');
+    randomizerBtn.addEventListener('click', () => {
+      document.querySelectorAll('inno-progress-bar').forEach(el => {
+        el.progressPercentage = Math.random() * 100;
+      });
+    });
+
+    document.getElementById('modalbutton1').addEventListener('click', async () => {
+      const modal = document.getElementById('innomodal1');
+      await modal.showModal();
+      modal.addEventListener('dialogDismiss', event => {
+        console.log(event);
+      });
+      modal.addEventListener('dialogClose', event => {
+        console.log(event);
+      });
+    });
+
+    document.querySelectorAll('inno-drag-and-drop').forEach(el => {
+      el.texts = {
+        firstLineText: 'Drag & Drop',
+        secondLineText: 'Browse files',
+        orText: 'or',
+        dragText: 'Please drop your files here',
+        loadingText: 'Loading...',
+        uploadFailedText: 'Something went wrong. Please try again. ',
+        uploadSuccessText: 'File uploaded successfully.',
+        acceptedFileTypesText: '*File must be .pdf',
+        uploadDisabledText: 'File upload is disabled',
+      };
+    });
+  </script>
 </html>
