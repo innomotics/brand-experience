@@ -6,7 +6,8 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/brand-experience-r
 
 Basic wrapper component for HTML table element. Will apply the innomotics design on the table elements and scrolling
 <Tabs>
-  <TabItem value="preview" label="Preview" default>
+<TabItem value="preview" label="Preview" default>
+
    <div class="component-display columns">
       <div class="light-bg">
         <span class="bg-title">light background</span>
@@ -43,7 +44,7 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
                 </tbody>
             </table>
         </inno-table-base>
-      </div>
+        </div>
       <div class="dark-bg">
         <span class="bg-title">dark background</span>
         <inno-table-base variant="dark">
@@ -120,9 +121,7 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
   </TabItem>
 </Tabs>
 
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -130,7 +129,6 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
 | --------- | --------- | ----------- | ------------------- | --------- |
 | `variant` | `variant` |             | `"dark" \| "light"` | `'light'` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

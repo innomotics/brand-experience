@@ -33,11 +33,11 @@ export class InnoTableBase {
   };
 
   componentDidLoad() {
-    this.scrollBar = new SimpleBar(this.hostElement.querySelector('.table-wrapper'), { autoHide: false });
+    this.scrollBar = new SimpleBar(this.hostElement.querySelector('.table-div'), { autoHide: false });
     this.maskElement = this.hostElement.querySelector<HTMLDivElement>('.mask-layer');
     let table = this.hostElement.querySelector('table');
     table.classList.add('inno-table');
-    if(this.variant == 'dark'){
+    if (this.variant == 'dark') {
       table.classList.add('dark');
     }
     this.scrollBar.getScrollElement().addEventListener('scroll', this.scrollListener, { passive: true });
@@ -52,7 +52,9 @@ export class InnoTableBase {
       <Host class={{ light: this.variant === 'light', dark: this.variant === 'dark' }}>
         <div class="table-wrapper">
           <div class="mask-layer"></div>
-          <slot></slot>
+          <div class="table-div">
+            <slot></slot>
+          </div>
         </div>
       </Host>
     );

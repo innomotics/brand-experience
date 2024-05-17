@@ -8,43 +8,53 @@
   //     width:5px;
   //     height:5px;
   //   }
-  
+
   //   /* Track */
   //   &::-webkit-scrollbar-track {
   //     background: colors.$additional-light-200;
   //   }
-  
+
   //   /* Handle */
   //   &::-webkit-scrollbar-thumb {
   //     background: colors.$interaction-light-hover;
   //   }
-  
+
   // }
   scrollbar-width: thin;
-  
-  .mask-layer {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: calc(100% - 25px);
-    background-color: rgba(0,0,0,0);
-    -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
-    mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
-    mask-size: contain;
-    --left-mask-color: transparent;
-    --right-mask-color: transparent;
+  .table-wrapper{
+    position:relative;
+    display:block;
+    .mask-layer {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: calc(100% - 25px);
+      background-color: rgba(0, 0, 0, 0);
+      -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      mask-size: contain;
+      --left-mask-color: transparent;
+      --right-mask-color: transparent;
 
-    &.is-left-overflowing  {
-      background-color: colors.$primary-300;
-      --left-mask-color: black; //must be a solid color
+      &.is-left-overflowing {
+        background-color: colors.$primary-300;
+        --left-mask-color: black; //must be a solid color
+      }
+
+      &.is-right-overflowing {
+        background-color: colors.$primary-300;
+        --right-mask-color: black; //must be a solid color
+      }
     }
-
-    &.is-right-overflowing {
-      background-color: colors.$primary-300;
-      --right-mask-color: black; //must be a solid color
+    .table-div {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      overflow-x: auto;
+      scrollbar-width: thin;
     }
   }
 }
