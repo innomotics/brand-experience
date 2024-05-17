@@ -9,9 +9,62 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
   <TabItem value="preview" label="Preview" default>
   <div class="component-display">
     <div class="dark-bg">
-    <span class="bg-title">Modal example</span>
+    <span class="bg-title-big">Modal example</span>
     <InnoModalExample></InnoModalExample>
     </div>
+  </div>
+  </TabItem>
+  <TabItem value="overview" label="Overview" default>
+  <div class="component-display">
+    <div class="dark-bg">
+    <span class="bg-title-big">Overview</span>
+
+    General information about the modal component.
+
+    <span class="bg-title-big">Usage</span>
+
+    The framework specific API should be used to manage the modal windows.
+
+    The content of the modal is customizable but there are predefined components
+    which can be used if no custom layout is required.
+
+    <span class="bg-title-big">General components</span>
+
+    These components are available to provide a default layout.
+
+    Example:
+
+    ```html
+      <inno-modal>
+        <inno-modal-header>modal title</inno-modal-header>
+        <inno-modal-content>
+          More details about the modal content
+        </inno-modal-content>
+        <inno-modal-footer>
+          Footer content
+        </inno-modal-footer>
+      </inno-modal>
+    ```
+
+    <span class="bg-title-big">InnoModal</span>
+
+    The main wrapper of the modal context.
+    Optional to defined but the content will be wrapped in a modal component.
+
+    <span class="bg-title-big">InnoModalHeader</span>
+
+    Provide a default header with a title and a close button.
+
+    <span class="bg-title-big">InnoModalContent</span>
+
+    Wrap the provided content with the necessary styling.
+
+    <span class="bg-title-big">InnoModalFooter</span>
+
+    Wrap the provided content with the necessary styling.
+
+    </div>
+
   </div>
   </TabItem>
   <TabItem value="angular" label="Angular">
@@ -117,13 +170,13 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
         Reference to the opened modal instance.
 
         ```ts
-        interface ModalInstance<TReason = any> {
-          htmlElement: HTMLInnoModalElement;
+          interface ModalInstance<TReason = any> {
+            htmlElement: HTMLInnoModalElement;
 
-          onClose: TypedEvent<TReason>;
+            onClose: TypedEvent<TReason>;
 
-          onDismiss: TypedEvent<TReason>;
-        }
+            onDismiss: TypedEvent<TReason>;
+          }
         ```
 
         **Properties**
@@ -141,13 +194,13 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
         Can be injected into the components defined as the content of the modal to get reference to the active modal instance.
 
         ```ts
-        class InnoActiveModal<TData = any, TReason = any> {
-          get data(): TData | undefined;
+          class InnoActiveModal<TData = any, TReason = any> {
+            get data(): TData | undefined;
 
-          close(reason: TReason): void;
+            close(reason: TReason): void;
 
-          dismiss(reason?: TReason): void;
-        }
+            dismiss(reason?: TReason): void;
+          }
 
         ```
 
@@ -174,9 +227,9 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
           ```html
             <ng-template #modalRef let-modal>
               <inno-modal>
-                <inno-modal-header>Modal title</inno-modal-header>
+                <inno-modal-header>{{ modal.data.title }}</inno-modal-header>
                 <inno-modal-content>
-                  More details about the modal content {{ modal.data }}
+                  More details about the modal content
                 </inno-modal-content>
                 <inno-modal-footer>
                   Footer content
@@ -209,16 +262,35 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
               async openModal() {
                 const ref = await this.modalService.open({
                   content: this.modalRef,
+                  data: { title: 'modal title' },
                   closeOnBackdropClick: false,
                   backdrop: true,
                   centered: true,
                   title: 'title',
                   closeOnEscape: false,
-                  data: 'modal data',
                 });
               }
             }
 
+          ```
+          Template component example:
+
+
+          ```ts
+            @Component({ selector: 'app-my-component' })
+            export class MyComponent {
+              title = '';
+
+              constructor(readonly activeModal: InnoActiveModal) {}
+
+              examples() {
+                // Using the provided data
+                this.title = this.activeModal.data.title;
+
+                // Closing the modal
+                this.activeModal.close('close reason');
+              }
+            }
           ```
 
         </div>
@@ -261,11 +333,7 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
           to get reference to the actual modal instance.
 
           ```ts
-            @Component({
-              selector: 'app-modal-by-component',
-              templateUrl: './modal-by-component.component.html',
-              styleUrl: './modal-by-component.component.scss',
-            })
+            @Component({ selector: 'app-modal-by-component' })
             export class ModalByContentComponent {
               title = '';
 

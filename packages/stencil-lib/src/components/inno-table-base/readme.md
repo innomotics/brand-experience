@@ -123,12 +123,14 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property  | Attribute | Description | Type                | Default   |
 | --------- | --------- | ----------- | ------------------- | --------- |
 | `variant` | `variant` |             | `"dark" \| "light"` | `'light'` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
