@@ -61,7 +61,36 @@
     </div>
     <inno-modal id="innomodal1">
       <inno-modal-header>Modal title</inno-modal-header>
-      <inno-modal-content style="color: white; padding: 20px">This is a non-critical modal</inno-modal-content>
+      <inno-modal-content style="color: white;">
+        <form id="formu">
+          <div style="background-color: white;">
+            <inno-input label="name" variant="light">
+              <input id="name" name="name" type="text"/>
+              <inno-error type="badInput">Not valid</inno-error>
+            </inno-input>
+            <inno-input id="name2" label="Power" variant="light"  disabled>
+              <input id="nameinput2" disabled type="text" value="10"/>
+              <inno-error type="badInput">Not valid</inno-error>
+            </inno-input>
+            <inno-select label="Select" disabled>
+              <inno-select-item value="124" label="Hello"></inno-select-item>
+              <inno-select-item value="124321" label="Bello"></inno-select-item>
+            </inno-select>
+          </div>
+          <inno-input label="name" variant="dark">
+            <input id="name3" name="name" type="text"/>
+            <inno-error type="badInput">Not valid</inno-error>
+          </inno-input>
+          <inno-input id="name4" label="Power" variant="dark"  disabled>
+            <input id="nameinput4" disabled type="text" value="10"/>
+            <inno-error type="badInput">Not valid</inno-error>
+          </inno-input>
+          <inno-select label="Select" variant="dark" disabled>
+            <inno-select-item value="124" label="Hello"></inno-select-item>
+            <inno-select-item value="124321" label="Bello"></inno-select-item>
+          </inno-select>
+        </form>
+      </inno-modal-content>
       <inno-modal-footer style="display: flex; justify-content: flex-end; gap: 20px">
         <inno-button colorVariant="light" variant="secondary"> Close </inno-button>
         <inno-button colorVariant="light" variant="primary"> Accept </inno-button>
