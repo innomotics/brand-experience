@@ -13,16 +13,30 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
         <inno-table-base>
             <table>
                 <thead>
-                <tr><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th></tr>
+                <tr><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th></tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th>cellhead</th>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                 </tr>
                 <tr>
                     <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                 </tr>
@@ -35,16 +49,30 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
         <inno-table-base variant="dark">
             <table>
                 <thead>
-                <tr><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th></tr>
+                <tr><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th></tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th>cellhead</th>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                 </tr>
                 <tr>
                     <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <th>Lorem ipsum</th>
+                    <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                     <td>Lorem ipsum</td>
                 </tr>

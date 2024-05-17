@@ -41,7 +41,7 @@ fs.readdir(directoryPath, (err, files) => {
     let name = path.parse(path.join(directoryPath, file)).name;
     let clearedName = clearName(name);
     moduleContent += `export const inno_${clearedName} = "${optimizeSvg(content)}";\n`;
-    readmeContent += `<div class="icon-item"><InnoIcon icon="${clearedName}" size="64"></InnoIcon><div>${clearedName}</div></div>`;
+    readmeContent += `<div className="icon-item"><InnoIcon icon="${clearedName}" size="64"></InnoIcon><div>${clearedName}</div></div>`;
   });
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
   readmeContent += "</div>";

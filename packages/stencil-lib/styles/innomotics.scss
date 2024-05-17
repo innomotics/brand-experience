@@ -1,4 +1,3 @@
-@use 'simplebar/dist/simplebar.min.css';
 @forward '@innomotics/brand-experience-fonts/dist/styles/innomoticsHaffer';
 @forward '@innomotics/brand-experience-icons/dist/styles/innomoticsIcons';
 @forward './layoutmixins';
@@ -6,6 +5,7 @@
 @forward './componentmixins';
 @forward './base';
 
+@use 'simplebar/dist/simplebar.min.css';
 @import './components/inno-checkbox';
 @import './components/inno-radiobutton';
 @import './components/inno-pane';

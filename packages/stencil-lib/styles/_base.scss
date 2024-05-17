@@ -39,6 +39,10 @@ table.inno-table {
   table-layout: auto;
   width: 100%;
 
+  tr{
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
   th,
   td {
     padding: 16px;
@@ -47,6 +51,7 @@ table.inno-table {
     text-align: left;
   }
   thead {
+    background-color: rgba(0, 0, 0, 0);
     th {
       text-align: left;
       font-weight: 790;
