@@ -72,7 +72,7 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
       <TabItem value="angular-configuration" label="Configuration" default>
       <div class="component-display">
         <div class="dark-bg">
-        <span class="bg-title-big">Modal configuration</span>
+        <span class="bg-title-big">Configuration</span>
         
         Import the provided module into the application root module.
 
