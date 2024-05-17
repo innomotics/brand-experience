@@ -47,6 +47,7 @@ export const config: Config = {
   plugins: [sass({ includePaths: ['styles', '../../node_modules'] }), postcss({ plugins: [autoprefixer()] })],
   srcDir: './src',
   globalStyle: './styles/innomotics.scss',
+  globalScript: './src/polyfills.ts',
   outputTargets: [
     {
       type: 'dist',
