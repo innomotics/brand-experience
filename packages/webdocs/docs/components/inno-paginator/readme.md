@@ -2,18 +2,18 @@
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoIcon} from '@innomotics/brand-experience-react-lib';
+import {InnoPaginator} from '@innomotics/brand-experience-react-lib';
 
 <Tabs>
   <TabItem value="preview" label="Preview" default>
   <div class="component-display">
     <div class="light-bg">
       <span class="bg-title">light background</span>
-      <inno-paginator page-count="15"></inno-paginator>
+      <InnoPaginator page-count="15"></InnoPaginator>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
-      <inno-paginator page-count="15" variant="dark"></inno-paginator>
+      <InnoPaginator page-count="15" variant="dark"></InnoPaginator>
     </div>
   </div>
   </TabItem>
@@ -22,11 +22,11 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
    <div class="component-display">
     <div class="light-bg">
       <span class="bg-title">light background</span>
-      <inno-paginator page-count="15"></inno-paginator>
+      <InnoPaginator page-count="15"></InnoPaginator>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
-      <inno-paginator page-count="15" variant="dark"></inno-paginator>
+      <InnoPaginator page-count="15" variant="dark"></InnoPaginator>
     </div>
   </div>
     ```
