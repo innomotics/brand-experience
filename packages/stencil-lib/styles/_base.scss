@@ -37,7 +37,7 @@ table.inno-table {
   font-size: 16px;
   background-color: rgba(0, 0, 0, 0);
   table-layout: auto;
-  width:100%;
+  width: 100%;
 
   th,
   td {
@@ -79,32 +79,30 @@ table.inno-table {
   }
 
   &.dark {
-    ::slotted(table) {
-      color: colors.$text-dark-highemphasis;
-      background-color: rgba(0, 0, 0, 0);
-      thead {
-        th {
-          border-color: colors.$text-dark-highemphasis;
-          border-style: solid;
-          border-width: 0px 0px 2px 0px;
-          color: colors.$text-dark-highemphasis;
-          background-color: rgba(0, 0, 0, 0);
-          text-align: left;
-        }
+    color: colors.$text-dark-highemphasis;
+    background-color: rgba(0, 0, 0, 0);
+    thead {
+      th {
+        border-color: colors.$text-dark-highemphasis;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        color: colors.$text-dark-highemphasis;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: left;
       }
-      tbody {
-        th,
-        td {
-          border-color: colors.$transparency-dark-200;
-          border-style: solid;
-          border-width: 0px 0px 1px 0px;
-          color: colors.$text-dark-highemphasis;
-          background-color: rgba(0, 0, 0, 0);
-          text-align: left;
-        }
-        tr {
-          border: none;
-        }
+    }
+    tbody {
+      th,
+      td {
+        border-color: colors.$transparency-dark-200;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+        color: colors.$text-dark-highemphasis;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: left;
+      }
+      tr {
+        border: none;
       }
     }
   }

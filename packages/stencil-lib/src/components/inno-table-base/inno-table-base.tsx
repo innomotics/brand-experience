@@ -37,6 +37,9 @@ export class InnoTableBase {
     this.maskElement = this.hostElement.querySelector<HTMLDivElement>('.mask-layer');
     let table = this.hostElement.querySelector('table');
     table.classList.add('inno-table');
+    if(this.variant == 'dark'){
+      table.classList.add('dark');
+    }
     this.scrollBar.getScrollElement().addEventListener('scroll', this.scrollListener, { passive: true });
   }
 
