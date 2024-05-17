@@ -14,81 +14,280 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
     </div>
   </div>
   </TabItem>
-  <TabItem value="angular" label="Angular" default>
-  <div class="component-display">
-  <div class="dark-bg">
-    <span class="bg-title">Import the root module to import the service</span>
-    ```ts
-      import { ComponentsModule } from '@innomotics/brand-experience-angular-lib';
+  <TabItem value="angular" label="Angular">
+    <Tabs>
+      <TabItem value="angular-configuration" label="Configuration" default>
+      <div class="component-display">
+        <div class="dark-bg">
+        <span class="bg-title-big">Modal configuration</span>
+        
+        Import the provided module into the application root module.
 
-      @NgModule({
-        imports: [
-          ComponentsModule,
-          ComponentsModule.forRoot(),
-        ]
-      })
-      export class Module {}
-    ```
+        Module example:
 
-  </div>
-  </div>
+        ```ts
+          import { ComponentsModule } from '@innomotics/brand-experience-angular-lib';
 
-  <div class="component-display">
-  <div class="dark-bg">
-    <span class="bg-title">Create a template</span>
+          @NgModule({
+            imports: [
+              // Import the modal components
+              ComponentsModule,
 
-    ```html
-      <inno-button (click)="openModal()">Open modal</inno-button>
+              // Import Modal service
+              ComponentsModule.forRoot(),
+            ]
+          })
+          export class ApplicationRootModule {}
+        ```
 
-      <ng-template #modalRef let-modal>
-        <inno-modal>
-          <inno-modal-header>Modal title</inno-modal-header>
-          <inno-modal-content>
-            More details about the modal content {{ modal.data }}
-          </inno-modal-content>
-          <inno-modal-footer>
-            Footer content
-          </inno-modal-footer>
-        </inno-modal>
-      </ng-template>
-    ```
+        Standalone component example:
 
-  </div>
-  </div>
+        ```ts
+        import { ComponentsModule } from '@innomotics/brand-experience-angular-lib';
 
-  <div class="component-display">
-  <div class="dark-bg">
-    <span class="bg-title">Import the service and open the modal</span>
+        bootstrapApplication(PhotoAppComponent, {
+          providers: [
+            importProvidersFrom(
+              ComponentsModule.forRoot()
+            ),
+          ]
+        });
 
-    ```ts
-      import { InnoModalService } from '@innomotics/brand-experience-angular-lib';
+        ```
+        </div>
+      </div>
+      </TabItem>
+      <TabItem value="angular-api" label="API">
+      <div class="component-display">
+        <div class="dark-bg">
+        <span class="bg-title-big">Description of the API surface</span>
 
-      @Component({})
-      export class ModalExampleComponent {
-        @ViewChild('modalRef', { read: TemplateRef })
-        modalRef!: TemplateRef<any>;
+        Overview about the core API.
 
-        constructor(private readonly modalService: InnoModalService) {}
+        **Parameters:**
 
-        async openModal() {
-          const ref = await this.modalService.open({
-            content: this.modalRef,
-            closeOnBackdropClick: false,
-            backdrop: true,
-            centered: true,
-            title: 'title',
-            closeOnEscape: false,
-            data: 'modal data',
-          });
+        | Name      | Description                                |
+        | --------- | ------------------------------------------ |
+        | `TData`   | Type of data propperty of the config input |
+        | `TReason` | Type of the return value of dismiss        |
+
+        <span class="bg-title-big">InnoModalService</span>
+
+        Central service to open modal.
+
+        ```ts
+        class InnoModalService {
+          open<TData = any, TReason = any>(config: ModalConfig<TData>) => Promise<ModalInstance>
         }
-      }
+        ```
 
-    ```
+        <span class="bg-title-big">Usage</span>
 
-  </div>
-  </div>
+        Inject into a component and use the `open` method to open a modal.
+
+        <span class="bg-title-big">Methods</span>
+
+        <span class="bg-title-big">`open`</span>
+
+        **Parameters**
+
+        | Name      | Type        | Description                |
+        | --------- | ----------- | -------------------------- |
+        | `config`  | ModalConfig | Modal configuration object |
+
+        **Returns:**
+
+        Type: `ModalInstance`
+
+        A reference to the created modal instance.
+
+        <span class="bg-title-big">ModalConfig</span>
+
+        Configuration of the opened modal instance.
+
+        Same as the inno-modal configuration but the content can be a  `TemplateRef` or an Angular component.
+
+        | Name       | Type              | Description                   |
+        | ---------- | ----------------- | ----------------------------- |
+        | `content`  | `TemplateRef`     | Reference to an `ng-template` |
+        | `content`  | `Čomponent class` | Angular component class       |
+
+        <span class="bg-title-big">ModalInstance</span>
+
+        Reference to the opened modal instance.
+
+        ```ts
+        interface ModalInstance<TReason = any> {
+          htmlElement: HTMLInnoModalElement;
+
+          onClose: TypedEvent<TReason>;
+
+          onDismiss: TypedEvent<TReason>;
+        }
+        ```
+
+        **Properties**
+
+        | Name          | Type                   | Description                               |
+        | ------------- | ---------------------- | ----------------------------------------- |
+        | `htmlElement` | `HTMLInnoModalElement` | Reference to the created modal DOM object |
+        | `onClose`     | `TypedEvent<TReason>`  | Close event subscription handler          |
+        | `onDismiss`   | `TypedEvent<TReason>`  | Dismiss event subscription handler        |
+
+        <span class="bg-title-big">ActiveModal</span>
+
+        Reference to the active modal instance.
+
+        Can be injected into the components defined as the content of the modal to get reference to the active modal instance.
+
+        ```ts
+        class InnoActiveModal<TData = any, TReason = any> {
+          get data(): TData | undefined;
+
+          close(reason: TReason): void;
+
+          dismiss(reason?: TReason): void;
+        }
+
+        ```
+
+        | Name      | Type     | Description                                 |
+        | --------- | -------- | ------------------------------------------- |
+        | `data`    | property | Provided configuration data                 |
+        | `close`   | function | Close the modal with the provided reaso     |
+        | `dismiss` | function | Dissmiss the modal with the provided reason |
+
+        </div>
+      </div>
+      </TabItem>
+      <TabItem value="angular-template" label="Modal by template">
+        <div class="component-display">
+        <div class="dark-bg">
+          <span class="bg-title">Using the API by providing a template as the content of the modal</span>
+
+          ### **Define the template**
+
+          Create a template and define the content of the modal component.
+
+          The modal variable (let-modal) can be used to get reference to the active modal instance.
+
+          ```html
+            <ng-template #modalRef let-modal>
+              <inno-modal>
+                <inno-modal-header>Modal title</inno-modal-header>
+                <inno-modal-content>
+                  More details about the modal content {{ modal.data }}
+                </inno-modal-content>
+                <inno-modal-footer>
+                  Footer content
+                </inno-modal-footer>
+              </inno-modal>
+            </ng-template>
+          ```
+
+          A custom component can be used instead to define the content of the template.
+
+          ```html
+            <ng-template #modalRef>
+              <my-component></my-component>
+            </ng-template>
+          ```
+
+          Import the service and open the modal by providing
+          the defined template as the content of the modal.
+
+          ```ts
+            import { InnoModalService } from '@innomotics/brand-experience-angular-lib';
+
+            @Component({})
+            export class ModalExampleComponent {
+              @ViewChild('modalRef', { read: TemplateRef })
+              modalRef!: TemplateRef<any>;
+
+              constructor(private readonly modalService: InnoModalService) {}
+
+              async openModal() {
+                const ref = await this.modalService.open({
+                  content: this.modalRef,
+                  closeOnBackdropClick: false,
+                  backdrop: true,
+                  centered: true,
+                  title: 'title',
+                  closeOnEscape: false,
+                  data: 'modal data',
+                });
+              }
+            }
+
+          ```
+
+        </div>
+        </div>
+      </TabItem>
+      <TabItem value="angular-component" label="Modal by component">
+        <div class="component-display">
+        <div class="dark-bg">
+          <span class="bg-title">Using the API by providing a component as the content of the modal</span>
+
+          Import the modal service and open the modal
+          by providing the content as an Angular component.
+
+          ```ts
+            import { InnoModalService } from '@innomotics/brand-experience-angular-lib';
+
+            @Component({})
+            export class ModalExampleComponent {
+              constructor(private readonly modalService: InnoModalService) {}
+
+              async openModal() {
+                const ref = await this.modalService.open({
+                  // Define the content as the class of the Component
+                  content: ModalByContentComponent,
+                  data: { title: 'example' },
+
+                  // Additional settings
+                  closeOnBackdropClick: false,
+                  backdrop: true,
+                  centered: true,
+                  title: 'title',
+                  closeOnEscape: false,
+                });
+              }
+            }
+
+          ```
+
+          In the component the InnoActiveModal can be injected
+          to get reference to the actual modal instance.
+
+          ```ts
+            @Component({
+              selector: 'app-modal-by-component',
+              templateUrl: './modal-by-component.component.html',
+              styleUrl: './modal-by-component.component.scss',
+            })
+            export class ModalByContentComponent {
+              title = '';
+
+              constructor(readonly activeModal: InnoActiveModal) {}
+
+              examples() {
+                // Using the provided data
+                this.title = this.activeModal.data.title;
+
+                // Closing the modal
+                this.activeModal.close('close reason');
+              }
+            }
+          ```
+
+        </div>
+        </div>
+      </TabItem>
+    </Tabs>
+
   </TabItem>
-  <TabItem value="react" label="React" default>
+  <TabItem value="react" label="React">
   <div class="component-display">
   <div class="dark-bg">
     <span class="bg-title">Use the provided function to show the modal.</span>
@@ -138,7 +337,7 @@ import InnoModalExample from '@site/src/components/InnoModalExample/InnoModalExa
   </div>
   </div>
   </TabItem>
-  <TabItem value="vue" label="Vue" default>
+  <TabItem value="vue" label="Vue">
   <div class="component-display">
   </div>
   </TabItem>

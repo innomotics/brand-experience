@@ -390,16 +390,19 @@ export namespace Components {
     /**
      * Represents the main content of the modal.
      * The content is provided by the user.
+     * See the inno-modal component for more information.
      */
     interface InnoModalContent {
     }
     /**
      * Represents the footer content for the InnoModal component.
+     * See the inno-modal component for more information.
      */
     interface InnoModalFooter {
     }
     /**
      * Represents the header of the inno-modal component.
+     * See the inno-modal component for more information.
      */
     interface InnoModalHeader {
         /**
@@ -1044,6 +1047,7 @@ declare global {
     /**
      * Represents the main content of the modal.
      * The content is provided by the user.
+     * See the inno-modal component for more information.
      */
     interface HTMLInnoModalContentElement extends Components.InnoModalContent, HTMLStencilElement {
     }
@@ -1053,6 +1057,7 @@ declare global {
     };
     /**
      * Represents the footer content for the InnoModal component.
+     * See the inno-modal component for more information.
      */
     interface HTMLInnoModalFooterElement extends Components.InnoModalFooter, HTMLStencilElement {
     }
@@ -1065,6 +1070,7 @@ declare global {
     }
     /**
      * Represents the header of the inno-modal component.
+     * See the inno-modal component for more information.
      */
     interface HTMLInnoModalHeaderElement extends Components.InnoModalHeader, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoModalHeaderElementEventMap>(type: K, listener: (this: HTMLInnoModalHeaderElement, ev: InnoModalHeaderCustomEvent<HTMLInnoModalHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1709,16 +1715,19 @@ declare namespace LocalJSX {
     /**
      * Represents the main content of the modal.
      * The content is provided by the user.
+     * See the inno-modal component for more information.
      */
     interface InnoModalContent {
     }
     /**
      * Represents the footer content for the InnoModal component.
+     * See the inno-modal component for more information.
      */
     interface InnoModalFooter {
     }
     /**
      * Represents the header of the inno-modal component.
+     * See the inno-modal component for more information.
      */
     interface InnoModalHeader {
         /**
@@ -2169,14 +2178,17 @@ declare module "@stencil/core" {
             /**
              * Represents the main content of the modal.
              * The content is provided by the user.
+             * See the inno-modal component for more information.
              */
             "inno-modal-content": LocalJSX.InnoModalContent & JSXBase.HTMLAttributes<HTMLInnoModalContentElement>;
             /**
              * Represents the footer content for the InnoModal component.
+             * See the inno-modal component for more information.
              */
             "inno-modal-footer": LocalJSX.InnoModalFooter & JSXBase.HTMLAttributes<HTMLInnoModalFooterElement>;
             /**
              * Represents the header of the inno-modal component.
+             * See the inno-modal component for more information.
              */
             "inno-modal-header": LocalJSX.InnoModalHeader & JSXBase.HTMLAttributes<HTMLInnoModalHeaderElement>;
             "inno-paginator": LocalJSX.InnoPaginator & JSXBase.HTMLAttributes<HTMLInnoPaginatorElement>;

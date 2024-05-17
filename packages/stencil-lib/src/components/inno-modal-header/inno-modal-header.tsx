@@ -3,6 +3,8 @@ import { closestPassShadow } from './../../utils/siemensix/shadow-dom';
 
 /**
  * Represents the header of the inno-modal component.
+ *
+ * See the inno-modal component for more information.
  */
 @Component({
   tag: 'inno-modal-header',
