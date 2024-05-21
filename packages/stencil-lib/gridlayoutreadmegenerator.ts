@@ -2,7 +2,7 @@ import * as fs from 'fs';
 
 let maingridStart = "<div className=\"inno-main-grid\" style={{ \"border\": \"1px solid white\"}}>\n";
 //passsing directoryPath and callback function
-let readmeContent = "# `Layout`\n classNamees defining the Innomotics page layout\n\n The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)\n";
+let readmeContent = "# `Layout`\n classNames defining the Innomotics page layout\n\n The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)\n";
 readmeContent += "## 36 columns\n use 'inno-main-grid' className on the main container element\n";
 readmeContent += maingridStart;
 for(let i = 0; i<35 ; i++){

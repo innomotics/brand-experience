@@ -1,5 +1,5 @@
 # `Layout`
- classNamees defining the Innomotics page layout
+ classNames defining the Innomotics page layout
 
  The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)
 ## 36 columns
