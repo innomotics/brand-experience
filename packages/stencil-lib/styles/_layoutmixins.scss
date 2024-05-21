@@ -1,7 +1,7 @@
 //divides the page into 36 equal columns
 @mixin inno-main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr repeat(32, 1fr) 1fr 1fr;
+  grid-template-columns: 1fr 1fr repeat(32, 40px) 1fr 1fr;
 }
 
 //creates a subgrid that has the middle 32 columns
