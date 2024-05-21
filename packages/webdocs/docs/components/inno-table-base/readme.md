@@ -45,7 +45,7 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
                 </tbody>
             </table>
         </InnoTableBase>
-        </div>
+      </div>
       <div class="dark-bg">
         <span class="bg-title">dark background</span>
         <InnoTableBase variant="dark">

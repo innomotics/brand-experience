@@ -9,6 +9,8 @@
 
 Represents the header of the inno-modal component.
 
+See the inno-modal component for more information.
+
 ## Properties
 
 | Property    | Attribute    | Description                     | Type                | Default     |

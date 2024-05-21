@@ -138,31 +138,45 @@
 .component-display {
   display: flex;
   flex-direction: row;
-  &.columns
-  {
+  &.columns {
     flex-direction: column;
   }
   gap: 10px;
   .light-bg {
     color: innomotics.$primary-200;
-    flex-grow:1;
+    flex-grow: 1;
     padding: 1em;
     background-color: innomotics.$primary-300;
     padding: 1em;
-    .bg-title {
-      display: block;
-      margin-bottom: 25px;
-    }
-  }
-  .dark-bg {
-    color: innomotics.$primary-300;
-    flex-grow:1;
-    padding: 1em;
-    background-color: innomotics.$primary-200;
+
     .bg-title {
       display: block;
       margin-bottom: 25px;
     }
 
+    .bg-title-big {
+      display: block;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  .dark-bg {
+    color: innomotics.$primary-300;
+    flex-grow: 1;
+    padding: 1em;
+    background-color: innomotics.$primary-200;
+
+    .bg-title {
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .bg-title-big {
+      display: block;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: bold;
+    }
   }
 }
