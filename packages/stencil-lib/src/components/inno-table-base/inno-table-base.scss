@@ -1,25 +1,6 @@
 @use '@innomotics/brand-experience/styles/colors';
 
 :host {
-  // &.scrollcustom {
-  //   display:block;
-  //   /* width */
-  //   &::-webkit-scrollbar {
-  //     width:5px;
-  //     height:5px;
-  //   }
-
-  //   /* Track */
-  //   &::-webkit-scrollbar-track {
-  //     background: colors.$additional-light-200;
-  //   }
-
-  //   /* Handle */
-  //   &::-webkit-scrollbar-thumb {
-  //     background: colors.$interaction-light-hover;
-  //   }
-
-  // }
   scrollbar-width: thin;
   .table-wrapper{
     position:relative;
@@ -33,8 +14,8 @@
       width: 100%;
       height: calc(100% - 25px);
       background-color: rgba(0, 0, 0, 0);
-      -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
-      mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 200px, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 15%, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
+      mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 10%, transparent 85%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
       mask-size: contain;
       --left-mask-color: transparent;
       --right-mask-color: transparent;
