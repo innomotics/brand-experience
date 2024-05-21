@@ -338,7 +338,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component. You can either use this property or use the manually added errors. Can't use both at the same time.
          */
         "error": string;
         /**
@@ -1691,7 +1691,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component. You can either use this property or use the manually added errors. Can't use both at the same time.
          */
         "error"?: string;
         /**

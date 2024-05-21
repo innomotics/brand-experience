@@ -41,6 +41,7 @@ export class InnoInput {
 
   /**
    * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+   * You can either use this property or use the manually added errors. Can't use both at the same time.
    */
   @Prop({ mutable: true }) error: string;
 
@@ -68,6 +69,10 @@ export class InnoInput {
   }
 
   private setErrors(element: any) {
+    if (this.error != null && this.error !== '') { //if error is specified skip the manually added errors
+      return;
+    }
+
     this.errorElements.forEach(ee => (ee.active = false));
     if (!element.validity.valid) {
       this.isValid = false;
