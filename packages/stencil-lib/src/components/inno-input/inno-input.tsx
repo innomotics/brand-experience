@@ -58,7 +58,7 @@ export class InnoInput {
   @State() isValid: boolean = true;
 
   get errorElements() {
-    return [...Array.from(this.hostElement.querySelectorAll('inno-error'))];
+    return [...Array.from(this.hostElement.querySelectorAll('inno-error:not(.explicit-error)'))] as HTMLInnoErrorElement[];
   }
 
   @Listen('input')
@@ -193,7 +193,15 @@ export class InnoInput {
           invalid: !this.isValid || errorSpecified
         }}>{this.label}</span>
         <slot></slot>
-        {errorSpecified ? <inno-error type={this.errortype} variant={this.variant} active={true}>{this.error}</inno-error> : null}
+        {errorSpecified ?
+          <inno-error
+            class="explicit-error"
+            type={this.errortype}
+            variant={this.variant}
+            active={true}>
+            {this.error}
+          </inno-error>
+          : null}
       </Host>
     );
   }
