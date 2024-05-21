@@ -39,12 +39,22 @@ export class InnoInput {
    */
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
 
+  /**
+   * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+   */
+  @Prop({ mutable: true }) error: string;
+
+  /**
+   * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+   * <br/><br/>Only has an effect if 'error' has a value.
+   */
+  @Prop({ mutable: true }) errortype: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
+    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+
   /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
   @Prop() valuePropReDefine: boolean = true;
 
   @State() isValid: boolean = true;
-
-  @State() canShowErrors: boolean = false;
 
   get errorElements() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-error'))];
@@ -152,7 +162,8 @@ export class InnoInput {
   }
 
   render() {
-    this.canShowErrors = this.errorElements?.length > 0;
+    let errorSpecified = this.error != null && this.error !== '';
+    let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
 
     return (
       <Host
@@ -163,13 +174,21 @@ export class InnoInput {
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
-          'invalid': !this.isValid,
-          'can-show-errors': this.canShowErrors
+          'invalid': !this.isValid || errorSpecified,
+          'can-show-errors': canShowErrors
         }}
         onClick={() => this.activateInput()}
       >
-        <span class={{ label: true, float: this.shouldFloat, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>{this.label}</span>
+        <span class={{
+          label: true,
+          float: this.shouldFloat,
+          disabled: this.disabled,
+          light: this.variant === 'light',
+          dark: this.variant === 'dark',
+          invalid: !this.isValid || errorSpecified
+        }}>{this.label}</span>
         <slot></slot>
+        {errorSpecified ? <inno-error type={this.errortype} variant={this.variant} active={true}>{this.error}</inno-error> : null}
       </Host>
     );
   }

@@ -43,11 +43,25 @@ import {InnoError, InnoInput} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                                                                                                  | Default     |
-| -------- | --------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `active` | `active`  |             | `boolean`                                                                                                                                                                             | `false`     |
-| `type`   | `type`    |             | `"badInput" \| "customError" \| "patternMismatch" \| "rangeOverflow" \| "rangeUnderflow" \| "stepMismatch" \| "tooLong" \| "tooShort" \| "typeMismatch" \| "valid" \| "valueMissing"` | `undefined` |
+| Property  | Attribute | Description                                                                                            | Type                                                                                                                                                                                  | Default     |
+| --------- | --------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `active`  | `active`  | Show the error or not.                                                                                 | `boolean`                                                                                                                                                                             | `false`     |
+| `type`    | `type`    | The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState | `"badInput" \| "customError" \| "patternMismatch" \| "rangeOverflow" \| "rangeUnderflow" \| "stepMismatch" \| "tooLong" \| "tooShort" \| "typeMismatch" \| "valid" \| "valueMissing"` | `undefined` |
+| `variant` | `variant` | Theme variant of the input.                                                                            | `"dark" \| "light"`                                                                                                                                                                   | `'light'`   |
 
+
+## Dependencies
+
+### Used by
+
+ - [inno-input](../inno-input)
+
+### Graph
+```mermaid
+graph TD;
+  inno-input --> inno-error
+  style inno-error fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

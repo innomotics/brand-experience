@@ -7,17 +7,24 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class InnoError {
 
-  @Prop() active : boolean = false;
-  @Prop() type: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
-  
-  // @Watch('active')
-  // activehandling(newValue: boolean)
-  // {
-  //   this.active = newValue;
-  // }
+  /**
+   * Show the error or not.
+   */
+  @Prop({ mutable: true }) active: boolean = false;
+
+  /**
+   * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+   */
+  @Prop({ mutable: true }) type: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow' | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+
+  /**
+   * Theme variant of the input.
+   */
+  @Prop({ mutable: true }) variant: 'dark' | 'light' = 'light';
+
   render() {
     return (
-      <Host active={this.active}>
+      <Host active={this.active} class={{ 'dark': this.variant === 'dark', 'light': this.variant === 'light' }}>
         <slot></slot>
       </Host>
     );

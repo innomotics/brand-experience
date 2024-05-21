@@ -284,8 +284,18 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
     interface InnoError {
+        /**
+          * Show the error or not.
+         */
         "active": boolean;
-        "type": 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        /**
+          * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+         */
+        "type": 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow' | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        /**
+          * Theme variant of the input.
+         */
+        "variant": 'dark' | 'light';
     }
     /**
      * Represents the general footer for the Innomotics applications.
@@ -327,6 +337,15 @@ export namespace Components {
           * Whether the input is disabled or not.
          */
         "disabled": boolean;
+        /**
+          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+         */
+        "error": string;
+        /**
+          * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value.
+         */
+        "errortype": 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
+    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
         /**
           * Whether the input is focused or not.
          */
@@ -1618,8 +1637,18 @@ declare namespace LocalJSX {
         "variant"?: 'dark' | 'light';
     }
     interface InnoError {
+        /**
+          * Show the error or not.
+         */
         "active"?: boolean;
-        "type"?: 'badInput' | 'customError' |'patternMismatch' | 'rangeOverflow' |'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        /**
+          * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+         */
+        "type"?: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow' | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        /**
+          * Theme variant of the input.
+         */
+        "variant"?: 'dark' | 'light';
     }
     /**
      * Represents the general footer for the Innomotics applications.
@@ -1661,6 +1690,15 @@ declare namespace LocalJSX {
           * Whether the input is disabled or not.
          */
         "disabled"?: boolean;
+        /**
+          * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+         */
+        "error"?: string;
+        /**
+          * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value.
+         */
+        "errortype"?: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
+    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
         /**
           * Whether the input is focused or not.
          */

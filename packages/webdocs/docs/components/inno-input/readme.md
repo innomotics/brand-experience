@@ -82,12 +82,14 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property    | Attribute    | Description                           | Type                | Default     |
-| ----------- | ------------ | ------------------------------------- | ------------------- | ----------- |
-| `disabled`  | `disabled`   | Whether the input is disabled or not. | `boolean`           | `false`     |
-| `isFocused` | `is-focused` | Whether the input is focused or not.  | `boolean`           | `undefined` |
-| `label`     | `label`      | Floating label for the input.         | `string`            | `undefined` |
-| `variant`   | `variant`    | Color variant of the input.           | `"dark" \| "light"` | `'light'`   |
+| Property    | Attribute    | Description                                                                                                                                                 | Type                                                                                                                                                                                  | Default     |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `disabled`  | `disabled`   | Whether the input is disabled or not.                                                                                                                       | `boolean`                                                                                                                                                                             | `false`     |
+| `error`     | `error`      | Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.               | `string`                                                                                                                                                                              | `undefined` |
+| `errortype` | `errortype`  | The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value. | `"badInput" \| "customError" \| "patternMismatch" \| "rangeOverflow" \| "rangeUnderflow" \| "stepMismatch" \| "tooLong" \| "tooShort" \| "typeMismatch" \| "valid" \| "valueMissing"` | `undefined` |
+| `isFocused` | `is-focused` | Whether the input is focused or not.                                                                                                                        | `boolean`                                                                                                                                                                             | `undefined` |
+| `label`     | `label`      | Floating label for the input.                                                                                                                               | `string`                                                                                                                                                                              | `undefined` |
+| `variant`   | `variant`    | Color variant of the input.                                                                                                                                 | `"dark" \| "light"`                                                                                                                                                                   | `'light'`   |
 
 
 ## Events
@@ -96,6 +98,19 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
 | -------------- | ---------------------------------- | ------------------------------- |
 | `valueChanged` | Fired when the new value is valid. | `CustomEvent<number \| string>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [inno-error](../inno-error)
+
+### Graph
+```mermaid
+graph TD;
+  inno-input --> inno-error
+  style inno-input fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -110,7 +110,8 @@ export const InnoDragAndDrop = /*@__PURE__*/ defineContainer<JSX.InnoDragAndDrop
 
 export const InnoError = /*@__PURE__*/ defineContainer<JSX.InnoError>('inno-error', undefined, [
   'active',
-  'type'
+  'type',
+  'variant'
 ]);
 
 
@@ -137,6 +138,8 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'disabled',
   'label',
   'variant',
+  'error',
+  'errortype',
   'valuePropReDefine',
   'valueChanged'
 ]);

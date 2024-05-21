@@ -225,14 +225,14 @@ export declare interface InnoDragAndDrop extends Components.InnoDragAndDrop {
 
 
 @ProxyCmp({
-  inputs: ['active', 'type']
+  inputs: ['active', 'type', 'variant']
 })
 @Component({
   selector: 'inno-error',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['active', 'type'],
+  inputs: ['active', 'type', 'variant'],
 })
 export class InnoError {
   protected el: HTMLElement;
@@ -313,14 +313,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'isFocused', 'label', 'variant']
+  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'isFocused', 'label', 'variant'],
+  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;

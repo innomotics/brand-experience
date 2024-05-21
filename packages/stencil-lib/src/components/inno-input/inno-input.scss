@@ -42,7 +42,8 @@
         -webkit-box-shadow: 0 0 0px 1000px colors.$background-light-200 inset;
       }
 
-      &.disabled, &:disabled {
+      &.disabled,
+      &:disabled {
         background-color: rgba(colors.$transparency-light-100, 0);
         -webkit-text-fill-color: unset;
         -webkit-box-shadow: unset;
@@ -59,7 +60,8 @@
       border: 1px solid colors.$highlight-light-100;
       box-shadow: inset 0px 0px 0px 1px colors.$highlight-light-100;
 
-      &.disabled, &:disabled  {
+      &.disabled,
+      &:disabled {
         box-shadow: inset 0px 0px 0px 1px colors.$additional-light-300;
         border: 1px solid colors.$additional-light-300;
         background-color: colors.$transparency-light-100;
@@ -101,7 +103,8 @@
         box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
       }
 
-      &.disabled, &:disabled {
+      &.disabled,
+      &:disabled {
         background-color: rgba(colors.$transparency-dark-100, 0);
         color: colors.$text-dark-highemphasis;
         -webkit-box-shadow: unset;
@@ -118,7 +121,8 @@
       border: 1px solid colors.$highlight-dark-100;
       box-shadow: inset 0px 0px 0px 1px colors.$highlight-dark-100;
 
-      &.disabled, &:disabled {
+      &.disabled,
+      &:disabled {
         box-shadow: inset 0px 0px 0px 1px colors.$additional-dark-300;
         border: 1px solid colors.$additional-dark-300;
       }
@@ -151,12 +155,20 @@
     position: absolute;
 
     &.light {
+      &.invalid {
+        color: colors.$status-light-error;
+      }
+
       &.disabled {
         color: colors.$text-light-lowemphasis;
       }
     }
 
     &.dark {
+      &.invalid {
+        color: colors.$status-dark-error;
+      }
+
       &.disabled {
         color: colors.$text-dark-lowemphasis;
       }
