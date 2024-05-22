@@ -101,6 +101,7 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
  - [inno-drag-and-drop](../inno-drag-and-drop)
  - [inno-modal-header](../inno-modal-header)
  - [inno-paginator](../inno-paginator)
+ - [inno-popover](../inno-popover)
  - [inno-select](../inno-select)
  - [inno-select-item](../inno-select-item)
  - [inno-status-message](../inno-status-message)
@@ -117,6 +118,7 @@ graph TD;
   inno-drag-and-drop --> inno-icon
   inno-modal-header --> inno-icon
   inno-paginator --> inno-icon
+  inno-popover --> inno-icon
   inno-select --> inno-icon
   inno-select-item --> inno-icon
   inno-status-message --> inno-icon

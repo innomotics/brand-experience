@@ -5,7 +5,7 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 50;
+  z-index: 1001;
   color: colors.$primary-300;
   font-weight: 300;
   font-size: 14px;
@@ -18,12 +18,30 @@
   background-color: colors.$additional-light-400;
   padding: 16px;
 
-  box-shadow: 0px 2px 5px 0px rgba(colors.$primary-200,.8);
+  box-shadow: 0px 2px 5px 0px rgba(colors.$primary-200, .8);
 
-  .tooltip-title {
+  .tooltip-title-row {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    font-weight: bold;
+    margin-bottom: 16px;
+
+    .tooltip-title {
+      display: block;
+      font-size: 24px;
+      line-height: 130%;
+      font-weight: 700;
+    }
+
+    inno-icon {
+      margin-left: 16px;
+      cursor: pointer;
+    }
+
+    &.only-close-btn {
+      justify-content: flex-end;
+    }
   }
 
   .tooltip-text {
@@ -37,6 +55,7 @@
 }
 
 :host(.visible) {
+
   .arrow,
   .arrow::before {
     position: absolute;

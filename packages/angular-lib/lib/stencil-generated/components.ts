@@ -529,7 +529,7 @@ export declare interface InnoPane extends Components.InnoPane {
 
 
 @ProxyCmp({
-  inputs: ['for', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
+  inputs: ['closable', 'for', 'hasBackdrop', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
   methods: ['showTooltip', 'hideTooltip']
 })
 @Component({
@@ -537,7 +537,7 @@ export declare interface InnoPane extends Components.InnoPane {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['for', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
+  inputs: ['closable', 'for', 'hasBackdrop', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
 })
 export class InnoPopover {
   protected el: HTMLElement;

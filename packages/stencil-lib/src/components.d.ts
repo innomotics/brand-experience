@@ -486,9 +486,17 @@ export namespace Components {
     interface InnoPopover {
         "animationFrame": boolean;
         /**
+          * Popover will have a close button. Has no effect if trigger type is 'hover'.
+         */
+        "closable": boolean;
+        /**
           * Css selector of the element the popover is for.
          */
         "for": string;
+        /**
+          * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
+         */
+        "hasBackdrop": boolean;
         /**
           * Hide the tooltip.
          */
@@ -498,7 +506,7 @@ export namespace Components {
          */
         "placement": Placement;
         /**
-          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly.
          */
         "popoverText": string;
         /**
@@ -1855,15 +1863,23 @@ declare namespace LocalJSX {
     interface InnoPopover {
         "animationFrame"?: boolean;
         /**
+          * Popover will have a close button. Has no effect if trigger type is 'hover'.
+         */
+        "closable"?: boolean;
+        /**
           * Css selector of the element the popover is for.
          */
         "for"?: string;
+        /**
+          * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
+         */
+        "hasBackdrop"?: boolean;
         /**
           * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
          */
         "placement"?: Placement;
         /**
-          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+          * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly.
          */
         "popoverText"?: string;
         /**

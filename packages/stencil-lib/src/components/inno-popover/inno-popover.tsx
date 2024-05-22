@@ -57,7 +57,7 @@ export class InnoPopover {
 
   /**
    * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip, 
-   * otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover>
+   * otherwise you can provide your own html directly.
    */
   @Prop({ mutable: true }) popoverText: string;
 
@@ -71,6 +71,16 @@ export class InnoPopover {
    */
   @Prop({ mutable: true }) visible = false;
 
+  /**
+   * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
+   */
+  @Prop({ mutable: true }) hasBackdrop = false;
+
+  /**
+   * Popover will have a close button. Has no effect if trigger type is 'hover'.
+   */
+  @Prop({ mutable: true }) closable = false;
+
   /** @internal */
   @Prop() animationFrame = false;
 
@@ -79,6 +89,8 @@ export class InnoPopover {
   private showBind = this.onTooltipShow.bind(this);
   private hideBind = this.onTooltipHide.bind(this);
   private disposeAutoUpdate?: () => void;
+
+  private backdropElement: HTMLDivElement;
 
   private disposeListener: Function;
 
@@ -113,6 +125,7 @@ export class InnoPopover {
   async showTooltip() {
     const anchorElement = this.forElement;
     if (!!anchorElement) {
+      this.createBackdrop();
       await this.computeTooltipPosition(anchorElement);
       this.visible = true;
     }
@@ -123,8 +136,37 @@ export class InnoPopover {
    */
   @Method()
   async hideTooltip() {
+    this.destroyBackdrop();
     this.visible = false;
     this.destroyAutoUpdate();
+  }
+
+  private createBackdrop(): void {
+    let backdropVisible = this.hasBackdrop && this.trigger !== 'hover';
+
+    if (backdropVisible) {
+      this.backdropElement = document.createElement("div");
+      this.backdropElement.classList.add("inno-popover-backdrop");
+      this.backdropElement.style.cssText = `
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 0.6;
+      `;
+      document.body.appendChild(this.backdropElement);
+    }
+  }
+
+  private destroyBackdrop(): void {
+    if (!!this.backdropElement) {
+      this.backdropElement.remove();
+      this.backdropElement = null;
+    }
   }
 
   @Watch('visible')
@@ -298,17 +340,29 @@ export class InnoPopover {
     if (this.disposeListener) {
       this.disposeListener();
     }
+
+    this.destroyBackdrop();
   }
 
   render() {
+    let hasCloseBtn: boolean = this.closable && this.trigger !== 'hover';
+    let renderTitleRow: boolean = !!this.popoverTitle || hasCloseBtn;
+    let onlyCloseBtn: boolean = hasCloseBtn && !this.popoverTitle;
+
     return (
       <Host class={{
         visible: this.visible,
-        'light': this.variant === 'light',
-        'dark': this.variant === 'dark'
+        light: this.variant === 'light',
+        dark: this.variant === 'dark'
       }}>
         <div class="tooltip-content">
-          {this.popoverTitle != null ? <div class="tooltip-title" innerHTML={this.popoverTitle}></div> : null}
+          {renderTitleRow
+            ?
+            <div class={{ "tooltip-title-row": true, "only-close-btn": onlyCloseBtn }}>
+              {this.popoverTitle != null ? <div class="tooltip-title" innerHTML={this.popoverTitle}></div> : null}
+              {hasCloseBtn ? <inno-icon icon='close' size={24} onClick={() => this.hideTooltip()}></inno-icon> : null}
+            </div>
+            : null}
           {this.popoverText != null ? <div class="tooltip-text" innerHTML={this.popoverText}></div> : null}
           <slot></slot>
         </div>

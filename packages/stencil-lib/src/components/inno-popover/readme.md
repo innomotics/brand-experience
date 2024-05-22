@@ -63,15 +63,17 @@ import {InnoPopover} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property       | Attribute       | Description                                                                                                                                                                                                                                                               | Type                                                                                                                                                                 | Default     |
-| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `for`          | `for`           | Css selector of the element the popover is for.                                                                                                                                                                                                                           | `string`                                                                                                                                                             | `undefined` |
-| `placement`    | `placement`     | Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.                                                                                                                                                       | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`     |
-| `popoverText`  | `popover-text`  | Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly in the template like this: <inno-popover>your custom html goes here</inno-popover> | `string`                                                                                                                                                             | `undefined` |
-| `popoverTitle` | `popover-title` | Contents of the title. Can be either html or a simple string. Can be omitted.                                                                                                                                                                                             | `string`                                                                                                                                                             | `undefined` |
-| `trigger`      | `trigger`       | How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.                                                                                                                                                              | `"click" \| "hover" \| "manual"`                                                                                                                                     | `'click'`   |
-| `variant`      | `variant`       | Color variant of the popover.                                                                                                                                                                                                                                             | `"dark" \| "light"`                                                                                                                                                  | `'dark'`    |
-| `visible`      | `visible`       | Programatically change whether the popover is visible or not.                                                                                                                                                                                                             | `boolean`                                                                                                                                                            | `false`     |
+| Property       | Attribute       | Description                                                                                                                                                                             | Type                                                                                                                                                                 | Default     |
+| -------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `closable`     | `closable`      | Popover will have a close button. Has no effect if trigger type is 'hover'.                                                                                                             | `boolean`                                                                                                                                                            | `false`     |
+| `for`          | `for`           | Css selector of the element the popover is for.                                                                                                                                         | `string`                                                                                                                                                             | `undefined` |
+| `hasBackdrop`  | `has-backdrop`  | Popover should have a backdrop. Has no effect if trigger type is 'hover'.                                                                                                               | `boolean`                                                                                                                                                            | `false`     |
+| `placement`    | `placement`     | Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.                                                                     | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`     |
+| `popoverText`  | `popover-text`  | Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,  otherwise you can provide your own html directly. | `string`                                                                                                                                                             | `undefined` |
+| `popoverTitle` | `popover-title` | Contents of the title. Can be either html or a simple string. Can be omitted.                                                                                                           | `string`                                                                                                                                                             | `undefined` |
+| `trigger`      | `trigger`       | How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.                                                                            | `"click" \| "hover" \| "manual"`                                                                                                                                     | `'click'`   |
+| `variant`      | `variant`       | Color variant of the popover.                                                                                                                                                           | `"dark" \| "light"`                                                                                                                                                  | `'dark'`    |
+| `visible`      | `visible`       | Programatically change whether the popover is visible or not.                                                                                                                           | `boolean`                                                                                                                                                            | `false`     |
 
 
 ## Methods
@@ -96,6 +98,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- [inno-icon](../inno-icon)
+
+### Graph
+```mermaid
+graph TD;
+  inno-popover --> inno-icon
+  style inno-popover fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
