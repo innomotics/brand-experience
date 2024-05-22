@@ -13,24 +13,21 @@ body {
   font-style: normal;
 }
 
-.inno-main-grid {
-  @include layoutmixins.inno-main-grid;
-
-  .inno-full-content {
-    @include layoutmixins.full-main-grid;
+.be-main-grid {
+  @include layoutmixins.be-main-grid;
+  &.subgrid{
+    @include layoutmixins.be-main-grid-36-columns;
   }
 
-  .inno-content-grid {
-    @include layoutmixins.inno-content-grid;
-
-    .inno-full-content {
-      @include layoutmixins.full-content-grid;
-    }
+  .be-content-grid{
+    @include layoutmixins.be-content-grid;
   }
+
+  @include layoutmixins.be-columns;
 }
 
 table.inno-table {
-  display:contents;
+  display: contents;
   font-family: 'InnomoticsHafferSQ';
   border-collapse: collapse;
   border-spacing: 0;
@@ -40,10 +37,10 @@ table.inno-table {
   table-layout: auto;
   width: 100%;
 
-  tr{
+  tr {
     background-color: rgba(0, 0, 0, 0);
   }
-  
+
   th,
   td {
     padding: 16px;
