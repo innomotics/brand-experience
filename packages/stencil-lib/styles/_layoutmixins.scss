@@ -6,7 +6,7 @@
 @mixin be-main-grid {
   @include be-main-grid-36-columns;
   @media screen and (min-width: 1440px) {
-    grid-template-columns: repeat(2, 1fr) repeat(32, 45px) repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) repeat(32, 40px) repeat(2, 1fr);
   }
 }
 
