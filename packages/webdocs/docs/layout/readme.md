@@ -1,10 +1,10 @@
 # `Layout`
- classNamees defining the Innomotics page layout
+ classNames defining the Innomotics page layout
 
  The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)
 ## 36 columns
- use 'inno-main-grid' className on the main container element
-<div className="inno-main-grid" style={{ "border": "1px solid white"}}>
+ Use 'be-main-grid' className on the main container element. If this grid is not your main layout grid add the 'subgrid' class as well
+<div className="be-main-grid subgrid" style={{ "border": "1px solid white"}}>
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
@@ -42,10 +42,10 @@
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
 <div style={{ "borderLeft":"1px solid yellow", "borderRight":"1px solid yellow" }}>&nbsp;</div>
 </div>
-## 33 content columns
- use 'inno-content-grid' className inside the 'inno-main-grid' container element
-<div className="inno-main-grid" style={{ "border": "1px solid white"}}>
-<div className="inno-content-grid">
+## 32 content column
+ inside 'be-main-grid' use 'be-content-grid' to use the center 32 columns
+<div className="be-main-grid subgrid" style={{ "border": "1px solid white"}}>
+<div className="be-content-grid">
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
 <div style={{ "borderLeft":"1px solid yellow" }}>&nbsp;</div>
@@ -80,11 +80,20 @@
 <div style={{ "borderLeft":"1px solid yellow", "borderRight":"1px solid yellow" }}>&nbsp;</div>
 </div>
 </div>
-## using the full width of the container
-use 'inno-full-content' inside the 'inno-main-grid' or 'inno-content-grid' elements
-<div className="inno-main-grid" style={{ "border": "1px solid white"}}>
-<div className="inno-full-content" style={{ "border": "1px solid yellow"}}><div style={{ "justifySelf": "center"}}>Full width used of main grid</div></div>
-<div className="inno-content-grid" style={{ "border": "1px solid yellow"}}>
-<div className="inno-full-content" style={{ "justifySelf": "center"}}>Full width used of content grid</div>
+## Targeting columns for placement
+direct child elements of 'be-main-grid' and 'be-content grid' can be placed using
+'be-columns-[start]-[end]' 
+<div>[start] - inclusive, the starting column number</div>
+<div>[end] - exclusive, the ending column number </div>
+<div className="be-main-grid subgrid" style={{ "border": "1px solid white"}}>
+<div className="be-columns-1-37"><div>Main grid</div></div>
+<div className="be-columns-1-20" style={{ "border": "1px solid yellow", "display": "grid"}}><div>be-columns-1-20</div></div>
+<div className="be-columns-7-27" style={{ "border": "1px solid yellow", "display": "grid"}}><div>be-columns-7-27</div></div>
+<div className="be-columns-1-37" style={{ "border": "1px solid yellow", "display": "grid"}}><div>Full width of main gridwith be-columns-1-37</div></div>
+<div className="be-content-grid" style={{ "border": "1px solid yellow"}}>
+<div className="be-columns-1-33" >Content grid</div>
+<div className="be-columns-1-20" style={{ "border": "1px solid yellow"}}>be-columns-1-20</div>
+<div className="be-columns-7-27" style={{ "border": "1px solid yellow"}}>be-columns-7-27</div>
+<div className="be-columns-1-33" style={{ "border": "1px solid yellow"}}>Full width of content grid with be-columns-1-33</div>
 </div>
 </div>

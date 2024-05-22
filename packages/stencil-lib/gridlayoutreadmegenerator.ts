@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 
-let maingridStart = "<div className=\"inno-main-grid\" style={{ \"border\": \"1px solid white\"}}>\n";
+let maingridStart = "<div className=\"be-main-grid subgrid\" style={{ \"border\": \"1px solid white\"}}>\n";
 //passsing directoryPath and callback function
-let readmeContent = "# `Layout`\n classNamees defining the Innomotics page layout\n\n The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)\n";
-readmeContent += "## 36 columns\n use 'inno-main-grid' className on the main container element\n";
+let readmeContent = "# `Layout`\n classNames defining the Innomotics page layout\n\n The grid layout system is using [CSS grid](https://drafts.csswg.org/css-grid/)\n";
+readmeContent += "## 36 columns\n Use 'be-main-grid' className on the main container element. If this grid is not your main layout grid add the 'subgrid' class as well\n";
 readmeContent += maingridStart;
 for(let i = 0; i<35 ; i++){
   readmeContent += "<div style={{ \"borderLeft\":\"1px solid yellow\" }}>&nbsp;</div>\n"
@@ -12,22 +12,31 @@ readmeContent += "<div style={{ \"borderLeft\":\"1px solid yellow\", \"borderRig
 
 readmeContent += "</div>\n";
 
-readmeContent += "## 33 content columns\n use 'inno-content-grid' className inside the 'inno-main-grid' container element\n";
+readmeContent += "## 32 content column\n inside 'be-main-grid' use 'be-content-grid' to use the center 32 columns\n";
 readmeContent += maingridStart;
-readmeContent += "<div className=\"inno-content-grid\">\n";
+readmeContent += "<div className=\"be-content-grid\">\n";
 for(let i = 0; i<31 ; i++){
   readmeContent += "<div style={{ \"borderLeft\":\"1px solid yellow\" }}>&nbsp;</div>\n";
 }
 readmeContent += "<div style={{ \"borderLeft\":\"1px solid yellow\", \"borderRight\":\"1px solid yellow\" }}>&nbsp;</div>\n";
 readmeContent += "</div>\n";
 readmeContent += "</div>\n";
-readmeContent += "## using the full width of the container\n";
-readmeContent += "use 'inno-full-content' inside the 'inno-main-grid' or 'inno-content-grid' elements\n";
+readmeContent += "## Targeting columns for placement\n";
+readmeContent += "direct child elements of 'be-main-grid' and 'be-content grid' can be placed using\n";
+readmeContent += "'be-columns-[start]-[end]' \n";
+readmeContent += "<div>[start] - inclusive, the starting column number</div>\n";
+readmeContent += "<div>[end] - exclusive, the ending column number </div>\n";
 
 readmeContent += maingridStart;
-readmeContent += "<div className=\"inno-full-content\" style={{ \"border\": \"1px solid yellow\"}}><div style={{ \"justifySelf\": \"center\"}}>Full width used of main grid</div></div>\n"
-readmeContent += "<div className=\"inno-content-grid\" style={{ \"border\": \"1px solid yellow\"}}>\n";
-readmeContent += "<div className=\"inno-full-content\" style={{ \"justifySelf\": \"center\"}}>Full width used of content grid</div>\n";
+readmeContent += "<div className=\"be-columns-1-37\"><div>Main grid</div></div>\n"
+readmeContent += "<div className=\"be-columns-1-20\" style={{ \"border\": \"1px solid yellow\", \"display\": \"grid\"}}><div>be-columns-1-20</div></div>\n"
+readmeContent += "<div className=\"be-columns-7-27\" style={{ \"border\": \"1px solid yellow\", \"display\": \"grid\"}}><div>be-columns-7-27</div></div>\n"
+readmeContent += "<div className=\"be-columns-1-37\" style={{ \"border\": \"1px solid yellow\", \"display\": \"grid\"}}><div>Full width of main gridwith be-columns-1-37</div></div>\n"
+readmeContent += "<div className=\"be-content-grid\" style={{ \"border\": \"1px solid yellow\"}}>\n";
+readmeContent += "<div className=\"be-columns-1-33\" >Content grid</div>\n";
+readmeContent += "<div className=\"be-columns-1-20\" style={{ \"border\": \"1px solid yellow\"}}>be-columns-1-20</div>\n";
+readmeContent += "<div className=\"be-columns-7-27\" style={{ \"border\": \"1px solid yellow\"}}>be-columns-7-27</div>\n";
+readmeContent += "<div className=\"be-columns-1-33\" style={{ \"border\": \"1px solid yellow\"}}>Full width of content grid with be-columns-1-33</div>\n";
 readmeContent += "</div>\n";
 readmeContent += "</div>\n";
 
