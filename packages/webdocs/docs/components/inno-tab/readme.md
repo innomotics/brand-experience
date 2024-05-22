@@ -15,7 +15,7 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
         <InnoTabItem>Device details</InnoTabItem>
         <InnoTabItem>
           <span>Label with icon</span>
-          <InnoIcon name="help" size="32"></InnoIcon>
+          <InnoIcon icon="help" size="32"></InnoIcon>
         </InnoTabItem>
       </InnoTab>
     </div>
