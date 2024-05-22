@@ -56,7 +56,10 @@ $bar-active-height: 8px;
     }
   }
 
-  .text {
+  .slot-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

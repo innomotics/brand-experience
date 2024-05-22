@@ -70,12 +70,12 @@ export class InnoTabItem {
     };
   }
 
-  private slotClasses() {
+  private slotContainerClasses() {
     return {
       ...this.themeClasses(),
-      text: true,
-      selected: this.selected,
-      disabled: this.disabled,
+      'slot-container': true,
+      'selected': this.selected,
+      'disabled': this.disabled,
     };
   }
 
@@ -94,7 +94,7 @@ export class InnoTabItem {
           }
         }}
       >
-        <div class={this.slotClasses()}>
+        <div class={this.slotContainerClasses()}>
           <slot></slot>
         </div>
       </Host>
