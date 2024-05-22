@@ -687,14 +687,14 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
 
 
 @ProxyCmp({
-  inputs: ['layout', 'selected', 'showArrow', 'theme']
+  inputs: ['alwaysEmphasized', 'layout', 'selected', 'showArrow', 'theme']
 })
 @Component({
   selector: 'inno-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['layout', 'selected', 'showArrow', 'theme'],
+  inputs: ['alwaysEmphasized', 'layout', 'selected', 'showArrow', 'theme'],
 })
 export class InnoTab {
   protected el: HTMLElement;
@@ -715,14 +715,14 @@ export declare interface InnoTab extends Components.InnoTab {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'layout', 'selected', 'theme']
+  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'selected', 'theme']
 })
 @Component({
   selector: 'inno-tab-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'layout', 'selected', 'theme'],
+  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'selected', 'theme'],
 })
 export class InnoTabItem {
   protected el: HTMLElement;

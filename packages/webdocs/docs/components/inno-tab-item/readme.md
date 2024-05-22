@@ -15,12 +15,13 @@ See the InnoTab component for more information about how to use the tab componen
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                          | Type                    | Default   |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- | --------- |
-| `disabled` | `disabled` | Set disabled tab.                                                                                                                    | `boolean`               | `false`   |
-| `layout`   | `layout`   | Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width. | `"auto" \| "stretched"` | `'auto'`  |
-| `selected` | `selected` | Set selected tab.                                                                                                                    | `boolean`               | `false`   |
-| `theme`    | `theme`    | Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.                                          | `"dark" \| "light"`     | `'light'` |
+| Property           | Attribute           | Description                                                                                                                          | Type                    | Default   |
+| ------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- | --------- |
+| `alwaysEmphasized` | `always-emphasized` | Make the non-selected items always vivid without any opacity effect.                                                                 | `boolean`               | `false`   |
+| `disabled`         | `disabled`          | Set disabled tab.                                                                                                                    | `boolean`               | `false`   |
+| `layout`           | `layout`            | Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width. | `"auto" \| "stretched"` | `'auto'`  |
+| `selected`         | `selected`          | Set selected tab.                                                                                                                    | `boolean`               | `false`   |
+| `theme`            | `theme`             | Theme variant property. Inherited from the parent. Can be overridden if explicitly defined.                                          | `"dark" \| "light"`     | `'light'` |
 
 
 ## Events

@@ -707,13 +707,17 @@ export namespace Components {
     }
     interface InnoTab {
         /**
+          * Make the non-selected items always vivid without any opacity effect.
+         */
+        "alwaysEmphasized": boolean;
+        /**
           * Set layout width style
          */
         "layout": 'auto' | 'stretched';
         /**
-          * Set default selected tab by index
+          * Set default selected tab by index or undefined if not tab is selected.
          */
-        "selected": number;
+        "selected": number | undefined;
         /**
           * Show the navigation arrow for desktop.
          */
@@ -729,6 +733,10 @@ export namespace Components {
      * See the InnoTab component for more information about how to use the tab component.
      */
     interface InnoTabItem {
+        /**
+          * Make the non-selected items always vivid without any opacity effect.
+         */
+        "alwaysEmphasized": boolean;
         /**
           * Set disabled tab.
          */
@@ -2083,6 +2091,10 @@ declare namespace LocalJSX {
     }
     interface InnoTab {
         /**
+          * Make the non-selected items always vivid without any opacity effect.
+         */
+        "alwaysEmphasized"?: boolean;
+        /**
           * Set layout width style
          */
         "layout"?: 'auto' | 'stretched';
@@ -2091,9 +2103,9 @@ declare namespace LocalJSX {
          */
         "onSelectedChange"?: (event: InnoTabCustomEvent<number>) => void;
         /**
-          * Set default selected tab by index
+          * Set default selected tab by index or undefined if not tab is selected.
          */
-        "selected"?: number;
+        "selected"?: number | undefined;
         /**
           * Show the navigation arrow for desktop.
          */
@@ -2109,6 +2121,10 @@ declare namespace LocalJSX {
      * See the InnoTab component for more information about how to use the tab component.
      */
     interface InnoTabItem {
+        /**
+          * Make the non-selected items always vivid without any opacity effect.
+         */
+        "alwaysEmphasized"?: boolean;
         /**
           * Set disabled tab.
          */

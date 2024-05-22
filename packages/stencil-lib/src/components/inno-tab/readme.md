@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
+import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 # inno-tab
 
@@ -13,6 +13,10 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
         <InnoTabItem>High emphasis item</InnoTabItem>
         <InnoTabItem>Device overview</InnoTabItem>
         <InnoTabItem>Device details</InnoTabItem>
+        <InnoTabItem>
+          <span>Label with icon</span>
+          <InnoIcon icon="help" size="32"></InnoIcon>
+        </InnoTabItem>
       </InnoTab>
     </div>
   </div>
@@ -60,6 +64,10 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
         <inno-tab-item>Tab item 1</inno-tab-item>
         <inno-tab-item>Tab item 2</inno-tab-item>
         <inno-tab-item>Tab item 3</inno-tab-item>
+        <inno-tab-item>
+          <span>Label with icon</span>
+          <inno-icon icon="help" size="32"></inno-icon>
+        </inno-tab-item>
       </inno-tab>
 
       <!-- Tab content container -->
@@ -95,6 +103,10 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
               <InnoTabItem>Tab 1</InnoTabItem>
               <InnoTabItem>Tab 2</InnoTabItem>
               <InnoTabItem>Tab 3</InnoTabItem>
+              <InnoTabItem>
+                <span>Label with icon</span>
+                <InnoIcon icon="help" size="32"></InnoIcon>
+              </InnoTabItem>
             </InnoTab>
             {selectedTab === 0 ? <div>Content 1</div> : null}
             {selectedTab === 1 ? <div>Content 2</div> : null}
@@ -134,23 +146,21 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
-| Property    | Attribute    | Description                            | Type                    | Default   |
-| ----------- | ------------ | -------------------------------------- | ----------------------- | --------- |
-| `layout`    | `layout`     | Set layout width style                 | `"auto" \| "stretched"` | `'auto'`  |
-| `selected`  | `selected`   | Set default selected tab by index      | `number`                | `0`       |
-| `showArrow` | `show-arrow` | Show the navigation arrow for desktop. | `boolean`               | `true`    |
-| `theme`     | `theme`      | Theme variant of the component.        | `"dark" \| "light"`     | `'light'` |
-
+| Property           | Attribute           | Description                                                            | Type                    | Default     |
+| ------------------ | ------------------- | ---------------------------------------------------------------------- | ----------------------- | ----------- |
+| `alwaysEmphasized` | `always-emphasized` | Make the non-selected items always vivid without any opacity effect.   | `boolean`               | `false`     |
+| `layout`           | `layout`            | Set layout width style                                                 | `"auto" \| "stretched"` | `'auto'`    |
+| `selected`         | `selected`          | Set default selected tab by index or undefined if not tab is selected. | `number`                | `undefined` |
+| `showArrow`        | `show-arrow`        | Show the navigation arrow for desktop.                                 | `boolean`               | `true`      |
+| `theme`            | `theme`             | Theme variant of the component.                                        | `"dark" \| "light"`     | `'light'`   |
 
 ## Events
 
 | Event            | Description                 | Type                  |
 | ---------------- | --------------------------- | --------------------- |
 | `selectedChange` | `selected` property changed | `CustomEvent<number>` |
-
 
 ## Dependencies
 
@@ -159,12 +169,13 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
 - [inno-icon](../inno-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   inno-tab --> inno-icon
   style inno-tab fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

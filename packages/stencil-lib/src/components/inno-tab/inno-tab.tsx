@@ -33,8 +33,9 @@ export class InnoTab {
 
   /**
    * Set default selected tab by index
+   * or undefined if not tab is selected.
    */
-  @Prop({ mutable: true }) selected = 0;
+  @Prop({ mutable: true }) selected: number | undefined = undefined;
 
   /**
    * Set layout width style
@@ -45,6 +46,11 @@ export class InnoTab {
    * Show the navigation arrow for desktop.
    */
   @Prop() showArrow = true;
+
+  /**
+   * Make the non-selected items always vivid without any opacity effect.
+   */
+  @Prop() alwaysEmphasized = false;
 
   /**
    * `selected` property changed
@@ -226,6 +232,7 @@ export class InnoTab {
       element.setAttribute('theme', this.theme);
       element.setAttribute('layout', this.layout);
       element.setAttribute('selected', index === this.selected ? 'true' : 'false');
+      element.setAttribute('always-emphasized', this.alwaysEmphasized ? 'true' : 'false');
     });
   }
 
@@ -252,6 +259,7 @@ export class InnoTab {
     const tabs = this.getTabs();
     tabs.forEach(element => {
       element.addEventListener('mousedown', event => this.dragStart(element, event));
+      element.alwaysEmphasized = this.alwaysEmphasized;
     });
   }
 

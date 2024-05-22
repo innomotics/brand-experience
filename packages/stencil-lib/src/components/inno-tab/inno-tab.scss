@@ -20,11 +20,11 @@
   font-weight: bold;
 
   &.light {
-    background-color: colors.$primary-300;
+    background-color: transparent;
   }
 
   &.dark {
-    background-color: colors.$primary-200;
+    background-color: transparent;
   }
 }
 

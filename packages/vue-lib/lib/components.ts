@@ -275,6 +275,7 @@ export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', un
   'selected',
   'layout',
   'showArrow',
+  'alwaysEmphasized',
   'selectedChange'
 ]);
 
@@ -284,6 +285,7 @@ export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-
   'layout',
   'selected',
   'disabled',
+  'alwaysEmphasized',
   'tabClick'
 ]);
 

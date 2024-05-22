@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
+import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 # inno-tab
 
@@ -13,6 +13,10 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
         <InnoTabItem>High emphasis item</InnoTabItem>
         <InnoTabItem>Device overview</InnoTabItem>
         <InnoTabItem>Device details</InnoTabItem>
+        <InnoTabItem>
+          <span>Label with icon</span>
+          <InnoIcon icon="help" size="32"></InnoIcon>
+        </InnoTabItem>
       </InnoTab>
     </div>
   </div>
@@ -137,12 +141,13 @@ import {InnoTab, InnoTabItem} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property    | Attribute    | Description                            | Type                    | Default   |
-| ----------- | ------------ | -------------------------------------- | ----------------------- | --------- |
-| `layout`    | `layout`     | Set layout width style                 | `"auto" \| "stretched"` | `'auto'`  |
-| `selected`  | `selected`   | Set default selected tab by index      | `number`                | `0`       |
-| `showArrow` | `show-arrow` | Show the navigation arrow for desktop. | `boolean`               | `true`    |
-| `theme`     | `theme`      | Theme variant of the component.        | `"dark" \| "light"`     | `'light'` |
+| Property           | Attribute           | Description                                                            | Type                    | Default     |
+| ------------------ | ------------------- | ---------------------------------------------------------------------- | ----------------------- | ----------- |
+| `alwaysEmphasized` | `always-emphasized` | Make the non-selected items always vivid without any opacity effect.   | `boolean`               | `false`     |
+| `layout`           | `layout`            | Set layout width style                                                 | `"auto" \| "stretched"` | `'auto'`    |
+| `selected`         | `selected`          | Set default selected tab by index or undefined if not tab is selected. | `number`                | `undefined` |
+| `showArrow`        | `show-arrow`        | Show the navigation arrow for desktop.                                 | `boolean`               | `true`      |
+| `theme`            | `theme`             | Theme variant of the component.                                        | `"dark" \| "light"`     | `'light'`   |
 
 
 ## Events

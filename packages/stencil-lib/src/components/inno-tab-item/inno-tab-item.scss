@@ -39,7 +39,6 @@ $bar-active-height: 8px;
   }
 
   &.light {
-    background-color: colors.$primary-300;
     color: colors.$secondary-800;
 
     &::after {
@@ -49,7 +48,6 @@ $bar-active-height: 8px;
   }
 
   &.dark {
-    background-color: colors.$primary-200;
     color: colors.$secondary-300;
 
     &::after {
@@ -58,7 +56,10 @@ $bar-active-height: 8px;
     }
   }
 
-  .text {
+  .slot-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -73,6 +74,26 @@ $bar-active-height: 8px;
 
   .hidden {
     display: none;
+  }
+
+  &.emphasized {
+    &.light {
+      color: colors.$primary-200;
+
+      &::after {
+        opacity: 1;
+        background-color: colors.$primary-200;
+      }
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+
+      &::after {
+        opacity: 1;
+        background-color: colors.$primary-300;
+      }
+    }
   }
 }
 
@@ -112,6 +133,26 @@ $bar-active-height: 8px;
       background-color: colors.$secondary-300;
     }
   }
+
+  &.emphasized {
+    &.light {
+      color: colors.$primary-200;
+
+      &::after {
+        opacity: 1;
+        background-color: colors.$primary-200;
+      }
+    }
+
+    &.dark {
+      color: colors.$primary-300;
+
+      &::after {
+        opacity: 1;
+        background-color: colors.$primary-300;
+      }
+    }
+  }
 }
 
 :host(:active) {
@@ -120,7 +161,6 @@ $bar-active-height: 8px;
   }
 
   &.light {
-    background-color: colors.$primary-300;
     color: colors.$primary-200;
 
     &::after {
@@ -130,7 +170,6 @@ $bar-active-height: 8px;
   }
 
   &.dark {
-    background-color: colors.$primary-200;
     color: colors.$primary-100;
 
     &::after {
@@ -148,7 +187,6 @@ $bar-active-height: 8px;
   }
 
   &.light {
-    background-color: colors.$primary-300;
     color: colors.$secondary-800;
 
     &::after {
@@ -158,7 +196,6 @@ $bar-active-height: 8px;
   }
 
   &.dark {
-    background-color: colors.$primary-200;
     color: colors.$secondary-800;
 
     &::after {
@@ -174,7 +211,6 @@ $bar-active-height: 8px;
   }
 
   &.light {
-    background-color: colors.$primary-300;
     color: colors.$primary-200;
 
     &::after {
@@ -184,7 +220,6 @@ $bar-active-height: 8px;
   }
 
   &.dark {
-    background-color: colors.$primary-200;
     color: colors.$primary-100;
 
     &::after {
