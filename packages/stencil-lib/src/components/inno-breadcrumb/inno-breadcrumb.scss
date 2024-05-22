@@ -22,6 +22,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px;
+    padding: 0px;
     ::slotted(inno-breadcrumb-item:last-of-type) {
       font-weight: bold;
     }
