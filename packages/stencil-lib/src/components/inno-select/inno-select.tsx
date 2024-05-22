@@ -57,10 +57,18 @@ export class InnoSelect {
    */
   @Event() valueChanged: EventEmitter<string>;
 
+  @State() items: HTMLInnoSelectItemElement[] = [];
+
   private disposeAutoUpdate?: () => void;
+
+  private observer: MutationObserver;
 
   selectClicked() {
     this.isOpen = !this.isOpen;
+  }
+
+  componentWillLoad() {
+    this.updateItems();
   }
 
   componentDidLoad() {
@@ -70,6 +78,11 @@ export class InnoSelect {
         this.selectitem(selectedItem.value, true);
       }
     }
+
+    this.observer = new MutationObserver(() => {
+      this.updateItems();
+    });
+    this.observer.observe(this.hostElement.querySelector(".items"), { childList: true })
   }
 
   onFocusout() {
@@ -205,10 +218,12 @@ export class InnoSelect {
 
   disconnectedCallback() {
     this.destroyAutoUpdate();
+    this.observer.disconnect();
+    this.observer = null;
   }
 
-  get items() {
-    return [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
+  private updateItems() {
+    this.items = [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
 
   get selectedItem() {
