@@ -4,7 +4,7 @@ export type TabClickDetail = {
   nativeEvent: MouseEvent;
 };
 
-type HostClasses = { selected: boolean; disabled: boolean; stretched: boolean };
+type HostClasses = { selected: boolean; disabled: boolean; stretched: boolean; emphasized: boolean };
 
 /**
  * Represents an inno-tab item.
@@ -44,6 +44,11 @@ export class InnoTabItem {
   @Prop() disabled = false;
 
   /**
+   * Make the non-selected items always vivid without any opacity effect.
+   */
+  @Prop() alwaysEmphasized = false;
+
+  /**
    * On tab click.
    */
   @Event() tabClick: EventEmitter<TabClickDetail>;
@@ -61,6 +66,7 @@ export class InnoTabItem {
       selected: this.selected,
       disabled: this.disabled,
       stretched: this.layout === 'stretched',
+      emphasized: this.alwaysEmphasized,
     };
   }
 

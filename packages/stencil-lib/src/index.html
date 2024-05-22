@@ -18,10 +18,16 @@
   </head>
 
   <body>
-    <inno-table-base style="width:600px">
+    <inno-table-base style="width: 600px">
       <table>
         <thead>
-          <tr><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th><th>Lorem ipsum</th></tr>
+          <tr>
+            <th>Lorem ipsum</th>
+            <th>Lorem ipsum</th>
+            <th>Lorem ipsum</th>
+            <th>Lorem ipsum</th>
+            <th>Lorem ipsum</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -45,7 +51,6 @@
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
-
         </tbody>
       </table>
     </inno-table-base>
@@ -61,15 +66,15 @@
     </div>
     <inno-modal id="innomodal1">
       <inno-modal-header>Modal title</inno-modal-header>
-      <inno-modal-content style="color: white;">
+      <inno-modal-content style="color: white">
         <form id="formu">
-          <div style="background-color: white;">
+          <div style="background-color: white">
             <inno-input label="name" variant="light">
-              <input id="name" name="name" type="text"/>
+              <input id="name" name="name" type="text" />
               <inno-error type="badInput">Not valid</inno-error>
             </inno-input>
-            <inno-input id="name2" label="Power" variant="light"  disabled>
-              <input id="nameinput2" disabled type="text" value="10"/>
+            <inno-input id="name2" label="Power" variant="light" disabled>
+              <input id="nameinput2" disabled type="text" value="10" />
               <inno-error type="badInput">Not valid</inno-error>
             </inno-input>
             <inno-select label="Select" disabled>
@@ -78,11 +83,11 @@
             </inno-select>
           </div>
           <inno-input label="name" variant="dark">
-            <input id="name3" name="name" type="text"/>
+            <input id="name3" name="name" type="text" />
             <inno-error type="badInput">Not valid</inno-error>
           </inno-input>
-          <inno-input id="name4" label="Power" variant="dark"  disabled>
-            <input id="nameinput4" disabled type="text" value="10"/>
+          <inno-input id="name4" label="Power" variant="dark" disabled>
+            <input id="nameinput4" disabled type="text" value="10" />
             <inno-error type="badInput">Not valid</inno-error>
           </inno-input>
           <inno-select label="Select" variant="dark" disabled>
@@ -447,7 +452,7 @@
     </div>
 
     <div style="position: relative; width: 100%; display: block; background-color: #08191f; padding: 20px; margin-top: 20px">
-      <inno-tab layout="stretched" theme="dark">
+      <inno-tab layout="stretched" theme="dark" always-emphasized>
         <inno-tab-item>Tab item 1</inno-tab-item>
         <inno-tab-item>Tab item 2</inno-tab-item>
         <inno-tab-item>Tab item 3</inno-tab-item>
@@ -488,8 +493,8 @@
       </inno-tab>
     </div>
 
-    <div style="position: relative; width: 100%; display: block; background-color: white; padding: 20px; margin-top: 20px">
-      <inno-tab layout="stretched" theme="light">
+    <div style="position: relative; width: 100%; display: block; background-color: #e1f000; padding: 20px; margin-top: 20px">
+      <inno-tab layout="stretched" theme="light" always-emphasized>
         <inno-tab-item>Tab item 1</inno-tab-item>
         <inno-tab-item disabled>Tab item 2</inno-tab-item>
         <inno-tab-item>Tab item 3</inno-tab-item>
