@@ -146,6 +146,7 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property           | Attribute           | Description                                                            | Type                    | Default     |
@@ -156,11 +157,13 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
 | `showArrow`        | `show-arrow`        | Show the navigation arrow for desktop.                                 | `boolean`               | `true`      |
 | `theme`            | `theme`             | Theme variant of the component.                                        | `"dark" \| "light"`     | `'light'`   |
 
+
 ## Events
 
 | Event            | Description                 | Type                  |
 | ---------------- | --------------------------- | --------------------- |
 | `selectedChange` | `selected` property changed | `CustomEvent<number>` |
+
 
 ## Dependencies
 
@@ -169,13 +172,12 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
 - [inno-icon](../inno-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   inno-tab --> inno-icon
   style inno-tab fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

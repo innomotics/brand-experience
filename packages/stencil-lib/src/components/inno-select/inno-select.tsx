@@ -105,6 +105,11 @@ export class InnoSelect {
     }
   }
 
+  @Watch('value')
+  refreshSelected() {
+    this.updateSelectedItem();
+  }
+
   private async computeDropdownPosition() {
     return new Promise<void>((resolve) => {
       this.disposeAutoUpdate = autoUpdate(
@@ -153,11 +158,16 @@ export class InnoSelect {
     this.selectitem(event.detail);
   }
 
-  selectitem(value: any, init: boolean = false) {
+  private selectitem(value: any, init: boolean = false): void {
     this.value = value;
     if (!init) {
       this.valueChanged.emit(this.value);
     }
+
+    this.updateSelectedItem();
+  }
+
+  private updateSelectedItem(): void {
     this.items.forEach(i => {
       if (this.keyValueSelector(i.value) === this.keyValueSelector(this.value)) {
         i.selected = true;

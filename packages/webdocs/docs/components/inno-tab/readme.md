@@ -64,6 +64,10 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
         <inno-tab-item>Tab item 1</inno-tab-item>
         <inno-tab-item>Tab item 2</inno-tab-item>
         <inno-tab-item>Tab item 3</inno-tab-item>
+        <inno-tab-item>
+          <span>Label with icon</span>
+          <inno-icon icon="help" size="32"></inno-icon>
+        </inno-tab-item>
       </inno-tab>
 
       <!-- Tab content container -->
@@ -99,6 +103,10 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
               <InnoTabItem>Tab 1</InnoTabItem>
               <InnoTabItem>Tab 2</InnoTabItem>
               <InnoTabItem>Tab 3</InnoTabItem>
+              <InnoTabItem>
+                <span>Label with icon</span>
+                <InnoIcon icon="help" size="32"></InnoIcon>
+              </InnoTabItem>
             </InnoTab>
             {selectedTab === 0 ? <div>Content 1</div> : null}
             {selectedTab === 1 ? <div>Content 2</div> : null}
