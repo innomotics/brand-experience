@@ -1,5 +1,6 @@
 import { autoUpdate, computePosition, flip } from '@floating-ui/dom';
 import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen } from '@stencil/core';
+import sanitizeHtml from 'sanitize-html';
 
 @Component({
   tag: 'inno-select',
@@ -263,8 +264,8 @@ export class InnoSelect {
           {!this.icon ? (
             <div class="select-header">
               <div class={{ content: true, filled: !this.valueIsUndefined }}>
-                <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
-                  {this.label}
+                <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}
+                  innerHTML={sanitizeHtml(this.label)}>
                 </span>
                 <span class={{ "label-value": true, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
                   {this.selectedItem?.label}

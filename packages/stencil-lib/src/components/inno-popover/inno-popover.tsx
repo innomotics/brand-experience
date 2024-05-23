@@ -18,6 +18,7 @@ import {
   Prop,
   Watch
 } from '@stencil/core';
+import sanitizeHtml from 'sanitize-html';
 
 type ArrowPosition = {
   top?: string;
@@ -346,8 +347,10 @@ export class InnoPopover {
 
   render() {
     let hasCloseBtn: boolean = this.closable && this.trigger !== 'hover';
-    let renderTitleRow: boolean = !!this.popoverTitle || hasCloseBtn;
-    let onlyCloseBtn: boolean = hasCloseBtn && !this.popoverTitle;
+    let hasTitleText: boolean = !!this.popoverTitle && this.popoverTitle !== '';
+    let hasText: boolean = !!this.popoverText && this.popoverText !== '';
+    let renderTitleRow: boolean = hasTitleText || hasCloseBtn;
+    let onlyCloseBtn: boolean = hasCloseBtn && !hasTitleText;
 
     return (
       <Host class={{
@@ -359,11 +362,11 @@ export class InnoPopover {
           {renderTitleRow
             ?
             <div class={{ "tooltip-title-row": true, "only-close-btn": onlyCloseBtn }}>
-              {this.popoverTitle != null ? <div class="tooltip-title" innerHTML={this.popoverTitle}></div> : null}
+              {hasTitleText ? <div class="tooltip-title" innerHTML={sanitizeHtml(this.popoverTitle)}></div> : null}
               {hasCloseBtn ? <inno-icon icon='close' size={24} onClick={() => this.hideTooltip()}></inno-icon> : null}
             </div>
             : null}
-          {this.popoverText != null ? <div class="tooltip-text" innerHTML={this.popoverText}></div> : null}
+          {hasText ? <div class="tooltip-text" innerHTML={sanitizeHtml(this.popoverText)}></div> : null}
           <slot></slot>
         </div>
         <div class="arrow"></div>

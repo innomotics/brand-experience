@@ -1,4 +1,5 @@
 import { Element, Listen, Event, Prop, Component, Host, h, EventEmitter, State } from '@stencil/core';
+import sanitizeHtml from 'sanitize-html';
 
 @Component({
   tag: 'inno-input',
@@ -191,7 +192,7 @@ export class InnoInput {
           light: this.variant === 'light',
           dark: this.variant === 'dark',
           invalid: !this.isValid || errorSpecified
-        }}>{this.label}</span>
+        }} innerHTML={sanitizeHtml(this.label)}></span>
         <slot></slot>
         {errorSpecified ?
           <inno-error
