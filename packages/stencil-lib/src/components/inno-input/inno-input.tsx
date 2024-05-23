@@ -10,6 +10,7 @@ import sanitizeHtml from 'sanitize-html';
 export class InnoInput {
   @Element() hostElement!: HTMLInnoInputElement;
   private inputElementRef?: HTMLInputElement;
+  private observer: MutationObserver;
 
   /**
    * Fired when the new value is valid.
@@ -26,7 +27,8 @@ export class InnoInput {
   @Prop({ mutable: true }) isFocused: boolean;
 
   /**
-   * Whether the input is disabled or not.
+   * Whether the input is disabled or not. Probably not needed to be set since the component 
+   * automatically detects if the inserted input element is disabled or not.
    */
   @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
 
@@ -128,16 +130,46 @@ export class InnoInput {
     });
   }
 
+  private startMutationObserver(): void {
+    if (!!this.inputElementRef) {
+      this.observer = new MutationObserver((mutations: MutationRecord[]) => {
+        for (var i = 0, mutation: MutationRecord; mutation = mutations[i]; i++) {
+          if (mutation.attributeName == 'disabled') {
+            if ((mutation.target as HTMLInputElement).disabled) {
+              this.disabled = true;
+            } else {
+              this.disabled = false;
+            }
+            break;
+          }
+        };
+      });
+
+      this.observer.observe(this.inputElementRef, { attributes: true });
+    }
+  }
+
   componentDidLoad() {
     this.inputElementRef = this.hostElement.querySelector('input');
 
     this.reDefineInputValueProperty();
 
-    if (!this.isValueEmpty()) {
-      this.shouldFloat = true;
-    }
+    this.startMutationObserver();
+
+    setTimeout(() => {
+      if (!this.isValueEmpty()) {
+        this.shouldFloat = true;
+      }
+
+      this.disabled = this.inputElementRef?.disabled;
+    });
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
+  }
+
+  disconnectedCallback() {
+    this.observer?.disconnect();
+    this.observer = null;
   }
 
   @Listen('reCheckInnoInputValue')
@@ -170,6 +202,7 @@ export class InnoInput {
   render() {
     let errorSpecified = this.error != null && this.error !== '';
     let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
+    let shouldDisable = this.disabled || this.inputElementRef?.disabled;
 
     return (
       <Host
@@ -179,7 +212,7 @@ export class InnoInput {
           'focused': this.isFocused,
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
-          'disabled': this.disabled,
+          'disabled': shouldDisable,
           'invalid': !this.isValid || errorSpecified,
           'can-show-errors': canShowErrors
         }}
@@ -188,7 +221,7 @@ export class InnoInput {
         <span class={{
           label: true,
           float: this.shouldFloat,
-          disabled: this.disabled,
+          disabled: shouldDisable,
           light: this.variant === 'light',
           dark: this.variant === 'dark',
           invalid: !this.isValid || errorSpecified

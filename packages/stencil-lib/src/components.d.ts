@@ -334,7 +334,7 @@ export namespace Components {
     }
     interface InnoInput {
         /**
-          * Whether the input is disabled or not.
+          * Whether the input is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not.
          */
         "disabled": boolean;
         /**
@@ -1703,7 +1703,7 @@ declare namespace LocalJSX {
     }
     interface InnoInput {
         /**
-          * Whether the input is disabled or not.
+          * Whether the input is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not.
          */
         "disabled"?: boolean;
         /**
