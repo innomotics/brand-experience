@@ -94,6 +94,8 @@ export class InnoSelect {
   @Watch('isOpen')
   alignItems() {
     if (this.isOpen) {
+      this.updateItems();
+      this.refreshSelected();
       this.computeDropdownPosition();
     } else {
       this.destroyAutoUpdate();
