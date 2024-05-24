@@ -723,6 +723,10 @@ export namespace Components {
          */
         "layout": 'auto' | 'stretched';
         /**
+          * Minimalize the bottom decorator for the tab items. Show only if the given item is interracted or selected.
+         */
+        "minimalDecorator": boolean;
+        /**
           * Set default selected tab by index or undefined if not tab is selected.
          */
         "selected": number | undefined;
@@ -753,6 +757,10 @@ export namespace Components {
           * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
          */
         "layout": 'auto' | 'stretched';
+        /**
+          * Minimalize the bottom decorator for the tab items. Show only if the given item is interracted or selected.
+         */
+        "minimalDecorator": boolean;
         /**
           * Set selected tab.
          */
@@ -2115,6 +2123,10 @@ declare namespace LocalJSX {
          */
         "layout"?: 'auto' | 'stretched';
         /**
+          * Minimalize the bottom decorator for the tab items. Show only if the given item is interracted or selected.
+         */
+        "minimalDecorator"?: boolean;
+        /**
           * `selected` property changed
          */
         "onSelectedChange"?: (event: InnoTabCustomEvent<number>) => void;
@@ -2149,6 +2161,10 @@ declare namespace LocalJSX {
           * Set layout width style. Auto: Item has the same width as the enclosed item in slot. Stretched: Item has the maximum available width.
          */
         "layout"?: 'auto' | 'stretched';
+        /**
+          * Minimalize the bottom decorator for the tab items. Show only if the given item is interracted or selected.
+         */
+        "minimalDecorator"?: boolean;
         /**
           * On tab click.
          */

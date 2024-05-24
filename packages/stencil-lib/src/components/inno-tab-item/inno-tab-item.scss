@@ -98,7 +98,6 @@ $bar-active-height: 8px;
 
   &.minimal-decorator {
     &::after {
-      content: '';
       height: 0;
     }
   }
