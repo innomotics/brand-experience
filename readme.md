@@ -6,7 +6,7 @@
 
 After cloning the repo
 1. run npm install in the root directory
-3. build with lerna run build (migth need to install lerna package globally)
+3. build with lerna run build (might need to install lerna package globally)
 4. publish with lerna publish --no-private
 
 
