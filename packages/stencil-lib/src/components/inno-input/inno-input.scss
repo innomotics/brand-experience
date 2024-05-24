@@ -43,11 +43,13 @@
       }
 
       &.disabled,
-      &:disabled {
+      &:disabled,
+      &:read-only {
         background-color: rgba(colors.$transparency-light-100, 0);
         -webkit-text-fill-color: unset;
         -webkit-box-shadow: unset;
         box-shadow: unset;
+        pointer-events: none;
       }
     }
 
@@ -104,11 +106,13 @@
       }
 
       &.disabled,
-      &:disabled {
+      &:disabled,
+      &:read-only {
         background-color: rgba(colors.$transparency-dark-100, 0);
         color: colors.$text-dark-highemphasis;
         -webkit-box-shadow: unset;
         box-shadow: unset;
+        pointer-events: none;
       }
     }
 

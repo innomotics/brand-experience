@@ -27,8 +27,9 @@ export class InnoInput {
   @Prop({ mutable: true }) isFocused: boolean;
 
   /**
-   * Whether the input is disabled or not. Probably not needed to be set since the component 
+   * Whether the inno-input component is disabled or not. Probably not needed to be set since the component 
    * automatically detects if the inserted input element is disabled or not.
+   * The inno-input component will also be in a disabled state when the input element is readonly.
    */
   @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
 
@@ -133,16 +134,18 @@ export class InnoInput {
   private startMutationObserver(): void {
     if (!!this.inputElementRef) {
       this.observer = new MutationObserver((mutations: MutationRecord[]) => {
+        let isDisabled: boolean = false;
+        let isReadOnly: boolean = false;
+
         for (var i = 0, mutation: MutationRecord; mutation = mutations[i]; i++) {
           if (mutation.attributeName == 'disabled') {
-            if ((mutation.target as HTMLInputElement).disabled) {
-              this.disabled = true;
-            } else {
-              this.disabled = false;
-            }
-            break;
+            isDisabled = (mutation.target as HTMLInputElement).disabled;
+          } else if (mutation.attributeName == 'readonly') {
+            isReadOnly = (mutation.target as HTMLInputElement).readOnly;
           }
         };
+
+        this.disabled = isDisabled || isReadOnly;
       });
 
       this.observer.observe(this.inputElementRef, { attributes: true });
@@ -161,7 +164,7 @@ export class InnoInput {
         this.shouldFloat = true;
       }
 
-      this.disabled = this.inputElementRef?.disabled;
+      this.disabled = this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
     });
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
@@ -197,12 +200,20 @@ export class InnoInput {
   activateInput() {
     this.isActive = true;
     this.inputElementRef.focus();
+
+    if (this.inputElementRef.value !== null && this.inputElementRef.value !== undefined && this.inputElementRef.value.length > 0) {
+      if (this.inputElementRef.type == "text") {
+        this.inputElementRef.selectionStart = this.inputElementRef.selectionEnd = this.inputElementRef.value.length;
+      } else if (this.inputElementRef.type == "number") {
+        this.inputElementRef.select();
+      }
+    }
   }
 
   render() {
     let errorSpecified = this.error != null && this.error !== '';
     let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
-    let shouldDisable = this.disabled || this.inputElementRef?.disabled;
+    let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
 
     return (
       <Host
