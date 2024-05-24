@@ -4,7 +4,13 @@ export type TabClickDetail = {
   nativeEvent: MouseEvent;
 };
 
-type HostClasses = { selected: boolean; disabled: boolean; stretched: boolean; emphasized: boolean };
+type HostClasses = {
+  'selected': boolean;
+  'disabled': boolean;
+  'stretched': boolean;
+  'emphasized': boolean;
+  'minimal-decorator': boolean;
+};
 
 /**
  * Represents an inno-tab item.
@@ -49,6 +55,12 @@ export class InnoTabItem {
   @Prop() alwaysEmphasized = false;
 
   /**
+   * Minimalize the bottom decorator for the tab items.
+   * Show only if the given item is interracted or selected.
+   */
+  @Prop() minimalDecorator = false;
+
+  /**
    * On tab click.
    */
   @Event() tabClick: EventEmitter<TabClickDetail>;
@@ -63,10 +75,11 @@ export class InnoTabItem {
   private hostClasses(): HostClasses {
     return {
       ...this.themeClasses(),
-      selected: this.selected,
-      disabled: this.disabled,
-      stretched: this.layout === 'stretched',
-      emphasized: this.alwaysEmphasized,
+      'selected': this.selected,
+      'disabled': this.disabled,
+      'stretched': this.layout === 'stretched',
+      'emphasized': this.alwaysEmphasized,
+      'minimal-decorator': this.minimalDecorator,
     };
   }
 

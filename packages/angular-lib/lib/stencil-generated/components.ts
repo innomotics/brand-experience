@@ -313,14 +313,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant']
+  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'selectOnFocus', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant'],
+  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'selectOnFocus', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;
@@ -687,14 +687,14 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
 
 
 @ProxyCmp({
-  inputs: ['alwaysEmphasized', 'layout', 'selected', 'showArrow', 'theme']
+  inputs: ['alwaysEmphasized', 'layout', 'minimalDecorator', 'selected', 'showArrow', 'theme']
 })
 @Component({
   selector: 'inno-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['alwaysEmphasized', 'layout', 'selected', 'showArrow', 'theme'],
+  inputs: ['alwaysEmphasized', 'layout', 'minimalDecorator', 'selected', 'showArrow', 'theme'],
 })
 export class InnoTab {
   protected el: HTMLElement;
@@ -715,14 +715,14 @@ export declare interface InnoTab extends Components.InnoTab {
 
 
 @ProxyCmp({
-  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'selected', 'theme']
+  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'minimalDecorator', 'selected', 'theme']
 })
 @Component({
   selector: 'inno-tab-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'selected', 'theme'],
+  inputs: ['alwaysEmphasized', 'disabled', 'layout', 'minimalDecorator', 'selected', 'theme'],
 })
 export class InnoTabItem {
   protected el: HTMLElement;
