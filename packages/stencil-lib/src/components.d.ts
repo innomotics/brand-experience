@@ -334,6 +334,10 @@ export namespace Components {
     }
     interface InnoInput {
         /**
+          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
+         */
+        "caretPosEndOnFocus": boolean;
+        /**
           * Whether the inno-input component is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled": boolean;
@@ -354,6 +358,10 @@ export namespace Components {
           * Floating label for the input.
          */
         "label": string;
+        /**
+          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
+         */
+        "selectOnFocus": boolean;
         "valuePropReDefine": boolean;
         /**
           * Color variant of the input.
@@ -1703,6 +1711,10 @@ declare namespace LocalJSX {
     }
     interface InnoInput {
         /**
+          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
+         */
+        "caretPosEndOnFocus"?: boolean;
+        /**
           * Whether the inno-input component is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled"?: boolean;
@@ -1727,6 +1739,10 @@ declare namespace LocalJSX {
           * Fired when the new value is valid.
          */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
+        /**
+          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
+         */
+        "selectOnFocus"?: boolean;
         "valuePropReDefine"?: boolean;
         /**
           * Color variant of the input.

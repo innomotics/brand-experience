@@ -59,6 +59,22 @@ export class InnoInput {
   /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
   @Prop() valuePropReDefine: boolean = true;
 
+  /**
+   * When you click on the inno-input a focus() command is called on the input element. 
+   * This might cause that the caret position will be at the beginnging of the input's value.
+   * Set this to true if you want to select all of the text by default.
+   */
+  @Prop({ mutable: true }) selectOnFocus: boolean = false;
+
+
+  /**
+   * When you click on the inno-input a focus() command is called on the input element. 
+   * This might cause that the caret position will be at the beginnging of the input's value.
+   * Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'.
+   * Has no effect if 'selectOnFocus' is also true.
+   */
+  @Prop({ mutable: true }) caretPosEndOnFocus: boolean = false;
+
   @State() isValid: boolean = true;
 
   get errorElements() {
@@ -202,10 +218,13 @@ export class InnoInput {
     this.inputElementRef.focus();
 
     if (this.inputElementRef.value !== null && this.inputElementRef.value !== undefined && this.inputElementRef.value.length > 0) {
-      if (this.inputElementRef.type == "text") {
-        this.inputElementRef.selectionStart = this.inputElementRef.selectionEnd = this.inputElementRef.value.length;
-      } else if (this.inputElementRef.type == "number") {
+      if (this.selectOnFocus) {
         this.inputElementRef.select();
+        return;
+      }
+
+      if (this.caretPosEndOnFocus && this.inputElementRef.type == "text") {
+        this.inputElementRef.selectionStart = this.inputElementRef.selectionEnd = this.inputElementRef.value.length;
       }
     }
   }
