@@ -53,6 +53,12 @@ export class InnoTab {
   @Prop() alwaysEmphasized = false;
 
   /**
+   * Minimalize the bottom decorator for the tab items.
+   * Show only if the given item is interracted or selected.
+   */
+  @Prop() minimalDecorator = false;
+
+  /**
    * `selected` property changed
    */
   @Event() selectedChange: EventEmitter<number>;
@@ -233,6 +239,7 @@ export class InnoTab {
       element.setAttribute('layout', this.layout);
       element.setAttribute('selected', index === this.selected ? 'true' : 'false');
       element.setAttribute('always-emphasized', this.alwaysEmphasized ? 'true' : 'false');
+      element.setAttribute('minimal-decorator', this.minimalDecorator ? 'true' : 'false');
     });
   }
 
@@ -260,6 +267,7 @@ export class InnoTab {
     tabs.forEach(element => {
       element.addEventListener('mousedown', event => this.dragStart(element, event));
       element.alwaysEmphasized = this.alwaysEmphasized;
+      element.minimalDecorator = this.minimalDecorator;
     });
   }
 
