@@ -313,14 +313,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'selectOnFocus', 'variant']
+  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'selectOnFocus', 'variant'],
+  inputs: ['disabled', 'error', 'errortype', 'isFocused', 'label', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;

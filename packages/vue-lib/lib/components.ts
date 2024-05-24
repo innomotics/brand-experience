@@ -141,8 +141,6 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'error',
   'errortype',
   'valuePropReDefine',
-  'selectOnFocus',
-  'caretPosEndOnFocus',
   'valueChanged'
 ]);
 
