@@ -6,7 +6,7 @@
 @forward './base';
 
 @use 'simplebar/dist/simplebar.min.css';
-@import './components/inno-checkbox';
-@import './components/inno-radiobutton';
-@import './components/inno-pane';
-@import './components/inno-status-message-container';
+@use './components/inno-checkbox';
+@use './components/inno-radiobutton';
+@use './components/inno-pane';
+@use './components/inno-status-message-container';

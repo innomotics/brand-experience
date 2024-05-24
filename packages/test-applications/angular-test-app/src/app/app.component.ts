@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +10,11 @@ export class AppComponent {
 
   handleTabChange(index: number) {
     this.activeTabIndex = index;
+  }
+
+  @HostListener('pageSelected',['$event.detail'])
+  pagechanged(e: number)
+  {
+    console.log(e);
   }
 }

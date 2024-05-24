@@ -33,14 +33,14 @@ export class InnoPaginator {
   @Event() itemCountChanged: EventEmitter<number>;
 
   private selectPage(index: number) {
-    if (index < 0) {
-      this.selectedPage = 0;
+    if (index < 1) {
+      this.selectedPage = 1;
     } else if (index > this.pageCount - 1) {
-      this.selectedPage = this.pageCount - 1;
+      this.selectedPage = this.pageCount;
     } else {
       this.selectedPage = index;
     }
-
+    console.log(this.selectedPage);
     this.pageSelected.emit(this.selectedPage);
   }
 
