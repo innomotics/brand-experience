@@ -76,6 +76,14 @@ import {InnoPopover} from '@innomotics/brand-experience-react-lib';
 | `visible`      | `visible`       | Programatically change whether the popover is visible or not.                                                                                                                           | `boolean`                                                                                                                                                            | `false`     |
 
 
+## Events
+
+| Event               | Description                   | Type                |
+| ------------------- | ----------------------------- | ------------------- |
+| `innoPopoverHidden` | Fired when popover is hidden. | `CustomEvent<void>` |
+| `innoPopoverShown`  | Fired when popover is shown.  | `CustomEvent<void>` |
+
+
 ## Methods
 
 ### `hideTooltip() => Promise<void>`

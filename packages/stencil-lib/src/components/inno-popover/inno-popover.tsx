@@ -11,6 +11,8 @@ import {
 import {
   Component,
   Element,
+  Event,
+  EventEmitter,
   h,
   Host,
   Listen,
@@ -85,6 +87,16 @@ export class InnoPopover {
   /** @internal */
   @Prop() animationFrame = false;
 
+  /**
+   * Fired when popover is shown.
+   */
+  @Event() innoPopoverShown: EventEmitter<void>;
+
+  /**
+   * Fired when popover is hidden.
+   */
+  @Event() innoPopoverHidden: EventEmitter<void>;
+
   @Element() hostElement: HTMLInnoPopoverElement;
 
   private showBind = this.onTooltipShow.bind(this);
@@ -109,7 +121,12 @@ export class InnoPopover {
     }
   }
 
-  private onTooltipShow() {
+  private onTooltipShow(event: globalThis.Event) {
+    if (this.trigger === 'click') {
+      event?.preventDefault();
+      event?.stopPropagation();
+    }
+
     if (!this.visible) {
       this.showTooltip();
     }
@@ -129,6 +146,7 @@ export class InnoPopover {
       this.createBackdrop();
       await this.computeTooltipPosition(anchorElement);
       this.visible = true;
+      this.innoPopoverShown.emit();
     }
   }
 
@@ -140,6 +158,7 @@ export class InnoPopover {
     this.destroyBackdrop();
     this.visible = false;
     this.destroyAutoUpdate();
+    this.innoPopoverHidden.emit();
   }
 
   private createBackdrop(): void {

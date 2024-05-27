@@ -544,11 +544,21 @@ export class InnoPopover {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['innoPopoverShown', 'innoPopoverHidden']);
   }
 }
 
 
-export declare interface InnoPopover extends Components.InnoPopover {}
+export declare interface InnoPopover extends Components.InnoPopover {
+  /**
+   * Fired when popover is shown.
+   */
+  innoPopoverShown: EventEmitter<CustomEvent<void>>;
+  /**
+   * Fired when popover is hidden.
+   */
+  innoPopoverHidden: EventEmitter<CustomEvent<void>>;
+}
 
 
 @ProxyCmp({

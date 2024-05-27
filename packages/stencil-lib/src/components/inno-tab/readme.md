@@ -149,13 +149,14 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
 
 ## Properties
 
-| Property           | Attribute           | Description                                                            | Type                    | Default     |
-| ------------------ | ------------------- | ---------------------------------------------------------------------- | ----------------------- | ----------- |
-| `alwaysEmphasized` | `always-emphasized` | Make the non-selected items always vivid without any opacity effect.   | `boolean`               | `false`     |
-| `layout`           | `layout`            | Set layout width style                                                 | `"auto" \| "stretched"` | `'auto'`    |
-| `selected`         | `selected`          | Set default selected tab by index or undefined if not tab is selected. | `number`                | `undefined` |
-| `showArrow`        | `show-arrow`        | Show the navigation arrow for desktop.                                 | `boolean`               | `true`      |
-| `theme`            | `theme`             | Theme variant of the component.                                        | `"dark" \| "light"`     | `'light'`   |
+| Property           | Attribute           | Description                                                                                                | Type                    | Default     |
+| ------------------ | ------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------- | ----------- |
+| `alwaysEmphasized` | `always-emphasized` | Make the non-selected items always vivid without any opacity effect.                                       | `boolean`               | `false`     |
+| `layout`           | `layout`            | Set layout width style                                                                                     | `"auto" \| "stretched"` | `'auto'`    |
+| `minimalDecorator` | `minimal-decorator` | Minimalize the bottom decorator for the tab items. Show only if the given item is interracted or selected. | `boolean`               | `false`     |
+| `selected`         | `selected`          | Set default selected tab by index or undefined if not tab is selected.                                     | `number`                | `undefined` |
+| `showArrow`        | `show-arrow`        | Show the navigation arrow for desktop.                                                                     | `boolean`               | `true`      |
+| `theme`            | `theme`             | Theme variant of the component.                                                                            | `"dark" \| "light"`     | `'light'`   |
 
 
 ## Events

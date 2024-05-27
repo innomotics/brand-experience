@@ -210,7 +210,9 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'visible',
   'hasBackdrop',
   'closable',
-  'animationFrame'
+  'animationFrame',
+  'innoPopoverShown',
+  'innoPopoverHidden'
 ]);
 
 

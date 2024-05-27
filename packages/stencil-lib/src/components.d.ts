@@ -855,6 +855,10 @@ export interface InnoPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoPaneElement;
 }
+export interface InnoPopoverCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLInnoPopoverElement;
+}
 export interface InnoRadioCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLInnoRadioElement;
@@ -1181,7 +1185,19 @@ declare global {
         prototype: HTMLInnoPaneElement;
         new (): HTMLInnoPaneElement;
     };
+    interface HTMLInnoPopoverElementEventMap {
+        "innoPopoverShown": void;
+        "innoPopoverHidden": void;
+    }
     interface HTMLInnoPopoverElement extends Components.InnoPopover, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLInnoPopoverElementEventMap>(type: K, listener: (this: HTMLInnoPopoverElement, ev: InnoPopoverCustomEvent<HTMLInnoPopoverElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLInnoPopoverElementEventMap>(type: K, listener: (this: HTMLInnoPopoverElement, ev: InnoPopoverCustomEvent<HTMLInnoPopoverElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLInnoPopoverElement: {
         prototype: HTMLInnoPopoverElement;
@@ -1906,6 +1922,14 @@ declare namespace LocalJSX {
           * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
          */
         "hasBackdrop"?: boolean;
+        /**
+          * Fired when popover is hidden.
+         */
+        "onInnoPopoverHidden"?: (event: InnoPopoverCustomEvent<void>) => void;
+        /**
+          * Fired when popover is shown.
+         */
+        "onInnoPopoverShown"?: (event: InnoPopoverCustomEvent<void>) => void;
         /**
           * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
          */
