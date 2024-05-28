@@ -26,9 +26,7 @@
     "url": "https://github.com/innomotics/brand-experience/issues"
   },
   "dependencies": {
-    "cpx2": "^7.0.1"
-  },
-  "devDependencies": {
+    "cpx2": "^7.0.1",
     "ts-node": "^10.9.2"
   },
   "publishConfig": {

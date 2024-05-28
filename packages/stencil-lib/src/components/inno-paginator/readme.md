@@ -67,11 +67,11 @@ import {InnoPaginator} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property       | Attribute       | Description                                 | Type                | Default     |
-| -------------- | --------------- | ------------------------------------------- | ------------------- | ----------- |
-| `pageCount`    | `page-count`    | Total number of pages                       | `number`            | `undefined` |
-| `selectedPage` | `selected-page` | Zero based index of currently selected page | `number`            | `0`         |
-| `variant`      | `variant`       |                                             | `"dark" \| "light"` | `'light'`   |
+| Property       | Attribute       | Description                                | Type                | Default     |
+| -------------- | --------------- | ------------------------------------------ | ------------------- | ----------- |
+| `pageCount`    | `page-count`    | Total number of pages                      | `number`            | `undefined` |
+| `selectedPage` | `selected-page` | One based index of currently selected page | `number`            | `1`         |
+| `variant`      | `variant`       |                                            | `"dark" \| "light"` | `'light'`   |
 
 
 ## Events
