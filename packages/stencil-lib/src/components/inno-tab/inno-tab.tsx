@@ -161,7 +161,7 @@ export class InnoTab {
   }
 
   private moveTabToView(tabIndex: number) {
-    if (!this.showArrows()) return;
+    // if (!this.showArrows()) return;
 
     const tab = this.getTab(tabIndex);
     const dimension = tab.getBoundingClientRect();
@@ -192,7 +192,7 @@ export class InnoTab {
   }
 
   private dragStart(element: InnoTabItemHtmlElement, event: MouseEvent) {
-    if (!this.showArrows()) return;
+    // if (!this.showArrows()) return;
     if (event.button > 0) return;
 
     // Dragstart is called at start of a drag or click event
