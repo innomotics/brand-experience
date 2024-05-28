@@ -460,7 +460,7 @@ export namespace Components {
          */
         "pageCount": number;
         /**
-          * Zero based index of currently selected page
+          * One based index of currently selected page
          */
         "selectedPage": number;
         "variant": 'dark' | 'light';
@@ -1873,7 +1873,7 @@ declare namespace LocalJSX {
          */
         "pageCount"?: number;
         /**
-          * Zero based index of currently selected page
+          * One based index of currently selected page
          */
         "selectedPage"?: number;
         "variant"?: 'dark' | 'light';
