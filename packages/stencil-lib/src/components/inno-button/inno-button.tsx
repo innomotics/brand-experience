@@ -9,7 +9,7 @@ export class InnoButton {
   /**
    * Variant of the button.
    */
-  @Prop({ mutable: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' = 'primary';
+  @Prop({ mutable: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' | 'delete' = 'primary';
 
   /**
    * Color variant of the button.
@@ -95,6 +95,7 @@ export class InnoButton {
               'primary': this.variant === 'primary',
               'secondary': this.variant === 'secondary',
               'tertiary': this.variant === 'tertiary',
+              'delete': this.variant === 'delete',
               'media': this.variant === 'media',
               'navigation': this.variant === 'navigation',
               'icon-only': this.iconOnly,

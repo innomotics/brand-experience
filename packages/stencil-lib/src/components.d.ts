@@ -106,7 +106,7 @@ export namespace Components {
         /**
           * Variant of the button.
          */
-        "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+        "variant": 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' | 'delete';
     }
     /**
      * Checkbox for Innomatics design system.
@@ -1499,7 +1499,7 @@ declare namespace LocalJSX {
         /**
           * Variant of the button.
          */
-        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation';
+        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'media' | 'navigation' | 'delete';
     }
     /**
      * Checkbox for Innomatics design system.
