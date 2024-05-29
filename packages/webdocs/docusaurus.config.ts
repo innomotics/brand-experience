@@ -101,6 +101,12 @@ const config: Config = {
           label: "Colors",
         },
         {
+          type: "docSidebar",
+          sidebarId: "installingSidebar",
+          position: "left",
+          label: "Installing",
+        },
+        {
           href: "https://github.com/innomotics/brand-experience",
           label: "GitHub",
           position: "right",
