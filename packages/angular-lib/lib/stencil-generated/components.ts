@@ -8,14 +8,14 @@ import { Components } from '@innomotics/brand-experience';
 
 
 @ProxyCmp({
-  inputs: ['collapsed', 'inner', 'label', 'last', 'variant']
+  inputs: ['collapsed', 'inner', 'label', 'last', 'secondLabel', 'variant']
 })
 @Component({
   selector: 'inno-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['collapsed', 'inner', 'label', 'last', 'variant'],
+  inputs: ['collapsed', 'inner', 'label', 'last', 'secondLabel', 'variant'],
 })
 export class InnoAccordion {
   protected el: HTMLElement;

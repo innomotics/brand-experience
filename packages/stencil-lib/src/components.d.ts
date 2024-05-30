@@ -42,6 +42,10 @@ export namespace Components {
          */
         "last": boolean;
         /**
+          * Secondary text for the accordion. Always visible whether the accordion is opened or closed.
+         */
+        "secondLabel": string;
+        /**
           * Color variant of the accordion.
          */
         "variant": 'light' | 'dark';
@@ -1429,6 +1433,10 @@ declare namespace LocalJSX {
           * This event is fired whenever the accordion is opened/closed via user interaction.
          */
         "onCollapsedChanged"?: (event: InnoAccordionCustomEvent<{ element: HTMLInnoAccordionElement, collapsed: boolean }>) => void;
+        /**
+          * Secondary text for the accordion. Always visible whether the accordion is opened or closed.
+         */
+        "secondLabel"?: string;
         /**
           * Color variant of the accordion.
          */

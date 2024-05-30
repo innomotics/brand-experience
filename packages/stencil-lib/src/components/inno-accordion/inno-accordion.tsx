@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import sanitizeHtml from 'sanitize-html';
 
 @Component({
   tag: 'inno-accordion',
@@ -32,6 +33,11 @@ export class InnoAccordion {
   @Prop({ mutable: true }) label: string;
 
   /**
+   * Secondary text for the accordion. Always visible whether the accordion is opened or closed.
+   */
+  @Prop({ mutable: true }) secondLabel: string;
+
+  /**
    * This event is fired whenever the accordion is opened/closed via user interaction.
    */
   @Event() collapsedChanged: EventEmitter<{ element: HTMLInnoAccordionElement, collapsed: boolean }>;
@@ -48,14 +54,37 @@ export class InnoAccordion {
   private toggleHoveredClass(hovered: boolean) {
     if (hovered) {
       this.anchorElementRef.classList.add("hovered");
+      this.anchorElementRef.querySelectorAll("inno-accordion a.accordion").forEach(accordion => {
+        accordion.classList.add("hovered");
+      });
     } else {
       this.anchorElementRef.classList.remove("hovered");
+      this.anchorElementRef.querySelectorAll("inno-accordion a.accordion").forEach(accordion => {
+        accordion.classList.remove("hovered");
+      });
     }
   }
 
   render() {
     let iconSize: number = 24;
     let icon: string = this.collapsed ? this.inner ? 'chevron-down-small' : 'plus' : this.inner ? 'chevron-up-small' : 'minus';
+    let headerTitle =
+      <div class="accordion-header-titles">
+        <span class={{
+          'accordion-header-title': true,
+          'light': this.variant === 'light',
+          'dark': this.variant === 'dark',
+          'inner': this.inner
+        }} innerHTML={sanitizeHtml(this.label)}></span>
+        <span class={{
+          'accordion-header-title': true,
+          'second-label': true,
+          'light': this.variant === 'light',
+          'dark': this.variant === 'dark',
+          'inner': this.inner
+        }} innerHTML={sanitizeHtml(this.secondLabel)}></span>
+      </div>;
+
     return (
       <Host>
         <a class={{
@@ -80,24 +109,13 @@ export class InnoAccordion {
             onMouseLeave={() => this.toggleHoveredClass(false)}
           >
 
-            <span class={{
-              'accordion-header-title': true,
-              'light': this.variant === 'light',
-              'dark': this.variant === 'dark',
-              hide: this.inner,
-            }}>{this.label}</span>
+            {!this.inner ? headerTitle : null}
 
             <inno-icon class={{
               'inner': this.inner,
             }} icon={icon} size={iconSize} variant={this.variant}></inno-icon>
 
-            <span class={{
-              'accordion-header-title': true,
-              'inner': this.inner,
-              'light': this.variant === 'light',
-              'dark': this.variant === 'dark',
-              hide: !this.inner,
-            }}>{this.label}</span>
+            {this.inner ? headerTitle : null}
 
           </div>
 

@@ -69,6 +69,10 @@
       &.inner {
         border: 0;
       }
+
+      &.inner.hovered {
+        background-color: colors.$interaction-dark-hover;
+      }
     }
   }
 
@@ -84,37 +88,49 @@
 
     &.inner {
       padding: 0;
+      justify-content: flex-start;
     }
   }
 
-  .accordion-header-title {
+  .accordion-header-titles {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    flex-grow: 1;
-    height: 100%;
+    width: 100%;
+    gap: 8px;
 
-    font-weight: bold;
-    font-size: 16px;
+    .accordion-header-title {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      max-width: fit-content;
+      font-weight: bold;
+      font-size: 16px;
 
-    &.light {
-      color: colors.$text-light-highemphasis;
-    }
+      &.second-label {
+        font-weight: 400;
+        margin-right: 8px;
+      }
 
-    &.dark {
-      color: colors.$text-dark-highemphasis;
-    }
+      &.light {
+        color: colors.$text-light-highemphasis;
+      }
 
-    &.inner {
-      font-weight: normal;
-      font-size: 12px;
-    }
+      &.dark {
+        color: colors.$text-dark-highemphasis;
+      }
 
-    &.hide {
-      display: none;
-      max-height: 0;
-      padding-top: 0px;
-      padding-bottom: 0px;
+      &.inner {
+        font-weight: normal;
+        font-size: 12px;
+      }
+
+      &.hide {
+        display: none;
+        max-height: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
     }
   }
 
