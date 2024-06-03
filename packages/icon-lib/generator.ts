@@ -5,10 +5,12 @@ const directoryPath = "./lib/svg";
 const regexes: RegExp[] = [
   /\r|\n|\s{2,}/g,
   /<!--.*-->/g,
-  /<style.*\/style>/g,
-  /class="[^\s]*/g,
+  ///<style.*\/style>/g,
+  ///class="[^\s]*/g,
   /stroke="[^\s]*/g,
   /fill="[^\s]*/g,
+  /fill:[^\s]*;/g,
+  /clip-path:[^\s]*;/g,
 ];
 //passsing directoryPath and callback function
 let moduleContent = "";

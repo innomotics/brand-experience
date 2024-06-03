@@ -1,8 +1,14 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="sort up-down">
-<g id="Icon">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M17 9.5L12 2L7 9.5H17ZM9.33625 8.25H14.6637L12 4.25375L9.33625 8.25Z" fill="#08191F"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M17 14.5L12 22L7 14.5H17ZM9.33625 15.75H14.6637L12 19.7463L9.33625 15.75Z" fill="#08191F"/>
-</g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#08191F;}
+	.st1{clip-path:url(#SVGID_00000063628330939528074220000002025601078799157179_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
+</style>
+<g>
+<path class="st2" d="M17 14.5L12 22L7 14.5H17ZM9.33625 15.75H14.6637L12 19.7463L9.33625 15.75Z"/>
+<path class="st2" d="M17 9.5L12 2L7 9.5H17ZM9.33625 8.25H14.6637L12 4.25375L9.33625 8.25Z"/>
 </g>
 </svg>
