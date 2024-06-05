@@ -99,6 +99,9 @@
         }
 
         .label-value {
+          font-size: 16px;
+          font-weight: 400;
+
           &.light {
             color: colors.$primary-200;
           }
@@ -136,9 +139,16 @@
       position: fixed;
       max-height: 500px;
       overflow-y: auto;
-  
+
       &.opened {
         display: block;
+      }
+    }
+
+    .select-item.icon-driven {
+      .content-wrapper {
+        font-size: 16px;
+        font-weight: 400;
       }
     }
   }

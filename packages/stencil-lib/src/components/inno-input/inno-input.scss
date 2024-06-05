@@ -4,11 +4,15 @@
 @mixin light-base {
   background-color: colors.$background-light-200;
   color: colors.$text-light-lowemphasis;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 @mixin dark-base {
   background-color: colors.$background-dark-200;
   color: colors.$text-dark-lowemphasis;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 :host {
