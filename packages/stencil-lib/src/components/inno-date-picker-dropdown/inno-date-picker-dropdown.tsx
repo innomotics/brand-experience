@@ -107,10 +107,21 @@ export class InnoDatePickerDropdown {
   }
 
   private onDateChange(range: DateChange) {
+    console.log(range);
+
     if (range.to) {
       this.value = `${range.from} - ${range.to}`;
     } else {
       this.value = range.from;
+    }
+
+    // close if not in range mode and value is selected
+    if (!this.range) {
+      this.show = false;
+    }
+    // close if range mode and both values are selected
+    else if (this.range && range.to) {
+      this.show = false;
     }
 
     this.dateChange.emit(range);

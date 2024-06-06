@@ -165,7 +165,7 @@ export class InnoDatePicker {
   @State() dayNames: string[];
   @State() monthNames: string[];
   @State() firstMonthRef: HTMLElement;
-  @State() focusedDay: number = 1;
+  @State() focusedDay: DateTime = DateTime.now();
   @State() focusedDayElem: HTMLElement;
 
   private isDayFocus: boolean;
@@ -183,28 +183,30 @@ export class InnoDatePicker {
 
     switch (event.key) {
       case 'ArrowLeft':
-        _focusedDay--;
+        _focusedDay = _focusedDay.minus({ day: 1 });
         break;
       case 'ArrowRight':
-        _focusedDay++;
+        _focusedDay = _focusedDay.plus({ day: 1 });
         break;
       case 'ArrowUp':
-        _focusedDay = _focusedDay - this.DAYS_IN_WEEK;
+        _focusedDay = _focusedDay.minus({ day: this.DAYS_IN_WEEK });
         break;
       case 'ArrowDown':
-        _focusedDay = _focusedDay + this.DAYS_IN_WEEK;
+        _focusedDay = _focusedDay.plus({ day: this.DAYS_IN_WEEK });
         break;
       default:
         return;
     }
 
-    if (_focusedDay > this.getDaysInCurrentMonth()) {
-      _focusedDay = _focusedDay - this.getDaysInCurrentMonth();
+    const selected = DateTime.fromObject({ year: this.selectedYear, month: this.selectedMonth + 1, day: 1 });
+    // this.getDaysInCurrentMonth()
+    if (_focusedDay.month > selected.month) {
+      // _focusedDay = _focusedDay - this.getDaysInCurrentMonth();
       this.changeToAdjacentMonth(1);
       this.monthChangedFromFocus = true;
-    } else if (_focusedDay < 1) {
+    } else if (_focusedDay.month < selected.month) {
       this.changeToAdjacentMonth(-1);
-      _focusedDay = _focusedDay + this.getDaysInCurrentMonth();
+      // _focusedDay = _focusedDay + this.getDaysInCurrentMonth();
       this.monthChangedFromFocus = true;
     }
 
@@ -252,7 +254,7 @@ export class InnoDatePicker {
       return;
     }
 
-    const dayElem = this.hostElement.querySelector(`[id=day-cell-${this.focusedDay}]`) as HTMLElement;
+    const dayElem = this.hostElement.querySelector(`[id=${this.calculateIdForCell(this.focusedDay)}]`) as HTMLElement;
     dayElem.focus();
   }
 
@@ -267,6 +269,10 @@ export class InnoDatePicker {
     this.monthNames = Info.months('long', {
       locale: this.locale,
     });
+  }
+
+  private calculateIdForCell(dateTime: DateTime) {
+    return `day-cell-${dateTime.year}-${dateTime.month}-${dateTime.day}`;
   }
 
   /**
@@ -635,15 +641,17 @@ export class InnoDatePicker {
               return <div date-calender-day class={this.getDayClasses(day)}></div>;
             }
 
+            const focusedDay = day.month === this.focusedDay.month && day.day === this.focusedDay.day;
+            const id = this.calculateIdForCell(day);
             return (
               <div
                 date-calender-day
                 key={`${day.month}-${day.day}`}
-                id={`day-cell-${day}`}
+                id={id}
                 class={this.getDayClasses(day)}
                 onClick={() => this.selectDay(day)}
                 onKeyUp={e => e.key === 'Enter' && this.selectDay(day)}
-                tabIndex={day.day === this.focusedDay ? 0 : -1}
+                tabIndex={focusedDay ? 0 : -1}
                 onFocus={() => this.onDayFocus()}
                 onBlur={() => this.onDayBlur()}
               >
