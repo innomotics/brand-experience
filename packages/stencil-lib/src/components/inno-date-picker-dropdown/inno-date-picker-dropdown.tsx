@@ -78,6 +78,8 @@ export class InnoDatePickerDropdown {
    */
   @Prop() label: string | undefined;
 
+  @Prop() closeOnSelection = true;
+
   /**
    * Triggers if the date selection changes.
    * See the date-picker component for more information.
@@ -111,6 +113,17 @@ export class InnoDatePickerDropdown {
       this.value = `${range.from} - ${range.to}`;
     } else {
       this.value = range.from;
+    }
+
+    if (this.closeOnSelection) {
+      // close if not in range mode and value is selected
+      if (!this.range) {
+        this.show = false;
+      }
+      // close if range mode and both values are selected
+      else if (this.range && range.to) {
+        this.show = false;
+      }
     }
 
     this.dateChange.emit(range);
