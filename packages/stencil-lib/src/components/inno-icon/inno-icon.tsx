@@ -24,22 +24,25 @@ export class InnoIcon {
   @State() svgContent?: string;
 
   @Watch('icon')
-  async svgContentChanged(){
+  async svgContentChanged() {
     this.svgContent = await this.resolveIcon(this.icon);
   }
-  
-  async connectedCallback()
-  {
+
+  async connectedCallback() {
     this.svgContentChanged();
   }
-  
+
   render() {
     return <Host class={`icon-${this.size} icon-inno-${this.icon}`}>
-      <div class={`icon-${this.size} icon-${this.variant}` } innerHTML={this.svgContent}></div>
+      <div class={`icon-${this.size} icon-${this.variant}`} innerHTML={this.svgContent}></div>
     </Host>;
   }
 
   async resolveIcon(icon: string) {
+    if (!icon) {
+      return null;
+    }
+
     const svgIcon = await import(`@innomotics/brand-experience-icons/dist/inno-icons`);
     const iconname = 'inno_' + icon.replace(/\-/g, '');
     return svgIcon[iconname];
