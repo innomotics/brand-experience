@@ -212,6 +212,7 @@ export namespace Components {
      * Date-picker with dropdown.
      */
     interface InnoDatePickerDropdown {
+        "closeOnSelection": boolean;
         /**
           * Date format string. See the date-picker component for more information.
          */
@@ -1613,6 +1614,7 @@ declare namespace LocalJSX {
      * Date-picker with dropdown.
      */
     interface InnoDatePickerDropdown {
+        "closeOnSelection"?: boolean;
         /**
           * Date format string. See the date-picker component for more information.
          */

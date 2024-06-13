@@ -167,14 +167,14 @@ export declare interface InnoDatePicker extends Components.InnoDatePicker {
 
 
 @ProxyCmp({
-  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex']
+  inputs: ['closeOnSelection', 'format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex']
 })
 @Component({
   selector: 'inno-date-picker-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex'],
+  inputs: ['closeOnSelection', 'format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex'],
 })
 export class InnoDatePickerDropdown {
   protected el: HTMLElement;

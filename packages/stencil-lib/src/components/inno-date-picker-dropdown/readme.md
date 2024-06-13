@@ -75,19 +75,20 @@ Date-picker with dropdown.
 
 ## Properties
 
-| Property         | Attribute          | Description                                                                                                    | Type                | Default        |
-| ---------------- | ------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
-| `format`         | `format`           | Date format string. See the date-picker component for more information.                                        | `string`            | `'yyyy/LL/dd'` |
-| `from`           | `from`             | The selected starting range. See the date-picker component for more information.                               | `string`            | `undefined`    |
-| `label`          | `label`            | Label of the dropdown component.                                                                               | `string`            | `undefined`    |
-| `locale`         | `locale`           | Format of the date strings. See the date-picker component for more information.                                | `string`            | `undefined`    |
-| `maxDate`        | `max-date`         | The latest date that can be selected by the date picker. See the date-picker component for more information.   | `string`            | `undefined`    |
-| `minDate`        | `min-date`         | The earliest date that can be selected by the date picker. See the date-picker component for more information. | `string`            | `undefined`    |
-| `range`          | `range`            | If true a date-range can be selected. See the date-picker component for more information.                      | `boolean`           | `false`        |
-| `showOuterDays`  | `show-outer-days`  | Show the days outside the selected month. See the date-picker component for more information.                  | `boolean`           | `true`         |
-| `to`             | `to`               | The selected end date. See the date-picker component for more information.                                     | `string`            | `undefined`    |
-| `variant`        | `variant`          | Color variant of the component.                                                                                | `"dark" \| "light"` | `'dark'`       |
-| `weekStartIndex` | `week-start-index` | The index of which day to start the week on. See the date-picker component for more information.               | `number`            | `0`            |
+| Property           | Attribute            | Description                                                                                                    | Type                | Default        |
+| ------------------ | -------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- |
+| `closeOnSelection` | `close-on-selection` |                                                                                                                | `boolean`           | `true`         |
+| `format`           | `format`             | Date format string. See the date-picker component for more information.                                        | `string`            | `'yyyy/LL/dd'` |
+| `from`             | `from`               | The selected starting range. See the date-picker component for more information.                               | `string`            | `undefined`    |
+| `label`            | `label`              | Label of the dropdown component.                                                                               | `string`            | `undefined`    |
+| `locale`           | `locale`             | Format of the date strings. See the date-picker component for more information.                                | `string`            | `undefined`    |
+| `maxDate`          | `max-date`           | The latest date that can be selected by the date picker. See the date-picker component for more information.   | `string`            | `undefined`    |
+| `minDate`          | `min-date`           | The earliest date that can be selected by the date picker. See the date-picker component for more information. | `string`            | `undefined`    |
+| `range`            | `range`              | If true a date-range can be selected. See the date-picker component for more information.                      | `boolean`           | `false`        |
+| `showOuterDays`    | `show-outer-days`    | Show the days outside the selected month. See the date-picker component for more information.                  | `boolean`           | `true`         |
+| `to`               | `to`                 | The selected end date. See the date-picker component for more information.                                     | `string`            | `undefined`    |
+| `variant`          | `variant`            | Color variant of the component.                                                                                | `"dark" \| "light"` | `'dark'`       |
+| `weekStartIndex`   | `week-start-index`   | The index of which day to start the week on. See the date-picker component for more information.               | `number`            | `0`            |
 
 
 ## Events

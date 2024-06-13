@@ -94,6 +94,7 @@ export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDate
   'locale',
   'showOuterDays',
   'label',
+  'closeOnSelection',
   'dateChange'
 ]);
 

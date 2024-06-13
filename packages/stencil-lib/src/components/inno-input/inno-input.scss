@@ -37,26 +37,6 @@
       box-shadow: inset 0px 0px 0px 1px colors.$interaction-light-hover;
     }
 
-    ::slotted(input) {
-      @include light-base;
-      color: colors.$text-light-highemphasis;
-
-      &:-webkit-autofill {
-        -webkit-text-fill-color: colors.$text-light-highemphasis;
-        -webkit-box-shadow: 0 0 0px 1000px colors.$background-light-200 inset;
-      }
-
-      &.disabled,
-      &:disabled,
-      &:read-only {
-        background-color: rgba(colors.$transparency-light-100, 0);
-        -webkit-text-fill-color: unset;
-        -webkit-box-shadow: unset;
-        box-shadow: unset;
-        pointer-events: none;
-      }
-    }
-
     &.isactive {
       &:hover:not(.disabled):not(:disabled) {
         box-shadow: inset 0px 0px 0px 1px colors.$highlight-light-100;
@@ -85,6 +65,7 @@
 
     &.disabled {
       background-color: colors.$transparency-light-200;
+      border: 1px solid transparent;
     }
   }
 
@@ -97,27 +78,7 @@
 
     &.disabled {
       background-color: colors.$transparency-dark-100;
-    }
-
-    ::slotted(input) {
-      @include dark-base;
-      color: colors.$text-dark-highemphasis;
-
-      &:-webkit-autofill {
-        -webkit-text-fill-color: colors.$text-dark-highemphasis;
-        -webkit-box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
-        box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
-      }
-
-      &.disabled,
-      &:disabled,
-      &:read-only {
-        background-color: rgba(colors.$transparency-dark-100, 0);
-        color: colors.$text-dark-highemphasis;
-        -webkit-box-shadow: unset;
-        box-shadow: unset;
-        pointer-events: none;
-      }
+      border: 1px solid transparent;
     }
 
     &.isactive {
