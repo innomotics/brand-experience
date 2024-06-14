@@ -8,7 +8,7 @@ import sanitizeHtml from 'sanitize-html';
   formAssociated: true,
 })
 export class InnoInput {
-  @Element() hostElement!: HTMLInnoInputElement;
+  @Element() hostElement!: HTMLInnoInputElement & HTMLDivElement;
   private inputElementRef?: HTMLInputElement;
   private observer: MutationObserver;
 
@@ -21,13 +21,15 @@ export class InnoInput {
 
   @State() shouldFloat: boolean;
 
+  @State() textareaMode = false;
+
   /**
    * Whether the input is focused or not.
    */
   @Prop({ mutable: true }) isFocused: boolean;
 
   /**
-   * Whether the inno-input component is disabled or not. Probably not needed to be set since the component 
+   * Whether the inno-input component is disabled or not. Probably not needed to be set since the component
    * automatically detects if the inserted input element is disabled or not.
    * The inno-input component will also be in a disabled state when the input element is readonly.
    */
@@ -53,27 +55,43 @@ export class InnoInput {
    * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
    * <br/><br/>Only has an effect if 'error' has a value.
    */
-  @Prop({ mutable: true }) errortype: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
-    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+  @Prop({ mutable: true }) errortype:
+    | 'badInput'
+    | 'customError'
+    | 'patternMismatch'
+    | 'rangeOverflow'
+    | 'rangeUnderflow'
+    | 'stepMismatch'
+    | 'tooLong'
+    | 'tooShort'
+    | 'typeMismatch'
+    | 'valid'
+    | 'valueMissing'
+    | undefined;
 
   /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
   @Prop() valuePropReDefine: boolean = true;
 
   /**
-   * When you click on the inno-input a focus() command is called on the input element. 
+   * When you click on the inno-input a focus() command is called on the input element.
    * This might cause that the caret position will be at the beginnging of the input's value.
    * Set this to true if you want to select all of the text by default.
    */
   @Prop({ mutable: true }) selectOnFocus: boolean = false;
 
-
   /**
-   * When you click on the inno-input a focus() command is called on the input element. 
+   * When you click on the inno-input a focus() command is called on the input element.
    * This might cause that the caret position will be at the beginnging of the input's value.
    * Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'.
    * Has no effect if 'selectOnFocus' is also true.
    */
   @Prop({ mutable: true }) caretPosEndOnFocus: boolean = false;
+
+  /**
+   * Only has effect if textarea is provided as wrapped element.
+   * Whether the textarea is resizeable.
+   */
+  @Prop() resizeable = false;
 
   @State() isValid: boolean = true;
 
@@ -89,7 +107,8 @@ export class InnoInput {
   }
 
   private setErrors(element: any) {
-    if (this.error != null && this.error !== '') { //if error is specified skip the manually added errors
+    if (this.error != null && this.error !== '') {
+      //if error is specified skip the manually added errors
       return;
     }
 
@@ -134,16 +153,16 @@ export class InnoInput {
     }
 
     let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
-    let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, "value");
+    let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
     let thisref = this;
-    Object.defineProperty(this.inputElementRef, "value", {
+    Object.defineProperty(this.inputElementRef, 'value', {
       get: function () {
         return descriptor.get.apply(this, arguments);
       },
       set: function () {
         descriptor.set.apply(this, arguments);
-        setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event("reCheckInnoInputValue", { bubbles: true })), 0);
-      }
+        setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
+      },
     });
   }
 
@@ -153,13 +172,13 @@ export class InnoInput {
         let isDisabled: boolean = false;
         let isReadOnly: boolean = false;
 
-        for (var i = 0, mutation: MutationRecord; mutation = mutations[i]; i++) {
+        for (var i = 0, mutation: MutationRecord; (mutation = mutations[i]); i++) {
           if (mutation.attributeName == 'disabled') {
             isDisabled = (mutation.target as HTMLInputElement).disabled;
           } else if (mutation.attributeName == 'readonly') {
             isReadOnly = (mutation.target as HTMLInputElement).readOnly;
           }
-        };
+        }
 
         this.disabled = isDisabled || isReadOnly;
       });
@@ -169,7 +188,8 @@ export class InnoInput {
   }
 
   componentDidLoad() {
-    this.inputElementRef = this.hostElement.querySelector('input');
+    this.inputElementRef = this.hostElement.querySelector('input') ?? (this.hostElement.querySelector('textarea') as any);
+    this.textareaMode = this.inputElementRef instanceof HTMLTextAreaElement;
 
     this.reDefineInputValueProperty();
 
@@ -223,9 +243,40 @@ export class InnoInput {
         return;
       }
 
-      if (this.caretPosEndOnFocus && this.inputElementRef.type == "text") {
+      if (this.caretPosEndOnFocus && this.inputElementRef.type == 'text') {
         this.inputElementRef.selectionStart = this.inputElementRef.selectionEnd = this.inputElementRef.value.length;
       }
+    }
+  }
+
+  private onSeizerMouseDown(_event: MouseEvent) {
+    const move = (event: MouseEvent) => this.onSeizerMove(event);
+
+    // Refactored to a variable to prevent memory leak
+    const mouseUpListener = () => {
+      window.removeEventListener('mousemove', move, false);
+      window.removeEventListener('mouseup', mouseUpListener);
+    };
+
+    window.addEventListener('mouseup', mouseUpListener);
+    window.addEventListener('mousemove', move, false);
+  }
+
+  private onSeizerMove(event: MouseEvent) {
+    console.log(this.inputElementRef.offsetWidth);
+
+    const width = event.clientX < 100 ? 100 : event.clientX;
+    const height = event.clientY < 100 ? 100 : event.clientY;
+
+    this.hostElement.style.width = `${width}px`;
+    this.hostElement.style.height = `${height}px`;
+  }
+
+  private seizer() {
+    if (this.resizeable) {
+      return <inno-icon icon="resize" size={32} class="seizer" onMouseDown={event => this.onSeizerMouseDown(event)}></inno-icon>;
+    } else {
+      return null;
     }
   }
 
@@ -244,28 +295,30 @@ export class InnoInput {
           'dark': this.variant === 'dark',
           'disabled': shouldDisable,
           'invalid': !this.isValid || errorSpecified,
-          'can-show-errors': canShowErrors
+          'can-show-errors': canShowErrors,
+          'textareamode': this.textareaMode,
         }}
         onClick={() => this.activateInput()}
       >
-        <span class={{
-          label: true,
-          float: this.shouldFloat,
-          disabled: shouldDisable,
-          light: this.variant === 'light',
-          dark: this.variant === 'dark',
-          invalid: !this.isValid || errorSpecified
-        }} innerHTML={sanitizeHtml(this.label)}></span>
+        <span
+          class={{
+            label: true,
+            float: this.shouldFloat && !this.textareaMode,
+            floatarea: this.shouldFloat && this.textareaMode,
+            disabled: shouldDisable,
+            light: this.variant === 'light',
+            dark: this.variant === 'dark',
+            invalid: !this.isValid || errorSpecified,
+          }}
+          innerHTML={sanitizeHtml(this.label)}
+        ></span>
         <slot></slot>
-        {errorSpecified ?
-          <inno-error
-            class="explicit-error"
-            type={this.errortype}
-            variant={this.variant}
-            active={true}>
+        {this.seizer()}
+        {errorSpecified ? (
+          <inno-error class="explicit-error" type={this.errortype} variant={this.variant} active={true}>
             {this.error}
           </inno-error>
-          : null}
+        ) : null}
       </Host>
     );
   }

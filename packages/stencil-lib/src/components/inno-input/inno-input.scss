@@ -1,5 +1,6 @@
 @use '@innomotics/brand-experience/styles/colors';
 @use '@innomotics/brand-experience/styles/componentmixins';
+@use '../../../styles/siemens-ix/scrollbar';
 
 @mixin light-base {
   background-color: colors.$background-light-200;
@@ -20,10 +21,21 @@
   height: 56px;
   min-height: 56px;
   max-height: 56px;
-  padding: 0px 16px 0px 16px;
+  padding: 0px 0px 0px 16px;
   margin: 5px 5px 8px 5px;
   border: 1px solid colors.$additional-light-300;
   cursor: text;
+
+  &.textareamode {
+    height: unset;
+    max-height: unset;
+    // padding: 3px; //16px;
+
+    display: inline-block;
+
+    position: relative;
+    pointer-events: all;
+  }
 
   &.can-show-errors {
     margin-bottom: 23px;
@@ -37,7 +49,8 @@
       box-shadow: inset 0px 0px 0px 1px colors.$interaction-light-hover;
     }
 
-    ::slotted(input) {
+    ::slotted(input),
+    ::slotted(textarea) {
       @include light-base;
       color: colors.$text-light-highemphasis;
 
@@ -99,7 +112,8 @@
       background-color: colors.$transparency-dark-100;
     }
 
-    ::slotted(input) {
+    ::slotted(input),
+    ::slotted(textarea) {
       @include dark-base;
       color: colors.$text-dark-highemphasis;
 
@@ -153,6 +167,41 @@
     margin-top: calc(56px - 30px);
   }
 
+  ::slotted(textarea) {
+    // @include scrollbar.scrollbar();
+
+    scrollbar-color: colors.$secondary-300 colors.$secondary-800;
+    scrollbar-width: thin;
+
+    // &::-webkit-scrollbar {
+    //   width: 16px;
+    //   height: 16px;
+    // }
+
+    // &::-webkit-scrollbar-corner,
+    // &::-webkit-scrollbar-track {
+    //   background-color: rgb(64, 64, 64);
+    // }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: rgb(96, 96, 96);
+    //   background-clip: padding-box;
+    //   border: 2px solid transparent;
+    // }
+
+    // &::-webkit-scrollbar-button {
+    //   background-color: rgb(64, 64, 64);
+    //   display: none;
+    // }
+
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    border: 0;
+    outline: 0;
+    resize: none;
+  }
+
   .label {
     left: auto;
     right: auto;
@@ -188,7 +237,20 @@
     font-size: 12px;
   }
 
+  .floatarea {
+    transform: translate(0rem, 0.3rem) scale(1);
+    font-size: 12px;
+  }
+
   &.disabled {
     border: 1px solid colors.$interaction-light-disabled;
   }
+}
+
+.seizer {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  cursor: nw-resize;
+  z-index: 1;
 }

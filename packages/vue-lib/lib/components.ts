@@ -94,6 +94,7 @@ export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDate
   'locale',
   'showOuterDays',
   'label',
+  'closeOnSelection',
   'dateChange'
 ]);
 
@@ -144,6 +145,7 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'valuePropReDefine',
   'selectOnFocus',
   'caretPosEndOnFocus',
+  'resizeable',
   'valueChanged'
 ]);
 
