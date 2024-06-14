@@ -10,6 +10,7 @@ import sanitizeHtml from 'sanitize-html';
 export class InnoInput {
   @Element() hostElement!: HTMLInnoInputElement & HTMLDivElement;
   private inputElementRef?: HTMLInputElement;
+  private seizerElementRef: HTMLElement;
   private observer: MutationObserver;
 
   /**
@@ -88,10 +89,16 @@ export class InnoInput {
   @Prop({ mutable: true }) caretPosEndOnFocus: boolean = false;
 
   /**
-   * Only has effect if textarea is provided as wrapped element.
    * Whether the textarea is resizeable.
+   * Only has effect if textarea is provided as wrapped element.
    */
   @Prop() resizeable = false;
+
+  /**
+   * Set the resize direction.
+   * Only has effect if textarea is provided as wrapped element.
+   */
+  @Prop() resizeMode: 'vertical' | 'horizontal' | 'both' = 'both';
 
   @State() isValid: boolean = true;
 
@@ -104,6 +111,7 @@ export class InnoInput {
     this.shouldFloat = true;
     this.isActive = true;
     this.setErrors(event.target);
+    this.synchSeizerPosition();
   }
 
   private setErrors(element: any) {
@@ -192,7 +200,6 @@ export class InnoInput {
     this.textareaMode = this.inputElementRef instanceof HTMLTextAreaElement;
 
     this.reDefineInputValueProperty();
-
     this.startMutationObserver();
 
     setTimeout(() => {
@@ -204,6 +211,7 @@ export class InnoInput {
     });
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
+    this.synchSeizerPosition();
   }
 
   disconnectedCallback() {
@@ -249,6 +257,14 @@ export class InnoInput {
     }
   }
 
+  private synchSeizerPosition() {
+    if (this.inputElementRef.scrollHeight > this.inputElementRef.clientHeight) {
+      this.seizerElementRef.classList.add('seizer-with-scrollbar');
+    } else {
+      this.seizerElementRef.classList.remove('seizer-with-scrollbar');
+    }
+  }
+
   private onSeizerMouseDown(_event: MouseEvent) {
     const move = (event: MouseEvent) => this.onSeizerMove(event);
 
@@ -263,18 +279,36 @@ export class InnoInput {
   }
 
   private onSeizerMove(event: MouseEvent) {
-    console.log(this.inputElementRef.offsetWidth);
+    if (this.resizeMode === 'both' || this.resizeMode === 'horizontal') {
+      const width = event.clientX < 100 ? 100 : event.clientX;
+      this.hostElement.style.width = `${width}px`;
+    }
 
-    const width = event.clientX < 100 ? 100 : event.clientX;
-    const height = event.clientY < 100 ? 100 : event.clientY;
+    if (this.resizeMode === 'both' || this.resizeMode === 'vertical') {
+      const height = event.clientY < 100 ? 100 : event.clientY;
+      this.hostElement.style.height = `${height}px`;
+    }
 
-    this.hostElement.style.width = `${width}px`;
-    this.hostElement.style.height = `${height}px`;
+    this.synchSeizerPosition();
   }
 
-  private seizer() {
+  private seizerElement() {
     if (this.resizeable) {
-      return <inno-icon icon="resize" size={32} class="seizer" onMouseDown={event => this.onSeizerMouseDown(event)}></inno-icon>;
+      return <inno-icon icon="resize" size={32} class="seizer" ref={ref => (this.seizerElementRef = ref)} onMouseDown={event => this.onSeizerMouseDown(event)}></inno-icon>;
+    } else {
+      return null;
+    }
+  }
+
+  private errorElement() {
+    const errorSpecified = this.error != null && this.error !== '';
+
+    if (errorSpecified) {
+      return (
+        <inno-error class="explicit-error" type={this.errortype} variant={this.variant} active={true}>
+          {this.error}
+        </inno-error>
+      );
     } else {
       return null;
     }
@@ -313,12 +347,8 @@ export class InnoInput {
           innerHTML={sanitizeHtml(this.label)}
         ></span>
         <slot></slot>
-        {this.seizer()}
-        {errorSpecified ? (
-          <inno-error class="explicit-error" type={this.errortype} variant={this.variant} active={true}>
-            {this.error}
-          </inno-error>
-        ) : null}
+        {this.seizerElement()}
+        {this.errorElement()}
       </Host>
     );
   }
