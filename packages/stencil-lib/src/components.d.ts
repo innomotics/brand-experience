@@ -373,9 +373,12 @@ export namespace Components {
           * Floating label for the input.
          */
         "label": string;
+        /**
+          * Set the resize direction. Only has effect if textarea is provided as wrapped element.
+         */
         "resizeMode": 'vertical' | 'horizontal' | 'both';
         /**
-          * Only has effect if textarea is provided as wrapped element. Whether the textarea is resizeable.
+          * Whether the textarea is resizeable. Only has effect if textarea is provided as wrapped element.
          */
         "resizeable": boolean;
         /**
@@ -1798,9 +1801,12 @@ declare namespace LocalJSX {
           * Fired when the new value is valid.
          */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
+        /**
+          * Set the resize direction. Only has effect if textarea is provided as wrapped element.
+         */
         "resizeMode"?: 'vertical' | 'horizontal' | 'both';
         /**
-          * Only has effect if textarea is provided as wrapped element. Whether the textarea is resizeable.
+          * Whether the textarea is resizeable. Only has effect if textarea is provided as wrapped element.
          */
         "resizeable"?: boolean;
         /**

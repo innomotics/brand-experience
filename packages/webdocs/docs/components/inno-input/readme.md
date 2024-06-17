@@ -11,14 +11,23 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
       <span class="bg-title">light background</span>
       <InnoInput label="Power" variant="light">
         <input type="number" />
-      </InnoInput> 
+      </InnoInput>
+
+      <InnoInput label="Power" variant="light">
+        <textarea />
+      </InnoInput>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
       <InnoInput label="Power" variant="dark">
         <input type="number" />
-      </InnoInput> 
+      </InnoInput>
+
+      <InnoInput label="Power" variant="dark">
+        <textarea />
+      </InnoInput>
     </div>
+
   </div>
   </TabItem>
   <TabItem value="Angular" label="Angular">
@@ -90,7 +99,8 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
 | `errortype`          | `errortype`              | The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value.                                                                                                                                                                                  | `"badInput" \| "customError" \| "patternMismatch" \| "rangeOverflow" \| "rangeUnderflow" \| "stepMismatch" \| "tooLong" \| "tooShort" \| "typeMismatch" \| "valid" \| "valueMissing"` | `undefined` |
 | `isFocused`          | `is-focused`             | Whether the input is focused or not.                                                                                                                                                                                                                                                                                                         | `boolean`                                                                                                                                                                             | `undefined` |
 | `label`              | `label`                  | Floating label for the input.                                                                                                                                                                                                                                                                                                                | `string`                                                                                                                                                                              | `undefined` |
-| `resizeable`         | `resizeable`             | Only has effect if textarea is provided as wrapped element. Whether the textarea is resizeable.                                                                                                                                                                                                                                              | `boolean`                                                                                                                                                                             | `false`     |
+| `resizeMode`         | `resize-mode`            | Set the resize direction. Only has effect if textarea is provided as wrapped element.                                                                                                                                                                                                                                                        | `"both" \| "horizontal" \| "vertical"`                                                                                                                                                | `'both'`    |
+| `resizeable`         | `resizeable`             | Whether the textarea is resizeable. Only has effect if textarea is provided as wrapped element.                                                                                                                                                                                                                                              | `boolean`                                                                                                                                                                             | `false`     |
 | `selectOnFocus`      | `select-on-focus`        | When you click on the inno-input a focus() command is called on the input element. This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.                                                                                               | `boolean`                                                                                                                                                                             | `false`     |
 | `variant`            | `variant`                | Color variant of the input.                                                                                                                                                                                                                                                                                                                  | `"dark" \| "light"`                                                                                                                                                                   | `'light'`   |
 
@@ -106,11 +116,13 @@ import {InnoInput} from '@innomotics/brand-experience-react-lib';
 
 ### Depends on
 
+- [inno-icon](../inno-icon)
 - [inno-error](../inno-error)
 
 ### Graph
 ```mermaid
 graph TD;
+  inno-input --> inno-icon
   inno-input --> inno-error
   style inno-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

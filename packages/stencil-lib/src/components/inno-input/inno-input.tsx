@@ -258,6 +258,10 @@ export class InnoInput {
   }
 
   private synchSeizerPosition() {
+    if (!this.seizerElementRef) {
+      return;
+    }
+
     if (this.inputElementRef.scrollHeight > this.inputElementRef.clientHeight) {
       this.seizerElementRef.classList.add('seizer-with-scrollbar');
     } else {
@@ -270,12 +274,12 @@ export class InnoInput {
 
     // Refactored to a variable to prevent memory leak
     const mouseUpListener = () => {
-      window.removeEventListener('mousemove', move, false);
-      window.removeEventListener('mouseup', mouseUpListener);
+      window.removeEventListener('mousemove', move, true);
+      window.removeEventListener('mouseup', mouseUpListener, true);
     };
 
     window.addEventListener('mouseup', mouseUpListener);
-    window.addEventListener('mousemove', move, false);
+    window.addEventListener('mousemove', move, true);
   }
 
   private onSeizerMove(event: MouseEvent) {
@@ -343,6 +347,7 @@ export class InnoInput {
             light: this.variant === 'light',
             dark: this.variant === 'dark',
             invalid: !this.isValid || errorSpecified,
+            textareamode: this.textareaMode,
           }}
           innerHTML={sanitizeHtml(this.label)}
         ></span>
