@@ -29,10 +29,11 @@
     height: unset;
     max-height: unset;
     margin: 0;
-    padding: 16px 5px 16px 16px;
+    padding: 16px 5px 20px 16px;
 
     position: relative;
     pointer-events: all;
+    user-select: none;
   }
 
   &.can-show-errors {
@@ -77,23 +78,6 @@
       background-color: colors.$transparency-light-200;
       border: 1px solid transparent;
     }
-
-    // ::slotted(textarea) {
-    //   background-color: transparent !important;
-    //   pointer-events: all;
-
-    //   &::-webkit-scrollbar {
-    //     width: 5px;
-    //   }
-
-    //   &::-webkit-scrollbar-thumb {
-    //     background: colors.$secondary-800;
-    //   }
-
-    //   &::-webkit-scrollbar-track {
-    //     background: colors.$secondary-200;
-    //   }
-    // }
   }
 
   &.dark {
@@ -132,29 +116,6 @@
       box-shadow: inset 0px 0px 0px 1px colors.$status-dark-error;
       border: 1px solid colors.$status-dark-error;
     }
-
-    // ::slotted(textarea) {
-    //   background-color: transparent !important;
-    //   pointer-events: all;
-
-    //   &.disabled,
-    //   &:disabled,
-    //   &:read-only {
-    //     pointer-events: all;
-    //   }
-
-    //   &::-webkit-scrollbar {
-    //     width: 5px;
-    //   }
-
-    //   &::-webkit-scrollbar-thumb {
-    //     background: colors.$secondary-300;
-    //   }
-
-    //   &::-webkit-scrollbar-track {
-    //     background: colors.$secondary-800;
-    //   }
-    // }
   }
 
   ::slotted(input) {
@@ -162,15 +123,6 @@
     border: none;
     outline: none;
     margin-top: calc(56px - 30px);
-  }
-
-  ::slotted(textarea) {
-    width: 100% !important;
-    height: 100% !important;
-
-    border: 0;
-    outline: 0;
-    resize: none;
   }
 
   .label {
@@ -226,10 +178,22 @@
   position: absolute;
   bottom: -17px;
   right: -15px;
-  cursor: nw-resize;
+
   z-index: 1;
 
+  &.seizer-horizontal {
+    cursor: ew-resize;
+  }
+
+  &.seizer-vertical {
+    cursor: ns-resize;
+  }
+
+  &.seizer-both {
+    cursor: nw-resize;
+  }
+
   &.seizer-with-scrollbar {
-    // Currently seizer is not moved
+    // Currently seizer is not moved, implemented for further usage
   }
 }

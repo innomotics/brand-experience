@@ -270,16 +270,17 @@ export class InnoInput {
   }
 
   private onSeizerMouseDown(_event: MouseEvent) {
-    const move = (event: MouseEvent) => this.onSeizerMove(event);
+    const seizerMove = (event: MouseEvent) => this.onSeizerMove(event);
 
-    // Refactored to a variable to prevent memory leak
     const mouseUpListener = () => {
-      window.removeEventListener('mousemove', move, true);
-      window.removeEventListener('mouseup', mouseUpListener, true);
+      window.removeEventListener('mousemove', seizerMove);
+      window.removeEventListener('mouseup', mouseUpListener);
+      this.inputElementRef.removeEventListener('mouseup', mouseUpListener);
     };
 
     window.addEventListener('mouseup', mouseUpListener);
-    window.addEventListener('mousemove', move, true);
+    this.inputElementRef.addEventListener('mouseup', mouseUpListener);
+    window.addEventListener('mousemove', seizerMove);
   }
 
   private onSeizerMove(event: MouseEvent) {
@@ -297,8 +298,15 @@ export class InnoInput {
   }
 
   private seizerElement() {
+    const classes = {
+      'seizer': true,
+      'seizer-horizontal': this.resizeMode === 'horizontal',
+      'seizer-vertical': this.resizeMode === 'vertical',
+      'seizer-both': this.resizeMode === 'both',
+    };
+
     if (this.resizeable) {
-      return <inno-icon icon="resize" size={32} class="seizer" ref={ref => (this.seizerElementRef = ref)} onMouseDown={event => this.onSeizerMouseDown(event)}></inno-icon>;
+      return <inno-icon icon="resize" size={32} class={classes} ref={ref => (this.seizerElementRef = ref)} onMouseDown={event => this.onSeizerMouseDown(event)}></inno-icon>;
     } else {
       return null;
     }
