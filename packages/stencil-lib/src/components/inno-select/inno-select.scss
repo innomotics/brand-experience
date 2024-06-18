@@ -104,10 +104,18 @@
 
           &.light {
             color: colors.$primary-200;
+
+            &.disabled {
+              color: colors.$text-light-lowemphasis;
+            }
           }
 
           &.dark {
             color: colors.$primary-300;
+
+            &.disabled {
+              color: colors.$text-dark-lowemphasis;
+            }
           }
         }
       }
@@ -154,8 +162,12 @@
   }
 
   &.disabled {
-    border: 1px solid colors.$interaction-light-disabled;
+    border: 1px solid transparent;
     background-color: colors.$transparency-dark-100;
     pointer-events: none;
+
+    inno-icon.chevron {
+      display: none;
+    }
   }
 }

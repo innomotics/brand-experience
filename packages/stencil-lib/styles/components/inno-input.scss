@@ -1,0 +1,88 @@
+@use './../colors';
+
+@mixin light-base {
+  background-color: colors.$background-light-200;
+  color: colors.$text-light-lowemphasis;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@mixin dark-base {
+  background-color: colors.$background-dark-200;
+  color: colors.$text-dark-lowemphasis;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+inno-input {
+  &.light {
+    input,
+    textarea {
+      @include light-base;
+      color: colors.$text-light-highemphasis;
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: colors.$text-light-highemphasis;
+        -webkit-box-shadow: 0 0 0px 1000px colors.$background-light-200 inset;
+      }
+
+      &.disabled,
+      &:disabled,
+      &:read-only {
+        background-color: rgba(colors.$transparency-light-100, 0);
+        -webkit-text-fill-color: colors.$text-light-lowemphasis;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.dark {
+    input,
+    textarea {
+      @include dark-base;
+      color: colors.$text-dark-highemphasis;
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: colors.$text-dark-highemphasis;
+        -webkit-box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
+        box-shadow: 0 0 0px 1000px colors.$background-dark-200 inset;
+      }
+
+      &.disabled,
+      &:disabled,
+      &:read-only {
+        background-color: rgba(colors.$transparency-dark-100, 0);
+        color: colors.$text-dark-lowemphasis;
+        -webkit-text-fill-color: colors.$text-dark-lowemphasis;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
+        pointer-events: none;
+      }
+    }
+
+    textarea {
+      background-color: transparent !important;
+      pointer-events: all;
+
+      &.disabled,
+      &:disabled,
+      &:read-only {
+        pointer-events: all;
+      }
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: colors.$secondary-300;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: colors.$secondary-800;
+      }
+    }
+  }
+}

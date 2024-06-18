@@ -273,7 +273,7 @@ export class InnoSelect {
                   {this.selectedItem?.label}
                 </span>
               </div>
-              <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
+              <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           ) : (
             <div class="select-item icon-driven">
@@ -287,7 +287,7 @@ export class InnoSelect {
                   <inno-icon icon={this.icon} size={32}></inno-icon>Please select
                 </span>
               )}
-              <inno-icon icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
+              <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           )}
           <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isOpen }}>
