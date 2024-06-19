@@ -199,14 +199,11 @@ export class InnoDatePicker {
     }
 
     const selected = DateTime.fromObject({ year: this.selectedYear, month: this.selectedMonth + 1, day: 1 });
-    // this.getDaysInCurrentMonth()
     if (_focusedDay.month > selected.month) {
-      // _focusedDay = _focusedDay - this.getDaysInCurrentMonth();
       this.changeToAdjacentMonth(1);
       this.monthChangedFromFocus = true;
     } else if (_focusedDay.month < selected.month) {
       this.changeToAdjacentMonth(-1);
-      // _focusedDay = _focusedDay + this.getDaysInCurrentMonth();
       this.monthChangedFromFocus = true;
     }
 
@@ -251,7 +248,7 @@ export class InnoDatePicker {
     }
 
     const dayElem = this.hostElement.querySelector(`[id=${this.calculateIdForCell(this.focusedDay)}]`) as HTMLElement;
-    dayElem.focus();
+    dayElem?.focus();
   }
 
   private setTranslations() {
