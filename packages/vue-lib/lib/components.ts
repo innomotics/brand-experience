@@ -145,6 +145,8 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'valuePropReDefine',
   'selectOnFocus',
   'caretPosEndOnFocus',
+  'resizeable',
+  'resizeMode',
   'valueChanged'
 ]);
 

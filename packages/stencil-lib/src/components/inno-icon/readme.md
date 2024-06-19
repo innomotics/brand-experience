@@ -99,6 +99,7 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
  - [inno-date-picker](../inno-date-picker)
  - [inno-date-picker-dropdown](../inno-date-picker-dropdown)
  - [inno-drag-and-drop](../inno-drag-and-drop)
+ - [inno-input](../inno-input)
  - [inno-modal-header](../inno-modal-header)
  - [inno-paginator](../inno-paginator)
  - [inno-popover](../inno-popover)
@@ -116,6 +117,7 @@ graph TD;
   inno-date-picker --> inno-icon
   inno-date-picker-dropdown --> inno-icon
   inno-drag-and-drop --> inno-icon
+  inno-input --> inno-icon
   inno-modal-header --> inno-icon
   inno-paginator --> inno-icon
   inno-popover --> inno-icon

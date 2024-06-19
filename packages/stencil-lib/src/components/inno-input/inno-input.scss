@@ -20,10 +20,21 @@
   height: 56px;
   min-height: 56px;
   max-height: 56px;
-  padding: 0px 16px 0px 16px;
+  padding: 0px 0px 0px 16px;
   margin: 5px 5px 8px 5px;
   border: 1px solid colors.$additional-light-300;
   cursor: text;
+
+  &.textareamode {
+    height: unset;
+    max-height: unset;
+    margin: 0;
+    padding: 16px 5px 20px 16px;
+
+    position: relative;
+    pointer-events: all;
+    user-select: none;
+  }
 
   &.can-show-errors {
     margin-bottom: 23px;
@@ -142,14 +153,47 @@
         color: colors.$text-dark-lowemphasis;
       }
     }
-  }
 
-  .float {
-    transform: translate(0rem, 0.5rem) scale(1);
-    font-size: 12px;
+    &.float {
+      transform: translate(0rem, 0.5rem) scale(1);
+      font-size: 12px;
+    }
+
+    &.textareamode {
+      transform: translate(0rem, -0.2rem) scale(1);
+
+      &.floatarea {
+        transform: translate(0rem, -0.9rem) scale(1);
+        font-size: 12px;
+      }
+    }
   }
 
   &.disabled {
     border: 1px solid colors.$interaction-light-disabled;
+  }
+}
+
+.seizer {
+  position: absolute;
+  bottom: -17px;
+  right: -15px;
+
+  z-index: 1;
+
+  &.seizer-horizontal {
+    cursor: ew-resize;
+  }
+
+  &.seizer-vertical {
+    cursor: ns-resize;
+  }
+
+  &.seizer-both {
+    cursor: nw-resize;
+  }
+
+  &.seizer-with-scrollbar {
+    // Currently seizer is not moved, implemented for further usage
   }
 }

@@ -213,10 +213,6 @@ export class InnoDatePicker {
     this.focusedDay = _focusedDay;
   }
 
-  /*private getDaysInCurrentMonth(): number {
-    return DateTime.utc(this.selectedYear, this.selectedMonth + 1).daysInMonth;
-  }*/
-
   private getDateTimeNow() {
     return DateTime.fromISO(this.today);
   }

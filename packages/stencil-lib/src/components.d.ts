@@ -339,11 +339,11 @@ export namespace Components {
     }
     interface InnoInput {
         /**
-          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
+          * When you click on the inno-input a focus() command is called on the input element. This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
          */
         "caretPosEndOnFocus": boolean;
         /**
-          * Whether the inno-input component is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
+          * Whether the inno-input component is disabled or not. Probably not needed to be set since the component automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled": boolean;
         /**
@@ -353,8 +353,18 @@ export namespace Components {
         /**
           * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value.
          */
-        "errortype": 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
-    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        "errortype": | 'badInput'
+    | 'customError'
+    | 'patternMismatch'
+    | 'rangeOverflow'
+    | 'rangeUnderflow'
+    | 'stepMismatch'
+    | 'tooLong'
+    | 'tooShort'
+    | 'typeMismatch'
+    | 'valid'
+    | 'valueMissing'
+    | undefined;
         /**
           * Whether the input is focused or not.
          */
@@ -364,7 +374,15 @@ export namespace Components {
          */
         "label": string;
         /**
-          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
+          * Set the resize direction. Only has effect if textarea is provided as wrapped element.
+         */
+        "resizeMode": 'vertical' | 'horizontal' | 'both';
+        /**
+          * Whether the textarea is resizeable. Only has effect if textarea is provided as wrapped element.
+         */
+        "resizeable": boolean;
+        /**
+          * When you click on the inno-input a focus() command is called on the input element. This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
          */
         "selectOnFocus": boolean;
         "valuePropReDefine": boolean;
@@ -1745,11 +1763,11 @@ declare namespace LocalJSX {
     }
     interface InnoInput {
         /**
-          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
+          * When you click on the inno-input a focus() command is called on the input element. This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'. Has no effect if 'selectOnFocus' is also true.
          */
         "caretPosEndOnFocus"?: boolean;
         /**
-          * Whether the inno-input component is disabled or not. Probably not needed to be set since the component  automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
+          * Whether the inno-input component is disabled or not. Probably not needed to be set since the component automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled"?: boolean;
         /**
@@ -1759,8 +1777,18 @@ declare namespace LocalJSX {
         /**
           * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState <br/><br/>Only has an effect if 'error' has a value.
          */
-        "errortype"?: 'badInput' | 'customError' | 'patternMismatch' | 'rangeOverflow'
-    | 'rangeUnderflow' | 'stepMismatch' | 'tooLong' | 'tooShort' | 'typeMismatch' | 'valid' | 'valueMissing' | undefined;
+        "errortype"?: | 'badInput'
+    | 'customError'
+    | 'patternMismatch'
+    | 'rangeOverflow'
+    | 'rangeUnderflow'
+    | 'stepMismatch'
+    | 'tooLong'
+    | 'tooShort'
+    | 'typeMismatch'
+    | 'valid'
+    | 'valueMissing'
+    | undefined;
         /**
           * Whether the input is focused or not.
          */
@@ -1774,7 +1802,15 @@ declare namespace LocalJSX {
          */
         "onValueChanged"?: (event: InnoInputCustomEvent<string | number>) => void;
         /**
-          * When you click on the inno-input a focus() command is called on the input element.  This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
+          * Set the resize direction. Only has effect if textarea is provided as wrapped element.
+         */
+        "resizeMode"?: 'vertical' | 'horizontal' | 'both';
+        /**
+          * Whether the textarea is resizeable. Only has effect if textarea is provided as wrapped element.
+         */
+        "resizeable"?: boolean;
+        /**
+          * When you click on the inno-input a focus() command is called on the input element. This might cause that the caret position will be at the beginnging of the input's value. Set this to true if you want to select all of the text by default.
          */
         "selectOnFocus"?: boolean;
         "valuePropReDefine"?: boolean;

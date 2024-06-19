@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 10H12V12H10V10Z"/>
+  <path d="M5 10H7V12H5V10Z" />
+  <path d="M5 5H7V7H5V5Z"/>
+  <path d="M0 10H2V12H0V10Z" />
+  <path d="M10 5H12V7H10V5Z"/>
+  <path d="M10 0H12V2H10V0Z"/>
+</svg>
