@@ -10,7 +10,7 @@ const regexes: RegExp[] = [
   /stroke="[^\s]*/g,
   //replace fill attribute 
   /fill="[^\/ | ^\s]*/g,
-  /fill:.*;/g
+  /fill:[^;]*;/g
 ];
 //passsing directoryPath and callback function
 let moduleContent = "";
