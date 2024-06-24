@@ -341,14 +341,14 @@ export declare interface InnoInput extends Components.InnoInput {
 
 
 @ProxyCmp({
-  inputs: ['size', 'variant']
+  inputs: ['size', 'strokeWidth', 'variant']
 })
 @Component({
   selector: 'inno-loader',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['size', 'variant'],
+  inputs: ['size', 'strokeWidth', 'variant'],
 })
 export class InnoLoader {
   protected el: HTMLElement;
