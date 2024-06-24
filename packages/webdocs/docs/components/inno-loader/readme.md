@@ -68,10 +68,11 @@ import {InnoLoader} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property  | Attribute | Description                                           | Type                | Default   |
-| --------- | --------- | ----------------------------------------------------- | ------------------- | --------- |
-| `size`    | `size`    | Size of the loader. Valid values are: 16, 24, 32, 64. | `number`            | `64`      |
-| `variant` | `variant` | Theme variant property.                               | `"dark" \| "light"` | `'light'` |
+| Property      | Attribute      | Description                                           | Type                | Default   |
+| ------------- | -------------- | ----------------------------------------------------- | ------------------- | --------- |
+| `size`        | `size`         | Size of the loader. Valid values are: 16, 24, 32, 64. | `number`            | `64`      |
+| `strokeWidth` | `stroke-width` | Loader bar width.                                     | `"thick" \| "thin"` | `'thick'` |
+| `variant`     | `variant`      | Theme variant property.                               | `"dark" \| "light"` | `'light'` |
 
 
 ## Dependencies
