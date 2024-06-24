@@ -153,7 +153,8 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
 
 export const InnoLoader = /*@__PURE__*/ defineContainer<JSX.InnoLoader>('inno-loader', undefined, [
   'size',
-  'variant'
+  'variant',
+  'strokeWidth'
 ]);
 
 

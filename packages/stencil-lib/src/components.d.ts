@@ -397,6 +397,10 @@ export namespace Components {
          */
         "size": number;
         /**
+          * Loader bar width.
+         */
+        "strokeWidth": 'thin' | 'thick';
+        /**
           * Theme variant property.
          */
         "variant": 'light' | 'dark';
@@ -1824,6 +1828,10 @@ declare namespace LocalJSX {
           * Size of the loader. Valid values are: 16, 24, 32, 64.
          */
         "size"?: number;
+        /**
+          * Loader bar width.
+         */
+        "strokeWidth"?: 'thin' | 'thick';
         /**
           * Theme variant property.
          */
