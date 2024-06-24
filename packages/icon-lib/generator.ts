@@ -8,8 +8,8 @@ const regexes: RegExp[] = [
   ///<style.*\/style>/g,
   ///class="[^\s]*/g,
   /stroke="[^\s]*/g,
-  /fill="[^\s]*/g,
-  /fill:[^\s]*;/g,
+  //replace fill attribute 
+  /fill="[^\/ | ^\s]"/g
 ];
 //passsing directoryPath and callback function
 let moduleContent = "";
