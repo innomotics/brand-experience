@@ -109,6 +109,10 @@ Type: `Promise<void>`
 
 ## Dependencies
 
+### Used by
+
+ - [inno-select-item](../inno-select-item)
+
 ### Depends on
 
 - [inno-icon](../inno-icon)
@@ -117,6 +121,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   inno-popover --> inno-icon
+  inno-select-item --> inno-popover
   style inno-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

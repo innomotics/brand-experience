@@ -11,22 +11,30 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
           <span class="bg-title">light background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" icon="home">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-2" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-2" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
-          <InnoSelect label="Select" value="item1">
+          <InnoSelect label="Select" value="item1" variant="dark">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-3" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
-          <InnoSelect label="Select" icon="home">
+          <InnoSelect label="Select" icon="home" variant="dark">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-4" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -38,22 +46,30 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
           <span class="bg-title">light background</span>
           <inno-select label="Select" value="item1">
             <inno-select-item value="item1" label="item1"></inno-select-item>
-            <inno-select-item value="item2" label="item2"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
           <inno-select label="Select" icon="home">
             <inno-select-item value="item1" label="item1" icon="play"></inno-select-item>
-            <inno-select-item value="item2" label="item2" icon="pause"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3-2" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4-2" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
-          <inno-select label="Select" value="item1">
+          <inno-select label="Select" value="item1" variant="dark">
             <inno-select-item value="item1" label="item1"></inno-select-item>
-            <inno-select-item value="item2" label="item2"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3-3" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4-3" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
-          <inno-select label="Select" icon="home">
+          <inno-select label="Select" icon="home" variant="dark">
             <inno-select-item value="item1" label="item1" icon="play"></inno-select-item>
-            <inno-select-item value="item2" label="item2" icon="pause"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3-4" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4-4" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
         </div>
     </div>
@@ -66,22 +82,30 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
           <span class="bg-title">light background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" icon="home">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-2" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-2" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
-          <InnoSelect label="Select" value="item1">
+          <InnoSelect label="Select" value="item1" variant="dark">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-3" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
-          <InnoSelect label="Select" icon="home">
+          <InnoSelect label="Select" icon="home" variant="dark">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-4" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -94,22 +118,30 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
           <span class="bg-title">light background</span>
           <InnoSelect label="Select" value="item1">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" icon="home">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-2" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-2" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
-          <InnoSelect label="Select" value="item1">
+          <InnoSelect label="Select" value="item1" variant="dark">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-3" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
-          <InnoSelect label="Select" icon="home">
+          <InnoSelect label="Select" icon="home" variant="dark">
             <InnoSelectItem value="item1" label="item1" icon="play"></InnoSelectItem>
-            <InnoSelectItem value="item2" label="item2" icon="pause"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3-4" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
         </div>
     </div>
@@ -135,9 +167,13 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
 
 ## Events
 
-| Event          | Description                                 | Type                  |
-| -------------- | ------------------------------------------- | --------------------- |
-| `valueChanged` | This event is fired when the value changes. | `CustomEvent<string>` |
+| Event                  | Description                                                                                                                                                                | Type                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| `dropdownClosed`       | This event is fired when the dropdown is closed. You can use this event for example  if you want to reorder your InnoSelectItems after the favorited elements are changed. | `CustomEvent<void>`   |
+| `favoriteItemsChanged` | This event is fired when an item is added to or removed from favorites. The event contains all of the favorited items.                                                     | `CustomEvent<any>`    |
+| `itemIsFavorited`      | This event is fired when an item is favorited. You have to take care of managing and ordering the array of favorite items in your business logic.                          | `CustomEvent<any>`    |
+| `itemIsUnfavorited`    | This event is fired when an item is removed from favorites. You have to take care of managing and ordering the array of favorite items in your business logic.             | `CustomEvent<any>`    |
+| `valueChanged`         | This event is fired when the value changes.                                                                                                                                | `CustomEvent<string>` |
 
 
 ## Dependencies

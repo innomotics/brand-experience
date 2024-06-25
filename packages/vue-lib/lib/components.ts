@@ -254,7 +254,11 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'label',
   'variant',
   'icon',
-  'valueChanged'
+  'valueChanged',
+  'itemIsFavorited',
+  'itemIsUnfavorited',
+  'favoriteItemsChanged',
+  'dropdownClosed'
 ]);
 
 
@@ -263,7 +267,15 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
   'label',
   'icon',
   'selected',
-  'itemSelected'
+  'canFavorite',
+  'isFavorite',
+  'addToFavoritesLabel',
+  'removeFromFavoritesLabel',
+  'favoriteIconTooltipPos',
+  'hasSeparator',
+  'itemSelected',
+  'itemFavorited',
+  'itemUnfavorited'
 ]);
 
 

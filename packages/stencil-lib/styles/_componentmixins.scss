@@ -1,24 +1,49 @@
 @use './colors';
 
-@mixin focus{
-    outline: colors.$interaction-light-focus;
-    outline-style: solid;
-    outline-width: 2px;
-    outline-offset: 2px;
+@mixin focus {
+  outline: colors.$interaction-light-focus;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+
+.select-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16px;
+  grid-template-rows: auto;
+  align-items: center;
+  border-width: 0px;
+  border-style: none;
+  padding: 0px 16px 0px 16px;
+  height: 56px;
+  gap: 10px;
+  cursor: pointer;
+
+  &.icon-driven:not(.can-favorite) {
+    grid-template-columns: auto minmax(0, 1fr) 16px;
   }
 
-  .select-item {
-    display: grid;
-    grid-template-columns: minmax(0,1fr) 16px;
-    grid-template-rows: auto;
-    align-items:center;
-    border-width: 0px;
-    border-style: none;
-    padding: 0px 16px 0px 16px;
-    height: 56px;
-    gap:10px;
-    cursor:pointer;
-    &.icon-driven{
-      grid-template-columns: auto minmax(0,1fr) 16px;
+  &.icon-driven.can-favorite {
+    grid-template-columns: auto minmax(0, 1fr) 24px;
+  }
+
+  &.can-favorite {
+    .star {
+      display: block;
+      font-size: 24px;
+      position: relative;
     }
   }
+
+  &.separator {
+    border-bottom: 3px double colors.$primary-300;
+  }
+
+  &.can-favorite:not(.selected):not(.icon-driven) {
+    grid-template-columns: minmax(0, 1fr) 24px;
+  }
+
+  &.can-favorite.selected:not(.icon-driven) {
+    grid-template-columns: minmax(0, 1fr) 16px 24px;
+  }
+}

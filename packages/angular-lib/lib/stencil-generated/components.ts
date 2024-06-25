@@ -627,7 +627,7 @@ export class InnoSelect {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChanged']);
+    proxyOutputs(this, this.el, ['valueChanged', 'itemIsFavorited', 'itemIsUnfavorited', 'favoriteItemsChanged', 'dropdownClosed']);
   }
 }
 
@@ -637,25 +637,45 @@ export declare interface InnoSelect extends Components.InnoSelect {
    * This event is fired when the value changes.
    */
   valueChanged: EventEmitter<CustomEvent<string>>;
+  /**
+   * This event is fired when an item is favorited.
+You have to take care of managing and ordering the array of favorite items in your business logic.
+   */
+  itemIsFavorited: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired when an item is removed from favorites.
+You have to take care of managing and ordering the array of favorite items in your business logic.
+   */
+  itemIsUnfavorited: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired when an item is added to or removed from favorites.
+The event contains all of the favorited items.
+   */
+  favoriteItemsChanged: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired when the dropdown is closed. You can use this event for example 
+if you want to reorder your InnoSelectItems after the favorited elements are changed.
+   */
+  dropdownClosed: EventEmitter<CustomEvent<void>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['icon', 'label', 'selected', 'value']
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipPos', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value']
 })
 @Component({
   selector: 'inno-select-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'label', 'selected', 'value'],
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipPos', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
 })
 export class InnoSelectItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['itemSelected']);
+    proxyOutputs(this, this.el, ['itemSelected', 'itemFavorited', 'itemUnfavorited']);
   }
 }
 
@@ -665,6 +685,14 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
    * This event is fired whenever an item is selected.
    */
   itemSelected: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired whenever an item is favorited.
+   */
+  itemFavorited: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired whenever an item is removed from favorites.
+   */
+  itemUnfavorited: EventEmitter<CustomEvent<any>>;
 }
 
 

@@ -669,13 +669,37 @@ export namespace Components {
     }
     interface InnoSelectItem {
         /**
+          * Tooltip text for favorite add. The tooltip is only visible if the InnoSelectItem has a unique id.
+         */
+        "addToFavoritesLabel": string;
+        /**
+          * Adds a favorite icon to the selectable item. If you press this icon an event will be fired with the selected item.  You have to take care of managing and ordering the array of favorite items in your business logic. Clicking on the favorite icon will not close the dropdown.
+         */
+        "canFavorite": boolean;
+        /**
+          * Position of the favorite icon tooltip.
+         */
+        "favoriteIconTooltipPos": Placement;
+        /**
+          * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
+         */
+        "hasSeparator": boolean;
+        /**
           * Optional icon for the label.
          */
         "icon": string;
         /**
+          * The selectable item is favorited or not.
+         */
+        "isFavorite": boolean;
+        /**
           * Label of the item, can be different from the value.
          */
         "label": string;
+        /**
+          * Tooltip text for favorite remove. The tooltip is only visible if the InnoSelectItem has a unique id.
+         */
+        "removeFromFavoritesLabel": string;
         /**
           * Whether the item is selected or not.
          */
@@ -1258,6 +1282,10 @@ declare global {
     };
     interface HTMLInnoSelectElementEventMap {
         "valueChanged": string;
+        "itemIsFavorited": any;
+        "itemIsUnfavorited": any;
+        "favoriteItemsChanged": any;
+        "dropdownClosed": void;
     }
     interface HTMLInnoSelectElement extends Components.InnoSelect, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoSelectElementEventMap>(type: K, listener: (this: HTMLInnoSelectElement, ev: InnoSelectCustomEvent<HTMLInnoSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1275,6 +1303,8 @@ declare global {
     };
     interface HTMLInnoSelectItemElementEventMap {
         "itemSelected": any;
+        "itemFavorited": any;
+        "itemUnfavorited": any;
     }
     interface HTMLInnoSelectItemElement extends Components.InnoSelectItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2103,6 +2133,22 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * This event is fired when the dropdown is closed. You can use this event for example  if you want to reorder your InnoSelectItems after the favorited elements are changed.
+         */
+        "onDropdownClosed"?: (event: InnoSelectCustomEvent<void>) => void;
+        /**
+          * This event is fired when an item is added to or removed from favorites. The event contains all of the favorited items.
+         */
+        "onFavoriteItemsChanged"?: (event: InnoSelectCustomEvent<any>) => void;
+        /**
+          * This event is fired when an item is favorited. You have to take care of managing and ordering the array of favorite items in your business logic.
+         */
+        "onItemIsFavorited"?: (event: InnoSelectCustomEvent<any>) => void;
+        /**
+          * This event is fired when an item is removed from favorites. You have to take care of managing and ordering the array of favorite items in your business logic.
+         */
+        "onItemIsUnfavorited"?: (event: InnoSelectCustomEvent<any>) => void;
+        /**
           * This event is fired when the value changes.
          */
         "onValueChanged"?: (event: InnoSelectCustomEvent<string>) => void;
@@ -2117,17 +2163,49 @@ declare namespace LocalJSX {
     }
     interface InnoSelectItem {
         /**
+          * Tooltip text for favorite add. The tooltip is only visible if the InnoSelectItem has a unique id.
+         */
+        "addToFavoritesLabel"?: string;
+        /**
+          * Adds a favorite icon to the selectable item. If you press this icon an event will be fired with the selected item.  You have to take care of managing and ordering the array of favorite items in your business logic. Clicking on the favorite icon will not close the dropdown.
+         */
+        "canFavorite"?: boolean;
+        /**
+          * Position of the favorite icon tooltip.
+         */
+        "favoriteIconTooltipPos"?: Placement;
+        /**
+          * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
+         */
+        "hasSeparator"?: boolean;
+        /**
           * Optional icon for the label.
          */
         "icon"?: string;
+        /**
+          * The selectable item is favorited or not.
+         */
+        "isFavorite"?: boolean;
         /**
           * Label of the item, can be different from the value.
          */
         "label"?: string;
         /**
+          * This event is fired whenever an item is favorited.
+         */
+        "onItemFavorited"?: (event: InnoSelectItemCustomEvent<any>) => void;
+        /**
           * This event is fired whenever an item is selected.
          */
         "onItemSelected"?: (event: InnoSelectItemCustomEvent<any>) => void;
+        /**
+          * This event is fired whenever an item is removed from favorites.
+         */
+        "onItemUnfavorited"?: (event: InnoSelectItemCustomEvent<any>) => void;
+        /**
+          * Tooltip text for favorite remove. The tooltip is only visible if the InnoSelectItem has a unique id.
+         */
+        "removeFromFavoritesLabel"?: string;
         /**
           * Whether the item is selected or not.
          */

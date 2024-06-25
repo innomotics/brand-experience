@@ -58,6 +58,30 @@ export class InnoSelect {
    */
   @Event() valueChanged: EventEmitter<string>;
 
+  /**
+   * This event is fired when an item is favorited.
+   * You have to take care of managing and ordering the array of favorite items in your business logic.
+   */
+  @Event() itemIsFavorited: EventEmitter<any>;
+
+  /**
+   * This event is fired when an item is removed from favorites.
+   * You have to take care of managing and ordering the array of favorite items in your business logic.
+   */
+  @Event() itemIsUnfavorited: EventEmitter<any>;
+
+  /**
+   * This event is fired when an item is added to or removed from favorites.
+   * The event contains all of the favorited items.
+   */
+  @Event() favoriteItemsChanged: EventEmitter<any>;
+
+  /**
+   * This event is fired when the dropdown is closed. You can use this event for example 
+   * if you want to reorder your InnoSelectItems after the favorited elements are changed.
+   */
+  @Event() dropdownClosed: EventEmitter<void>;
+
   @State() items: HTMLInnoSelectItemElement[] = [];
 
   private disposeAutoUpdate?: () => void;
@@ -105,6 +129,7 @@ export class InnoSelect {
   private destroyAutoUpdate() {
     if (this.disposeAutoUpdate != undefined) {
       this.disposeAutoUpdate();
+      this.dropdownClosed.emit();
     }
   }
 
@@ -161,6 +186,23 @@ export class InnoSelect {
     this.selectitem(event.detail);
   }
 
+  @Listen('itemFavorited')
+  itemFavorited(event: CustomEvent<any>) {
+    this.itemIsFavorited.emit(event.detail);
+    this.emitAllFavoritedItems();
+  }
+
+  @Listen('itemUnfavorited')
+  itemUnfavorited(event: CustomEvent<any>) {
+    this.itemIsUnfavorited.emit(event.detail);
+    this.emitAllFavoritedItems();
+  }
+
+  private emitAllFavoritedItems(): void {
+    let favoritedItems: any[] = this.items?.filter(item => item.isFavorite).map(item => item.value) ?? [];
+    this.favoriteItemsChanged.emit(favoritedItems);
+  }
+
   private selectitem(value: any, init: boolean = false): void {
     this.value = value;
     if (!init) {
@@ -196,6 +238,8 @@ export class InnoSelect {
         }
         this.navigationItem = undefined;
       }
+
+      return;
     }
     if ((ev.key == 'ArrowDown' || ev.key == 'ArrowUp') && this.isOpen) {
       ev.preventDefault();
@@ -226,6 +270,12 @@ export class InnoSelect {
       if (this.navigationItem) {
         this.navigationItem.classList.add('focused');
       }
+
+      return;
+    }
+
+    if (ev.key == 'Escape' && this.isOpen) {
+      this.isOpen = false;
     }
   }
 
