@@ -334,7 +334,7 @@ export class InnoSelect {
                 </span>
               ) : (
                 <span>
-                  <inno-icon icon={this.icon} size={32}></inno-icon>Please select
+                  <inno-icon icon={this.icon} size={32}></inno-icon>{this.label}
                 </span>
               )}
               <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
