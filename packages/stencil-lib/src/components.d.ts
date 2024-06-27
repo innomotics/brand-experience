@@ -537,7 +537,11 @@ export namespace Components {
          */
         "hideTooltip": () => Promise<void>;
         /**
-          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+          * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+         */
+        "offset": number;
+        /**
+          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place. Please note that the offset will remain the same in case the desired placement does not fit.
          */
         "placement": Placement;
         /**
@@ -677,9 +681,17 @@ export namespace Components {
          */
         "canFavorite": boolean;
         /**
-          * Position of the favorite icon tooltip.
+          * Offset of the favorite icon tooltip position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+         */
+        "favoriteIconTooltipOffset": number;
+        /**
+          * Position of the favorite icon tooltip. Please note that the offset will remain the same in case the desired placement does not fit.
          */
         "favoriteIconTooltipPos": Placement;
+        /**
+          * Color variant of the favorite icon tooltip.
+         */
+        "favoriteIconTooltipVariant": 'light' | 'dark';
         /**
           * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
          */
@@ -2007,6 +2019,10 @@ declare namespace LocalJSX {
          */
         "hasBackdrop"?: boolean;
         /**
+          * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+         */
+        "offset"?: number;
+        /**
           * Fired when popover is hidden.
          */
         "onInnoPopoverHidden"?: (event: InnoPopoverCustomEvent<void>) => void;
@@ -2015,7 +2031,7 @@ declare namespace LocalJSX {
          */
         "onInnoPopoverShown"?: (event: InnoPopoverCustomEvent<void>) => void;
         /**
-          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+          * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place. Please note that the offset will remain the same in case the desired placement does not fit.
          */
         "placement"?: Placement;
         /**
@@ -2171,9 +2187,17 @@ declare namespace LocalJSX {
          */
         "canFavorite"?: boolean;
         /**
-          * Position of the favorite icon tooltip.
+          * Offset of the favorite icon tooltip position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+         */
+        "favoriteIconTooltipOffset"?: number;
+        /**
+          * Position of the favorite icon tooltip. Please note that the offset will remain the same in case the desired placement does not fit.
          */
         "favoriteIconTooltipPos"?: Placement;
+        /**
+          * Color variant of the favorite icon tooltip.
+         */
+        "favoriteIconTooltipVariant"?: 'light' | 'dark';
         /**
           * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
          */

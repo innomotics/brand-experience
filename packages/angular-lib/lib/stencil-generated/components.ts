@@ -529,7 +529,7 @@ export declare interface InnoPane extends Components.InnoPane {
 
 
 @ProxyCmp({
-  inputs: ['closable', 'for', 'hasBackdrop', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
+  inputs: ['closable', 'for', 'hasBackdrop', 'offset', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
   methods: ['showTooltip', 'hideTooltip']
 })
 @Component({
@@ -537,7 +537,7 @@ export declare interface InnoPane extends Components.InnoPane {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['closable', 'for', 'hasBackdrop', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
+  inputs: ['closable', 'for', 'hasBackdrop', 'offset', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
 })
 export class InnoPopover {
   protected el: HTMLElement;
@@ -661,14 +661,14 @@ if you want to reorder your InnoSelectItems after the favorited elements are cha
 
 
 @ProxyCmp({
-  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipPos', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value']
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value']
 })
 @Component({
   selector: 'inno-select-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipPos', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
 })
 export class InnoSelectItem {
   protected el: HTMLElement;

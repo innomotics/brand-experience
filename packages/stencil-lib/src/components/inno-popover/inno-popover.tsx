@@ -66,8 +66,14 @@ export class InnoPopover {
 
   /**
    * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+   * Please note that the offset will remain the same in case the desired placement does not fit.
    */
   @Prop({ mutable: true }) placement: Placement = 'top';
+
+  /**
+   * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+   */
+  @Prop({mutable: true}) offset: number = 8;
 
   /**
    * Programatically change whether the popover is visible or not.
@@ -254,7 +260,7 @@ export class InnoPopover {
                 placement: this.placement,
                 middleware: [
                   offset({
-                    mainAxis: 8
+                    mainAxis: this.offset
                   }),
                   shift(),
                   flip({

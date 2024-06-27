@@ -52,8 +52,20 @@ export class InnoSelectItem {
 
   /**
    * Position of the favorite icon tooltip.
+   * Please note that the offset will remain the same in case the desired placement does not fit.
    */
-  @Prop({ mutable: true }) favoriteIconTooltipPos: Placement = "left";
+  @Prop({ mutable: true }) favoriteIconTooltipPos: Placement = "right";
+
+  /**
+   * Color variant of the favorite icon tooltip.
+   */
+  @Prop({ mutable: true }) favoriteIconTooltipVariant: 'light' | 'dark' = 'light';
+
+  /**
+   * Offset of the favorite icon tooltip position in pixels.
+   * Please note that the offset will remain the same in case the desired placement does not fit.
+   */
+  @Prop({ mutable: true }) favoriteIconTooltipOffset: number = 8;
 
   /**
    * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
@@ -111,7 +123,9 @@ export class InnoSelectItem {
     return <inno-popover popoverText={this.isFavorite ? this.removeFromFavoritesLabel : this.addToFavoritesLabel}
       trigger='hover'
       for={this.isFavorite ? `#${this.host.id} .star.favorite` : `#${this.host.id} .star.not-favorite`}
-      placement={this.favoriteIconTooltipPos}>
+      placement={this.favoriteIconTooltipPos}
+      variant={this.favoriteIconTooltipVariant}
+      offset={this.favoriteIconTooltipOffset}>
     </inno-popover>;
   }
 
