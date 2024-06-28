@@ -1,7 +1,8 @@
 import { computePosition } from '@floating-ui/dom';
-import { Component, Host, h, Element, State, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Element, State, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 import { DateChange } from '../inno-date-context-api/inno-date-api';
 import { isPresent } from '../../utils/utils';
+import { DateTime } from 'luxon';
 
 /**
  * Date-picker with dropdown.
@@ -127,6 +128,24 @@ export class InnoDatePickerDropdown {
     }
 
     this.dateChange.emit(range);
+  }
+
+  @Watch('from')
+  watchFromPropHandler(newValue: string) {
+    let fromDate = newValue ? DateTime.fromFormat(newValue, this.format) : undefined;
+
+    if (fromDate?.isValid) {
+      this.onDateChange({ from: newValue, to: this.to });
+    }
+  }
+
+  @Watch('to')
+  watchToPropHandler(newValue: string) {
+    let toDate = newValue ? DateTime.fromFormat(newValue, this.format) : undefined;
+
+    if (toDate?.isValid) {
+      this.onDateChange({ from: this.from, to: newValue });
+    }
   }
 
   private variantClasses() {
