@@ -9,17 +9,17 @@ export class InnoIcon {
   /**
    * The icon name
    */
-  @Prop() icon: string;
+  @Prop({ mutable: true }) icon: string;
 
   /*
    * The icon size
    */
-  @Prop() size: number = 16;
+  @Prop({ mutable: true }) size: number = 16;
 
   /**
    * Color style of the icon.
    */
-  @Prop() variant: 'light' | 'dark' = 'light';
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
 
   @State() svgContent?: string;
 

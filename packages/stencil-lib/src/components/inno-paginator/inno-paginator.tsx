@@ -10,12 +10,12 @@ export class InnoPaginator {
 
   @Element() hostElement!: HTMLInnoPaginatorElement;
 
-  @Prop() variant: 'dark' | 'light' = 'light';
+  @Prop({ mutable: true }) variant: 'dark' | 'light' = 'light';
 
   /**
    * Total number of pages
    */
-  @Prop() pageCount: number;
+  @Prop({ mutable: true }) pageCount: number;
 
   /**
    * One based index of currently selected page
@@ -40,7 +40,7 @@ export class InnoPaginator {
     } else {
       this.selectedPage = index;
     }
-    console.log(this.selectedPage);
+
     this.pageSelected.emit(this.selectedPage);
   }
 
@@ -69,7 +69,7 @@ export class InnoPaginator {
   }
 
   private getPageButton(index: number) {
-    return <button class={{selected : this.selectedPage == index, light: this.variant == 'light', dark : this.variant == 'dark'  }} onClick={() => this.selectPage(index)}>{index}</button>;
+    return <button class={{ selected: this.selectedPage == index, light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.selectPage(index)}>{index}</button>;
   }
 
   private renderPageButtons() {
@@ -79,7 +79,7 @@ export class InnoPaginator {
     const hasOverflowEnd = hasOverflow && this.selectedPage <= this.pageCount - pagesBeforeOverflow;
     const pageButtons = [];
 
-    let start = 1; 
+    let start = 1;
     let end = Math.min(this.pageCount, this.maxCountPages);
     let pageCount = Math.floor((this.maxCountPages - 4) / 2);
 
@@ -93,7 +93,7 @@ export class InnoPaginator {
           }
         }
       };
-      pageButtons.push(<button class={{light: this.variant == 'light', dark : this.variant == 'dark'  }} {...baseButtonProps}>...</button>);
+      pageButtons.push(<button class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} {...baseButtonProps}>...</button>);
 
       if (hasOverflowEnd) {
         start = this.pageCount - this.maxCountPages + 2;
@@ -126,7 +126,7 @@ export class InnoPaginator {
           }
         }
       };
-      pageButtons.push(<button class={{light: this.variant == 'light', dark : this.variant == 'dark'  }} {...baseButtonProps}>...</button>);
+      pageButtons.push(<button class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} {...baseButtonProps}>...</button>);
     }
 
     return <span class="page-buttons">{pageButtons}</span>;
@@ -135,17 +135,17 @@ export class InnoPaginator {
   render() {
     return (
       <Host>
-        <button disabled={this.selectedPage === 0} class={{light: this.variant == 'light', dark : this.variant == 'dark'}} onClick={() => this.first()}>
+        <button disabled={this.selectedPage === 0} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.first()}>
           <inno-icon size={32} icon={'arrowdoubleleft'} variant={this.variant}></inno-icon>
         </button>
-        <button disabled={this.selectedPage === 0} class={{light: this.variant == 'light', dark : this.variant == 'dark'}} onClick={() => this.prev()}>
+        <button disabled={this.selectedPage === 0} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.prev()}>
           <inno-icon size={32} icon={'arrowheadleft'} variant={this.variant}></inno-icon>
         </button>
         <span class="basic-pagination">{this.renderPageButtons()} </span>
-        <button disabled={this.selectedPage === this.pageCount} class={{light: this.variant == 'light', dark : this.variant == 'dark'}} onClick={() => this.next()}>
+        <button disabled={this.selectedPage === this.pageCount} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.next()}>
           <inno-icon size={32} icon={'arrowheadright'} variant={this.variant}></inno-icon>
         </button>
-        <button disabled={this.selectedPage === this.pageCount} class={{light: this.variant == 'light', dark : this.variant == 'dark'}} onClick={() => this.last()}>
+        <button disabled={this.selectedPage === this.pageCount} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.last()}>
           <inno-icon size={32} icon={'arrowdoubleright'} variant={this.variant}></inno-icon>
         </button>
       </Host>
