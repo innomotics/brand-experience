@@ -281,7 +281,7 @@ export class InnoSelect {
 
   disconnectedCallback() {
     this.destroyAutoUpdate();
-    this.observer.disconnect();
+    this.observer?.disconnect();
     this.observer = null;
   }
 
