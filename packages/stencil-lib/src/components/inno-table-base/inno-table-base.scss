@@ -12,7 +12,7 @@
       left: 0;
       pointer-events: none;
       width: 100%;
-      height: calc(100% - 25px);
+      height: calc(100% - 20px);
       background-color: rgba(0, 0, 0, 0);
       -webkit-mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 15%, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);
       mask-image: linear-gradient(to right, var(--left-mask-color) 0%, transparent 10%, transparent 85%, transparent calc(100% - 200px), var(--right-mask-color) 100%);

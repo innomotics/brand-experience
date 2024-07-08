@@ -12,10 +12,14 @@ export class InnoTableBase {
   maskElement: HTMLDivElement;
   scrollBar: SimpleBar;
 
-  @Listen('resize', { target: 'window' })
-  onWindowResize() {
+  recalculateScrollbar() {
     this.scrollBar.recalculate();
     this.setMask(this.scrollBar.getScrollElement());
+  }
+
+  @Listen('resize', { target: 'window' })
+  onWindowResize() {
+    this.recalculateScrollbar();
   }
   setMask(el: HTMLElement) {
     this.maskElement.classList.add('is-left-overflowing');
@@ -41,6 +45,8 @@ export class InnoTableBase {
       table.classList.add('dark');
     }
     this.scrollBar.getScrollElement().addEventListener('scroll', this.scrollListener, { passive: true });
+
+    this.recalculateScrollbar();
   }
 
   componentWillUnload() {
