@@ -7,7 +7,17 @@ import SimpleBar from 'simplebar';
   scoped: true,
 })
 export class InnoTableBase {
-  @Prop() variant: 'light' | 'dark' = 'light';
+  /**
+   * Color variant of the table;
+   */
+  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
+
+  /**
+   * The fade out effect while scrolling is achieved by using mask-image and linear-gradient. 
+   * For it to work properly a color must be set to be the same as the table's background color.
+   */
+  @Prop({ mutable: true }) maskColor: string = '#ffffff';
+
   @Element() hostElement: HTMLInnoTableBaseElement;
   maskElement: HTMLDivElement;
   scrollBar: SimpleBar;
@@ -21,17 +31,25 @@ export class InnoTableBase {
   onWindowResize() {
     this.recalculateScrollbar();
   }
+
   setMask(el: HTMLElement) {
     this.maskElement.classList.add('is-left-overflowing');
     this.maskElement.classList.add('is-right-overflowing');
+    let leftMaskVisible: boolean = true;
+    let rightMaskVisible: boolean = true;
 
     if (el.scrollLeft < 1) {
       this.maskElement.classList.remove('is-left-overflowing');
+      leftMaskVisible = false;
     }
     if (el.scrollWidth - el.scrollLeft - el.clientWidth < 1) {
       this.maskElement.classList.remove('is-right-overflowing');
+      rightMaskVisible = false;
     }
+
+    this.maskElement.style.setProperty('background-color', leftMaskVisible || rightMaskVisible ? this.maskColor : 'transparent');
   }
+
   scrollListener = (event: any) => {
     this.setMask(event.target);
   };

@@ -834,6 +834,13 @@ export namespace Components {
         "theme": 'light' | 'dark';
     }
     interface InnoTableBase {
+        /**
+          * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
+         */
+        "maskColor": string;
+        /**
+          * Color variant of the table;
+         */
         "variant": 'light' | 'dark';
     }
     interface InnoTimePicker {
@@ -2359,6 +2366,13 @@ declare namespace LocalJSX {
         "theme"?: 'light' | 'dark';
     }
     interface InnoTableBase {
+        /**
+          * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
+         */
+        "maskColor"?: string;
+        /**
+          * Color variant of the table;
+         */
         "variant"?: 'light' | 'dark';
     }
     interface InnoTimePicker {

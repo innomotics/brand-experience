@@ -2,9 +2,11 @@
 
 :host {
   scrollbar-width: thin;
-  .table-wrapper{
-    position:relative;
-    display:block;
+
+  .table-wrapper {
+    position: relative;
+    display: block;
+
     .mask-layer {
       z-index: 1;
       position: absolute;
@@ -30,12 +32,14 @@
         --right-mask-color: black; //must be a solid color
       }
     }
+
     .table-div {
       display: block;
       width: 100%;
       font-size: 16px;
       overflow-x: auto;
       scrollbar-width: thin;
+      padding-bottom: 25px;
     }
   }
 }

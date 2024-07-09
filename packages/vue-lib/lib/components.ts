@@ -317,7 +317,8 @@ export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-
 
 
 export const InnoTableBase = /*@__PURE__*/ defineContainer<JSX.InnoTableBase>('inno-table-base', undefined, [
-  'variant'
+  'variant',
+  'maskColor'
 ]);
 
 

@@ -783,14 +783,14 @@ export declare interface InnoTabItem extends Components.InnoTabItem {
 
 
 @ProxyCmp({
-  inputs: ['variant']
+  inputs: ['maskColor', 'variant']
 })
 @Component({
   selector: 'inno-table-base',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['variant'],
+  inputs: ['maskColor', 'variant'],
 })
 export class InnoTableBase {
   protected el: HTMLElement;
