@@ -1,5 +1,4 @@
 import { Component, Element, Event, EventEmitter, Host, Method, Prop, State, h } from '@stencil/core';
-import { UploadFileState } from './upload-file-state';
 import { DragAndDropTexts } from './drag-and-drop-texts';
 
 @Component({
@@ -33,15 +32,15 @@ export class InnoDragAndDrop {
   /**
    * After a file is uploaded you can set the upload component to a defined state
    */
-  @Prop({ mutable: true }) state: UploadFileState = UploadFileState.SELECT_FILE;
+  @Prop({ mutable: true }) state: 'SELECT_FILE' | 'LOADING' | 'UPLOAD_FAILED' | 'UPLOAD_SUCCESS' = 'SELECT_FILE';
 
   /**
-   * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE,
+   * 'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE',
    * <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,
    * <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted,
-   * <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING,
-   * <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED,
-   * <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED,
+   * <br/><br/>'loadingText': will be used by state = 'LOADING',
+   * <br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED',
+   * <br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS',
    * <br/><br/>'acceptedFileTypesText': label for accepted file types,
    * <br/><br/>'uploadDisabledText': label for disabled state
    */
@@ -83,7 +82,7 @@ export class InnoDragAndDrop {
   }
 
   private fileOver(event: DragEvent) {
-    if (this.state !== UploadFileState.LOADING) {
+    if (this.state !== 'LOADING') {
       event.preventDefault();
       event.dataTransfer.dropEffect = 'move';
     }
@@ -185,12 +184,12 @@ export class InnoDragAndDrop {
     }
 
     switch (this.state) {
-      case UploadFileState.LOADING:
+      case 'LOADING':
         return this.renderLoading();
-      case UploadFileState.UPLOAD_SUCCESS:
+      case 'UPLOAD_SUCCESS':
         return this.renderSuccess();
-      case UploadFileState.SELECT_FILE:
-      case UploadFileState.UPLOAD_FAILED:
+      case 'SELECT_FILE':
+      case 'UPLOAD_FAILED':
       default:
         return this.renderBasic();
     }
@@ -203,15 +202,15 @@ export class InnoDragAndDrop {
           class={{
             'file-upload-area': true,
             'file-over':
-              this.state !== UploadFileState.LOADING && this.isFileOver,
-            checking: this.state === UploadFileState.LOADING,
-            success: this.state === UploadFileState.UPLOAD_SUCCESS,
+              this.state !== 'LOADING' && this.isFileOver,
+            checking: this.state === 'LOADING',
+            success: this.state === 'UPLOAD_SUCCESS',
             disabled: this.disabled,
             dark: this.variant === 'dark',
             light: this.variant === 'light'
           }}
           onDrop={(e) => {
-            if (this.state !== UploadFileState.LOADING) {
+            if (this.state !== 'LOADING') {
               this.fileDropped(e);
             }
           }}
@@ -234,7 +233,7 @@ export class InnoDragAndDrop {
             />
           </div>
         </div>
-        {this.state === UploadFileState.UPLOAD_FAILED
+        {this.state === 'UPLOAD_FAILED'
           ? <span class={{ "error-text": true, dark: this.variant === 'dark', light: this.variant === 'light' }}>{this.texts.uploadFailedText}</span> : null}
       </Host>
     );

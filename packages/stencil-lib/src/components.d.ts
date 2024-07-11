@@ -6,7 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { DateChange } from "./components/inno-date-context-api/inno-date-api";
-import { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
 import { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 import { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 import { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
@@ -15,7 +14,6 @@ import { InnoStatusMessageConfig, InnoStatusMessagePosition, InnoStatusMessageTh
 import { TabClickDetail } from "./components/inno-tab-item/inno-tab-item";
 import { InnoTimePickerTexts } from "./components/inno-time-picker/inno-time-picker.api";
 export { DateChange } from "./components/inno-date-context-api/inno-date-api";
-export { UploadFileState } from "./components/inno-drag-and-drop/upload-file-state";
 export { DragAndDropTexts } from "./components/inno-drag-and-drop/drag-and-drop-texts";
 export { InnoModalSize } from "./components/inno-modal/inno-modal.model";
 export { ExpandedChangedEvent } from "./components/inno-pane/inno-pane";
@@ -278,9 +276,9 @@ export namespace Components {
         /**
           * After a file is uploaded you can set the upload component to a defined state
          */
-        "state": UploadFileState;
+        "state": 'SELECT_FILE' | 'LOADING' | 'UPLOAD_FAILED' | 'UPLOAD_SUCCESS';
         /**
-          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
+          * 'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE', <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = 'LOADING', <br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED', <br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS', <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
          */
         "texts": DragAndDropTexts;
         /**
@@ -1755,9 +1753,9 @@ declare namespace LocalJSX {
         /**
           * After a file is uploaded you can set the upload component to a defined state
          */
-        "state"?: UploadFileState;
+        "state"?: 'SELECT_FILE' | 'LOADING' | 'UPLOAD_FAILED' | 'UPLOAD_SUCCESS';
         /**
-          * 'firstLineText' and 'secondLineText': will be used by state = UploadFileState.SELECT_FILE, <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = UploadFileState.LOADING, <br/><br/>'uploadFailedText': will be used by state = UploadFileState.UPLOAD_FAILED, <br/><br/>'uploadSuccessText': will be used by state = UploadFileState.UPLOAD_SUCCESSED, <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
+          * 'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE', <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used, <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted, <br/><br/>'loadingText': will be used by state = 'LOADING', <br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED', <br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS', <br/><br/>'acceptedFileTypesText': label for accepted file types, <br/><br/>'uploadDisabledText': label for disabled state
          */
         "texts"?: DragAndDropTexts;
         /**
