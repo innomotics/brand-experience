@@ -88,6 +88,8 @@ export class InnoSelect {
 
   private observer: MutationObserver;
 
+  private isVisible: boolean = false;
+
   selectClicked() {
     this.isOpen = !this.isOpen;
   }
@@ -120,9 +122,12 @@ export class InnoSelect {
     if (this.isOpen) {
       this.updateItems();
       this.refreshSelected();
-      this.computeDropdownPosition();
+      this.computeDropdownPosition().then(() => {
+        this.isVisible = true;
+      })
     } else {
       this.destroyAutoUpdate();
+      this.isVisible = false;
     }
   }
 
@@ -138,44 +143,51 @@ export class InnoSelect {
     this.updateSelectedItem();
   }
 
+  private async computePositionFn() {
+    return new Promise<void>(async (resolve) => {
+      const computeResponse = await computePosition(
+        this.wrapperRef,
+        this.itemsContainerRef,
+        {
+          strategy: 'fixed',
+          placement: 'bottom',
+          middleware: [
+            flip({
+              mainAxis: true,
+              crossAxis: true,
+              fallbackStrategy: 'bestFit',
+              padding: 5
+            })
+          ]
+        }
+      );
+
+      const { x, y } = computeResponse;
+      Object.assign(this.itemsContainerRef.style, {
+        left: x !== null ? `${x}px` : '',
+        top: y !== null ? `${y - 1}px` : '',
+        width: `${this.wrapperRef.getBoundingClientRect().width}px`
+      });
+      resolve();
+    })
+  }
+
   private async computeDropdownPosition() {
+    await this.computePositionFn();
+
     return new Promise<void>((resolve) => {
       this.disposeAutoUpdate = autoUpdate(
         this.wrapperRef,
         this.itemsContainerRef,
         async () => {
-          setTimeout(async () => {
-            const computeResponse = await computePosition(
-              this.wrapperRef,
-              this.itemsContainerRef,
-              {
-                strategy: 'fixed',
-                placement: 'bottom',
-                middleware: [
-                  flip({
-                    mainAxis: true,
-                    crossAxis: true,
-                    fallbackStrategy: 'bestFit',
-                    padding: 5
-                  })
-                ]
-              }
-            );
-
-            const { x, y } = computeResponse;
-            Object.assign(this.itemsContainerRef.style, {
-              left: x !== null ? `${x}px` : '',
-              top: y !== null ? `${y - 1}px` : '',
-              width: `${this.wrapperRef.getBoundingClientRect().width}px`
-            });
-
-            resolve();
-          });
+          await this.computePositionFn();
+          resolve();
         },
         {
           ancestorResize: true,
           ancestorScroll: true,
-          elementResize: true
+          elementResize: true,
+          layoutShift: true
         }
       );
     });
@@ -340,7 +352,7 @@ export class InnoSelect {
               <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           )}
-          <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isOpen }}>
+          <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isVisible }}>
             <slot></slot>
           </div>
         </div>

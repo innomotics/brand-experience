@@ -73,7 +73,7 @@ export class InnoPopover {
   /**
    * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
    */
-  @Prop({mutable: true}) offset: number = 8;
+  @Prop({ mutable: true }) offset: number = 8;
 
   /**
    * Programatically change whether the popover is visible or not.
@@ -162,8 +162,8 @@ export class InnoPopover {
   @Method()
   async hideTooltip() {
     this.destroyBackdrop();
-    this.visible = false;
     this.destroyAutoUpdate();
+    this.visible = false;
     this.innoPopoverHidden.emit();
   }
 
@@ -241,65 +241,73 @@ export class InnoPopover {
     }
   }
 
+  private async computePositionFn(target: Element) {
+    return new Promise<void>(async (resolve) => {
+      const computeResponse = await computePosition(
+        target,
+        this.hostElement,
+        {
+          strategy: 'fixed',
+          placement: this.placement,
+          middleware: [
+            offset({
+              mainAxis: this.offset
+            }),
+            shift(),
+            flip({
+              mainAxis: true,
+              crossAxis: true,
+              fallbackAxisSideDirection: 'start',
+              fallbackStrategy: 'bestFit',
+              padding: 5
+            }),
+            arrow({
+              element: this.arrowElement,
+              padding: 16
+            })
+          ]
+        }
+      );
+
+      if (computeResponse.middlewareData.arrow) {
+        const arrowPosition = this.computeArrowPosition(computeResponse);
+        this.arrowElement.style.top = "unset";
+        this.arrowElement.style.bottom = "unset";
+        this.arrowElement.style.right = "unset";
+        this.arrowElement.style.left = "unset";
+        Object.assign(this.arrowElement.style, arrowPosition);
+      }
+
+      const { x, y } = computeResponse;
+      Object.assign(this.hostElement.style, {
+        left: x !== null ? `${x}px` : '',
+        top: y !== null ? `${y}px` : ''
+      });
+
+      resolve();
+    });
+  }
+
   private async computeTooltipPosition(target: Element) {
     if (!target) {
       return;
     }
+
+    await this.computePositionFn(target);
 
     return new Promise<void>((resolve) => {
       this.disposeAutoUpdate = autoUpdate(
         target,
         this.hostElement,
         async () => {
-          setTimeout(async () => {
-            const computeResponse = await computePosition(
-              target,
-              this.hostElement,
-              {
-                strategy: 'fixed',
-                placement: this.placement,
-                middleware: [
-                  offset({
-                    mainAxis: this.offset
-                  }),
-                  shift(),
-                  flip({
-                    mainAxis: true,
-                    crossAxis: true,
-                    fallbackAxisSideDirection: 'start',
-                    fallbackStrategy: 'bestFit',
-                    padding: 5
-                  }),
-                  arrow({
-                    element: this.arrowElement,
-                    padding: 16
-                  })
-                ]
-              }
-            );
-
-            if (computeResponse.middlewareData.arrow) {
-              const arrowPosition = this.computeArrowPosition(computeResponse);
-              this.arrowElement.style.top = "unset";
-              this.arrowElement.style.bottom = "unset";
-              this.arrowElement.style.right = "unset";
-              this.arrowElement.style.left = "unset";
-              Object.assign(this.arrowElement.style, arrowPosition);
-            }
-
-            const { x, y } = computeResponse;
-            Object.assign(this.hostElement.style, {
-              left: x !== null ? `${x}px` : '',
-              top: y !== null ? `${y}px` : ''
-            });
-
-            resolve();
-          });
+          await this.computePositionFn(target);
+          resolve();
         },
         {
           ancestorResize: true,
           ancestorScroll: true,
           elementResize: true,
+          layoutShift: true,
           animationFrame: this.animationFrame
         }
       );
