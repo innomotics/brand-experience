@@ -49,7 +49,8 @@ export class InnoPopover {
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'dark';
 
   /**
-   * Css selector of the element the popover is for.
+   * Css selector of the element the popover is for. This is just the initial value, 
+   * don't update it manually. Use the 'updateForElement(...)' method instead.
    */
   @Prop() for: string;
 
@@ -93,6 +94,8 @@ export class InnoPopover {
   /** @internal */
   @Prop() animationFrame = false;
 
+  private forInternal: string;
+
   /**
    * Fired when popover is shown.
    */
@@ -113,12 +116,10 @@ export class InnoPopover {
 
   private disposeListener: Function;
 
-  private get arrowElement() {
-    return this.hostElement.querySelector('.arrow') as HTMLElement;
-  }
+  private arrowElement: HTMLElement;
 
   private get forElement() {
-    return document.querySelector(this.for);
+    return document.querySelector(this.forInternal ?? this.for);
   }
 
   private destroyAutoUpdate() {
@@ -150,7 +151,7 @@ export class InnoPopover {
     const anchorElement = this.forElement;
     if (!!anchorElement) {
       this.createBackdrop();
-      await this.computeTooltipPosition(anchorElement);
+      await this.computeTooltipPositionWithAutoUpdate(anchorElement);
       this.visible = true;
       this.innoPopoverShown.emit();
     }
@@ -165,6 +166,43 @@ export class InnoPopover {
     this.destroyAutoUpdate();
     this.visible = false;
     this.innoPopoverHidden.emit();
+  }
+
+  /**
+   * Updates the element the popover is for including all the internal event listeners and the popover's position.
+   * If called without a parameter it will refresh the internal event listeners and the popover's position for the current target element.
+   * If called with a nonexisting selector it will refresh the internal event listeners and the popover's position for the current target element.
+   * Returns a Promise which is 'true' when the update/refresh succeded. 
+   * Returns 'false' if neither the current target element nor the element from the parameter exists. 
+   */
+  @Method()
+  async updateForElement(forElement: string = null) {
+    if (!!document.querySelector(forElement) || !!this.forElement) {
+      this.destroyAutoUpdate();
+      if (this.disposeListener) {
+        this.disposeListener();
+      }
+    }
+
+    if (!!document.querySelector(forElement)) {
+      this.forInternal = forElement;
+    }
+
+    const anchorElement = this.forElement;
+    if (!!anchorElement) {
+      this.registerHoverListeners();
+      this.registerClickListener();
+
+      if (this.visible) {
+        await this.computeTooltipPositionWithAutoUpdate(anchorElement);
+      } else {
+        await this.computePosition(anchorElement);
+      }
+
+      return true;
+    }
+
+    return false;
   }
 
   private createBackdrop(): void {
@@ -241,7 +279,7 @@ export class InnoPopover {
     }
   }
 
-  private async computePositionFn(target: Element) {
+  private async computePosition(target: Element) {
     return new Promise<void>(async (resolve) => {
       const computeResponse = await computePosition(
         target,
@@ -269,7 +307,7 @@ export class InnoPopover {
         }
       );
 
-      if (computeResponse.middlewareData.arrow) {
+      if (!!this.arrowElement && !!computeResponse.middlewareData.arrow) {
         const arrowPosition = this.computeArrowPosition(computeResponse);
         this.arrowElement.style.top = "unset";
         this.arrowElement.style.bottom = "unset";
@@ -288,19 +326,19 @@ export class InnoPopover {
     });
   }
 
-  private async computeTooltipPosition(target: Element) {
+  private async computeTooltipPositionWithAutoUpdate(target: Element) {
     if (!target) {
       return;
     }
 
-    await this.computePositionFn(target);
+    await this.computePosition(target);
 
     return new Promise<void>((resolve) => {
       this.disposeAutoUpdate = autoUpdate(
         target,
         this.hostElement,
         async () => {
-          await this.computePositionFn(target);
+          await this.computePosition(target);
           resolve();
         },
         {
@@ -361,9 +399,11 @@ export class InnoPopover {
 
   componentDidLoad() {
     if (this.forElement == null) {
-      throw "No valid html element found for the css selector in the 'for' property!"
+      console.info("No valid html element found for the css selector in the 'for' property, 'for' value: " + this.for);
+      return;
     }
 
+    this.forInternal = this.for;
     this.registerHoverListeners();
     this.registerClickListener();
   }
@@ -402,7 +442,7 @@ export class InnoPopover {
           {hasText ? <div class="tooltip-text" innerHTML={sanitizeHtml(this.popoverText)}></div> : null}
           <slot></slot>
         </div>
-        <div class="arrow"></div>
+        <div ref={ref => this.arrowElement = ref} class="arrow"></div>
       </Host>
     );
   }

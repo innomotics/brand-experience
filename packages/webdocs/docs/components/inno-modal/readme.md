@@ -420,15 +420,15 @@ Represents the main frame of the modal component.
 
 ## Properties
 
-| Property               | Attribute                 | Description                                                       | Type                                                                         | Default   |
-| ---------------------- | ------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- |
-| `animation`            | `animation`               | Should the modal be animated                                      | `boolean`                                                                    | `true`    |
-| `backdrop`             | `backdrop`                | Show a backdrop behind the modal dialog                           | `boolean`                                                                    | `true`    |
-| `centered`             | `centered`                | Centered modal                                                    | `boolean`                                                                    | `false`   |
-| `closeOnBackdropClick` | `close-on-backdrop-click` | Dismiss modal on backdrop click                                   | `boolean`                                                                    | `true`    |
-| `closeOnEscape`        | `close-on-escape`         | If set to true the modal can be closed by pressing the Escape key | `boolean`                                                                    | `true`    |
-| `size`                 | `size`                    | Modal size                                                        | `"360" \| "480" \| "600" \| "720" \| "840" \| "full-screen" \| "full-width"` | `'720'`   |
-| `variant`              | `variant`                 | Theme variant of the component.                                   | `"dark" \| "light"`                                                          | `'light'` |
+| Property               | Attribute                 | Description                                                       | Type                                                                                          | Default   |
+| ---------------------- | ------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------- |
+| `animation`            | `animation`               | Should the modal be animated                                      | `boolean`                                                                                     | `true`    |
+| `backdrop`             | `backdrop`                | Show a backdrop behind the modal dialog                           | `boolean`                                                                                     | `true`    |
+| `centered`             | `centered`                | Centered modal                                                    | `boolean`                                                                                     | `false`   |
+| `closeOnBackdropClick` | `close-on-backdrop-click` | Dismiss modal on backdrop click                                   | `boolean`                                                                                     | `true`    |
+| `closeOnEscape`        | `close-on-escape`         | If set to true the modal can be closed by pressing the Escape key | `boolean`                                                                                     | `true`    |
+| `size`                 | `size`                    | Modal size                                                        | `"360" \| "480" \| "600" \| "720" \| "840" \| "fit-content" \| "full-screen" \| "full-width"` | `'720'`   |
+| `variant`              | `variant`                 | Theme variant of the component.                                   | `"dark" \| "light"`                                                                           | `'light'` |
 
 
 ## Events

@@ -66,7 +66,7 @@ import {InnoPopover} from '@innomotics/brand-experience-react-lib';
 | Property       | Attribute       | Description                                                                                                                                                                                                      | Type                                                                                                                                                                 | Default     |
 | -------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | `closable`     | `closable`      | Popover will have a close button. Has no effect if trigger type is 'hover'.                                                                                                                                      | `boolean`                                                                                                                                                            | `false`     |
-| `for`          | `for`           | Css selector of the element the popover is for.                                                                                                                                                                  | `string`                                                                                                                                                             | `undefined` |
+| `for`          | `for`           | Css selector of the element the popover is for. This is just the initial value,  don't update it manually. Use the 'updateForElement(...)' method instead.                                                       | `string`                                                                                                                                                             | `undefined` |
 | `hasBackdrop`  | `has-backdrop`  | Popover should have a backdrop. Has no effect if trigger type is 'hover'.                                                                                                                                        | `boolean`                                                                                                                                                            | `false`     |
 | `offset`       | `offset`        | Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.                                                                           | `number`                                                                                                                                                             | `8`         |
 | `placement`    | `placement`     | Position of the popover. If there is not enough space it will be automatically placed to where it has enough place. Please note that the offset will remain the same in case the desired placement does not fit. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`     |
@@ -104,6 +104,26 @@ Show the tooltip.
 #### Returns
 
 Type: `Promise<void>`
+
+
+
+### `updateForElement(forElement?: string) => Promise<boolean>`
+
+Updates the element the popover is for including all the internal event listeners and the popover's position.
+If called without a parameter it will refresh the internal event listeners and the popover's position for the current target element.
+If called with a nonexisting selector it will refresh the internal event listeners and the popover's position for the current target element.
+Returns a Promise which is 'true' when the update/refresh succeded. 
+Returns 'false' if neither the current target element nor the element from the parameter exists.
+
+#### Parameters
+
+| Name         | Type     | Description |
+| ------------ | -------- | ----------- |
+| `forElement` | `string` |             |
+
+#### Returns
+
+Type: `Promise<boolean>`
 
 
 

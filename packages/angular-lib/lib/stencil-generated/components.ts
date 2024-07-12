@@ -530,7 +530,7 @@ export declare interface InnoPane extends Components.InnoPane {
 
 @ProxyCmp({
   inputs: ['closable', 'for', 'hasBackdrop', 'offset', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
-  methods: ['showTooltip', 'hideTooltip']
+  methods: ['showTooltip', 'hideTooltip', 'updateForElement']
 })
 @Component({
   selector: 'inno-popover',
