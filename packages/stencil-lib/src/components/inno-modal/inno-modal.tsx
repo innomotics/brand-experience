@@ -80,9 +80,13 @@ export class InnoModal {
   // Handle keydown on modal content window
   @Listen('keydown')
   onKey(e: KeyboardEvent) {
-    if (e.key === 'Escape' && this.closeOnEscape) {
+    if (e.key === 'Escape') {
       e.preventDefault();
-      this.dismissModal();
+      if (this.closeOnEscape) {
+        this.dismissModal();
+      } else {
+        e.stopPropagation();
+      }
     } else {
       e.stopPropagation();
     }
