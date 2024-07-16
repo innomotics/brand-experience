@@ -27,12 +27,12 @@
   &.type-warning {
     &.light {
       background-color: colors.$primary-300;
-      border-color: colors.$warning-100;
+      border-color: colors.$warning-200;
     }
 
     &.dark {
       background-color: colors.$primary-200;
-      border-color: colors.$warning-100;
+      border-color: colors.$warning-200;
     }
   }
 
@@ -82,11 +82,11 @@
 
   &.type-warning {
     &.light {
-      color: colors.$warning-100;
+      color: colors.$warning-200;
     }
 
     &.dark {
-      color: colors.$warning-100;
+      color: colors.$warning-200;
     }
   }
 
@@ -231,11 +231,11 @@
 
   &.type-warning {
     &.light {
-      background-color: colors.$warning-100;
+      background-color: colors.$warning-200;
     }
 
     &.dark {
-      background-color: colors.$warning-100;
+      background-color: colors.$warning-200;
     }
   }
 

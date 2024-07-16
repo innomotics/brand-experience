@@ -13,15 +13,34 @@ $secondary-700: #566b73;
 $secondary-800: #40545b;
 $secondary-900: #2a3b40;
 
-$error-100: #f68181;
-$error-200: #cb0e0e;
-$warning-100: #ff853f;
-$warning-200: #e96401;
-$success-100: #4ed69b;
-$success-200: #007f57;
-$internal-100: #ddabff;
-$internal-200: #c263ed;
-$focus-100: #1491eb;
+$chart-25: #6060F9;
+$chart-50: #86A3FF;
+$chart-75: #CC68FA;
+$chart-100: #DDABFF;
+$chart-125: #00A3A8;
+$chart-150: #AA5103;
+$chart-175: #FD9E4B;
+$chart-200: #5B011C;
+$chart-225: #FF145A;
+$chart-250: #FFD8E4;
+$chart-275: #009B6A;
+$chart-300: #4ED69B;
+$chart-325: #1B1B81;
+$chart-350: #C3D2FF;
+$chart-375: #F051A0;
+$chart-400: #F36EB0;
+$chart-425: #AA880F;
+$chart-450: #BC991D;
+
+$error-100: #FF88AB;
+$error-200: #CB0E0E;
+$critical-200: #FC7703;
+$warning-200: #F0CB49;
+$success-100: #4ED69B;
+$success-200: #02884E;
+$internal-100: #DDABFF;
+$internal-200: #8936AF;
+$focus-100: #1491EB;
 
 $backdrop: #00000099;
 
@@ -49,12 +68,26 @@ $additional-light-300: $secondary-400;
 $additional-light-400: $secondary-900;
 
 $status-light-error: $error-200;
-$status-light-success: $success-200;
+$status-light-critical: $critical-200;
 $status-ligth-warning: $warning-200;
+$status-light-success: $success-200;
 $status-light-internal: $internal-200;
 
 $transparency-light-100: rgba($primary-200, 0.05);
 $transparency-light-200: rgba($primary-200, 0.2);
+
+$chart-light-1: $primary-200;
+$chart-light-2: $secondary-600;
+$chart-light-3: $chart-25;
+$chart-light-4: $chart-75;
+$chart-light-5: $chart-125;
+$chart-light-6: $chart-150;
+$chart-light-7: $chart-225;
+$chart-light-8: $chart-200;
+$chart-light-9: $chart-275;
+$chart-light-10: $chart-325;
+$chart-light-11: $chart-375;
+$chart-light-12: $chart-425;
 
 $text-dark-highemphasis: $primary-300;
 $text-dark-lowemphasis: $secondary-300;
@@ -62,7 +95,7 @@ $text-dark-buttonlabel: $primary-200;
 
 $interaction-dark-default: $primary-300;
 $interaction-dark-hover: $secondary-400;
-$interaction-dark-pressed: $secondary-500;
+$interaction-dark-pressed: $secondary-400;
 $interaction-dark-visited: $secondary-300;
 $interaction-dark-disabled: $secondary-400;
 $interaction-dark-focus: $focus-100;
@@ -80,45 +113,13 @@ $additional-dark-300: $secondary-400;
 $additional-dark-400: $primary-100;
 
 $status-dark-error: $error-100;
+$status-dark-critical: $critical-200;
+$status-dark-warning: $warning-200;
 $status-dark-success: $success-100;
-$status-dark-warning: $warning-100;
 $status-dark-internal: $internal-100;
 
 $transparency-dark-100: rgba($primary-300, 0.1);
 $transparency-dark-200: rgba($primary-300, 0.4);
-
-
-$chart-25: #6060F9;
-$chart-50: #86A3FF;
-$chart-75: #CC68FA;
-$chart-100: #DDABFF;
-$chart-125: #00A3A8;
-$chart-150: #AA5103;
-$chart-175: #FD9E4B;
-$chart-200: #5B011C;
-$chart-225: #FF145A;
-$chart-250: #FFD8E4;
-$chart-275: #009B6A;
-$chart-300: #4ED69B;
-$chart-325: #1B1B81;
-$chart-350: #C3D2FF;
-$chart-375: #F051A0;
-$chart-400: #F36EB0;
-$chart-425: #AA880F;
-$chart-450: #BC991D;
-
-$chart-light-1: $primary-200;
-$chart-light-2: $secondary-600;
-$chart-light-3: $chart-25;
-$chart-light-4: $chart-75;
-$chart-light-5: $chart-125;
-$chart-light-6: $chart-150;
-$chart-light-7: $chart-225;
-$chart-light-8: $chart-200;
-$chart-light-9: $chart-275;
-$chart-light-10: $chart-325;
-$chart-light-11: $chart-375;
-$chart-light-12: $chart-425;
 
 $chart-dark-1: $primary-100;
 $chart-dark-2: $primary-300;
@@ -132,4 +133,3 @@ $chart-dark-9: $chart-300;
 $chart-dark-10: $chart-350;
 $chart-dark-11: $chart-400;
 $chart-dark-12: $chart-450;
-
