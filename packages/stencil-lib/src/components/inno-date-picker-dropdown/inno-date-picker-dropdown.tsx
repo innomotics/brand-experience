@@ -1,5 +1,5 @@
-import { computePosition } from '@floating-ui/dom';
-import { Component, Host, h, Element, State, Prop, Event, EventEmitter, Watch } from '@stencil/core';
+import { autoUpdate, computePosition, flip, shift } from '@floating-ui/dom';
+import { Component, Host, h, Element, State, Prop, Event, EventEmitter, Watch, Listen } from '@stencil/core';
 import { DateChange } from '../inno-date-context-api/inno-date-api';
 import { isPresent } from '../../utils/utils';
 import { DateTime } from 'luxon';
@@ -88,25 +88,101 @@ export class InnoDatePickerDropdown {
   @Event() dateChange: EventEmitter<DateChange>;
 
   @State() show: boolean = false;
+  @State() isOpen: boolean = false;
   @State() value: string | undefined;
   @State() selectedRange: DateChange | undefined;
 
   private dropdownHost: HTMLElement;
   private datePicker: HTMLElement;
+  private disposeAutoUpdate?: () => void;
 
-  async showDrop() {
-    const positionConfig = await computePosition(this.dropdownHost, this.datePicker, {
-      placement: 'bottom',
+  private destroyAutoUpdate() {
+    if (this.disposeAutoUpdate != undefined) {
+      this.disposeAutoUpdate();
+    }
+  }
+
+  private async computeTooltipPositionWithAutoUpdate() {
+    await this.computeTooltipPos();
+
+    return new Promise<void>((resolve) => {
+      this.disposeAutoUpdate = autoUpdate(
+        this.dropdownHost,
+        this.datePicker,
+        async () => {
+          await this.computeTooltipPos();
+          resolve();
+        },
+        {
+          ancestorResize: true,
+          ancestorScroll: true,
+          elementResize: true,
+          layoutShift: true
+        }
+      );
     });
+  }
 
-    this.datePicker.style.left = `${positionConfig.x}`;
-    this.datePicker.style.top = `${positionConfig.y}`;
+  async computeTooltipPos() {
+    return new Promise<void>(async (resolve) => {
+      const positionConfig = await computePosition(this.dropdownHost, this.datePicker, {
+        placement: 'bottom',
+        strategy: 'fixed',
+        middleware: [
+          shift(),
+          flip({
+            mainAxis: true,
+            crossAxis: true,
+            fallbackAxisSideDirection: 'start',
+            fallbackStrategy: 'bestFit',
+            padding: 5
+          })
+        ]
+      });
 
-    this.show = true;
+      this.datePicker.style.left = `${positionConfig.x}`;
+      this.datePicker.style.top = `${positionConfig.y}`;
+
+      const { x, y } = positionConfig;
+      Object.assign(this.datePicker.style, {
+        left: x !== null ? `${x}px` : '',
+        top: y !== null ? `${y - 1}px` : ''
+      });
+
+      resolve();
+    });
   }
 
   private changeVisibility() {
-    this.show = !this.show;
+    this.isOpen = !this.isOpen;
+  }
+
+  @Watch('isOpen')
+  isOpenChanged() {
+    if (this.isOpen) {
+      this.computeTooltipPositionWithAutoUpdate().then(() => {
+        this.show = true;
+      });
+    } else {
+      this.show = false;
+      this.destroyAutoUpdate();
+    }
+  }
+
+  @Listen('keydown', { target: 'window' })
+  keyboardHandler(ev: KeyboardEvent) {
+    if (ev.key == 'Escape' && this.isOpen) {
+      this.isOpen = false;
+    }
+  }
+
+  @Listen('click', { target: 'window' })
+  async onClick(event: globalThis.Event) {
+    if (this.isOpen && this.show) {
+      if (event.target !== this.hostElement && !this.hostElement.contains(event.target as Node)) {
+        this.isOpen = false;
+      }
+    }
   }
 
   private onDateChange(range: DateChange) {
@@ -119,11 +195,11 @@ export class InnoDatePickerDropdown {
     if (this.closeOnSelection) {
       // close if not in range mode and value is selected
       if (!this.range) {
-        this.show = false;
+        this.isOpen = false;
       }
       // close if range mode and both values are selected
       else if (this.range && range.to) {
-        this.show = false;
+        this.isOpen = false;
       }
     }
 
@@ -146,6 +222,10 @@ export class InnoDatePickerDropdown {
     if (toDate?.isValid) {
       this.onDateChange({ from: this.from, to: newValue });
     }
+  }
+
+  disconnectedCallback() {
+    this.destroyAutoUpdate();
   }
 
   private variantClasses() {
