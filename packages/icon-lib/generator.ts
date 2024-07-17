@@ -45,6 +45,7 @@ fs.readdir(directoryPath, (err, files) => {
   if (err) {
     return console.log("Unable to scan directory: " + err);
   }
+  files.sort((a,b)=> a.toLowerCase().localeCompare(b.toLowerCase()));
   //listing all files using forEach
   files.forEach((file) => {
 
