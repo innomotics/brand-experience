@@ -8,6 +8,7 @@ const regexes: RegExp[] = [
   ///<style.*\/style>/g,
   ///class="[^\s]*/g,
   /stroke="[^\s]*/g,
+  /stroke-width:\d{1,2}px;/g,
   //replace fill attribute 
   /fill="[^\/ | ^\s]*/g,
   /fill:[^;]*;/g
