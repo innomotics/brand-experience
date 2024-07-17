@@ -7,7 +7,7 @@ const standardRegexes: RegExp[] = [
   /<!--.*-->/g,
   /stroke="[^\s]*/g,
   //replace fill attribute 
-  /fill="[^\/ | ^\s]*/g,
+  /fill="[^\/ | ^\s | ^>]*/g,
   /fill:[^;]*;/g
 ];
 
@@ -28,7 +28,7 @@ const passModifications: string[] =[
 //passsing directoryPath and callback function
 let moduleContent = "";
 
-let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/brand-experience-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div class='icon-wrapper'>";
+let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/brand-experience-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div className='icon-wrapper'>";
 
 let clearName = (name: string) => {
   return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();
