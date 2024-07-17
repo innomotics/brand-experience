@@ -41,6 +41,8 @@ input {
 .checkbox {
   width: $radio-size;
   height: $radio-size;
+  min-width: $radio-size;
+  min-height: $radio-size;
   border-radius: 50%;
   position: relative;
   display: flex;
