@@ -323,6 +323,11 @@ Basic wrapper component for HTML table element. Will apply the innomotics design
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                           | Type                | Default     |

@@ -835,6 +835,10 @@ export namespace Components {
          */
         "theme": 'light' | 'dark';
     }
+    /**
+     * Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+     * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+     */
     interface InnoTableBase {
         /**
           * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
@@ -1409,6 +1413,10 @@ declare global {
         prototype: HTMLInnoTabItemElement;
         new (): HTMLInnoTabItemElement;
     };
+    /**
+     * Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+     * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+     */
     interface HTMLInnoTableBaseElement extends Components.InnoTableBase, HTMLStencilElement {
     }
     var HTMLInnoTableBaseElement: {
@@ -2367,6 +2375,10 @@ declare namespace LocalJSX {
          */
         "theme"?: 'light' | 'dark';
     }
+    /**
+     * Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+     * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+     */
     interface InnoTableBase {
         /**
           * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
@@ -2532,6 +2544,10 @@ declare module "@stencil/core" {
              * See the InnoTab component for more information about how to use the tab component.
              */
             "inno-tab-item": LocalJSX.InnoTabItem & JSXBase.HTMLAttributes<HTMLInnoTabItemElement>;
+            /**
+             * Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+             * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+             */
             "inno-table-base": LocalJSX.InnoTableBase & JSXBase.HTMLAttributes<HTMLInnoTableBaseElement>;
             "inno-time-picker": LocalJSX.InnoTimePicker & JSXBase.HTMLAttributes<HTMLInnoTimePickerElement>;
             "inno-toggle": LocalJSX.InnoToggle & JSXBase.HTMLAttributes<HTMLInnoToggleElement>;

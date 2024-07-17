@@ -1,6 +1,10 @@
 import { Element, Component, Host, Prop, h, Listen } from '@stencil/core';
 import SimpleBar from 'simplebar';
 
+/**
+ * Basic wrapper element for html tables. Adds some basic styling to the table and a custom scrollbar with fade-out effect.
+ * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
+ */
 @Component({
   tag: 'inno-table-base',
   styleUrl: 'inno-table-base.scss',
@@ -58,9 +62,13 @@ export class InnoTableBase {
     this.scrollBar = new SimpleBar(this.hostElement.querySelector('.table-div'), { autoHide: false });
     this.maskElement = this.hostElement.querySelector<HTMLDivElement>('.mask-layer');
     let table = this.hostElement.querySelector('table');
-    table.classList.add('inno-table');
-    if (this.variant == 'dark') {
-      table.classList.add('dark');
+    if (!!table) {
+      table.classList.add('inno-table');
+      if (this.variant == 'dark') {
+        table.classList.add('dark');
+      }
+    } else {
+      console.info("No html table element found.");
     }
     this.scrollBar.getScrollElement().addEventListener('scroll', this.scrollListener, { passive: true });
 
