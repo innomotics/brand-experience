@@ -2,17 +2,26 @@ import * as fs from "fs";
 import * as path from "path";
 
 const directoryPath = "./lib/svg";
-const regexes: RegExp[] = [
+const standardRegexes: RegExp[] = [
   /\r|\n|\s{2,}/g,
   /<!--.*-->/g,
-  ///<style.*\/style>/g,
-  ///class="[^\s]*/g,
   /stroke="[^\s]*/g,
-  /stroke-width:\d{1,2}px;/g,
   //replace fill attribute 
   /fill="[^\/ | ^\s]*/g,
   /fill:[^;]*;/g
 ];
+
+const styleRegexes : RegExp[] = [
+  /<style.*\/style>/g,
+  /class="[^\s]*/g,
+]
+
+// these files are using explicitly style to achive the effects
+const passModifications: string[] =[
+  "globe",
+  "Worldwide"
+];
+
 //passsing directoryPath and callback function
 let moduleContent = "";
 
@@ -22,13 +31,12 @@ let clearName = (name: string) => {
   return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();
 };
 
-let optimizeSvg = (content: Buffer) => {
-  let stringified = content.toString();
+let optimizeSvg = (content : string, regexes: RegExp[]) => {
   for (let regex in regexes) {
-    stringified = stringified.replace(regexes[regex], "");
+    content = content.replace(regexes[regex], "");
   }
-  //remove style infos
-  return stringified.replace(/"/g, "'");
+  //replace style infos
+  return content.replace(/"/g, "'");
 };
 
 //generate ts module for dataurl-s
@@ -39,11 +47,21 @@ fs.readdir(directoryPath, (err, files) => {
   }
   //listing all files using forEach
   files.forEach((file) => {
+
+    let name = path.parse(path.join(directoryPath, file)).name;
+    
     // Do whatever you want to do with the file
     let content = fs.readFileSync(path.join(directoryPath, file));
-    let name = path.parse(path.join(directoryPath, file)).name;
+    let optimizedContent = content.toString();
+    
+    if(!passModifications.includes(name)){
+      optimizedContent = optimizeSvg(optimizedContent,standardRegexes.concat(styleRegexes));
+    }
+    else{
+      optimizedContent = optimizeSvg(optimizedContent,standardRegexes);
+    }
     let clearedName = clearName(name);
-    moduleContent += `export const inno_${clearedName} = "${optimizeSvg(content)}";\n`;
+    moduleContent += `export const inno_${clearedName} = "${optimizedContent}";\n`;
     readmeContent += `<div className="icon-item"><InnoIcon icon="${clearedName}" size="64"></InnoIcon><div>${clearedName}</div></div>`;
   });
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
