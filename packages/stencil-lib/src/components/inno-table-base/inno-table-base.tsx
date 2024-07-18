@@ -67,9 +67,8 @@ export class InnoTableBase {
       if (this.variant == 'dark') {
         table.classList.add('dark');
       }
-    } else {
-      console.info("No html table element found.");
     }
+
     this.scrollBar.getScrollElement().addEventListener('scroll', this.scrollListener, { passive: true });
 
     this.recalculateScrollbar();
