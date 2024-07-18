@@ -134,6 +134,9 @@
     transition: 0.2s cubic-bezier(0.84, 0, 0.58, 1) all;
     transform: translate(0rem, 1.2rem) scale(1);
     position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &.light {
       &.invalid {

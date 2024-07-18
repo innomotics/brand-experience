@@ -4,6 +4,7 @@
 
   background-color: colors.$additional-light-400;
   color: colors.$text-light-buttonlabel;
+
   &:hover {
     background-color: colors.$text-dark-lowemphasis;
     color: colors.$text-light-highemphasis;
@@ -16,5 +17,11 @@
 
   &.selected {
     color: colors.$highlight-light-200;
+  }
+
+  .content-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

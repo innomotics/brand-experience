@@ -11,7 +11,8 @@ export class InnoInput {
   @Element() hostElement!: HTMLInnoInputElement & HTMLDivElement;
   private inputElementRef?: HTMLInputElement;
   private seizerElementRef: HTMLElement;
-  private observer: MutationObserver;
+  private mutationObserver: MutationObserver;
+  private resizeObserver: ResizeObserver;
 
   /**
    * Fired when the new value is valid.
@@ -92,15 +93,25 @@ export class InnoInput {
    * Whether the textarea is resizeable.
    * Only has effect if textarea is provided as wrapped element.
    */
-  @Prop() resizeable = false;
+  @Prop({ mutable: true }) resizeable = false;
 
   /**
    * Set the resize direction.
    * Only has effect if textarea is provided as wrapped element.
    */
-  @Prop() resizeMode: 'vertical' | 'horizontal' | 'both' = 'both';
+  @Prop({ mutable: true }) resizeMode: 'vertical' | 'horizontal' | 'both' = 'both';
+
+  /**
+   * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component.
+   * By default the InnoInput component automatically resizes the floating label so it will fit inside.
+   * You can turn this behavior off e.g. if you are sure the label will always fit.
+   */
+  @Prop({ mutable: true }) disableFloatingLabelAutoResize: boolean = false;
 
   @State() isValid: boolean = true;
+
+  private floatingLabel: HTMLSpanElement;
+  private resizeTimeout: any;
 
   get errorElements() {
     return [...Array.from(this.hostElement.querySelectorAll('inno-error:not(.explicit-error)'))] as HTMLInnoErrorElement[];
@@ -152,6 +163,21 @@ export class InnoInput {
     return this.inputElementRef?.value;
   }
 
+  private setFloatingLabelMaxWidth(): void {
+    if (this.disableFloatingLabelAutoResize) {
+      return;
+    }
+
+    clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(() => {
+      if (!this.floatingLabel || !this.hostElement) {
+        return;
+      }
+
+      this.floatingLabel.style.maxWidth = `${this.hostElement.getBoundingClientRect().width - 20}px`;
+    }, 200);
+  }
+
   //when we programatically change the input's value (e.g. with Angular's formControl's setValue(...)), no events are generated
   //we redefine the input value setter, so an event will be fired besides the original setter function
   //if we disable this then we have to manually send input events to the input
@@ -176,7 +202,7 @@ export class InnoInput {
 
   private startMutationObserver(): void {
     if (!!this.inputElementRef) {
-      this.observer = new MutationObserver((mutations: MutationRecord[]) => {
+      this.mutationObserver = new MutationObserver((mutations: MutationRecord[]) => {
         let isDisabled: boolean = false;
         let isReadOnly: boolean = false;
 
@@ -191,8 +217,19 @@ export class InnoInput {
         this.disabled = isDisabled || isReadOnly;
       });
 
-      this.observer.observe(this.inputElementRef, { attributes: true });
+      this.mutationObserver.observe(this.inputElementRef, { attributes: true });
     }
+  }
+
+  private startResizeObserver(): void {
+    if (!this.hostElement) {
+      return;
+    }
+    this.resizeObserver = new ResizeObserver(() => {
+      this.setFloatingLabelMaxWidth();
+    });
+
+    this.resizeObserver.observe(this.hostElement, { box: "border-box" });
   }
 
   componentDidLoad() {
@@ -201,6 +238,7 @@ export class InnoInput {
 
     this.reDefineInputValueProperty();
     this.startMutationObserver();
+    this.startResizeObserver();
 
     setTimeout(() => {
       if (!this.isValueEmpty()) {
@@ -212,11 +250,14 @@ export class InnoInput {
 
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
     this.synchSeizerPosition();
+    this.setFloatingLabelMaxWidth();
   }
 
   disconnectedCallback() {
-    this.observer?.disconnect();
-    this.observer = null;
+    this.mutationObserver?.disconnect();
+    this.mutationObserver = null;
+    this.resizeObserver?.disconnect();
+    this.resizeObserver = null;
   }
 
   @Listen('reCheckInnoInputValue')
@@ -330,6 +371,7 @@ export class InnoInput {
     let errorSpecified = this.error != null && this.error !== '';
     let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
     let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
+    this.setFloatingLabelMaxWidth();
 
     return (
       <Host
@@ -357,6 +399,7 @@ export class InnoInput {
             invalid: !this.isValid || errorSpecified,
             textareamode: this.textareaMode,
           }}
+          ref={el => this.floatingLabel = el}
           innerHTML={sanitizeHtml(this.label)}
         ></span>
         <slot></slot>

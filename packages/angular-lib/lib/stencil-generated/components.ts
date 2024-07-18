@@ -313,14 +313,14 @@ export declare interface InnoIcon extends Components.InnoIcon {}
 
 
 @ProxyCmp({
-  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'resizeMode', 'resizeable', 'selectOnFocus', 'variant']
+  inputs: ['caretPosEndOnFocus', 'disableFloatingLabelAutoResize', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'resizeMode', 'resizeable', 'selectOnFocus', 'variant']
 })
 @Component({
   selector: 'inno-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['caretPosEndOnFocus', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'resizeMode', 'resizeable', 'selectOnFocus', 'variant'],
+  inputs: ['caretPosEndOnFocus', 'disableFloatingLabelAutoResize', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'resizeMode', 'resizeable', 'selectOnFocus', 'variant'],
 })
 export class InnoInput {
   protected el: HTMLElement;
@@ -613,14 +613,14 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant']
+  inputs: ['disableLabelAutoResize', 'disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant']
 })
 @Component({
   selector: 'inno-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant'],
+  inputs: ['disableLabelAutoResize', 'disabled', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;

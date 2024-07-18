@@ -341,6 +341,10 @@ export namespace Components {
          */
         "caretPosEndOnFocus": boolean;
         /**
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit.
+         */
+        "disableFloatingLabelAutoResize": boolean;
+        /**
           * Whether the inno-input component is disabled or not. Probably not needed to be set since the component automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled": boolean;
@@ -644,6 +648,10 @@ export namespace Components {
         "variant": 'dark' | 'light';
     }
     interface InnoSelect {
+        /**
+          * By default the InnoSelect component automatically resizes the labels so they will fit inside. You can turn this behavior off e.g. if you are sure the labels will always fit.
+         */
+        "disableLabelAutoResize": boolean;
         /**
           * Whether the select is disabled or not.
          */
@@ -1834,6 +1842,10 @@ declare namespace LocalJSX {
          */
         "caretPosEndOnFocus"?: boolean;
         /**
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit.
+         */
+        "disableFloatingLabelAutoResize"?: boolean;
+        /**
           * Whether the inno-input component is disabled or not. Probably not needed to be set since the component automatically detects if the inserted input element is disabled or not. The inno-input component will also be in a disabled state when the input element is readonly.
          */
         "disabled"?: boolean;
@@ -2149,6 +2161,10 @@ declare namespace LocalJSX {
         "variant"?: 'dark' | 'light';
     }
     interface InnoSelect {
+        /**
+          * By default the InnoSelect component automatically resizes the labels so they will fit inside. You can turn this behavior off e.g. if you are sure the labels will always fit.
+         */
+        "disableLabelAutoResize"?: boolean;
         /**
           * Whether the select is disabled or not.
          */

@@ -54,6 +54,12 @@ export class InnoSelect {
   @Prop() icon: string;
 
   /**
+   * By default the InnoSelect component automatically resizes the labels so they will fit inside.
+   * You can turn this behavior off e.g. if you are sure the labels will always fit.
+   */
+  @Prop({ mutable: true }) disableLabelAutoResize: boolean = false;
+
+  /**
    * This event is fired when the value changes.
    */
   @Event() valueChanged: EventEmitter<string>;
@@ -86,9 +92,13 @@ export class InnoSelect {
 
   private disposeAutoUpdate?: () => void;
 
-  private observer: MutationObserver;
+  private itemsObserver: MutationObserver;
+  private resizeObserver: ResizeObserver;
 
   private isVisible: boolean = false;
+  private floatingLabel: HTMLSpanElement;
+  private valueLabel: HTMLSpanElement;
+  private resizeTimeout: any;
 
   selectClicked() {
     this.isOpen = !this.isOpen;
@@ -106,10 +116,14 @@ export class InnoSelect {
       }
     }
 
-    this.observer = new MutationObserver(() => {
+    this.itemsObserver = new MutationObserver(() => {
       this.updateItems();
     });
-    this.observer.observe(this.hostElement.querySelector(".items"), { childList: true })
+    this.itemsObserver.observe(this.hostElement.querySelector(".items"), { childList: true })
+
+    this.startResizeObserver();
+
+    this.setLabelsMaxWidth();
   }
 
   onFocusout() {
@@ -239,6 +253,34 @@ export class InnoSelect {
     focusdItems.forEach(fi => fi.classList.remove('focused'));
   }
 
+  private setLabelsMaxWidth(): void {
+    if (this.disableLabelAutoResize) {
+      return;
+    }
+
+    clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(() => {
+      if (!this.floatingLabel || !this.valueLabel || !this.hostElement) {
+        return;
+      }
+
+      let newWidth: number = this.hostElement.getBoundingClientRect().width - 65;
+      this.floatingLabel.style.maxWidth = `${newWidth}px`;
+      this.valueLabel.style.maxWidth = `${newWidth}px`;;
+    }, 200);
+  }
+
+  private startResizeObserver(): void {
+    if (!this.hostElement) {
+      return;
+    }
+    this.resizeObserver = new ResizeObserver(() => {
+      this.setLabelsMaxWidth();
+    });
+
+    this.resizeObserver.observe(this.hostElement, { box: "border-box" });
+  }
+
   @Listen('keydown')
   keyboardHandler(ev: KeyboardEvent) {
     if (ev.key === 'Enter' || ev.key == 'NumpadEnter') {
@@ -293,8 +335,10 @@ export class InnoSelect {
 
   disconnectedCallback() {
     this.destroyAutoUpdate();
-    this.observer?.disconnect();
-    this.observer = null;
+    this.itemsObserver?.disconnect();
+    this.itemsObserver = null;
+    this.resizeObserver?.disconnect();
+    this.resizeObserver = null;
   }
 
   private updateItems() {
@@ -310,6 +354,8 @@ export class InnoSelect {
   }
 
   render() {
+    this.setLabelsMaxWidth();
+
     return (
       <Host
         tabindex={0}
@@ -328,10 +374,23 @@ export class InnoSelect {
           {!this.icon ? (
             <div class="select-header">
               <div class={{ content: true, filled: !this.valueIsUndefined }}>
-                <span class={{ label: true, float: !this.valueIsUndefined, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}
-                  innerHTML={sanitizeHtml(this.label)}>
+                <span class={{
+                  label: true,
+                  float: !this.valueIsUndefined,
+                  disabled: this.disabled,
+                  light: this.variant === 'light',
+                  dark: this.variant === 'dark'
+                }}
+                  innerHTML={sanitizeHtml(this.label)}
+                  ref={el => this.floatingLabel = el}>
                 </span>
-                <span class={{ "label-value": true, disabled: this.disabled, light: this.variant === 'light', dark: this.variant === 'dark' }}>
+                <span class={{
+                  "label-value": true,
+                  disabled: this.disabled,
+                  light: this.variant === 'light',
+                  dark: this.variant === 'dark'
+                }}
+                  ref={el => this.valueLabel = el}>
                   {this.selectedItem?.label}
                 </span>
               </div>
@@ -342,11 +401,12 @@ export class InnoSelect {
               {this.selectedItem?.icon ? (
                 <span>
                   <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon>
-                  <div class="content-wrapper">{this.selectedItem.label}</div>
+                  <div class="icon-driven-label">{this.selectedItem.label}</div>
                 </span>
               ) : (
                 <span>
-                  <inno-icon icon={this.icon} size={32}></inno-icon>{this.label}
+                  <inno-icon icon={this.icon} size={32}></inno-icon>
+                  <div class="icon-driven-label">{this.label}</div>
                 </span>
               )}
               <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}

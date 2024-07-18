@@ -147,6 +147,7 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'caretPosEndOnFocus',
   'resizeable',
   'resizeMode',
+  'disableFloatingLabelAutoResize',
   'valueChanged'
 ]);
 
@@ -255,6 +256,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'label',
   'variant',
   'icon',
+  'disableLabelAutoResize',
   'valueChanged',
   'itemIsFavorited',
   'itemIsUnfavorited',
