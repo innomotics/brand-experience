@@ -1,4 +1,4 @@
-import { Element, Component, Host, Prop, h, Listen } from '@stencil/core';
+import { Element, Component, Host, Prop, h, Listen, Method } from '@stencil/core';
 import SimpleBar from 'simplebar';
 
 /**
@@ -17,7 +17,7 @@ export class InnoTableBase {
   @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
 
   /**
-   * The fade out effect while scrolling is achieved by using mask-image and linear-gradient. 
+   * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient. 
    * For it to work properly a color must be set to be the same as the table's background color.
    */
   @Prop({ mutable: true }) maskColor: string = '#ffffff';
@@ -25,6 +25,15 @@ export class InnoTableBase {
   @Element() hostElement: HTMLInnoTableBaseElement;
   maskElement: HTMLDivElement;
   scrollBar: SimpleBar;
+
+  /**
+   * The component tries its best to always apply the custom scrollbar and the fade-out effect automatically but there might be some cases 
+   * (especially during/after initalization) where it just simply won't work. In those cases you can call this method manually.
+   */
+  @Method()
+  async refresh() {
+    this.recalculateScrollbar();
+  }
 
   recalculateScrollbar() {
     this.scrollBar.recalculate();

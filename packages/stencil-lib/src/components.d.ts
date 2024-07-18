@@ -841,9 +841,13 @@ export namespace Components {
      */
     interface InnoTableBase {
         /**
-          * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
+          * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
          */
         "maskColor": string;
+        /**
+          * The component tries its best to always apply the custom scrollbar and the fade-out effect automatically but there might be some cases  (especially during/after initalization) where it just simply won't work. In those cases you can call this method manually.
+         */
+        "refresh": () => Promise<void>;
         /**
           * Color variant of the table;
          */
@@ -2381,7 +2385,7 @@ declare namespace LocalJSX {
      */
     interface InnoTableBase {
         /**
-          * The fade out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
+          * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient.  For it to work properly a color must be set to be the same as the table's background color.
          */
         "maskColor"?: string;
         /**

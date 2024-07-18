@@ -783,7 +783,8 @@ export declare interface InnoTabItem extends Components.InnoTabItem {
 
 
 @ProxyCmp({
-  inputs: ['maskColor', 'variant']
+  inputs: ['maskColor', 'variant'],
+  methods: ['refresh']
 })
 @Component({
   selector: 'inno-table-base',
