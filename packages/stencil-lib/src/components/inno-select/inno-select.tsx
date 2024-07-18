@@ -1,4 +1,4 @@
-import { autoUpdate, computePosition, flip } from '@floating-ui/dom';
+import { autoUpdate, computePosition, flip, shift } from '@floating-ui/dom';
 import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen } from '@stencil/core';
 import sanitizeHtml from 'sanitize-html';
 
@@ -58,6 +58,12 @@ export class InnoSelect {
    * You can turn this behavior off e.g. if you are sure the labels will always fit.
    */
   @Prop({ mutable: true }) disableLabelAutoResize: boolean = false;
+
+  /**
+   * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.
+   * You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+   */
+  @Prop({ mutable: true }) dropdownWidth: string;
 
   /**
    * This event is fired when the value changes.
@@ -166,6 +172,7 @@ export class InnoSelect {
           strategy: 'fixed',
           placement: 'bottom',
           middleware: [
+            shift(),
             flip({
               mainAxis: true,
               crossAxis: true,
@@ -177,10 +184,13 @@ export class InnoSelect {
       );
 
       const { x, y } = computeResponse;
+      let newDropdownWidth: string = !this.dropdownWidth
+        ? `${this.wrapperRef.getBoundingClientRect().width}px`
+        : this.dropdownWidth;
       Object.assign(this.itemsContainerRef.style, {
         left: x !== null ? `${x}px` : '',
         top: y !== null ? `${y - 1}px` : '',
-        width: `${this.wrapperRef.getBoundingClientRect().width}px`
+        width: newDropdownWidth
       });
       resolve();
     })

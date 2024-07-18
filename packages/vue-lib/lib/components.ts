@@ -257,6 +257,7 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'variant',
   'icon',
   'disableLabelAutoResize',
+  'dropdownWidth',
   'valueChanged',
   'itemIsFavorited',
   'itemIsUnfavorited',

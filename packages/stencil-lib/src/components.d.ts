@@ -657,6 +657,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself. You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+         */
+        "dropdownWidth": string;
+        /**
           * Icon for select when no item selected When icon is present the label is not behaves as floating
          */
         "icon": string;
@@ -2169,6 +2173,10 @@ declare namespace LocalJSX {
           * Whether the select is disabled or not.
          */
         "disabled"?: boolean;
+        /**
+          * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself. You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+         */
+        "dropdownWidth"?: string;
         /**
           * Icon for select when no item selected When icon is present the label is not behaves as floating
          */
