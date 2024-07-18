@@ -89,6 +89,16 @@ export class InnoSelectItem {
 
   @Element() host: HTMLInnoSelectElement;
 
+  private popover: HTMLInnoPopoverElement;
+
+  private get hostElementHasId(): boolean {
+    return this.host.id != null && this.host.id.trim() !== '';
+  }
+
+  private get forSelector(): string {
+    return this.isFavorite ? `#${this.host.id} .star.favorite` : `#${this.host.id} .star.not-favorite`;
+  }
+
   selectItem() {
     this.itemSelected.emit(this.value);
   }
@@ -116,13 +126,15 @@ export class InnoSelectItem {
   }
 
   favoriteStarPopup() {
-    if (this.host.id == null || this.host.id.trim() === '') {
+    if (!this.hostElementHasId) {
       return null;
     }
 
-    return <inno-popover popoverText={this.isFavorite ? this.removeFromFavoritesLabel : this.addToFavoritesLabel}
+    return <inno-popover
+      ref={el => this.popover = el}
+      popoverText={this.isFavorite ? this.removeFromFavoritesLabel : this.addToFavoritesLabel}
       trigger='hover'
-      for={this.isFavorite ? `#${this.host.id} .star.favorite` : `#${this.host.id} .star.not-favorite`}
+      for={this.forSelector}
       placement={this.favoriteIconTooltipPos}
       variant={this.favoriteIconTooltipVariant}
       offset={this.favoriteIconTooltipOffset}>
@@ -130,6 +142,10 @@ export class InnoSelectItem {
   }
 
   render() {
+    if (this.hostElementHasId && !!this.popover) {
+      this.popover.updateForElement(this.forSelector);
+    }
+
     return (
       <Host
         class={{
