@@ -54,10 +54,11 @@ export class InnoSelect {
   @Prop() icon: string;
 
   /**
-   * By default the InnoSelect component automatically resizes the labels so they will fit inside.
-   * You can turn this behavior off e.g. if you are sure the labels will always fit.
+   * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.
+   * By default the InnoSelect component automatically resizes the floating label so it will fit inside.
+   * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
    */
-  @Prop({ mutable: true }) disableLabelAutoResize: boolean = false;
+  @Prop({ mutable: true }) disableFloatingLabelAutoResize: boolean = false;
 
   /**
    * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.
@@ -103,7 +104,6 @@ export class InnoSelect {
 
   private isVisible: boolean = false;
   private floatingLabel: HTMLSpanElement;
-  private valueLabel: HTMLSpanElement;
   private resizeTimeout: any;
 
   selectClicked() {
@@ -264,19 +264,18 @@ export class InnoSelect {
   }
 
   private setLabelsMaxWidth(): void {
-    if (this.disableLabelAutoResize) {
+    if (this.disableFloatingLabelAutoResize) {
       return;
     }
 
     clearTimeout(this.resizeTimeout);
     this.resizeTimeout = setTimeout(() => {
-      if (!this.floatingLabel || !this.valueLabel || !this.hostElement) {
+      if (!this.floatingLabel || !this.hostElement || this.valueIsUndefined) {
         return;
       }
 
-      let newWidth: number = this.hostElement.getBoundingClientRect().width - 65;
+      let newWidth: number = this.hostElement.getBoundingClientRect().width - 16;
       this.floatingLabel.style.maxWidth = `${newWidth}px`;
-      this.valueLabel.style.maxWidth = `${newWidth}px`;;
     }, 200);
   }
 
@@ -399,8 +398,7 @@ export class InnoSelect {
                   disabled: this.disabled,
                   light: this.variant === 'light',
                   dark: this.variant === 'dark'
-                }}
-                  ref={el => this.valueLabel = el}>
+                }}>
                   {this.selectedItem?.label}
                 </span>
               </div>

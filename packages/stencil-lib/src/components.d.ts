@@ -341,7 +341,7 @@ export namespace Components {
          */
         "caretPosEndOnFocus": boolean;
         /**
-          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit.
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
          */
         "disableFloatingLabelAutoResize": boolean;
         /**
@@ -649,9 +649,9 @@ export namespace Components {
     }
     interface InnoSelect {
         /**
-          * By default the InnoSelect component automatically resizes the labels so they will fit inside. You can turn this behavior off e.g. if you are sure the labels will always fit.
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component. By default the InnoSelect component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
          */
-        "disableLabelAutoResize": boolean;
+        "disableFloatingLabelAutoResize": boolean;
         /**
           * Whether the select is disabled or not.
          */
@@ -1846,7 +1846,7 @@ declare namespace LocalJSX {
          */
         "caretPosEndOnFocus"?: boolean;
         /**
-          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit.
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component. By default the InnoInput component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
          */
         "disableFloatingLabelAutoResize"?: boolean;
         /**
@@ -2166,9 +2166,9 @@ declare namespace LocalJSX {
     }
     interface InnoSelect {
         /**
-          * By default the InnoSelect component automatically resizes the labels so they will fit inside. You can turn this behavior off e.g. if you are sure the labels will always fit.
+          * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component. By default the InnoSelect component automatically resizes the floating label so it will fit inside. You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
          */
-        "disableLabelAutoResize"?: boolean;
+        "disableFloatingLabelAutoResize"?: boolean;
         /**
           * Whether the select is disabled or not.
          */
