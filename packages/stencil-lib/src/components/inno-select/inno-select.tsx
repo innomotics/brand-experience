@@ -106,6 +106,10 @@ export class InnoSelect {
   private floatingLabel: HTMLSpanElement;
   private resizeTimeout: any;
 
+  private get isLabelEmpty(): boolean {
+    return this.label == null || this.label.trim() === '';
+  }
+
   selectClicked() {
     this.isOpen = !this.isOpen;
   }
@@ -382,7 +386,7 @@ export class InnoSelect {
         <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
           {!this.icon ? (
             <div class="select-header">
-              <div class={{ content: true, filled: !this.valueIsUndefined }}>
+              <div class={{ content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty }}>
                 <span class={{
                   label: true,
                   float: !this.valueIsUndefined,
