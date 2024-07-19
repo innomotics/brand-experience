@@ -48,24 +48,30 @@
   min-width: 220px;
   min-height: 110px;
   border: 1px solid innomotics.$interaction-dark-default;
+
   &:hover {
     border: 1px solid innomotics.$interaction-dark-hover;
   }
+
   #colorcube {
     width: 60px;
     height: 60px;
     border-radius: 5px;
   }
+
   &.light {
     background-color: innomotics.$primary-300;
     color: innomotics.$primary-200;
+
     #colorcube {
       box-shadow: 0px 0px 5px 0px innomotics.$primary-200;
     }
   }
+
   &.dark {
     background-color: innomotics.$primary-200;
     color: innomotics.$primary-300;
+
     #colorcube {
       box-shadow: 0px 0px 5px 0px innomotics.$primary-300;
     }
@@ -75,54 +81,67 @@
 .InnomoticsHafferSQ-Bold {
   font-weight: bold;
 }
+
 .InnomoticsHafferSQ-BoldItalic {
   font-weight: bold;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-HeavyItalic {
   font-weight: 900;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-Light {
   font-weight: 300;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-Heavy {
   font-weight: 900;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-LightItalic {
   font-weight: 300;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-Medium {
   font-weight: 500;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-MediumItalic {
   font-weight: 500;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-Regular {
   font-weight: normal;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-RegularItalic {
   font-weight: normal;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-SemiBold {
   font-weight: 600;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-SemiBoldItalic {
   font-weight: 600;
   font-style: italic;
 }
+
 .InnomoticsHafferSQ-Thin {
   font-weight: 100;
   font-style: normal;
 }
+
 .InnomoticsHafferSQ-ThinItalic {
   font-weight: 100;
   font-style: italic;
@@ -138,10 +157,12 @@
 .component-display {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+
   &.columns {
     flex-direction: column;
   }
-  gap: 10px;
+
   .light-bg {
     color: innomotics.$primary-200;
     flex-grow: 1;
@@ -161,6 +182,7 @@
       font-weight: bold;
     }
   }
+
   .dark-bg {
     color: innomotics.$primary-300;
     flex-grow: 1;

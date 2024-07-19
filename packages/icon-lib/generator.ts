@@ -2,6 +2,9 @@ import * as fs from "fs";
 import * as path from "path";
 
 const directoryPath = "./lib/svg";
+
+const whiteSpaceFixRegex: RegExp = /(?<=((\s+d=.+)|(\s+points=.+)))\s*(\r|\n)\s{2,}(?=.*")/g;
+
 const standardRegexes: RegExp[] = [
   /\r|\n|\s{2,}/g,
   /<!--.*-->/g,
@@ -11,18 +14,19 @@ const standardRegexes: RegExp[] = [
   /fill:[^;]*;/g
 ];
 
-const styleRegexes : RegExp[] = [
+const styleRegexes: RegExp[] = [
   /<style.*\/style>/g,
   /class="[^\s]*/g,
 ]
 
 // these files are using explicitly style to achive the effects
-const passModifications: string[] =[
+const passModifications: string[] = [
   "globe",
   "Worldwide",
   "sort-down2",
   "sort-up-down2",
-  "sort-up2"
+  "sort-up2",
+  "trash"
 ];
 
 //passsing directoryPath and callback function
@@ -34,7 +38,15 @@ let clearName = (name: string) => {
   return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();
 };
 
-let optimizeSvg = (content : string, regexes: RegExp[]) => {
+/**
+ * in some svgs there is a new line char followed by 2 white spaces while within a d="..." or points="...", 
+ * optimizeSvg() would replace it with an empty string but that is incorrect as it would change the points/numbers
+ */
+let fixWhiteSpacesBeforeOptimization = (content: string) => {
+  return content.replace(whiteSpaceFixRegex, " ");
+}
+
+let optimizeSvg = (content: string, regexes: RegExp[]) => {
   for (let regex in regexes) {
     content = content.replace(regexes[regex], "");
   }
@@ -48,21 +60,23 @@ fs.readdir(directoryPath, (err, files) => {
   if (err) {
     return console.log("Unable to scan directory: " + err);
   }
-  files.sort((a,b)=> a.toLowerCase().localeCompare(b.toLowerCase()));
+  files.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   //listing all files using forEach
   files.forEach((file) => {
 
     let name = path.parse(path.join(directoryPath, file)).name;
-    
+
     // Do whatever you want to do with the file
     let content = fs.readFileSync(path.join(directoryPath, file));
     let optimizedContent = content.toString();
-    
-    if(!passModifications.includes(name)){
-      optimizedContent = optimizeSvg(optimizedContent,standardRegexes.concat(styleRegexes));
+
+    optimizedContent = fixWhiteSpacesBeforeOptimization(optimizedContent);
+
+    if (!passModifications.includes(name)) {
+      optimizedContent = optimizeSvg(optimizedContent, standardRegexes.concat(styleRegexes));
     }
-    else{
-      optimizedContent = optimizeSvg(optimizedContent,standardRegexes);
+    else {
+      optimizedContent = optimizeSvg(optimizedContent, standardRegexes);
     }
     let clearedName = clearName(name);
     moduleContent += `export const inno_${clearedName} = "${optimizedContent}";\n`;
@@ -70,5 +84,5 @@ fs.readdir(directoryPath, (err, files) => {
   });
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
   readmeContent += "</div>";
-  fs.writeFileSync("./readme.md",readmeContent);
+  fs.writeFileSync("./readme.md", readmeContent);
 });
