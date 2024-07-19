@@ -166,6 +166,7 @@ export const InnoModal = /*@__PURE__*/ defineContainer<JSX.InnoModal>('inno-moda
   'backdrop',
   'closeOnBackdropClick',
   'centered',
+  'fixed',
   'closeOnEscape',
   'dialogClose',
   'dialogDismiss'

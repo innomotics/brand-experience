@@ -23,6 +23,7 @@ export interface ModalConfig<CONTENT = any> {
   centered?: boolean;
   container?: string | HTMLElement;
   content: CONTENT | string;
+  fixed?: boolean;
   size?: InnoModalSize;
 }
 

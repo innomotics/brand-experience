@@ -29,6 +29,10 @@
     overflow: visible;
     max-height: 100vh;
     pointer-events: all;
+
+    &.fixed {
+      position: fixed;
+    }
   }
 
   .modal-size-360 {
@@ -109,6 +113,7 @@
 }
 
 :host(.with-icon) {
+
   ::slotted(inno-modal-footer),
   ::slotted(inno-modal-content) {
     margin-left: 2.5rem;

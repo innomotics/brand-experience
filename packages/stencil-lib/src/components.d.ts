@@ -440,6 +440,10 @@ export namespace Components {
          */
         "dismissModal": <T = any>(reason?: T) => Promise<void>;
         /**
+          * By default the modal always opens at the top and the InnoModal component automatically scrolls to it. Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+         */
+        "fixed": boolean;
+        /**
           * Show the dialog.
          */
         "showModal": () => Promise<void>;
@@ -1940,6 +1944,10 @@ declare namespace LocalJSX {
           * If set to true the modal can be closed by pressing the Escape key
          */
         "closeOnEscape"?: boolean;
+        /**
+          * By default the modal always opens at the top and the InnoModal component automatically scrolls to it. Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+         */
+        "fixed"?: boolean;
         /**
           * Dialog close
          */

@@ -51,6 +51,12 @@ export class InnoModal {
   @Prop() centered = false;
 
   /**
+   * By default the modal always opens at the top and the InnoModal component automatically scrolls to it.
+   * Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+   */
+  @Prop() fixed: boolean = false;
+
+  /**
    * If set to true the modal can be closed by pressing the Escape key
    */
   @Prop() closeOnEscape = true;
@@ -101,7 +107,10 @@ export class InnoModal {
       const dialog = await waitForElement<HTMLDialogElement>('dialog', this.hostElement);
       this.modalVisible = true;
       dialog.showModal();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (!this.fixed) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } catch (e) {
       console.error('HTMLDialogElement not existing');
     }
@@ -192,6 +201,7 @@ export class InnoModal {
   private dialogElement() {
     const classes = {
       modal: true,
+      fixed: this.fixed,
       [`modal-size-${this.size}`]: true,
     };
 
