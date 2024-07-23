@@ -34,7 +34,7 @@
     "stencil": "stencil"
   },
   "dependencies": {
-    "@floating-ui/dom": "1.6.5",
+    "@floating-ui/dom": "1.6.8",
     "@innomotics/brand-experience-fonts": "^0.0.1-alpha-94",
     "@innomotics/brand-experience-icons": "^0.0.1-alpha-94",
     "@stencil/core": "^4.18.0",
