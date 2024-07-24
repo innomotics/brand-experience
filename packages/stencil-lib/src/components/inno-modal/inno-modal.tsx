@@ -71,6 +71,8 @@ export class InnoModal {
    */
   @Event() dialogDismiss: EventEmitter;
 
+  private clickStartedInsideDialog: boolean | undefined = undefined;
+
   get dialog() {
     return this.hostElement.querySelector('dialog');
   }
@@ -190,12 +192,24 @@ export class InnoModal {
       return;
     }
 
-    const rect = this.dialog.getBoundingClientRect();
-    const isClickOutside = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
-
-    if (!isClickOutside && this.closeOnBackdropClick) {
+    if (!this.isClickInsideDialog(event) && this.closeOnBackdropClick && !this.clickStartedInsideDialog) {
+      this.clickStartedInsideDialog = undefined;
       this.dismissModal();
     }
+    this.clickStartedInsideDialog = undefined;
+  }
+
+  private onMouseDown(event: MouseEvent) {
+    if (this.closeOnBackdropClick && this.isClickInsideDialog(event)) {
+      this.clickStartedInsideDialog = true;
+    } else {
+      this.clickStartedInsideDialog = false;
+    }
+  }
+
+  private isClickInsideDialog(event: MouseEvent): boolean {
+    const rect = this.dialog.getBoundingClientRect();
+    return rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
   }
 
   private dialogElement() {
@@ -214,6 +228,7 @@ export class InnoModal {
           class={classes}
           onClick={e => this.onModalClick(e)}
           onCancel={e => this.onDialogCancel(e)}
+          onMouseDown={e => this.onMouseDown(e)}
         >
           <slot></slot>
         </dialog>
