@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-react-lib",
-  "version": "0.0.1-alpha-94",
+  "version": "0.0.1-alpha-95",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -26,12 +26,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.1-alpha-94"
+    "@innomotics/brand-experience": "^0.0.1-alpha-95"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.1-alpha-94",
-    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-94",
-    "@innomotics/brand-experience-icons": "^0.0.1-alpha-94"
+    "@innomotics/brand-experience": "^0.0.1-alpha-95",
+    "@innomotics/brand-experience-fonts": "^0.0.1-alpha-95",
+    "@innomotics/brand-experience-icons": "^0.0.1-alpha-95"
   },
   "devDependencies": {
     "@types/react": "^18.2.60",
