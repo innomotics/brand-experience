@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Host, h, Prop } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Host, h, Prop, Watch } from '@stencil/core';
 import { a11yBoolean } from '../../utils/a11y';
 
 @Component({
@@ -10,14 +10,14 @@ export class InnoToggle {
   @Element() hostElement!: HTMLInnoToggleElement;
 
   /**
-   * Whether the slide-toggle element is checked or not.
+   * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
    */
-  @Prop({ mutable: true, reflect: true }) checked = false;
+  @Prop({ mutable: true, reflect: true }) checked: boolean = false;
 
   /**
    * Whether the slide-toggle element is disabled or not.
    */
-  @Prop({ mutable: true }) disabled = false;
+  @Prop({ mutable: true }) disabled: boolean = false;
 
   /**
    * Color variant of the toggle component.
@@ -36,7 +36,13 @@ export class InnoToggle {
 
   onCheckedChange(newChecked: boolean) {
     this.checked = newChecked;
-    this.checkedChange.emit(this.checked);
+  }
+
+  @Watch('checked')
+  checkedChangeHandler(newValue: boolean, oldValue: boolean) {
+    if (newValue !== oldValue) {
+      this.checkedChange.emit(this.checked);
+    }
   }
 
   render() {

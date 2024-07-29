@@ -886,7 +886,7 @@ export namespace Components {
     }
     interface InnoToggle {
         /**
-          * Whether the slide-toggle element is checked or not.
+          * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
          */
         "checked": boolean;
         /**
@@ -2443,7 +2443,7 @@ declare namespace LocalJSX {
     }
     interface InnoToggle {
         /**
-          * Whether the slide-toggle element is checked or not.
+          * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
          */
         "checked"?: boolean;
         /**
