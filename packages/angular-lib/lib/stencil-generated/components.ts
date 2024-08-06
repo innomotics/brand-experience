@@ -613,7 +613,8 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant']
+  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'icon', 'isFocused', 'keyValueSelector', 'label', 'value', 'variant'],
+  methods: ['refresh']
 })
 @Component({
   selector: 'inno-select',
@@ -675,7 +676,7 @@ export class InnoSelectItem {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['itemSelected', 'itemFavorited', 'itemUnfavorited']);
+    proxyOutputs(this, this.el, ['itemSelected', 'itemFavorited', 'itemUnfavorited', 'itemLabelChanged']);
   }
 }
 
@@ -693,6 +694,10 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
    * This event is fired whenever an item is removed from favorites.
    */
   itemUnfavorited: EventEmitter<CustomEvent<any>>;
+  /**
+   * This event is fired whenever the selected item's label changes. The inno-select component then will rerender.
+   */
+  itemLabelChanged: EventEmitter<CustomEvent<any>>;
 }
 
 

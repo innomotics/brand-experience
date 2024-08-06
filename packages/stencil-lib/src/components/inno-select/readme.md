@@ -178,6 +178,19 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
 | `valueChanged`         | This event is fired when the value changes.                                                                                                                                | `CustomEvent<string>` |
 
 
+## Methods
+
+### `refresh() => Promise<void>`
+
+Can be used to force the inno-select component to rerender.
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

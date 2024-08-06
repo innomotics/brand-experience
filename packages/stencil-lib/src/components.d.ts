@@ -681,6 +681,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Can be used to force the inno-select component to rerender.
+         */
+        "refresh": () => Promise<void>;
+        /**
           * Value of the select.
          */
         "value": any;
@@ -1350,6 +1354,7 @@ declare global {
         "itemSelected": any;
         "itemFavorited": any;
         "itemUnfavorited": any;
+        "itemLabelChanged": any;
     }
     interface HTMLInnoSelectItemElement extends Components.InnoSelectItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLInnoSelectItemElementEventMap>(type: K, listener: (this: HTMLInnoSelectItemElement, ev: InnoSelectItemCustomEvent<HTMLInnoSelectItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2271,6 +2276,10 @@ declare namespace LocalJSX {
           * This event is fired whenever an item is favorited.
          */
         "onItemFavorited"?: (event: InnoSelectItemCustomEvent<any>) => void;
+        /**
+          * This event is fired whenever the selected item's label changes. The inno-select component then will rerender.
+         */
+        "onItemLabelChanged"?: (event: InnoSelectItemCustomEvent<any>) => void;
         /**
           * This event is fired whenever an item is selected.
          */

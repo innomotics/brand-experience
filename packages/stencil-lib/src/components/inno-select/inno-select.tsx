@@ -1,5 +1,5 @@
 import { autoUpdate, computePosition, flip, shift } from '@floating-ui/dom';
-import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen } from '@stencil/core';
+import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen, Method } from '@stencil/core';
 import sanitizeHtml from 'sanitize-html';
 
 @Component({
@@ -236,6 +236,19 @@ export class InnoSelect {
   itemUnfavorited(event: CustomEvent<any>) {
     this.itemIsUnfavorited.emit(event.detail);
     this.emitAllFavoritedItems();
+  }
+
+  @Listen('itemLabelChanged')
+  itemLabelChanged(_event: CustomEvent<any>) {
+    this.updateItems();
+  }
+
+  /**
+   * Can be used to force the inno-select component to rerender.
+   */
+  @Method()
+  async refresh() {
+    this.updateItems();
   }
 
   private emitAllFavoritedItems(): void {

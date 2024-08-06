@@ -282,7 +282,8 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
   'hasSeparator',
   'itemSelected',
   'itemFavorited',
-  'itemUnfavorited'
+  'itemUnfavorited',
+  'itemLabelChanged'
 ]);
 
 

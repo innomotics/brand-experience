@@ -1,4 +1,4 @@
-import { Element, Event, EventEmitter, Component, Host, Prop, h } from '@stencil/core';
+import { Element, Event, EventEmitter, Component, Host, Prop, h, Watch } from '@stencil/core';
 import { Placement } from '@floating-ui/dom';
 
 @Component({
@@ -87,6 +87,11 @@ export class InnoSelectItem {
    */
   @Event() itemUnfavorited: EventEmitter<any>;
 
+  /**
+   * This event is fired whenever the selected item's label changes. The inno-select component then will rerender.
+   */
+  @Event() itemLabelChanged: EventEmitter<any>;
+
   @Element() host: HTMLInnoSelectElement;
 
   private popover: HTMLInnoPopoverElement;
@@ -139,6 +144,13 @@ export class InnoSelectItem {
       variant={this.favoriteIconTooltipVariant}
       offset={this.favoriteIconTooltipOffset}>
     </inno-popover>;
+  }
+
+  @Watch('label')
+  labelChanged(newLabel: string) {
+    if (this.selected) {
+      this.itemLabelChanged.emit(newLabel);
+    }
   }
 
   render() {

@@ -25,11 +25,12 @@
 
 ## Events
 
-| Event             | Description                                                     | Type               |
-| ----------------- | --------------------------------------------------------------- | ------------------ |
-| `itemFavorited`   | This event is fired whenever an item is favorited.              | `CustomEvent<any>` |
-| `itemSelected`    | This event is fired whenever an item is selected.               | `CustomEvent<any>` |
-| `itemUnfavorited` | This event is fired whenever an item is removed from favorites. | `CustomEvent<any>` |
+| Event              | Description                                                                                                   | Type               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `itemFavorited`    | This event is fired whenever an item is favorited.                                                            | `CustomEvent<any>` |
+| `itemLabelChanged` | This event is fired whenever the selected item's label changes. The inno-select component then will rerender. | `CustomEvent<any>` |
+| `itemSelected`     | This event is fired whenever an item is selected.                                                             | `CustomEvent<any>` |
+| `itemUnfavorited`  | This event is fired whenever an item is removed from favorites.                                               | `CustomEvent<any>` |
 
 
 ## Dependencies
