@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Method } from '@stencil/core';
 import { requestAnimationFrameNoNgZone } from '../../utils/siemensix/requestAnimationFrame';
 import { InnoTabItem } from '../inno-tab-item/inno-tab-item';
 import { HTMLStencilElement } from '@stencil/core/internal';
@@ -76,9 +76,9 @@ export class InnoTab {
     timeout: NodeJS.Timeout;
     isClick: boolean;
   } = {
-    timeout: null,
-    isClick: true,
-  };
+      timeout: null,
+      isClick: true,
+    };
 
   @Listen('resize', { target: 'window' })
   onWindowResize() {
@@ -156,8 +156,11 @@ export class InnoTab {
 
     tabWrapper.setAttribute('style', styles);
 
-    if (click) this.currentScrollAmount = this.scrollActionAmount = amount;
-    else this.scrollActionAmount = amount;
+    if (click) {
+      this.currentScrollAmount = this.scrollActionAmount = amount;
+    } else {
+      this.scrollActionAmount = amount;
+    }
   }
 
   private moveTabToView(tabIndex: number) {
@@ -187,8 +190,14 @@ export class InnoTab {
       return;
     }
 
+    this.adjustCurrentScrollAmount();
     this.setSelected(index);
     this.moveTabToView(index);
+  }
+
+  private adjustCurrentScrollAmount(): void {
+    const tabWrapper = this.getTabsWrapper() as HTMLElement;
+    this.currentScrollAmount = new DOMMatrixReadOnly(window.getComputedStyle(tabWrapper)["transform"]).m41; //translateX value
   }
 
   private dragStart(element: InnoTabItemHtmlElement, event: MouseEvent) {
@@ -224,7 +233,9 @@ export class InnoTab {
     clearTimeout(this.clickAction.timeout);
     this.clickAction.timeout = null;
 
-    if (this.clickAction.isClick) return false;
+    if (this.clickAction.isClick) {
+      return false;
+    }
 
     this.currentScrollAmount = this.scrollActionAmount;
 
@@ -269,6 +280,17 @@ export class InnoTab {
       element.alwaysEmphasized = this.alwaysEmphasized;
       element.minimalDecorator = this.minimalDecorator;
     });
+  }
+
+  /**
+   * Programatically change the selected tab by its index and scroll to the selected inno-tab-item inside the inno-tab.
+   * Please note that manually changing the 'selected' property won't do any scrolling, that is only possible with this method.
+   */
+  @Method()
+  async changeSelected(newIndex: number) {
+    this.selected = newIndex;
+    this.adjustCurrentScrollAmount();
+    this.moveTabToView(this.selected);
   }
 
   @Listen('tabClick')

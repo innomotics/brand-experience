@@ -730,7 +730,8 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
 
 
 @ProxyCmp({
-  inputs: ['alwaysEmphasized', 'layout', 'minimalDecorator', 'selected', 'showArrow', 'theme']
+  inputs: ['alwaysEmphasized', 'layout', 'minimalDecorator', 'selected', 'showArrow', 'theme'],
+  methods: ['changeSelected']
 })
 @Component({
   selector: 'inno-tab',

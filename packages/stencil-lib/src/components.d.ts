@@ -804,6 +804,10 @@ export namespace Components {
          */
         "alwaysEmphasized": boolean;
         /**
+          * Programatically change the selected tab by its index and scroll to the selected inno-tab-item inside the inno-tab. Please note that manually changing the 'selected' property won't do any scrolling, that is only possible with this method.
+         */
+        "changeSelected": (newIndex: number) => Promise<void>;
+        /**
           * Set layout width style
          */
         "layout": 'auto' | 'stretched';

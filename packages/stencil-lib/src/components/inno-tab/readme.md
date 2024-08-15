@@ -166,6 +166,26 @@ import {InnoTab, InnoTabItem, InnoIcon} from '@innomotics/brand-experience-react
 | `selectedChange` | `selected` property changed | `CustomEvent<number>` |
 
 
+## Methods
+
+### `changeSelected(newIndex: number) => Promise<void>`
+
+Programatically change the selected tab by its index and scroll to the selected inno-tab-item inside the inno-tab.
+Please note that manually changing the 'selected' property won't do any scrolling, that is only possible with this method.
+
+#### Parameters
+
+| Name       | Type     | Description |
+| ---------- | -------- | ----------- |
+| `newIndex` | `number` |             |
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on
