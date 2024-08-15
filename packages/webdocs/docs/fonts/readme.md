@@ -1,4 +1,4 @@
-# `Fonts`
+# `InnomoticsHafferSQ font`
 
 > Innomotics font package font families
 
@@ -16,7 +16,3 @@
   * <span class="InnomoticsHafferSQ-SemiBoldItalic">InnomoticsHafferSQ-SemiBoldItalic</span>
   * <span class="InnomoticsHafferSQ-Thin">InnomoticsHafferSQ-Thin</span>
   * <span class="InnomoticsHafferSQ-ThinItalic">InnomoticsHafferSQ-ThinItalic</span>
-
-## Usage
-
-Import the @innomotics/brand-experience-fonts package to your application and use 'InnomoticsHafferSQ' as a font-family

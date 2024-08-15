@@ -147,6 +147,12 @@
   font-style: italic;
 }
 
+.InnomoticsUiIcons {
+  font-family: "InnomoticsUiIcons";
+  font-weight: normal;
+  font-style: normal;
+}
+
 .color-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -199,6 +205,38 @@
       margin-bottom: 25px;
       font-size: 22px;
       font-weight: bold;
+    }
+  }
+}
+
+.sajat {
+  font-family: 'InnomoticsUiIcons';
+
+  &::before {
+    content: '\e900';
+  }
+}
+
+.font-display-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+
+  .font-display-item {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: innomotics.$primary-300;
+    color: black;
+    
+    & > span:nth-child(1) {
+      font-size: 36px;
     }
   }
 }
