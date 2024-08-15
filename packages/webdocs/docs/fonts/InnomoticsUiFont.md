@@ -2,6 +2,6 @@ import InnoIcons from '@site/src/components/AvailableInnoUiIconFont/AvailableInn
 
 # `Innomotics UI icon font`
 
-The available icons for the Innomotics UI font with the hexacode.
+The available icons for the Innomotics UI font with hexacode.
 
 <InnoIcons></InnoIcons>

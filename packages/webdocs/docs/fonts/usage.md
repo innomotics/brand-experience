@@ -18,29 +18,38 @@ See the InnomoticsHafferSQ font page for example and more information about the 
 
 ## Innomotics UI icon font
 
+Set the font-family and set the icon code.
+
+### Add font-family
+
 Use **'InnomoticsUiIcons'** as the font-family.
 
 The class **InnomoticsUiIcons** can be used to add font-family directly to an element.
 
-Select the icon as direct unicode:
-
 ```html
-<span>&#e900;</span>
+<span class="InnomoticsUiIcons">example text</span>
 ```
 
-Use icon as css content:
+### Select icon code
+
+Set icon as direct unicode:
+
+```html
+<span class="InnomoticsUiIcons">&#e900;</span>
+```
+
+Set icon with css:
+
+Use the code of the icon as content.
 
 ```css
 .customstyle {
+    font-family: 'InnomoticsUiIcons';
 
     &::before {
         content: '\e900'
     }
 }
 ```
-
-<span class="sajat">&#e900;</span>
-
-<span clasName="sajat"></span>
 
 See the Innomotics UI Icon font page for example and more information about the style.
