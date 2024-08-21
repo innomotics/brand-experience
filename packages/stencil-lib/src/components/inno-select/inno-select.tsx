@@ -384,7 +384,6 @@ export class InnoSelect {
 
     return (
       <Host
-        tabindex={0}
         class={{
           'input-container': true,
           'isactive': !this.valueIsUndefined,
