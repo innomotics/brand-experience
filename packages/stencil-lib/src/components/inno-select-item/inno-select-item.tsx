@@ -104,7 +104,10 @@ export class InnoSelectItem {
     return this.isFavorite ? `#${this.host.id} .star.favorite` : `#${this.host.id} .star.not-favorite`;
   }
 
-  selectItem() {
+  selectItem(event: MouseEvent) {
+    console.log("i got a click");
+    event.stopPropagation();
+    event.preventDefault();
     this.itemSelected.emit(this.value);
   }
 
@@ -158,6 +161,7 @@ export class InnoSelectItem {
       this.popover.updateForElement(this.forSelector);
     }
 
+
     return (
       <Host
         class={{
@@ -167,7 +171,7 @@ export class InnoSelectItem {
           'can-favorite': this.canFavorite,
           separator: this.hasSeparator
         }}
-        onClick={() => this.selectItem()}
+        onClick={(e: MouseEvent) => this.selectItem(e)}
       >
         {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
         <div class="content-wrapper">{this.label}</div>

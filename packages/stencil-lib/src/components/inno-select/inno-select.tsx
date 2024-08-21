@@ -27,11 +27,6 @@ export class InnoSelect {
   @Prop({ mutable: true }) value: any;
 
   /**
-   * Whether the select is focused or not.
-   */
-  @Prop({ mutable: true }) isFocused: boolean;
-
-  /**
    * Whether the select is disabled or not.
    */
   @Prop({ reflect: true, mutable: true }) disabled: boolean = false;
@@ -110,7 +105,8 @@ export class InnoSelect {
     return this.label == null || this.label.trim() === '';
   }
 
-  selectClicked() {
+  selectClicked(e: MouseEvent) {
+    e.stopImmediatePropagation();
     this.isOpen = !this.isOpen;
   }
 
@@ -137,7 +133,6 @@ export class InnoSelect {
   }
 
   onFocusout() {
-    this.isFocused = false;
     this.isOpen = false;
   }
 
@@ -243,6 +238,12 @@ export class InnoSelect {
     this.updateItems();
   }
 
+  @Listen('click', { target: 'body' })
+  outsideclick() {
+    if (this.isOpen) {
+      this.isOpen = false;
+    }
+  }
   /**
    * Can be used to force the inno-select component to rerender.
    */
@@ -263,6 +264,7 @@ export class InnoSelect {
     }
 
     this.updateSelectedItem();
+    this.isOpen = false;
   }
 
   private updateSelectedItem(): void {
@@ -384,16 +386,15 @@ export class InnoSelect {
 
     return (
       <Host
+        tabindex={0}
         class={{
           'input-container': true,
           'isactive': !this.valueIsUndefined,
-          'focused': this.isFocused,
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
         }}
-        onFocusout={() => this.onFocusout()}
-        onClick={() => this.selectClicked()}
+        onClick={(e) => this.selectClicked(e)}
       >
         <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
           {!this.icon ? (

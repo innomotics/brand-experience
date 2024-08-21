@@ -669,10 +669,6 @@ export namespace Components {
          */
         "icon": string;
         /**
-          * Whether the select is focused or not.
-         */
-        "isFocused": boolean;
-        /**
           * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
          */
         "keyValueSelector": (val: any) => any;
@@ -2198,10 +2194,6 @@ declare namespace LocalJSX {
           * Icon for select when no item selected When icon is present the label is not behaves as floating
          */
         "icon"?: string;
-        /**
-          * Whether the select is focused or not.
-         */
-        "isFocused"?: boolean;
         /**
           * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
          */
