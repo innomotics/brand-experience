@@ -1,5 +1,5 @@
 
-$font-families: InnomoticsHafferSQ;
+$font-families: InnomoticsHafferSQ, InnomoticsUiIcons;
 
 @font-face {
   font-family: "InnomoticsHafferSQ";
@@ -153,6 +153,19 @@ $font-families: InnomoticsHafferSQ;
     url("../fonts/InnomoticsHafferSQ-ThinItalic.woff") format("woff");
   font-weight: 100;
   font-style: italic;
+  font-display: swap;
+}
+
+// Innomotocs UI icons
+
+@font-face {
+  font-family: "InnomoticsUiIcons";
+  src:
+    local("Innomotics UI Icons"),
+    url("../fonts/Innomotics_UI_Icons.woff2") format("woff2"),
+    url("../fonts/Innomotics_UI_Icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 
