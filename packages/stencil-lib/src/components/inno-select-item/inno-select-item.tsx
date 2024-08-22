@@ -105,7 +105,6 @@ export class InnoSelectItem {
   }
 
   selectItem(event: MouseEvent) {
-    console.log("i got a click");
     event.stopPropagation();
     event.preventDefault();
     this.itemSelected.emit(this.value);
