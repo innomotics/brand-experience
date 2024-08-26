@@ -33,12 +33,12 @@
     "@innomotics/brand-experience": "^0.0.2-beta-1"
   },
   "devDependencies": {
-    "ng-packagr": "^17.3.0"
+    "ng-packagr": "^17.3.0 || ^18.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^17.3.5",
-    "@angular/core": "^17.3.5",
-    "@angular/forms": "^17.3.5",
+    "@angular/common": "^17.3.5 || ^18.0.0",
+    "@angular/core": "^17.3.5 || ^18.0.0",
+    "@angular/forms": "^17.3.5 || ^18.0.0",
     "@innomotics/brand-experience": "^0.0.2-beta-1",
     "@innomotics/brand-experience-fonts": "^0.0.2-beta-1",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-1",
