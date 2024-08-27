@@ -238,12 +238,6 @@ export class InnoSelect {
     this.updateItems();
   }
 
-  @Listen('click', { target: 'body' })
-  outsideclick() {
-    if (this.isOpen) {
-      this.isOpen = false;
-    }
-  }
   /**
    * Can be used to force the inno-select component to rerender.
    */
@@ -394,7 +388,8 @@ export class InnoSelect {
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
         }}
-        onClick={(e) => this.selectClicked(e)}
+        onClick={(e) => this.selectClicked(e)}  
+        onFocusout={() => this.onFocusout()}
       >
         <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
           {!this.icon ? (
