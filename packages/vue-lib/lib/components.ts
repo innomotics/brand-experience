@@ -130,6 +130,7 @@ export const InnoFooterItem = /*@__PURE__*/ defineContainer<JSX.InnoFooterItem>(
 
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
+  'iconFont',
   'size',
   'variant'
 ]);

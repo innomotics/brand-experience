@@ -29,12 +29,20 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
       <inno-icon icon='home' size='16' theme='light'></inno-icon>
       <inno-icon icon='home' size='24' theme='light'></inno-icon>
       <inno-icon icon='home' size='32' theme='light'></inno-icon>
+
+      <inno-icon iconFont='e902' size='16' theme='light'></inno-icon>
+      <inno-icon iconFont='e902' size='24' theme='light'></inno-icon>
+      <inno-icon iconFont='e902' size='32' theme='light'></inno-icon>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
       <inno-icon icon='home' size='16' theme='light'></inno-icon>
       <inno-icon icon='home' size='24' theme='light'></inno-icon>
       <inno-icon icon='home' size='32' theme='light'></inno-icon>
+
+      <inno-icon iconFont='e902' size='16' theme='light'></inno-icon>
+      <inno-icon iconFont='e902' size='24' theme='light'></inno-icon>
+      <inno-icon iconFont='e902' size='32' theme='light'></inno-icon>
     </div>
   </div>
     ```
@@ -47,12 +55,20 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
       <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+
+      <InnoIcon iconFont='e902' size='16' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='24' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='32' theme='light'></InnoIcon>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
       <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+
+      <InnoIcon iconFont='e902' size='16' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='24' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='32' theme='light'></InnoIcon>
     </div>
   </div>
     ```
@@ -65,12 +81,20 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
       <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+
+      <InnoIcon iconFont='e902' size='16' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='24' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='32' theme='light'></InnoIcon>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
       <InnoIcon icon='home' size='16' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='24' theme='light'></InnoIcon>
       <InnoIcon icon='home' size='32' theme='light'></InnoIcon>
+
+      <InnoIcon iconFont='e902' size='16' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='24' theme='light'></InnoIcon>
+      <InnoIcon iconFont='e902' size='32' theme='light'></InnoIcon>
     </div>
   </div>
     ```
@@ -82,11 +106,12 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property  | Attribute | Description              | Type                | Default     |
-| --------- | --------- | ------------------------ | ------------------- | ----------- |
-| `icon`    | `icon`    | The icon name            | `string`            | `undefined` |
-| `size`    | `size`    |                          | `number`            | `16`        |
-| `variant` | `variant` | Color style of the icon. | `"dark" \| "light"` | `'light'`   |
+| Property   | Attribute   | Description                                                                   | Type                | Default     |
+| ---------- | ----------- | ----------------------------------------------------------------------------- | ------------------- | ----------- |
+| `icon`     | `icon`      | The icon name. Use this or the iconFont property.                             | `string`            | `undefined` |
+| `iconFont` | `icon-font` | Font icon code for the InnomoticsUiIcons font. Use this or the icon property. | `string`            | `undefined` |
+| `size`     | `size`      |                                                                               | `number`            | `16`        |
+| `variant`  | `variant`   | Color style of the icon.                                                      | `"dark" \| "light"` | `'light'`   |
 
 
 ## Dependencies

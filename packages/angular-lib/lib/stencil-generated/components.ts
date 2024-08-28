@@ -291,14 +291,14 @@ export declare interface InnoFooterItem extends Components.InnoFooterItem {}
 
 
 @ProxyCmp({
-  inputs: ['icon', 'size', 'variant']
+  inputs: ['icon', 'iconFont', 'size', 'variant']
 })
 @Component({
   selector: 'inno-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'size', 'variant'],
+  inputs: ['icon', 'iconFont', 'size', 'variant'],
 })
 export class InnoIcon {
   protected el: HTMLElement;
