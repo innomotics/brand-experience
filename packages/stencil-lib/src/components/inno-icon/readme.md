@@ -30,9 +30,9 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
       <inno-icon icon='home' size='24' theme='light'></inno-icon>
       <inno-icon icon='home' size='32' theme='light'></inno-icon>
 
-      <inno-icon iconFont='e902' size='16' theme='light'></inno-icon>
-      <inno-icon iconFont='e902' size='24' theme='light'></inno-icon>
-      <inno-icon iconFont='e902' size='32' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='16' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='24' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='32' theme='light'></inno-icon>
     </div>
     <div class="dark-bg">
       <span class="bg-title">dark background</span>
@@ -40,9 +40,9 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
       <inno-icon icon='home' size='24' theme='light'></inno-icon>
       <inno-icon icon='home' size='32' theme='light'></inno-icon>
 
-      <inno-icon iconFont='e902' size='16' theme='light'></inno-icon>
-      <inno-icon iconFont='e902' size='24' theme='light'></inno-icon>
-      <inno-icon iconFont='e902' size='32' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='16' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='24' theme='light'></inno-icon>
+      <inno-icon icon-font='e902' size='32' theme='light'></inno-icon>
     </div>
   </div>
     ```
