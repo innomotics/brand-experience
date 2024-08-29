@@ -9,12 +9,14 @@ export class InnoIcon {
   /**
    * The icon name.
    * Use either this or the iconFont property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
    */
   @Prop({ mutable: true }) icon: string;
 
   /**
    * Font icon code for the InnomoticsUiIcons font.
    * Use either this or the icon property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
    */
   @Prop({ mutable: true }) iconFont: string;
 

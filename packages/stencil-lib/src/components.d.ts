@@ -78,9 +78,13 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Icon to use inside the button.
+          * Icon to use inside the button. Use either this or the 'iconFont' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
+        /**
+          * Icon font to use inside the button. Use either this or the 'icon' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont": string;
         /**
           * Only show an icon.
          */
@@ -326,11 +330,11 @@ export namespace Components {
     }
     interface InnoIcon {
         /**
-          * The icon name. Use this or the iconFont property.
+          * The icon name. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
         /**
-          * Font icon code for the InnomoticsUiIcons font. Use this or the icon property.
+          * Font icon code for the InnomoticsUiIcons font. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
          */
         "iconFont": string;
         "size": number;
@@ -1588,9 +1592,13 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Icon to use inside the button.
+          * Icon to use inside the button. Use either this or the 'iconFont' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
+        /**
+          * Icon font to use inside the button. Use either this or the 'icon' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont"?: string;
         /**
           * Only show an icon.
          */
@@ -1844,11 +1852,11 @@ declare namespace LocalJSX {
     }
     interface InnoIcon {
         /**
-          * The icon name. Use this or the iconFont property.
+          * The icon name. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
         /**
-          * Font icon code for the InnomoticsUiIcons font. Use this or the icon property.
+          * Font icon code for the InnomoticsUiIcons font. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
          */
         "iconFont"?: string;
         "size"?: number;

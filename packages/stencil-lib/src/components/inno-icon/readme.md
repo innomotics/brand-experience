@@ -106,12 +106,12 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
 
 ## Properties
 
-| Property   | Attribute   | Description                                                                   | Type                | Default     |
-| ---------- | ----------- | ----------------------------------------------------------------------------- | ------------------- | ----------- |
-| `icon`     | `icon`      | The icon name. Use this or the iconFont property.                             | `string`            | `undefined` |
-| `iconFont` | `icon-font` | Font icon code for the InnomoticsUiIcons font. Use this or the icon property. | `string`            | `undefined` |
-| `size`     | `size`      |                                                                               | `number`            | `16`        |
-| `variant`  | `variant`   | Color style of the icon.                                                      | `"dark" \| "light"` | `'light'`   |
+| Property   | Attribute   | Description                                                                                                                                                                              | Type                | Default     |
+| ---------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| `icon`     | `icon`      | The icon name. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/                                             | `string`            | `undefined` |
+| `iconFont` | `icon-font` | Font icon code for the InnomoticsUiIcons font. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont | `string`            | `undefined` |
+| `size`     | `size`      |                                                                                                                                                                                          | `number`            | `16`        |
+| `variant`  | `variant`   | Color style of the icon.                                                                                                                                                                 | `"dark" \| "light"` | `'light'`   |
 
 
 ## Dependencies

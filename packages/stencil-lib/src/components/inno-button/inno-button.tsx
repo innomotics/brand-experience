@@ -32,9 +32,16 @@ export class InnoButton {
   @Prop({ reflect: true, mutable: true }) disabled = false;
 
   /**
-   * Icon to use inside the button.
+   * Icon to use inside the button. Use either this or the 'iconFont' property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
    */
   @Prop({ mutable: true }) icon: string;
+
+  /**
+   * Icon font to use inside the button. Use either this or the 'icon' property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+   */
+  @Prop({ mutable: true }) iconFont: string;
 
   /**
    * Where to put the icon relative to the text.
@@ -54,7 +61,7 @@ export class InnoButton {
   /**
    * Special style for button lists.
    */
-  @Prop({reflect: true}) listType : boolean = false
+  @Prop({ reflect: true }) listType: boolean = false
 
   @Element() hostElement: HTMLInnoButtonElement;
   submitButtonElement: HTMLButtonElement;
@@ -78,11 +85,12 @@ export class InnoButton {
   }
 
   render() {
-    let hasIcon: boolean = (this.icon != null && this.icon != '') || this.variant === 'navigation';
+    let hasIcon: boolean = (this.icon != null && this.icon.trim() != '') || this.variant === 'navigation';
+    let hasIconFont: boolean = this.iconFont != null && this.iconFont.trim() != '';
     let iconSize: number = this.variant === 'media' ? 32 : 24;
     let icon: string = this.variant === 'navigation'
       ? (this.navDirection === 'right' ? 'chevron-right-small' : 'chevron-left-small')
-      : this.icon;
+      : (this.icon ?? this.iconFont);
 
     return (
       <Host class={{
@@ -112,6 +120,7 @@ export class InnoButton {
         >
           <slot></slot>
           {hasIcon ? <inno-icon icon={icon} size={iconSize} variant={this.colorVariant}></inno-icon> : null}
+          {hasIconFont && !hasIcon ? <inno-icon iconFont={icon} size={iconSize} variant={this.colorVariant}></inno-icon> : null}
         </button>
       </Host>
     );
