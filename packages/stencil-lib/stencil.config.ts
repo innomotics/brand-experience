@@ -17,6 +17,7 @@ const copyGlobalStyles = [
   {
     src: '../styles',
     dest: 'dist/styles',
+    keepDirStructure: true
   },
 ];
 
