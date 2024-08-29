@@ -52,4 +52,11 @@ Use the code of the icon as content.
 }
 ```
 
+The font icons can be used with the inno-icon component:
+
+```js
+<inno-icon icon-font="e901"></inno-icon>
+
+```
+
 See the Innomotics UI Icon font page for example and more information about the style.

@@ -326,9 +326,13 @@ export namespace Components {
     }
     interface InnoIcon {
         /**
-          * The icon name
+          * The icon name. Use this or the iconFont property.
          */
         "icon": string;
+        /**
+          * Font icon code for the InnomoticsUiIcons font. Use this or the icon property.
+         */
+        "iconFont": string;
         "size": number;
         /**
           * Color style of the icon.
@@ -1840,9 +1844,13 @@ declare namespace LocalJSX {
     }
     interface InnoIcon {
         /**
-          * The icon name
+          * The icon name. Use this or the iconFont property.
          */
         "icon"?: string;
+        /**
+          * Font icon code for the InnomoticsUiIcons font. Use this or the icon property.
+         */
+        "iconFont"?: string;
         "size"?: number;
         /**
           * Color style of the icon.
