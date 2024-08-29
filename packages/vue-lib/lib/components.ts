@@ -43,6 +43,7 @@ export const InnoButton = /*@__PURE__*/ defineContainer<JSX.InnoButton>('inno-bu
   'tabIdx',
   'disabled',
   'icon',
+  'iconFont',
   'iconPosition',
   'navDirection',
   'iconOnly',
@@ -130,6 +131,7 @@ export const InnoFooterItem = /*@__PURE__*/ defineContainer<JSX.InnoFooterItem>(
 
 export const InnoIcon = /*@__PURE__*/ defineContainer<JSX.InnoIcon>('inno-icon', undefined, [
   'icon',
+  'iconFont',
   'size',
   'variant'
 ]);
@@ -256,6 +258,8 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'label',
   'variant',
   'icon',
+  'iconFont',
+  'hasIcons',
   'disableFloatingLabelAutoResize',
   'dropdownWidth',
   'valueChanged',
@@ -270,6 +274,7 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
   'value',
   'label',
   'icon',
+  'iconFont',
   'selected',
   'canFavorite',
   'isFavorite',

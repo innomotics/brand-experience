@@ -43,10 +43,24 @@ export class InnoSelect {
   @State() isOpen: boolean = false;
 
   /**
-   * Icon for select when no item selected
-   * When icon is present the label is not behaves as floating
+   * Icon for select when no item selected. Use either this or the iconFont property.
+   * When icon is present the label doesn't behave as floating.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
    */
   @Prop() icon: string;
+
+  /**
+   * Icon font for select when no item selected. Use either this or the icon property.
+   * When icon is present the label doesn't behave as floating.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+   */
+  @Prop() iconFont: string;
+
+  /**
+   * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties
+   * since your select has no state where nothing is selected.
+   */
+  @Prop() hasIcons: boolean = false;
 
   /**
    * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.
@@ -388,11 +402,11 @@ export class InnoSelect {
           'dark': this.variant === 'dark',
           'disabled': this.disabled,
         }}
-        onClick={(e) => this.selectClicked(e)}  
+        onClick={(e) => this.selectClicked(e)}
         onFocusout={() => this.onFocusout()}
       >
         <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
-          {!this.icon ? (
+          {!this.icon && !this.iconFont && !this.hasIcons ? (
             <div class="select-header">
               <div class={{ content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty }}>
                 <span class={{
@@ -418,14 +432,16 @@ export class InnoSelect {
             </div>
           ) : (
             <div class="select-item icon-driven">
-              {this.selectedItem?.icon ? (
+              {(this.selectedItem?.icon || this.selectedItem?.iconFont) ? (
                 <span>
-                  <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon>
+                  {this.selectedItem?.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}
+                  {this.selectedItem?.iconFont && !this.selectedItem?.icon ? <inno-icon iconFont={this.selectedItem.iconFont} size={32}></inno-icon> : null}
                   <div class="icon-driven-label">{this.selectedItem.label}</div>
                 </span>
               ) : (
                 <span>
-                  <inno-icon icon={this.icon} size={32}></inno-icon>
+                  {this.icon ? <inno-icon icon={this.icon} size={32}></inno-icon> : null}
+                  {this.iconFont && !this.icon ? <inno-icon iconFont={this.iconFont} size={32}></inno-icon> : null}
                   <div class="icon-driven-label">{this.label}</div>
                 </span>
               )}

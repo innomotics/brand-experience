@@ -78,9 +78,13 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Icon to use inside the button.
+          * Icon to use inside the button. Use either this or the 'iconFont' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
+        /**
+          * Icon font to use inside the button. Use either this or the 'icon' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont": string;
         /**
           * Only show an icon.
          */
@@ -326,9 +330,13 @@ export namespace Components {
     }
     interface InnoIcon {
         /**
-          * The icon name
+          * The icon name. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
+        /**
+          * Font icon code for the InnomoticsUiIcons font. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont": string;
         "size": number;
         /**
           * Color style of the icon.
@@ -665,9 +673,17 @@ export namespace Components {
          */
         "dropdownWidth": string;
         /**
-          * Icon for select when no item selected When icon is present the label is not behaves as floating
+          * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties since your select has no state where nothing is selected.
+         */
+        "hasIcons": boolean;
+        /**
+          * Icon for select when no item selected. Use either this or the iconFont property. When icon is present the label doesn't behave as floating. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
+        /**
+          * Icon font for select when no item selected. Use either this or the icon property. When icon is present the label doesn't behave as floating. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont": string;
         /**
           * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
          */
@@ -715,9 +731,13 @@ export namespace Components {
          */
         "hasSeparator": boolean;
         /**
-          * Optional icon for the label.
+          * Optional icon for the label. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon": string;
+        /**
+          * Optional icon font for the label. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont": string;
         /**
           * The selectable item is favorited or not.
          */
@@ -1584,9 +1604,13 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Icon to use inside the button.
+          * Icon to use inside the button. Use either this or the 'iconFont' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
+        /**
+          * Icon font to use inside the button. Use either this or the 'icon' property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont"?: string;
         /**
           * Only show an icon.
          */
@@ -1840,9 +1864,13 @@ declare namespace LocalJSX {
     }
     interface InnoIcon {
         /**
-          * The icon name
+          * The icon name. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
+        /**
+          * Font icon code for the InnomoticsUiIcons font. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont"?: string;
         "size"?: number;
         /**
           * Color style of the icon.
@@ -2191,9 +2219,17 @@ declare namespace LocalJSX {
          */
         "dropdownWidth"?: string;
         /**
-          * Icon for select when no item selected When icon is present the label is not behaves as floating
+          * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties since your select has no state where nothing is selected.
+         */
+        "hasIcons"?: boolean;
+        /**
+          * Icon for select when no item selected. Use either this or the iconFont property. When icon is present the label doesn't behave as floating. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
+        /**
+          * Icon font for select when no item selected. Use either this or the icon property. When icon is present the label doesn't behave as floating. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont"?: string;
         /**
           * If you work with object arrays you can set a simple function which returns the unique key value  so the objects can be differentiated. By default we assume you work with simple arrays so we simply return the value as it is, in that case you don't have to provide this function.
          */
@@ -2257,9 +2293,13 @@ declare namespace LocalJSX {
          */
         "hasSeparator"?: boolean;
         /**
-          * Optional icon for the label.
+          * Optional icon for the label. Use either this or the iconFont property. For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
          */
         "icon"?: string;
+        /**
+          * Optional icon font for the label. Use either this or the icon property. For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+         */
+        "iconFont"?: string;
         /**
           * The selectable item is favorited or not.
          */

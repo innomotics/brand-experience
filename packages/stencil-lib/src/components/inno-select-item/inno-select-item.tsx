@@ -19,9 +19,16 @@ export class InnoSelectItem {
   @Prop() label: string
 
   /**
-   * Optional icon for the label.
+   * Optional icon for the label. Use either this or the iconFont property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
    */
   @Prop() icon: string;
+
+  /**
+   * Optional icon font for the label. Use either this or the icon property.
+   * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+   */
+  @Prop() iconFont: string;
 
   /**
    * Whether the item is selected or not.
@@ -165,7 +172,7 @@ export class InnoSelectItem {
       <Host
         class={{
           'select-item': true,
-          'icon-driven': this.icon != undefined,
+          'icon-driven': this.icon != undefined || this.iconFont != undefined,
           selected: this.selected,
           'can-favorite': this.canFavorite,
           separator: this.hasSeparator
@@ -173,8 +180,9 @@ export class InnoSelectItem {
         onClick={(e: MouseEvent) => this.selectItem(e)}
       >
         {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
+        {this.iconFont && !this.icon ? <inno-icon iconFont={this.iconFont} size={24}></inno-icon> : null}
         <div class="content-wrapper">{this.label}</div>
-        {this.selected && !this.icon ? <inno-icon icon="checkcheckbox" size={24}></inno-icon> : null}
+        {this.selected && !this.icon && !this.iconFont ? <inno-icon icon="checkcheckbox" size={24}></inno-icon> : null}
         {this.canFavorite ? this.favoriteStar() : null}
         {this.canFavorite ? this.favoriteStarPopup() : null}
       </Host>

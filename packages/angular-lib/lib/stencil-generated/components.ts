@@ -86,14 +86,14 @@ export declare interface InnoBreadcrumbItem extends Components.InnoBreadcrumbIte
 
 
 @ProxyCmp({
-  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant']
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconFont', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant']
 })
 @Component({
   selector: 'inno-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['colorVariant', 'disabled', 'icon', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant'],
+  inputs: ['colorVariant', 'disabled', 'icon', 'iconFont', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant'],
 })
 export class InnoButton {
   protected el: HTMLElement;
@@ -291,14 +291,14 @@ export declare interface InnoFooterItem extends Components.InnoFooterItem {}
 
 
 @ProxyCmp({
-  inputs: ['icon', 'size', 'variant']
+  inputs: ['icon', 'iconFont', 'size', 'variant']
 })
 @Component({
   selector: 'inno-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['icon', 'size', 'variant'],
+  inputs: ['icon', 'iconFont', 'size', 'variant'],
 })
 export class InnoIcon {
   protected el: HTMLElement;
@@ -613,7 +613,7 @@ export declare interface InnoRadio extends Components.InnoRadio {
 
 
 @ProxyCmp({
-  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'icon', 'keyValueSelector', 'label', 'value', 'variant'],
+  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'hasIcons', 'icon', 'iconFont', 'keyValueSelector', 'label', 'value', 'variant'],
   methods: ['refresh']
 })
 @Component({
@@ -621,7 +621,7 @@ export declare interface InnoRadio extends Components.InnoRadio {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'icon', 'keyValueSelector', 'label', 'value', 'variant'],
+  inputs: ['disableFloatingLabelAutoResize', 'disabled', 'dropdownWidth', 'hasIcons', 'icon', 'iconFont', 'keyValueSelector', 'label', 'value', 'variant'],
 })
 export class InnoSelect {
   protected el: HTMLElement;
@@ -662,14 +662,14 @@ if you want to reorder your InnoSelectItems after the favorited elements are cha
 
 
 @ProxyCmp({
-  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value']
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'iconFont', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value']
 })
 @Component({
   selector: 'inno-select-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
+  inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'iconFont', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
 })
 export class InnoSelectItem {
   protected el: HTMLElement;

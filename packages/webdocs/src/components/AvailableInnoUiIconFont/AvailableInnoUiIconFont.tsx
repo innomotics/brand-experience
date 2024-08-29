@@ -14,7 +14,7 @@ export default function AvailableInnoUiIconFont(): JSX.Element {
     const iconForm = String.fromCodePoint(parseInt(hexaForm, 16));
 
     const item = (
-      <div className="font-display-item">
+      <div className="font-display-item" key={index}>
         <span className="InnomoticsUiIcons">{iconForm}</span>
         <span>{hexaForm}</span>
       </div>
