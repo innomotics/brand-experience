@@ -2,7 +2,7 @@
 const startIndex = 59648;
 const stopIndex = 59809;
 
-// Index of the missing icon indexes
+// Store the font indexes which are missing
 const missingIndexes = [59732, 59733, 59734];
 
 /**
@@ -27,6 +27,7 @@ export default function AvailableInnoUiIconFont(): JSX.Element {
         <span>{hexaForm}</span>
       </div>
     );
+
     icons.push(item);
 
     index += 1;
