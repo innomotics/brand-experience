@@ -65,5 +65,6 @@
     "@innomotics/brand-experience-fonts": "^0.0.2-beta-4",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "83e4c1ac45c715589dc05940a8a6344ea724a9fe"
 }

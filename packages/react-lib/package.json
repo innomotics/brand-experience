@@ -9,17 +9,11 @@
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "private": false,
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "dist/"
-  ],
   "scripts": {
     "test": "node ./__tests__/react-library.test.js",
-    "build": "npm run tsc",
-    "tsc": "tsc -p . --outDir ./dist"
+    "build": "npm run tsc && npm run copypackagejson",
+    "tsc": "tsc -p . --outDir ./dist",
+    "copypackagejson": "npx cpx package.json \"./dist/\""
   },
   "publishConfig": {
     "access": "public",
@@ -38,5 +32,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "5.4.5"
-  }
+  },
+  "gitHead": "83e4c1ac45c715589dc05940a8a6344ea724a9fe"
 }

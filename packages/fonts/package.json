@@ -9,18 +9,16 @@
   "directories": {
     "lib": "lib"
   },
-  "files": [
-    "dist/"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/innomotics/brand-experience"
   },
   "scripts": {
-    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
+    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts && npm run copypackagejson",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
-    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\""
+    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
+    "copypackagejson": "npx cpx package.json \"./dist/\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"
@@ -28,5 +26,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "gitHead": "83e4c1ac45c715589dc05940a8a6344ea724a9fe"
 }
