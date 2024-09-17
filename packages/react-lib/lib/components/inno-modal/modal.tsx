@@ -8,7 +8,7 @@
  */
 
 import React, { useImperativeHandle, useRef } from "react";
-import { InnoModal } from "../stencil-generated";
+import { InnoModal } from "../stencil-generated/components";
 
 export interface ModalRef {
   close: <T = any>(result: T) => void;

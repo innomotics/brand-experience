@@ -56,6 +56,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
+      externalRuntime: false
     },
     {
       type: 'docs-readme',
@@ -74,8 +75,9 @@ export const config: Config = {
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
     reactOutputTarget({
-      componentCorePackage: '@innomotics/brand-experience',
-      proxiesFile: '../react-lib/lib/components/stencil-generated/index.ts',
+      stencilPackageName: '@innomotics/brand-experience',
+      outDir:'../react-lib/lib/components/stencil-generated'
+      //proxiesFile: '../react-lib/lib/components/stencil-generated/index.ts',
     }),
     vueOutputTarget({
       componentCorePackage: '@innomotics/brand-experience',

@@ -3,9 +3,9 @@
     "compilerOptions": {
       "outDir": "./dist",
       "lib": ["dom", "es2015"],
-      "module": "es2015",
-      "moduleResolution": "node",
-      "target": "es2015",
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "target": "ESNext",
       "skipLibCheck": true,
       "jsx": "react",
       "allowSyntheticDefaultImports": true,

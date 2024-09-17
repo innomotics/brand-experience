@@ -1,4 +1,4 @@
-export * from "./components/stencil-generated";
+export * from "./components/stencil-generated/components";
 export { defineCustomElements } from "@innomotics/brand-experience/loader";
 export * from "./components/inno-modal";
 export * from "./components/inno-status-message";
