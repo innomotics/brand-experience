@@ -1,19 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-4",
-  "lerna":{
-    "command":{
-      "publish":
-      {
-        "directory":"./dist",
-        "assets":[
-          "README.md",
-          "package.json",
-          "LICENSE.md"
-        ]
-      }
-    }
-  },
+  "version": "0.0.2-beta-3",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -34,7 +21,7 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-4"
+    "@innomotics/brand-experience": "^0.0.2-beta-3"
   },
   "devDependencies": {
     "vue": "3.4.25"
@@ -44,9 +31,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-4",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-4",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-4"
-  },
-  "gitHead": "1f2bb5e94a4805217564aad49dfaa174b10e6e18"
+    "@innomotics/brand-experience": "^0.0.2-beta-3",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-3",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-3"
+  }
 }

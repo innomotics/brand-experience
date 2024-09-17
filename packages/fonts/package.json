@@ -1,23 +1,17 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-4",
-  "lerna": {
-    "command": {
-      "publish": {
-        "directory": "./dist",
-        "assets": [
-          "README.md",
-          "package.json",
-          "LICENSE.md"
-        ]
-      }
-    }
-  },
+  "version": "0.0.2-beta-3",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
   "license": "MIT",
   "private": false,
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/innomotics/brand-experience"
@@ -33,8 +27,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "directory": "dist"
-  },
-  "gitHead": "1f2bb5e94a4805217564aad49dfaa174b10e6e18"
+    "registry": "https://registry.npmjs.org/"
+  }
 }

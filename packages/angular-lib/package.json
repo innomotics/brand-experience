@@ -1,19 +1,6 @@
 {
   "name": "@innomotics/brand-experience-angular-lib",
-  "version": "0.0.2-beta-4",
-  "lerna":{
-    "command":{
-      "publish":
-      {
-        "directory":"./dist",
-        "assets":[
-          "README.md",
-          "package.json",
-          "LICENSE.md"
-        ]
-      }
-    }
-  },
+  "version": "0.0.2-beta-3",
   "description": "> TODO: description",
   "author": "",
   "types": "dist/types/index.d.ts",
@@ -43,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-4"
+    "@innomotics/brand-experience": "^0.0.2-beta-3"
   },
   "devDependencies": {
     "ng-packagr": "^17.3.0 || ^18.0.0"
@@ -52,14 +39,13 @@
     "@angular/common": "^17.3.5 || ^18.0.0",
     "@angular/core": "^17.3.5 || ^18.0.0",
     "@angular/forms": "^17.3.5 || ^18.0.0",
-    "@innomotics/brand-experience": "^0.0.2-beta-4",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-4",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-4",
+    "@innomotics/brand-experience": "^0.0.2-beta-3",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-3",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-3",
     "typescript": "^5.3.3"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "gitHead": "1f2bb5e94a4805217564aad49dfaa174b10e6e18"
+  }
 }
