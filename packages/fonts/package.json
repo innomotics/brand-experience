@@ -1,12 +1,11 @@
 {
   "name": "@innomotics/brand-experience-fonts",
   "version": "0.0.2-beta-4",
-  "lerna":{
-    "command":{
-      "publish":
-      {
-        "directory":"./dist",
-        "assets":[
+  "lerna": {
+    "command": {
+      "publish": {
+        "directory": "./dist",
+        "assets": [
           "README.md",
           "package.json",
           "LICENSE.md"
@@ -34,7 +33,8 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "directory": "dist"
   },
   "gitHead": "1f2bb5e94a4805217564aad49dfaa174b10e6e18"
 }
