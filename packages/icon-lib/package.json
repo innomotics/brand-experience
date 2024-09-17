@@ -1,6 +1,19 @@
 {
   "name": "@innomotics/brand-experience-icons",
   "version": "0.0.2-beta-4",
+  "lerna":{
+    "command":{
+      "publish":
+      {
+        "directory":"./dist",
+        "assets":[
+          "README.md",
+          "package.json",
+          "LICENSE.md"
+        ]
+      }
+    }
+  },
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "https://github.com/innomotics/brand-experience#readme",
@@ -14,11 +27,10 @@
     "url": "git+https://github.com/innomotics/brand-experience.git"
   },
   "scripts": {
-    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyreadme && npm run copypackagejson",
+    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyreadme",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "generateIconModule": "npx ts-node generator.ts",
-    "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\"",
-    "copypackagejson": "npx cpx package.json \"./dist/\""
+    "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\""
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
@@ -31,5 +43,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "83e4c1ac45c715589dc05940a8a6344ea724a9fe"
+  "gitHead": "1f2bb5e94a4805217564aad49dfaa174b10e6e18"
 }
