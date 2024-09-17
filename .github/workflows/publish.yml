@@ -35,7 +35,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-          lerna publish from-package --no-private --yes
+          lerna publish from-package --contents dist --no-private --yes
 
   deploy-docs:
     if: ${{ (github.repository == 'innomotics/brand-experience') && (github.ref == 'refs/heads/main') }}
