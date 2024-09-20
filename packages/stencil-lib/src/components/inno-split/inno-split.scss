@@ -1,0 +1,42 @@
+:host {
+  display: grid;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: aquamarine;
+
+  /*&.horizontal {
+    flex-direction: row;
+  }
+
+  &.vertical {
+    flex-direction: column;
+  }*/
+
+  &.dragging {
+    user-select: none !important;
+
+    &.vertical {
+      cursor: row-resize;
+    }
+
+    &.horizontal {
+      cursor: col-resize;
+    }
+  }
+
+  .split-slot-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 0;
+
+    &.horizontal {
+      flex-direction: row;
+    }
+
+    &.vertical {
+      flex-direction: column;
+    }
+  }
+}

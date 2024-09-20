@@ -17,9 +17,20 @@
     </style>
   </head>
   <body>
-    <div style="max-width: 700px; min-width: 200px;">
+    <inno-split id="splittest" orientation="horizontal">
+      <inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+      <inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+      <inno-split-item>
+        <inno-split id="splittest2" orientation="vertical">
+          <inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+          <inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+        </inno-split>
+      </inno-split-item>
+      <inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+    </inno-split>
+    <div style="max-width: 700px; min-width: 200px;"></div>
 
-      <inno-input label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" variant="light">
+      <!--<inno-input label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" variant="light">
         <input id="name" name="name" type="text" />
         <inno-error type="badInput">Not valid</inno-error>
       </inno-input>
@@ -574,11 +585,15 @@
       </inno-status-message>
       <inno-status-message message-type="error">message</inno-status-message>
       <inno-status-message message-type="success">message</inno-status-message>
-    </div>
+    </div>-->
   </body>
 
   <script>
-    const pane1 = document.getElementById('button-showcase');
+    const split = document.getElementById('splittest');
+    split.slotNames = ["split-slot-0","split-slot-1","split-slot-2","split-slot-3"];
+    const split2 = document.getElementById('splittest2');
+    split2.slotNames = ["split-slot-4","split-slot-5"];
+    /*const pane1 = document.getElementById('button-showcase');
     const button1 = document.getElementById('button-showcase-toggle');
 
     button1.addEventListener('click', () => {
@@ -654,6 +669,6 @@
         acceptedFileTypesText: '*File must be .pdf',
         uploadDisabledText: 'File upload is disabled',
       };
-    });
+    });*/
   </script>
 </html>
