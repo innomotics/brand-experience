@@ -1,659 +1,723 @@
 <!doctype html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/innomotics-brand-experience.esm.js"></script>
-    <script nomodule src="/build/innomotics-brand-experience.js"></script>
-    <link href="/build/innomotics-brand-experience.css" rel="stylesheet" />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+	<title>Stencil Component Starter</title>
 
-    <style>
-      .separator-dummy {
-        border: 1px solid black;
-        margin: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <div style="max-width: 700px; min-width: 200px;">
+	<script type="module" src="/build/innomotics-brand-experience.esm.js"></script>
+	<script nomodule src="/build/innomotics-brand-experience.js"></script>
+	<link href="/build/innomotics-brand-experience.css" rel="stylesheet" />
 
-      <inno-input label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" variant="light">
-        <input id="name" name="name" type="text" />
-        <inno-error type="badInput">Not valid</inno-error>
-      </inno-input>
-      <inno-select icon-font="e911" label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM">
-        <inno-select-item icon-font="e946" value="1" label="1" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e946" value="2" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e946" value="3" label="3" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e913" value="4" label="4" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e946" value="5" label="5" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e946" value="6" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item icon-font="e913" value="7" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="8" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="9" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="10" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="11" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="12" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="13" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="14" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="15" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="16" label="21" can-favorite="true"></inno-select-item>
-        <inno-select-item value="17" label="22" can-favorite="true"></inno-select-item>
-        <inno-select-item value="18" label="23" can-favorite="true"></inno-select-item>
-        <inno-select-item value="19" label="24" can-favorite="true"></inno-select-item>
-        <inno-select-item value="20" label="25" can-favorite="true"></inno-select-item>
-        <inno-select-item value="21" label="26" can-favorite="true"></inno-select-item>
-        <inno-select-item value="22" label="27" can-favorite="true"></inno-select-item>
-        <inno-select-item value="23" label="28" can-favorite="true"></inno-select-item>
-        <inno-select-item value="24" label="29" can-favorite="true"></inno-select-item>
-        <inno-select-item value="25" label="12" can-favorite="true"></inno-select-item>
-        <inno-select-item value="26" label="2" can-favorite="true"></inno-select-item>
-        <inno-select-item value="27" label="32" can-favorite="true"></inno-select-item>
-      </inno-select>
-    </div>
+	<style>
+		.separator-dummy {
+			border: 1px solid black;
+			margin: 5px;
+		}
+	</style>
+</head>
 
-    <inno-date-picker-dropdown close-on-selection="false"></inno-date-picker-dropdown>
-    <inno-table-base style="width: 600px">
-      <table>
-        <thead>
-          <tr>
-            <th>Lorem ipsum</th>
-            <th>Lorem ipsum</th>
-            <th>Lorem ipsum</th>
-            <th>Lorem ipsum</th>
-            <th>Lorem ipsum</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>cellhead</th>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <th>Lorem ipsum</th>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <th>cellhead</th>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-        </tbody>
-      </table>
-    </inno-table-base>
-    <div class="inno-main-grid rows-3">
-      <div class="inno-full-content">Main-grid</div>
-      <div class="inno-content-grid">
-        <div class="inno-full-content"><div>content grid</div></div>
-      </div>
-    </div>
-    <inno-paginator page-count="17"></inno-paginator>
-    <div style="background-color: black">
-      <inno-paginator variant="dark" page-count="15"></inno-paginator>
-    </div>
-    <inno-modal id="innomodal1" close-on-backdrop-click="false" close-on-escape="false">
-      <inno-modal-header>Modal title</inno-modal-header>
-      <inno-modal-content style="color: white">
-        <form id="formu">
-          <div style="background-color: white">
-            <inno-input label="name" variant="light">
-              <input id="name" name="name" type="text" />
-              <inno-error type="badInput">Not valid</inno-error>
-            </inno-input>
-            <inno-input id="name2" label="Power" variant="light" disabled>
-              <input id="nameinput2" disabled type="text" value="10" />
-              <inno-error type="badInput">Not valid</inno-error>
-            </inno-input>
-            <inno-select label="Select" disabled>
-              <inno-select-item value="124" label="Hello"></inno-select-item>
-              <inno-select-item value="124321" label="Bello"></inno-select-item>
-            </inno-select>
-          </div>
-          <inno-input label="name" variant="dark">
-            <input id="name3" name="name" type="text" />
-            <inno-error type="badInput">Not valid</inno-error>
-          </inno-input>
-          <inno-input id="name4" label="Power" variant="dark" disabled>
-            <input id="nameinput4" disabled type="text" value="10" />
-            <inno-error type="badInput">Not valid</inno-error>
-          </inno-input>
-          <inno-select label="Select" variant="dark" disabled>
-            <inno-select-item value="124" label="Hello"></inno-select-item>
-            <inno-select-item value="124321" label="Bello"></inno-select-item>
-          </inno-select>
-        </form>
-      </inno-modal-content>
-      <inno-modal-footer style="display: flex; justify-content: flex-end; gap: 20px">
-        <inno-button colorVariant="light" variant="secondary"> Close </inno-button>
-        <inno-button colorVariant="light" variant="primary"> Accept </inno-button>
-      </inno-modal-footer>
-    </inno-modal>
+<body>
+	<inno-split id="splittest" orientation="horizontal">
+		<inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+			laudantium</inno-split-item>
+		<inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+			laudantium</inno-split-item>
+		<inno-split-item>
+			<inno-split id="splittest2" orientation="vertical">
+				<inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+					laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed
+					ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+				<inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+					laudantiumSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumSed
+					ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</inno-split-item>
+			</inno-split>
+		</inno-split-item>
+		<inno-split-item>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+			laudantium</inno-split-item>
+	</inno-split>
+	<div style="max-width: 700px; min-width: 200px;"></div>
 
-    <div><button id="modalbutton1" type="button">Open modal</button></div>
+	<inno-input label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" variant="light">
+		<input id="name" name="name" type="text" />
+		<inno-error type="badInput">Not valid</inno-error>
+	</inno-input>
+	<inno-select icon-font="e911" label="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM">
+		<inno-select-item icon-font="e946" value="1" label="1" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e946" value="2" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e946" value="3" label="3" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e913" value="4" label="4" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e946" value="5" label="5" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e946" value="6" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item icon-font="e913" value="7" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="8" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="9" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="10" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="11" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="12" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="13" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="14" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="15" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="16" label="21" can-favorite="true"></inno-select-item>
+		<inno-select-item value="17" label="22" can-favorite="true"></inno-select-item>
+		<inno-select-item value="18" label="23" can-favorite="true"></inno-select-item>
+		<inno-select-item value="19" label="24" can-favorite="true"></inno-select-item>
+		<inno-select-item value="20" label="25" can-favorite="true"></inno-select-item>
+		<inno-select-item value="21" label="26" can-favorite="true"></inno-select-item>
+		<inno-select-item value="22" label="27" can-favorite="true"></inno-select-item>
+		<inno-select-item value="23" label="28" can-favorite="true"></inno-select-item>
+		<inno-select-item value="24" label="29" can-favorite="true"></inno-select-item>
+		<inno-select-item value="25" label="12" can-favorite="true"></inno-select-item>
+		<inno-select-item value="26" label="2" can-favorite="true"></inno-select-item>
+		<inno-select-item value="27" label="32" can-favorite="true"></inno-select-item>
+	</inno-select>
+	</div>
 
-    <div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px">
-      <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
-        <inno-toggle></inno-toggle>
-        <inno-toggle disabled></inno-toggle>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 10px; background-color: #08191f; padding: 10px">
-        <inno-toggle variant="light"></inno-toggle>
-        <inno-toggle variant="light" disabled></inno-toggle>
-      </div>
-    </div>
-    <div>
-      <inno-loader size="88"></inno-loader>
-    </div>
+	<inno-date-picker-dropdown close-on-selection="false"></inno-date-picker-dropdown>
+	<inno-table-base style="width: 600px">
+		<table>
+			<thead>
+				<tr>
+					<th>Lorem ipsum</th>
+					<th>Lorem ipsum</th>
+					<th>Lorem ipsum</th>
+					<th>Lorem ipsum</th>
+					<th>Lorem ipsum</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>cellhead</th>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+				<tr>
+					<th>cellhead</th>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+			</tbody>
+		</table>
+	</inno-table-base>
+	<div class="inno-main-grid rows-3">
+		<div class="inno-full-content">Main-grid</div>
+		<div class="inno-content-grid">
+			<div class="inno-full-content">
+				<div>content grid</div>
+			</div>
+		</div>
+	</div>
+	<inno-paginator page-count="17"></inno-paginator>
+	<div style="background-color: black">
+		<inno-paginator variant="dark" page-count="15"></inno-paginator>
+	</div>
+	<inno-modal id="innomodal1" close-on-backdrop-click="false" close-on-escape="false">
+		<inno-modal-header>Modal title</inno-modal-header>
+		<inno-modal-content style="color: white">
+			<form id="formu">
+				<div style="background-color: white">
+					<inno-input label="name" variant="light">
+						<input id="name" name="name" type="text" />
+						<inno-error type="badInput">Not valid</inno-error>
+					</inno-input>
+					<inno-input id="name2" label="Power" variant="light" disabled>
+						<input id="nameinput2" disabled type="text" value="10" />
+						<inno-error type="badInput">Not valid</inno-error>
+					</inno-input>
+					<inno-select label="Select" disabled>
+						<inno-select-item value="124" label="Hello"></inno-select-item>
+						<inno-select-item value="124321" label="Bello"></inno-select-item>
+					</inno-select>
+				</div>
+				<inno-input label="name" variant="dark">
+					<input id="name3" name="name" type="text" />
+					<inno-error type="badInput">Not valid</inno-error>
+				</inno-input>
+				<inno-input id="name4" label="Power" variant="dark" disabled>
+					<input id="nameinput4" disabled type="text" value="10" />
+					<inno-error type="badInput">Not valid</inno-error>
+				</inno-input>
+				<inno-select label="Select" variant="dark" disabled>
+					<inno-select-item value="124" label="Hello"></inno-select-item>
+					<inno-select-item value="124321" label="Bello"></inno-select-item>
+				</inno-select>
+			</form>
+		</inno-modal-content>
+		<inno-modal-footer style="display: flex; justify-content: flex-end; gap: 20px">
+			<inno-button colorVariant="light" variant="secondary"> Close </inno-button>
+			<inno-button colorVariant="light" variant="primary"> Accept </inno-button>
+		</inno-modal-footer>
+	</inno-modal>
 
-    <span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
-    <span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
-    <span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
-    <button id="manualbtn">click me!</button>
-    <inno-popover for="#onclickspan" placement="right" popover-title="title">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <inno-popover for="#onhoverspan" placement="bottom" trigger="hover" popover-title="title" variant="light">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual" popover-title="title">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-popover>
-    <br />
-    <inno-accordion variant="light" label="Example">first accordion</inno-accordion>
-    <inno-accordion variant="light" label="Example2" collapsed>
-      second accordion
-      <inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
-    </inno-accordion>
-    <inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
-    <br />
-    <br />
-    <inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
-    <inno-accordion variant="dark" label="Example2" collapsed> second accordion </inno-accordion>
-    <inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
-    <br />
-    <inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with buttons)</inno-button>
-    <inno-button id="left-toggle" variant="primary" color-variant="dark">left pane</inno-button>
-    <inno-button id="top-toggle" variant="primary" color-variant="dark">top pane</inno-button>
-    <inno-button id="bottom-toggle" variant="primary" color-variant="dark">bottom pane</inno-button>
-    <inno-pane id="button-showcase" title-text="Button showcase" close-on-backdrop-click="false" pane-size="1100px">
-      <div>
-        <h1>regular buttons</h1>
-        <div style="display: flex; flex-direction: row">
-          <div style="background-color: white; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: black">light background</span>
-            <inno-button variant="primary" icon="arrow-right" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" icon="arrow-right" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
-          </div>
-          <div style="background-color: #08191f; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: white">dark background</span>
-            <inno-button variant="primary" icon="arrow-right">primary button</inno-button>
-            <inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
-            <inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
-            <inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
-            <inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
-          </div>
-          <div style="background-color: white; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: black">disabled light background</span>
-            <inno-button variant="primary" disabled icon="settings" icon-position="left" color-variant="dark">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="settings" icon-position="left" color-variant="dark">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="settings" icon-position="left" color-variant="dark">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="secondary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
-            <inno-button variant="tertiary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
-          </div>
-          <div style="background-color: #08191f; padding: 15px">
-            <span style="display: block; margin-bottom: 25px; color: white">disabled dark background</span>
-            <inno-button variant="primary" disabled icon="settings" icon-position="left">primary button</inno-button>
-            <inno-button variant="secondary" disabled icon="settings" icon-position="left">secondary button</inno-button>
-            <inno-button variant="tertiary" disabled icon="settings" icon-position="left">tertiary button</inno-button>
-            <inno-button variant="primary" disabled icon="settings" icon-only="true"></inno-button>
-            <inno-button variant="secondary" disabled icon="settings" icon-only="true"></inno-button>
-            <inno-button variant="tertiary" disabled icon="settings" icon-only="true"></inno-button>
-          </div>
-        </div>
-        <h1>media buttons</h1>
-        <div style="display: flex; flex-direction: row; gap: 40px">
-          <inno-button variant="media" icon-font="e913"></inno-button>
-          <inno-button variant="media" icon-font="e913" disabled></inno-button>
-        </div>
-        <h1>navigation buttons</h1>
-        <div style="display: flex; flex-direction: row; gap: 40px">
-          <inno-button variant="navigation" nav-direction="left"></inno-button>
-          <inno-button variant="navigation" disabled></inno-button>
-        </div>
-      </div>
-    </inno-pane>
-    <inno-pane id="left-pane" title-text="Left pane" close-on-backdrop-click="true" pane-size="500px" position="left">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <inno-pane id="top-pane" title-text="Top pane" close-on-backdrop-click="true" pane-size="500px" position="top">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <inno-pane id="bottom-pane" title-text="Bottom pane" close-on-backdrop-click="true" pane-size="500px" position="bottom">
-      <p style="color: white">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-        dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam
-        erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-      </p>
-    </inno-pane>
-    <inno-input label="Power" variant="light" value="10">
-      <input type="number" />
-      <inno-error type="badInput">Not valid</inno-error>
-    </inno-input>
-    <inno-select label="Select">
-      <inno-select-item value="124" label="Hello"></inno-select-item>
-      <inno-select-item value="124321" label="Bello"></inno-select-item>
-    </inno-select>
-    <inno-select label="label for icon driven select placeholder" icon="plus">
-      <inno-select-item value="124" label="Hello" icon="home"></inno-select-item>
-      <inno-select-item value="124321" label="Bello" icon="back"></inno-select-item>
-    </inno-select>
-    <h1>breadcrumb</h1>
-    <inno-breadcrumb variant="light">
-      <inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
-    </inno-breadcrumb>
-    <inno-breadcrumb variant="dark" style="background-color: #08191f">
-      <inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
-      <inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
-    </inno-breadcrumb>
+	<div><button id="modalbutton1" type="button">Open modal</button></div>
 
-    <div class="separator-dummy">separator dummy</div>
+	<div style="display: flex; flex-direction: row; gap: 20px; margin-bottom: 15px">
+		<div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
+			<inno-toggle></inno-toggle>
+			<inno-toggle disabled></inno-toggle>
+		</div>
+		<div style="display: flex; flex-direction: column; gap: 10px; background-color: #08191f; padding: 10px">
+			<inno-toggle variant="light"></inno-toggle>
+			<inno-toggle variant="light" disabled></inno-toggle>
+		</div>
+	</div>
+	<div>
+		<inno-loader size="88"></inno-loader>
+	</div>
 
-    <inno-footer variant="dark" copyright="@ Innomotics 2024">
-      <inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
-      <inno-footer-item slot="links"><span>Whistleblowing</span></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="applications" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="car" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="capture" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="cloud-filled" theme="dark"></inno-icon></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
-    </inno-footer>
+	<span id="onclickspan" style="background-color: black; color: white">tooltip on click</span>
+	<span id="onhoverspan" style="background-color: black; color: white">tooltip on hover</span>
+	<span id="manualspan" style="background-color: black; color: white">manual tooltip, click on the button --&gt;</span>
+	<button id="manualbtn">click me!</button>
+	<inno-popover for="#onclickspan" placement="right" popover-title="title">
+		<p>
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-popover>
+	<inno-popover for="#onhoverspan" placement="bottom" trigger="hover" popover-title="title" variant="light">
+		<p>
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-popover>
+	<inno-popover id="manualpop" for="#manualspan" placement="bottom" trigger="manual" popover-title="title">
+		<p>
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-popover>
+	<br />
+	<inno-accordion variant="light" label="Example">first accordion</inno-accordion>
+	<inno-accordion variant="light" label="Example2" collapsed>
+		second accordion
+		<inno-accordion variant="light" label="Inner Label" collapsed inner>inner inner inner</inno-accordion>
+	</inno-accordion>
+	<inno-accordion variant="light" label="Example3" collapsed last>third accordion</inno-accordion>
+	<br />
+	<br />
+	<inno-accordion variant="dark" label="Example">first accordion</inno-accordion>
+	<inno-accordion variant="dark" label="Example2" collapsed> second accordion </inno-accordion>
+	<inno-accordion variant="dark" label="Example3" collapsed last>third accordion</inno-accordion>
+	<br />
+	<inno-button id="button-showcase-toggle" variant="primary" color-variant="dark">right pane (with
+		buttons)</inno-button>
+	<inno-button id="left-toggle" variant="primary" color-variant="dark">left pane</inno-button>
+	<inno-button id="top-toggle" variant="primary" color-variant="dark">top pane</inno-button>
+	<inno-button id="bottom-toggle" variant="primary" color-variant="dark">bottom pane</inno-button>
+	<inno-pane id="button-showcase" title-text="Button showcase" close-on-backdrop-click="false" pane-size="1100px">
+		<div>
+			<h1>regular buttons</h1>
+			<div style="display: flex; flex-direction: row">
+				<div style="background-color: white; padding: 15px">
+					<span style="display: block; margin-bottom: 25px; color: black">light background</span>
+					<inno-button variant="primary" icon="arrow-right" color-variant="dark">primary button</inno-button>
+					<inno-button variant="secondary" icon="arrow-right" color-variant="dark">secondary button</inno-button>
+					<inno-button variant="tertiary" icon="arrow-right" color-variant="dark">tertiary button</inno-button>
+					<inno-button variant="primary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+					<inno-button variant="secondary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+					<inno-button variant="tertiary" icon="arrow-right" icon-only="true" color-variant="dark"></inno-button>
+				</div>
+				<div style="background-color: #08191f; padding: 15px">
+					<span style="display: block; margin-bottom: 25px; color: white">dark background</span>
+					<inno-button variant="primary" icon="arrow-right">primary button</inno-button>
+					<inno-button variant="secondary" icon="arrow-right">secondary button</inno-button>
+					<inno-button variant="tertiary" icon="arrow-right">tertiary button</inno-button>
+					<inno-button variant="primary" icon="arrow-right" icon-only="true"></inno-button>
+					<inno-button variant="secondary" icon="arrow-right" icon-only="true"></inno-button>
+					<inno-button variant="tertiary" icon="arrow-right" icon-only="true"></inno-button>
+				</div>
+				<div style="background-color: white; padding: 15px">
+					<span style="display: block; margin-bottom: 25px; color: black">disabled light background</span>
+					<inno-button variant="primary" disabled icon="settings" icon-position="left" color-variant="dark">primary
+						button</inno-button>
+					<inno-button variant="secondary" disabled icon="settings" icon-position="left" color-variant="dark">secondary
+						button</inno-button>
+					<inno-button variant="tertiary" disabled icon="settings" icon-position="left" color-variant="dark">tertiary
+						button</inno-button>
+					<inno-button variant="primary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
+					<inno-button variant="secondary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
+					<inno-button variant="tertiary" disabled icon="settings" icon-only="true" color-variant="dark"></inno-button>
+				</div>
+				<div style="background-color: #08191f; padding: 15px">
+					<span style="display: block; margin-bottom: 25px; color: white">disabled dark background</span>
+					<inno-button variant="primary" disabled icon="settings" icon-position="left">primary button</inno-button>
+					<inno-button variant="secondary" disabled icon="settings" icon-position="left">secondary button</inno-button>
+					<inno-button variant="tertiary" disabled icon="settings" icon-position="left">tertiary button</inno-button>
+					<inno-button variant="primary" disabled icon="settings" icon-only="true"></inno-button>
+					<inno-button variant="secondary" disabled icon="settings" icon-only="true"></inno-button>
+					<inno-button variant="tertiary" disabled icon="settings" icon-only="true"></inno-button>
+				</div>
+			</div>
+			<h1>media buttons</h1>
+			<div style="display: flex; flex-direction: row; gap: 40px">
+				<inno-button variant="media" icon-font="e913"></inno-button>
+				<inno-button variant="media" icon-font="e913" disabled></inno-button>
+			</div>
+			<h1>navigation buttons</h1>
+			<div style="display: flex; flex-direction: row; gap: 40px">
+				<inno-button variant="navigation" nav-direction="left"></inno-button>
+				<inno-button variant="navigation" disabled></inno-button>
+			</div>
+		</div>
+	</inno-pane>
+	<inno-pane id="left-pane" title-text="Left pane" close-on-backdrop-click="true" pane-size="500px" position="left">
+		<p style="color: white">
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-pane>
+	<inno-pane id="top-pane" title-text="Top pane" close-on-backdrop-click="true" pane-size="500px" position="top">
+		<p style="color: white">
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-pane>
+	<inno-pane id="bottom-pane" title-text="Bottom pane" close-on-backdrop-click="true" pane-size="500px"
+		position="bottom">
+		<p style="color: white">
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+			quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+			Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque
+			sit amet est et sapien ullamcorper pharetra. Vestibulum
+			erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+			condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+			dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+			neque egestas augue, eu vulputate magna eros eu erat. Aliquam
+			erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+		</p>
+	</inno-pane>
+	<inno-input label="Power" variant="light" value="10">
+		<input type="number" />
+		<inno-error type="badInput">Not valid</inno-error>
+	</inno-input>
+	<inno-select label="Select">
+		<inno-select-item value="124" label="Hello"></inno-select-item>
+		<inno-select-item value="124321" label="Bello"></inno-select-item>
+	</inno-select>
+	<inno-select label="label for icon driven select placeholder" icon="plus">
+		<inno-select-item value="124" label="Hello" icon="home"></inno-select-item>
+		<inno-select-item value="124321" label="Bello" icon="back"></inno-select-item>
+	</inno-select>
+	<h1>breadcrumb</h1>
+	<inno-breadcrumb variant="light">
+		<inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
+	</inno-breadcrumb>
+	<inno-breadcrumb variant="dark" style="background-color: #08191f">
+		<inno-breadcrumb-item label="product & services"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="drive technology"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="Minimum-Efficiency-Performance-Standard"></inno-breadcrumb-item>
+		<inno-breadcrumb-item label="European union"></inno-breadcrumb-item>
+	</inno-breadcrumb>
 
-    <div class="separator-dummy">separator dummy</div>
+	<div class="separator-dummy">separator dummy</div>
 
-    <inno-footer variant="light" copyright="@ Innomotics 2024">
-      <inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
-      <inno-footer-item slot="links"><a>Whistleblowing</a></inno-footer-item>
-      <inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
-    </inno-footer>
+	<inno-footer variant="dark" copyright="@ Innomotics 2024">
+		<inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+		<inno-footer-item slot="links"><span>Whistleblowing</span></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="applications" theme="dark"></inno-icon></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="car" theme="dark"></inno-icon></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="capture" theme="dark"></inno-icon></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="cloud-filled" theme="dark"></inno-icon></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
+	</inno-footer>
 
-    <div class="separator-dummy">separator dummy</div>
+	<div class="separator-dummy">separator dummy</div>
 
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="Label" checked="true" variant="light"></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" checked="true" variant="light" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" checked="true" variant="light" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" checked="true" variant="light" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" checked="true" variant="light" required error></inno-checkbox>
-      </div>
-    </div>
+	<inno-footer variant="light" copyright="@ Innomotics 2024">
+		<inno-footer-item slot="links"><a>Corporate Information</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Privacy Notice</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Cookie Notice</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Term of use</a></inno-footer-item>
+		<inno-footer-item slot="links"><a>Whistleblowing</a></inno-footer-item>
+		<inno-footer-item slot="icons"><inno-icon icon="about" theme="dark"></inno-icon></inno-footer-item>
+	</inno-footer>
 
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="Label" indeterminate="true" variant="light"></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" indeterminate="true" variant="light" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" indeterminate="true" variant="light" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" indeterminate="true" variant="light" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" indeterminate="true" variant="light" required error></inno-checkbox>
-      </div>
-    </div>
+	<div class="separator-dummy">separator dummy</div>
 
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="normal" checked="true" variant="dark" error></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" checked="true" variant="dark" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" checked="true" variant="dark" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" checked="true" variant="dark" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" checked="true" variant="dark" required error></inno-checkbox>
-      </div>
-    </div>
+	<div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
+		<div>
+			<inno-checkbox label="Label" checked="true" variant="light"></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="readonly" checked="true" variant="light" readonly></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="disabled" checked="true" variant="light" disabled></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="required" checked="true" variant="light" required></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="error" checked="true" variant="light" required error></inno-checkbox>
+		</div>
+	</div>
 
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-checkbox label="normal" indeterminate="true" variant="dark"></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="readonly" indeterminate="true" variant="dark" readonly></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="disabled" indeterminate="true" variant="dark" disabled></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="required" indeterminate="true" variant="dark" required></inno-checkbox>
-      </div>
-      <div>
-        <inno-checkbox label="error" indeterminate="true" variant="dark" required error></inno-checkbox>
-      </div>
-    </div>
+	<div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
+		<div>
+			<inno-checkbox label="Label" indeterminate="true" variant="light"></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="readonly" indeterminate="true" variant="light" readonly></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="disabled" indeterminate="true" variant="light" disabled></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="required" indeterminate="true" variant="light" required></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="error" indeterminate="true" variant="light" required error></inno-checkbox>
+		</div>
+	</div>
 
-    <div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
-      <div>
-        <inno-radio label="Label" checked="true" variant="light"></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="readonly" checked="true" variant="light" readonly></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="disabled" checked="true" variant="light" disabled></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="required" checked="true" variant="light" required></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="error" checked="true" variant="light" required error></inno-radio>
-      </div>
-    </div>
+	<div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
+		<div>
+			<inno-checkbox label="normal" checked="true" variant="dark" error></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="readonly" checked="true" variant="dark" readonly></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="disabled" checked="true" variant="dark" disabled></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="required" checked="true" variant="dark" required></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="error" checked="true" variant="dark" required error></inno-checkbox>
+		</div>
+	</div>
 
-    <div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
-      <div>
-        <inno-radio label="normal" checked="false" variant="dark"></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="readonly" checked="false" variant="dark" readonly></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="disabled" checked="false" variant="dark" disabled></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="required" checked="false" variant="dark" required></inno-radio>
-      </div>
-      <div>
-        <inno-radio label="error" checked="false" variant="dark" required error></inno-radio>
-      </div>
-    </div>
+	<div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
+		<div>
+			<inno-checkbox label="normal" indeterminate="true" variant="dark"></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="readonly" indeterminate="true" variant="dark" readonly></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="disabled" indeterminate="true" variant="dark" disabled></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="required" indeterminate="true" variant="dark" required></inno-checkbox>
+		</div>
+		<div>
+			<inno-checkbox label="error" indeterminate="true" variant="dark" required error></inno-checkbox>
+		</div>
+	</div>
 
-    <form id="testform">
-      <div><inno-checkbox name="cb1" label="checkbox1" checked="true"></inno-checkbox></div>
-      <div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
+	<div style="padding: 20px; background-color: white; display: flex; flex-direction: column">
+		<div>
+			<inno-radio label="Label" checked="true" variant="light"></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="readonly" checked="true" variant="light" readonly></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="disabled" checked="true" variant="light" disabled></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="required" checked="true" variant="light" required></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="error" checked="true" variant="light" required error></inno-radio>
+		</div>
+	</div>
 
-      <inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
-      <inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
-      <inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
+	<div style="padding: 20px; background-color: #08191f; display: flex; flex-direction: column">
+		<div>
+			<inno-radio label="normal" checked="false" variant="dark"></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="readonly" checked="false" variant="dark" readonly></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="disabled" checked="false" variant="dark" disabled></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="required" checked="false" variant="dark" required></inno-radio>
+		</div>
+		<div>
+			<inno-radio label="error" checked="false" variant="dark" required error></inno-radio>
+		</div>
+	</div>
 
-      <button type="submit">submit</button>
-    </form>
+	<form id="testform">
+		<div><inno-checkbox name="cb1" label="checkbox1" checked="true"></inno-checkbox></div>
+		<div><inno-checkbox name="cb2" label="checkbox2"></inno-checkbox></div>
 
-    <div style="position: relative; width: 100%; display: block; background-color: #08191f; padding: 20px; margin-top: 20px">
-      <inno-tab layout="auto" theme="dark">
-        <inno-tab-item>Tab item 1</inno-tab-item>
-        <inno-tab-item>Tab item 2</inno-tab-item>
-        <inno-tab-item>Tab item 3</inno-tab-item>
-        <inno-tab-item>Tab item 4</inno-tab-item>
-        <inno-tab-item>Tab item 5</inno-tab-item>
-        <inno-tab-item>Tab item 6</inno-tab-item>
-        <inno-tab-item>Tab item 7</inno-tab-item>
-        <inno-tab-item>Tab item 8</inno-tab-item>
-        <inno-tab-item>Tab item 9</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-      </inno-tab>
-    </div>
+		<inno-radio name="radioGroup1" label="value1" value="value1"></inno-radio>
+		<inno-radio name="radioGroup1" label="value2" value="value2"></inno-radio>
+		<inno-radio name="radioGroup1" label="value3" value="value3"></inno-radio>
 
-    <div style="position: relative; width: 100%; display: block; background-color: #08191f; padding: 20px; margin-top: 20px">
-      <inno-tab layout="stretched" theme="dark" always-emphasized minimal-decorator>
-        <inno-tab-item postfix-icon="help">Tab item 1</inno-tab-item>
-        <inno-tab-item>
-          <span>Tab item 2</span>
-          <inno-icon icon="help" size="32"></inno-icon>
-        </inno-tab-item>
-        <inno-tab-item>Tab item 3</inno-tab-item>
-        <inno-tab-item>Tab item 4</inno-tab-item>
-        <inno-tab-item>Tab item 5</inno-tab-item>
-      </inno-tab>
-    </div>
+		<button type="submit">submit</button>
+	</form>
 
-    <div style="position: relative; width: 100%; display: block; background-color: white; padding: 20px; margin-top: 20px">
-      <inno-tab layout="auto" theme="light">
-        <inno-tab-item>Tab item 1</inno-tab-item>
-        <inno-tab-item>Tab item 2</inno-tab-item>
-        <inno-tab-item>Tab item 3</inno-tab-item>
-        <inno-tab-item>Tab item 4</inno-tab-item>
-        <inno-tab-item>Tab item 5</inno-tab-item>
-        <inno-tab-item>Tab item 6</inno-tab-item>
-        <inno-tab-item>Tab item 7</inno-tab-item>
-        <inno-tab-item>Tab item 8</inno-tab-item>
-        <inno-tab-item>Tab item 9</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-        <inno-tab-item>Tab item 10</inno-tab-item>
-        <inno-tab-item>Tab item 11</inno-tab-item>
-        <inno-tab-item>Tab item 12</inno-tab-item>
-        <inno-tab-item>Tab item 13</inno-tab-item>
-        <inno-tab-item>Tab item 14</inno-tab-item>
-        <inno-tab-item>Tab item 15</inno-tab-item>
-      </inno-tab>
-    </div>
+	<div
+		style="position: relative; width: 100%; display: block; background-color: #08191f; padding: 20px; margin-top: 20px">
+		<inno-tab layout="auto" theme="dark">
+			<inno-tab-item>Tab item 1</inno-tab-item>
+			<inno-tab-item>Tab item 2</inno-tab-item>
+			<inno-tab-item>Tab item 3</inno-tab-item>
+			<inno-tab-item>Tab item 4</inno-tab-item>
+			<inno-tab-item>Tab item 5</inno-tab-item>
+			<inno-tab-item>Tab item 6</inno-tab-item>
+			<inno-tab-item>Tab item 7</inno-tab-item>
+			<inno-tab-item>Tab item 8</inno-tab-item>
+			<inno-tab-item>Tab item 9</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+		</inno-tab>
+	</div>
 
-    <div style="position: relative; width: 100%; display: block; background-color: #e1f000; padding: 20px; margin-top: 20px">
-      <inno-tab layout="stretched" theme="light" always-emphasized>
-        <inno-tab-item postfix-icon="help">Tab item 1</inno-tab-item>
-        <inno-tab-item>Tab item 2</inno-tab-item>
-        <inno-tab-item>Tab item 3</inno-tab-item>
-        <inno-tab-item>Tab item 4</inno-tab-item>
-        <inno-tab-item>Tab item 5</inno-tab-item>
-      </inno-tab>
-    </div>
+	<div
+		style="position: relative; width: 100%; display: block; background-color: #08191f; padding: 20px; margin-top: 20px">
+		<inno-tab layout="stretched" theme="dark" always-emphasized minimal-decorator>
+			<inno-tab-item postfix-icon="help">Tab item 1</inno-tab-item>
+			<inno-tab-item>
+				<span>Tab item 2</span>
+				<inno-icon icon="help" size="32"></inno-icon>
+			</inno-tab-item>
+			<inno-tab-item>Tab item 3</inno-tab-item>
+			<inno-tab-item>Tab item 4</inno-tab-item>
+			<inno-tab-item>Tab item 5</inno-tab-item>
+		</inno-tab>
+	</div>
 
-    <div class="progress-bars" style="display: block; padding-top: 20px; padding: 10px">
-      <button id="progressRandomizer">Randomize progress!</button>
-      <inno-progress-bar style="margin-bottom: 10px" progress-percentage="50" progress-text="your progress text"></inno-progress-bar>
-      <inno-progress-bar progress-text="your progress text" progress-percentage="50" percentage-precision="2" trailing-zeroes="true" variant="dark"></inno-progress-bar>
-    </div>
+	<div
+		style="position: relative; width: 100%; display: block; background-color: white; padding: 20px; margin-top: 20px">
+		<inno-tab layout="auto" theme="light">
+			<inno-tab-item>Tab item 1</inno-tab-item>
+			<inno-tab-item>Tab item 2</inno-tab-item>
+			<inno-tab-item>Tab item 3</inno-tab-item>
+			<inno-tab-item>Tab item 4</inno-tab-item>
+			<inno-tab-item>Tab item 5</inno-tab-item>
+			<inno-tab-item>Tab item 6</inno-tab-item>
+			<inno-tab-item>Tab item 7</inno-tab-item>
+			<inno-tab-item>Tab item 8</inno-tab-item>
+			<inno-tab-item>Tab item 9</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+			<inno-tab-item>Tab item 10</inno-tab-item>
+			<inno-tab-item>Tab item 11</inno-tab-item>
+			<inno-tab-item>Tab item 12</inno-tab-item>
+			<inno-tab-item>Tab item 13</inno-tab-item>
+			<inno-tab-item>Tab item 14</inno-tab-item>
+			<inno-tab-item>Tab item 15</inno-tab-item>
+		</inno-tab>
+	</div>
 
-    <div class="drag-n-drop" style="display: flex; flex-direction: column; padding-top: 20px; gap: 10px">
-      <div class="light-bg" style="display: flex; flex-direction: row; gap: 10px; overflow-x: auto">
-        <inno-drag-and-drop></inno-drag-and-drop>
-        <inno-drag-and-drop state="UPLOAD_FAILED"></inno-drag-and-drop>
-        <inno-drag-and-drop disabled="true"></inno-drag-and-drop>
-        <inno-drag-and-drop state="LOADING"></inno-drag-and-drop>
-        <inno-drag-and-drop state="UPLOAD_SUCCESS"></inno-drag-and-drop>
-      </div>
-      <div class="dark-bg" style="display: flex; flex-direction: row; gap: 10px; padding-top: 20px; overflow-x: auto; background-color: #08191f">
-        <inno-drag-and-drop variant="light"></inno-drag-and-drop>
-        <inno-drag-and-drop variant="light" state="UPLOAD_FAILED"></inno-drag-and-drop>
-        <inno-drag-and-drop variant="light" disabled="true"></inno-drag-and-drop>
-        <inno-drag-and-drop variant="light" state="LOADING"></inno-drag-and-drop>
-        <inno-drag-and-drop variant="light" state="UPLOAD_SUCCESS"></inno-drag-and-drop>
-      </div>
-    </div>
+	<div
+		style="position: relative; width: 100%; display: block; background-color: #e1f000; padding: 20px; margin-top: 20px">
+		<inno-tab layout="stretched" theme="light" always-emphasized>
+			<inno-tab-item postfix-icon="help">Tab item 1</inno-tab-item>
+			<inno-tab-item>Tab item 2</inno-tab-item>
+			<inno-tab-item>Tab item 3</inno-tab-item>
+			<inno-tab-item>Tab item 4</inno-tab-item>
+			<inno-tab-item>Tab item 5</inno-tab-item>
+		</inno-tab>
+	</div>
 
-    <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
-      <inno-status-message id="msg1111" message-type="info"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </inno-status-message>
-      <inno-status-message message-type="warning">
-        <span style="font-weight: bold">Warning:</span>
-        <span>long long long long long long2 long2 long2 message</span>
-      </inno-status-message>
-      <inno-status-message message-type="error">message</inno-status-message>
-      <inno-status-message message-type="success">message</inno-status-message>
-    </div>
-  </body>
+	<div class="progress-bars" style="display: block; padding-top: 20px; padding: 10px">
+		<button id="progressRandomizer">Randomize progress!</button>
+		<inno-progress-bar style="margin-bottom: 10px" progress-percentage="50"
+			progress-text="your progress text"></inno-progress-bar>
+		<inno-progress-bar progress-text="your progress text" progress-percentage="50" percentage-precision="2"
+			trailing-zeroes="true" variant="dark"></inno-progress-bar>
+	</div>
 
-  <script>
-    const pane1 = document.getElementById('button-showcase');
-    const button1 = document.getElementById('button-showcase-toggle');
+	<div class="drag-n-drop" style="display: flex; flex-direction: column; padding-top: 20px; gap: 10px">
+		<div class="light-bg" style="display: flex; flex-direction: row; gap: 10px; overflow-x: auto">
+			<inno-drag-and-drop></inno-drag-and-drop>
+			<inno-drag-and-drop state="UPLOAD_FAILED"></inno-drag-and-drop>
+			<inno-drag-and-drop disabled="true"></inno-drag-and-drop>
+			<inno-drag-and-drop state="LOADING"></inno-drag-and-drop>
+			<inno-drag-and-drop state="UPLOAD_SUCCESS"></inno-drag-and-drop>
+		</div>
+		<div class="dark-bg"
+			style="display: flex; flex-direction: row; gap: 10px; padding-top: 20px; overflow-x: auto; background-color: #08191f">
+			<inno-drag-and-drop variant="light"></inno-drag-and-drop>
+			<inno-drag-and-drop variant="light" state="UPLOAD_FAILED"></inno-drag-and-drop>
+			<inno-drag-and-drop variant="light" disabled="true"></inno-drag-and-drop>
+			<inno-drag-and-drop variant="light" state="LOADING"></inno-drag-and-drop>
+			<inno-drag-and-drop variant="light" state="UPLOAD_SUCCESS"></inno-drag-and-drop>
+		</div>
+	</div>
 
-    button1.addEventListener('click', () => {
-      pane1.expanded = pane1.expanded ? undefined : true;
-    });
+	<div style="display: flex; flex-direction: column; gap: 10px; padding: 10px">
+		<inno-status-message id="msg1111" message-type="info"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+			diam nonumy eirmod. </inno-status-message>
+		<inno-status-message message-type="warning">
+			<span style="font-weight: bold">Warning:</span>
+			<span>long long long long long long2 long2 long2 message</span>
+		</inno-status-message>
+		<inno-status-message message-type="error">message</inno-status-message>
+		<inno-status-message message-type="success">message</inno-status-message>
+	</div>
+</body>
 
-    const pane2 = document.getElementById('left-pane');
-    const button2 = document.getElementById('left-toggle');
+<script>
+	const split = document.getElementById('splittest');
+	split.slotNames = ["split-slot-0", "split-slot-1", "split-slot-2", "split-slot-3"];
+	const split2 = document.getElementById('splittest2');
+	split2.slotNames = ["split-slot-4", "split-slot-5"];
+	const pane1 = document.getElementById('button-showcase');
+	const button1 = document.getElementById('button-showcase-toggle');
 
-    button2.addEventListener('click', () => {
-      pane2.expanded = pane2.expanded ? undefined : true;
-    });
+	button1.addEventListener('click', () => {
+		pane1.expanded = pane1.expanded ? undefined : true;
+	});
 
-    const pane3 = document.getElementById('top-pane');
-    const button3 = document.getElementById('top-toggle');
+	const pane2 = document.getElementById('left-pane');
+	const button2 = document.getElementById('left-toggle');
 
-    button3.addEventListener('click', () => {
-      pane3.expanded = pane1.expanded ? undefined : true;
-    });
+	button2.addEventListener('click', () => {
+		pane2.expanded = pane2.expanded ? undefined : true;
+	});
 
-    const pane4 = document.getElementById('bottom-pane');
-    const button4 = document.getElementById('bottom-toggle');
+	const pane3 = document.getElementById('top-pane');
+	const button3 = document.getElementById('top-toggle');
 
-    button4.addEventListener('click', () => {
-      pane4.expanded = pane1.expanded ? undefined : true;
-    });
+	button3.addEventListener('click', () => {
+		pane3.expanded = pane1.expanded ? undefined : true;
+	});
 
-    document.getElementById('manualbtn').addEventListener('click', () => {
-      var popover = document.getElementById('manualpop');
-      if (popover.visible) {
-        popover.visible = false;
-      } else {
-        popover.visible = true;
-      }
-    });
+	const pane4 = document.getElementById('bottom-pane');
+	const button4 = document.getElementById('bottom-toggle');
 
-    document.getElementById('testform').addEventListener('submit', event => {
-      event.preventDefault();
-      console.log(event);
+	button4.addEventListener('click', () => {
+		pane4.expanded = pane1.expanded ? undefined : true;
+	});
 
-      const formData = new FormData(event.target);
-      const formProps = Object.fromEntries(formData);
-      console.log(formProps);
-    });
+	document.getElementById('manualbtn').addEventListener('click', () => {
+		var popover = document.getElementById('manualpop');
+		if (popover.visible) {
+			popover.visible = false;
+		} else {
+			popover.visible = true;
+		}
+	});
 
-    const randomizerBtn = document.getElementById('progressRandomizer');
-    randomizerBtn.addEventListener('click', () => {
-      document.querySelectorAll('inno-progress-bar').forEach(el => {
-        el.progressPercentage = Math.random() * 100;
-      });
-    });
+	document.getElementById('testform').addEventListener('submit', event => {
+		event.preventDefault();
+		console.log(event);
 
-    document.getElementById('modalbutton1').addEventListener('click', async () => {
-      const modal = document.getElementById('innomodal1');
-      await modal.showModal();
-      modal.addEventListener('dialogDismiss', event => {
-        console.log(event);
-      });
-      modal.addEventListener('dialogClose', event => {
-        console.log(event);
-      });
-    });
+		const formData = new FormData(event.target);
+		const formProps = Object.fromEntries(formData);
+		console.log(formProps);
+	});
 
-    document.querySelectorAll('inno-drag-and-drop').forEach(el => {
-      el.texts = {
-        firstLineText: 'Drag & Drop',
-        secondLineText: 'Browse files',
-        orText: 'or',
-        dragText: 'Please drop your files here',
-        loadingText: 'Loading...',
-        uploadFailedText: 'Something went wrong. Please try again. ',
-        uploadSuccessText: 'File uploaded successfully.',
-        acceptedFileTypesText: '*File must be .pdf',
-        uploadDisabledText: 'File upload is disabled',
-      };
-    });
-  </script>
+	const randomizerBtn = document.getElementById('progressRandomizer');
+	randomizerBtn.addEventListener('click', () => {
+		document.querySelectorAll('inno-progress-bar').forEach(el => {
+			el.progressPercentage = Math.random() * 100;
+		});
+	});
+
+	document.getElementById('modalbutton1').addEventListener('click', async () => {
+		const modal = document.getElementById('innomodal1');
+		await modal.showModal();
+		modal.addEventListener('dialogDismiss', event => {
+			console.log(event);
+		});
+		modal.addEventListener('dialogClose', event => {
+			console.log(event);
+		});
+	});
+
+	document.querySelectorAll('inno-drag-and-drop').forEach(el => {
+		el.texts = {
+			firstLineText: 'Drag & Drop',
+			secondLineText: 'Browse files',
+			orText: 'or',
+			dragText: 'Please drop your files here',
+			loadingText: 'Loading...',
+			uploadFailedText: 'Something went wrong. Please try again. ',
+			uploadSuccessText: 'File uploaded successfully.',
+			acceptedFileTypesText: '*File must be .pdf',
+			uploadDisabledText: 'File upload is disabled',
+		};
+	});
+</script>
+
 </html>

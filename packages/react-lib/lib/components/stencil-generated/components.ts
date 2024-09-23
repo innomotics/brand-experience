@@ -33,6 +33,9 @@ import { InnoProgressBar as InnoProgressBarElement, defineCustomElement as defin
 import { InnoRadio as InnoRadioElement, defineCustomElement as defineInnoRadio } from "@innomotics/brand-experience/dist/components/inno-radio.js";
 import { InnoSelectItem as InnoSelectItemElement, defineCustomElement as defineInnoSelectItem } from "@innomotics/brand-experience/dist/components/inno-select-item.js";
 import { InnoSelect as InnoSelectElement, defineCustomElement as defineInnoSelect } from "@innomotics/brand-experience/dist/components/inno-select.js";
+import { InnoSplitGutter as InnoSplitGutterElement, defineCustomElement as defineInnoSplitGutter } from "@innomotics/brand-experience/dist/components/inno-split-gutter.js";
+import { InnoSplitItem as InnoSplitItemElement, defineCustomElement as defineInnoSplitItem } from "@innomotics/brand-experience/dist/components/inno-split-item.js";
+import { InnoSplit as InnoSplitElement, defineCustomElement as defineInnoSplit } from "@innomotics/brand-experience/dist/components/inno-split.js";
 import { InnoStatusMessage as InnoStatusMessageElement, defineCustomElement as defineInnoStatusMessage } from "@innomotics/brand-experience/dist/components/inno-status-message.js";
 import { InnoTabItem as InnoTabItemElement, defineCustomElement as defineInnoTabItem } from "@innomotics/brand-experience/dist/components/inno-tab-item.js";
 import { InnoTab as InnoTabElement, defineCustomElement as defineInnoTab } from "@innomotics/brand-experience/dist/components/inno-tab.js";
@@ -331,6 +334,36 @@ export const InnoSelectItem: StencilReactComponent<InnoSelectItemElement, InnoSe
         onItemLabelChanged: 'itemLabelChanged'
     } as InnoSelectItemEvents,
     defineCustomElement: defineInnoSelectItem
+});
+
+type InnoSplitEvents = NonNullable<unknown>;
+
+export const InnoSplit: StencilReactComponent<InnoSplitElement, InnoSplitEvents> = /*@__PURE__*/ createComponent<InnoSplitElement, InnoSplitEvents>({
+    tagName: 'inno-split',
+    elementClass: InnoSplitElement,
+    react: React,
+    events: {} as InnoSplitEvents,
+    defineCustomElement: defineInnoSplit
+});
+
+type InnoSplitGutterEvents = NonNullable<unknown>;
+
+export const InnoSplitGutter: StencilReactComponent<InnoSplitGutterElement, InnoSplitGutterEvents> = /*@__PURE__*/ createComponent<InnoSplitGutterElement, InnoSplitGutterEvents>({
+    tagName: 'inno-split-gutter',
+    elementClass: InnoSplitGutterElement,
+    react: React,
+    events: {} as InnoSplitGutterEvents,
+    defineCustomElement: defineInnoSplitGutter
+});
+
+type InnoSplitItemEvents = NonNullable<unknown>;
+
+export const InnoSplitItem: StencilReactComponent<InnoSplitItemElement, InnoSplitItemEvents> = /*@__PURE__*/ createComponent<InnoSplitItemElement, InnoSplitItemEvents>({
+    tagName: 'inno-split-item',
+    elementClass: InnoSplitItemElement,
+    react: React,
+    events: {} as InnoSplitItemEvents,
+    defineCustomElement: defineInnoSplitItem
 });
 
 type InnoStatusMessageEvents = { onCloseMessage: EventName<CustomEvent<any>> };

@@ -760,6 +760,36 @@ export namespace Components {
         "value": any;
     }
     /**
+     * Experimental component that lets the user separate and resize panels. Should only contain inno-split-item children components.
+     * The inno-split-item components can contain inno-split component for nesting.
+     */
+    interface InnoSplit {
+        "orientation": 'horizontal' | 'vertical';
+        /**
+          * Reinit the component. Can be used if the number of inno-split-items change.
+         */
+        "reInit": () => Promise<void>;
+        /**
+          * Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items.
+         */
+        "slotNames": string[];
+        /**
+          * Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes.
+         */
+        "splitAreasDefaultSizes": number[];
+    }
+    /**
+     * Gutter for the inno-split component. Inserted automatically. Should not be used as a standalone component.
+     */
+    interface InnoSplitGutter {
+        "orientation": 'horizontal' | 'vertical';
+    }
+    /**
+     * Should be only used with inno-split component. Can contain inno-split component for nesting.
+     */
+    interface InnoSplitItem {
+    }
+    /**
      * Represents a status message entry.
      */
     interface InnoStatusMessage {
@@ -1390,6 +1420,34 @@ declare global {
         prototype: HTMLInnoSelectItemElement;
         new (): HTMLInnoSelectItemElement;
     };
+    /**
+     * Experimental component that lets the user separate and resize panels. Should only contain inno-split-item children components.
+     * The inno-split-item components can contain inno-split component for nesting.
+     */
+    interface HTMLInnoSplitElement extends Components.InnoSplit, HTMLStencilElement {
+    }
+    var HTMLInnoSplitElement: {
+        prototype: HTMLInnoSplitElement;
+        new (): HTMLInnoSplitElement;
+    };
+    /**
+     * Gutter for the inno-split component. Inserted automatically. Should not be used as a standalone component.
+     */
+    interface HTMLInnoSplitGutterElement extends Components.InnoSplitGutter, HTMLStencilElement {
+    }
+    var HTMLInnoSplitGutterElement: {
+        prototype: HTMLInnoSplitGutterElement;
+        new (): HTMLInnoSplitGutterElement;
+    };
+    /**
+     * Should be only used with inno-split component. Can contain inno-split component for nesting.
+     */
+    interface HTMLInnoSplitItemElement extends Components.InnoSplitItem, HTMLStencilElement {
+    }
+    var HTMLInnoSplitItemElement: {
+        prototype: HTMLInnoSplitItemElement;
+        new (): HTMLInnoSplitItemElement;
+    };
     interface HTMLInnoStatusMessageElementEventMap {
         "closeMessage": any;
     }
@@ -1529,6 +1587,9 @@ declare global {
         "inno-radio": HTMLInnoRadioElement;
         "inno-select": HTMLInnoSelectElement;
         "inno-select-item": HTMLInnoSelectItemElement;
+        "inno-split": HTMLInnoSplitElement;
+        "inno-split-gutter": HTMLInnoSplitGutterElement;
+        "inno-split-item": HTMLInnoSplitItemElement;
         "inno-status-message": HTMLInnoStatusMessageElement;
         "inno-status-message-container": HTMLInnoStatusMessageContainerElement;
         "inno-tab": HTMLInnoTabElement;
@@ -2338,6 +2399,32 @@ declare namespace LocalJSX {
         "value"?: any;
     }
     /**
+     * Experimental component that lets the user separate and resize panels. Should only contain inno-split-item children components.
+     * The inno-split-item components can contain inno-split component for nesting.
+     */
+    interface InnoSplit {
+        "orientation"?: 'horizontal' | 'vertical';
+        /**
+          * Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items.
+         */
+        "slotNames": string[];
+        /**
+          * Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes.
+         */
+        "splitAreasDefaultSizes"?: number[];
+    }
+    /**
+     * Gutter for the inno-split component. Inserted automatically. Should not be used as a standalone component.
+     */
+    interface InnoSplitGutter {
+        "orientation"?: 'horizontal' | 'vertical';
+    }
+    /**
+     * Should be only used with inno-split component. Can contain inno-split component for nesting.
+     */
+    interface InnoSplitItem {
+    }
+    /**
      * Represents a status message entry.
      */
     interface InnoStatusMessage {
@@ -2535,6 +2622,9 @@ declare namespace LocalJSX {
         "inno-radio": InnoRadio;
         "inno-select": InnoSelect;
         "inno-select-item": InnoSelectItem;
+        "inno-split": InnoSplit;
+        "inno-split-gutter": InnoSplitGutter;
+        "inno-split-item": InnoSplitItem;
         "inno-status-message": InnoStatusMessage;
         "inno-status-message-container": InnoStatusMessageContainer;
         "inno-tab": InnoTab;
@@ -2610,6 +2700,19 @@ declare module "@stencil/core" {
             "inno-radio": LocalJSX.InnoRadio & JSXBase.HTMLAttributes<HTMLInnoRadioElement>;
             "inno-select": LocalJSX.InnoSelect & JSXBase.HTMLAttributes<HTMLInnoSelectElement>;
             "inno-select-item": LocalJSX.InnoSelectItem & JSXBase.HTMLAttributes<HTMLInnoSelectItemElement>;
+            /**
+             * Experimental component that lets the user separate and resize panels. Should only contain inno-split-item children components.
+             * The inno-split-item components can contain inno-split component for nesting.
+             */
+            "inno-split": LocalJSX.InnoSplit & JSXBase.HTMLAttributes<HTMLInnoSplitElement>;
+            /**
+             * Gutter for the inno-split component. Inserted automatically. Should not be used as a standalone component.
+             */
+            "inno-split-gutter": LocalJSX.InnoSplitGutter & JSXBase.HTMLAttributes<HTMLInnoSplitGutterElement>;
+            /**
+             * Should be only used with inno-split component. Can contain inno-split component for nesting.
+             */
+            "inno-split-item": LocalJSX.InnoSplitItem & JSXBase.HTMLAttributes<HTMLInnoSplitItemElement>;
             /**
              * Represents a status message entry.
              */

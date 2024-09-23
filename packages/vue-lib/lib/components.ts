@@ -291,6 +291,21 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
 ]);
 
 
+export const InnoSplit = /*@__PURE__*/ defineContainer<JSX.InnoSplit>('inno-split', undefined, [
+  'orientation',
+  'splitAreasDefaultSizes',
+  'slotNames'
+]);
+
+
+export const InnoSplitGutter = /*@__PURE__*/ defineContainer<JSX.InnoSplitGutter>('inno-split-gutter', undefined, [
+  'orientation'
+]);
+
+
+export const InnoSplitItem = /*@__PURE__*/ defineContainer<JSX.InnoSplitItem>('inno-split-item', undefined);
+
+
 export const InnoStatusMessage = /*@__PURE__*/ defineContainer<JSX.InnoStatusMessage>('inno-status-message', undefined, [
   'theme',
   'messageType',
