@@ -702,6 +702,71 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
 
 
 @ProxyCmp({
+  inputs: ['orientation', 'slotNames', 'splitAreasDefaultSizes'],
+  methods: ['reInit']
+})
+@Component({
+  selector: 'inno-split',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['orientation', 'slotNames', 'splitAreasDefaultSizes'],
+})
+export class InnoSplit {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoSplit extends Components.InnoSplit {}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'inno-split-gutter',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoSplitGutter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoSplitGutter extends Components.InnoSplitGutter {}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'inno-split-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InnoSplitItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InnoSplitItem extends Components.InnoSplitItem {}
+
+
+@ProxyCmp({
   inputs: ['autoClose', 'autoCloseDelay', 'icon', 'iconColor', 'messageType', 'showProgress', 'theme']
 })
 @Component({

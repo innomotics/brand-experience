@@ -2,15 +2,6 @@
   display: grid;
   inline-size: 100%;
   block-size: 100%;
-  background-color: aquamarine;
-
-  /*&.horizontal {
-    flex-direction: row;
-  }
-
-  &.vertical {
-    flex-direction: column;
-  }*/
 
   &.dragging {
     user-select: none !important;
