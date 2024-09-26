@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-angular-lib",
-  "version": "0.0.2-beta-5",
+  "version": "0.0.2-beta-6",
   "description": "> TODO: description",
   "author": "",
   "types": "dist/types/index.d.ts",
@@ -30,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-5"
+    "@innomotics/brand-experience": "^0.0.2-beta-6"
   },
   "devDependencies": {
     "ng-packagr": "^17.3.0 || ^18.0.0"
@@ -39,9 +39,9 @@
     "@angular/common": "^17.3.5 || ^18.0.0",
     "@angular/core": "^17.3.5 || ^18.0.0",
     "@angular/forms": "^17.3.5 || ^18.0.0",
-    "@innomotics/brand-experience": "^0.0.2-beta-5",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-5",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-5",
+    "@innomotics/brand-experience": "^0.0.2-beta-6",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-6",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-6",
     "typescript": "^5.3.3"
   },
   "publishConfig": {
