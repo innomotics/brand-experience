@@ -48,6 +48,25 @@
     }
   }
 
+  &.primary {
+    transition: background-color 0.3s cubic-bezier(0.84, 0, 0.58, 1);
+
+    &:hover:not(.disabled):not(:disabled) {
+      color: colors.$primary-200;
+      background-color: colors.$secondary-300;
+    }
+
+    .select-header {
+      inno-icon {
+        color: colors.$primary-200;
+      }
+    }
+
+    .icon-driven:not(inno-select-item) {
+      color: colors.$primary-200;
+    }
+  }
+
   &.input-container {
     display: flex;
     flex-direction: column;
@@ -56,6 +75,10 @@
     height: 56px;
     max-height: 56px;
     min-height: 56px;
+
+    &.primary {
+      border: none;
+    }
 
     .select-header {
       padding: 8px 16px 8px 16px;
@@ -98,6 +121,18 @@
               color: colors.$text-dark-lowemphasis;
             }
           }
+
+          &.primary {
+            color: colors.$primary-200;
+
+            &.disabled-light {
+              color: colors.$interaction-light-disabled;
+            }
+
+            &.disabled-dark {
+              color: colors.$interaction-dark-disabled;
+            }
+          }
         }
 
         .float {
@@ -128,6 +163,18 @@
               color: colors.$text-dark-lowemphasis;
             }
           }
+
+          &.primary {
+            color: colors.$primary-200;
+
+            &.disabled-light {
+              color: colors.$interaction-light-disabled;
+            }
+
+            &.disabled-dark {
+              color: colors.$interaction-dark-disabled;
+            }
+          }
         }
       }
     }
@@ -145,6 +192,18 @@
 
       &.disabled {
         background-color: rgb(colors.$primary-200, 0.2);
+      }
+    }
+
+    &.primary {
+      background-color: colors.$primary-100;
+
+      &.disabled-light {
+        background-color: colors.$additional-light-200;
+      }
+
+      &.disabled-dark {
+        background-color: colors.$additional-dark-200;
       }
     }
   }
@@ -165,6 +224,22 @@
     }
 
     .select-item.icon-driven {
+      &.light.disabled {
+        color: colors.$secondary-800;
+      }
+
+      &.dark.disabled {
+        color: colors.$secondary-300;
+      }
+
+      &.disabled-light {
+        color: colors.$interaction-light-disabled;
+      }
+
+      &.disabled-dark {
+        color: colors.$interaction-dark-disabled;
+      }
+
       .icon-driven-label {
         font-size: 16px;
         font-weight: 400;

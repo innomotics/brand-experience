@@ -39,8 +39,14 @@ export class InnoSelect {
   /**
    * Color variant of the select.
    */
-  @Prop({ mutable: true }) variant: 'light' | 'dark' = 'light';
+  @Prop({ mutable: true }) variant: 'light' | 'dark' | 'primary' = 'light';
   @State() isOpen: boolean = false;
+
+  /**
+   * Depending on the container html element's background color you can choose a lighter or darker disabled style.
+   * Only applicable when variant is 'primary'.
+   */
+  @Prop({ mutable: true }) disabledBackgroundColor: 'light' | 'dark' = 'light';
 
   /**
    * Icon for select when no item selected. Use either this or the iconFont property.
@@ -400,9 +406,12 @@ export class InnoSelect {
           'isactive': !this.valueIsUndefined,
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
+          'primary': this.variant === 'primary',
           'disabled': this.disabled,
+          'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
+          'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
         }}
-        onClick={(e) => this.selectClicked(e)}
+        onClick={(e: MouseEvent) => this.selectClicked(e)}
         onFocusout={() => this.onFocusout()}
       >
         <div class="select-wrapper" ref={el => this.wrapperRef = el as HTMLDivElement}>
@@ -413,17 +422,23 @@ export class InnoSelect {
                   label: true,
                   float: !this.valueIsUndefined,
                   disabled: this.disabled,
+                  'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
+                  'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark',
                   light: this.variant === 'light',
-                  dark: this.variant === 'dark'
+                  dark: this.variant === 'dark',
+                  primary: this.variant === 'primary'
                 }}
                   innerHTML={sanitizeHtml(this.label)}
                   ref={el => this.floatingLabel = el}>
                 </span>
                 <span class={{
-                  "label-value": true,
+                  'label-value': true,
                   disabled: this.disabled,
+                  'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
+                  'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark',
                   light: this.variant === 'light',
-                  dark: this.variant === 'dark'
+                  dark: this.variant === 'dark',
+                  primary: this.variant === 'primary'
                 }}>
                   {this.selectedItem?.label}
                 </span>
@@ -431,7 +446,15 @@ export class InnoSelect {
               <inno-icon class="chevron" icon={this.isOpen ? 'chevron-up' : 'chevron-down'} size={16}></inno-icon>{' '}
             </div>
           ) : (
-            <div class="select-item icon-driven">
+            <div class={{
+              'select-item': true,
+              'icon-driven': true,
+              'light': this.variant === 'light',
+              'dark': this.variant === 'dark',
+              disabled: this.disabled,
+              'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
+              'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
+            }}>
               {(this.selectedItem?.icon || this.selectedItem?.iconFont) ? (
                 <span>
                   {this.selectedItem?.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}

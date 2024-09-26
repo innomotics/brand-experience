@@ -669,6 +669,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Depending on the container html element's background color you can choose a lighter or darker disabled style. Only applicable when variant is 'primary'.
+         */
+        "disabledBackgroundColor": 'light' | 'dark';
+        /**
           * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself. You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
          */
         "dropdownWidth": string;
@@ -703,7 +707,7 @@ export namespace Components {
         /**
           * Color variant of the select.
          */
-        "variant": 'light' | 'dark';
+        "variant": 'light' | 'dark' | 'primary';
     }
     interface InnoSelectItem {
         /**
@@ -2276,6 +2280,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Depending on the container html element's background color you can choose a lighter or darker disabled style. Only applicable when variant is 'primary'.
+         */
+        "disabledBackgroundColor"?: 'light' | 'dark';
+        /**
           * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself. You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
          */
         "dropdownWidth"?: string;
@@ -2326,7 +2334,7 @@ declare namespace LocalJSX {
         /**
           * Color variant of the select.
          */
-        "variant"?: 'light' | 'dark';
+        "variant"?: 'light' | 'dark' | 'primary';
     }
     interface InnoSelectItem {
         /**
