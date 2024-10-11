@@ -1,6 +1,6 @@
 {
   "name": "test-applications",
-  "version": "0.0.2-beta-3",
+  "version": "0.0.2-beta-6",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -74,7 +74,7 @@
     "prettier": "^3.0.3",
     "tslib": "*",
     "typescript": "5.4.5",
-    "vite": "5.2.10",
+    "vite": "^5.2.14",
     "vue-tsc": "2.0.14"
   }
 }

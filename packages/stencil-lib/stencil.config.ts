@@ -9,7 +9,7 @@ import autoprefixer from 'autoprefixer';
 const copyAssets = [
   {
     src: './../../../node_modules/@innomotics/brand-experience-fonts/dist',
-    dest: '',
+    dest: './fonts'
   },
 ];
 
@@ -65,7 +65,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null,
-      copy: copyAssets,
+      copy: copyAssets
     },
     angularOutputTarget({
       componentCorePackage: '@innomotics/brand-experience',

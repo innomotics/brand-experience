@@ -42,7 +42,7 @@ export class InnoIcon {
     this.content = await this.resolveIcon();
   }
 
-  async connectedCallback() {
+  componentWillLoad() {
     this.svgContentChanged();
   }
 
@@ -60,7 +60,7 @@ export class InnoIcon {
 
   async resolveIcon(): Promise<string | null> {
     if (this.icon) {
-      const svgIcon = await import(`@innomotics/brand-experience-icons/dist/inno-icons`);
+      const svgIcon = await import(`@innomotics/brand-experience-icons/lib/inno-icons`);
       const iconname = 'inno_' + this.icon.replace(/\-/g, '');
       return svgIcon[iconname];
     }

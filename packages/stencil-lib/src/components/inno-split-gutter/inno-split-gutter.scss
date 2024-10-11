@@ -1,0 +1,47 @@
+@use '@innomotics/brand-experience/styles/colors';
+
+:host {
+  display: block;
+
+  &.split-gutter {
+    background-color: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .handle {
+      background-color: colors.$primary-200;
+      border-radius: 8px;
+    }
+
+    &.vertical {
+      height: 16px;
+      min-height: 16px;
+      max-height: 16px;
+      width: 100%;
+      cursor: row-resize;
+
+      .handle {
+        height: 8px;
+        width: 40px;
+      }
+    }
+
+    &.horizontal {
+      width: 16px;
+      min-width: 16px;
+      max-width: 16px;
+      height: 100%;
+      cursor: col-resize;
+
+      .handle {
+        width: 8px;
+        height: 40px;
+      }
+    } 
+
+    &:hover .handle {
+      background-color: colors.$secondary-700;
+    }
+  }
+}
