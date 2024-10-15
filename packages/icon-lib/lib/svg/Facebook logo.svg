@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#08191F;}
-	.st1{clip-path:url(#SVGID_00000001621809629844984340000016496878081457850267_);}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
-</style>
-<path class="st2" d="M11.8,2H4.3C3,2,2,3,2,4.3v7.5C2,13,3,14,4.3,14h7.5c1.2,0,2.2-1,2.2-2.2V4.3C14,3,13,2,11.8,2z M11.4,8.5h-1.1
-	v4.2H8.4V8.5H7.7V7.1h0.7V6.2c0-1.2,0.5-1.9,1.9-1.9h1.4v1.4h-0.8c-0.5,0-0.6,0.2-0.6,0.6l0,0.8h1.3L11.4,8.5L11.4,8.5z"/>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="Icons_Power_Gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs><style>.cls-1{fill:#08191f;fill-rule:evenodd;}</style></defs><path class="cls-1" d="M11.75,2h-7.5c-1.24,0-2.25,1.01-2.25,2.25v7.5c0,1.24,1.01,2.25,2.25,2.25h7.5c1.24,0,2.25-1.01,2.25-2.25v-7.5c0-1.24-1.01-2.25-2.25-2.25ZM11.71,5.7h-.81c-.54,0-.57.2-.57.57v.79s1.27,0,1.27,0l-.15,1.4h0s-1.12,0-1.12,0v4.16h-1.88v-4.16h-.73v-1.4h.73v-.89c0-1.17.49-1.86,1.86-1.86h1.4v1.39Z"/></svg>

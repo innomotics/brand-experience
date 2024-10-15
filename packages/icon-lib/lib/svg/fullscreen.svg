@@ -1,10 +1,15 @@
-<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="full screen">
-<g id="Icon">
-<path d="M11.6247 2.58325V5.16659H5.16634V11.6249H2.58301V2.58325H11.6247Z" fill="#E1F000"/>
-<path d="M5.16634 19.3749V25.8333H11.6247V28.4166H2.58301V19.3749H5.16634Z" fill="#E1F000"/>
-<path d="M19.3747 2.58325V5.16659H25.833V11.6249H28.4163V2.58325H19.3747Z" fill="#E1F000"/>
-<path d="M25.833 25.8333V19.3749H28.4163V28.4166H19.3747V25.8333H25.833Z" fill="#E1F000"/>
-</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="power_grey" data-name="power grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="2 2 2 6 3 6 3 3 6 3 6 2 2 2"/>
+  <polygon class="cls-1" points="10 2 10 3 13 3 13 6 14 6 14 2 10 2"/>
+  <polygon class="cls-1" points="13 13 10 13 10 14 14 14 14 10 13 10 13 13"/>
+  <polygon class="cls-1" points="3 10 2 10 2 14 6 14 6 13 3 13 3 10"/>
 </svg>

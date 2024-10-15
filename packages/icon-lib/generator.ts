@@ -21,12 +21,10 @@ const styleRegexes: RegExp[] = [
 
 // these files are using explicitly style to achive the effects
 const passModifications: string[] = [
-  "globe",
   "Worldwide",
   "sort-down2",
   "sort-up-down2",
   "sort-up2",
-  "trash"
 ];
 
 //passsing directoryPath and callback function

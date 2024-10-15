@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Icon_PG" data-name="Icon PG">
+    <g>
+      <path class="cls-1" d="M26,16h2c0-4.8-2.9-9-7-10.9v2.2c3,1.7,5,5,5,8.7h0Z"/>
+      <path class="cls-1" d="M6,16c0-5.2,4-9.5,9-9.9v-2c-6.2.5-11,5.7-11,11.9s3.4,9.7,8,11.3v-2.1c-3.5-1.5-6-5.1-6-9.2Z"/>
+      <polygon class="cls-1" points="27.5 22.1 25 24.7 25 19 23 19 23 24.7 20.5 22.1 19 23.6 24 28.5 28.9 23.5 27.5 22.1"/>
+      <path class="cls-1" d="M23.2,15h-4.2V4l-9.1,13h4.1v11l9.2-13ZM13.7,15l3.3-4.7v6.7h2.3l-3.3,4.7v-6.7h-2.3Z"/>
+    </g>
+  </g>
+</svg>

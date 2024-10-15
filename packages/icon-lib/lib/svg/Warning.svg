@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="power_grey" data-name="power grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M8,2L1,14h14L8,2ZM8,3.98l5.26,9.02H2.74L8,3.98Z"/>
+  <rect class="cls-1" x="7.5" y="7" width="1" height="3"/>
+  <rect class="cls-1" x="7.5" y="11" width="1" height="1"/>
+</svg>

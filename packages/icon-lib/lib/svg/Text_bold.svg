@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="power_grey" data-name="power grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M10.11,7.66c.6-.31.99-.92.99-1.58,0-1.24-.95-2.05-2.41-2.05h-3.69v7.99h3.72c1.72,0,2.85-.96,2.85-2.43,0-.87-.58-1.63-1.47-1.93ZM7.27,5.94h1.06c.37,0,.6.21.6.52s-.24.53-.6.53h-1.06v-1.05ZM8.5,10.12h-1.23v-1.39h1.23c.5,0,.82.27.82.68s-.32.71-.82.71Z"/>
+</svg>

@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="power_grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#08191F;}
-	.st1{clip-path:url(#SVGID_00000106134213321554847800000003442234645632776844_);}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
-</style>
-<g>
-	<circle class="st0" cx="6" cy="8" r="0.5"/>
-	<circle class="st0" cx="8" cy="8" r="0.5"/>
-	<circle class="st0" cx="10" cy="8" r="0.5"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="power_grey" data-name="power grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="10" cy="8" r=".5"/>
+  <circle class="cls-1" cx="8" cy="8" r=".5"/>
+  <circle class="cls-1" cx="6" cy="8" r=".5"/>
 </svg>

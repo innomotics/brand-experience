@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icon_PG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M13.62,5.5H4.89l-1.38.61-.02,5.7,1.38.69h8.74l1.38-.69v-5.62l-1.38-.69ZM11,9.5h-4.5v-1h4.5v1ZM6.5,10.5h4.5v1h-4.5v-1ZM11,6.5v1h-4.5v-1h4.5ZM4.5,11.19v-4.43s.6-.26.6-.26h.39v5h-.38l-.62-.31ZM14,11.19l-.62.31h-1.38v-5h1.38l.62.31v4.38Z"/>
+  <rect class="cls-1" x="5.5" y="3.5" width="4.5" height="1"/>
+  <rect class="cls-1" x="1" y="8.5" width="2" height="1"/>
+</svg>

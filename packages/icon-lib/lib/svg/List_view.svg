@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icon_PG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M8,22h16v-12H8v12ZM10,12h12v8h-12v-8Z"/>
+  <polygon class="cls-1" points="8 3 8 8 10 8 10 5 22 5 22 8 24 8 24 3 8 3"/>
+  <polygon class="cls-1" points="22 27 10 27 10 24 8 24 8 29 24 29 24 24 22 24 22 27"/>
+</svg>

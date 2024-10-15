@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="power_grey" data-name="power grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="6 1 6 2 13 2 13 12 11 12 11 13 14 13 14 1 6 1"/>
+  <rect class="cls-1" x="4" y="7" width="4" height="1"/>
+  <path class="cls-1" d="M2,15h8V3H2v12ZM3,4h6v10H3V4Z"/>
+  <rect class="cls-1" x="4" y="5" width="4" height="1"/>
+</svg>
