@@ -58,7 +58,7 @@ export class BreadcrumbItem {
           <a>
             {this.icon ? (<inno-icon icon={this.icon} size={this.iconSize}></inno-icon>) : this.label}
             <slot></slot>
-            {this.showChevron ? (<inno-icon icon="chevron-right" class="chevron" size={this.iconSize}></inno-icon>) : null}
+            {this.showChevron ? (<inno-icon icon="chevron_right" class="chevron" size={this.iconSize}></inno-icon>) : null}
           </a>
         </li>
       </Host>

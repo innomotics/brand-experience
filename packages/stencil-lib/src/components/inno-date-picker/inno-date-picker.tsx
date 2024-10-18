@@ -540,7 +540,7 @@ export class InnoDatePicker {
           }}
           tabIndex={0}
         >
-          <inno-icon class={iconClasses} icon="chevronrightsmall" size={16}></inno-icon>
+          <inno-icon class={iconClasses} icon="chevron_right_small" size={16}></inno-icon>
           <div style={{ 'min-width': 'max-content' }}>{`${year}`}</div>
         </div>,
       );
@@ -580,7 +580,7 @@ export class InnoDatePicker {
           onKeyUp={event => event.key === 'Enter' && this.selectMonth(index)}
           tabIndex={0}
         >
-          <inno-icon class={iconClasses} icon="chevronrightsmall" size={16}></inno-icon>
+          <inno-icon class={iconClasses} icon="chevron_right_small" size={16}></inno-icon>
           <div>
             <span>{`${month} ${this.tempYear}`}</span>
           </div>
@@ -594,14 +594,14 @@ export class InnoDatePicker {
   private header() {
     return (
       <div class="header" slot="header">
-        <inno-icon icon="chevronleftsmall" size={24} class="navigation" onClick={() => this.changeToAdjacentMonth(-1)}></inno-icon>
+        <inno-icon icon="chevron_left_small" size={24} class="navigation" onClick={() => this.changeToAdjacentMonth(-1)}></inno-icon>
         <div class="selector">
           <span ref={ref => (this.dropdownButtonRef = ref)} onClick={() => this.openDropdownSelector()}>
             {this.monthNames[this.selectedMonth]} {this.selectedYear}
             {this.dropDown()}
           </span>
         </div>
-        <inno-icon icon="chevronrightsmall" size={24} class="navigation" onClick={() => this.changeToAdjacentMonth(1)}></inno-icon>
+        <inno-icon icon="chevron_right_small" size={24} class="navigation" onClick={() => this.changeToAdjacentMonth(1)}></inno-icon>
       </div>
     );
   }

@@ -333,7 +333,7 @@ export class InnoTab {
   private leftArrow() {
     return (
       <div class={this.arrowStyle(true)} onClick={() => this.move(this.scrollAmount, true)} ref={ref => (this.arrowLeftElement = ref)}>
-        <inno-icon icon="chevronleftsmall" size={24}></inno-icon>
+        <inno-icon icon="chevron_left_small" size={24}></inno-icon>
       </div>
     );
   }
@@ -351,7 +351,7 @@ export class InnoTab {
   private rightArrow() {
     return (
       <div class={this.arrowStyle(false)} onClick={() => this.move(-this.scrollAmount, true)} ref={ref => (this.arrowRightElement = ref)}>
-        <inno-icon icon="chevronrightsmall" size={24}></inno-icon>
+        <inno-icon icon="chevron_right_small" size={24}></inno-icon>
       </div>
     );
   }

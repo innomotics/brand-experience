@@ -209,6 +209,18 @@
   }
 }
 
+.icon-table-wrapper {
+  display:grid;
+  grid-template-rows: min-content 1fr;
+  .header{
+    
+  }
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .font-display-container {
   display: flex;
   flex-wrap: wrap;
@@ -227,8 +239,8 @@
 
     background-color: innomotics.$primary-300;
     color: black;
-    
-    & > span:nth-child(1) {
+
+    &>span:nth-child(1) {
       font-size: 36px;
     }
   }

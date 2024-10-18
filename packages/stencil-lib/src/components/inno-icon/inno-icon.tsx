@@ -61,7 +61,7 @@ export class InnoIcon {
   async resolveIcon(): Promise<string | null> {
     if (this.icon) {
       const svgIcon = await import(`@innomotics/brand-experience-icons/lib/inno-icons`);
-      const iconname = 'inno_' + this.icon.replace(/\-/g, '');
+      const iconname = 'inno_' + this.icon;
       return svgIcon[iconname];
     }
 

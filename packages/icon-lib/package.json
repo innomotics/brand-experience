@@ -17,10 +17,11 @@
     "url": "git+https://github.com/innomotics/brand-experience.git"
   },
   "scripts": {
-    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyreadme",
+    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyicons && npm run copyreadme",
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "generateIconModule": "npx ts-node generator.ts",
-    "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\""
+    "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\"",
+    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\""
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
@@ -32,5 +33,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@iconify/tools": "^4.0.7"
   }
 }

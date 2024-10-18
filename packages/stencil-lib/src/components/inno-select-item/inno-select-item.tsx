@@ -182,7 +182,7 @@ export class InnoSelectItem {
         {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
         {this.iconFont && !this.icon ? <inno-icon iconFont={this.iconFont} size={24}></inno-icon> : null}
         <div class="content-wrapper">{this.label}</div>
-        {this.selected && !this.icon && !this.iconFont ? <inno-icon icon="checkcheckbox" size={24}></inno-icon> : null}
+        {this.selected && !this.icon && !this.iconFont ? <inno-icon icon="check_checkbox" size={24}></inno-icon> : null}
         {this.canFavorite ? this.favoriteStar() : null}
         {this.canFavorite ? this.favoriteStarPopup() : null}
       </Host>

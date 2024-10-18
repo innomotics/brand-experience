@@ -136,17 +136,17 @@ export class InnoPaginator {
     return (
       <Host>
         <button disabled={this.selectedPage === 0} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.first()}>
-          <inno-icon size={32} icon={'arrowdoubleleft'} variant={this.variant}></inno-icon>
+          <inno-icon size={32} icon={'arrow_double_left'} variant={this.variant}></inno-icon>
         </button>
         <button disabled={this.selectedPage === 0} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.prev()}>
-          <inno-icon size={32} icon={'arrowheadleft'} variant={this.variant}></inno-icon>
+          <inno-icon size={32} icon={'arrowhead_left'} variant={this.variant}></inno-icon>
         </button>
         <span class="basic-pagination">{this.renderPageButtons()} </span>
         <button disabled={this.selectedPage === this.pageCount} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.next()}>
-          <inno-icon size={32} icon={'arrowheadright'} variant={this.variant}></inno-icon>
+          <inno-icon size={32} icon={'arrowhead_right'} variant={this.variant}></inno-icon>
         </button>
         <button disabled={this.selectedPage === this.pageCount} class={{ light: this.variant == 'light', dark: this.variant == 'dark' }} onClick={() => this.last()}>
-          <inno-icon size={32} icon={'arrowdoubleright'} variant={this.variant}></inno-icon>
+          <inno-icon size={32} icon={'arrow_double_right'} variant={this.variant}></inno-icon>
         </button>
       </Host>
     );

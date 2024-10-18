@@ -172,7 +172,7 @@ export class InnoDragAndDrop {
   private renderSuccess() {
     return (
       <div class="state">
-        <inno-icon icon='checkcheckbox' size={48}></inno-icon>
+        <inno-icon icon='check_checkbox' size={48}></inno-icon>
         <span class="loading-text">{this.texts.uploadSuccessText}</span>
       </div>
     );

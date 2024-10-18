@@ -24,7 +24,7 @@ function App() {
         <InnoBreadcrumbItem label="Item 2"></InnoBreadcrumbItem>
         <InnoBreadcrumbItem label="Item 3"></InnoBreadcrumbItem>
       </InnoBreadcrumb>
-      <InnoIcon icon="youtubelogo"></InnoIcon>
+      <InnoIcon icon="youtube_logo"></InnoIcon>
 
       <InnoModalExample></InnoModalExample>
 

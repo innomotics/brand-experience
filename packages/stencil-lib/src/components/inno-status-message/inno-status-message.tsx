@@ -124,7 +124,7 @@ export class InnoStatusMessage {
 
     return (
       <div class={classes}>
-        <inno-icon icon="closesmall" size={32} onClick={() => this.closeMessage.emit()}></inno-icon>
+        <inno-icon icon="close_small" size={32} onClick={() => this.closeMessage.emit()}></inno-icon>
       </div>
     );
   }

@@ -1,86 +1,83 @@
 import * as fs from "fs";
-import * as path from "path";
+import { importDirectorySync } from '@iconify/tools/lib/import/directory';
+import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
+import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
+import { parseColors } from '@iconify/tools/lib/colors/parse';
+
 
 const directoryPath = "./lib/svg";
-
-const whiteSpaceFixRegex: RegExp = /(?<=((\s+d=.+)|(\s+points=.+)))\s*(\r|\n)\s{2,}(?=.*")/g;
-
-const standardRegexes: RegExp[] = [
-  /\r|\n|\s{2,}/g,
-  /<!--.*-->/g,
-  /stroke="[^\s]*/g,
-  //replace fill attribute 
-  /fill="[^\/ | ^\s | ^>]*/g,
-  /fill:[^;]*;/g
-];
-
-const styleRegexes: RegExp[] = [
-  /<style.*\/style>/g,
-  /class="[^\s]*/g,
-]
-
-// these files are using explicitly style to achive the effects
-const passModifications: string[] = [
-  "Worldwide",
-  "sort-down2",
-  "sort-up-down2",
-  "sort-up2",
-];
 
 //passsing directoryPath and callback function
 let moduleContent = "";
 
-let readmeContent = "# `Icons`\nimport {InnoIcon} from '@innomotics/brand-experience-react-lib';\n\n> Innomotics icons for inno-icon component\n\n<div className='icon-wrapper'>";
 
-let clearName = (name: string) => {
-  return name.replace(/\-{1,}|\s{1,}/g, "").toLowerCase();
-};
+let readmeContent = "import DownloadableIcon from '@site/src/components/DownloadableIcon/DownloadableIcon'\n\n# `Icons`\n\n> Innomotics icons for inno-icon component\n\n";
 
-/**
- * in some svgs there is a new line char followed by 2 white spaces while within a d="..." or points="...", 
- * optimizeSvg() would replace it with an empty string but that is incorrect as it would change the points/numbers
- */
-let fixWhiteSpacesBeforeOptimization = (content: string) => {
-  return content.replace(whiteSpaceFixRegex, " ");
-}
+let themes = [{ set: 'white', color: '#ffffff' }, { set: 'grey', color: '#aaaaaa' }, { set: 'lime', color: '#e1f000' }];
 
-let optimizeSvg = (content: string, regexes: RegExp[]) => {
-  for (let regex in regexes) {
-    content = content.replace(regexes[regex], "");
-  }
-  //replace style infos
-  return content.replace(/"/g, "'");
-};
+(() => {
 
-//generate ts module for dataurl-s
-fs.readdir(directoryPath, (err, files) => {
-  //handling error
-  if (err) {
-    return console.log("Unable to scan directory: " + err);
-  }
-  files.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  //listing all files using forEach
-  files.forEach((file) => {
+  const iconSet = importDirectorySync(directoryPath);
 
-    let name = path.parse(path.join(directoryPath, file)).name;
-
-    // Do whatever you want to do with the file
-    let content = fs.readFileSync(path.join(directoryPath, file));
-    let optimizedContent = content.toString();
-
-    optimizedContent = fixWhiteSpacesBeforeOptimization(optimizedContent);
-
-    if (!passModifications.includes(name)) {
-      optimizedContent = optimizeSvg(optimizedContent, standardRegexes.concat(styleRegexes));
+  iconSet.forEach((name, type) => {
+    console.log(`${name} - ${type} processing`);
+    if (type !== 'icon') {
+      console.log(`${name} - ${type} is not icon`);
+      return;
     }
-    else {
-      optimizedContent = optimizeSvg(optimizedContent, standardRegexes);
+
+    const svg = iconSet.toSVG(name);
+    if (!svg) {
+      // Invalid icon
+      console.log(`${name} - ${type} is invalid`);
+      iconSet.remove(name);
+      return;
     }
-    let clearedName = clearName(name);
-    moduleContent += `export const inno_${clearedName} = "${optimizedContent}";\n`;
-    readmeContent += `<div className="icon-item"><InnoIcon icon="${clearedName}" size="64"></InnoIcon><div>${clearedName}</div></div>`;
+
+    // Clean up and optimise icons
+    try {
+      cleanupSVG(svg);
+      parseColors(svg, {
+        defaultColor: "#ffffff",
+        callback: (attr, colorStr, color) => {
+          return "unset";
+        },
+      });
+      runSVGO(svg);
+    } catch (err) {
+      // Invalid icon
+      console.error(`Error parsing ${name}:`, err);
+      iconSet.remove(name);
+      return;
+    }
+    // Update icon
+    iconSet.fromSVG(name, svg);
   });
+
+  let names = [];
+  iconSet.forEach(name => {
+    let tsCompatibleName = name.replace(/-/g, "_");
+    moduleContent += `export const inno_${tsCompatibleName} = "${iconSet.toString(name).replace(/"/g, "'")}";\n`;
+    names.push(tsCompatibleName);
+
+    themes.forEach(theme => {
+
+      const svgColor = iconSet.toSVG(name);
+      if (!svgColor) {
+        return;
+      }
+      parseColors(svgColor, {
+        defaultColor: theme.color,
+        callback: (attr, colorStr, color) => {
+          return theme.color;
+        },
+      });
+      // Save to file
+      fs.writeFileSync(`./downloadoutput/${theme.set}/${name}.svg`, svgColor.toString());
+    });
+  });
+
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
-  readmeContent += "</div>";
+  readmeContent += `<DownloadableIcon iconnames={['${names.join('\',\'')}']}></DownloadableIcon>`;
   fs.writeFileSync("./readme.md", readmeContent);
-});
+})();
