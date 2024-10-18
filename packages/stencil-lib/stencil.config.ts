@@ -77,7 +77,6 @@ export const config: Config = {
     reactOutputTarget({
       stencilPackageName: '@innomotics/brand-experience',
       outDir:'../react-lib/lib/components/stencil-generated'
-      //proxiesFile: '../react-lib/lib/components/stencil-generated/index.ts',
     }),
     vueOutputTarget({
       componentCorePackage: '@innomotics/brand-experience',
