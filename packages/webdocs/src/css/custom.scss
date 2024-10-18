@@ -212,8 +212,9 @@
 .icon-table-wrapper {
   display:grid;
   grid-template-rows: min-content 1fr;
-  .header{
-    
+  .options{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
   }
   .icons {
     display: grid;

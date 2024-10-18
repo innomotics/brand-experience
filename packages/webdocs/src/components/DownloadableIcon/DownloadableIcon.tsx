@@ -1,4 +1,4 @@
-import { InnoIcon, InnoSelect, InnoSelectItem, InnoCheckbox, InnoButton } from '@innomotics/brand-experience-react-lib';
+import { InnoIcon, InnoSelect, InnoSelectItem, InnoInput } from '@innomotics/brand-experience-react-lib';
 import React from 'react';
 import JSZip from "jszip";
 
@@ -7,10 +7,21 @@ export default function DownloadableIcon({ iconnames }): JSX.Element {
         'white'
     );
 
+    const [filteredlist, filter] = React.useState([...iconnames]);
 
     const icons: React.JSX.Element[] = [];
 
-    iconnames.forEach(name => {
+    function filterlist(value){
+        if(value.detail !== ''){
+            filter(iconnames.filter(c=> c.includes(value.detail)));
+            
+        }
+        else{
+            filter([...iconnames]);
+        }
+    }
+
+    filteredlist.forEach(name => {
         const url = `/brand-experience/svg/${color}/${name}.svg`;
         const item = (
             <div className="icon-item"><InnoIcon icon={name} size={64}></InnoIcon><div>{name}</div><div><a download href={url}>Download</a></div></div>
@@ -26,6 +37,9 @@ export default function DownloadableIcon({ iconnames }): JSX.Element {
                     <InnoSelectItem value='grey' label='grey'></InnoSelectItem>
                     <InnoSelectItem id='lime' value='lime' label='lime'></InnoSelectItem>
                 </InnoSelect>
+                <InnoInput label="Search" variant="light" onValueChanged={(value) => filterlist(value)}>
+                <input type="string" />
+                </InnoInput> 
             </div>
             <div className="icons">
                 {icons}
