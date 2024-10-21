@@ -36,3 +36,13 @@ in tsconfig module and moduleResolution under compileroptions should set to
     "module": "esnext",
     "moduleResolution": "bundler",
 ```
+
+### .env
+
+you have to configure sass module to include node_modules when resolving styles. One way is to add an .env file to your project root with 
+
+```
+SASS_PATH=./node_modules
+
+```
+inside it.
