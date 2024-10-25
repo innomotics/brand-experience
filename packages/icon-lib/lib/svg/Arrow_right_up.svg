@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv_Power_Grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="10.12" y="18.91" width="3.95" height="2" transform="translate(-10.53 14.38) rotate(-45)"/>
+  <polygon class="cls-1" points="15 10 15 12 18.59 12 14.23 16.36 15.64 17.77 20 13.41 20 17 22 17 22 10 15 10"/>
+</svg>

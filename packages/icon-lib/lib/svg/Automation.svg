@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Automation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
-<g id="Motiv_x5F_White">
-	<polygon fill="#FFFFFF" points="26,21.03 26,19.03 6,19.03 6,21.03 15,21.03 15,27.02 10,27.02 10,29.02 22,29.02 22,27.02 
-		17,27.02 17,21.03 	"/>
-	<polygon fill="#FFFFFF" points="30,21.03 28,21.03 28,5.03 4,5.03 4,21.03 2,21.03 2,3.03 30,3.03 	"/>
-	<path fill="#FFFFFF" d="M26.03,17.01H5.97l4.58-7.66l2.44,0.62l3-2.42l3.02,2.41l2.44-0.6L26.03,17.01z M9.5,15.01h13l-2.01-3.35
-		l-1.96,0.48L16,10.11l-2.53,2.04l-1.97-0.5L9.5,15.01z"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="6 21.03 15 21.03 15 26.02 10 26.02 10 28.02 22 28.02 22 26.02 17 26.02 17 21.03 26 21.03 26 19.03 6 19.03 6 21.03"/>
+  <polygon class="cls-1" points="2 4.03 2 21.03 4 21.03 4 6.03 28 6.03 28 21.03 30 21.03 30 4.03 2 4.03"/>
+  <path class="cls-1" d="M19.01,9.96l-3.02-2.41-3,2.42-2.44-.62-4.58,7.66h20.06l-4.58-7.65-2.44.6ZM9.5,15.01l2-3.35,1.97.5,2.53-2.04,2.53,2.02,1.96-.48,2.01,3.35h-13Z"/>
 </svg>

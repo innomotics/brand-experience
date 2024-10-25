@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
     <style>
       .cls-1 {
@@ -8,6 +8,7 @@
       }
     </style>
   </defs>
-  <path class="cls-1" d="M39.63,19h-6.63v-3h-8v3h-1.4l-3.6,1.88v10.89l3.56,2.22h16.06l2.38-1.8v-11.39l-2.37-1.81ZM35,27h-8v-2h8v2ZM27,29h8v3h-8v-3ZM35,23h-8v-2h8v2ZM27,18h4v1h-4v-1ZM22,30.67v-8.57l2.09-1.09h.91v11h-.87l-2.13-1.33ZM40,31.21l-1.05.79h-1.95v-11h1.95l1.05.8v9.4Z"/>
-  <path class="cls-1" d="M15,13h3v-2H5v2h2v7H3v12h4v2h12v-17h-4v-4ZM5,30v-8h2v8h-2ZM17,19v13h-8V13h4v6h4Z"/>
+  <path class="cls-1" d="M27.41,14h-10.72l-1.7,1.13v-3.13h-3v-4h1v-2H4.07v2h.93v18h10v-1.13l1.7,1.13h10.72l2.59-2.59v-6.83l-2.59-2.59ZM13,24h-6V8h3v6h3v10ZM15,22.46v-4.93l2-1.33v7.6l-2-1.33ZM28,22.59l-1.41,1.41h-7.59v-4h6.97v-2h-6.97v-2h7.59l1.41,1.41v5.17Z"/>
+  <rect class="cls-1" x="17" y="11" width="5" height="2"/>
+  <rect class="cls-1" x="2" y="15" width="2" height="8"/>
 </svg>

@@ -443,7 +443,7 @@ export class InnoSelect {
                   {this.selectedItem?.label}
                 </span>
               </div>
-              <inno-icon class="chevron" icon={this.isOpen ? 'chevron_up' : 'chevron_down'} size={16}></inno-icon>{' '}
+              <inno-icon class="chevron" icon={this.isOpen ? 'chevron_up_small' : 'chevron_down_small'} size={16}></inno-icon>{' '}
             </div>
           ) : (
             <div class={{
@@ -468,7 +468,7 @@ export class InnoSelect {
                   <div class="icon-driven-label">{this.label}</div>
                 </span>
               )}
-              <inno-icon class="chevron" icon={this.isOpen ? 'chevron_up' : 'chevron_down'} size={16}></inno-icon>{' '}
+              <inno-icon class="chevron" icon={this.isOpen ? 'chevron_up_small' : 'chevron_down_small'} size={16}></inno-icon>{' '}
             </div>
           )}
           <div ref={el => (this.itemsContainerRef = el as HTMLDivElement)} class={{ items: true, opened: this.isVisible }}>

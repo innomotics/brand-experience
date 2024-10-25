@@ -3,7 +3,7 @@ import { importDirectorySync } from '@iconify/tools/lib/import/directory';
 import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
 import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
 import { parseColors } from '@iconify/tools/lib/colors/parse';
-
+import * as JSZip from 'jszip';
 
 const directoryPath = "./lib/svg";
 
@@ -13,7 +13,8 @@ let moduleContent = "";
 
 let readmeContent = "import DownloadableIcon from '@site/src/components/DownloadableIcon/DownloadableIcon'\n\n# `Icons`\n\n> Innomotics icons for inno-icon component\n\n";
 
-let themes = [{ set: 'white', color: '#ffffff' }, { set: 'grey', color: '#aaaaaa' }, { set: 'lime', color: '#e1f000' }];
+let themes = [{ set: 'white', color: '#ffffff' }, { set: 'powergrey', color: '#08191f' }, { set: 'lime', color: '#e1f000' }];
+let bundles = [{ set: 'white', zip: new JSZip() }, { set: 'powergrey', zip: new JSZip() }, { set: 'lime', zip: new JSZip() }];
 
 (() => {
 
@@ -55,12 +56,14 @@ let themes = [{ set: 'white', color: '#ffffff' }, { set: 'grey', color: '#aaaaaa
   });
 
   let names = [];
+
   iconSet.forEach(name => {
     let tsCompatibleName = name.replace(/-/g, "_");
     moduleContent += `export const inno_${tsCompatibleName} = "${iconSet.toString(name).replace(/"/g, "'")}";\n`;
     names.push(tsCompatibleName);
 
     themes.forEach(theme => {
+      let bundle = bundles.find(z=> z.set == theme.set);
 
       const svgColor = iconSet.toSVG(name);
       if (!svgColor) {
@@ -73,9 +76,16 @@ let themes = [{ set: 'white', color: '#ffffff' }, { set: 'grey', color: '#aaaaaa
         },
       });
       // Save to file
-      fs.writeFileSync(`./downloadoutput/${theme.set}/${name}.svg`, svgColor.toString());
+      bundle.zip = bundle.zip.file(`${tsCompatibleName}.svg`, svgColor.toString());
+      fs.writeFileSync(`./downloadoutput/${theme.set}/${tsCompatibleName}.svg`, svgColor.toString());
     });
   });
+
+  bundles.forEach(async (z)=>{
+    await z.zip.generateAsync({type:'arraybuffer'}).then(content=>{
+        fs.writeFileSync(`./downloadoutput/${z.set}/innoicons_${z.set}.zip`, Buffer.from(new Uint8Array(content)));
+    });
+  })
 
   fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
   readmeContent += `<DownloadableIcon iconnames={['${names.join('\',\'')}']}></DownloadableIcon>`;

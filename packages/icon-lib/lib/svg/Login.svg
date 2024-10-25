@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Icons_Power_Gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs><style>.cls-1{fill:#08191f;}</style></defs><path class="cls-1" d="M6,3v2h1v-1h6v8h-6v-1h-1v2h8V3H6ZM8.46,10.12l.71.71,2.83-2.83-2.83-2.83-.71.71,1.62,1.62H2v1h8.09l-1.62,1.62Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv_Power_Grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="5" y="15" width="4" height="2"/>
+  <polygon class="cls-1" points="12.97 22 12.97 24 24.97 24 24.97 8 12.97 8 12.97 10 10.97 10 10.97 6 26.97 6 26.97 26 10.97 26 10.97 22 12.97 22"/>
+  <polygon class="cls-1" points="16.05 11.05 14.64 12.46 17.17 15 11 15 11 17 17.17 17 14.64 19.54 16.05 20.95 21 16 16.05 11.05"/>
+</svg>

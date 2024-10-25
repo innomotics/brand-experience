@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Grinding" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
-<g id="Motiv_x5F_White">
-	<path fill="#FFFFFF" d="M21,29c-1.86,0-3.43-1.28-3.87-3h-2.25c-0.44,1.72-2.01,3-3.87,3s-3.43-1.28-3.87-3H4.99L3.02,15h25.96
-		l-1.99,11h-2.12C24.43,27.72,22.86,29,21,29z M13,24h6v1c0,1.1,0.9,2,2,2s2-0.9,2-2v-1h2.32l1.26-7H5.41l1.26,7H9v1
-		c0,1.1,0.9,2,2,2s2-0.9,2-2V24z"/>
-	<polygon fill="#FFFFFF" points="6.33,13 7.95,10.29 11.49,11.19 16,7.55 20.52,11.16 24.05,10.29 25.67,13 28,13 25.01,8 21,8.98 
-		15.99,4.99 11.01,9.01 6.99,7.98 4,13 	"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M3.02,14l1.97,11h2.13c.44,1.72,2.01,3,3.87,3s3.43-1.28,3.87-3h2.25c.44,1.72,2.01,3,3.87,3s3.43-1.28,3.87-3h2.12l1.99-11H3.02ZM25.32,23h-2.32v1c0,1.1-.9,2-2,2s-2-.9-2-2v-1h-6v1c0,1.1-.9,2-2,2s-2-.9-2-2v-1h-2.33l-1.26-7h21.18l-1.26,7Z"/>
+  <polygon class="cls-1" points="7.95 9.29 11.49 10.19 16 6.55 20.52 10.16 24.05 9.29 25.67 12 28 12 25.01 7 21 7.98 15.99 3.99 11.01 8.01 6.99 6.98 4 12 6.33 12 7.95 9.29"/>
 </svg>

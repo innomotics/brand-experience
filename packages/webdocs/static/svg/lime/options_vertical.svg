@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><style>
-.st0 {
-	fill: #e1f000;
-}
-.st1 {
-	clip-path: url(#SVGID_00000060024004622420528420000002100159245715983533_);
-}
-.st2 {
-	fill-rule: evenodd;
-	clip-rule: evenodd;
-	fill: #e1f000;
-}
-</style><circle cx="8" cy="6" r=".5" class="st0"/><circle cx="8" cy="8" r=".5" class="st0"/><circle cx="8" cy="10" r=".5" class="st0"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><style>.st1{clip-path:url(#SVGID_00000060024004622420528420000002100159245715983533_)}.st2{fill-rule:evenodd;clip-rule:evenodd}</style><circle cx="8" cy="6" r=".5" fill="#e1f000" class="st0"/><circle cx="8" cy="8" r=".5" fill="#e1f000" class="st0"/><circle cx="8" cy="10" r=".5" fill="#e1f000" class="st0"/></svg>

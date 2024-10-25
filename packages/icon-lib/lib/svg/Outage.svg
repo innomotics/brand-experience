@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Outage" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
-<g id="HG_Power_Grey" display="none">
-	<rect display="inline" fill="#08191F" width="32" height="32"/>
-</g>
-<g id="Motiv_Lime">
-	<path fill="#FFFFFF" d="M30,28.01L2.01,28L16,4.02L30,28.01z M5.49,26l21.02,0.01L16,7.98L5.49,26z"/>
-	<path fill="#FFFFFF" d="M14.99,12.99h2v7h-2V12.99z M15,22h2v2h-2V22z"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="15" y="22" width="2" height="2"/>
+  <rect class="cls-1" x="14.99" y="11.99" width="2" height="8"/>
+  <path class="cls-1" d="M16,4.02L2.01,28h27.99S16,4.02,16,4.02ZM16,7.98l10.51,18.02H5.49S16,7.98,16,7.98Z"/>
 </svg>

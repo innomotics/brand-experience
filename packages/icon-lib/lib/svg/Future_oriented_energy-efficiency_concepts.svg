@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M17.99,28.04v-11.04h-4.13L22.99,3.95v11.04l4.16-.04-9.16,13.08ZM17.71,15h2.29v6.69l3.29-4.7-2.29.02v-6.71l-3.29,4.7Z"/>
+  <rect class="cls-1" x="6" y="13" width="2" height="13"/>
+  <rect class="cls-1" x="10" y="18" width="2" height="8"/>
+  <rect class="cls-1" x="14" y="22" width="2" height="4"/>
+</svg>

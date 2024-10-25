@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="7.01" y="20.99" width="2" height="6"/>
+  <path class="cls-1" d="M28.58,12.65h0l-2.83-2.83-1.41,1.41,1.83,1.83H5.61c-1.99,0-3.61,1.57-3.61,3.5s1.62,3.5,3.61,3.5h15.39v6.94h2v-8.94H5.61c-.89,0-1.61-.67-1.61-1.5s.72-1.5,1.61-1.5h20.55l-1.83,1.83,1.41,1.41,2.83-2.83,1.43-1.41-1.42-1.41Z"/>
+</svg>

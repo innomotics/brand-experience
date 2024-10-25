@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Motiv_White" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><rect class="cls-1" x="6" y="16" width="12" height="2"/><rect class="cls-1" x="6" y="11" width="12" height="2"/><rect class="cls-1" x="6" y="21" width="12" height="2"/><rect class="cls-1" x="22" y="16" width="2" height="2"/><rect class="cls-1" x="22" y="21" width="2" height="2"/><polygon class="cls-1" points="24 14.01 20.39 10.39 21.8 8.98 24 11.18 27.3 7.88 28.71 9.3 24 14.01"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="6" y="16" width="11" height="2"/>
+  <rect class="cls-1" x="6" y="11" width="11" height="2"/>
+  <rect class="cls-1" x="6" y="21" width="11" height="2"/>
+  <rect class="cls-1" x="22" y="16" width="2" height="2"/>
+  <rect class="cls-1" x="22" y="21" width="2" height="2"/>
+  <polygon class="cls-1" points="27.71 9.3 26.3 7.89 23 11.18 20.8 8.98 19.39 10.4 23 14.01 27.71 9.3"/>
+</svg>

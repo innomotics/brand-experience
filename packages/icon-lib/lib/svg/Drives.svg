@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Motiv_White" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><rect class="cls-1" x="11" y="7" width="2" height="10"/><rect class="cls-1" x="15" y="10.12" width="2" height="6.88"/><rect class="cls-1" x="19" y="12.62" width="2" height="4.38"/><polygon class="cls-1" points="26 21.03 26 19.03 6 19.03 6 21.03 15 21.03 15 27.02 10 27.02 10 29.02 22 29.02 22 27.02 17 27.02 17 21.03 26 21.03"/><polygon class="cls-1" points="30 21.03 28 21.03 28 5.03 4 5.03 4 21.03 2 21.03 2 3.03 30 3.03 30 21.03"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="11" y="8" width="2" height="9"/>
+  <rect class="cls-1" x="15" y="10.9" width="2" height="6.1"/>
+  <rect class="cls-1" x="19" y="13.99" width="2" height="3.01"/>
+  <polygon class="cls-1" points="6 21.03 15 21.03 15 26.02 10 26.02 10 28.02 22 28.02 22 26.02 17 26.02 17 21.03 26 21.03 26 19.03 6 19.03 6 21.03"/>
+  <polygon class="cls-1" points="2 4.03 2 21.03 4 21.03 4 6.03 28 6.03 28 21.03 30 21.03 30 4.03 2 4.03"/>
+</svg>

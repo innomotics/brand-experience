@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Motiv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08191f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="8" y="19" width="4" height="2"/>
+  <path class="cls-1" d="M17,15H3v13h26v-13h-12ZM15,26H5v-9h10v9ZM27,26h-10v-9h10v9Z"/>
+  <rect class="cls-1" x="20" y="19" width="4" height="2"/>
+  <polygon class="cls-1" points="11 6 21 6 21 13 23 13 23 4 9 4 9 13 11 13 11 6"/>
+  <rect class="cls-1" x="14" y="8" width="4" height="2"/>
+</svg>

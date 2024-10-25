@@ -214,8 +214,13 @@
   grid-template-rows: min-content 1fr;
   .options{
     display:grid;
-    grid-template-columns: repeat(2,1fr);
-  }
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+    inno-select,inno-input{
+      width:100%;
+    }
+    }
   .icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

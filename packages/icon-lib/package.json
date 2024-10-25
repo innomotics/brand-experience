@@ -9,6 +9,17 @@
   "directories": {
     "lib": "lib"
   },
+  "lerna": {
+    "command": {
+      "publish": {
+        "directory": "./dist",
+        "assets": [
+          "README.md",
+          "package.json"
+        ]
+      }
+    }
+  },
   "files": [
     "dist/"
   ],
@@ -35,6 +46,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@iconify/tools": "^4.0.7"
+    "@iconify/tools": "^4.0.7",
+    "jszip": "^3.10.1"
   }
 }
