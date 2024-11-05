@@ -46,7 +46,7 @@
       font-size: 14px;
       clip-path: inset(0 0 0 0%);
       -webkit-clip-path: inset(0 0 0 0%);
-      transition: clip-path 0.6s cubic-bezier(0.84, 0, 0.58, 1);
+      transition: clip-path 0.3s cubic-bezier(0.84, 0, 0.58, 1);
       @include dimensions();
 
       &.light {
