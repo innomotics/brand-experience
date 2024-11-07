@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-icons",
-  "version": "0.0.2-beta-21",
+  "version": "0.0.2-beta-12",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "https://github.com/innomotics/brand-experience#readme",
@@ -32,7 +32,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873"
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@iconify/tools": "^4.0.7",

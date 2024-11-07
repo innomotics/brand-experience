@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-21",
+  "version": "0.0.2-beta-12",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -21,18 +21,18 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-21"
+    "@innomotics/brand-experience": "^0.0.2-beta-12"
   },
   "devDependencies": {
     "vue": "3.4.25"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873"
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-21",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-21",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-21"
+    "@innomotics/brand-experience": "^0.0.2-beta-12",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-12",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-12"
   }
 }
