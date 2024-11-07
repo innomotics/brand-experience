@@ -9,17 +9,6 @@
   "directories": {
     "lib": "lib"
   },
-  "lerna": {
-    "command": {
-      "publish": {
-        "directory": "./dist",
-        "assets": [
-          "README.md",
-          "package.json"
-        ]
-      }
-    }
-  },
   "files": [
     "dist/"
   ],
