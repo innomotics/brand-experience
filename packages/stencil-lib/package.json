@@ -31,7 +31,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "stencil": "stencil",
-    "prepublishOnly": "npx cpx ./lib/package.json ./dist/package.json && npx cpx *.md \"./dist\""
+    "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",
@@ -66,5 +66,5 @@
     "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
   },
   "license": "MIT",
-  "gitHead": "2da9a9827997f720d8e2a200b829bfa9d5b00ed7"
+  "gitHead": "9a05b1b139916726977b2efea062f6eb2fbda3b7"
 }
