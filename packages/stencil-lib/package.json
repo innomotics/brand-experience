@@ -20,8 +20,7 @@
     "registry": "http://localhost:4873/"
   },
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
@@ -32,7 +31,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "stencil": "stencil",
-    "prepublishOnly": "npx cpx package_dist.json \"./dist/package.json\" && npx cpx *.md \"./dist\""
+    "prepublishOnly": "npx cpx ./lib/package.json ./dist/package.json && npx cpx *.md \"./dist\""
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",
@@ -67,5 +66,5 @@
     "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
   },
   "license": "MIT",
-  "gitHead": "f885cd7eae07d9b2255fb83cdfb4972cb27a03c2"
+  "gitHead": "2da9a9827997f720d8e2a200b829bfa9d5b00ed7"
 }

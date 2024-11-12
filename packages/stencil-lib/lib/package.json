@@ -25,7 +25,10 @@
     "types/",
     "loader/",
     "index.cjs.js",
-    "index.js"
+    "index.js",
+    "LICENSE.md",
+    "readme.md",
+    "package.json"
   ],
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",

@@ -1,0 +1,33 @@
+{
+  "name": "@innomotics/brand-experience-vue-lib",
+  "version": "0.0.2-beta-13",
+  "description": "> TODO: description",
+  "author": "@innomotics",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "types": "index.js",
+  "private": false,
+  "files": [
+    "vue-component-lib/",
+    "compnents.d.ts",
+    "components.js",
+    "components.js.map",
+    "index.d.ts",
+    "index.js.map",
+    "package.json",
+    "plugin.d.ts",
+    "plugin.js",
+    "plugin.js.map",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "@innomotics/brand-experience": "^0.0.2-beta-13"
+  },
+  "peerDependencies": {
+    "@innomotics/brand-experience": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
+  }
+}

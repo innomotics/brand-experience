@@ -55,6 +55,10 @@ export const config: Config = {
       esmLoaderPath: '../dist/loader',
     },
     {
+      type: 'dist',
+      esmLoaderPath: '../loader',
+    },
+    {
       type: 'dist-custom-elements',
       externalRuntime: false
     },

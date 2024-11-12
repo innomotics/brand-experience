@@ -22,7 +22,7 @@
     "generateIconModule": "npx ts-node generator.ts",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\"",
     "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\"",
-    "prepublishOnly": "npx cpx package_dist.json \"./dist\" && npx cpx *.md \"./dist\""
+    "prepublishOnly": "npx cpx ./lib/package.json \"./dist\" && npx cpx *.md \"./dist\""
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"

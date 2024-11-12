@@ -10,13 +10,17 @@
     "url": ""
   },
   "files": [
-    "dist/"
+    "esm2022/",
+    "fesm2022/",
+    "lib/",
+    "index.d.ts",
+    "package.json",
+    "public-api.d.ts",
+    "README.md",
+    "LICENSE.md"
   ],
   "private": false,
-  "scripts": {
-    "build": "ng-packagr -c tsconfig.json",
-    "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""
-  },
+  
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -33,9 +37,6 @@
   "dependencies": {
     "@innomotics/brand-experience": "^0.0.2-beta-13"
   },
-  "devDependencies": {
-    "ng-packagr": "^17.3.0 || ^18.0.0"
-  },
   "peerDependencies": {
     "@angular/common": "^17.3.5 || ^18.0.0",
     "@angular/core": "^17.3.5 || ^18.0.0",
@@ -44,10 +45,5 @@
     "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-13",
     "typescript": "^5.3.3"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://localhost:4873/"
-  },
-  "gitHead": "2da9a9827997f720d8e2a200b829bfa9d5b00ed7"
+  }
 }
