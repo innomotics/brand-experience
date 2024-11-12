@@ -52,7 +52,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader',
+      esmLoaderPath: '../dist/loader',
     },
     {
       type: 'dist-custom-elements',
