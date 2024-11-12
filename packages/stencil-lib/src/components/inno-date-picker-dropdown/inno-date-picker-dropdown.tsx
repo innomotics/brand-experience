@@ -252,7 +252,7 @@ export class InnoDatePickerDropdown {
       'picker-value': true,
     };
 
-    const iconName = this.show ? 'chevronupsmall' : 'calendar';
+    const iconName = this.show ? 'chevron_up_small' : 'calendar';
     const pickerIconClasses = {
       ...this.variantClasses(),
       'picker-icon': true,

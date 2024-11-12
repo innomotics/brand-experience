@@ -33,17 +33,21 @@ export class InnoIcon {
   @State() content?: string;
 
   @Watch('icon')
-  async svgContentChanged() {
-    this.content = await this.resolveIcon();
+  async iconChanged() {
+    this.content = await this.resolveIcon(false);
   }
 
   @Watch('iconFont')
   async fontChanged() {
-    this.content = await this.resolveIcon();
+    this.content = await this.resolveIcon(true);
   }
 
   componentWillLoad() {
-    this.svgContentChanged();
+    if (!this.iconFont) {
+      this.iconChanged();
+    } else {
+      this.fontChanged();
+    }
   }
 
   render() {
@@ -58,14 +62,19 @@ export class InnoIcon {
     );
   }
 
-  async resolveIcon(): Promise<string | null> {
-    if (this.icon) {
+  async resolveIcon(isIconFont: boolean): Promise<string | null> {
+    if (this.icon && !isIconFont) {
       const svgIcon = await import(`@innomotics/brand-experience-icons/lib/inno-icons`);
       const iconname = 'inno_' + this.icon;
-      return svgIcon[iconname];
+      const resolvedIcon = svgIcon[iconname];
+
+      if (resolvedIcon == null) {
+        console.error(`No content for icon "${this.icon}"! Maybe the icon was renamed or no longer exists.`);
+      }
+      return resolvedIcon;
     }
 
-    if (this.iconFont) {
+    if (this.iconFont && isIconFont) {
       return (
         <span class={`icon-${this.size} icon-${this.variant} icon-font`} style={{ fontSize: `${this.size}px` }}>
           {String.fromCodePoint(parseInt(this.iconFont, 16))}
