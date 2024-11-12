@@ -178,3 +178,15 @@ $font-families: InnomoticsHafferSQ, InnomoticsUiIcons;
 }
 
 @include font-families-classes();
+
+$fontsizes : (text-4xl:80px, text-3xl:48px, text-2xl:32px, text-xl: 24px,text-lg:20px,text-base: 16px, text-sm:14px,text-xs:12px);
+
+@mixin font-sizes() {
+  @each $fontname, $size in $fontsizes {
+    .#{$fontname} {
+      font-size: $size;
+    }
+  }
+}
+
+@include font-sizes();
