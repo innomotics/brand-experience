@@ -18,9 +18,11 @@
   },
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
-    "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
+    "prepublishOnly": "npm run copypackageassets",
+    "copyoutputs": "npx cpx \"./lib/**\" \"./dist/\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
-    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\""
+    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
+    "copypackageassets":"npx cpx package.json /dist && npx cpx *.md /dist"
   },
   "devDependencies": {
     "cpx2": "^7.0.1"
@@ -28,5 +30,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "http://localhost:4873/"
-  }
+  },
+  "gitHead": "53bcad74d4025878a794faa22eba9012467ef380"
 }

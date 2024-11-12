@@ -47,5 +47,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "http://localhost:4873/"
-  }
+  },
+  "gitHead": "53bcad74d4025878a794faa22eba9012467ef380"
 }

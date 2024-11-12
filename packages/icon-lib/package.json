@@ -37,5 +37,6 @@
   "dependencies": {
     "@iconify/tools": "^4.0.7",
     "jszip": "^3.10.1"
-  }
+  },
+  "gitHead": "53bcad74d4025878a794faa22eba9012467ef380"
 }
