@@ -21,7 +21,10 @@
     "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
     "generateIconModule": "npx ts-node generator.ts",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\"",
-    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\""
+    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\"",
+    "prepublishOnly": "npm run copypackageassets",
+    "copypackageassets": "npx cpx package.json \"./dist\" && npx cpx *.md \"./dist\""
+
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
@@ -38,5 +41,5 @@
     "@iconify/tools": "^4.0.7",
     "jszip": "^3.10.1"
   },
-  "gitHead": "ee68061720467aed890109d624bcc55651452da5"
+  "gitHead": "c18d54b85389fb6310ac6fa42e0a8736fa7d4c90"
 }
