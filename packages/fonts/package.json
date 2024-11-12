@@ -22,7 +22,7 @@
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
     "prepublishOnly": "npm run copypackageassets",
-    "copypackageassets": "npx cpx package.json \"./dist\" && npx cpx *.md \"./dist\""
+    "copypackageassets": "npx cpx package.json \"./dist/package.json\" && npx cpx *.md \"./dist\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"

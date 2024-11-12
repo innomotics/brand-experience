@@ -1,0 +1,31 @@
+{
+  "name": "@innomotics/brand-experience-icons",
+  "version": "0.0.2-beta-13",
+  "description": "> TODO: description",
+  "author": "@innomotics",
+  "homepage": "https://github.com/innomotics/brand-experience#readme",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "styles/",
+    "svg/",
+    "package.json",
+    "README.md",
+    "inno-icons.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/innomotics/brand-experience.git"
+  },
+  "bugs": {
+    "url": "https://github.com/innomotics/brand-experience/issues"
+  },
+  "devDependencies": {
+    "cpx2": "^7.0.1",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@iconify/tools": "^4.0.7",
+    "jszip": "^3.10.1"
+  }
+}

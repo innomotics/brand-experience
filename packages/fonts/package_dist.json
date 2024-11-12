@@ -1,0 +1,26 @@
+{
+  "name": "@innomotics/brand-experience-fonts",
+  "version": "0.0.2-beta-13",
+  "description": "> TODO: description",
+  "author": "@innomotics",
+  "homepage": "",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "fonts/",
+    "styles",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innomotics/brand-experience"
+  },
+  "devDependencies": {
+    "cpx2": "^7.0.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://localhost:4873/"
+  }
+}
