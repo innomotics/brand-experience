@@ -22,7 +22,7 @@
     "copyoutputs": "npx cpx \"./lib/**\" \"./dist/\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
-    "copypackageassets":"npx cpx package.json /dist && npx cpx *.md /dist"
+    "copypackageassets": "npx cpx package.json \"./dist\" && npx cpx *.md \"./dist\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"
@@ -31,5 +31,5 @@
     "access": "public",
     "registry": "http://localhost:4873/"
   },
-  "gitHead": "53bcad74d4025878a794faa22eba9012467ef380"
+  "gitHead": "ee68061720467aed890109d624bcc55651452da5"
 }
