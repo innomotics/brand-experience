@@ -1,0 +1,20 @@
+:host {
+  background-color: #2a3b40;
+  color: #ffffff;
+}
+:host:hover {
+  background-color: #b2c1c7;
+  color: #08191f;
+}
+:host.focused {
+  background-color: #b2c1c7;
+  color: #08191f;
+}
+:host.selected {
+  color: #e1f000;
+}
+:host .content-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

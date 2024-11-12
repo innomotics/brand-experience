@@ -1,0 +1,14 @@
+:host {
+  display: none;
+  font-size: 12px;
+}
+:host[active] {
+  display: block;
+  transform: translate(-16px, 1rem) scale(1);
+}
+:host[active].light {
+  color: #CB0E0E;
+}
+:host[active].dark {
+  color: #FF88AB;
+}

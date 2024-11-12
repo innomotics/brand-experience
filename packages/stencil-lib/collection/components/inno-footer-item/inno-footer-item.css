@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  cursor: pointer;
+}
+:host.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #08191f;
+}
+:host.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)):hover {
+  color: #08191f;
+}
+:host.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #ffffff;
+}
+:host.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)):hover {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  :host {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :host.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
+    color: #08191f;
+  }
+  :host.light :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)):hover {
+    color: #08191f;
+  }
+  :host.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)) {
+    color: #ffffff;
+  }
+  :host.dark :where(::slotted(a), ::slotted(p), ::slotted(span), ::slotted(inno-icon)):hover {
+    color: #ffffff;
+  }
+}
