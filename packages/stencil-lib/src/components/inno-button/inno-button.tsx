@@ -89,7 +89,7 @@ export class InnoButton {
     let hasIconFont: boolean = this.iconFont != null && this.iconFont.trim() != '';
     let iconSize: number = this.variant === 'media' ? 32 : 24;
     let icon: string = this.variant === 'navigation'
-      ? (this.navDirection === 'right' ? 'chevron-right-small' : 'chevron-left-small')
+      ? (this.navDirection === 'right' ? 'chevron_right_small' : 'chevron_left_small')
       : (this.icon ?? this.iconFont);
 
     return (
