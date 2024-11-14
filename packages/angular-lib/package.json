@@ -1,9 +1,9 @@
 {
   "name": "@innomotics/brand-experience-angular-lib",
-  "version": "0.0.2-beta-12",
+  "version": "0.0.2-beta-13",
   "description": "> TODO: description",
   "author": "",
-  "types": "dist/types/index.d.ts",
+  "types": "./index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,23 +14,24 @@
   ],
   "private": false,
   "scripts": {
-    "build": "ng-packagr -c tsconfig.json"
+    "build": "ng-packagr -c tsconfig.json",
+    "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""
   },
-  "typings": "dist/index.d.ts",
+  "typings": "index.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     "./dist": {
-      "types": "./dist/index.d.ts",
-      "esm": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
-      "esm2022": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
-      "fesm2022": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs",
-      "default": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs"
+      "types": "./index.d.ts",
+      "esm": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "esm2022": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "fesm2022": "./fesm2022/innomotics-brand-experience-angular-lib.mjs",
+      "default": "./fesm2022/innomotics-brand-experience-angular-lib.mjs"
     }
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-12"
+    "@innomotics/brand-experience": "^0.0.2-beta-13"
   },
   "devDependencies": {
     "ng-packagr": "^17.3.0 || ^18.0.0"
@@ -39,13 +40,14 @@
     "@angular/common": "^17.3.5 || ^18.0.0",
     "@angular/core": "^17.3.5 || ^18.0.0",
     "@angular/forms": "^17.3.5 || ^18.0.0",
-    "@innomotics/brand-experience": "^0.0.2-beta-12",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-12",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-12",
+    "@innomotics/brand-experience": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13",
     "typescript": "^5.3.3"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "gitHead": "8028f370259942960841efa6820cc62e01b9a688"
 }

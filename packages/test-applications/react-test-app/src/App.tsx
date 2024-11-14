@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import {
   defineCustomElements,
   InnoBreadcrumb,
@@ -15,6 +15,7 @@ defineCustomElements();
 function App() {
   return (
     <>
+    <div className="text-4xl">retek</div>
       <div className="tab-container">
         <InnoTabExample></InnoTabExample>
       </div>

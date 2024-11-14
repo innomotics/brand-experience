@@ -8,40 +8,40 @@
 /* eslint-disable */
 
 import { type DateChange, type ExpandedChangedEvent, type InnoAccordionCustomEvent, type InnoDatePickerCustomEvent, type InnoDatePickerDropdownCustomEvent, type InnoDragAndDropCustomEvent, type InnoModalHeaderCustomEvent, type InnoPaneCustomEvent, type InnoTabItemCustomEvent, type TabClickDetail } from "@innomotics/brand-experience";
-import { InnoAccordion as InnoAccordionElement, defineCustomElement as defineInnoAccordion } from "@innomotics/brand-experience/dist/components/inno-accordion.js";
-import { InnoBreadcrumbItem as InnoBreadcrumbItemElement, defineCustomElement as defineInnoBreadcrumbItem } from "@innomotics/brand-experience/dist/components/inno-breadcrumb-item.js";
-import { InnoBreadcrumb as InnoBreadcrumbElement, defineCustomElement as defineInnoBreadcrumb } from "@innomotics/brand-experience/dist/components/inno-breadcrumb.js";
-import { InnoButton as InnoButtonElement, defineCustomElement as defineInnoButton } from "@innomotics/brand-experience/dist/components/inno-button.js";
-import { InnoCheckbox as InnoCheckboxElement, defineCustomElement as defineInnoCheckbox } from "@innomotics/brand-experience/dist/components/inno-checkbox.js";
-import { InnoDatePickerDropdown as InnoDatePickerDropdownElement, defineCustomElement as defineInnoDatePickerDropdown } from "@innomotics/brand-experience/dist/components/inno-date-picker-dropdown.js";
-import { InnoDatePicker as InnoDatePickerElement, defineCustomElement as defineInnoDatePicker } from "@innomotics/brand-experience/dist/components/inno-date-picker.js";
-import { InnoDragAndDrop as InnoDragAndDropElement, defineCustomElement as defineInnoDragAndDrop } from "@innomotics/brand-experience/dist/components/inno-drag-and-drop.js";
-import { InnoError as InnoErrorElement, defineCustomElement as defineInnoError } from "@innomotics/brand-experience/dist/components/inno-error.js";
-import { InnoFooterItem as InnoFooterItemElement, defineCustomElement as defineInnoFooterItem } from "@innomotics/brand-experience/dist/components/inno-footer-item.js";
-import { InnoFooter as InnoFooterElement, defineCustomElement as defineInnoFooter } from "@innomotics/brand-experience/dist/components/inno-footer.js";
-import { InnoIcon as InnoIconElement, defineCustomElement as defineInnoIcon } from "@innomotics/brand-experience/dist/components/inno-icon.js";
-import { InnoInput as InnoInputElement, defineCustomElement as defineInnoInput } from "@innomotics/brand-experience/dist/components/inno-input.js";
-import { InnoLoader as InnoLoaderElement, defineCustomElement as defineInnoLoader } from "@innomotics/brand-experience/dist/components/inno-loader.js";
-import { InnoModalContent as InnoModalContentElement, defineCustomElement as defineInnoModalContent } from "@innomotics/brand-experience/dist/components/inno-modal-content.js";
-import { InnoModalFooter as InnoModalFooterElement, defineCustomElement as defineInnoModalFooter } from "@innomotics/brand-experience/dist/components/inno-modal-footer.js";
-import { InnoModalHeader as InnoModalHeaderElement, defineCustomElement as defineInnoModalHeader } from "@innomotics/brand-experience/dist/components/inno-modal-header.js";
-import { InnoModal as InnoModalElement, defineCustomElement as defineInnoModal } from "@innomotics/brand-experience/dist/components/inno-modal.js";
-import { InnoPaginator as InnoPaginatorElement, defineCustomElement as defineInnoPaginator } from "@innomotics/brand-experience/dist/components/inno-paginator.js";
-import { InnoPane as InnoPaneElement, defineCustomElement as defineInnoPane } from "@innomotics/brand-experience/dist/components/inno-pane.js";
-import { InnoPopover as InnoPopoverElement, defineCustomElement as defineInnoPopover } from "@innomotics/brand-experience/dist/components/inno-popover.js";
-import { InnoProgressBar as InnoProgressBarElement, defineCustomElement as defineInnoProgressBar } from "@innomotics/brand-experience/dist/components/inno-progress-bar.js";
-import { InnoRadio as InnoRadioElement, defineCustomElement as defineInnoRadio } from "@innomotics/brand-experience/dist/components/inno-radio.js";
-import { InnoSelectItem as InnoSelectItemElement, defineCustomElement as defineInnoSelectItem } from "@innomotics/brand-experience/dist/components/inno-select-item.js";
-import { InnoSelect as InnoSelectElement, defineCustomElement as defineInnoSelect } from "@innomotics/brand-experience/dist/components/inno-select.js";
-import { InnoSplitGutter as InnoSplitGutterElement, defineCustomElement as defineInnoSplitGutter } from "@innomotics/brand-experience/dist/components/inno-split-gutter.js";
-import { InnoSplitItem as InnoSplitItemElement, defineCustomElement as defineInnoSplitItem } from "@innomotics/brand-experience/dist/components/inno-split-item.js";
-import { InnoSplit as InnoSplitElement, defineCustomElement as defineInnoSplit } from "@innomotics/brand-experience/dist/components/inno-split.js";
-import { InnoStatusMessage as InnoStatusMessageElement, defineCustomElement as defineInnoStatusMessage } from "@innomotics/brand-experience/dist/components/inno-status-message.js";
-import { InnoTabItem as InnoTabItemElement, defineCustomElement as defineInnoTabItem } from "@innomotics/brand-experience/dist/components/inno-tab-item.js";
-import { InnoTab as InnoTabElement, defineCustomElement as defineInnoTab } from "@innomotics/brand-experience/dist/components/inno-tab.js";
-import { InnoTableBase as InnoTableBaseElement, defineCustomElement as defineInnoTableBase } from "@innomotics/brand-experience/dist/components/inno-table-base.js";
-import { InnoTimePicker as InnoTimePickerElement, defineCustomElement as defineInnoTimePicker } from "@innomotics/brand-experience/dist/components/inno-time-picker.js";
-import { InnoToggle as InnoToggleElement, defineCustomElement as defineInnoToggle } from "@innomotics/brand-experience/dist/components/inno-toggle.js";
+import { InnoAccordion as InnoAccordionElement, defineCustomElement as defineInnoAccordion } from "@innomotics/brand-experience/components/inno-accordion.js";
+import { InnoBreadcrumbItem as InnoBreadcrumbItemElement, defineCustomElement as defineInnoBreadcrumbItem } from "@innomotics/brand-experience/components/inno-breadcrumb-item.js";
+import { InnoBreadcrumb as InnoBreadcrumbElement, defineCustomElement as defineInnoBreadcrumb } from "@innomotics/brand-experience/components/inno-breadcrumb.js";
+import { InnoButton as InnoButtonElement, defineCustomElement as defineInnoButton } from "@innomotics/brand-experience/components/inno-button.js";
+import { InnoCheckbox as InnoCheckboxElement, defineCustomElement as defineInnoCheckbox } from "@innomotics/brand-experience/components/inno-checkbox.js";
+import { InnoDatePickerDropdown as InnoDatePickerDropdownElement, defineCustomElement as defineInnoDatePickerDropdown } from "@innomotics/brand-experience/components/inno-date-picker-dropdown.js";
+import { InnoDatePicker as InnoDatePickerElement, defineCustomElement as defineInnoDatePicker } from "@innomotics/brand-experience/components/inno-date-picker.js";
+import { InnoDragAndDrop as InnoDragAndDropElement, defineCustomElement as defineInnoDragAndDrop } from "@innomotics/brand-experience/components/inno-drag-and-drop.js";
+import { InnoError as InnoErrorElement, defineCustomElement as defineInnoError } from "@innomotics/brand-experience/components/inno-error.js";
+import { InnoFooterItem as InnoFooterItemElement, defineCustomElement as defineInnoFooterItem } from "@innomotics/brand-experience/components/inno-footer-item.js";
+import { InnoFooter as InnoFooterElement, defineCustomElement as defineInnoFooter } from "@innomotics/brand-experience/components/inno-footer.js";
+import { InnoIcon as InnoIconElement, defineCustomElement as defineInnoIcon } from "@innomotics/brand-experience/components/inno-icon.js";
+import { InnoInput as InnoInputElement, defineCustomElement as defineInnoInput } from "@innomotics/brand-experience/components/inno-input.js";
+import { InnoLoader as InnoLoaderElement, defineCustomElement as defineInnoLoader } from "@innomotics/brand-experience/components/inno-loader.js";
+import { InnoModalContent as InnoModalContentElement, defineCustomElement as defineInnoModalContent } from "@innomotics/brand-experience/components/inno-modal-content.js";
+import { InnoModalFooter as InnoModalFooterElement, defineCustomElement as defineInnoModalFooter } from "@innomotics/brand-experience/components/inno-modal-footer.js";
+import { InnoModalHeader as InnoModalHeaderElement, defineCustomElement as defineInnoModalHeader } from "@innomotics/brand-experience/components/inno-modal-header.js";
+import { InnoModal as InnoModalElement, defineCustomElement as defineInnoModal } from "@innomotics/brand-experience/components/inno-modal.js";
+import { InnoPaginator as InnoPaginatorElement, defineCustomElement as defineInnoPaginator } from "@innomotics/brand-experience/components/inno-paginator.js";
+import { InnoPane as InnoPaneElement, defineCustomElement as defineInnoPane } from "@innomotics/brand-experience/components/inno-pane.js";
+import { InnoPopover as InnoPopoverElement, defineCustomElement as defineInnoPopover } from "@innomotics/brand-experience/components/inno-popover.js";
+import { InnoProgressBar as InnoProgressBarElement, defineCustomElement as defineInnoProgressBar } from "@innomotics/brand-experience/components/inno-progress-bar.js";
+import { InnoRadio as InnoRadioElement, defineCustomElement as defineInnoRadio } from "@innomotics/brand-experience/components/inno-radio.js";
+import { InnoSelectItem as InnoSelectItemElement, defineCustomElement as defineInnoSelectItem } from "@innomotics/brand-experience/components/inno-select-item.js";
+import { InnoSelect as InnoSelectElement, defineCustomElement as defineInnoSelect } from "@innomotics/brand-experience/components/inno-select.js";
+import { InnoSplitGutter as InnoSplitGutterElement, defineCustomElement as defineInnoSplitGutter } from "@innomotics/brand-experience/components/inno-split-gutter.js";
+import { InnoSplitItem as InnoSplitItemElement, defineCustomElement as defineInnoSplitItem } from "@innomotics/brand-experience/components/inno-split-item.js";
+import { InnoSplit as InnoSplitElement, defineCustomElement as defineInnoSplit } from "@innomotics/brand-experience/components/inno-split.js";
+import { InnoStatusMessage as InnoStatusMessageElement, defineCustomElement as defineInnoStatusMessage } from "@innomotics/brand-experience/components/inno-status-message.js";
+import { InnoTabItem as InnoTabItemElement, defineCustomElement as defineInnoTabItem } from "@innomotics/brand-experience/components/inno-tab-item.js";
+import { InnoTab as InnoTabElement, defineCustomElement as defineInnoTab } from "@innomotics/brand-experience/components/inno-tab.js";
+import { InnoTableBase as InnoTableBaseElement, defineCustomElement as defineInnoTableBase } from "@innomotics/brand-experience/components/inno-table-base.js";
+import { InnoTimePicker as InnoTimePickerElement, defineCustomElement as defineInnoTimePicker } from "@innomotics/brand-experience/components/inno-time-picker.js";
+import { InnoToggle as InnoToggleElement, defineCustomElement as defineInnoToggle } from "@innomotics/brand-experience/components/inno-toggle.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
@@ -51,7 +51,6 @@ type InnoAccordionEvents = { onCollapsedChanged: EventName<InnoAccordionCustomEv
 export const InnoAccordion: StencilReactComponent<InnoAccordionElement, InnoAccordionEvents> = /*@__PURE__*/ createComponent<InnoAccordionElement, InnoAccordionEvents>({
     tagName: 'inno-accordion',
     elementClass: InnoAccordionElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onCollapsedChanged: 'collapsedChanged' } as InnoAccordionEvents,
     defineCustomElement: defineInnoAccordion
@@ -62,7 +61,6 @@ type InnoBreadcrumbEvents = { onItemClick: EventName<CustomEvent<{ itemIndex: nu
 export const InnoBreadcrumb: StencilReactComponent<InnoBreadcrumbElement, InnoBreadcrumbEvents> = /*@__PURE__*/ createComponent<InnoBreadcrumbElement, InnoBreadcrumbEvents>({
     tagName: 'inno-breadcrumb',
     elementClass: InnoBreadcrumbElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onItemClick: 'itemClick' } as InnoBreadcrumbEvents,
     defineCustomElement: defineInnoBreadcrumb
@@ -73,7 +71,6 @@ type InnoBreadcrumbItemEvents = NonNullable<unknown>;
 export const InnoBreadcrumbItem: StencilReactComponent<InnoBreadcrumbItemElement, InnoBreadcrumbItemEvents> = /*@__PURE__*/ createComponent<InnoBreadcrumbItemElement, InnoBreadcrumbItemEvents>({
     tagName: 'inno-breadcrumb-item',
     elementClass: InnoBreadcrumbItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoBreadcrumbItemEvents,
     defineCustomElement: defineInnoBreadcrumbItem
@@ -84,7 +81,6 @@ type InnoButtonEvents = NonNullable<unknown>;
 export const InnoButton: StencilReactComponent<InnoButtonElement, InnoButtonEvents> = /*@__PURE__*/ createComponent<InnoButtonElement, InnoButtonEvents>({
     tagName: 'inno-button',
     elementClass: InnoButtonElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoButtonEvents,
     defineCustomElement: defineInnoButton
@@ -95,7 +91,6 @@ type InnoCheckboxEvents = { onValueChange: EventName<CustomEvent<boolean>> };
 export const InnoCheckbox: StencilReactComponent<InnoCheckboxElement, InnoCheckboxEvents> = /*@__PURE__*/ createComponent<InnoCheckboxElement, InnoCheckboxEvents>({
     tagName: 'inno-checkbox',
     elementClass: InnoCheckboxElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onValueChange: 'valueChange' } as InnoCheckboxEvents,
     defineCustomElement: defineInnoCheckbox
@@ -106,7 +101,6 @@ type InnoDatePickerEvents = { onDateChange: EventName<InnoDatePickerCustomEvent<
 export const InnoDatePicker: StencilReactComponent<InnoDatePickerElement, InnoDatePickerEvents> = /*@__PURE__*/ createComponent<InnoDatePickerElement, InnoDatePickerEvents>({
     tagName: 'inno-date-picker',
     elementClass: InnoDatePickerElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onDateChange: 'dateChange' } as InnoDatePickerEvents,
     defineCustomElement: defineInnoDatePicker
@@ -117,7 +111,6 @@ type InnoDatePickerDropdownEvents = { onDateChange: EventName<InnoDatePickerDrop
 export const InnoDatePickerDropdown: StencilReactComponent<InnoDatePickerDropdownElement, InnoDatePickerDropdownEvents> = /*@__PURE__*/ createComponent<InnoDatePickerDropdownElement, InnoDatePickerDropdownEvents>({
     tagName: 'inno-date-picker-dropdown',
     elementClass: InnoDatePickerDropdownElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onDateChange: 'dateChange' } as InnoDatePickerDropdownEvents,
     defineCustomElement: defineInnoDatePickerDropdown
@@ -128,7 +121,6 @@ type InnoDragAndDropEvents = { onFilesChanged: EventName<InnoDragAndDropCustomEv
 export const InnoDragAndDrop: StencilReactComponent<InnoDragAndDropElement, InnoDragAndDropEvents> = /*@__PURE__*/ createComponent<InnoDragAndDropElement, InnoDragAndDropEvents>({
     tagName: 'inno-drag-and-drop',
     elementClass: InnoDragAndDropElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onFilesChanged: 'filesChanged' } as InnoDragAndDropEvents,
     defineCustomElement: defineInnoDragAndDrop
@@ -139,7 +131,6 @@ type InnoErrorEvents = NonNullable<unknown>;
 export const InnoError: StencilReactComponent<InnoErrorElement, InnoErrorEvents> = /*@__PURE__*/ createComponent<InnoErrorElement, InnoErrorEvents>({
     tagName: 'inno-error',
     elementClass: InnoErrorElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoErrorEvents,
     defineCustomElement: defineInnoError
@@ -150,7 +141,6 @@ type InnoFooterEvents = NonNullable<unknown>;
 export const InnoFooter: StencilReactComponent<InnoFooterElement, InnoFooterEvents> = /*@__PURE__*/ createComponent<InnoFooterElement, InnoFooterEvents>({
     tagName: 'inno-footer',
     elementClass: InnoFooterElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoFooterEvents,
     defineCustomElement: defineInnoFooter
@@ -161,7 +151,6 @@ type InnoFooterItemEvents = NonNullable<unknown>;
 export const InnoFooterItem: StencilReactComponent<InnoFooterItemElement, InnoFooterItemEvents> = /*@__PURE__*/ createComponent<InnoFooterItemElement, InnoFooterItemEvents>({
     tagName: 'inno-footer-item',
     elementClass: InnoFooterItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoFooterItemEvents,
     defineCustomElement: defineInnoFooterItem
@@ -172,7 +161,6 @@ type InnoIconEvents = NonNullable<unknown>;
 export const InnoIcon: StencilReactComponent<InnoIconElement, InnoIconEvents> = /*@__PURE__*/ createComponent<InnoIconElement, InnoIconEvents>({
     tagName: 'inno-icon',
     elementClass: InnoIconElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoIconEvents,
     defineCustomElement: defineInnoIcon
@@ -183,7 +171,6 @@ type InnoInputEvents = { onValueChanged: EventName<CustomEvent<string | number>>
 export const InnoInput: StencilReactComponent<InnoInputElement, InnoInputEvents> = /*@__PURE__*/ createComponent<InnoInputElement, InnoInputEvents>({
     tagName: 'inno-input',
     elementClass: InnoInputElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onValueChanged: 'valueChanged' } as InnoInputEvents,
     defineCustomElement: defineInnoInput
@@ -194,7 +181,6 @@ type InnoLoaderEvents = NonNullable<unknown>;
 export const InnoLoader: StencilReactComponent<InnoLoaderElement, InnoLoaderEvents> = /*@__PURE__*/ createComponent<InnoLoaderElement, InnoLoaderEvents>({
     tagName: 'inno-loader',
     elementClass: InnoLoaderElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoLoaderEvents,
     defineCustomElement: defineInnoLoader
@@ -208,7 +194,6 @@ type InnoModalEvents = {
 export const InnoModal: StencilReactComponent<InnoModalElement, InnoModalEvents> = /*@__PURE__*/ createComponent<InnoModalElement, InnoModalEvents>({
     tagName: 'inno-modal',
     elementClass: InnoModalElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onDialogClose: 'dialogClose',
@@ -222,7 +207,6 @@ type InnoModalContentEvents = NonNullable<unknown>;
 export const InnoModalContent: StencilReactComponent<InnoModalContentElement, InnoModalContentEvents> = /*@__PURE__*/ createComponent<InnoModalContentElement, InnoModalContentEvents>({
     tagName: 'inno-modal-content',
     elementClass: InnoModalContentElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoModalContentEvents,
     defineCustomElement: defineInnoModalContent
@@ -233,7 +217,6 @@ type InnoModalFooterEvents = NonNullable<unknown>;
 export const InnoModalFooter: StencilReactComponent<InnoModalFooterElement, InnoModalFooterEvents> = /*@__PURE__*/ createComponent<InnoModalFooterElement, InnoModalFooterEvents>({
     tagName: 'inno-modal-footer',
     elementClass: InnoModalFooterElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoModalFooterEvents,
     defineCustomElement: defineInnoModalFooter
@@ -244,7 +227,6 @@ type InnoModalHeaderEvents = { onCloseClick: EventName<InnoModalHeaderCustomEven
 export const InnoModalHeader: StencilReactComponent<InnoModalHeaderElement, InnoModalHeaderEvents> = /*@__PURE__*/ createComponent<InnoModalHeaderElement, InnoModalHeaderEvents>({
     tagName: 'inno-modal-header',
     elementClass: InnoModalHeaderElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onCloseClick: 'closeClick' } as InnoModalHeaderEvents,
     defineCustomElement: defineInnoModalHeader
@@ -258,7 +240,6 @@ type InnoPaginatorEvents = {
 export const InnoPaginator: StencilReactComponent<InnoPaginatorElement, InnoPaginatorEvents> = /*@__PURE__*/ createComponent<InnoPaginatorElement, InnoPaginatorEvents>({
     tagName: 'inno-paginator',
     elementClass: InnoPaginatorElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onPageSelected: 'pageSelected',
@@ -272,7 +253,6 @@ type InnoPaneEvents = { onExpandedChanged: EventName<InnoPaneCustomEvent<Expande
 export const InnoPane: StencilReactComponent<InnoPaneElement, InnoPaneEvents> = /*@__PURE__*/ createComponent<InnoPaneElement, InnoPaneEvents>({
     tagName: 'inno-pane',
     elementClass: InnoPaneElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onExpandedChanged: 'expandedChanged' } as InnoPaneEvents,
     defineCustomElement: defineInnoPane
@@ -286,7 +266,6 @@ type InnoPopoverEvents = {
 export const InnoPopover: StencilReactComponent<InnoPopoverElement, InnoPopoverEvents> = /*@__PURE__*/ createComponent<InnoPopoverElement, InnoPopoverEvents>({
     tagName: 'inno-popover',
     elementClass: InnoPopoverElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onInnoPopoverShown: 'innoPopoverShown',
@@ -300,7 +279,6 @@ type InnoProgressBarEvents = NonNullable<unknown>;
 export const InnoProgressBar: StencilReactComponent<InnoProgressBarElement, InnoProgressBarEvents> = /*@__PURE__*/ createComponent<InnoProgressBarElement, InnoProgressBarEvents>({
     tagName: 'inno-progress-bar',
     elementClass: InnoProgressBarElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoProgressBarEvents,
     defineCustomElement: defineInnoProgressBar
@@ -311,7 +289,6 @@ type InnoRadioEvents = { onValueChange: EventName<CustomEvent<string>> };
 export const InnoRadio: StencilReactComponent<InnoRadioElement, InnoRadioEvents> = /*@__PURE__*/ createComponent<InnoRadioElement, InnoRadioEvents>({
     tagName: 'inno-radio',
     elementClass: InnoRadioElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onValueChange: 'valueChange' } as InnoRadioEvents,
     defineCustomElement: defineInnoRadio
@@ -328,7 +305,6 @@ type InnoSelectEvents = {
 export const InnoSelect: StencilReactComponent<InnoSelectElement, InnoSelectEvents> = /*@__PURE__*/ createComponent<InnoSelectElement, InnoSelectEvents>({
     tagName: 'inno-select',
     elementClass: InnoSelectElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onValueChanged: 'valueChanged',
@@ -350,7 +326,6 @@ type InnoSelectItemEvents = {
 export const InnoSelectItem: StencilReactComponent<InnoSelectItemElement, InnoSelectItemEvents> = /*@__PURE__*/ createComponent<InnoSelectItemElement, InnoSelectItemEvents>({
     tagName: 'inno-select-item',
     elementClass: InnoSelectItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onItemSelected: 'itemSelected',
@@ -366,7 +341,6 @@ type InnoSplitEvents = NonNullable<unknown>;
 export const InnoSplit: StencilReactComponent<InnoSplitElement, InnoSplitEvents> = /*@__PURE__*/ createComponent<InnoSplitElement, InnoSplitEvents>({
     tagName: 'inno-split',
     elementClass: InnoSplitElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoSplitEvents,
     defineCustomElement: defineInnoSplit
@@ -377,7 +351,6 @@ type InnoSplitGutterEvents = NonNullable<unknown>;
 export const InnoSplitGutter: StencilReactComponent<InnoSplitGutterElement, InnoSplitGutterEvents> = /*@__PURE__*/ createComponent<InnoSplitGutterElement, InnoSplitGutterEvents>({
     tagName: 'inno-split-gutter',
     elementClass: InnoSplitGutterElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoSplitGutterEvents,
     defineCustomElement: defineInnoSplitGutter
@@ -388,7 +361,6 @@ type InnoSplitItemEvents = NonNullable<unknown>;
 export const InnoSplitItem: StencilReactComponent<InnoSplitItemElement, InnoSplitItemEvents> = /*@__PURE__*/ createComponent<InnoSplitItemElement, InnoSplitItemEvents>({
     tagName: 'inno-split-item',
     elementClass: InnoSplitItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoSplitItemEvents,
     defineCustomElement: defineInnoSplitItem
@@ -399,7 +371,6 @@ type InnoStatusMessageEvents = { onCloseMessage: EventName<CustomEvent<any>> };
 export const InnoStatusMessage: StencilReactComponent<InnoStatusMessageElement, InnoStatusMessageEvents> = /*@__PURE__*/ createComponent<InnoStatusMessageElement, InnoStatusMessageEvents>({
     tagName: 'inno-status-message',
     elementClass: InnoStatusMessageElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onCloseMessage: 'closeMessage' } as InnoStatusMessageEvents,
     defineCustomElement: defineInnoStatusMessage
@@ -410,7 +381,6 @@ type InnoTabEvents = { onSelectedChange: EventName<CustomEvent<number>> };
 export const InnoTab: StencilReactComponent<InnoTabElement, InnoTabEvents> = /*@__PURE__*/ createComponent<InnoTabElement, InnoTabEvents>({
     tagName: 'inno-tab',
     elementClass: InnoTabElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onSelectedChange: 'selectedChange' } as InnoTabEvents,
     defineCustomElement: defineInnoTab
@@ -421,7 +391,6 @@ type InnoTabItemEvents = { onTabClick: EventName<InnoTabItemCustomEvent<TabClick
 export const InnoTabItem: StencilReactComponent<InnoTabItemElement, InnoTabItemEvents> = /*@__PURE__*/ createComponent<InnoTabItemElement, InnoTabItemEvents>({
     tagName: 'inno-tab-item',
     elementClass: InnoTabItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onTabClick: 'tabClick' } as InnoTabItemEvents,
     defineCustomElement: defineInnoTabItem
@@ -432,7 +401,6 @@ type InnoTableBaseEvents = NonNullable<unknown>;
 export const InnoTableBase: StencilReactComponent<InnoTableBaseElement, InnoTableBaseEvents> = /*@__PURE__*/ createComponent<InnoTableBaseElement, InnoTableBaseEvents>({
     tagName: 'inno-table-base',
     elementClass: InnoTableBaseElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as InnoTableBaseEvents,
     defineCustomElement: defineInnoTableBase
@@ -443,7 +411,6 @@ type InnoTimePickerEvents = { onValueChange: EventName<CustomEvent<any>> };
 export const InnoTimePicker: StencilReactComponent<InnoTimePickerElement, InnoTimePickerEvents> = /*@__PURE__*/ createComponent<InnoTimePickerElement, InnoTimePickerEvents>({
     tagName: 'inno-time-picker',
     elementClass: InnoTimePickerElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onValueChange: 'valueChange' } as InnoTimePickerEvents,
     defineCustomElement: defineInnoTimePicker
@@ -454,7 +421,6 @@ type InnoToggleEvents = { onCheckedChange: EventName<CustomEvent<boolean>> };
 export const InnoToggle: StencilReactComponent<InnoToggleElement, InnoToggleEvents> = /*@__PURE__*/ createComponent<InnoToggleElement, InnoToggleEvents>({
     tagName: 'inno-toggle',
     elementClass: InnoToggleElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onCheckedChange: 'checkedChange' } as InnoToggleEvents,
     defineCustomElement: defineInnoToggle

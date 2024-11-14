@@ -1,0 +1,50 @@
+{
+  "name": "@innomotics/brand-experience",
+  "version": "0.0.2-beta-13",
+  "description": "Stencil Component Starter",
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "es2015": "esm/index.js",
+  "es2017": "esm/index.js",
+  "types": "types/index.d.ts",
+  "collection": "collection/collection-manifest.json",
+  "collection:main": "collection/index.js",
+  "unpkg": "innomotics-brand-experience/innomotics-brand-experience.esm.js",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "cjs/",
+    "collection/",
+    "components/",
+    "esm/",
+    "innomotics-brand-experience/",
+    "styles/",
+    "types/",
+    "loader/",
+    "index.cjs.js",
+    "index.js",
+    "LICENSE.md",
+    "readme.md",
+    "package.json"
+  ],
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.11",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13",
+    "@stencil/core": "^4.21.0",
+    "@stencil/sass": "^3.0.12",
+    "animejs": "^3.2.2",
+    "luxon": "3.4.4",
+    "resize-observer-polyfill": "^1.5.1",
+    "sanitize-html": "^2.13.0",
+    "simplebar": "^6.2.6"
+  },
+  "peerDependencies": {
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
+  },
+  "license": "MIT"
+}

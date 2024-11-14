@@ -27,5 +27,5 @@ imports: [
 ### Import style
 
 ```
-@import '@innomotics/brand-experience/dist/styles/innomotics'
+@import '@innomotics/brand-experience/styles/innomotics'
 ```

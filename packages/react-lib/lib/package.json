@@ -1,0 +1,30 @@
+{
+  "name": "@innomotics/brand-experience-react-lib",
+  "version": "0.0.2-beta-13",
+  "description": "> TODO: description",
+  "author": "&innomotics",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "types/index.d.ts",
+  "private": false,
+  "files": [
+    "components/",
+    "types/",
+    "util/",
+    "index.js",
+    "index.js.map",
+    "package.json",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "dependencies": {
+    "@innomotics/brand-experience": "^0.0.2-beta-13"
+  },
+  "peerDependencies": {
+    "@innomotics/brand-experience": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
+  }
+}

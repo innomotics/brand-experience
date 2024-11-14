@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-12",
+  "version": "0.0.2-beta-13",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -18,9 +18,10 @@
   },
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
-    "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
+    "copyoutputs": "npx cpx \"./fonts/**\" \"./dist/fonts\" && npx cpx \"./styles/**\" \"./dist/styles\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
-    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\""
+    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
+    "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"
@@ -28,5 +29,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "gitHead": "c18d54b85389fb6310ac6fa42e0a8736fa7d4c90"
 }

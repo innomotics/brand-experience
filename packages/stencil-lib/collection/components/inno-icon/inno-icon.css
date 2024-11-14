@@ -1,0 +1,9 @@
+:host .icon-light {
+  color: inherit;
+}
+:host .icon-dark {
+  color: inherit;
+}
+:host .icon-font {
+  font-family: "InnomoticsUiIcons";
+}

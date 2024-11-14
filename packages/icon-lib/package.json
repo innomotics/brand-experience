@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-icons",
-  "version": "0.0.2-beta-12",
+  "version": "0.0.2-beta-13",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "https://github.com/innomotics/brand-experience#readme",
@@ -18,10 +18,11 @@
   },
   "scripts": {
     "build": "npm run generateIconModule && npm run copyoutputs && npm run copyicons && npm run copyreadme",
-    "copyoutputs": " npx cpx \"./lib/**\" \"./dist/\"",
+    "copyoutputs": "npx cpx \"./lib/**\" \"./dist/\" && npx cpx \"./svg/**\" \"./dist/svg\" && npx cpx \"./styles/**\" \"./dist/styles\"",
     "generateIconModule": "npx ts-node generator.ts",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/icons\"",
-    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\""
+    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\"",
+    "prepublishOnly": "npx cpx *.md \"./dist\""
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
@@ -37,5 +38,6 @@
   "dependencies": {
     "@iconify/tools": "^4.0.7",
     "jszip": "^3.10.1"
-  }
+  },
+  "gitHead": "d9fac69a3daa0096a9cb27470f6c912bd0f846ad"
 }

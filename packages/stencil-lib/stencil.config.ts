@@ -13,14 +13,6 @@ const copyAssets = [
   },
 ];
 
-const copyGlobalStyles = [
-  {
-    src: '../styles',
-    dest: 'dist/styles',
-    keepDirStructure: true
-  },
-];
-
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: ['inno-select[formControl]', 'inno-select[formControlName]', 'inno-select[ngModel]'],
@@ -52,16 +44,18 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader',
+      esmLoaderPath: './loader',
+      dir : './',
+      empty:false
     },
     {
       type: 'dist-custom-elements',
+      dir:'./components',
       externalRuntime: false
     },
     {
       type: 'docs-readme',
     },
-    { type: 'dist-custom-elements', copy: copyGlobalStyles },
     {
       type: 'www',
       serviceWorker: null,
@@ -76,6 +70,7 @@ export const config: Config = {
     }),
     reactOutputTarget({
       stencilPackageName: '@innomotics/brand-experience',
+      customElementsDir : "components",
       outDir:'../react-lib/lib/components/stencil-generated'
     }),
     vueOutputTarget({

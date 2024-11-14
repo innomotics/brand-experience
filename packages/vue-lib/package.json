@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-12",
+  "version": "0.0.2-beta-13",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -18,10 +18,11 @@
   "scripts": {
     "test": "node ./__tests__/vue-lib.test.js",
     "build": "npm run tsc",
-    "tsc": "tsc -p . --outDir ./dist"
+    "tsc": "tsc -p . --outDir ./dist",
+    "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-12"
+    "@innomotics/brand-experience": "^0.0.2-beta-13"
   },
   "devDependencies": {
     "vue": "3.4.25"
@@ -31,8 +32,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-12",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-12",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-12"
-  }
+    "@innomotics/brand-experience": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-13",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-13"
+  },
+  "gitHead": "8028f370259942960841efa6820cc62e01b9a688"
 }

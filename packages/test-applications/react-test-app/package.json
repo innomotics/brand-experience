@@ -10,11 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@innomotics/brand-experience-react-lib": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@innomotics/brand-experience":"*",
-    "@innomotics/brand-experience-react-lib":"*",
-    "@innomotics/brand-experience-fonts":"*"
+    "sass": "^1.80.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 56px;
+}
+
+.picker {
+  width: 100%;
+  height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  font-family: "InnomoticsHafferSQ";
+  cursor: pointer;
+}
+.picker.light {
+  border: 1px solid #9aacb4;
+  color: #40545b;
+}
+.picker.dark {
+  border: 1px solid #9aacb4;
+  background-color: #08191f;
+  color: #b2c1c7;
+}
+.picker .picker-label--hasvalue {
+  position: absolute;
+  top: 6px;
+  left: 16px;
+  font-size: 12px;
+}
+.picker .picker-value {
+  position: relative;
+  top: 7px;
+}
+.picker .picker-icon {
+  margin-left: auto;
+}
+.picker .picker-icon.light {
+  color: #08191f;
+}
+.picker .picker-icon.dark {
+  color: #ffffff;
+}
+
+.dropdown-container {
+  display: none;
+  z-index: 10;
+  position: fixed;
+}
+
+.show {
+  display: block;
+}
