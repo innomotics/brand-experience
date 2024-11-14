@@ -23,5 +23,5 @@ createApp(App).use(ComponentLibrary).mount('#app')
 ### Import style
 
 ```
-@import '@innomotics/brand-experience/dist/styles/innomotics'
+@import '@innomotics/brand-experience/styles/innomotics'
 ```

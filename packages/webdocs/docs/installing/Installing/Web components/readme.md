@@ -25,5 +25,5 @@ then also call it in your main application file (app.js)
 ### Import style
 
 ```
-@import '@innomotics/brand-experience/dist/styles/innomotics'
+@import '@innomotics/brand-experience/styles/innomotics'
 ```

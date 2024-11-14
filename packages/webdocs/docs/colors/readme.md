@@ -121,6 +121,6 @@
 
  ## Usage 
 Import the colors either by 
-```@use @innomotics/brand-experience/dist/styles/colors; ```
+```@use @innomotics/brand-experience/styles/colors; ```
  or 
-``` @use @innomotics/brand-experience/dist/styles/innomotics; ```
+``` @use @innomotics/brand-experience/styles/innomotics; ```

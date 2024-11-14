@@ -5,8 +5,8 @@
 @use './components/inno-input';
 @use 'simplebar/dist/simplebar.min.css';
 
-@forward '@innomotics/brand-experience-fonts/dist/styles/innomoticsHaffer';
-@forward '@innomotics/brand-experience-icons/dist/styles/innomoticsIcons';
+@forward '@innomotics/brand-experience-fonts/styles/innomoticsHaffer';
+@forward '@innomotics/brand-experience-icons/styles/innomoticsIcons';
 @forward './layoutmixins';
 @forward './colors';
 @forward './componentmixins';

@@ -25,7 +25,7 @@ defineCustomElements();
 
 ```
 npm install sass
-@import '@innomotics/brand-experience/dist/styles/innomotics'
+@import '@innomotics/brand-experience/styles/innomotics'
 ```
 
 ### tsconfig.json
