@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoLoader extends Components.InnoLoader, HTMLElement {}
 export const InnoLoader: {

@@ -1,1 +1,0 @@
-module.exports = require('../stencil-lib/cjs/loader.cjs.js');

@@ -28,7 +28,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873/"
+    "registry": "https://registry.npmjs.org/"
   },
   "gitHead": "c18d54b85389fb6310ac6fa42e0a8736fa7d4c90"
 }
