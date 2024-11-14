@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../types/components";
 
 interface InnoToggle extends Components.InnoToggle, HTMLElement {}
 export const InnoToggle: {

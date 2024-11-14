@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-15",
+  "version": "0.0.2-beta-16",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
-    "copyoutputs": "npx cpx \"./lib/**\" \"./dist/\"",
+    "copyoutputs": "npx cpx \"./fonts/**\" \"./dist/fonts\" && npx cpx \"./styles/**\" \"./dist/styles\"",
     "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
     "prepublishOnly": "npx cpx ./lib/package.json ./dist && npx cpx *.md \"./dist\""

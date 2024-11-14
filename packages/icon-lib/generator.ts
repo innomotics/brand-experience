@@ -5,7 +5,7 @@ import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
 import { parseColors } from '@iconify/tools/lib/colors/parse';
 import * as JSZip from 'jszip';
 
-const directoryPath = "./lib/svg";
+const directoryPath = "./svg";
 
 //passsing directoryPath and callback function
 let moduleContent = "";
