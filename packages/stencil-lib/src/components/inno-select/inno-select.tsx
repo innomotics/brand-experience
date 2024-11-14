@@ -39,7 +39,7 @@ export class InnoSelect {
   /**
    * Color variant of the select.
    */
-  @Prop({ mutable: true }) variant: 'light' | 'dark' | 'primary' = 'light';
+  @Prop({ mutable: true }) variant: 'light' | 'dark' | 'primary' | 'primary-dark' = 'light';
   @State() isOpen: boolean = false;
 
   /**
@@ -407,6 +407,7 @@ export class InnoSelect {
           'light': this.variant === 'light',
           'dark': this.variant === 'dark',
           'primary': this.variant === 'primary',
+          'primary-dark': this.variant === 'primary-dark',
           'disabled': this.disabled,
           'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
           'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
