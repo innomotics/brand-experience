@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoModalHeader extends Components.InnoModalHeader, HTMLElement {}
 export const InnoModalHeader: {

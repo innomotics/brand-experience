@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoDateTimeCard extends Components.InnoDateTimeCard, HTMLElement {}
 export const InnoDateTimeCard: {

@@ -14,7 +14,7 @@
   ],
   "private": false,
   "scripts": {
-    "build": "ng-packagr -c tsconfig.json && npm run publishartifacts",
+    "build": "ng-packagr -p ng-package.json -c tsconfig.json && npm run publishartifacts",
     "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "typings": "index.d.ts",
@@ -23,11 +23,11 @@
       "default": "./package.json"
     },
     ".": {
-      "types": "./index.d.ts",
-      "esm": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
-      "esm2022": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
-      "fesm2022": "./fesm2022/innomotics-brand-experience-angular-lib.mjs",
-      "default": "./fesm2022/innomotics-brand-experience-angular-lib.mjs"
+      "types": "./dist/index.d.ts",
+      "esm": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "esm2022": "./dist/esm2022/innomotics-brand-experience-angular-lib.mjs",
+      "fesm2022": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs",
+      "default": "./dist/fesm2022/innomotics-brand-experience-angular-lib.mjs"
     }
   },
   "dependencies": {
@@ -47,7 +47,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "http://localhost:4873//"
   },
   "gitHead": "8028f370259942960841efa6820cc62e01b9a688"
 }

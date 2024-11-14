@@ -33,7 +33,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "http://localhost:4873//"
   },
   "dependencies": {
     "@iconify/tools": "^4.0.7",

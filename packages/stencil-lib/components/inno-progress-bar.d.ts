@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoProgressBar extends Components.InnoProgressBar, HTMLElement {}
 export const InnoProgressBar: {

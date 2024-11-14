@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoButton extends Components.InnoButton, HTMLElement {}
 export const InnoButton: {
