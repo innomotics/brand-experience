@@ -19,9 +19,9 @@
   "scripts": {
     "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
     "copyoutputs": "npx cpx \"./fonts/**\" \"./dist/fonts\" && npx cpx \"./styles/**\" \"./dist/styles\"",
-    "copyreadme": "npx cpx readme.md \"../webdocs/docs/fonts\"",
+    "copyreadme": "npx cpx \"readme.md\" \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
-    "prepublishOnly": "npx cpx ./lib/package.json \"./dist\" && npx cpx *.md \"./dist\""
+    "prepublishOnly": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"
