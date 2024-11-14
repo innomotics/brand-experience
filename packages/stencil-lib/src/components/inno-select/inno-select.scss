@@ -67,6 +67,25 @@
     }
   }
 
+  &.primary-dark {
+    transition: background-color 0.3s cubic-bezier(0.84, 0, 0.58, 1);
+
+    &:hover:not(.disabled):not(:disabled) {
+      color: colors.$text-light-buttonlabel;
+      background-color: colors.$interaction-light-hover;
+    }
+
+    .select-header {
+      inno-icon {
+        color: colors.$highlight-light-200;
+      }
+    }
+
+    .icon-driven:not(inno-select-item) {
+      color: colors.$highlight-light-200;
+    }
+  }
+
   &.input-container {
     display: flex;
     flex-direction: column;
@@ -125,13 +144,20 @@
           &.primary {
             color: colors.$primary-200;
 
-            &.disabled-light {
+            &.disabled {
+              color: colors.$interaction-dark-disabled;
+              background-color: colors.$additional-dark-200;
+            }
+          }
+
+          &.primary-dark {
+            color: colors.$primary-200;
+
+            &.disabled {
               color: colors.$interaction-light-disabled;
+              background-color: colors.$additional-light-200;
             }
 
-            &.disabled-dark {
-              color: colors.$interaction-dark-disabled;
-            }
           }
         }
 
@@ -167,12 +193,19 @@
           &.primary {
             color: colors.$primary-200;
 
-            &.disabled-light {
-              color: colors.$interaction-light-disabled;
-            }
-
-            &.disabled-dark {
+            &.disabled {
               color: colors.$interaction-dark-disabled;
+              background-color: colors.$additional-dark-200;
+            }
+          }
+
+          &.primary-dark {
+            color: colors.$highlight-light-200;
+            //background-color: colors.$highlight-light-100;
+
+            &.disabled {
+              color: colors.$interaction-light-disabled;
+              background-color: colors.$additional-light-200;
             }
           }
         }
@@ -198,12 +231,19 @@
     &.primary {
       background-color: colors.$primary-100;
 
-      &.disabled-light {
-        background-color: colors.$additional-light-200;
-      }
-
-      &.disabled-dark {
+      &.disabled {
+        color: colors.$interaction-dark-disabled;
         background-color: colors.$additional-dark-200;
+      }
+    }
+
+    &.primary-dark {
+      color: colors.$highlight-light-200;
+      background-color: colors.$highlight-light-100;
+
+      &.disabled {
+        color: colors.$interaction-light-disabled;
+        background-color: colors.$additional-light-200;
       }
     }
   }
