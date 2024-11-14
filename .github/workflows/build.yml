@@ -62,8 +62,6 @@ jobs:
           if-no-files-found: error
           path: |
             packages/stencil-lib/dist
-            packages/stencil-lib/loader
-            packages/stencil-lib/www
             packages/react-lib/dist
             packages/vue-lib/dist
             packages/angular-lib/dist
