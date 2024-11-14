@@ -25,7 +25,7 @@ export declare class InnoSelect {
     /**
      * Color variant of the select.
      */
-    variant: 'light' | 'dark' | 'primary';
+    variant: 'light' | 'dark' | 'primary' | 'primary-dark';
     isOpen: boolean;
     /**
      * Depending on the container html element's background color you can choose a lighter or darker disabled style.

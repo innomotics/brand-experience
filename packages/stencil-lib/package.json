@@ -25,13 +25,13 @@
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
     "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts && npx cpx \"./readmes/**/*.md\" \"../webdocs/docs\"",
-    "build": "stencil build && npm run copyreadmes && npm run createadditionalreadmes",
+    "build": "stencil build && npm run copyreadmes && npm run createadditionalreadmes && npm run publishartifacts",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "stencil": "stencil",
-    "prepublishOnly": "npx cpx \"./cjs/**\" \"./dist/cjs\" && npx cpx \"./collection/**\" \"./dist/collection\" && npx cpx \"./esm/**\" \"./dist/esm\" && npx cpx \"./innomotics-brand-experience/**\" \"./dist/innomotics-brand-experience\" && npx cpx \"./styles/**\" ./dist/styles && npx cpx \"./types/**\" \"./dist/types\" && npx cpx \"./loader/**\" \"./dist/loader\" && npx cpx \"./*.js\" \"./dist\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "publishartifacts": "npx cpx \"./cjs/**\" \"./dist/cjs\" && npx cpx \"./collection/**\" \"./dist/collection\" && npx cpx \"./esm/**\" \"./dist/esm\" && npx cpx \"./innomotics-brand-experience/**\" \"./dist/innomotics-brand-experience\" && npx cpx \"./styles/**\" ./dist/styles && npx cpx \"./types/**\" \"./dist/types\" && npx cpx \"./loader/**\" \"./dist/loader\" && npx cpx \"./*.js\" \"./dist\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",

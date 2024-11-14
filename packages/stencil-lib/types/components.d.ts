@@ -707,7 +707,7 @@ export namespace Components {
         /**
           * Color variant of the select.
          */
-        "variant": 'light' | 'dark' | 'primary';
+        "variant": 'light' | 'dark' | 'primary' | 'primary-dark';
     }
     interface InnoSelectItem {
         /**
@@ -2326,7 +2326,7 @@ declare namespace LocalJSX {
         /**
           * Color variant of the select.
          */
-        "variant"?: 'light' | 'dark' | 'primary';
+        "variant"?: 'light' | 'dark' | 'primary' | 'primary-dark';
     }
     interface InnoSelectItem {
         /**

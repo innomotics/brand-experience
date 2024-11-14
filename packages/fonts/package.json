@@ -17,11 +17,11 @@
     "url": "https://github.com/innomotics/brand-experience"
   },
   "scripts": {
-    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts",
+    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts && npm run publishartifacts",
     "copyoutputs": "npx cpx \"./fonts/**\" \"./dist/fonts\" && npx cpx \"./styles/**\" \"./dist/styles\"",
     "copyreadme": "npx cpx \"readme.md\" \"../webdocs/docs/fonts\"",
     "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
-    "prepublishOnly": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "devDependencies": {
     "cpx2": "^7.0.1"

@@ -18,9 +18,9 @@
   ],
   "scripts": {
     "test": "node ./__tests__/react-library.test.js",
-    "build": "npm run tsc",
+    "build": "npm run tsc && npm run publishartifacts",
     "tsc": "tsc -p . --outDir ./dist",
-    "prepublishOnly": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "publishConfig": {
     "access": "public",

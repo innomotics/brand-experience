@@ -76,6 +76,19 @@
 :host.primary .icon-driven:not(inno-select-item) {
   color: #08191f;
 }
+:host.primary-dark {
+  transition: background-color 0.3s cubic-bezier(0.84, 0, 0.58, 1);
+}
+:host.primary-dark:hover:not(.disabled):not(:disabled) {
+  color: #ffffff;
+  background-color: #40545b;
+}
+:host.primary-dark .select-header inno-icon {
+  color: #e1f000;
+}
+:host.primary-dark .icon-driven:not(inno-select-item) {
+  color: #e1f000;
+}
 :host.input-container {
   display: flex;
   flex-direction: column;
@@ -126,11 +139,16 @@
 :host.input-container .select-header .content .label.primary {
   color: #08191f;
 }
-:host.input-container .select-header .content .label.primary.disabled-light {
+:host.input-container .select-header .content .label.primary.disabled {
   color: #9aacb4;
+  background-color: #40545b;
 }
-:host.input-container .select-header .content .label.primary.disabled-dark {
+:host.input-container .select-header .content .label.primary-dark {
+  color: #08191f;
+}
+:host.input-container .select-header .content .label.primary-dark.disabled {
   color: #9aacb4;
+  background-color: #cad5da;
 }
 :host.input-container .select-header .content .float {
   position: absolute;
@@ -159,11 +177,16 @@
 :host.input-container .select-header .content .label-value.primary {
   color: #08191f;
 }
-:host.input-container .select-header .content .label-value.primary.disabled-light {
+:host.input-container .select-header .content .label-value.primary.disabled {
   color: #9aacb4;
+  background-color: #40545b;
 }
-:host.input-container .select-header .content .label-value.primary.disabled-dark {
+:host.input-container .select-header .content .label-value.primary-dark {
+  color: #e1f000;
+}
+:host.input-container .select-header .content .label-value.primary-dark.disabled {
   color: #9aacb4;
+  background-color: #cad5da;
 }
 :host.input-container.dark {
   background-color: #08191f;
@@ -180,11 +203,17 @@
 :host.input-container.primary {
   background-color: #e1f000;
 }
-:host.input-container.primary.disabled-light {
-  background-color: #cad5da;
-}
-:host.input-container.primary.disabled-dark {
+:host.input-container.primary.disabled {
+  color: #9aacb4;
   background-color: #40545b;
+}
+:host.input-container.primary-dark {
+  color: #e1f000;
+  background-color: #08191f;
+}
+:host.input-container.primary-dark.disabled {
+  color: #9aacb4;
+  background-color: #cad5da;
 }
 :host .select-wrapper {
   position: relative;

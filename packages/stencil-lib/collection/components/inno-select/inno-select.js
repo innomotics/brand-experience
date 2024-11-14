@@ -274,16 +274,17 @@ export class InnoSelect {
     }
     render() {
         this.setLabelsMaxWidth();
-        return (h(Host, { key: '61fd3bdc2282d9959e4864392b7006e4fd9a41e6', tabindex: 0, class: {
+        return (h(Host, { key: '375736989a5b2b8c948793440ff4f856f6b73657', tabindex: 0, class: {
                 'input-container': true,
                 'isactive': !this.valueIsUndefined,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
                 'primary': this.variant === 'primary',
+                'primary-dark': this.variant === 'primary-dark',
                 'disabled': this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, h("div", { key: '383877c06ab2ebc22bf5d11ee3ffcd45d8190506', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (h("div", { class: "select-header" }, h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, h("span", { class: {
+            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, h("div", { key: '0c69af4852ffe82a2b40eb549c207a5be882008f', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (h("div", { class: "select-header" }, h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, h("span", { class: {
                 label: true,
                 float: !this.valueIsUndefined,
                 disabled: this.disabled,
@@ -308,7 +309,7 @@ export class InnoSelect {
                 disabled: this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (h("span", null, this.selectedItem?.icon ? h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (h("span", null, this.icon ? h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.label))), h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), h("div", { key: '03a5741af6d2bb60b53c4c8ff53d724df52a5914', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, h("slot", { key: '7fab48ae731a0dcea5bb656e14cf3db57c92ceb9' })))));
+            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (h("span", null, this.selectedItem?.icon ? h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (h("span", null, this.icon ? h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.label))), h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), h("div", { key: '0297c9975edd316b357a7956efa57a6baf5ec01b', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, h("slot", { key: '033e35acecf544d53e470df0d5e21d33c841533f' })))));
     }
     static get is() { return "inno-select"; }
     static get encapsulation() { return "scoped"; }
@@ -396,8 +397,8 @@ export class InnoSelect {
                 "type": "string",
                 "mutable": true,
                 "complexType": {
-                    "original": "'light' | 'dark' | 'primary'",
-                    "resolved": "\"dark\" | \"light\" | \"primary\"",
+                    "original": "'light' | 'dark' | 'primary' | 'primary-dark'",
+                    "resolved": "\"dark\" | \"light\" | \"primary\" | \"primary-dark\"",
                     "references": {}
                 },
                 "required": false,

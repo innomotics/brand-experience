@@ -14,8 +14,8 @@
   ],
   "private": false,
   "scripts": {
-    "build": "ng-packagr -c tsconfig.json",
-    "prepublishOnly": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "build": "ng-packagr -c tsconfig.json && npm run publishartifacts",
+    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "typings": "index.d.ts",
   "exports": {
