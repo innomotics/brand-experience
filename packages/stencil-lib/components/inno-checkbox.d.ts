@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../types/components";
 
 interface InnoCheckbox extends Components.InnoCheckbox, HTMLElement {}
 export const InnoCheckbox: {

@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../types/components";
 
 interface InnoRadio extends Components.InnoRadio, HTMLElement {}
 export const InnoRadio: {

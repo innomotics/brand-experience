@@ -22,7 +22,7 @@
     "./package.json": {
       "default": "./package.json"
     },
-    "./dist": {
+    ".": {
       "types": "./index.d.ts",
       "esm": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
       "esm2022": "./esm2022/innomotics-brand-experience-angular-lib.mjs",
