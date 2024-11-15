@@ -227,11 +227,13 @@ export class InnoCheckbox {
       ...this.commonStyles(),
       label: true,
     };
-    return (
-      <span class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
-        {this.label}
-      </span>
-    );
+    if (this.label != null && this.label !== '') {
+      return (
+        <span class={classes} onClick={() => this.changeCheckedState(!this.checked)}>
+          {this.label}
+        </span>
+      );
+    }
   }
 
   render() {

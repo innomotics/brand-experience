@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../types/components";
 
 interface InnoDatePicker extends Components.InnoDatePicker, HTMLElement {}
 export const InnoDatePicker: {
