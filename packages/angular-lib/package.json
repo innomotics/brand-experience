@@ -43,7 +43,7 @@
     "@innomotics/brand-experience": "^0.0.2-beta-15",
     "@innomotics/brand-experience-fonts": "^0.0.2-beta-15",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-15",
-    "typescript": "^5.3.3"
+    "typescript": "5.4.5"
   },
   "publishConfig": {
     "access": "public",
