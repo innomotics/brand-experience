@@ -14,7 +14,18 @@ The class **InnomoticsHafferSQ** can be used to add font-family directly to an e
 <span class="InnomoticsHafferSQ">example text</span>
 ```
 
-See the InnomoticsHafferSQ font page for example and more information about the style.
+## Font related classes
+
+Avaliable classes to use after import.
+
+* <span class="text-4xl">text-4xl (80px)</span>
+* <span class="text-3xl">text-3xl (48px)</span>
+* <span class="text-2xl">text-2xl (32px)</span>
+* <span class="text-xl">text-xl (24px)</span>
+* <span class="text-lg">text-lg (20px)</span>
+* <span class="text-base">text-base (16px)</span>
+* <span class="text-sm">text-sm (14px)</span>
+* <span class="text-xs">text-xs (12px)</span>
 
 ## Innomotics UI icon font
 
