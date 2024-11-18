@@ -60,7 +60,7 @@ export class InnoTableBase {
       rightMaskVisible = false;
     }
 
-    this.maskElement.style.setProperty('background-color', leftMaskVisible || rightMaskVisible ? this.maskColor : 'transparent');
+    this.maskElement.style.backgroundColor = ((leftMaskVisible || rightMaskVisible) ? this.maskColor : 'transparent');
   }
 
   scrollListener = (event: any) => {
