@@ -146,15 +146,14 @@ export class InnoTab {
   }
 
   private move(amount: number, click = false) {
-    const tabWrapper = this.getTabsWrapper();
+    const tabWrapper = this.getTabsWrapper() as HTMLElement;
     const maxScrollWidth = (tabWrapper.scrollWidth - tabWrapper.getBoundingClientRect().width) * -1;
 
     amount = this.currentScrollAmount + amount;
     amount = amount > 0 ? 0 : amount < maxScrollWidth ? maxScrollWidth : amount;
 
-    const styles = [`transform: translateX(${amount}px);`, click ? 'transition: all ease-in-out 400ms;' : ''].join('');
-
-    tabWrapper.setAttribute('style', styles);
+    tabWrapper.style.transform = `translateX(${amount}px)`;
+    tabWrapper.style.transition = click ? 'all ease-in-out 400ms' : 'unset';
 
     if (click) {
       this.currentScrollAmount = this.scrollActionAmount = amount;
