@@ -27,6 +27,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
             <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary-dark" disabled="true">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
@@ -43,6 +49,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" value="item1" variant="primary">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary" disabled="true">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
@@ -74,6 +86,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <inno-select-item id="item3" value="item3" label="item3" can-favorite="true"></inno-select-item>
             <inno-select-item id="item4" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
+          <inno-select label="Select" value="item1" variant="primary-dark" disabled="true">
+            <inno-select-item value="item1" label="item1"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4" value="item4" label="item4" can-favorite="true"></inno-select-item>
+          </inno-select>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
@@ -90,6 +108,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <inno-select-item id="item4-4" value="item4" label="item4" can-favorite="true"></inno-select-item>
           </inno-select>
           <inno-select label="Select" value="item1" variant="primary">
+            <inno-select-item value="item1" label="item1"></inno-select-item>
+            <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
+            <inno-select-item id="item3" value="item3" label="item3" can-favorite="true"></inno-select-item>
+            <inno-select-item id="item4" value="item4" label="item4" can-favorite="true"></inno-select-item>
+          </inno-select>
+          <inno-select label="Select" value="item1" variant="primary" disabled="true">
             <inno-select-item value="item1" label="item1"></inno-select-item>
             <inno-select-item value="item2" label="item2" has-separator="true"></inno-select-item>
             <inno-select-item id="item3" value="item3" label="item3" can-favorite="true"></inno-select-item>
@@ -122,6 +146,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
             <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary-dark" disabled="true">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
@@ -138,6 +168,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" value="item1" variant="primary">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary" disabled="true">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
@@ -170,6 +206,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
             <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary-dark" disabled="true">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
         </div>
         <div class="dark-bg">
           <span class="bg-title">dark background</span>
@@ -186,6 +228,12 @@ import {InnoSelect, InnoSelectItem} from '@innomotics/brand-experience-react-lib
             <InnoSelectItem id="item4-4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
           </InnoSelect>
           <InnoSelect label="Select" value="item1" variant="primary">
+            <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
+            <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
+            <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
+            <InnoSelectItem id="item4" value="item4" label="item4" canFavorite="true"></InnoSelectItem>
+          </InnoSelect>
+          <InnoSelect label="Select" value="item1" variant="primary" disabled="true">
             <InnoSelectItem value="item1" label="item1"></InnoSelectItem>
             <InnoSelectItem value="item2" label="item2" hasSeparator="true"></InnoSelectItem>
             <InnoSelectItem id="item3" value="item3" label="item3" canFavorite="true"></InnoSelectItem>
