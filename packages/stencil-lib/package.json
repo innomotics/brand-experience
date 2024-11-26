@@ -2,21 +2,21 @@
   "name": "@innomotics/brand-experience",
   "version": "0.0.2-beta-19",
   "description": "Stencil Component Starter",
-  "main": "index.cjs.js",
-  "module": "index.js",
-  "es2015": "esm/index.js",
-  "es2017": "esm/index.js",
-  "types": "types/index.d.ts",
-  "collection": "collection/collection-manifest.json",
-  "collection:main": "collection/index.js",
-  "unpkg": "innomotics-brand-experience/innomotics-brand-experience.esm.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "es2015": "./dist/esm/index.js",
+  "es2017": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "collection:main": "./dist/collection/index.js",
+  "unpkg": "./dist/innomotics-brand-experience/innomotics-brand-experience.esm.js",
   "private": false,
   "repository": {
     "type": "git",
     "url": ""
   },
   "files": [
-    "./"
+    "./dist"
   ],
   "publishConfig": {
     "access": "public",
@@ -31,7 +31,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "stencil": "stencil",
-    "publishartifacts": "npx cpx \"./cjs/**\" \"./dist/cjs\" && npx cpx \"./collection/**\" \"./dist/collection\" && npx cpx \"./esm/**\" \"./dist/esm\" && npx cpx \"./innomotics-brand-experience/**\" \"./dist/innomotics-brand-experience\" && npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./loader/**\" \"./dist/loader\" && npx cpx \"./*.js\" \"./dist\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "publishartifacts": "npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",

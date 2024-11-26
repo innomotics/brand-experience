@@ -44,15 +44,11 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: './loader',
-      dir : './',
       empty:false
     },
     {
       type: 'dist-custom-elements',
-      externalRuntime: false,
-      empty: false,
-
+      externalRuntime: false
     },
     {
       type: 'docs-readme',

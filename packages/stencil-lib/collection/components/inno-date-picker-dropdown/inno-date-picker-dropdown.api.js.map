@@ -1,1 +1,0 @@
-{"version":3,"file":"inno-date-picker-dropdown.api.js","sourceRoot":"","sources":["../../../src/components/inno-date-picker-dropdown/inno-date-picker-dropdown.api.ts"],"names":[],"mappings":"","sourcesContent":["export interface InnoDatePickerDropdownSettings {\r\n  readonly label?: string;\r\n}\r\n"]}
