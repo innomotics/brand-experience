@@ -89,8 +89,8 @@ export class InnoTab {
         const maxScrollWidth = (tabWrapper.scrollWidth - tabWrapper.getBoundingClientRect().width) * -1;
         amount = this.currentScrollAmount + amount;
         amount = amount > 0 ? 0 : amount < maxScrollWidth ? maxScrollWidth : amount;
-        const styles = [`transform: translateX(${amount}px);`, click ? 'transition: all ease-in-out 400ms;' : ''].join('');
-        tabWrapper.setAttribute('style', styles);
+        tabWrapper.style.transform = `translateX(${amount}px)`;
+        tabWrapper.style.transition = click ? 'all ease-in-out 400ms' : 'unset';
         if (click) {
             this.currentScrollAmount = this.scrollActionAmount = amount;
         }
@@ -243,7 +243,7 @@ export class InnoTab {
         return (h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, h("inno-icon", { icon: "chevron_right_small", size: 24 })));
     }
     render() {
-        return (h(Host, { key: 'e0c67f067208f37a0c796491c39cbb46d8a90cc4', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
+        return (h(Host, { key: 'd769006f1cbbec794dc7e4f772f6fbefe5d83402', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
     }
     static get is() { return "inno-tab"; }
     static get encapsulation() { return "scoped"; }

@@ -39,7 +39,7 @@ export class InnoTableBase {
             this.maskElement.classList.remove('is-right-overflowing');
             rightMaskVisible = false;
         }
-        this.maskElement.style.setProperty('background-color', leftMaskVisible || rightMaskVisible ? this.maskColor : 'transparent');
+        this.maskElement.style.backgroundColor = ((leftMaskVisible || rightMaskVisible) ? this.maskColor : 'transparent');
     }
     scrollListener = (event) => {
         this.setMask(event.target);
@@ -61,7 +61,7 @@ export class InnoTableBase {
         this.scrollBar.getScrollElement().removeEventListener('scroll', this.scrollListener);
     }
     render() {
-        return (h(Host, { key: 'e560ad69fcf77c9a15e9ea84552de54ca17da8fb', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, h("div", { key: 'b7aab63da3a2b0075481c51429e17bcc2000ba75', class: "table-wrapper" }, h("div", { key: 'f9b493667e700a340d2b45430a3f95a819d2980a', class: "mask-layer" }), h("div", { key: '409a82d6428b0d04570e4d266e0405aa595a1a7a', class: "table-div" }, h("slot", { key: '901e8b1fd0a34adce1193940851190c73174d888' })))));
+        return (h(Host, { key: '49ba48b414322d1a7b4dc9d590d42493e86dadd7', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, h("div", { key: 'a85518690a8b60e684705641a2e99146cbd97c82', class: "table-wrapper" }, h("div", { key: '14a5a8e4cd52680ba562acbbc862e4e18c2c7b40', class: "mask-layer" }), h("div", { key: '593c2cfc00d30bf2b230b918c05b9988aa23c5d1', class: "table-div" }, h("slot", { key: '3d50ef0c9c9e17017c4784f9a6a8d38dc047801a' })))));
     }
     static get is() { return "inno-table-base"; }
     static get encapsulation() { return "scoped"; }

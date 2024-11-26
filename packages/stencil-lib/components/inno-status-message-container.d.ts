@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoStatusMessageContainer extends Components.InnoStatusMessageContainer, HTMLElement {}
 export const InnoStatusMessageContainer: {

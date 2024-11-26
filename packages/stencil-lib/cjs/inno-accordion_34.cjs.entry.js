@@ -16590,8 +16590,8 @@ const InnoTab = class {
         const maxScrollWidth = (tabWrapper.scrollWidth - tabWrapper.getBoundingClientRect().width) * -1;
         amount = this.currentScrollAmount + amount;
         amount = amount > 0 ? 0 : amount < maxScrollWidth ? maxScrollWidth : amount;
-        const styles = [`transform: translateX(${amount}px);`, click ? 'transition: all ease-in-out 400ms;' : ''].join('');
-        tabWrapper.setAttribute('style', styles);
+        tabWrapper.style.transform = `translateX(${amount}px)`;
+        tabWrapper.style.transition = click ? 'all ease-in-out 400ms' : 'unset';
         if (click) {
             this.currentScrollAmount = this.scrollActionAmount = amount;
         }
@@ -16744,7 +16744,7 @@ const InnoTab = class {
         return (index$2.h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, index$2.h("inno-icon", { icon: "chevron_right_small", size: 24 })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'e0c67f067208f37a0c796491c39cbb46d8a90cc4', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
+        return (index$2.h(index$2.Host, { key: 'd769006f1cbbec794dc7e4f772f6fbefe5d83402', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
     }
 };
 InnoTab.style = InnoTabStyle0;
@@ -16843,7 +16843,7 @@ const InnoTableBase = class {
             this.maskElement.classList.remove('is-right-overflowing');
             rightMaskVisible = false;
         }
-        this.maskElement.style.setProperty('background-color', leftMaskVisible || rightMaskVisible ? this.maskColor : 'transparent');
+        this.maskElement.style.backgroundColor = ((leftMaskVisible || rightMaskVisible) ? this.maskColor : 'transparent');
     }
     scrollListener = (event) => {
         this.setMask(event.target);
@@ -16865,7 +16865,7 @@ const InnoTableBase = class {
         this.scrollBar.getScrollElement().removeEventListener('scroll', this.scrollListener);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'e560ad69fcf77c9a15e9ea84552de54ca17da8fb', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$2.h("div", { key: 'b7aab63da3a2b0075481c51429e17bcc2000ba75', class: "table-wrapper" }, index$2.h("div", { key: 'f9b493667e700a340d2b45430a3f95a819d2980a', class: "mask-layer" }), index$2.h("div", { key: '409a82d6428b0d04570e4d266e0405aa595a1a7a', class: "table-div" }, index$2.h("slot", { key: '901e8b1fd0a34adce1193940851190c73174d888' })))));
+        return (index$2.h(index$2.Host, { key: '49ba48b414322d1a7b4dc9d590d42493e86dadd7', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$2.h("div", { key: 'a85518690a8b60e684705641a2e99146cbd97c82', class: "table-wrapper" }, index$2.h("div", { key: '14a5a8e4cd52680ba562acbbc862e4e18c2c7b40', class: "mask-layer" }), index$2.h("div", { key: '593c2cfc00d30bf2b230b918c05b9988aa23c5d1', class: "table-div" }, index$2.h("slot", { key: '3d50ef0c9c9e17017c4784f9a6a8d38dc047801a' })))));
     }
 };
 InnoTableBase.style = InnoTableBaseStyle0;

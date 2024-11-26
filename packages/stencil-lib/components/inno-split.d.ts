@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoSplit extends Components.InnoSplit, HTMLElement {}
 export const InnoSplit: {

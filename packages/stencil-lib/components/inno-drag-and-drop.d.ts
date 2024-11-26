@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/components";
+import type { Components, JSX } from "../dist/types/components";
 
 interface InnoDragAndDrop extends Components.InnoDragAndDrop, HTMLElement {}
 export const InnoDragAndDrop: {
