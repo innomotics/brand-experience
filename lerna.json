@@ -3,7 +3,7 @@
   "version": "0.0.2-beta-18",
   "command": {
     "publish": {
-      "registry": "http://localhost:4873/"
+      "registry": "https://registry.npmjs.org/"
     }
   }
 }

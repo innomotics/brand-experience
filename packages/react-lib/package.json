@@ -24,7 +24,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873/"
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@innomotics/brand-experience": "^0.0.2-beta-18"

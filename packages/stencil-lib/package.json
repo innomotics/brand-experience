@@ -20,7 +20,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873/"
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
