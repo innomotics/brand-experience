@@ -11,6 +11,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@stencil/core": "^4.22.3",
+    "@stencil/react-output-target": "^0.7.4",
+    "@stencil/vue-output-target": "^0.9.0",
     "npm": "^10.5.0"
   }
 }

@@ -1,9 +1,9 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.0.2-beta-18",
+  "version": "0.0.2-beta-19",
   "command": {
     "publish": {
-      "registry": "https://registry.npmjs.org/"
+      "registry": "http://localhost:4873//"
     }
   }
 }

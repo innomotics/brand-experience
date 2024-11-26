@@ -1,5 +1,5 @@
-import { b as bootstrapLazy } from './index-28809b9f.js';
-export { s as setNonce } from './index-28809b9f.js';
+import { b as bootstrapLazy } from './index-aa3fe2a7.js';
+export { s as setNonce } from './index-aa3fe2a7.js';
 import { g as globalScripts } from './app-globals-173d43d6.js';
 import './index-00d75f3d.js';
 
