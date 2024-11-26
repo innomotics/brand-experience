@@ -67,6 +67,7 @@ export const config: Config = {
     }),
     reactOutputTarget({
       stencilPackageName: '@innomotics/brand-experience',
+      customElementsDir: 'components',
       outDir:'../react-lib/lib/components/stencil-generated'
     }),
     vueOutputTarget({

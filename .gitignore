@@ -7,3 +7,11 @@ packages/icon-lib/downloadoutput/
 packages/webdocs/static/svg/lime/innoicons_lime.zip
 packages/webdocs/static/svg/powergrey/innoicons_powergrey.zip
 packages/webdocs/static/svg/white/innoicons_white.zip
+packages/stencil-lib/cjs/
+packages/stencil-lib/collection/
+packages/stencil-lib/components/
+packages/stencil-lib/esm/
+packages/stencil-lib/innomotics-brand-experience/
+packages/stencil-lib/types/
+packages/stencil-lib/utils/
+
