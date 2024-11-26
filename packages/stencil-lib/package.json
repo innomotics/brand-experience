@@ -1,42 +1,39 @@
 {
   "name": "@innomotics/brand-experience",
-  "version": "0.0.2-beta-19",
+  "version": "0.0.2-beta-20",
   "description": "Stencil Component Starter",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.js",
-  "es2015": "./dist/esm/index.js",
-  "es2017": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
-  "collection": "./dist/collection/collection-manifest.json",
-  "collection:main": "./dist/collection/index.js",
-  "unpkg": "./dist/innomotics-brand-experience/innomotics-brand-experience.esm.js",
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "es2015": "esm/index.js",
+  "es2017": "esm/index.js",
+  "types": "types/index.d.ts",
+  "collection": "collection/collection-manifest.json",
+  "collection:main": "collection/index.js",
+  "unpkg": "innomotics-brand-experience/innomotics-brand-experience.esm.js",
   "private": false,
   "repository": {
     "type": "git",
     "url": ""
   },
   "files": [
-    "./dist"
+    "cjs/",
+    "collection/",
+    "components/",
+    "esm/",
+    "innomotics-brand-experience/",
+    "styles/",
+    "types/",
+    "loader/",
+    "index.cjs.js",
+    "index.js",
+    "LICENSE.md",
+    "readme.md",
+    "package.json"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://localhost:4873//"
-  },
-  "scripts": {
-    "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
-    "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts && npx cpx \"./readmes/**/*.md\" \"../webdocs/docs\"",
-    "build": "stencil build && npm run copyreadmes && npm run createadditionalreadmes && npm run publishartifacts",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate",
-    "stencil": "stencil",
-    "publishartifacts": "npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
-  },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-19",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-20",
     "@stencil/core": "^4.21.0",
     "@stencil/sass": "^3.0.12",
     "animejs": "^3.2.2",
@@ -45,26 +42,9 @@
     "sanitize-html": "^2.13.0",
     "simplebar": "^6.2.6"
   },
-  "devDependencies": {
-    "@stencil-community/postcss": "^2.2.0",
-    "@stencil/angular-output-target": "0.9.0",
-    "@stencil/react-output-target": "^0.7.1",
-    "@stencil/vue-output-target": "^0.8.9",
-    "@types/autoprefixer": "^10.2.0",
-    "@types/jest": "^29.5.6",
-    "@types/luxon": "^3.4.2",
-    "@types/node": "^16.18.11",
-    "@types/sanitize-html": "^2.11.0",
-    "autoprefixer": "^10.4.17",
-    "cpx2": "^7.0.1",
-    "jest": "^29.7.0",
-    "jest-cli": "^29.7.0",
-    "puppeteer": "^21.9.0"
-  },
   "peerDependencies": {
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-19"
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-20"
   },
-  "license": "MIT",
-  "gitHead": "fddcfeab6c7804b68835fd34039bc57f9101937e"
+  "license": "MIT"
 }

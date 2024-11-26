@@ -1,0 +1,250 @@
+.select-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16px;
+  grid-template-rows: auto;
+  align-items: center;
+  border-width: 0px;
+  border-style: none;
+  padding: 0px 16px 0px 16px;
+  height: 56px;
+  gap: 10px;
+  cursor: pointer;
+}
+.select-item.icon-driven:not(.can-favorite) {
+  grid-template-columns: auto minmax(0, 1fr) 16px;
+}
+.select-item.icon-driven.can-favorite {
+  grid-template-columns: auto minmax(0, 1fr) 24px;
+}
+.select-item.can-favorite .star {
+  display: block;
+  font-size: 24px;
+  position: relative;
+}
+.select-item.separator {
+  border-bottom: 3px double #ffffff;
+}
+.select-item.can-favorite:not(.selected):not(.icon-driven) {
+  grid-template-columns: minmax(0, 1fr) 24px;
+}
+.select-item.can-favorite.selected:not(.icon-driven) {
+  grid-template-columns: minmax(0, 1fr) 16px 24px;
+}
+
+:host {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+}
+:host.list-type {
+  width: 100%;
+}
+:host.disabled, :host:disabled {
+  pointer-events: none;
+  cursor: default;
+}
+:host button {
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  min-width: 96px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: bold;
+  border: none;
+  color: #08191f;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.84, 0, 0.58, 1);
+}
+:host button.list-type {
+  justify-content: space-between;
+  gap: unset;
+  width: 100%;
+}
+:host button.display-reverse {
+  flex-direction: row-reverse;
+}
+:host button.primary.dark {
+  color: #e1f000;
+  background-color: #08191f;
+}
+:host button.primary.dark:hover:not(.disabled):not(:disabled) {
+  color: #ffffff;
+  box-shadow: inset 0 -48px #40545b;
+}
+:host button.primary.dark:active:not(.disabled):not(:disabled) {
+  color: #ffffff;
+  box-shadow: inset 0 -48px #2a3b40;
+}
+:host button.primary.dark:disabled, :host button.primary.dark.disabled {
+  color: #9aacb4;
+  background-color: #cad5da;
+  pointer-events: none;
+}
+:host button.primary.light {
+  color: #08191f;
+  background-color: #e1f000;
+}
+:host button.primary.light:hover:not(.disabled):not(:disabled) {
+  box-shadow: inset 0 -48px #b2c1c7;
+}
+:host button.primary.light:active:not(.disabled):not(:disabled) {
+  box-shadow: inset 0 -48px #9aacb4;
+}
+:host button.primary.light:disabled, :host button.primary.light.disabled {
+  color: #9aacb4;
+  background-color: #40545b;
+  pointer-events: none;
+}
+:host button.delete {
+  background-color: transparent;
+}
+:host button.delete.dark, :host button.delete.light {
+  border: 2px solid #CB0E0E;
+  color: #CB0E0E;
+}
+:host button.delete.dark:hover:not(.disabled):not(:disabled), :host button.delete.light:hover:not(.disabled):not(:disabled) {
+  border-color: #CB0E0E;
+  color: #ffffff;
+  box-shadow: inset 0 -48px #CB0E0E;
+}
+:host button.delete.dark:active:not(.disabled):not(:disabled), :host button.delete.light:active:not(.disabled):not(:disabled) {
+  border-color: #FF88AB;
+  color: #ffffff;
+  box-shadow: inset 0 -48px #FF88AB;
+}
+:host button.secondary {
+  background-color: transparent;
+}
+:host button.secondary.dark {
+  border: 2px solid #08191f;
+  color: #08191f;
+}
+:host button.secondary.dark:hover:not(.disabled):not(:disabled) {
+  border-color: #40545b;
+  color: #ffffff;
+  box-shadow: inset 0 -48px #40545b;
+}
+:host button.secondary.dark:active:not(.disabled):not(:disabled) {
+  border-color: #2a3b40;
+  color: #ffffff;
+  box-shadow: inset 0 -48px #2a3b40;
+}
+:host button.secondary.light {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+:host button.secondary.light:hover:not(.disabled):not(:disabled) {
+  border-color: #9aacb4;
+  color: #08191f;
+  box-shadow: inset 0 -48px #9aacb4;
+}
+:host button.secondary.light:active:not(.disabled):not(:disabled) {
+  border-color: #9aacb4;
+  color: #08191f;
+  box-shadow: inset 0 -48px #9aacb4;
+}
+:host button.secondary:disabled, :host button.secondary.disabled {
+  color: #9aacb4;
+  border: 2px solid #9aacb4;
+  pointer-events: none;
+}
+:host button.tertiary {
+  padding: 0;
+  box-shadow: 0px -5px #08191f inset;
+  background-color: transparent;
+}
+:host button.tertiary.icon-only {
+  border: none !important;
+}
+:host button.tertiary.dark {
+  color: #08191f;
+  box-shadow: 0px -5px #08191f inset;
+}
+:host button.tertiary.dark:hover:not(.disabled):not(:disabled) {
+  color: #40545b;
+  box-shadow: 0 -8px #40545b inset;
+}
+:host button.tertiary.dark:active:not(.disabled):not(:disabled) {
+  color: #2a3b40;
+  border-color: #2a3b40;
+  box-shadow: 0 -8px #2a3b40 inset;
+}
+:host button.tertiary.light {
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: inset 0 -5px #ffffff;
+}
+:host button.tertiary.light:hover:not(.disabled):not(:disabled) {
+  color: #9aacb4;
+  box-shadow: inset 0 -8px #9aacb4;
+}
+:host button.tertiary.light:active:not(.disabled):not(:disabled) {
+  color: #9aacb4;
+  border-color: #9aacb4;
+  box-shadow: inset 0 -8px #9aacb4;
+}
+:host button.tertiary:disabled, :host button.tertiary.disabled {
+  color: #9aacb4;
+  border-color: #9aacb4;
+  box-shadow: inset 0 -5px #9aacb4;
+  pointer-events: none;
+}
+:host button:focus:not(.disabled):not(:disabled) {
+  outline-color: #1491EB;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+:host button.media {
+  min-height: 80px;
+  max-height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px 0px rgba(8, 25, 31, 0.33);
+  color: #08191f;
+}
+:host button.media:hover:not(.disabled):not(:disabled) {
+  color: #40545b;
+}
+:host button.media:active:not(.disabled):not(:disabled) {
+  color: #2a3b40;
+}
+:host button.media:disabled, :host button.media.disabled {
+  pointer-events: none;
+  color: #9aacb4;
+}
+:host button.navigation {
+  min-height: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px 0px rgba(8, 25, 31, 0.33);
+}
+:host button.navigation:hover:not(.disabled):not(:disabled) {
+  color: #08191f;
+}
+:host button.navigation:active:not(.disabled):not(:disabled) {
+  color: #2a3b40;
+}
+:host button.navigation:disabled, :host button.navigation.disabled {
+  pointer-events: none;
+  color: #9aacb4;
+}
+:host button.icon-only {
+  padding: 0;
+  min-width: 48px;
+  max-width: 48px;
+}
