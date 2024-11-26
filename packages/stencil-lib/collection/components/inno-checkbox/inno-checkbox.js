@@ -119,11 +119,13 @@ export class InnoCheckbox {
             ...this.commonStyles(),
             label: true,
         };
-        return (h("span", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.label));
+        if (this.label != null && this.label !== '') {
+            return (h("span", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.label));
+        }
     }
     render() {
         const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
-        return (h(Host, { key: '03db3b52afa5cb0ca081c857576c04f7c48ecd5f', tabIndex: tabIndexValue, role: "checkbox", "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
+        return (h(Host, { key: '8912943a46613e1d14c29bde5978357a52eb5e02', tabIndex: tabIndexValue, role: "checkbox", "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
     }
     static get is() { return "inno-checkbox"; }
     static get encapsulation() { return "scoped"; }

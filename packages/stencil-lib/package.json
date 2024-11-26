@@ -20,7 +20,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://localhost:4873/"
   },
   "scripts": {
     "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
@@ -31,7 +31,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "stencil": "stencil",
-    "publishartifacts": "npx cpx \"./cjs/**\" \"./dist/cjs\" && npx cpx \"./collection/**\" \"./dist/collection\" && npx cpx \"./esm/**\" \"./dist/esm\" && npx cpx \"./innomotics-brand-experience/**\" \"./dist/innomotics-brand-experience\" && npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./types/**\" \"./dist/types\" && npx cpx \"./loader/**\" \"./dist/loader\" && npx cpx \"./*.js\" \"./dist\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "publishartifacts": "npx cpx \"./cjs/**\" \"./dist/cjs\" && npx cpx \"./collection/**\" \"./dist/collection\" && npx cpx \"./components/**\" \"./dist/components\" && npx cpx \"./esm/**\" \"./dist/esm\" && npx cpx \"./innomotics-brand-experience/**\" \"./dist/innomotics-brand-experience\" && npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./types/**\" \"./dist/types\" && npx cpx \"./loader/**\" \"./dist/loader\" && npx cpx \"./*.js\" \"./dist\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",
