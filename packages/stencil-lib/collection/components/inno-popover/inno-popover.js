@@ -283,14 +283,14 @@ export class InnoPopover {
         let hasText = !!this.popoverText && this.popoverText !== '';
         let renderTitleRow = hasTitleText || hasCloseBtn;
         let onlyCloseBtn = hasCloseBtn && !hasTitleText;
-        return (h(Host, { key: '155d6492ff4ea5d653043c8e1d9c8a3dc91c5c8b', class: {
+        return (h(Host, { key: '48bc9d0e5b6a237c8acb27bc74dc32658bdf9b56', class: {
                 visible: this.visible,
                 light: this.variant === 'light',
                 dark: this.variant === 'dark'
-            } }, h("div", { key: '6473b66bd2a799d03e53ddd6fe5a8fe3dfd44157', class: "tooltip-content" }, renderTitleRow
+            } }, h("div", { key: '0eb924fd16364978c592087cda300c0622fad08c', class: "tooltip-content" }, renderTitleRow
             ?
                 h("div", { class: { "tooltip-title-row": true, "only-close-btn": onlyCloseBtn } }, hasTitleText ? h("div", { class: "tooltip-title", innerHTML: sanitizeHtml(this.popoverTitle) }) : null, hasCloseBtn ? h("inno-icon", { icon: 'close', size: 24, onClick: () => this.hideTooltip() }) : null)
-            : null, hasText ? h("div", { class: "tooltip-text", innerHTML: sanitizeHtml(this.popoverText) }) : null, h("slot", { key: '10dc5dbb6ba293d28892dcc6406b0ced657d7d2c' })), h("div", { key: '660e02b9b8f9f80c9b6d9f437524eeddc49e5bab', ref: ref => this.arrowElement = ref, class: "arrow" })));
+            : null, hasText ? h("div", { class: "tooltip-text", innerHTML: sanitizeHtml(this.popoverText) }) : null, h("slot", { key: '3b5f414180b0dda5b9e3f51371a8ac79f8a7aac2' })), h("div", { key: '62080b646be8a6a88f6ff3ae01e06f1e0606b001', ref: ref => this.arrowElement = ref, class: "arrow" })));
     }
     static get is() { return "inno-popover"; }
     static get encapsulation() { return "scoped"; }

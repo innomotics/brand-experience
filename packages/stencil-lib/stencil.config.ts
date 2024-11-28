@@ -51,7 +51,7 @@ export const config: Config = {
       externalRuntime: false
     },
     {
-      type: 'docs-readme',
+      type: 'docs-readme'
     },
     {
       type: 'www',

@@ -119,18 +119,18 @@ import {InnoIcon} from '@innomotics/brand-experience-react-lib';
 ### Used by
 
  - [inno-accordion](../inno-accordion)
- - [inno-breadcrumb-item](../inno-breadcrumb-item)
+ - [inno-breadcrumb-item](../inno-breadcrumb/inno-breadcrumb-item)
  - [inno-button](../inno-button)
- - [inno-date-picker](../inno-date-picker)
+ - [inno-date-picker](../inno-date-picker-dropdown/inno-date-picker)
  - [inno-date-picker-dropdown](../inno-date-picker-dropdown)
  - [inno-drag-and-drop](../inno-drag-and-drop)
  - [inno-input](../inno-input)
- - [inno-modal-header](../inno-modal-header)
+ - [inno-modal-header](../inno-modal/inno-modal-header)
  - [inno-paginator](../inno-paginator)
  - [inno-popover](../inno-popover)
  - [inno-select](../inno-select)
- - [inno-select-item](../inno-select-item)
- - [inno-status-message](../inno-status-message)
+ - [inno-select-item](../inno-select/inno-select-item)
+ - [inno-status-message](../inno-status-message-container/inno-status-message)
  - [inno-tab](../inno-tab)
 
 ### Graph

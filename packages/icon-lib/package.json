@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-icons",
-  "version": "0.0.2-beta-19",
+  "version": "0.0.2-beta-20",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "https://github.com/innomotics/brand-experience#readme",
@@ -17,27 +17,59 @@
     "url": "git+https://github.com/innomotics/brand-experience.git"
   },
   "scripts": {
-    "build": "npm run generateIconModule && npm run copyoutputs && npm run copyicons && npm run copyreadme && npm run publishartifacts",
-    "copyoutputs": "npx cpx \"./lib/**\" \"./dist/\" && npx cpx \"./svg/**\" \"./dist/svg\" && npx cpx \"./styles/**\" \"./dist/styles\"",
-    "generateIconModule": "npx ts-node generator.ts",
-    "copyreadme": "npx cpx \"readme.md\" \"../webdocs/docs/icons\"",
-    "copyicons": "npx cpx  \"./downloadoutput/**\" \"../webdocs/static/svg\"",
-    "publishartifacts": "npx cpx \"./*.md\" \"./dist\""
+    "build": "npm run generateIconModule && npx copy-files-from-to",
+    "generateIconModule": "npx ts-node generator.ts"
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
   },
   "devDependencies": {
+    "copy-files-from-to": "^3.12.0",
     "cpx2": "^7.0.1",
     "ts-node": "^10.9.2"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://localhost:4873"
   },
   "dependencies": {
     "@iconify/tools": "^4.0.7",
     "jszip": "^3.10.1"
   },
-  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914"
+  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914",
+  "copyFiles": [
+    {
+      "from": [
+        "./**",
+        "!./dist",
+        "!./downloadoutput",
+        "!./lib",
+        "!./node_modules",
+        "!./*.*"
+      ],
+      "to": "./dist"
+    },
+    {
+      "from": [
+        "./lib/**"
+      ],
+      "to": "./dist"
+    },
+    {
+      "from": [
+        "/downloadoutput/**"
+      ],
+      "to": "../webdocs/static/svg"
+    },
+    {
+      "from": [
+        "readme.md"
+      ],
+      "to": "../webdocs/docs/icons"
+    }
+  ],
+  "copyFilesSettings": {
+    "ignoreDotFilesAndFolders": true,
+    "whenFileExists": "overwrite"
+  }
 }

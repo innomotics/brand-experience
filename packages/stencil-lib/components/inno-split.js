@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$2 } from './p-c8edcbd4.js';
+import { d as defineCustomElement$2 } from './p-69e82cdc.js';
 
 const innoSplitCss = ".sc-inno-split-h{display:grid;inline-size:100%;block-size:100%}.dragging.sc-inno-split-h{-webkit-user-select:none !important;-moz-user-select:none !important;user-select:none !important}.dragging.vertical.sc-inno-split-h{cursor:row-resize}.dragging.horizontal.sc-inno-split-h{cursor:col-resize}.sc-inno-split-h .split-slot-container.sc-inno-split{display:flex;flex-wrap:nowrap;justify-content:space-between;min-width:0;min-height:0}.sc-inno-split-h .split-slot-container.horizontal.sc-inno-split{flex-direction:row}.sc-inno-split-h .split-slot-container.vertical.sc-inno-split{flex-direction:column}";
 const InnoSplitStyle0 = innoSplitCss;
@@ -122,7 +122,7 @@ const InnoSplit$1 = /*@__PURE__*/ proxyCustomElement(class InnoSplit extends H {
             'grid-template-columns': this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
             'grid-template-rows': !this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
         };
-        return (h(Host, { key: '6c7ca174d95ac4245f4fb6d402b8637b0787cf77', class: {
+        return (h(Host, { key: 'b317c21cfa30ef3584b4bd474a6a083b6d95761a', class: {
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical',
                 'dragging': this.isMouseDown

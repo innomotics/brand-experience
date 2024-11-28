@@ -119,7 +119,7 @@ export class InnoSplit {
             'grid-template-columns': this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
             'grid-template-rows': !this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
         };
-        return (h(Host, { key: '6c7ca174d95ac4245f4fb6d402b8637b0787cf77', class: {
+        return (h(Host, { key: 'b317c21cfa30ef3584b4bd474a6a083b6d95761a', class: {
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical',
                 'dragging': this.isMouseDown

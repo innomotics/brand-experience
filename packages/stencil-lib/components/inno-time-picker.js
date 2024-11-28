@@ -69,7 +69,7 @@ const InnoTimePicker$1 = /*@__PURE__*/ proxyCustomElement(class InnoTimePicker e
         return (h("div", { class: "confirm-container" }, h("inno-button", { variant: "secondary", onClick: () => this.sendValueChange() }, this.texts?.confirmLabel ?? DEFAULT_TEXTS.confirmLabel)));
     }
     render() {
-        return (h(Host, { key: '35b9ccc70e074c9e5ca8fb10adb2ce5b0b0f19b2' }, this.titleContainer(), this.valuesContainer(), this.confirmContainer()));
+        return (h(Host, { key: 'e47d418001c3d6d22ffe76ce6820c3851b004f24' }, this.titleContainer(), this.valuesContainer(), this.confirmContainer()));
     }
     static get style() { return InnoTimePickerStyle0; }
 }, [2, "inno-time-picker", {

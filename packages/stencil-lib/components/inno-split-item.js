@@ -9,7 +9,7 @@ const InnoSplitItem$1 = /*@__PURE__*/ proxyCustomElement(class InnoSplitItem ext
         this.__registerHost();
     }
     render() {
-        return (h(Host, { key: '0e1f9dc6b469c26c8183b21c8ede20b0e7ab335d' }, h("slot", { key: '683f4a2f31334552d9ddb87c2bd4d4159ab45133' })));
+        return (h(Host, { key: 'a12f069a60676f3b95cc21e2734144dac735c574' }, h("slot", { key: 'f01e34fb3894e07133ee8b4da065c541342f1396' })));
     }
     static get style() { return InnoSplitItemStyle0; }
 }, [6, "inno-split-item"]);

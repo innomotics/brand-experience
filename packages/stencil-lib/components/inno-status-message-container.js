@@ -1,7 +1,7 @@
 import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
 import { T as TypedEvent } from './p-90b661dd.js';
 import { d as defineCustomElement$3 } from './p-a043038e.js';
-import { d as defineCustomElement$2 } from './p-f49af92c.js';
+import { d as defineCustomElement$2 } from './p-7034886d.js';
 
 const innoStatusMessageContainerCss = "#status-message-container.sc-inno-status-message-container{z-index:1000}#status-message-container.sc-inno-status-message-container>.sc-inno-status-message-container:not(:last-child){margin-block-end:1rem}.status-message-container.sc-inno-status-message-container{display:block;position:fixed}.status-message-container--top-right.sc-inno-status-message-container{right:1rem;top:2rem}.status-message-container--bottom-right.sc-inno-status-message-container{right:1rem;bottom:2rem}.status-message-container--bottom-left.sc-inno-status-message-container{left:1rem;bottom:2rem}.status-message-container--top-left.sc-inno-status-message-container{left:1rem;top:2rem}";
 const InnoStatusMessageContainerStyle0 = innoStatusMessageContainerCss;
@@ -84,12 +84,12 @@ const InnoStatusMessageContainer$1 = /*@__PURE__*/ proxyCustomElement(class Inno
         };
     }
     render() {
-        return (h(Host, { key: '59ebda0fe718332b74e4ba367e770b7f7624801c', class: {
+        return (h(Host, { key: '5a6f762051aab38c282dbe33eff45b65fa8cfb1c', class: {
                 [`${this.PREFIX_POSITION_CLASS}top-right`]: this.position === 'top-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-right`]: this.position === 'bottom-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-left`]: this.position === 'bottom-left',
                 [`${this.PREFIX_POSITION_CLASS}top-left`]: this.position === 'top-left',
-            } }, h("slot", { key: '200262644a8c465a50cae237e3b2598c4100c60d' })));
+            } }, h("slot", { key: '234619e82a726d0d38ea314a79b59f0fa9eb5603' })));
     }
     static get watchers() { return {
         "position": ["onPositionChange"]

@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-angular-lib",
-  "version": "0.0.2-beta-19",
+  "version": "0.0.2-beta-20",
   "description": "> TODO: description",
   "author": "",
   "types": "./index.d.ts",
@@ -14,8 +14,7 @@
   ],
   "private": false,
   "scripts": {
-    "build": "ng-packagr -p ng-package.json -c tsconfig.json && npm run publishartifacts",
-    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "build": "ng-packagr -p ng-package.json -c tsconfig.json && npx copy-files-from-to"
   },
   "typings": "index.d.ts",
   "exports": {
@@ -31,23 +30,34 @@
     }
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-19"
+    "@innomotics/brand-experience": "^0.0.2-beta-20"
   },
   "devDependencies": {
+    "copy-files-from-to": "^3.12.0",
     "ng-packagr": "^17.3.0 || ^18.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^17.3.5 || ^18.0.0",
     "@angular/core": "^17.3.5 || ^18.0.0",
     "@angular/forms": "^17.3.5 || ^18.0.0",
-    "@innomotics/brand-experience": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-19",
+    "@innomotics/brand-experience": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-20",
     "typescript": "5.4.5"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://localhost:4873"
   },
-  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914"
+  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914",
+  "copyFiles": [
+    {
+      "from": ["./lib/package.json","./lib/*.md"],
+      "to": "./dist"
+    }
+  ],
+  "copyFilesSettings": {
+    "ignoreDotFilesAndFolders": true,
+    "whenFileExists":"overwrite"
+  }
 }

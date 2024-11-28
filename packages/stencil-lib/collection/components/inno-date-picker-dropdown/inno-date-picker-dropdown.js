@@ -174,7 +174,7 @@ export class InnoDatePickerDropdown {
         return (h("div", { class: dropdownContainerClasses, ref: ref => (this.datePicker = ref) }, h("inno-date-picker", { format: this.format, range: this.range, from: this.from, to: this.to, minDate: this.minDate, maxDate: this.maxDate, weekStartIndex: this.weekStartIndex, locale: this.locale, showOuterDays: this.showOuterDays, onDateChange: event => this.onDateChange(event.detail) })));
     }
     render() {
-        return (h(Host, { key: '04988b028eaebd130ed272260d34d3a58c589ee3' }, this.picker(), this.calendarContainer()));
+        return (h(Host, { key: 'ac08815d9da7fed4ea3ac444de687d0d903b366b' }, this.picker(), this.calendarContainer()));
     }
     static get is() { return "inno-date-picker-dropdown"; }
     static get encapsulation() { return "scoped"; }

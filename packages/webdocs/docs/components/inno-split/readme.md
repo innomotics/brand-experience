@@ -114,7 +114,7 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [inno-split-gutter](../inno-split-gutter)
+- [inno-split-gutter](inno-split-gutter)
 
 ### Graph
 ```mermaid

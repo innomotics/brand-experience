@@ -106,7 +106,7 @@ import {InnoBreadcrumb, InnoBreadcrumbItem} from '@innomotics/brand-experience-r
 
 ### Depends on
 
-- [inno-breadcrumb-item](../inno-breadcrumb-item)
+- [inno-breadcrumb-item](inno-breadcrumb-item)
 
 ### Graph
 ```mermaid

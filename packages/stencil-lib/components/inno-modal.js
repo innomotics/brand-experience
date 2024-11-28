@@ -199,7 +199,7 @@ const InnoModal$1 = /*@__PURE__*/ proxyCustomElement(class InnoModal extends H {
             'no-backdrop': !this.backdrop,
             'align-center': this.centered,
         };
-        return h(Host, { key: '53b3f903cf2310218df9e9fbd9053f5c8f1ea40f', class: hostClasses }, this.dialogElement());
+        return h(Host, { key: 'de8c8ba6d532f44d9ac377b9459c68fa759babd0', class: hostClasses }, this.dialogElement());
     }
     static get style() { return InnoModalStyle0; }
 }, [6, "inno-modal", {

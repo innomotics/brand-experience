@@ -1,4 +1,4 @@
-import { InnoStatusMessageConfig, InnoStatusMessagePosition, ShowStatusMessageResult } from '../inno-status-message/inno-status-message.api';
+import { InnoStatusMessageConfig, InnoStatusMessagePosition, ShowStatusMessageResult } from './inno-status-message/inno-status-message.api';
 /**
  * Container to hold the status messages.
  *

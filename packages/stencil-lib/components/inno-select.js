@@ -286,7 +286,7 @@ const InnoSelect$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelect extends H
     }
     render() {
         this.setLabelsMaxWidth();
-        return (h(Host, { key: '375736989a5b2b8c948793440ff4f856f6b73657', tabindex: 0, class: {
+        return (h(Host, { key: '0f808eb0d1c730368973c6bd28d2d85f8c2bcbd0', tabindex: 0, class: {
                 'input-container': true,
                 'isactive': !this.valueIsUndefined,
                 'light': this.variant === 'light',
@@ -296,7 +296,7 @@ const InnoSelect$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelect extends H
                 'disabled': this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, h("div", { key: '0c69af4852ffe82a2b40eb549c207a5be882008f', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (h("div", { class: "select-header" }, h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, h("span", { class: {
+            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, h("div", { key: 'e8199efa7c2d128122d0cf49fc19a3fa8d408486', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (h("div", { class: "select-header" }, h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, h("span", { class: {
                 label: true,
                 float: !this.valueIsUndefined,
                 disabled: this.disabled,
@@ -321,7 +321,7 @@ const InnoSelect$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelect extends H
                 disabled: this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (h("span", null, this.selectedItem?.icon ? h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (h("span", null, this.icon ? h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.label))), h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), h("div", { key: '0297c9975edd316b357a7956efa57a6baf5ec01b', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, h("slot", { key: '033e35acecf544d53e470df0d5e21d33c841533f' })))));
+            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (h("span", null, this.selectedItem?.icon ? h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (h("span", null, this.icon ? h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, h("div", { class: "icon-driven-label" }, this.label))), h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), h("div", { key: '5b8f9d4577d3058f2a48ee7b1dbba3616f526390', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, h("slot", { key: 'a8ac45d467a26c94598b26e0ecea44c6207af8e0' })))));
     }
     static get watchers() { return {
         "isOpen": ["alignItems"],

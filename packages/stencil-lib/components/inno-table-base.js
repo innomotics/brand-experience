@@ -63,7 +63,7 @@ const InnoTableBase$1 = /*@__PURE__*/ proxyCustomElement(class InnoTableBase ext
         this.scrollBar.getScrollElement().removeEventListener('scroll', this.scrollListener);
     }
     render() {
-        return (h(Host, { key: '49ba48b414322d1a7b4dc9d590d42493e86dadd7', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, h("div", { key: 'a85518690a8b60e684705641a2e99146cbd97c82', class: "table-wrapper" }, h("div", { key: '14a5a8e4cd52680ba562acbbc862e4e18c2c7b40', class: "mask-layer" }), h("div", { key: '593c2cfc00d30bf2b230b918c05b9988aa23c5d1', class: "table-div" }, h("slot", { key: '3d50ef0c9c9e17017c4784f9a6a8d38dc047801a' })))));
+        return (h(Host, { key: '851f010ad0f965f88b1254dea43fc0df0815802d', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, h("div", { key: '7a5963e51ff519b27e992a2c1e0a8a9e8e006eac', class: "table-wrapper" }, h("div", { key: '16f67496c87ab69bcdca6c07a8e0415481945bf1', class: "mask-layer" }), h("div", { key: 'b95b9b2e78c120e44cffc8407983678d025bdaa7', class: "table-div" }, h("slot", { key: 'b8672b4e810e6d385841c0fa745d19983a7d329d' })))));
     }
     static get style() { return InnoTableBaseStyle0; }
 }, [6, "inno-table-base", {

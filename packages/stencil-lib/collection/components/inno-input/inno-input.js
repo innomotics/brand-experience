@@ -242,7 +242,7 @@ export class InnoInput {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (h(Host, { key: '5ddcba8d9d8bcfd2897ba313875a02ee73721127', class: {
+        return (h(Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -252,7 +252,7 @@ export class InnoInput {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, h("span", { key: '2cfde74bd5653cf8e35bf36559fcddfc71c61ad4', class: {
+            }, onClick: () => this.activateInput() }, h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -261,7 +261,7 @@ export class InnoInput {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: '8e3d7aef681fa26c194af4e11450a79d996c8b2d' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
     }
     static get is() { return "inno-input"; }
     static get encapsulation() { return "scoped"; }

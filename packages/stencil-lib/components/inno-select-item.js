@@ -1,6 +1,6 @@
 import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
 import { d as defineCustomElement$3 } from './p-a043038e.js';
-import { d as defineCustomElement$2 } from './p-badfc4bd.js';
+import { d as defineCustomElement$2 } from './p-a26d5cd0.js';
 
 const innoSelectItemCss = ".sc-inno-select-item-h{background-color:#2a3b40;color:#ffffff}.sc-inno-select-item-h:hover{background-color:#b2c1c7;color:#08191f}.focused.sc-inno-select-item-h{background-color:#b2c1c7;color:#08191f}.selected.sc-inno-select-item-h{color:#e1f000}.sc-inno-select-item-h .content-wrapper.sc-inno-select-item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}";
 const InnoSelectItemStyle0 = innoSelectItemCss;
@@ -88,13 +88,13 @@ const InnoSelectItem$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelectItem e
         if (this.hostElementHasId && !!this.popover) {
             this.popover.updateForElement(this.forSelector);
         }
-        return (h(Host, { key: 'dbc866b8f9265c143de7c72a937993f94fc5d0b1', class: {
+        return (h(Host, { key: 'e6bfe4a0271d4ecd73622e77ee356adf373eb8d7', class: {
                 'select-item': true,
                 'icon-driven': this.icon != undefined || this.iconFont != undefined,
                 selected: this.selected,
                 'can-favorite': this.canFavorite,
                 separator: this.hasSeparator
-            }, onClick: (e) => this.selectItem(e) }, this.icon ? h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, h("div", { key: 'b9925100dcf7438b66d85dea0e8906a527f2d3c6', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
+            }, onClick: (e) => this.selectItem(e) }, this.icon ? h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, h("div", { key: '4bca610ca6fa4e3d947606850eed089f60492d30', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
     }
     static get formAssociated() { return true; }
     static get watchers() { return {

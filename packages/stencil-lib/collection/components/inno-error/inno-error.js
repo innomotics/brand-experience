@@ -6,7 +6,7 @@ export class InnoError {
         this.variant = 'light';
     }
     render() {
-        return (h(Host, { key: '23ba9413e7dc64c641b26f7fbe4713045383baa8', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, h("slot", { key: '0306943c62030ee72c154d42f2f7f15aebeed8a4' })));
+        return (h(Host, { key: '813db110a8ff0b88b66de47ec6e8c9562cdb73b6', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, h("slot", { key: '29e129d8a0dcabea73e687db8b6fba9b268bc4ba' })));
     }
     static get is() { return "inno-error"; }
     static get encapsulation() { return "scoped"; }

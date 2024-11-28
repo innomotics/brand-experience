@@ -18,7 +18,7 @@ export class InnoLoader {
         this.size = adjustValueToRange(this.size, 16, 64);
     }
     render() {
-        return h(Host, { key: 'd75126a1af249dec321e2ddcd21a15a9a3e67e12', class: this.getStlyes() });
+        return h(Host, { key: 'd9c1f372d78c20fecb09f55215c0c64b7dacb2c0', class: this.getStlyes() });
     }
     static get is() { return "inno-loader"; }
     static get encapsulation() { return "scoped"; }

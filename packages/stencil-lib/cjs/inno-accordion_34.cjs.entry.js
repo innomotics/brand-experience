@@ -12598,7 +12598,7 @@ const InnoDatePicker = class {
     //   );
     // }
     render() {
-        return (index$2.h(index$2.Host, { key: '29f90dea98a269024181f9cd35a3a5b636e8bb36' }, index$2.h("inno-date-time-card", { key: 'f66b84ca14d1b3abb893bc48464569f3bc913f52', standaloneAppearance: this.standaloneAppearance }, this.header(), this.calendarGrid())));
+        return (index$2.h(index$2.Host, { key: 'f304d419f6127386881f8fbd383707a6c6ca2336' }, index$2.h("inno-date-time-card", { key: '841b926a9defab3c33ae031b270e8a4cb9ac37b0', standaloneAppearance: this.standaloneAppearance }, this.header(), this.calendarGrid())));
     }
     static get watchers() { return {
         "from": ["watchFromPropHandler"],
@@ -12785,7 +12785,7 @@ const InnoDatePickerDropdown = class {
         return (index$2.h("div", { class: dropdownContainerClasses, ref: ref => (this.datePicker = ref) }, index$2.h("inno-date-picker", { format: this.format, range: this.range, from: this.from, to: this.to, minDate: this.minDate, maxDate: this.maxDate, weekStartIndex: this.weekStartIndex, locale: this.locale, showOuterDays: this.showOuterDays, onDateChange: event => this.onDateChange(event.detail) })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '04988b028eaebd130ed272260d34d3a58c589ee3' }, this.picker(), this.calendarContainer()));
+        return (index$2.h(index$2.Host, { key: 'ac08815d9da7fed4ea3ac444de687d0d903b366b' }, this.picker(), this.calendarContainer()));
     }
     static get watchers() { return {
         "isOpen": ["isOpenChanged"],
@@ -12808,7 +12808,7 @@ const InnoDateTimeCard = class {
             card: true,
             standaloneAppearance: this.standaloneAppearance,
         };
-        return (index$2.h(index$2.Host, { key: '91a18cf5910f6cea2833656ef71e900714a2542e' }, index$2.h("div", { key: '92313ffdd18ca6d215e03949cbb40c27af0813ab', class: cardClasses }, index$2.h("div", { key: 'e9d87672e62a06dc087f4652726918802aff4114', class: "header" }, index$2.h("slot", { key: '7c5b3e7a821a272e392995f76742ced0c2dd9ce1', name: "header" })), index$2.h("div", { key: '46498d626c5ac5a09b54d2388c2eb1abf715c83d', class: "separator" }), index$2.h("div", { key: '1a092bab70256c3844d0dc516dc1ee77a241aecd', class: "content" }, index$2.h("slot", { key: '44cd49f3278cf2af8e2b5749ecf99f002de721f1' })))));
+        return (index$2.h(index$2.Host, { key: 'f559853739d7e612ce31f13545f39087475ce5ce' }, index$2.h("div", { key: 'd94112848dfab3c6eb3f40249f357be0428a2dd3', class: cardClasses }, index$2.h("div", { key: 'fd3c1a2248017cbf026ccbc0cc14a60dd0d172ee', class: "header" }, index$2.h("slot", { key: 'd88f77dfb809e9014080bfc68df50b2833915bdc', name: "header" })), index$2.h("div", { key: '13e2389efa7ada5d6d6892cbdd15a71e584284d2', class: "separator" }), index$2.h("div", { key: '8480893d8c00aca85bc83f83e72ff9572483ac1f', class: "content" }, index$2.h("slot", { key: '1dd49a023a5a47050682e5c229fe2471825b6525' })))));
     }
 };
 InnoDateTimeCard.style = InnoDateTimeCardStyle0;
@@ -12929,7 +12929,7 @@ const InnoDragAndDrop = class {
         }
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '5e7e15ce8a3c7be30eea722f824d2d8090b51a96' }, index$2.h("div", { key: 'a32526fdd9f0f8352f5c3a2c50cff84389c366c3', class: {
+        return (index$2.h(index$2.Host, { key: 'ee11b92ffcd3b19090d658d51394d9bc79c7831c' }, index$2.h("div", { key: '3e3953de42399541a1f28d36f6e679cd163946bd', class: {
                 'file-upload-area': true,
                 'file-over': this.state !== 'LOADING' && this.isFileOver,
                 checking: this.state === 'LOADING',
@@ -12941,7 +12941,7 @@ const InnoDragAndDrop = class {
                 if (this.state !== 'LOADING') {
                     this.fileDropped(e);
                 }
-            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), index$2.h("div", { key: '51009940899a1119e573c12d80a73b2b8e86eefc' }, index$2.h("input", { key: '4cd582bb6895e97066a83289df98770cdf3ff668', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
+            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), index$2.h("div", { key: '7302e9d726364fe5ca342c372e390051ef04a3c1' }, index$2.h("input", { key: '2fdb35634b99cb99c6311542b6c22efb20f08e8d', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
                 this.fileChangeEvent(e);
             }, accept: this.accept }))), this.state === 'UPLOAD_FAILED'
             ? index$2.h("span", { class: { "error-text": true, dark: this.variant === 'dark', light: this.variant === 'light' } }, this.texts.uploadFailedText) : null));
@@ -12960,7 +12960,7 @@ const InnoError = class {
         this.variant = 'light';
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '23ba9413e7dc64c641b26f7fbe4713045383baa8', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, index$2.h("slot", { key: '0306943c62030ee72c154d42f2f7f15aebeed8a4' })));
+        return (index$2.h(index$2.Host, { key: '813db110a8ff0b88b66de47ec6e8c9562cdb73b6', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, index$2.h("slot", { key: '29e129d8a0dcabea73e687db8b6fba9b268bc4ba' })));
     }
 };
 InnoError.style = InnoErrorStyle0;
@@ -13009,7 +13009,7 @@ const InnoFooter = class {
         return (index$2.h("div", { class: { icons: true } }, index$2.h("slot", { name: "icons" })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '13e14919d147dacc1aa5c1276801ae882a010cc8', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
+        return (index$2.h(index$2.Host, { key: '98d6a106ed3e7d0713cf409b1eaf57f6af4efbed', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
     }
     static get watchers() { return {
         "variant": ["watchVariant"]
@@ -13050,7 +13050,7 @@ const InnoFooterItem = class {
         };
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'fabc0434f63407bdd395843921e6c52142ac0306', class: this.variantStyle() }, index$2.h("slot", { key: '78dc65fe844048d21ba51897c1cdaa535abc9348' })));
+        return (index$2.h(index$2.Host, { key: '0bfbb9d010e31f582094fac88a7078ccaeefd4ea', class: this.variantStyle() }, index$2.h("slot", { key: '039cb73b7883544d6a83b51fea87ce5c48af0dfc' })));
     }
     static get watchers() { return {
         "variant": ["watchVariant"]
@@ -13359,7 +13359,7 @@ const InnoInput = class {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (index$2.h(index$2.Host, { key: '5ddcba8d9d8bcfd2897ba313875a02ee73721127', class: {
+        return (index$2.h(index$2.Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -13369,7 +13369,7 @@ const InnoInput = class {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, index$2.h("span", { key: '2cfde74bd5653cf8e35bf36559fcddfc71c61ad4', class: {
+            }, onClick: () => this.activateInput() }, index$2.h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -13378,7 +13378,7 @@ const InnoInput = class {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), index$2.h("slot", { key: '8e3d7aef681fa26c194af4e11450a79d996c8b2d' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), index$2.h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
     }
     static get formAssociated() { return true; }
 };
@@ -13406,7 +13406,7 @@ const InnoLoader = class {
         this.size = adjustValueToRange(this.size, 16, 64);
     }
     render() {
-        return index$2.h(index$2.Host, { key: 'd75126a1af249dec321e2ddcd21a15a9a3e67e12', class: this.getStlyes() });
+        return index$2.h(index$2.Host, { key: 'd9c1f372d78c20fecb09f55215c0c64b7dacb2c0', class: this.getStlyes() });
     }
 };
 InnoLoader.style = InnoLoaderStyle0;
@@ -14916,7 +14916,7 @@ const InnoModal = class {
             'no-backdrop': !this.backdrop,
             'align-center': this.centered,
         };
-        return index$2.h(index$2.Host, { key: '53b3f903cf2310218df9e9fbd9053f5c8f1ea40f', class: hostClasses }, this.dialogElement());
+        return index$2.h(index$2.Host, { key: 'de8c8ba6d532f44d9ac377b9459c68fa759babd0', class: hostClasses }, this.dialogElement());
     }
 };
 InnoModal.style = InnoModalStyle0;
@@ -14929,7 +14929,7 @@ const InnoModalContent = class {
         index$2.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'a407a62ddb0a28ccfdc6800bf0c843a4f6833f97' }, index$2.h("slot", { key: '2db1c877789935c0241913a8fddfde9e5d321396' })));
+        return (index$2.h(index$2.Host, { key: '6d09a70eb3305a479174901b9c9f745e524f414f' }, index$2.h("slot", { key: '05ede465c65bedbdacf5cc890dc872d5b7a40518' })));
     }
 };
 InnoModalContent.style = InnoModalContentStyle0;
@@ -14942,7 +14942,7 @@ const InnoModalFooter = class {
         index$2.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '329e9e3141f7760663d63ff90eefa86d6b37a57b' }, index$2.h("slot", { key: '94c8c71d8da6536631a7b9ae844d357214d94529' })));
+        return (index$2.h(index$2.Host, { key: 'd390cf1a327c3339cafd1316763088fc45bf8ffa' }, index$2.h("slot", { key: 'a7ee9cc0320548d8e12c7101a315a8542cb9eee2' })));
     }
 };
 InnoModalFooter.style = InnoModalFooterStyle0;
@@ -15020,7 +15020,7 @@ const InnoModalHeader = class {
     }
     render() {
         const hostClasses = { ...this.themeClasses() };
-        return (index$2.h(index$2.Host, { key: 'aa679137991decd498bd5d9da888193804799ede', class: hostClasses }, this.titleIcon(), index$2.h("slot", { key: 'd65f3f58414c909aae89f3c759171350774da9fc' }), this.closeControl()));
+        return (index$2.h(index$2.Host, { key: 'db7bcafe32ee96738810832fd825d4fd69950257', class: hostClasses }, this.titleIcon(), index$2.h("slot", { key: '9c8b10d4cbe4fcf7b60f0b70c7c6642086de44a7' }), this.closeControl()));
     }
 };
 InnoModalHeader.style = InnoModalHeaderStyle0;
@@ -15139,7 +15139,7 @@ const InnoPaginator = class {
         return index$2.h("span", { class: "page-buttons" }, pageButtons);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'b1cdd6f2580b6686436f9c7f592c09604c7305bd' }, index$2.h("button", { key: '821ceda6cc0bc61582818da27349caf90e9d5be0', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.first() }, index$2.h("inno-icon", { key: 'b74a126ba6a5936f657fa3bec7c9ce05068b1b9b', size: 32, icon: 'arrow_double_left', variant: this.variant })), index$2.h("button", { key: '3ed3ad6af2589954006589528b035c04dc2302af', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.prev() }, index$2.h("inno-icon", { key: '46b90b12fd37410690460d71ce946b267cd2e85a', size: 32, icon: 'arrowhead_left', variant: this.variant })), index$2.h("span", { key: '551171a31f2b014b88348183839a3d5c59625f5c', class: "basic-pagination" }, this.renderPageButtons(), " "), index$2.h("button", { key: '19b1cbcec3a652bbd4578fa515d23263296a8584', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.next() }, index$2.h("inno-icon", { key: 'f0093bba684f3e27bae69b282db9ed8e94e0911b', size: 32, icon: 'arrowhead_right', variant: this.variant })), index$2.h("button", { key: 'f4bd239d40a1234f3e5697fb53c60b3ea5d0d307', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.last() }, index$2.h("inno-icon", { key: 'b25d068438cbf5ec25d40cdee29a93b6865f57b8', size: 32, icon: 'arrow_double_right', variant: this.variant }))));
+        return (index$2.h(index$2.Host, { key: '49a54d0e87092550ac9b4fb89312f6dcc274d0f0' }, index$2.h("button", { key: '563ee49badd594b04b47b8a081afb35f8f3437f1', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.first() }, index$2.h("inno-icon", { key: '065da656e295a666fb483aadefb6fec3bb4f72ca', size: 32, icon: 'arrow_double_left', variant: this.variant })), index$2.h("button", { key: '4bd8c2cfb03685e3151e73ccedfc6cc286413721', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.prev() }, index$2.h("inno-icon", { key: 'a9ef0d4d41962a7cf84723f70427c2869d8ff425', size: 32, icon: 'arrowhead_left', variant: this.variant })), index$2.h("span", { key: '6f50767326ebb83723c26d3290a4c289591b6a72', class: "basic-pagination" }, this.renderPageButtons(), " "), index$2.h("button", { key: 'ad5b5c0d44cc1030ca6a0a26c1c2108ccd0a6b8f', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.next() }, index$2.h("inno-icon", { key: '614f39420dd1cf3c25a18558247f1ea3b43a54d2', size: 32, icon: 'arrowhead_right', variant: this.variant })), index$2.h("button", { key: 'f1f70ebdbf3c2e4fb474f2a60e30bf7bf7290a30', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.last() }, index$2.h("inno-icon", { key: '5f46d9edb757eec5baefee26e8ed502aba3f3ec3', size: 32, icon: 'arrow_double_right', variant: this.variant }))));
     }
 };
 InnoPaginator.style = InnoPaginatorStyle0;
@@ -15520,14 +15520,14 @@ const InnoPopover = class {
         let hasText = !!this.popoverText && this.popoverText !== '';
         let renderTitleRow = hasTitleText || hasCloseBtn;
         let onlyCloseBtn = hasCloseBtn && !hasTitleText;
-        return (index$2.h(index$2.Host, { key: '155d6492ff4ea5d653043c8e1d9c8a3dc91c5c8b', class: {
+        return (index$2.h(index$2.Host, { key: '48bc9d0e5b6a237c8acb27bc74dc32658bdf9b56', class: {
                 visible: this.visible,
                 light: this.variant === 'light',
                 dark: this.variant === 'dark'
-            } }, index$2.h("div", { key: '6473b66bd2a799d03e53ddd6fe5a8fe3dfd44157', class: "tooltip-content" }, renderTitleRow
+            } }, index$2.h("div", { key: '0eb924fd16364978c592087cda300c0622fad08c', class: "tooltip-content" }, renderTitleRow
             ?
                 index$2.h("div", { class: { "tooltip-title-row": true, "only-close-btn": onlyCloseBtn } }, hasTitleText ? index$2.h("div", { class: "tooltip-title", innerHTML: sanitizeHtml$1(this.popoverTitle) }) : null, hasCloseBtn ? index$2.h("inno-icon", { icon: 'close', size: 24, onClick: () => this.hideTooltip() }) : null)
-            : null, hasText ? index$2.h("div", { class: "tooltip-text", innerHTML: sanitizeHtml$1(this.popoverText) }) : null, index$2.h("slot", { key: '10dc5dbb6ba293d28892dcc6406b0ced657d7d2c' })), index$2.h("div", { key: '660e02b9b8f9f80c9b6d9f437524eeddc49e5bab', ref: ref => this.arrowElement = ref, class: "arrow" })));
+            : null, hasText ? index$2.h("div", { class: "tooltip-text", innerHTML: sanitizeHtml$1(this.popoverText) }) : null, index$2.h("slot", { key: '3b5f414180b0dda5b9e3f51371a8ac79f8a7aac2' })), index$2.h("div", { key: '62080b646be8a6a88f6ff3ae01e06f1e0606b001', ref: ref => this.arrowElement = ref, class: "arrow" })));
     }
     static get watchers() { return {
         "visible": ["visibleChanged"]
@@ -15586,11 +15586,11 @@ const InnoProgressBar = class {
         return (index$2.h("div", { class: "progress-text-container" }, this.showPercentage ? index$2.h("div", { class: "percentage" }, progressPercentage) : null, index$2.h("div", { class: "progress-text" }, this.progressText)));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '3af01977cc2e05cf4b3e442245bd7d5727dcf333' }, index$2.h("div", { key: '18a294c8225ea16b07cb48f80952994a1d2e45bc', class: "progress-bar-container" }, index$2.h("div", { key: '36b49eb396fd35abb1c9443a98bf7d821f464d12', class: {
+        return (index$2.h(index$2.Host, { key: 'c14d98adc167f0444bb04f0f12e507798c9627cd' }, index$2.h("div", { key: '1b85833edb55997632447ab666dd6737de662a05', class: "progress-bar-container" }, index$2.h("div", { key: '3aa71942f1a07f8545da96ea7aa5aca2438167a3', class: {
                 'back-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
-            } }, this.progressHtml()), index$2.h("div", { key: 'ec5a3b8348c077074851cdd5d55b01686e021167', class: {
+            } }, this.progressHtml()), index$2.h("div", { key: '6654d8d659a920ad3627d8c7d7b2a34135f20bdf', class: {
                 'front-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
@@ -15755,7 +15755,7 @@ const InnoRadio = class {
     }
     render() {
         const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
-        return (index$2.h(index$2.Host, { key: '565205be3df9581ef18226db152408327551c627', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
+        return (index$2.h(index$2.Host, { key: '4f42f4af697c47f10fa1007244ce9aec2eeefae2', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
     }
     static get formAssociated() { return true; }
 };
@@ -16043,7 +16043,7 @@ const InnoSelect = class {
     }
     render() {
         this.setLabelsMaxWidth();
-        return (index$2.h(index$2.Host, { key: '375736989a5b2b8c948793440ff4f856f6b73657', tabindex: 0, class: {
+        return (index$2.h(index$2.Host, { key: '0f808eb0d1c730368973c6bd28d2d85f8c2bcbd0', tabindex: 0, class: {
                 'input-container': true,
                 'isactive': !this.valueIsUndefined,
                 'light': this.variant === 'light',
@@ -16053,7 +16053,7 @@ const InnoSelect = class {
                 'disabled': this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, index$2.h("div", { key: '0c69af4852ffe82a2b40eb549c207a5be882008f', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (index$2.h("div", { class: "select-header" }, index$2.h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, index$2.h("span", { class: {
+            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, index$2.h("div", { key: 'e8199efa7c2d128122d0cf49fc19a3fa8d408486', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (index$2.h("div", { class: "select-header" }, index$2.h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, index$2.h("span", { class: {
                 label: true,
                 float: !this.valueIsUndefined,
                 disabled: this.disabled,
@@ -16078,7 +16078,7 @@ const InnoSelect = class {
                 disabled: this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (index$2.h("span", null, this.selectedItem?.icon ? index$2.h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? index$2.h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (index$2.h("span", null, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.label))), index$2.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), index$2.h("div", { key: '0297c9975edd316b357a7956efa57a6baf5ec01b', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, index$2.h("slot", { key: '033e35acecf544d53e470df0d5e21d33c841533f' })))));
+            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (index$2.h("span", null, this.selectedItem?.icon ? index$2.h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? index$2.h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (index$2.h("span", null, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.label))), index$2.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), index$2.h("div", { key: '5b8f9d4577d3058f2a48ee7b1dbba3616f526390', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, index$2.h("slot", { key: 'a8ac45d467a26c94598b26e0ecea44c6207af8e0' })))));
     }
     static get watchers() { return {
         "isOpen": ["alignItems"],
@@ -16172,13 +16172,13 @@ const InnoSelectItem = class {
         if (this.hostElementHasId && !!this.popover) {
             this.popover.updateForElement(this.forSelector);
         }
-        return (index$2.h(index$2.Host, { key: 'dbc866b8f9265c143de7c72a937993f94fc5d0b1', class: {
+        return (index$2.h(index$2.Host, { key: 'e6bfe4a0271d4ecd73622e77ee356adf373eb8d7', class: {
                 'select-item': true,
                 'icon-driven': this.icon != undefined || this.iconFont != undefined,
                 selected: this.selected,
                 'can-favorite': this.canFavorite,
                 separator: this.hasSeparator
-            }, onClick: (e) => this.selectItem(e) }, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, index$2.h("div", { key: 'b9925100dcf7438b66d85dea0e8906a527f2d3c6', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? index$2.h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
+            }, onClick: (e) => this.selectItem(e) }, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, index$2.h("div", { key: '4bca610ca6fa4e3d947606850eed089f60492d30', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? index$2.h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
     }
     static get formAssociated() { return true; }
     static get watchers() { return {
@@ -16307,7 +16307,7 @@ const InnoSplit = class {
             'grid-template-columns': this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
             'grid-template-rows': !this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
         };
-        return (index$2.h(index$2.Host, { key: '6c7ca174d95ac4245f4fb6d402b8637b0787cf77', class: {
+        return (index$2.h(index$2.Host, { key: 'b317c21cfa30ef3584b4bd474a6a083b6d95761a', class: {
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical',
                 'dragging': this.isMouseDown
@@ -16334,11 +16334,11 @@ const InnoSplitGutter = class {
         this.orientation = 'horizontal';
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'cb2903d44e69ae4e935ad918acdba015452d26d1', class: {
+        return (index$2.h(index$2.Host, { key: '0ad4da3139c5d119bd57ddcc31077342a89625d1', class: {
                 'split-gutter': true,
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical'
-            } }, index$2.h("div", { key: '3bc672f46cf22601e2737938e94ef40065385630', class: "handle" })));
+            } }, index$2.h("div", { key: 'e5e1d6275c2ea9fee9e486b763edfe61b7c6e73b', class: "handle" })));
     }
 };
 InnoSplitGutter.style = InnoSplitGutterStyle0;
@@ -16351,7 +16351,7 @@ const InnoSplitItem = class {
         index$2.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '0e1f9dc6b469c26c8183b21c8ede20b0e7ab335d' }, index$2.h("slot", { key: '683f4a2f31334552d9ddb87c2bd4d4159ab45133' })));
+        return (index$2.h(index$2.Host, { key: 'a12f069a60676f3b95cc21e2734144dac735c574' }, index$2.h("slot", { key: 'f01e34fb3894e07133ee8b4da065c541342f1396' })));
     }
 };
 InnoSplitItem.style = InnoSplitItemStyle0;
@@ -16476,7 +16476,7 @@ const InnoStatusMessage = class {
             [typeDetails.typeClass]: true,
             'sm-fade-in': true,
         };
-        return (index$2.h(index$2.Host, { key: 'c2bd7f44c144b8c453442c07da179863fd3cc8a9', class: hostClasses, onPointerEnter: () => (this.touched = true), onPointerLeave: () => (this.touched = false) }, this.messageIcon(typeDetails, themeClasses), this.messageContainer(typeDetails, themeClasses), this.closeControl(typeDetails, themeClasses), this.progressBar(typeDetails, themeClasses)));
+        return (index$2.h(index$2.Host, { key: '79997bf4cbae19961cceb5852606d7a12a5e83a0', class: hostClasses, onPointerEnter: () => (this.touched = true), onPointerLeave: () => (this.touched = false) }, this.messageIcon(typeDetails, themeClasses), this.messageContainer(typeDetails, themeClasses), this.closeControl(typeDetails, themeClasses), this.progressBar(typeDetails, themeClasses)));
     }
 };
 InnoStatusMessage.style = InnoStatusMessageStyle0;
@@ -16744,7 +16744,7 @@ const InnoTab = class {
         return (index$2.h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, index$2.h("inno-icon", { icon: "chevron_right_small", size: 24 })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'd769006f1cbbec794dc7e4f772f6fbefe5d83402', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
+        return (index$2.h(index$2.Host, { key: '4558f79c9da8456b33fca901e389804c16f75b4a', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
     }
 };
 InnoTab.style = InnoTabStyle0;
@@ -16865,7 +16865,7 @@ const InnoTableBase = class {
         this.scrollBar.getScrollElement().removeEventListener('scroll', this.scrollListener);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '49ba48b414322d1a7b4dc9d590d42493e86dadd7', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$2.h("div", { key: 'a85518690a8b60e684705641a2e99146cbd97c82', class: "table-wrapper" }, index$2.h("div", { key: '14a5a8e4cd52680ba562acbbc862e4e18c2c7b40', class: "mask-layer" }), index$2.h("div", { key: '593c2cfc00d30bf2b230b918c05b9988aa23c5d1', class: "table-div" }, index$2.h("slot", { key: '3d50ef0c9c9e17017c4784f9a6a8d38dc047801a' })))));
+        return (index$2.h(index$2.Host, { key: '851f010ad0f965f88b1254dea43fc0df0815802d', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$2.h("div", { key: '7a5963e51ff519b27e992a2c1e0a8a9e8e006eac', class: "table-wrapper" }, index$2.h("div", { key: '16f67496c87ab69bcdca6c07a8e0415481945bf1', class: "mask-layer" }), index$2.h("div", { key: 'b95b9b2e78c120e44cffc8407983678d025bdaa7', class: "table-div" }, index$2.h("slot", { key: 'b8672b4e810e6d385841c0fa745d19983a7d329d' })))));
     }
 };
 InnoTableBase.style = InnoTableBaseStyle0;

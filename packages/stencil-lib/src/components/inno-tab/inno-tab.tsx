@@ -1,6 +1,6 @@
 import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Method } from '@stencil/core';
 import { requestAnimationFrameNoNgZone } from '../../utils/siemensix/requestAnimationFrame';
-import { InnoTabItem } from '../inno-tab-item/inno-tab-item';
+import { InnoTabItem } from './inno-tab-item/inno-tab-item';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

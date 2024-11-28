@@ -132,7 +132,7 @@ Type: `Promise<boolean>`
 
 ### Used by
 
- - [inno-select-item](../inno-select-item)
+ - [inno-select-item](../inno-select/inno-select-item)
 
 ### Depends on
 

@@ -75,7 +75,7 @@ const InnoModalHeader$1 = /*@__PURE__*/ proxyCustomElement(class InnoModalHeader
     }
     render() {
         const hostClasses = { ...this.themeClasses() };
-        return (h(Host, { key: 'aa679137991decd498bd5d9da888193804799ede', class: hostClasses }, this.titleIcon(), h("slot", { key: 'd65f3f58414c909aae89f3c759171350774da9fc' }), this.closeControl()));
+        return (h(Host, { key: 'db7bcafe32ee96738810832fd825d4fd69950257', class: hostClasses }, this.titleIcon(), h("slot", { key: '9c8b10d4cbe4fcf7b60f0b70c7c6642086de44a7' }), this.closeControl()));
     }
     static get style() { return InnoModalHeaderStyle0; }
 }, [6, "inno-modal-header", {

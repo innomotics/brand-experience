@@ -243,7 +243,7 @@ export class InnoTab {
         return (h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, h("inno-icon", { icon: "chevron_right_small", size: 24 })));
     }
     render() {
-        return (h(Host, { key: 'd769006f1cbbec794dc7e4f772f6fbefe5d83402', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
+        return (h(Host, { key: '4558f79c9da8456b33fca901e389804c16f75b4a', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
     }
     static get is() { return "inno-tab"; }
     static get encapsulation() { return "scoped"; }

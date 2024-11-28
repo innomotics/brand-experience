@@ -1,4 +1,4 @@
-import { B as BreadcrumbItem, d as defineCustomElement$1 } from './p-6d46b31e.js';
+import { B as BreadcrumbItem, d as defineCustomElement$1 } from './p-f5564b95.js';
 
 const InnoBreadcrumbItem = BreadcrumbItem;
 const defineCustomElement = defineCustomElement$1;

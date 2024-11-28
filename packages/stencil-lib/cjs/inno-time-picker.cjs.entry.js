@@ -70,7 +70,7 @@ const InnoTimePicker = class {
         return (index.h("div", { class: "confirm-container" }, index.h("inno-button", { variant: "secondary", onClick: () => this.sendValueChange() }, this.texts?.confirmLabel ?? DEFAULT_TEXTS.confirmLabel)));
     }
     render() {
-        return (index.h(index.Host, { key: '35b9ccc70e074c9e5ca8fb10adb2ce5b0b0f19b2' }, this.titleContainer(), this.valuesContainer(), this.confirmContainer()));
+        return (index.h(index.Host, { key: 'e47d418001c3d6d22ffe76ce6820c3851b004f24' }, this.titleContainer(), this.valuesContainer(), this.confirmContainer()));
     }
 };
 InnoTimePicker.style = InnoTimePickerStyle0;

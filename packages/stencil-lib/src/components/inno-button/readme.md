@@ -249,7 +249,7 @@ import {InnoButton} from '@innomotics/brand-experience-react-lib';
 ### Used by
 
  - [inno-pane](../inno-pane)
- - [inno-time-picker](../inno-time-picker)
+ - [inno-time-picker](../inno-date-picker-dropdown/inno-time-picker)
 
 ### Depends on
 

@@ -9,7 +9,7 @@ const InnoModalContent$1 = /*@__PURE__*/ proxyCustomElement(class InnoModalConte
         this.__registerHost();
     }
     render() {
-        return (h(Host, { key: 'a407a62ddb0a28ccfdc6800bf0c843a4f6833f97' }, h("slot", { key: '2db1c877789935c0241913a8fddfde9e5d321396' })));
+        return (h(Host, { key: '6d09a70eb3305a479174901b9c9f745e524f414f' }, h("slot", { key: '05ede465c65bedbdacf5cc890dc872d5b7a40518' })));
     }
     static get style() { return InnoModalContentStyle0; }
 }, [6, "inno-modal-content"]);

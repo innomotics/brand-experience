@@ -145,7 +145,7 @@ export class InnoRadio {
     }
     render() {
         const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
-        return (h(Host, { key: '565205be3df9581ef18226db152408327551c627', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
+        return (h(Host, { key: '4f42f4af697c47f10fa1007244ce9aec2eeefae2', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
     }
     static get is() { return "inno-radio"; }
     static get encapsulation() { return "scoped"; }

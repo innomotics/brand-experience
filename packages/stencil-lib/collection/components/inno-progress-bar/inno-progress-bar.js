@@ -46,11 +46,11 @@ export class InnoProgressBar {
         return (h("div", { class: "progress-text-container" }, this.showPercentage ? h("div", { class: "percentage" }, progressPercentage) : null, h("div", { class: "progress-text" }, this.progressText)));
     }
     render() {
-        return (h(Host, { key: '3af01977cc2e05cf4b3e442245bd7d5727dcf333' }, h("div", { key: '18a294c8225ea16b07cb48f80952994a1d2e45bc', class: "progress-bar-container" }, h("div", { key: '36b49eb396fd35abb1c9443a98bf7d821f464d12', class: {
+        return (h(Host, { key: 'c14d98adc167f0444bb04f0f12e507798c9627cd' }, h("div", { key: '1b85833edb55997632447ab666dd6737de662a05', class: "progress-bar-container" }, h("div", { key: '3aa71942f1a07f8545da96ea7aa5aca2438167a3', class: {
                 'back-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
-            } }, this.progressHtml()), h("div", { key: 'ec5a3b8348c077074851cdd5d55b01686e021167', class: {
+            } }, this.progressHtml()), h("div", { key: '6654d8d659a920ad3627d8c7d7b2a34135f20bdf', class: {
                 'front-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',

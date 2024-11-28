@@ -1,0 +1,17 @@
+@use '../../../../styles/siemens-ix/shadow-dom/component' as component;
+@use '../../../../styles/breakpoints' as breakpoints;
+
+:host {
+  @include component.inno-component;
+
+  display: block;
+  align-self: stretch;
+}
+
+// @media screen and (max-width: breakpoints.$desktop) {
+//   :host {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }

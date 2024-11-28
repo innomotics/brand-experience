@@ -6,7 +6,8 @@
     "module": "es2015",
     "moduleResolution": "node",
     "target": "es2017",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "sourceMap": false
   },
   "include": ["lib"],
   "exclude": ["node_modules"]

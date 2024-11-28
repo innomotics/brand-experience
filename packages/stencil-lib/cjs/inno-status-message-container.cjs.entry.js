@@ -85,12 +85,12 @@ const InnoStatusMessageContainer = class {
         };
     }
     render() {
-        return (index.h(index.Host, { key: '59ebda0fe718332b74e4ba367e770b7f7624801c', class: {
+        return (index.h(index.Host, { key: '5a6f762051aab38c282dbe33eff45b65fa8cfb1c', class: {
                 [`${this.PREFIX_POSITION_CLASS}top-right`]: this.position === 'top-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-right`]: this.position === 'bottom-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-left`]: this.position === 'bottom-left',
                 [`${this.PREFIX_POSITION_CLASS}top-left`]: this.position === 'top-left',
-            } }, index.h("slot", { key: '200262644a8c465a50cae237e3b2598c4100c60d' })));
+            } }, index.h("slot", { key: '234619e82a726d0d38ea314a79b59f0fa9eb5603' })));
     }
     static get watchers() { return {
         "position": ["onPositionChange"]

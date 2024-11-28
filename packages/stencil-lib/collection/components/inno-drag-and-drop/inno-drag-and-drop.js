@@ -110,7 +110,7 @@ export class InnoDragAndDrop {
         }
     }
     render() {
-        return (h(Host, { key: '5e7e15ce8a3c7be30eea722f824d2d8090b51a96' }, h("div", { key: 'a32526fdd9f0f8352f5c3a2c50cff84389c366c3', class: {
+        return (h(Host, { key: 'ee11b92ffcd3b19090d658d51394d9bc79c7831c' }, h("div", { key: '3e3953de42399541a1f28d36f6e679cd163946bd', class: {
                 'file-upload-area': true,
                 'file-over': this.state !== 'LOADING' && this.isFileOver,
                 checking: this.state === 'LOADING',
@@ -122,7 +122,7 @@ export class InnoDragAndDrop {
                 if (this.state !== 'LOADING') {
                     this.fileDropped(e);
                 }
-            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), h("div", { key: '51009940899a1119e573c12d80a73b2b8e86eefc' }, h("input", { key: '4cd582bb6895e97066a83289df98770cdf3ff668', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
+            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), h("div", { key: '7302e9d726364fe5ca342c372e390051ef04a3c1' }, h("input", { key: '2fdb35634b99cb99c6311542b6c22efb20f08e8d', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
                 this.fileChangeEvent(e);
             }, accept: this.accept }))), this.state === 'UPLOAD_FAILED'
             ? h("span", { class: { "error-text": true, dark: this.variant === 'dark', light: this.variant === 'light' } }, this.texts.uploadFailedText) : null));

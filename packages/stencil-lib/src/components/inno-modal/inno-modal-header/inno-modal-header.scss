@@ -1,0 +1,41 @@
+@use '@innomotics/brand-experience/styles/colors' as colors;
+@use '../../../../styles//siemens-ix/shadow-dom/component' as component;
+
+:host {
+  @include component.inno-component;
+
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  font-size: 24px;
+  line-height: 32px;
+  font-family: 'InnomoticsHafferSQ';
+  font-weight: bold;
+  text-overflow: ellipsis;
+
+  .modal-close {
+    align-self: flex-start;
+    margin-left: auto;
+    background-color: transparent;
+    color: colors.$primary-300;
+    cursor: pointer;
+
+    &:hover {
+      color: colors.$secondary-400;
+    }
+  }
+
+  .modal-icon {
+    margin-right: 1rem;
+    color: colors.$primary-300;
+  }
+
+  &.light {
+    color: colors.$primary-300;
+  }
+
+  &.dark {
+    color: colors.$primary-300;
+  }
+}

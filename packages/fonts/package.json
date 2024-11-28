@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-19",
+  "version": "0.0.2-beta-20",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -17,18 +17,47 @@
     "url": "https://github.com/innomotics/brand-experience"
   },
   "scripts": {
-    "build": "npm run copyoutputs && npm run copyreadme && npm run copyfonts && npm run publishartifacts",
-    "copyoutputs": "npx cpx \"./fonts/**\" \"./dist/fonts\" && npx cpx \"./styles/**\" \"./dist/styles\"",
-    "copyreadme": "npx cpx \"readme.md\" \"../webdocs/docs/fonts\"",
-    "copyfonts": "npx cpx \"./lib/font/**\" \"../webdocs/src\"",
-    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "build": "npx copy-files-from-to"
   },
   "devDependencies": {
-    "cpx2": "^7.0.1"
+    "copy-files-from-to": "^3.12.0"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://localhost:4873"
   },
-  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914"
+  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914",
+  "copyFiles": [
+    {
+      "from": [
+        "./**",
+        "!./dist",
+        "!./lib",
+        "!./*.*"
+      ],
+      "to": "./dist"
+    },
+    {
+      "from": [
+        "./lib/**"
+      ],
+      "to": "./dist"
+    },
+    {
+      "from": [
+        "readme.md"
+      ],
+      "to": "../webdocs/docs/fonts"
+    },
+    {
+      "from": [
+        "./fonts/**"
+      ],
+      "to": "../webdocs/src/fonts"
+    }
+  ],
+  "copyFilesSettings": {
+    "ignoreDotFilesAndFolders": true,
+    "whenFileExists": "overwrite"
+  }
 }

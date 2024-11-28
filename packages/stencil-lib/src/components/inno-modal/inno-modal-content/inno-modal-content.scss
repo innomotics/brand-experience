@@ -1,0 +1,10 @@
+@use '@innomotics/brand-experience/styles/colors' as colors;
+@use '../../../../styles/siemens-ix/shadow-dom/component' as component;
+
+:host {
+  @include component.inno-component;
+
+  display: block;
+  position: relative;
+  overflow: auto;
+}

@@ -34,7 +34,7 @@ const InnoFooterItem$1 = /*@__PURE__*/ proxyCustomElement(class InnoFooterItem e
         };
     }
     render() {
-        return (h(Host, { key: 'fabc0434f63407bdd395843921e6c52142ac0306', class: this.variantStyle() }, h("slot", { key: '78dc65fe844048d21ba51897c1cdaa535abc9348' })));
+        return (h(Host, { key: '0bfbb9d010e31f582094fac88a7078ccaeefd4ea', class: this.variantStyle() }, h("slot", { key: '039cb73b7883544d6a83b51fea87ce5c48af0dfc' })));
     }
     static get watchers() { return {
         "variant": ["watchVariant"]

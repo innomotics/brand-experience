@@ -2,8 +2,8 @@ import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-
 import { a as autoUpdate, c as computePosition, s as shift, f as flip } from './p-ae69ea43.js';
 import { a as isPresent } from './p-565004a9.js';
 import { D as DateTime_1 } from './p-1370a3b4.js';
-import { d as defineCustomElement$4 } from './p-ed834ff2.js';
-import { d as defineCustomElement$3 } from './p-4e62a2d1.js';
+import { d as defineCustomElement$4 } from './p-a0f4f6ca.js';
+import { d as defineCustomElement$3 } from './p-98e090aa.js';
 import { d as defineCustomElement$2 } from './p-a043038e.js';
 
 const innoDatePickerDropdownCss = ".sc-inno-date-picker-dropdown-h{display:block;position:relative;width:100%;max-width:380px;height:56px}.picker.sc-inno-date-picker-dropdown{width:100%;height:56px;padding-left:16px;padding-right:16px;display:flex;flex-direction:row;align-items:center;position:relative;font-size:16px;font-family:\"InnomoticsHafferSQ\";cursor:pointer}.picker.light.sc-inno-date-picker-dropdown{border:1px solid #9aacb4;color:#40545b}.picker.dark.sc-inno-date-picker-dropdown{border:1px solid #9aacb4;background-color:#08191f;color:#b2c1c7}.picker.sc-inno-date-picker-dropdown .picker-label--hasvalue.sc-inno-date-picker-dropdown{position:absolute;top:6px;left:16px;font-size:12px}.picker.sc-inno-date-picker-dropdown .picker-value.sc-inno-date-picker-dropdown{position:relative;top:7px}.picker.sc-inno-date-picker-dropdown .picker-icon.sc-inno-date-picker-dropdown{margin-left:auto}.picker.sc-inno-date-picker-dropdown .picker-icon.light.sc-inno-date-picker-dropdown{color:#08191f}.picker.sc-inno-date-picker-dropdown .picker-icon.dark.sc-inno-date-picker-dropdown{color:#ffffff}.dropdown-container.sc-inno-date-picker-dropdown{display:none;z-index:10;position:fixed}.show.sc-inno-date-picker-dropdown{display:block}";
@@ -181,7 +181,7 @@ const InnoDatePickerDropdown$1 = /*@__PURE__*/ proxyCustomElement(class InnoDate
         return (h("div", { class: dropdownContainerClasses, ref: ref => (this.datePicker = ref) }, h("inno-date-picker", { format: this.format, range: this.range, from: this.from, to: this.to, minDate: this.minDate, maxDate: this.maxDate, weekStartIndex: this.weekStartIndex, locale: this.locale, showOuterDays: this.showOuterDays, onDateChange: event => this.onDateChange(event.detail) })));
     }
     render() {
-        return (h(Host, { key: '04988b028eaebd130ed272260d34d3a58c589ee3' }, this.picker(), this.calendarContainer()));
+        return (h(Host, { key: 'ac08815d9da7fed4ea3ac444de687d0d903b366b' }, this.picker(), this.calendarContainer()));
     }
     static get watchers() { return {
         "isOpen": ["isOpenChanged"],

@@ -81,12 +81,12 @@ export class InnoStatusMessageContainer {
         };
     }
     render() {
-        return (h(Host, { key: '59ebda0fe718332b74e4ba367e770b7f7624801c', class: {
+        return (h(Host, { key: '5a6f762051aab38c282dbe33eff45b65fa8cfb1c', class: {
                 [`${this.PREFIX_POSITION_CLASS}top-right`]: this.position === 'top-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-right`]: this.position === 'bottom-right',
                 [`${this.PREFIX_POSITION_CLASS}bottom-left`]: this.position === 'bottom-left',
                 [`${this.PREFIX_POSITION_CLASS}top-left`]: this.position === 'top-left',
-            } }, h("slot", { key: '200262644a8c465a50cae237e3b2598c4100c60d' })));
+            } }, h("slot", { key: '234619e82a726d0d38ea314a79b59f0fa9eb5603' })));
     }
     static get is() { return "inno-status-message-container"; }
     static get encapsulation() { return "scoped"; }
@@ -147,8 +147,8 @@ export class InnoStatusMessageContainer {
                     "references": {
                         "InnoStatusMessagePosition": {
                             "location": "import",
-                            "path": "../inno-status-message/inno-status-message.api",
-                            "id": "src/components/inno-status-message/inno-status-message.api.ts::InnoStatusMessagePosition"
+                            "path": "./inno-status-message/inno-status-message.api",
+                            "id": "src/components/inno-status-message-container/inno-status-message/inno-status-message.api.ts::InnoStatusMessagePosition"
                         }
                     }
                 },
@@ -181,13 +181,13 @@ export class InnoStatusMessageContainer {
                         },
                         "ShowStatusMessageResult": {
                             "location": "import",
-                            "path": "../inno-status-message/inno-status-message.api",
-                            "id": "src/components/inno-status-message/inno-status-message.api.ts::ShowStatusMessageResult"
+                            "path": "./inno-status-message/inno-status-message.api",
+                            "id": "src/components/inno-status-message-container/inno-status-message/inno-status-message.api.ts::ShowStatusMessageResult"
                         },
                         "InnoStatusMessageConfig": {
                             "location": "import",
-                            "path": "../inno-status-message/inno-status-message.api",
-                            "id": "src/components/inno-status-message/inno-status-message.api.ts::InnoStatusMessageConfig"
+                            "path": "./inno-status-message/inno-status-message.api",
+                            "id": "src/components/inno-status-message-container/inno-status-message/inno-status-message.api.ts::InnoStatusMessageConfig"
                         },
                         "CustomEvent": {
                             "location": "global",

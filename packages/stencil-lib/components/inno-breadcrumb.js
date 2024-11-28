@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$3 } from './p-6d46b31e.js';
+import { d as defineCustomElement$3 } from './p-f5564b95.js';
 import { d as defineCustomElement$2 } from './p-a043038e.js';
 
 const innoBreadcrumbCss = ".sc-inno-breadcrumb-h{display:flex;background-color:transparent;overflow:hidden;font-size:12px}.sc-inno-breadcrumb-h inno-icon.sc-inno-breadcrumb{padding-top:2px}.light.sc-inno-breadcrumb-h{color:#08191f}.dark.sc-inno-breadcrumb-h{color:#ffffff}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb{list-style:none;display:flex;align-items:center;flex-direction:row;flex-wrap:wrap;gap:4px;padding:0px}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type,.sc-inno-breadcrumb-h ol .sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type{font-weight:bold}";

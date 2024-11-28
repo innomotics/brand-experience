@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-19",
+  "version": "0.0.2-beta-20",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -17,24 +17,37 @@
   ],
   "scripts": {
     "test": "node ./__tests__/vue-lib.test.js",
-    "build": "npm run tsc && npm run publishartifacts",
-    "tsc": "tsc -p . --outDir ./dist",
-    "publishartifacts": "npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\""
+    "build": "npm run tsc && npx copy-files-from-to",
+    "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-19"
+    "@innomotics/brand-experience": "^0.0.2-beta-20"
   },
   "devDependencies": {
+    "copy-files-from-to": "^3.12.0",
     "vue": "3.4.25"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://localhost:4873"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-19",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-19"
+    "@innomotics/brand-experience": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-20",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-20"
   },
-  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914"
+  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914",
+  "copyFiles": [
+    {
+      "from": [
+        "./lib/*.md",
+        "./lib/*.json"
+      ],
+      "to": "./dist"
+    }
+  ],
+  "copyFilesSettings": {
+    "ignoreDotFilesAndFolders": true,
+    "whenFileExists": "overwrite"
+  }
 }

@@ -45,7 +45,7 @@ export class InnoFooter {
         return (h("div", { class: { icons: true } }, h("slot", { name: "icons" })));
     }
     render() {
-        return (h(Host, { key: '13e14919d147dacc1aa5c1276801ae882a010cc8', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
+        return (h(Host, { key: '98d6a106ed3e7d0713cf409b1eaf57f6af4efbed', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
     }
     static get is() { return "inno-footer"; }
     static get encapsulation() { return "scoped"; }
