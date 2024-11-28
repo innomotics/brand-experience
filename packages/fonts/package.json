@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-21",
+  "version": "0.0.2-beta-20",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -24,7 +24,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://localhost:4873"
+    "registry": "https://registry.npmjs.org"
   },
   "gitHead": "258791c1cbf11ee4ff207f0034abe74bcea86955",
   "copyFiles": [
