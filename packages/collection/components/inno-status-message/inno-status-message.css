@@ -1,0 +1,208 @@
+:host {
+  width: 500px;
+  height: 83px;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+}
+:host.type-success.light {
+  background-color: #ffffff;
+  border-color: #02884E;
+}
+:host.type-success.dark {
+  background-color: #08191f;
+  border-color: #4ED69B;
+}
+:host.type-warning.light {
+  background-color: #ffffff;
+  border-color: #F0CB49;
+}
+:host.type-warning.dark {
+  background-color: #08191f;
+  border-color: #F0CB49;
+}
+:host.type-error.light {
+  background-color: #ffffff;
+  border-color: #CB0E0E;
+}
+:host.type-error.dark {
+  background-color: #08191f;
+  border-color: #FF88AB;
+}
+:host.type-info.light {
+  background-color: #ffffff;
+  border-color: #08191f;
+}
+:host.type-info.dark {
+  background-color: #08191f;
+  border-color: #ffffff;
+}
+
+.icon-container {
+  position: relative;
+}
+.icon-container > inno-icon {
+  position: relative;
+  top: -10px;
+  left: -11px;
+}
+.icon-container.type-success.light {
+  color: #02884E;
+}
+.icon-container.type-success.dark {
+  color: #4ED69B;
+}
+.icon-container.type-warning.light {
+  color: #F0CB49;
+}
+.icon-container.type-warning.dark {
+  color: #F0CB49;
+}
+.icon-container.type-error.light {
+  color: #CB0E0E;
+}
+.icon-container.type-error.dark {
+  color: #FF88AB;
+}
+.icon-container.type-info.light {
+  color: #08191f;
+}
+.icon-container.type-info.dark {
+  color: #ffffff;
+}
+
+.message-container {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "InnomoticsHafferSQ";
+  overflow: hidden;
+}
+.message-container.type-success.light {
+  color: #08191f;
+}
+.message-container.type-success.dark {
+  color: #ffffff;
+}
+.message-container.type-warning.light {
+  color: #08191f;
+}
+.message-container.type-warning.dark {
+  color: #ffffff;
+}
+.message-container.type-error.light {
+  color: #08191f;
+}
+.message-container.type-error.dark {
+  color: #ffffff;
+}
+.message-container.type-info.light {
+  color: #08191f;
+}
+.message-container.type-info.dark {
+  color: #ffffff;
+}
+
+.close-container {
+  margin-left: auto;
+}
+.close-container > inno-icon {
+  cursor: pointer;
+}
+.close-container.type-success.light {
+  color: #08191f;
+}
+.close-container.type-success.dark {
+  color: #ffffff;
+}
+.close-container.type-warning.light {
+  color: #08191f;
+}
+.close-container.type-warning.dark {
+  color: #ffffff;
+}
+.close-container.type-error.light {
+  color: #08191f;
+}
+.close-container.type-error.dark {
+  color: #ffffff;
+}
+.close-container.type-info.light {
+  color: #08191f;
+}
+.close-container.type-info.dark {
+  color: #ffffff;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  z-index: 1;
+  transform-origin: left;
+}
+.progress-bar--animated {
+  animation: trackProgress linear 1 forwards;
+}
+.progress-bar.type-success.light {
+  background-color: #02884E;
+}
+.progress-bar.type-success.dark {
+  background-color: #4ED69B;
+}
+.progress-bar.type-warning.light {
+  background-color: #F0CB49;
+}
+.progress-bar.type-warning.dark {
+  background-color: #F0CB49;
+}
+.progress-bar.type-error.light {
+  background-color: #CB0E0E;
+}
+.progress-bar.type-error.dark {
+  background-color: #FF88AB;
+}
+.progress-bar.type-info.light {
+  background-color: #08191f;
+}
+.progress-bar.type-info.dark {
+  background-color: #ffffff;
+}
+
+@keyframes trackProgress {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes statusMessageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sm-fade-in {
+  animation: statusMessageFadeIn linear 5 forwards;
+}
+
+@keyframes statusMessageFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  animation-name: statusMessageFadeOut;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}

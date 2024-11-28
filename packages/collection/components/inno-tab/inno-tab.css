@@ -1,0 +1,114 @@
+:host {
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  display: flex;
+  align-items: center;
+  width: auto;
+  position: relative;
+  font-family: "InnomoticsHafferSQ";
+  font-weight: bold;
+}
+:host *,
+:host *::after,
+:host *::before {
+  box-sizing: border-box;
+}
+:host ::-webkit-scrollbar-button {
+  display: none;
+}
+:host ::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+:host ::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #2a3b40;
+}
+:host ::-webkit-scrollbar-track:hover {
+  background: #2a3b40;
+}
+:host ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #566b73;
+}
+:host ::-webkit-scrollbar-thumb:hover {
+  background: #566b73;
+}
+:host ::-webkit-scrollbar-corner {
+  display: none;
+}
+:host.light {
+  background-color: transparent;
+}
+:host.dark {
+  background-color: transparent;
+}
+
+.tab-items {
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.tab-items .items-content {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  pointer-events: none;
+}
+.arrow > inno-icon {
+  pointer-events: auto;
+}
+.arrow.light > inno-icon {
+  color: #08191f;
+}
+.arrow.light > inno-icon:hover {
+  color: #40545b;
+}
+.arrow.dark > inno-icon {
+  color: #ffffff;
+}
+.arrow.dark > inno-icon:hover {
+  color: #b2c1c7;
+}
+
+.arrow-left {
+  justify-content: flex-start;
+}
+.arrow-left.light {
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.arrow-left.dark {
+  background: linear-gradient(to right, #08191f, transparent);
+}
+
+.arrow-right {
+  justify-content: flex-end;
+  left: auto;
+  right: 0;
+}
+.arrow-right.light {
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+.arrow-right.dark {
+  background: linear-gradient(to left, #08191f, transparent);
+}
+
+@media screen and (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}

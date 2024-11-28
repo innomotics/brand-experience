@@ -1,0 +1,2 @@
+class s{listeners=[];listenersOncer=[];on=s=>{this.listeners.push(s);return{dispose:()=>this.off(s)}};once=s=>{this.listenersOncer.push(s)};off=s=>{const i=this.listeners.indexOf(s);if(i>-1){this.listeners.splice(i,1)}};emit=s=>{this.listeners.forEach((i=>i(s)));if(this.listenersOncer.length>0){const i=this.listenersOncer;this.listenersOncer=[];i.forEach((i=>i(s)))}};pipe=s=>this.on((i=>s.emit(i)))}export{s as T};
+//# sourceMappingURL=p-90b661dd.js.map

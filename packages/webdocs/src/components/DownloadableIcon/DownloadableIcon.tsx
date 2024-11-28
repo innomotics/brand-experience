@@ -20,17 +20,11 @@ export default function DownloadableIcon({ iconnames }): JSX.Element {
         }
     }
 
-    function download()
-    {
-        const url = `/brand-experience/svg/${color}/innoicons.zip`;
-
-    }
-
     filteredlist.forEach(name => {
 
         const url = `/brand-experience/svg/${color}/${name}.svg`;
         const item = (
-            <div className="icon-item"><InnoIcon icon={name} size={64}></InnoIcon><div>{name}</div><div><a download href={url}>Download</a></div></div>
+            <div key={name} className="icon-item"><InnoIcon icon={name} size={64}></InnoIcon><div>{name}</div><div><a download href={url}>Download</a></div></div>
         );
         icons.push(item);
     });
@@ -39,8 +33,8 @@ export default function DownloadableIcon({ iconnames }): JSX.Element {
         <div className="icon-table-wrapper">
             <div className="options">
                 <InnoSelect label='Select download color' value={color} onValueChanged={value => { setColor(value.detail); }}>
-                    <InnoSelectItem value='white' label='white'></InnoSelectItem>
-                    <InnoSelectItem value='powergrey' label='powergrey'></InnoSelectItem>
+                    <InnoSelectItem id="white" value='white' label='white'></InnoSelectItem>
+                    <InnoSelectItem id="powergrey" value='powergrey' label='powergrey'></InnoSelectItem>
                     <InnoSelectItem id='lime' value='lime' label='lime'></InnoSelectItem>
                 </InnoSelect>
                 <InnoInput label="Search" variant="light" onValueChanged={(value) => filterlist(value)}>

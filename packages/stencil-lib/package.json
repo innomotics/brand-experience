@@ -23,16 +23,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "copyreadmes": "npx cpx \"./src/components/**/*.md\" \"../webdocs/docs/components\"",
-    "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts && npx cpx \"./readmes/**/*.md\" \"../webdocs/docs\"",
-    "build": "stencil build && npm run copyreadmes && npm run createadditionalreadmes && npm run publishartifacts && npm run setbuild",
+    "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts",
+    "build": "stencil build && npm run createadditionalreadmes && npx copy-files-from-to",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "stencil": "stencil",
-    "publishartifacts": "npx cpx \"./styles/**\" \"./dist/styles\" && npx cpx \"./lib/package.json\" \"./dist\" && npx cpx \"./*.md\" \"./dist\"",
-    "setbuild": "npx cpx \"./dist/cjs/**\" \"./cjs\" && npx cpx \"./dist/collection/**\" \"./collection\" && npx cpx \"./dist/components/**\" \"./components\" && npx cpx \"./dist/esm/**\" \"./esm\" && npx cpx \"./dist/innomotics-brand-experience/**\" \"./innomotics-brand-experience\" && npx cpx \"./dist/loader/**\" \"./loader\" && npx cpx \"./dist/types/**\" \"./types\" && npx cpx \"./dist/**.js\" \"./\""
+    "stencil": "stencil"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.11",
@@ -57,7 +54,6 @@
     "@types/node": "^16.18.11",
     "@types/sanitize-html": "^2.11.0",
     "autoprefixer": "^10.4.17",
-    "cpx2": "^7.0.1",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "puppeteer": "^21.9.0"
@@ -67,5 +63,108 @@
     "@innomotics/brand-experience-icons": "^0.0.2-beta-19"
   },
   "license": "MIT",
-  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914"
+  "gitHead": "1822534a8818dd0f162c03d6b2eb4f22bd8ba914",
+  "copyFiles": [
+    {
+      "from": [
+        "./src/components/**/*.md",
+        "!./src/components/inno-breadcrumb-item",
+        "!./src/components/inno-date-picker-dropdown",
+        "!./src/components/inno-footer-item",
+        "!./src/components/inno-modal-content",
+        "!./src/components/inno-modal-footer",
+        "!./src/components/inno-modal-header",
+        "!./src/components/inno-select-item",
+        "!./src/components/inno-split-gutter",
+        "!./src/components/inno-split-item",
+        "!./src/components/inno-status-message-container",
+        "!./src/components/inno-tab-item"
+      ],
+      "to": "../webdocs/docs/components"
+    },
+    {
+      "from":["./src/components/inno-breadcrumb-item/*.md"],
+      "to":"../webdocs/docs/components/inno-breadcrumb/inno-breadcrumb-item"
+    },
+    {
+      "from":["./src/components/inno-date-picker-dropdown/*.md"],
+      "to":"../webdocs/docs/components/inno-date-picker/inno-date-picker-dropdown"
+    },
+    {
+      "from":["./src/components/inno-footer-item/*.md"],
+      "to":"../webdocs/docs/components/inno-footer/inno-footer-item"
+    },
+    {
+      "from":["./src/components/inno-modal-content/*.md"],
+      "to":"../webdocs/docs/components/inno-modal/inno-modal-content"
+    },
+    {
+      "from":["./src/components/inno-modal-footer/*.md"],
+      "to":"../webdocs/docs/components/inno-modal/inno-modal-footer"
+    },
+    {
+      "from":["./src/components/inno-modal-header/*.md"],
+      "to":"../webdocs/docs/components/inno-modal/inno-modal-header"
+    },
+    {
+      "from":["./src/components/inno-select-item/*.md"],
+      "to":"../webdocs/docs/components/inno-select/inno-select-item"
+    },
+    {
+      "from":["./src/components/inno-split-gutter/*.md"],
+      "to":"../webdocs/docs/components/inno-split/inno-split-gutter"
+    },
+    {
+      "from":["./src/components/inno-split-item/*.md"],
+      "to":"../webdocs/docs/components/inno-split/inno-split-item"
+    },
+    {
+      "from":["./src/components/status-message-container/*.md"],
+      "to":"../webdocs/docs/components/inno-status-message/status-message-container"
+    },
+    {
+      "from":["./src/components/inno-tab-item/*.md"],
+      "to":"../webdocs/docs/components/inno-tab/inno-tab-item"
+    },
+    {
+      "from": "./readmes/**/*.md",
+      "to": "../webdocs/docs"
+    },
+    {
+      "from": [
+        "./**",
+        "!./cjs",
+        "!./collection",
+        "!./components",
+        "!./dist",
+        "!./esm",
+        "!./innomotics-brand-experience",
+        "!./lib",
+        "!./loader",
+        "!./node_modules",
+        "!./readmes",
+        "!./src",
+        "!./types",
+        "!./www",
+        "!./**/*.*"
+      ],
+      "to": "./kuka"
+    },
+    {
+      "from": "./lib/**",
+      "to": "./dist"
+    },
+    {
+      "from": [
+        "./dist/**",
+        "!./dist/styles",
+        "!./dist/*.json",
+        "!./dist/*.md"
+      ],
+      "to": "./"
+    }
+  ],
+  "copyFilesSettings": {
+    "ignoreDotFilesAndFolders": true
+  }
 }

@@ -1,0 +1,88 @@
+.select-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16px;
+  grid-template-rows: auto;
+  align-items: center;
+  border-width: 0px;
+  border-style: none;
+  padding: 0px 16px 0px 16px;
+  height: 56px;
+  gap: 10px;
+  cursor: pointer;
+}
+.select-item.icon-driven:not(.can-favorite) {
+  grid-template-columns: auto minmax(0, 1fr) 16px;
+}
+.select-item.icon-driven.can-favorite {
+  grid-template-columns: auto minmax(0, 1fr) 24px;
+}
+.select-item.can-favorite .star {
+  display: block;
+  font-size: 24px;
+  position: relative;
+}
+.select-item.separator {
+  border-bottom: 3px double #ffffff;
+}
+.select-item.can-favorite:not(.selected):not(.icon-driven) {
+  grid-template-columns: minmax(0, 1fr) 24px;
+}
+.select-item.can-favorite.selected:not(.icon-driven) {
+  grid-template-columns: minmax(0, 1fr) 16px 24px;
+}
+
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  height: 32px;
+}
+:host button {
+  font-family: "InnomoticsHafferSQ";
+  font-size: 16px;
+  font-weight: 430;
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #08191f;
+}
+:host button.dark {
+  color: #ffffff;
+}
+:host button.dark:hover {
+  color: #08191f;
+  background-color: #9aacb4;
+}
+:host button.dark.selected {
+  background-color: #e1f000;
+  color: #08191f;
+}
+:host button:focus:not(.disabled):not(:disabled) {
+  outline-color: #1491EB;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+:host button.selected {
+  background-color: #08191f;
+  color: #ffffff;
+}
+:host button:hover {
+  background-color: #40545b;
+  color: #ffffff;
+}
+:host .page-buttons {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
