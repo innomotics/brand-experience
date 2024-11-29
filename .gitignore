@@ -4,9 +4,7 @@ dist/
 package-lock.json
 lerna-debug.log
 packages/icon-lib/downloadoutput/
-packages/webdocs/static/svg/lime/innoicons_lime.zip
-packages/webdocs/static/svg/powergrey/innoicons_powergrey.zip
-packages/webdocs/static/svg/white/innoicons_white.zip
+packages/webdocs/static/svg/
 packages/stencil-lib/cjs/
 packages/stencil-lib/collection/
 packages/stencil-lib/components/

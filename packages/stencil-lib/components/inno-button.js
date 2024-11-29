@@ -1,4 +1,4 @@
-import { I as InnoButton$1, d as defineCustomElement$1 } from './p-23c6263d.js';
+import { I as InnoButton$1, d as defineCustomElement$1 } from './p-dacf73f5.js';
 
 const InnoButton = InnoButton$1;
 const defineCustomElement = defineCustomElement$1;
