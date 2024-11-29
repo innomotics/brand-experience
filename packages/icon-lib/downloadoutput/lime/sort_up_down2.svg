@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><style>.st1{clip-path:url(#SVGID_00000063628330939528074220000002025601078799157179_)}</style><path fill="#e1f000" fill-rule="evenodd" d="M17 14.5 12 22l-5-7.5zm-7.664 1.25h5.328L12 19.746zM17 9.5 12 2 7 9.5zM9.336 8.25h5.328L12 4.254z" clip-rule="evenodd"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><style>
+.st0 {
+	fill: #e1f000;
+}
+.st1 {
+	clip-path: url(#SVGID_00000063628330939528074220000002025601078799157179_);
+}
+</style><path fill="#e1f000" fill-rule="evenodd" d="M17 14.5 12 22l-5-7.5zm-7.664 1.25h5.328L12 19.746zM17 9.5 12 2 7 9.5zM9.336 8.25h5.328L12 4.254z" clip-rule="evenodd"/></svg>

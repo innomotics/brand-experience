@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>.cls-1{stroke-width:0px}</style></defs><path fill="#ffffff" d="M16 14.32c-4.71 0-8 3.7-8 9v1h16v-1c0-5.38-3.21-9-8-9m1.58 8 1.46-3.09-1.81-.85-1.86 3.94h-5.31c.33-3.13 2.2-6 5.95-6 3.98 0 5.65 3.04 5.95 6h-4.37Z" class="cls-1"/><path fill="#ffffff" d="M25.83 10.32H6.17l-3.38 18H29.2l-3.38-18Zm-18 2h16.34l2.62 14H5.2l2.62-14Zm7.15-3.02h2V6.32H26v-2H6v2h8.98z" class="cls-1"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>
+.cls-1 {
+	fill: #ffffff;
+	stroke-width: 0px;
+}
+</style></defs><path d="M16 14.32c-4.71 0-8 3.7-8 9v1h16v-1c0-5.38-3.21-9-8-9m1.58 8 1.46-3.09-1.81-.85-1.86 3.94h-5.31c.33-3.13 2.2-6 5.95-6 3.98 0 5.65 3.04 5.95 6h-4.37Z" class="cls-1"/><path d="M25.83 10.32H6.17l-3.38 18H29.2l-3.38-18Zm-18 2h16.34l2.62 14H5.2l2.62-14Zm7.15-3.02h2V6.32H26v-2H6v2h8.98z" class="cls-1"/></svg>

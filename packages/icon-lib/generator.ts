@@ -3,6 +3,7 @@ import { importDirectorySync } from '@iconify/tools/lib/import/directory';
 import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
 import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
 import { parseColors } from '@iconify/tools/lib/colors/parse';
+import { SVG } from '@iconify/tools';
 import * as JSZip from 'jszip';
 
 const directoryPath = "./svg";
@@ -39,11 +40,23 @@ let bundles = [{ set: 'white', zip: new JSZip() }, { set: 'powergrey', zip: new 
     try {
       cleanupSVG(svg);
       parseColors(svg, {
-        defaultColor: "#ffffff",
-        callback: (attr, colorStr, color) => {
-          return "unset";
-        },
-      });
+         defaultColor: "#ffffff",
+          callback: (attr, colorStr, color) => {
+            //large icons are specified with not transparent bg so fill attribute shoud not be changed;
+            if(name.includes("large")){
+              switch(attr){
+                case "fill":
+                  {
+                    return "none";
+                  }
+                  default:{
+                    return "currentColor";
+                  }
+              }
+              }
+            return "currentColor";
+          },
+       });
       runSVGO(svg);
     } catch (err) {
       // Invalid icon
@@ -72,6 +85,18 @@ let bundles = [{ set: 'white', zip: new JSZip() }, { set: 'powergrey', zip: new 
       parseColors(svgColor, {
         defaultColor: theme.color,
         callback: (attr, colorStr, color) => {
+          //large icons are specified with not transparent bg so fill attribute shoud not be changed;
+          if(name.includes("large")){
+            switch(attr){
+              case "fill":
+                {
+                  return "none";
+                }
+                default:{
+                  return theme.color;
+                }
+            }
+            }
           return theme.color;
         },
       });

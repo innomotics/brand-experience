@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225">
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
   <defs>
     <style>
       .cls-1 {
-	      fill: none;
-        fill-opacity:0;
         stroke: #08191f;
         stroke-miterlimit: 10;
-        stroke-width: 10px;
+        stroke-width: 2px;
       }
+      .cls-2 {
+        stroke: #08191f;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+        fill:none;
+      }
+
     </style>
   </defs>
   <g>
-    <polygon class="cls-1" points="98.48 46.5 98.48 177.49 167.5 177.49 167.5 84.51 142.51 84.51 142.51 46.5 98.48 46.5"/>
-    <rect class="cls-1" x="73.5" y="102.49" width="24.98" height="61.98"/>
-    <line class="cls-1" x1="168.01" y1="46.5" x2="79.98" y2="46.5"/>
+    <polygon class="cls-2" points="23.85 33 39.29 33 41 31.7 41 21.31 39.29 20 23.85 20 21 21.49 21 31.22 23.85 33"/>
+    <line class="cls-1" x1="26" y1="20.27" x2="26" y2="32.98"/>
+    <line class="cls-1" x1="36" y1="20.5" x2="36" y2="32.5"/>
+    <line class="cls-1" x1="26" y1="24" x2="36" y2="24"/>
+    <line class="cls-1" x1="26" y1="28" x2="36" y2="28"/>
+    <polyline class="cls-2" points="26 20 26 17 32 17 32 20"/>
   </g>
-  <polygon class="cls-1" points="204.54 177.49 317.14 177.49 327.53 171.49 327.53 102.03 317.14 96.5 204.54 96.5 189.46 102.19 189.46 171.76 204.54 177.49"/>
-  <line class="cls-1" x1="217.48" y1="98.31" x2="217.48" y2="176.18"/>
-  <line class="cls-1" x1="288.54" y1="98.31" x2="288.54" y2="176.18"/>
-  <line class="cls-1" x1="217.88" y1="120.49" x2="288.9" y2="120.49"/>
-  <line class="cls-1" x1="217.88" y1="144.53" x2="288.9" y2="144.53"/>
-  <rect class="cls-1" x="217.48" y="77.48" width="43.01" height="19.02"/>
+  <polygon class="cls-2" points="8 12 8 33 18 33 18 18 14 18 14 12 8 12"/>
+  <rect class="cls-2" x="4" y="21" width="4" height="10"/>
+  <line class="cls-1" x1="18" y1="12" x2="5" y2="12"/>
 </svg>

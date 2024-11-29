@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>.cls-1{stroke-width:0px}</style></defs><path fill="#e1f000" d="M7 4v24h18V4zm16 22H9V6h14z" class="cls-1"/><path fill="#e1f000" d="M11 8h10v2H11zm0 4h10v2H11zm0 4h10v2H11z" class="cls-1"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>
+.cls-1 {
+	fill: #e1f000;
+	stroke-width: 0px;
+}
+</style></defs><path d="M7 4v24h18V4zm16 22H9V6h14z" class="cls-1"/><path d="M11 8h10v2H11zm0 4h10v2H11zm0 4h10v2H11z" class="cls-1"/></svg>

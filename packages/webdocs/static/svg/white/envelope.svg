@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><style>.st1{clip-path:url(#SVGID_00000063628330939528074220000002025601078799157179_)}.st2{fill-rule:evenodd;clip-rule:evenodd}</style><path fill="#ffffff" d="M12 5v6H4V5zm1-1H3v8h10z" class="st0"/><path fill="#ffffff" d="m11.806 4.785.707.707-4.526 4.525-.707-.707z" class="st0"/><path fill="#ffffff" d="m3.487 5.492.707-.707L8.719 9.31l-.707.708z" class="st0"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><style>
+.st0 {
+	fill: #ffffff;
+}
+.st1 {
+	clip-path: url(#SVGID_00000063628330939528074220000002025601078799157179_);
+}
+.st2 {
+	fill-rule: evenodd;
+	clip-rule: evenodd;
+	fill: #ffffff;
+}
+</style><path d="M12 5v6H4V5zm1-1H3v8h10z" class="st0"/><path d="m11.806 4.785.707.707-4.526 4.525-.707-.707z" class="st0"/><path d="m3.487 5.492.707-.707L8.719 9.31l-.707.708z" class="st0"/></svg>

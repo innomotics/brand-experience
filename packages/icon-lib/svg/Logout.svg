@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
+<!--Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" xml:space="preserve">
+  <style type="text/css">
 	.st1{fill:#08191F;}
-	.st2{clip-path:url(#SVGID_00000148641204885633698000000009255753470927084975_);}
-	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#08191F;}
-</style>
-<g id="WHITE_background">
-	<rect class="st0" width="16" height="16"/>
-</g>
-<g id="power_grey">
-	<polygon class="st1" points="9,11 9,12 3,12 3,4 9,4 9,5 10,5 10,3 2,3 2,13 10,13 10,11 	"/>
-	<g>
-		<rect x="4" y="7.5" class="st1" width="9" height="1"/>
-	</g>
-	<g>
-		<rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
-	</g>
-	<g>
-		<rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
-	</g>
-	<g>
-		<rect x="4" y="7.5" class="st1" width="9" height="1"/>
-	</g>
-	<g>
-		<rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
-	</g>
-	<g>
-		<rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
-	</g>
-	<g>
-		<rect x="4" y="7.5" class="st1" width="9" height="1"/>
-	</g>
-	<g>
-		<rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
-	</g>
-	<g>
-		<rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
-	</g>
-</g>
+  </style>
+  <polygon class="st1" points="9,11 9,12 3,12 3,4 9,4 9,5 10,5 10,3 2,3 2,13 10,13 10,11 	"/>
+  <rect x="4" y="7.5" class="st1" width="9" height="1"/>
+  <rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
+  <rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
+  <rect x="4" y="7.5" class="st1" width="9" height="1"/>
+  <rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
+  <rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
+  <rect x="4" y="7.5" class="st1" width="9" height="1"/>
+  <rect x="11.6" y="4.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.2886 10.5962)" class="st1" width="1" height="4.2"/>
+  <rect x="11.6" y="7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 14.2678 24.2028)" class="st1" width="1" height="4.2"/>
 </svg>
