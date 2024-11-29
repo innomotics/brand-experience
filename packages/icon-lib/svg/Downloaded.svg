@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Motiv_Power_Grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #08191f;
-        stroke-width: 0px;
-      }
-    </style>
-  </defs>
-  <g>
-    <rect class="cls-1" x="12" y="6" width="2" height="4"/>
-    <polygon class="cls-1" points="21 20 21 24 5 24 5 20 3 20 3 26 23 26 23 20 21 20"/>
-  </g>
-  <polygon class="cls-1" points="24 15.5 20.89 12.3 22.32 10.91 24.01 12.64 27.24 9.34 28.67 10.74 24 15.5"/>
-  <polygon class="cls-1" points="16.54 15.64 14 18.17 14 18.17 14 12 12 12 12 18.17 9.46 15.64 8.05 17.05 13 22 17.95 17.05 16.54 15.64"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>.cls-1{stroke-width:0px}</style></defs><path fill="#ffffff" d="M12 6h2v4h-2zm9 14v4H5v-4H3v6h20v-6zm3-4.5-3.11-3.2 1.43-1.39 1.69 1.73 3.23-3.3 1.43 1.4z" class="cls-1"/><path fill="#ffffff" d="M16.54 15.64 14 18.17V12h-2v6.17l-2.54-2.53-1.41 1.41L13 22l4.95-4.95z" class="cls-1"/></svg>

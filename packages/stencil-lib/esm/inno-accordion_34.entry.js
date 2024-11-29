@@ -13088,7 +13088,7 @@ const InnoIcon = class {
     }
     async resolveIcon(isIconFont) {
         if (this.icon && !isIconFont) {
-            const svgIcon = await import('./inno-icons-9eba5453.js');
+            const svgIcon = await import('./inno-icons-8dd8681b.js');
             const iconname = 'inno_' + this.icon;
             const resolvedIcon = svgIcon[iconname];
             if (resolvedIcon == null) {
