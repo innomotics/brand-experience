@@ -13092,7 +13092,7 @@ const InnoIcon = class {
     }
     async resolveIcon(isIconFont) {
         if (this.icon && !isIconFont) {
-            const svgIcon = await Promise.resolve().then(function () { return require('./inno-icons-fe605659.js'); });
+            const svgIcon = await Promise.resolve().then(function () { return require('./inno-icons-395387bc.js'); });
             const iconname = 'inno_' + this.icon;
             const resolvedIcon = svgIcon[iconname];
             if (resolvedIcon == null) {

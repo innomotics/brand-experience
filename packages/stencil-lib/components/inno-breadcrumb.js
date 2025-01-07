@@ -1,6 +1,6 @@
 import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$3 } from './p-952335fb.js';
-import { d as defineCustomElement$2 } from './p-1969fbd9.js';
+import { d as defineCustomElement$3 } from './p-fd4e2b17.js';
+import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
 
 const innoBreadcrumbCss = ".sc-inno-breadcrumb-h{display:flex;background-color:transparent;overflow:hidden;font-size:12px}.sc-inno-breadcrumb-h inno-icon.sc-inno-breadcrumb{padding-top:2px}.light.sc-inno-breadcrumb-h{color:#08191f}.dark.sc-inno-breadcrumb-h{color:#ffffff}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb{list-style:none;display:flex;align-items:center;flex-direction:row;flex-wrap:wrap;gap:4px;padding:0px}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type,.sc-inno-breadcrumb-h ol .sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type{font-weight:bold}";
 const InnoBreadcrumbStyle0 = innoBreadcrumbCss;

@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$2 } from './p-1969fbd9.js';
+import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Copied from the the original Siemens IX library.

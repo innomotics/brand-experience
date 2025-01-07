@@ -2,12 +2,12 @@
 <svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
   <defs>
     <style>
-      .cls-1 {
+      .cls-large-1 {
         stroke: #08191f;
         stroke-miterlimit: 10;
         stroke-width: 2px;
       }
-      .cls-2 {
+      .cls-large-2 {
         stroke: #08191f;
         stroke-miterlimit: 10;
         stroke-width: 2px;
@@ -15,13 +15,13 @@
       }
     </style>
   </defs>
-  <polygon class="cls-2" points="15.18 33 38.8 33 41 31.74 41 17.16 38.8 16 15.18 16 12 17.2 12 31.8 15.18 33"/>
-  <line class="cls-1" x1="18" y1="16.28" x2="18" y2="32.72"/>
-  <line class="cls-1" x1="33" y1="16.28" x2="33" y2="32.72"/>
-  <line class="cls-1" x1="18" y1="22" x2="33" y2="22"/>
-  <line class="cls-1" x1="18" y1="27" x2="33" y2="27"/>
-  <line class="cls-1" x1="26" y1="11.99" x2="17" y2="11.99"/>
-  <polyline class="cls-2" points="8.98 26 4 26 4 23 8.98 23"/>
-  <line class="cls-1" x1="18" y1="16.61" x2="18" y2="12.33"/>
-  <line class="cls-1" x1="25" y1="16.61" x2="25" y2="12.33"/>
+  <polygon class="cls-large-2" points="15.18 33 38.8 33 41 31.74 41 17.16 38.8 16 15.18 16 12 17.2 12 31.8 15.18 33"/>
+  <line class="cls-large-1" x1="18" y1="16.28" x2="18" y2="32.72"/>
+  <line class="cls-large-1" x1="33" y1="16.28" x2="33" y2="32.72"/>
+  <line class="cls-large-1" x1="18" y1="22" x2="33" y2="22"/>
+  <line class="cls-large-1" x1="18" y1="27" x2="33" y2="27"/>
+  <line class="cls-large-1" x1="26" y1="11.99" x2="17" y2="11.99"/>
+  <polyline class="cls-large-2" points="8.98 26 4 26 4 23 8.98 23"/>
+  <line class="cls-large-1" x1="18" y1="16.61" x2="18" y2="12.33"/>
+  <line class="cls-large-1" x1="25" y1="16.61" x2="25" y2="12.33"/>
 </svg>
