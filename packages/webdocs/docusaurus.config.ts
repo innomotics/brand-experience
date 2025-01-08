@@ -49,7 +49,7 @@ const config: Config = {
   plugins: [
     [
       "docusaurus-plugin-sass",
-      { sassOptions: { includePaths: ["../../node_modules"] } },
+      { sassOptions: { loadPaths: ["../../node_modules"] } },
     ],
   ],
   markdown: {
