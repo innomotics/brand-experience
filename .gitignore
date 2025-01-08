@@ -3,9 +3,12 @@ dist/
 .npmrc
 package-lock.json
 lerna-debug.log
-packages/icon-lib/downloadoutput/powergrey/*.*
-packages/icon-lib/downloadoutput/lime/*.*
-packages/icon-lib/downloadoutput/white/*.*
+packages/icon-lib/downloadoutput/powergrey/*.svg
+packages/icon-lib/downloadoutput/lime/*.svg
+packages/icon-lib/downloadoutput/white/*.svg
+packages/icon-lib/downloadoutput/powergrey/*.zip
+packages/icon-lib/downloadoutput/lime/*.zip
+packages/icon-lib/downloadoutput/white/*.zip
 packages/webdocs/static/svg/
 packages/stencil-lib/cjs/
 packages/stencil-lib/collection/
