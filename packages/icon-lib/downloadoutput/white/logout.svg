@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><path id="svgID0" d="M4 7.5h9v1H4z"/><path id="svgID1" d="m10.237 5.717.707-.707 2.97 2.97-.707.707z"/><path id="svgID2" d="m11.016 11.052-.707-.707 2.97-2.97.706.707z"/></defs><style>
-.st1 {
-	fill: #ffffff;
-}
-</style><path d="M9 11v1H3V4h6v1h1V3H2v10h8v-2z" class="st1"/><use href="#svgID0" class="st1"/><use href="#svgID1" class="st1"/><use href="#svgID2" class="st1"/><use href="#svgID0" class="st1"/><use href="#svgID1" class="st1"/><use href="#svgID2" class="st1"/><use href="#svgID0" class="st1"/><use href="#svgID1" class="st1"/><use href="#svgID2" class="st1"/></svg>

@@ -3,7 +3,9 @@ dist/
 .npmrc
 package-lock.json
 lerna-debug.log
-packages/icon-lib/downloadoutput/
+packages/icon-lib/downloadoutput/powergrey/*.*
+packages/icon-lib/downloadoutput/lime/*.*
+packages/icon-lib/downloadoutput/white/*.*
 packages/webdocs/static/svg/
 packages/stencil-lib/cjs/
 packages/stencil-lib/collection/
@@ -13,3 +15,9 @@ packages/stencil-lib/innomotics-brand-experience/
 packages/stencil-lib/types/
 packages/stencil-lib/utils/
 
+packages/icon-lib/downloadoutput/lime/innoicons_lime.zip
+packages/icon-lib/downloadoutput/powergrey/innoicons_powergrey.zip
+packages/icon-lib/downloadoutput/white/innoicons_white.zip
+packages/webdocs/static/svg/lime/innoicons_lime.zip
+packages/webdocs/static/svg/powergrey/innoicons_powergrey.zip
+packages/webdocs/static/svg/white/innoicons_white.zip

@@ -1,4 +1,4 @@
-import './p-cf0ba765.js';
+import './p-cd3f0a1b.js';
 export { g as getAssetPath, s as setAssetPath, a as setNonce, b as setPlatformOptions } from './p-f9444b6c.js';
 import { T as TypedEvent } from './p-90b661dd.js';
 

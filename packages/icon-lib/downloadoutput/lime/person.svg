@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><style>
-.cls-1 {
-	fill: #e1f000;
-	stroke-width: 0px;
-}
-</style></defs><path d="M11 28h10v2H11zm5-12c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7m0-12c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5" class="cls-1"/><path d="M25 30h-2v-5.81L21.32 20H10.67L9 24.19V30H7v-6.19L9.32 18h13.35L25 23.81z" class="cls-1"/></svg>

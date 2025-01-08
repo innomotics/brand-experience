@@ -2,26 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index$2 = require('./index-317c665c.js');
+const index$3 = require('./index-317c665c.js');
+const index$2 = require('./index-c2072cb6.js');
 const luxon = require('./luxon-9a5412ce.js');
-const index$3 = require('./index-c869f4e8.js');
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function getAugmentedNamespace(n) {
-	if (n.__esModule) return n;
-	var a = Object.defineProperty({}, '__esModule', {value: true});
-	Object.keys(n).forEach(function (k) {
-		var d = Object.getOwnPropertyDescriptor(n, k);
-		Object.defineProperty(a, k, d.get ? d : {
-			enumerable: true,
-			get: function () {
-				return n[k];
-			}
-		});
-	});
-	return a;
-}
 
 var decode = {};
 
@@ -126,7 +109,7 @@ exports.default = decodeCodePoint;
 }(decode_codepoint));
 
 (function (exports) {
-var __createBinding = (commonjsGlobal && commonjsGlobal.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+var __createBinding = (index$2.commonjsGlobal && index$2.commonjsGlobal.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
     if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -137,19 +120,19 @@ var __createBinding = (commonjsGlobal && commonjsGlobal.__createBinding) || (Obj
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
-var __setModuleDefault = (commonjsGlobal && commonjsGlobal.__setModuleDefault) || (Object.create ? (function(o, v) {
+var __setModuleDefault = (index$2.commonjsGlobal && index$2.commonjsGlobal.__setModuleDefault) || (Object.create ? (function(o, v) {
     Object.defineProperty(o, "default", { enumerable: true, value: v });
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (commonjsGlobal && commonjsGlobal.__importStar) || function (mod) {
+var __importStar = (index$2.commonjsGlobal && index$2.commonjsGlobal.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
     if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (commonjsGlobal && commonjsGlobal.__importDefault) || function (mod) {
+var __importDefault = (index$2.commonjsGlobal && index$2.commonjsGlobal.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2125,18 +2108,18 @@ const CDATA$1 = ElementType.CDATA;
 const Doctype = ElementType.Doctype;
 
 const index$1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	get ElementType () { return ElementType; },
-	isTag: isTag$1,
-	Root: Root$7,
-	Text: Text$1,
-	Directive: Directive,
-	Comment: Comment$6,
-	Script: Script,
-	Style: Style,
-	Tag: Tag,
-	CDATA: CDATA$1,
-	Doctype: Doctype
+    __proto__: null,
+    get ElementType () { return ElementType; },
+    isTag: isTag$1,
+    Root: Root$7,
+    Text: Text$1,
+    Directive: Directive,
+    Comment: Comment$6,
+    Script: Script,
+    Style: Style,
+    Tag: Tag,
+    CDATA: CDATA$1,
+    Doctype: Doctype
 });
 
 /**
@@ -3921,48 +3904,48 @@ function isValidFeed(value) {
 }
 
 const index = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	isTag: isTag,
-	isCDATA: isCDATA,
-	isText: isText,
-	isComment: isComment,
-	isDocument: isDocument,
-	hasChildren: hasChildren,
-	getOuterHTML: getOuterHTML,
-	getInnerHTML: getInnerHTML,
-	getText: getText,
-	textContent: textContent,
-	innerText: innerText,
-	getChildren: getChildren,
-	getParent: getParent,
-	getSiblings: getSiblings,
-	getAttributeValue: getAttributeValue,
-	hasAttrib: hasAttrib,
-	getName: getName,
-	nextElementSibling: nextElementSibling,
-	prevElementSibling: prevElementSibling,
-	removeElement: removeElement,
-	replaceElement: replaceElement,
-	appendChild: appendChild,
-	append: append,
-	prependChild: prependChild,
-	prepend: prepend,
-	filter: filter$1,
-	find: find,
-	findOneChild: findOneChild,
-	findOne: findOne,
-	existsOne: existsOne,
-	findAll: findAll,
-	testElement: testElement,
-	getElements: getElements,
-	getElementById: getElementById,
-	getElementsByTagName: getElementsByTagName,
-	getElementsByTagType: getElementsByTagType,
-	removeSubsets: removeSubsets,
-	get DocumentPosition () { return DocumentPosition; },
-	compareDocumentPosition: compareDocumentPosition,
-	uniqueSort: uniqueSort,
-	getFeed: getFeed
+    __proto__: null,
+    isTag: isTag,
+    isCDATA: isCDATA,
+    isText: isText,
+    isComment: isComment,
+    isDocument: isDocument,
+    hasChildren: hasChildren,
+    getOuterHTML: getOuterHTML,
+    getInnerHTML: getInnerHTML,
+    getText: getText,
+    textContent: textContent,
+    innerText: innerText,
+    getChildren: getChildren,
+    getParent: getParent,
+    getSiblings: getSiblings,
+    getAttributeValue: getAttributeValue,
+    hasAttrib: hasAttrib,
+    getName: getName,
+    nextElementSibling: nextElementSibling,
+    prevElementSibling: prevElementSibling,
+    removeElement: removeElement,
+    replaceElement: replaceElement,
+    appendChild: appendChild,
+    append: append,
+    prependChild: prependChild,
+    prepend: prepend,
+    filter: filter$1,
+    find: find,
+    findOneChild: findOneChild,
+    findOne: findOne,
+    existsOne: existsOne,
+    findAll: findAll,
+    testElement: testElement,
+    getElements: getElements,
+    getElementById: getElementById,
+    getElementsByTagName: getElementsByTagName,
+    getElementsByTagType: getElementsByTagType,
+    removeSubsets: removeSubsets,
+    get DocumentPosition () { return DocumentPosition; },
+    compareDocumentPosition: compareDocumentPosition,
+    uniqueSort: uniqueSort,
+    getFeed: getFeed
 });
 
 // Helper methods
@@ -4013,21 +3996,21 @@ function parseFeed(feed, options = parseFeedDefaultOptions) {
 }
 
 const esm = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	parseDocument: parseDocument,
-	parseDOM: parseDOM,
-	createDomStream: createDomStream,
-	parseFeed: parseFeed,
-	Parser: Parser$2,
-	DomHandler: DomHandler,
-	DefaultHandler: DomHandler,
-	Tokenizer: Tokenizer,
-	ElementType: index$1,
-	getFeed: getFeed,
-	DomUtils: index
+    __proto__: null,
+    parseDocument: parseDocument,
+    parseDOM: parseDOM,
+    createDomStream: createDomStream,
+    parseFeed: parseFeed,
+    Parser: Parser$2,
+    DomHandler: DomHandler,
+    DefaultHandler: DomHandler,
+    Tokenizer: Tokenizer,
+    ElementType: index$1,
+    getFeed: getFeed,
+    DomUtils: index
 });
 
-const require$$0 = /*@__PURE__*/getAugmentedNamespace(esm);
+const require$$0 = /*@__PURE__*/index$2.getAugmentedNamespace(esm);
 
 var escapeStringRegexp$1 = string => {
 	if (typeof string !== 'string') {
@@ -4075,11 +4058,11 @@ function isPlainObject$1(o) {
 }
 
 const isPlainObject$2 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	isPlainObject: isPlainObject$1
+    __proto__: null,
+    isPlainObject: isPlainObject$1
 });
 
-const require$$2$1 = /*@__PURE__*/getAugmentedNamespace(isPlainObject$2);
+const require$$2$1 = /*@__PURE__*/index$2.getAugmentedNamespace(isPlainObject$2);
 
 var isMergeableObject = function isMergeableObject(value) {
 	return isNonNullObject(value)
@@ -4242,7 +4225,7 @@ var parseSrcset$1 = {exports: {}};
 		// Browser globals (root is window)
 		root.parseSrcset = factory();
 	}
-}(commonjsGlobal, function () {
+}(index$2.commonjsGlobal, function () {
 
 	// 1. Let input be the value passed to this algorithm.
 	return function (input) {
@@ -4552,11 +4535,11 @@ picocolors_browser.exports.createColors = create;
 const _nodeResolve_empty = {};
 
 const _nodeResolve_empty$1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	'default': _nodeResolve_empty
+    __proto__: null,
+    'default': _nodeResolve_empty
 });
 
-const require$$2 = /*@__PURE__*/getAugmentedNamespace(_nodeResolve_empty$1);
+const require$$2 = /*@__PURE__*/index$2.getAugmentedNamespace(_nodeResolve_empty$1);
 
 let pico = picocolors_browser.exports;
 
@@ -5450,12 +5433,12 @@ let nanoid$1 = (size = 21) => {
 };
 
 const nonSecure = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	nanoid: nanoid$1,
-	customAlphabet: customAlphabet
+    __proto__: null,
+    nanoid: nanoid$1,
+    customAlphabet: customAlphabet
 });
 
-const require$$3 = /*@__PURE__*/getAugmentedNamespace(nonSecure);
+const require$$3 = /*@__PURE__*/index$2.getAugmentedNamespace(nonSecure);
 
 let { SourceMapConsumer: SourceMapConsumer$2, SourceMapGenerator: SourceMapGenerator$2 } = require$$2;
 let { existsSync, readFileSync } = require$$2;
@@ -9620,8 +9603,8 @@ const InnoAccordionStyle0 = innoAccordionCss;
 
 const InnoAccordion = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.collapsedChanged = index$2.createEvent(this, "collapsedChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.collapsedChanged = index$3.createEvent(this, "collapsedChanged", 7);
         this.variant = 'light';
         this.collapsed = false;
         this.last = false;
@@ -9633,7 +9616,7 @@ const InnoAccordion = class {
      * This event is fired whenever the accordion is opened/closed via user interaction.
      */
     collapsedChanged;
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     anchorElementRef;
     onHeaderClick() {
         this.collapsed = !this.collapsed;
@@ -9656,39 +9639,39 @@ const InnoAccordion = class {
     render() {
         let iconSize = 24;
         let icon = this.collapsed ? this.inner ? 'chevron_down_small' : 'plus' : this.inner ? 'chevron_up_small' : 'minus';
-        let headerTitle = index$2.h("div", { key: '7f07c0cbad73e993d2cdb49e9ddb3091abc9cdc6', class: "accordion-header-titles" }, index$2.h("span", { key: '3dd676da67c4653ffde14ff97958d2899737f96e', class: {
+        let headerTitle = index$3.h("div", { key: '7f07c0cbad73e993d2cdb49e9ddb3091abc9cdc6', class: "accordion-header-titles" }, index$3.h("span", { key: '3dd676da67c4653ffde14ff97958d2899737f96e', class: {
                 'accordion-header-title': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
                 'inner': this.inner
-            }, innerHTML: sanitizeHtml$1(this.label) }), index$2.h("span", { key: '7ee3d8ffc6e31e5f5369ae577548d28551e1dcec', class: {
+            }, innerHTML: sanitizeHtml$1(this.label) }), index$3.h("span", { key: '7ee3d8ffc6e31e5f5369ae577548d28551e1dcec', class: {
                 'accordion-header-title': true,
                 'second-label': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
                 'inner': this.inner
             }, innerHTML: sanitizeHtml$1(this.secondLabel) }));
-        return (index$2.h(index$2.Host, { key: 'f555ac627f2568c7a7c7e40fdd3b254d57e4ec4b' }, index$2.h("a", { key: '37cd7048c6c5f57b43c1129f413e830a8641afc3', class: {
+        return (index$3.h(index$3.Host, { key: 'f555ac627f2568c7a7c7e40fdd3b254d57e4ec4b' }, index$3.h("a", { key: '37cd7048c6c5f57b43c1129f413e830a8641afc3', class: {
                 'accordion': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
                 'last': this.last,
                 'open': !this.collapsed,
                 'inner': this.inner,
-            }, ref: (ref) => (this.anchorElementRef = ref) }, index$2.h("div", { key: '82b0fd14876f5893144c9e75a40b51ef5d9b75b3', class: {
+            }, ref: (ref) => (this.anchorElementRef = ref) }, index$3.h("div", { key: '82b0fd14876f5893144c9e75a40b51ef5d9b75b3', class: {
                 'accordion-header': true,
                 'inner': this.inner,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
-            }, onClick: () => this.onHeaderClick(), onMouseEnter: () => this.toggleHoveredClass(true), onMouseLeave: () => this.toggleHoveredClass(false) }, !this.inner ? headerTitle : null, index$2.h("inno-icon", { key: 'b02d4aff65eb1f6abd5b7145c1d4f27eedf54eaf', class: {
+            }, onClick: () => this.onHeaderClick(), onMouseEnter: () => this.toggleHoveredClass(true), onMouseLeave: () => this.toggleHoveredClass(false) }, !this.inner ? headerTitle : null, index$3.h("inno-icon", { key: 'b02d4aff65eb1f6abd5b7145c1d4f27eedf54eaf', class: {
                 'inner': this.inner,
-            }, icon: icon, size: iconSize, variant: this.variant }), this.inner ? headerTitle : null), index$2.h("section", { key: 'fab3e6b48754d350266e87e0ea058115f6d649cb', class: {
+            }, icon: icon, size: iconSize, variant: this.variant }), this.inner ? headerTitle : null), index$3.h("section", { key: 'fab3e6b48754d350266e87e0ea058115f6d649cb', class: {
                 'accordion-content': true,
                 'inner': this.inner,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
                 hide: this.collapsed,
-            } }, index$2.h("slot", { key: '5bd2b7456e61444fd30337ec105cd1da2f113a19' })))));
+            } }, index$3.h("slot", { key: '5bd2b7456e61444fd30337ec105cd1da2f113a19' })))));
     }
 };
 InnoAccordion.style = InnoAccordionStyle0;
@@ -9698,11 +9681,11 @@ const InnoBreadcrumbStyle0 = innoBreadcrumbCss;
 
 const Breadcrumb = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.itemClick = index$2.createEvent(this, "itemClick", 7);
+        index$3.registerInstance(this, hostRef);
+        this.itemClick = index$3.createEvent(this, "itemClick", 7);
         this.variant = 'light';
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
      */
@@ -9722,10 +9705,10 @@ const Breadcrumb = class {
     }
     render() {
         this.removeLastItemChevron(this.items);
-        return (index$2.h(index$2.Host, { key: '24445c39cd58e0430b33ab877ec9d01c0eec71a4', class: {
+        return (index$3.h(index$3.Host, { key: '24445c39cd58e0430b33ab877ec9d01c0eec71a4', class: {
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark'
-            } }, index$2.h("ol", { key: '2cbb0716c60fe67e5e533224352ba3093eecf636' }, this.items?.length > 0 ? (index$2.h("inno-breadcrumb-item", { label: "home", icon: "home", itemIndex: 0, showChevron: this.items.length > 0 })) : null, index$2.h("slot", { key: '1582cd4b497bbf16b982e9824ac07da95838afd8' }))));
+            } }, index$3.h("ol", { key: '2cbb0716c60fe67e5e533224352ba3093eecf636' }, this.items?.length > 0 ? (index$3.h("inno-breadcrumb-item", { label: "home", icon: "home", itemIndex: 0, showChevron: this.items.length > 0 })) : null, index$3.h("slot", { key: '1582cd4b497bbf16b982e9824ac07da95838afd8' }))));
     }
 };
 Breadcrumb.style = InnoBreadcrumbStyle0;
@@ -9735,8 +9718,8 @@ const InnoBreadcrumbItemStyle0 = innoBreadcrumbItemCss;
 
 const BreadcrumbItem = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.breadcrumbItemClick = index$2.createEvent(this, "breadcrumbItemClick", 7);
+        index$3.registerInstance(this, hostRef);
+        this.breadcrumbItemClick = index$3.createEvent(this, "breadcrumbItemClick", 7);
         this.label = undefined;
         this.icon = undefined;
         this.itemIndex = undefined;
@@ -9744,16 +9727,16 @@ const BreadcrumbItem = class {
         this.visible = true;
         this.showChevron = true;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**@internal */
     breadcrumbItemClick;
     render() {
         if (!this.visible) {
-            return index$2.h(index$2.Host, { class: 'invisible' });
+            return index$3.h(index$3.Host, { class: 'invisible' });
         }
-        return (index$2.h(index$2.Host, { class: {
+        return (index$3.h(index$3.Host, { class: {
                 'hide-chevron': !this.showChevron,
-            }, onClick: () => this.breadcrumbItemClick.emit({ itemIndex: this.itemIndex, label: this.label }) }, index$2.h("li", null, index$2.h("a", null, this.icon ? (index$2.h("inno-icon", { icon: this.icon, size: this.iconSize })) : this.label, index$2.h("slot", null), this.showChevron ? (index$2.h("inno-icon", { icon: "chevron_right", class: "chevron", size: this.iconSize })) : null))));
+            }, onClick: () => this.breadcrumbItemClick.emit({ itemIndex: this.itemIndex, label: this.label }) }, index$3.h("li", null, index$3.h("a", null, this.icon ? (index$3.h("inno-icon", { icon: this.icon, size: this.iconSize })) : this.label, index$3.h("slot", null), this.showChevron ? (index$3.h("inno-icon", { icon: "chevron_right", class: "chevron", size: this.iconSize })) : null))));
     }
 };
 BreadcrumbItem.style = InnoBreadcrumbItemStyle0;
@@ -9763,7 +9746,7 @@ const InnoButtonStyle0 = innoButtonCss;
 
 const InnoButton = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.variant = 'primary';
         this.colorVariant = 'light';
         this.type = 'button';
@@ -9776,7 +9759,7 @@ const InnoButton = class {
         this.iconOnly = false;
         this.listType = false;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     submitButtonElement;
     componentDidLoad() {
         if (this.type === 'submit') {
@@ -9800,10 +9783,10 @@ const InnoButton = class {
         let icon = this.variant === 'navigation'
             ? (this.navDirection === 'right' ? 'chevron_right_small' : 'chevron_left_small')
             : (this.icon ?? this.iconFont);
-        return (index$2.h(index$2.Host, { key: '8b10c7f51248426077d1657733fc4ab56a2d66b0', class: {
+        return (index$3.h(index$3.Host, { key: '8b10c7f51248426077d1657733fc4ab56a2d66b0', class: {
                 disabled: this.disabled,
                 'list-type': this.listType
-            } }, index$2.h("button", { key: 'a2a4d6d969a9d831dd0c5bfe74af5d0ff611bc31', class: {
+            } }, index$3.h("button", { key: 'a2a4d6d969a9d831dd0c5bfe74af5d0ff611bc31', class: {
                 'primary': this.variant === 'primary',
                 'secondary': this.variant === 'secondary',
                 'tertiary': this.variant === 'tertiary',
@@ -9816,7 +9799,7 @@ const InnoButton = class {
                 'display-reverse': this.iconPosition === 'left',
                 'list-type': this.listType,
                 disabled: this.disabled
-            }, onClick: () => this.dispatchFormEvents(), type: this.type, tabIndex: this.disabled ? -1 : this.tabIdx ?? 0 }, index$2.h("slot", { key: '22b5f25e587d0fe291681e56264c1c5dff06428e' }), hasIcon ? index$2.h("inno-icon", { icon: icon, size: iconSize, variant: this.colorVariant }) : null, hasIconFont && !hasIcon ? index$2.h("inno-icon", { iconFont: icon, size: iconSize, variant: this.colorVariant }) : null)));
+            }, onClick: () => this.dispatchFormEvents(), type: this.type, tabIndex: this.disabled ? -1 : this.tabIdx ?? 0 }, index$3.h("slot", { key: '22b5f25e587d0fe291681e56264c1c5dff06428e' }), hasIcon ? index$3.h("inno-icon", { icon: icon, size: iconSize, variant: this.colorVariant }) : null, hasIconFont && !hasIcon ? index$3.h("inno-icon", { iconFont: icon, size: iconSize, variant: this.colorVariant }) : null)));
     }
 };
 InnoButton.style = InnoButtonStyle0;
@@ -9930,8 +9913,8 @@ const InnoCheckboxStyle0 = innoCheckboxCss;
 
 const InnoCheckbox = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.valueChange = index$2.createEvent(this, "valueChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.valueChange = index$3.createEvent(this, "valueChange", 7);
         if (hostRef.$hostElement$["s-ei"]) {
             this.elementInternals = hostRef.$hostElement$["s-ei"];
         }
@@ -9951,7 +9934,7 @@ const InnoCheckbox = class {
         this.required = false;
         this.error = false;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     elementInternals;
     /**
      * Checked status has been changed.
@@ -10031,21 +10014,21 @@ const InnoCheckbox = class {
         };
     }
     inputElement() {
-        return (index$2.h("input", { type: "checkbox", "aria-checked": a11yBoolean(this.checked), tabIndex: -1, name: this.name, disabled: this.disabled, checked: this.checked, required: this.required, onChange: event => this.changeCheckedState(event.target.checked) }));
+        return (index$3.h("input", { type: "checkbox", "aria-checked": a11yBoolean(this.checked), tabIndex: -1, name: this.name, disabled: this.disabled, checked: this.checked, required: this.required, onChange: event => this.changeCheckedState(event.target.checked) }));
     }
     checkboxComponent() {
         const classes = {
             ...this.commonStyles(),
             checkbox: true,
         };
-        return (index$2.h("div", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.checkSignComponent()));
+        return (index$3.h("div", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.checkSignComponent()));
     }
     checkSignComponent() {
         const classes = {
             ...this.commonStyles(),
             checksign: true,
         };
-        return index$2.h("div", { class: classes });
+        return index$3.h("div", { class: classes });
     }
     labelComponent() {
         const classes = {
@@ -10053,12 +10036,12 @@ const InnoCheckbox = class {
             label: true,
         };
         if (this.label != null && this.label !== '') {
-            return (index$2.h("span", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.label));
+            return (index$3.h("span", { class: classes, onClick: () => this.changeCheckedState(!this.checked) }, this.label));
         }
     }
     render() {
         const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
-        return (index$2.h(index$2.Host, { key: '8912943a46613e1d14c29bde5978357a52eb5e02', tabIndex: tabIndexValue, role: "checkbox", "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
+        return (index$3.h(index$3.Host, { key: '8912943a46613e1d14c29bde5978357a52eb5e02', tabIndex: tabIndexValue, role: "checkbox", "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
     }
     static get formAssociated() { return true; }
 };
@@ -10103,21 +10086,21 @@ function OnListener(event, fnExp) {
         const { componentWillLoad, componentWillRender, disconnectedCallback } = proto;
         if (fnExp) {
             proto.componentWillRender = function () {
-                const host = index$2.getElement(this);
+                const host = index$3.getElement(this);
                 host[`__ix__${methodName}`]?.enable(fnExp(this));
                 return componentWillRender && componentWillRender.call(this);
             };
         }
         proto.componentWillLoad = function () {
             const listener = createListener(event);
-            const host = index$2.getElement(this);
+            const host = index$3.getElement(this);
             const method = this[methodName];
             host[`__ix__${methodName}`] = listener;
             listener.on(method.bind(this));
             return componentWillLoad && componentWillLoad.call(this);
         };
         proto.disconnectedCallback = function () {
-            const host = index$2.getElement(this);
+            const host = index$3.getElement(this);
             if (host && host[`__ix__${methodName}`]) {
                 host[`__ix__${methodName}`]?.destroy();
                 host[`__ix__${methodName}`] = null;
@@ -12180,8 +12163,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 const InnoDatePicker = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.dateChange = index$2.createEvent(this, "dateChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.dateChange = index$3.createEvent(this, "dateChange", 7);
         this.format = 'yyyy/LL/dd';
         this.range = true;
         this.from = undefined;
@@ -12212,7 +12195,7 @@ const InnoDatePicker = class {
         this.focusedDay = luxon.DateTime_1.now();
         this.focusedDayElem = undefined;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     watchFromPropHandler(newValue) {
         this.currFromDate = newValue ? luxon.DateTime_1.fromFormat(newValue, this.format) : undefined;
         if (this.currFromDate?.isValid) {
@@ -12521,7 +12504,7 @@ const InnoDatePicker = class {
             dropdown: true,
             show: this.showDropdown,
         };
-        return (index$2.h("div", { class: classes, ref: ref => (this.dropdownContainerRef = ref) }, index$2.h("div", { class: "wrapper" }, this.renderYears(), this.dropdownMonths())));
+        return (index$3.h("div", { class: classes, ref: ref => (this.dropdownContainerRef = ref) }, index$3.h("div", { class: "wrapper" }, this.renderYears(), this.dropdownMonths())));
     }
     renderYears() {
         const rows = [];
@@ -12535,14 +12518,14 @@ const InnoDatePicker = class {
                 hidden: this.tempYear !== year,
                 arrowPosition: true,
             };
-            rows.push(index$2.h("div", { key: year, class: yearClasses, onClick: event => this.selectTempYear(event, year), onKeyUp: event => {
+            rows.push(index$3.h("div", { key: year, class: yearClasses, onClick: event => this.selectTempYear(event, year), onKeyUp: event => {
                     if (event.key === 'Enter') {
                         this.selectTempYear(null, year);
                         this.focusMonth();
                     }
-                }, tabIndex: 0 }, index$2.h("inno-icon", { class: iconClasses, icon: "chevron_right_small", size: 16 }), index$2.h("div", { style: { 'min-width': 'max-content' } }, `${year}`)));
+                }, tabIndex: 0 }, index$3.h("inno-icon", { class: iconClasses, icon: "chevron_right_small", size: 16 }), index$3.h("div", { style: { 'min-width': 'max-content' } }, `${year}`)));
         }
-        return (index$2.h("div", { class: "overflow", ref: ref => (this.yearContainerRef = ref), onScroll: () => this.infiniteScrollYears() }, rows));
+        return (index$3.h("div", { class: "overflow", ref: ref => (this.yearContainerRef = ref), onScroll: () => this.infiniteScrollYears() }, rows));
     }
     dropdownMonths() {
         const months = this.monthNames.map((month, index) => {
@@ -12556,32 +12539,32 @@ const InnoDatePicker = class {
                 hidden: this.tempYear !== this.selectedYear || this.tempMonth !== index,
                 checkPosition: true,
             };
-            return (index$2.h("div", { key: month, ref: ref => {
+            return (index$3.h("div", { key: month, ref: ref => {
                     if (month === this.monthNames[0]) {
                         this.firstMonthRef = ref;
                     }
-                }, class: classes, onClick: () => this.selectMonth(index), onKeyUp: event => event.key === 'Enter' && this.selectMonth(index), tabIndex: 0 }, index$2.h("inno-icon", { class: iconClasses, icon: "chevron_right_small", size: 16 }), index$2.h("div", null, index$2.h("span", null, `${month} ${this.tempYear}`))));
+                }, class: classes, onClick: () => this.selectMonth(index), onKeyUp: event => event.key === 'Enter' && this.selectMonth(index), tabIndex: 0 }, index$3.h("inno-icon", { class: iconClasses, icon: "chevron_right_small", size: 16 }), index$3.h("div", null, index$3.h("span", null, `${month} ${this.tempYear}`))));
         });
-        return index$2.h("div", { class: "overflow" }, months);
+        return index$3.h("div", { class: "overflow" }, months);
     }
     header() {
-        return (index$2.h("div", { class: "header", slot: "header" }, index$2.h("inno-icon", { icon: "chevron_left_small", size: 24, class: "navigation", onClick: () => this.changeToAdjacentMonth(-1) }), index$2.h("div", { class: "selector" }, index$2.h("span", { ref: ref => (this.dropdownButtonRef = ref), onClick: () => this.openDropdownSelector() }, this.monthNames[this.selectedMonth], " ", this.selectedYear, this.dropDown())), index$2.h("inno-icon", { icon: "chevron_right_small", size: 24, class: "navigation", onClick: () => this.changeToAdjacentMonth(1) })));
+        return (index$3.h("div", { class: "header", slot: "header" }, index$3.h("inno-icon", { icon: "chevron_left_small", size: 24, class: "navigation", onClick: () => this.changeToAdjacentMonth(-1) }), index$3.h("div", { class: "selector" }, index$3.h("span", { ref: ref => (this.dropdownButtonRef = ref), onClick: () => this.openDropdownSelector() }, this.monthNames[this.selectedMonth], " ", this.selectedYear, this.dropDown())), index$3.h("inno-icon", { icon: "chevron_right_small", size: 24, class: "navigation", onClick: () => this.changeToAdjacentMonth(1) })));
     }
     calendarGrid() {
-        return (index$2.h("div", { class: "grid" }, index$2.h("div", { class: "calendar-item week-day" }), this.createCalendarWeekNamesLayout(), this.createCalendarDaysLayout()));
+        return (index$3.h("div", { class: "grid" }, index$3.h("div", { class: "calendar-item week-day" }), this.createCalendarWeekNamesLayout(), this.createCalendarDaysLayout()));
     }
     createCalendarWeekNamesLayout() {
-        return this.dayNames.map(name => (index$2.h("div", { key: name, class: "calendar-item week-day" }, name.slice(0, 3))));
+        return this.dayNames.map(name => (index$3.h("div", { key: name, class: "calendar-item week-day" }, name.slice(0, 3))));
     }
     createCalendarDaysLayout() {
         return this.calendar.map(week => {
-            return (index$2.h(index$2.Fragment, null, index$2.h("div", { class: "calendar-item week-number" }, week.weekNumber), week.days.map(day => {
+            return (index$3.h(index$3.Fragment, null, index$3.h("div", { class: "calendar-item week-number" }, week.weekNumber), week.days.map(day => {
                 if (day === undefined) {
-                    return index$2.h("div", { "date-calender-day": true, class: this.getDayClasses(day) });
+                    return index$3.h("div", { "date-calender-day": true, class: this.getDayClasses(day) });
                 }
                 const focusedDay = day.month === this.focusedDay.month && day.day === this.focusedDay.day;
                 const id = this.calculateIdForCell(day);
-                return (index$2.h("div", { "date-calender-day": true, key: `${day.month}-${day.day}`, id: id, class: this.getDayClasses(day), onClick: () => this.selectDay(day), onKeyUp: e => e.key === 'Enter' && this.selectDay(day), tabIndex: focusedDay ? 0 : -1, onFocus: () => this.onDayFocus(), onBlur: () => this.onDayBlur() }, day.day));
+                return (index$3.h("div", { "date-calender-day": true, key: `${day.month}-${day.day}`, id: id, class: this.getDayClasses(day), onClick: () => this.selectDay(day), onKeyUp: e => e.key === 'Enter' && this.selectDay(day), tabIndex: focusedDay ? 0 : -1, onFocus: () => this.onDayFocus(), onBlur: () => this.onDayBlur() }, day.day));
             })));
         });
     }
@@ -12598,7 +12581,7 @@ const InnoDatePicker = class {
     //   );
     // }
     render() {
-        return (index$2.h(index$2.Host, { key: 'f304d419f6127386881f8fbd383707a6c6ca2336' }, index$2.h("inno-date-time-card", { key: '841b926a9defab3c33ae031b270e8a4cb9ac37b0', standaloneAppearance: this.standaloneAppearance }, this.header(), this.calendarGrid())));
+        return (index$3.h(index$3.Host, { key: 'f304d419f6127386881f8fbd383707a6c6ca2336' }, index$3.h("inno-date-time-card", { key: '841b926a9defab3c33ae031b270e8a4cb9ac37b0', standaloneAppearance: this.standaloneAppearance }, this.header(), this.calendarGrid())));
     }
     static get watchers() { return {
         "from": ["watchFromPropHandler"],
@@ -12616,8 +12599,8 @@ const InnoDatePickerDropdownStyle0 = innoDatePickerDropdownCss;
 
 const InnoDatePickerDropdown = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.dateChange = index$2.createEvent(this, "dateChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.dateChange = index$3.createEvent(this, "dateChange", 7);
         this.variant = 'dark';
         this.format = 'yyyy/LL/dd';
         this.range = false;
@@ -12635,7 +12618,7 @@ const InnoDatePickerDropdown = class {
         this.value = undefined;
         this.selectedRange = undefined;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Triggers if the date selection changes.
      * See the date-picker component for more information.
@@ -12774,7 +12757,7 @@ const InnoDatePickerDropdown = class {
             ...this.variantClasses(),
             'picker-icon': true,
         };
-        return (index$2.h("div", { class: pickerClasses, ref: ref => (this.dropdownHost = ref), onClick: _ => this.changeVisibility() }, index$2.h("div", { class: labelClasses }, index$2.h("span", null, label)), index$2.h("div", { class: valueClasses }, this.value), index$2.h("div", { class: pickerIconClasses }, index$2.h("inno-icon", { icon: iconName, size: 32 }))));
+        return (index$3.h("div", { class: pickerClasses, ref: ref => (this.dropdownHost = ref), onClick: _ => this.changeVisibility() }, index$3.h("div", { class: labelClasses }, index$3.h("span", null, label)), index$3.h("div", { class: valueClasses }, this.value), index$3.h("div", { class: pickerIconClasses }, index$3.h("inno-icon", { icon: iconName, size: 32 }))));
     }
     calendarContainer() {
         const dropdownContainerClasses = {
@@ -12782,10 +12765,10 @@ const InnoDatePickerDropdown = class {
             'dropdown-container': true,
             'show': this.show,
         };
-        return (index$2.h("div", { class: dropdownContainerClasses, ref: ref => (this.datePicker = ref) }, index$2.h("inno-date-picker", { format: this.format, range: this.range, from: this.from, to: this.to, minDate: this.minDate, maxDate: this.maxDate, weekStartIndex: this.weekStartIndex, locale: this.locale, showOuterDays: this.showOuterDays, onDateChange: event => this.onDateChange(event.detail) })));
+        return (index$3.h("div", { class: dropdownContainerClasses, ref: ref => (this.datePicker = ref) }, index$3.h("inno-date-picker", { format: this.format, range: this.range, from: this.from, to: this.to, minDate: this.minDate, maxDate: this.maxDate, weekStartIndex: this.weekStartIndex, locale: this.locale, showOuterDays: this.showOuterDays, onDateChange: event => this.onDateChange(event.detail) })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'ac08815d9da7fed4ea3ac444de687d0d903b366b' }, this.picker(), this.calendarContainer()));
+        return (index$3.h(index$3.Host, { key: 'ac08815d9da7fed4ea3ac444de687d0d903b366b' }, this.picker(), this.calendarContainer()));
     }
     static get watchers() { return {
         "isOpen": ["isOpenChanged"],
@@ -12800,7 +12783,7 @@ const InnoDateTimeCardStyle0 = innoDateTimeCardCss;
 
 const InnoDateTimeCard = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.standaloneAppearance = false;
     }
     render() {
@@ -12808,7 +12791,7 @@ const InnoDateTimeCard = class {
             card: true,
             standaloneAppearance: this.standaloneAppearance,
         };
-        return (index$2.h(index$2.Host, { key: 'f559853739d7e612ce31f13545f39087475ce5ce' }, index$2.h("div", { key: 'd94112848dfab3c6eb3f40249f357be0428a2dd3', class: cardClasses }, index$2.h("div", { key: 'fd3c1a2248017cbf026ccbc0cc14a60dd0d172ee', class: "header" }, index$2.h("slot", { key: 'd88f77dfb809e9014080bfc68df50b2833915bdc', name: "header" })), index$2.h("div", { key: '13e2389efa7ada5d6d6892cbdd15a71e584284d2', class: "separator" }), index$2.h("div", { key: '8480893d8c00aca85bc83f83e72ff9572483ac1f', class: "content" }, index$2.h("slot", { key: '1dd49a023a5a47050682e5c229fe2471825b6525' })))));
+        return (index$3.h(index$3.Host, { key: 'f559853739d7e612ce31f13545f39087475ce5ce' }, index$3.h("div", { key: 'd94112848dfab3c6eb3f40249f357be0428a2dd3', class: cardClasses }, index$3.h("div", { key: 'fd3c1a2248017cbf026ccbc0cc14a60dd0d172ee', class: "header" }, index$3.h("slot", { key: 'd88f77dfb809e9014080bfc68df50b2833915bdc', name: "header" })), index$3.h("div", { key: '13e2389efa7ada5d6d6892cbdd15a71e584284d2', class: "separator" }), index$3.h("div", { key: '8480893d8c00aca85bc83f83e72ff9572483ac1f', class: "content" }, index$3.h("slot", { key: '1dd49a023a5a47050682e5c229fe2471825b6525' })))));
     }
 };
 InnoDateTimeCard.style = InnoDateTimeCardStyle0;
@@ -12818,8 +12801,8 @@ const InnoDragAndDropStyle0 = innoDragAndDropCss;
 
 const InnoDragAndDrop = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.filesChanged = index$2.createEvent(this, "filesChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.filesChanged = index$3.createEvent(this, "filesChanged", 7);
         this.variant = 'dark';
         this.accept = undefined;
         this.multiple = false;
@@ -12839,7 +12822,7 @@ const InnoDragAndDrop = class {
         this.isFileOver = false;
     }
     filesChanged;
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     filesToUpload;
     get inputElement() {
         return this.hostElement.querySelector('#upload-browser');
@@ -12902,16 +12885,16 @@ const InnoDragAndDrop = class {
         let renderOr = renderFirstLine && renderSecondLine;
         let renderFileTypesText = this.texts.acceptedFileTypesText != null && this.texts.acceptedFileTypesText.replace(/\s/g, '').length > 0;
         let ignoreDragText = this.texts.dragText == null || this.texts.dragText.replace(/\s/g, '').length === 0;
-        return (index$2.h("div", { class: "state" }, index$2.h("inno-icon", { icon: 'upload', size: 48 }), index$2.h("div", { class: { "drag-and-drop-texts": true, "show-always": ignoreDragText } }, renderFirstLine ? index$2.h("span", { class: "first-line-text" }, this.texts.firstLineText) : null, renderOr ? index$2.h("span", { class: "or-text" }, this.texts.orText) : null, renderSecondLine ? index$2.h("span", { class: "second-line-text" }, this.texts.secondLineText) : null), index$2.h("div", { class: { "drag-text": true, hidden: ignoreDragText } }, this.texts.dragText), renderFileTypesText ? index$2.h("span", { class: "file-types-text" }, this.texts.acceptedFileTypesText) : null));
+        return (index$3.h("div", { class: "state" }, index$3.h("inno-icon", { icon: 'upload', size: 48 }), index$3.h("div", { class: { "drag-and-drop-texts": true, "show-always": ignoreDragText } }, renderFirstLine ? index$3.h("span", { class: "first-line-text" }, this.texts.firstLineText) : null, renderOr ? index$3.h("span", { class: "or-text" }, this.texts.orText) : null, renderSecondLine ? index$3.h("span", { class: "second-line-text" }, this.texts.secondLineText) : null), index$3.h("div", { class: { "drag-text": true, hidden: ignoreDragText } }, this.texts.dragText), renderFileTypesText ? index$3.h("span", { class: "file-types-text" }, this.texts.acceptedFileTypesText) : null));
     }
     renderDisabled() {
-        return (index$2.h("div", { class: "state" }, index$2.h("inno-icon", { icon: 'close', size: 48 }), index$2.h("span", { class: "disabled-text" }, this.texts.uploadDisabledText)));
+        return (index$3.h("div", { class: "state" }, index$3.h("inno-icon", { icon: 'close', size: 48 }), index$3.h("span", { class: "disabled-text" }, this.texts.uploadDisabledText)));
     }
     renderLoading() {
-        return (index$2.h("div", { class: "state" }, index$2.h("inno-loader", { size: 48, variant: this.variant === 'dark' ? 'light' : 'dark' }), index$2.h("span", { class: "loading-text" }, this.texts.loadingText)));
+        return (index$3.h("div", { class: "state" }, index$3.h("inno-loader", { size: 48, variant: this.variant === 'dark' ? 'light' : 'dark' }), index$3.h("span", { class: "loading-text" }, this.texts.loadingText)));
     }
     renderSuccess() {
-        return (index$2.h("div", { class: "state" }, index$2.h("inno-icon", { icon: 'check_checkbox', size: 48 }), index$2.h("span", { class: "loading-text" }, this.texts.uploadSuccessText)));
+        return (index$3.h("div", { class: "state" }, index$3.h("inno-icon", { icon: 'check_checkbox', size: 48 }), index$3.h("span", { class: "loading-text" }, this.texts.uploadSuccessText)));
     }
     renderUploadState() {
         if (this.disabled) {
@@ -12929,7 +12912,7 @@ const InnoDragAndDrop = class {
         }
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'ee11b92ffcd3b19090d658d51394d9bc79c7831c' }, index$2.h("div", { key: '3e3953de42399541a1f28d36f6e679cd163946bd', class: {
+        return (index$3.h(index$3.Host, { key: 'ee11b92ffcd3b19090d658d51394d9bc79c7831c' }, index$3.h("div", { key: '3e3953de42399541a1f28d36f6e679cd163946bd', class: {
                 'file-upload-area': true,
                 'file-over': this.state !== 'LOADING' && this.isFileOver,
                 checking: this.state === 'LOADING',
@@ -12941,10 +12924,10 @@ const InnoDragAndDrop = class {
                 if (this.state !== 'LOADING') {
                     this.fileDropped(e);
                 }
-            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), index$2.h("div", { key: '7302e9d726364fe5ca342c372e390051ef04a3c1' }, index$2.h("input", { key: '2fdb35634b99cb99c6311542b6c22efb20f08e8d', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
+            }, onDragOver: (e) => this.fileOver(e), onDragLeave: () => this.fileLeave(), draggable: !this.disabled, onClick: () => this.inputElement.click() }, this.renderUploadState(), index$3.h("div", { key: '7302e9d726364fe5ca342c372e390051ef04a3c1' }, index$3.h("input", { key: '2fdb35634b99cb99c6311542b6c22efb20f08e8d', multiple: this.multiple, type: "file", class: "upload-browser", id: "upload-browser", onChange: (e) => {
                 this.fileChangeEvent(e);
             }, accept: this.accept }))), this.state === 'UPLOAD_FAILED'
-            ? index$2.h("span", { class: { "error-text": true, dark: this.variant === 'dark', light: this.variant === 'light' } }, this.texts.uploadFailedText) : null));
+            ? index$3.h("span", { class: { "error-text": true, dark: this.variant === 'dark', light: this.variant === 'light' } }, this.texts.uploadFailedText) : null));
     }
 };
 InnoDragAndDrop.style = InnoDragAndDropStyle0;
@@ -12954,13 +12937,13 @@ const InnoErrorStyle0 = innoErrorCss;
 
 const InnoError = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.active = false;
         this.type = undefined;
         this.variant = 'light';
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '813db110a8ff0b88b66de47ec6e8c9562cdb73b6', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, index$2.h("slot", { key: '29e129d8a0dcabea73e687db8b6fba9b268bc4ba' })));
+        return (index$3.h(index$3.Host, { key: '813db110a8ff0b88b66de47ec6e8c9562cdb73b6', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, index$3.h("slot", { key: '29e129d8a0dcabea73e687db8b6fba9b268bc4ba' })));
     }
 };
 InnoError.style = InnoErrorStyle0;
@@ -12970,11 +12953,11 @@ const InnoFooterStyle0 = innoFooterCss;
 
 const InnoFooter = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.variant = 'light';
         this.copyright = '';
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     componentDidLoad() {
         this.cascadeFooterStyle();
     }
@@ -13000,16 +12983,16 @@ const InnoFooter = class {
             ...this.variantStyle(),
             'ix-footer-copyright': true,
         };
-        return index$2.h("div", { class: classes }, this.copyright);
+        return index$3.h("div", { class: classes }, this.copyright);
     }
     linkNodes() {
-        return (index$2.h("div", { class: { links: true } }, index$2.h("slot", { name: "links" })));
+        return (index$3.h("div", { class: { links: true } }, index$3.h("slot", { name: "links" })));
     }
     iconNodes() {
-        return (index$2.h("div", { class: { icons: true } }, index$2.h("slot", { name: "icons" })));
+        return (index$3.h("div", { class: { icons: true } }, index$3.h("slot", { name: "icons" })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '98d6a106ed3e7d0713cf409b1eaf57f6af4efbed', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
+        return (index$3.h(index$3.Host, { key: '98d6a106ed3e7d0713cf409b1eaf57f6af4efbed', class: this.variantStyle() }, this.createCopyrightNode(), this.linkNodes(), this.iconNodes()));
     }
     static get watchers() { return {
         "variant": ["watchVariant"]
@@ -13023,10 +13006,10 @@ const InnoFooterItemStyle0 = innoFooterItemCss;
 const IGNORED_ELEMENTS = ['A', 'P', 'inno-icon', 'SPAN'];
 const InnoFooterItem = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.variant = 'light';
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     watchVariant(newVariant) {
         this.variant = newVariant;
         this.propagateStyle();
@@ -13050,7 +13033,7 @@ const InnoFooterItem = class {
         };
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '0bfbb9d010e31f582094fac88a7078ccaeefd4ea', class: this.variantStyle() }, index$2.h("slot", { key: '039cb73b7883544d6a83b51fea87ce5c48af0dfc' })));
+        return (index$3.h(index$3.Host, { key: '0bfbb9d010e31f582094fac88a7078ccaeefd4ea', class: this.variantStyle() }, index$3.h("slot", { key: '039cb73b7883544d6a83b51fea87ce5c48af0dfc' })));
     }
     static get watchers() { return {
         "variant": ["watchVariant"]
@@ -13063,7 +13046,7 @@ const InnoIconStyle0 = innoIconCss;
 
 const InnoIcon = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.icon = undefined;
         this.iconFont = undefined;
         this.size = 16;
@@ -13086,9 +13069,9 @@ const InnoIcon = class {
     }
     render() {
         if (this.iconFont) {
-            return index$2.h(index$2.Host, { class: `icon-${this.size} icon-inno-${this.icon}` }, this.content);
+            return index$3.h(index$3.Host, { class: `icon-${this.size} icon-inno-${this.icon}` }, this.content);
         }
-        return (index$2.h(index$2.Host, { class: `icon-${this.size} icon-inno-${this.icon}` }, index$2.h("div", { class: `icon-${this.size} icon-${this.variant}`, innerHTML: this.content })));
+        return (index$3.h(index$3.Host, { class: `icon-${this.size} icon-inno-${this.icon}` }, index$3.h("div", { class: `icon-${this.size} icon-${this.variant}`, innerHTML: this.content })));
     }
     async resolveIcon(isIconFont) {
         if (this.icon && !isIconFont) {
@@ -13101,7 +13084,7 @@ const InnoIcon = class {
             return resolvedIcon;
         }
         if (this.iconFont && isIconFont) {
-            return (index$2.h("span", { class: `icon-${this.size} icon-${this.variant} icon-font`, style: { fontSize: `${this.size}px` } }, String.fromCodePoint(parseInt(this.iconFont, 16))));
+            return (index$3.h("span", { class: `icon-${this.size} icon-${this.variant} icon-font`, style: { fontSize: `${this.size}px` } }, String.fromCodePoint(parseInt(this.iconFont, 16))));
         }
         return null;
     }
@@ -13117,8 +13100,8 @@ const InnoInputStyle0 = innoInputCss;
 
 const InnoInput = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.valueChanged = index$2.createEvent(this, "valueChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.valueChanged = index$3.createEvent(this, "valueChanged", 7);
         this.isActive = undefined;
         this.shouldFloat = undefined;
         this.textareaMode = false;
@@ -13136,7 +13119,7 @@ const InnoInput = class {
         this.disableFloatingLabelAutoResize = false;
         this.isValid = true;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     inputElementRef;
     seizerElementRef;
     mutationObserver;
@@ -13339,7 +13322,7 @@ const InnoInput = class {
             'seizer-both': this.resizeMode === 'both',
         };
         if (this.resizeable) {
-            return index$2.h("inno-icon", { icon: "resize", size: 32, class: classes, ref: ref => (this.seizerElementRef = ref), onMouseDown: event => this.onSeizerMouseDown(event) });
+            return index$3.h("inno-icon", { icon: "resize", size: 32, class: classes, ref: ref => (this.seizerElementRef = ref), onMouseDown: event => this.onSeizerMouseDown(event) });
         }
         else {
             return null;
@@ -13348,7 +13331,7 @@ const InnoInput = class {
     errorElement() {
         const errorSpecified = this.error != null && this.error !== '';
         if (errorSpecified) {
-            return (index$2.h("inno-error", { class: "explicit-error", type: this.errortype, variant: this.variant, active: true }, this.error));
+            return (index$3.h("inno-error", { class: "explicit-error", type: this.errortype, variant: this.variant, active: true }, this.error));
         }
         else {
             return null;
@@ -13359,7 +13342,7 @@ const InnoInput = class {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (index$2.h(index$2.Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
+        return (index$3.h(index$3.Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -13369,7 +13352,7 @@ const InnoInput = class {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, index$2.h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
+            }, onClick: () => this.activateInput() }, index$3.h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -13378,7 +13361,7 @@ const InnoInput = class {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), index$2.h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), index$3.h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
     }
     static get formAssociated() { return true; }
 };
@@ -13389,7 +13372,7 @@ const InnoLoaderStyle0 = innoLoaderCss;
 
 const InnoLoader = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.size = 64;
         this.variant = 'light';
         this.strokeWidth = 'thick';
@@ -13406,7 +13389,7 @@ const InnoLoader = class {
         this.size = adjustValueToRange(this.size, 16, 64);
     }
     render() {
-        return index$2.h(index$2.Host, { key: 'd9c1f372d78c20fecb09f55215c0c64b7dacb2c0', class: this.getStlyes() });
+        return index$3.h(index$3.Host, { key: 'd9c1f372d78c20fecb09f55215c0c64b7dacb2c0', class: this.getStlyes() });
     }
 };
 InnoLoader.style = InnoLoaderStyle0;
@@ -14757,9 +14740,9 @@ const InnoModalStyle0 = innoModalCss;
 
 const InnoModal = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.dialogClose = index$2.createEvent(this, "dialogClose", 7);
-        this.dialogDismiss = index$2.createEvent(this, "dialogDismiss", 7);
+        index$3.registerInstance(this, hostRef);
+        this.dialogClose = index$3.createEvent(this, "dialogClose", 7);
+        this.dialogDismiss = index$3.createEvent(this, "dialogDismiss", 7);
         this.modalVisible = false;
         this.variant = 'light';
         this.size = '720';
@@ -14771,7 +14754,7 @@ const InnoModal = class {
         this.closeOnEscape = true;
     }
     ariaAttributes = {};
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Dialog close
      */
@@ -14908,7 +14891,7 @@ const InnoModal = class {
             fixed: this.fixed,
             [`modal-size-${this.size}`]: true,
         };
-        return (index$2.h("div", { class: "dialog-backdrop" }, index$2.h("dialog", { "aria-modal": a11yBoolean(true), "aria-describedby": this.ariaAttributes['aria-describedby'], "aria-labelledby": this.ariaAttributes['aria-labelledby'], class: classes, onClick: e => this.onModalClick(e), onCancel: e => this.onDialogCancel(e), onMouseDown: e => this.onMouseDown(e) }, index$2.h("slot", null))));
+        return (index$3.h("div", { class: "dialog-backdrop" }, index$3.h("dialog", { "aria-modal": a11yBoolean(true), "aria-describedby": this.ariaAttributes['aria-describedby'], "aria-labelledby": this.ariaAttributes['aria-labelledby'], class: classes, onClick: e => this.onModalClick(e), onCancel: e => this.onDialogCancel(e), onMouseDown: e => this.onMouseDown(e) }, index$3.h("slot", null))));
     }
     render() {
         const hostClasses = {
@@ -14916,7 +14899,7 @@ const InnoModal = class {
             'no-backdrop': !this.backdrop,
             'align-center': this.centered,
         };
-        return index$2.h(index$2.Host, { key: 'de8c8ba6d532f44d9ac377b9459c68fa759babd0', class: hostClasses }, this.dialogElement());
+        return index$3.h(index$3.Host, { key: 'de8c8ba6d532f44d9ac377b9459c68fa759babd0', class: hostClasses }, this.dialogElement());
     }
 };
 InnoModal.style = InnoModalStyle0;
@@ -14926,10 +14909,10 @@ const InnoModalContentStyle0 = innoModalContentCss;
 
 const InnoModalContent = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '6d09a70eb3305a479174901b9c9f745e524f414f' }, index$2.h("slot", { key: '05ede465c65bedbdacf5cc890dc872d5b7a40518' })));
+        return (index$3.h(index$3.Host, { key: '6d09a70eb3305a479174901b9c9f745e524f414f' }, index$3.h("slot", { key: '05ede465c65bedbdacf5cc890dc872d5b7a40518' })));
     }
 };
 InnoModalContent.style = InnoModalContentStyle0;
@@ -14939,10 +14922,10 @@ const InnoModalFooterStyle0 = innoModalFooterCss;
 
 const InnoModalFooter = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'd390cf1a327c3339cafd1316763088fc45bf8ffa' }, index$2.h("slot", { key: 'a7ee9cc0320548d8e12c7101a315a8542cb9eee2' })));
+        return (index$3.h(index$3.Host, { key: 'd390cf1a327c3339cafd1316763088fc45bf8ffa' }, index$3.h("slot", { key: 'a7ee9cc0320548d8e12c7101a315a8542cb9eee2' })));
     }
 };
 InnoModalFooter.style = InnoModalFooterStyle0;
@@ -14971,14 +14954,14 @@ const InnoModalHeaderStyle0 = innoModalHeaderCss;
 
 const InnoModalHeader = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.closeClick = index$2.createEvent(this, "closeClick", 7);
+        index$3.registerInstance(this, hostRef);
+        this.closeClick = index$3.createEvent(this, "closeClick", 7);
         this.variant = 'light';
         this.showClose = true;
         this.icon = undefined;
     }
     parentDialog;
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Emits when close icon is clicked and closes the modal
      * Can be prevented, in which case only the event is triggered, and the modal remains open
@@ -15003,7 +14986,7 @@ const InnoModalHeader = class {
     titleIcon() {
         if (this.icon) {
             const classes = { ...this.themeClasses(), 'modal-icon': true };
-            return index$2.h("inno-icon", { icon: this.icon, class: classes, size: 24 });
+            return index$3.h("inno-icon", { icon: this.icon, class: classes, size: 24 });
         }
         else {
             return null;
@@ -15012,7 +14995,7 @@ const InnoModalHeader = class {
     closeControl() {
         if (this.showClose) {
             const classes = { ...this.themeClasses(), 'modal-close': true };
-            return index$2.h("inno-icon", { icon: "close", class: classes, size: 24, onClick: e => this.onCloseClick(e) });
+            return index$3.h("inno-icon", { icon: "close", class: classes, size: 24, onClick: e => this.onCloseClick(e) });
         }
         else {
             return null;
@@ -15020,7 +15003,7 @@ const InnoModalHeader = class {
     }
     render() {
         const hostClasses = { ...this.themeClasses() };
-        return (index$2.h(index$2.Host, { key: 'db7bcafe32ee96738810832fd825d4fd69950257', class: hostClasses }, this.titleIcon(), index$2.h("slot", { key: '9c8b10d4cbe4fcf7b60f0b70c7c6642086de44a7' }), this.closeControl()));
+        return (index$3.h(index$3.Host, { key: 'db7bcafe32ee96738810832fd825d4fd69950257', class: hostClasses }, this.titleIcon(), index$3.h("slot", { key: '9c8b10d4cbe4fcf7b60f0b70c7c6642086de44a7' }), this.closeControl()));
     }
 };
 InnoModalHeader.style = InnoModalHeaderStyle0;
@@ -15030,15 +15013,15 @@ const InnoPaginatorStyle0 = innoPaginatorCss;
 
 const InnoPaginator = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.pageSelected = index$2.createEvent(this, "pageSelected", 7);
-        this.itemCountChanged = index$2.createEvent(this, "itemCountChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.pageSelected = index$3.createEvent(this, "pageSelected", 7);
+        this.itemCountChanged = index$3.createEvent(this, "itemCountChanged", 7);
         this.variant = 'light';
         this.pageCount = undefined;
         this.selectedPage = 1;
     }
     maxCountPages = 8;
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Page selection event
      */
@@ -15080,7 +15063,7 @@ const InnoPaginator = class {
         }
     }
     getPageButton(index) {
-        return index$2.h("button", { class: { selected: this.selectedPage == index, light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.selectPage(index) }, index);
+        return index$3.h("button", { class: { selected: this.selectedPage == index, light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.selectPage(index) }, index);
     }
     renderPageButtons() {
         const pagesBeforeOverflow = Math.floor(this.maxCountPages / 2);
@@ -15102,7 +15085,7 @@ const InnoPaginator = class {
                     }
                 }
             };
-            pageButtons.push(index$2.h("button", { class: { light: this.variant == 'light', dark: this.variant == 'dark' }, ...baseButtonProps }, "..."));
+            pageButtons.push(index$3.h("button", { class: { light: this.variant == 'light', dark: this.variant == 'dark' }, ...baseButtonProps }, "..."));
             if (hasOverflowEnd) {
                 start = this.pageCount - this.maxCountPages + 2;
             }
@@ -15134,12 +15117,12 @@ const InnoPaginator = class {
                     }
                 }
             };
-            pageButtons.push(index$2.h("button", { class: { light: this.variant == 'light', dark: this.variant == 'dark' }, ...baseButtonProps }, "..."));
+            pageButtons.push(index$3.h("button", { class: { light: this.variant == 'light', dark: this.variant == 'dark' }, ...baseButtonProps }, "..."));
         }
-        return index$2.h("span", { class: "page-buttons" }, pageButtons);
+        return index$3.h("span", { class: "page-buttons" }, pageButtons);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '49a54d0e87092550ac9b4fb89312f6dcc274d0f0' }, index$2.h("button", { key: '563ee49badd594b04b47b8a081afb35f8f3437f1', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.first() }, index$2.h("inno-icon", { key: '065da656e295a666fb483aadefb6fec3bb4f72ca', size: 32, icon: 'arrow_double_left', variant: this.variant })), index$2.h("button", { key: '4bd8c2cfb03685e3151e73ccedfc6cc286413721', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.prev() }, index$2.h("inno-icon", { key: 'a9ef0d4d41962a7cf84723f70427c2869d8ff425', size: 32, icon: 'arrowhead_left', variant: this.variant })), index$2.h("span", { key: '6f50767326ebb83723c26d3290a4c289591b6a72', class: "basic-pagination" }, this.renderPageButtons(), " "), index$2.h("button", { key: 'ad5b5c0d44cc1030ca6a0a26c1c2108ccd0a6b8f', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.next() }, index$2.h("inno-icon", { key: '614f39420dd1cf3c25a18558247f1ea3b43a54d2', size: 32, icon: 'arrowhead_right', variant: this.variant })), index$2.h("button", { key: 'f1f70ebdbf3c2e4fb474f2a60e30bf7bf7290a30', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.last() }, index$2.h("inno-icon", { key: '5f46d9edb757eec5baefee26e8ed502aba3f3ec3', size: 32, icon: 'arrow_double_right', variant: this.variant }))));
+        return (index$3.h(index$3.Host, { key: '49a54d0e87092550ac9b4fb89312f6dcc274d0f0' }, index$3.h("button", { key: '563ee49badd594b04b47b8a081afb35f8f3437f1', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.first() }, index$3.h("inno-icon", { key: '065da656e295a666fb483aadefb6fec3bb4f72ca', size: 32, icon: 'arrow_double_left', variant: this.variant })), index$3.h("button", { key: '4bd8c2cfb03685e3151e73ccedfc6cc286413721', disabled: this.selectedPage === 0, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.prev() }, index$3.h("inno-icon", { key: 'a9ef0d4d41962a7cf84723f70427c2869d8ff425', size: 32, icon: 'arrowhead_left', variant: this.variant })), index$3.h("span", { key: '6f50767326ebb83723c26d3290a4c289591b6a72', class: "basic-pagination" }, this.renderPageButtons(), " "), index$3.h("button", { key: 'ad5b5c0d44cc1030ca6a0a26c1c2108ccd0a6b8f', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.next() }, index$3.h("inno-icon", { key: '614f39420dd1cf3c25a18558247f1ea3b43a54d2', size: 32, icon: 'arrowhead_right', variant: this.variant })), index$3.h("button", { key: 'f1f70ebdbf3c2e4fb474f2a60e30bf7bf7290a30', disabled: this.selectedPage === this.pageCount, class: { light: this.variant == 'light', dark: this.variant == 'dark' }, onClick: () => this.last() }, index$3.h("inno-icon", { key: '5f46d9edb757eec5baefee26e8ed502aba3f3ec3', size: 32, icon: 'arrow_double_right', variant: this.variant }))));
     }
 };
 InnoPaginator.style = InnoPaginatorStyle0;
@@ -15149,8 +15132,8 @@ const InnoPaneStyle0 = innoPaneCss;
 
 const InnoPane = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.expandedChanged = index$2.createEvent(this, "expandedChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.expandedChanged = index$3.createEvent(this, "expandedChanged", 7);
         this.position = 'right';
         this.expanded = false;
         this.hideCloseButton = false;
@@ -15159,7 +15142,7 @@ const InnoPane = class {
         this.paneSize = '100%';
         this.showContent = false;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * This event is fired when the pane is opened or closed.
      */
@@ -15212,20 +15195,20 @@ const InnoPane = class {
         });
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '2e1ac2b17bc8fdfda3ea21855ddd9170baef2a13', class: {
+        return (index$3.h(index$3.Host, { key: '2e1ac2b17bc8fdfda3ea21855ddd9170baef2a13', class: {
                 'not-visible': !this.expanded
-            } }, index$2.h("div", { key: '726c734902ca0bde9c00871fe4e878f49ffa311f', class: 'pane-backdrop', onClick: (e) => this.closeViaBackdrop(e) }), index$2.h("div", { key: '6fd6859f0dcf42d956e57e751c22e4cdf501b9a2', class: {
+            } }, index$3.h("div", { key: '726c734902ca0bde9c00871fe4e878f49ffa311f', class: 'pane-backdrop', onClick: (e) => this.closeViaBackdrop(e) }), index$3.h("div", { key: '6fd6859f0dcf42d956e57e751c22e4cdf501b9a2', class: {
                 'pane-content-container': true,
                 'pane-pos-top': this.position === 'top',
                 'pane-pos-left': this.position === 'left',
                 'pane-pos-bottom': this.position === 'bottom',
                 'pane-pos-right': this.position === 'right'
-            } }, index$2.h("div", { key: '92d28c9ca8c847447fd607a1c0a878e5d409dd63', class: {
+            } }, index$3.h("div", { key: '92d28c9ca8c847447fd607a1c0a878e5d409dd63', class: {
                 'pane-title-container': true,
                 'no-title': this.titleText == null
-            }, hidden: !this.showContent || !this.expanded }, this.titleText != null ? index$2.h("h2", null, this.titleText) : null, !this.hideCloseButton
-            ? index$2.h("inno-button", { id: 'innoPaneClose', icon: 'close', variant: 'tertiary', iconOnly: true, colorVariant: 'light', onClick: () => this.expanded = !this.expanded })
-            : null), index$2.h("div", { key: '3c099a70a3332de5bae1af024eadb449506dee66', hidden: !this.showContent || !this.expanded }, index$2.h("slot", { key: 'acf717f68b21d6635e78d38c8e2b26070fb004b5' })))));
+            }, hidden: !this.showContent || !this.expanded }, this.titleText != null ? index$3.h("h2", null, this.titleText) : null, !this.hideCloseButton
+            ? index$3.h("inno-button", { id: 'innoPaneClose', icon: 'close', variant: 'tertiary', iconOnly: true, colorVariant: 'light', onClick: () => this.expanded = !this.expanded })
+            : null), index$3.h("div", { key: '3c099a70a3332de5bae1af024eadb449506dee66', hidden: !this.showContent || !this.expanded }, index$3.h("slot", { key: 'acf717f68b21d6635e78d38c8e2b26070fb004b5' })))));
     }
     static get watchers() { return {
         "expanded": ["onExpandedChange"]
@@ -15239,9 +15222,9 @@ const InnoPopoverStyle0 = innoPopoverCss;
 const numberToPixel = (value) => (value != null ? `${value}px` : '');
 const InnoPopover = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.innoPopoverShown = index$2.createEvent(this, "innoPopoverShown", 7);
-        this.innoPopoverHidden = index$2.createEvent(this, "innoPopoverHidden", 7);
+        index$3.registerInstance(this, hostRef);
+        this.innoPopoverShown = index$3.createEvent(this, "innoPopoverShown", 7);
+        this.innoPopoverHidden = index$3.createEvent(this, "innoPopoverHidden", 7);
         this.trigger = 'click';
         this.variant = 'dark';
         this.for = undefined;
@@ -15263,7 +15246,7 @@ const InnoPopover = class {
      * Fired when popover is hidden.
      */
     innoPopoverHidden;
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     showBind = this.onTooltipShow.bind(this);
     hideBind = this.onTooltipHide.bind(this);
     disposeAutoUpdate;
@@ -15520,14 +15503,14 @@ const InnoPopover = class {
         let hasText = !!this.popoverText && this.popoverText !== '';
         let renderTitleRow = hasTitleText || hasCloseBtn;
         let onlyCloseBtn = hasCloseBtn && !hasTitleText;
-        return (index$2.h(index$2.Host, { key: '48bc9d0e5b6a237c8acb27bc74dc32658bdf9b56', class: {
+        return (index$3.h(index$3.Host, { key: '48bc9d0e5b6a237c8acb27bc74dc32658bdf9b56', class: {
                 visible: this.visible,
                 light: this.variant === 'light',
                 dark: this.variant === 'dark'
-            } }, index$2.h("div", { key: '0eb924fd16364978c592087cda300c0622fad08c', class: "tooltip-content" }, renderTitleRow
+            } }, index$3.h("div", { key: '0eb924fd16364978c592087cda300c0622fad08c', class: "tooltip-content" }, renderTitleRow
             ?
-                index$2.h("div", { class: { "tooltip-title-row": true, "only-close-btn": onlyCloseBtn } }, hasTitleText ? index$2.h("div", { class: "tooltip-title", innerHTML: sanitizeHtml$1(this.popoverTitle) }) : null, hasCloseBtn ? index$2.h("inno-icon", { icon: 'close', size: 24, onClick: () => this.hideTooltip() }) : null)
-            : null, hasText ? index$2.h("div", { class: "tooltip-text", innerHTML: sanitizeHtml$1(this.popoverText) }) : null, index$2.h("slot", { key: '3b5f414180b0dda5b9e3f51371a8ac79f8a7aac2' })), index$2.h("div", { key: '62080b646be8a6a88f6ff3ae01e06f1e0606b001', ref: ref => this.arrowElement = ref, class: "arrow" })));
+                index$3.h("div", { class: { "tooltip-title-row": true, "only-close-btn": onlyCloseBtn } }, hasTitleText ? index$3.h("div", { class: "tooltip-title", innerHTML: sanitizeHtml$1(this.popoverTitle) }) : null, hasCloseBtn ? index$3.h("inno-icon", { icon: 'close', size: 24, onClick: () => this.hideTooltip() }) : null)
+            : null, hasText ? index$3.h("div", { class: "tooltip-text", innerHTML: sanitizeHtml$1(this.popoverText) }) : null, index$3.h("slot", { key: '3b5f414180b0dda5b9e3f51371a8ac79f8a7aac2' })), index$3.h("div", { key: '62080b646be8a6a88f6ff3ae01e06f1e0606b001', ref: ref => this.arrowElement = ref, class: "arrow" })));
     }
     static get watchers() { return {
         "visible": ["visibleChanged"]
@@ -15540,7 +15523,7 @@ const InnoProgressBarStyle0 = innoProgressBarCss;
 
 const InnoProgressBar = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.variant = 'light';
         this.progressText = '';
         this.progressPercentage = 0;
@@ -15583,14 +15566,14 @@ const InnoProgressBar = class {
     }
     progressHtml() {
         let progressPercentage = `${this.progressNum()}%`;
-        return (index$2.h("div", { class: "progress-text-container" }, this.showPercentage ? index$2.h("div", { class: "percentage" }, progressPercentage) : null, index$2.h("div", { class: "progress-text" }, this.progressText)));
+        return (index$3.h("div", { class: "progress-text-container" }, this.showPercentage ? index$3.h("div", { class: "percentage" }, progressPercentage) : null, index$3.h("div", { class: "progress-text" }, this.progressText)));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'c14d98adc167f0444bb04f0f12e507798c9627cd' }, index$2.h("div", { key: '1b85833edb55997632447ab666dd6737de662a05', class: "progress-bar-container" }, index$2.h("div", { key: '3aa71942f1a07f8545da96ea7aa5aca2438167a3', class: {
+        return (index$3.h(index$3.Host, { key: 'c14d98adc167f0444bb04f0f12e507798c9627cd' }, index$3.h("div", { key: '1b85833edb55997632447ab666dd6737de662a05', class: "progress-bar-container" }, index$3.h("div", { key: '3aa71942f1a07f8545da96ea7aa5aca2438167a3', class: {
                 'back-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
-            } }, this.progressHtml()), index$2.h("div", { key: '6654d8d659a920ad3627d8c7d7b2a34135f20bdf', class: {
+            } }, this.progressHtml()), index$3.h("div", { key: '6654d8d659a920ad3627d8c7d7b2a34135f20bdf', class: {
                 'front-layer': true,
                 'light': this.variant === 'light',
                 'dark': this.variant === 'dark',
@@ -15607,8 +15590,8 @@ const InnoRadioStyle0 = innoRadioCss;
 
 const InnoRadio = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.valueChange = index$2.createEvent(this, "valueChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.valueChange = index$3.createEvent(this, "valueChange", 7);
         if (hostRef.$hostElement$["s-ei"]) {
             this.elementInternals = hostRef.$hostElement$["s-ei"];
         }
@@ -15628,7 +15611,7 @@ const InnoRadio = class {
         this.required = false;
         this.error = false;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     elementInternals;
     /**
      * Emits the associated value when the element is clicked.
@@ -15730,32 +15713,32 @@ const InnoRadio = class {
         };
     }
     inputElement() {
-        return (index$2.h("input", { type: "radio", "aria-checked": a11yBoolean(this.checked), tabindex: -1, name: this.name, value: this.value, disabled: this.disabled, checked: this.checked, required: this.required }));
+        return (index$3.h("input", { type: "radio", "aria-checked": a11yBoolean(this.checked), tabindex: -1, name: this.name, value: this.value, disabled: this.disabled, checked: this.checked, required: this.required }));
     }
     checkboxComponent() {
         const classes = {
             ...this.commonStyles(),
             checkbox: true,
         };
-        return (index$2.h("div", { class: classes, onClick: () => this.changeCheckedState(true) }, this.checkSignComponent()));
+        return (index$3.h("div", { class: classes, onClick: () => this.changeCheckedState(true) }, this.checkSignComponent()));
     }
     checkSignComponent() {
         const classes = {
             ...this.commonStyles(),
             checksign: true,
         };
-        return index$2.h("div", { class: classes });
+        return index$3.h("div", { class: classes });
     }
     labelComponent() {
         const classes = {
             ...this.commonStyles(),
             label: true,
         };
-        return (index$2.h("span", { class: classes, onClick: () => this.changeCheckedState(true) }, this.label));
+        return (index$3.h("span", { class: classes, onClick: () => this.changeCheckedState(true) }, this.label));
     }
     render() {
         const tabIndexValue = this.elementInDisabledInteractionMode() ? -1 : this.tabIdx;
-        return (index$2.h(index$2.Host, { key: '4f42f4af697c47f10fa1007244ce9aec2eeefae2', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
+        return (index$3.h(index$3.Host, { key: '4f42f4af697c47f10fa1007244ce9aec2eeefae2', role: "radio", tabIndex: tabIndexValue, "aria-checked": a11yBoolean(this.checked) }, this.inputElement(), this.checkboxComponent(), this.labelComponent()));
     }
     static get formAssociated() { return true; }
 };
@@ -15766,12 +15749,12 @@ const InnoSelectStyle0 = innoSelectCss;
 
 const InnoSelect = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.valueChanged = index$2.createEvent(this, "valueChanged", 7);
-        this.itemIsFavorited = index$2.createEvent(this, "itemIsFavorited", 7);
-        this.itemIsUnfavorited = index$2.createEvent(this, "itemIsUnfavorited", 7);
-        this.favoriteItemsChanged = index$2.createEvent(this, "favoriteItemsChanged", 7);
-        this.dropdownClosed = index$2.createEvent(this, "dropdownClosed", 7);
+        index$3.registerInstance(this, hostRef);
+        this.valueChanged = index$3.createEvent(this, "valueChanged", 7);
+        this.itemIsFavorited = index$3.createEvent(this, "itemIsFavorited", 7);
+        this.itemIsUnfavorited = index$3.createEvent(this, "itemIsUnfavorited", 7);
+        this.favoriteItemsChanged = index$3.createEvent(this, "favoriteItemsChanged", 7);
+        this.dropdownClosed = index$3.createEvent(this, "dropdownClosed", 7);
         this.navigationItem = undefined;
         this.keyValueSelector = (val) => { return val; };
         this.value = undefined;
@@ -15787,7 +15770,7 @@ const InnoSelect = class {
         this.dropdownWidth = undefined;
         this.items = [];
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     itemsContainerRef;
     wrapperRef;
     /**
@@ -16043,7 +16026,7 @@ const InnoSelect = class {
     }
     render() {
         this.setLabelsMaxWidth();
-        return (index$2.h(index$2.Host, { key: '0f808eb0d1c730368973c6bd28d2d85f8c2bcbd0', tabindex: 0, class: {
+        return (index$3.h(index$3.Host, { key: '0f808eb0d1c730368973c6bd28d2d85f8c2bcbd0', tabindex: 0, class: {
                 'input-container': true,
                 'isactive': !this.valueIsUndefined,
                 'light': this.variant === 'light',
@@ -16053,7 +16036,7 @@ const InnoSelect = class {
                 'disabled': this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, index$2.h("div", { key: 'e8199efa7c2d128122d0cf49fc19a3fa8d408486', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (index$2.h("div", { class: "select-header" }, index$2.h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, index$2.h("span", { class: {
+            }, onClick: (e) => this.selectClicked(e), onFocusout: () => this.onFocusout() }, index$3.h("div", { key: 'e8199efa7c2d128122d0cf49fc19a3fa8d408486', class: "select-wrapper", ref: el => this.wrapperRef = el }, !this.icon && !this.iconFont && !this.hasIcons ? (index$3.h("div", { class: "select-header" }, index$3.h("div", { class: { content: true, filled: !this.valueIsUndefined, "empty-label": this.isLabelEmpty } }, index$3.h("span", { class: {
                 label: true,
                 float: !this.valueIsUndefined,
                 disabled: this.disabled,
@@ -16062,7 +16045,7 @@ const InnoSelect = class {
                 light: this.variant === 'light',
                 dark: this.variant === 'dark',
                 primary: this.variant === 'primary'
-            }, innerHTML: sanitizeHtml$1(this.label), ref: el => this.floatingLabel = el }), index$2.h("span", { class: {
+            }, innerHTML: sanitizeHtml$1(this.label), ref: el => this.floatingLabel = el }), index$3.h("span", { class: {
                 'label-value': true,
                 disabled: this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
@@ -16070,7 +16053,7 @@ const InnoSelect = class {
                 light: this.variant === 'light',
                 dark: this.variant === 'dark',
                 primary: this.variant === 'primary'
-            } }, this.selectedItem?.label)), index$2.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')) : (index$2.h("div", { class: {
+            } }, this.selectedItem?.label)), index$3.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')) : (index$3.h("div", { class: {
                 'select-item': true,
                 'icon-driven': true,
                 'light': this.variant === 'light',
@@ -16078,7 +16061,7 @@ const InnoSelect = class {
                 disabled: this.disabled,
                 'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
                 'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
-            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (index$2.h("span", null, this.selectedItem?.icon ? index$2.h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? index$2.h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (index$2.h("span", null, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, index$2.h("div", { class: "icon-driven-label" }, this.label))), index$2.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), index$2.h("div", { key: '5b8f9d4577d3058f2a48ee7b1dbba3616f526390', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, index$2.h("slot", { key: 'a8ac45d467a26c94598b26e0ecea44c6207af8e0' })))));
+            } }, (this.selectedItem?.icon || this.selectedItem?.iconFont) ? (index$3.h("span", null, this.selectedItem?.icon ? index$3.h("inno-icon", { icon: this.selectedItem.icon, size: 32 }) : null, this.selectedItem?.iconFont && !this.selectedItem?.icon ? index$3.h("inno-icon", { iconFont: this.selectedItem.iconFont, size: 32 }) : null, index$3.h("div", { class: "icon-driven-label" }, this.selectedItem.label))) : (index$3.h("span", null, this.icon ? index$3.h("inno-icon", { icon: this.icon, size: 32 }) : null, this.iconFont && !this.icon ? index$3.h("inno-icon", { iconFont: this.iconFont, size: 32 }) : null, index$3.h("div", { class: "icon-driven-label" }, this.label))), index$3.h("inno-icon", { class: "chevron", icon: this.isOpen ? 'chevron_up_small' : 'chevron_down_small', size: 16 }), ' ')), index$3.h("div", { key: '5b8f9d4577d3058f2a48ee7b1dbba3616f526390', ref: el => (this.itemsContainerRef = el), class: { items: true, opened: this.isVisible } }, index$3.h("slot", { key: 'a8ac45d467a26c94598b26e0ecea44c6207af8e0' })))));
     }
     static get watchers() { return {
         "isOpen": ["alignItems"],
@@ -16092,11 +16075,11 @@ const InnoSelectItemStyle0 = innoSelectItemCss;
 
 const InnoSelectItem = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.itemSelected = index$2.createEvent(this, "itemSelected", 7);
-        this.itemFavorited = index$2.createEvent(this, "itemFavorited", 7);
-        this.itemUnfavorited = index$2.createEvent(this, "itemUnfavorited", 7);
-        this.itemLabelChanged = index$2.createEvent(this, "itemLabelChanged", 7);
+        index$3.registerInstance(this, hostRef);
+        this.itemSelected = index$3.createEvent(this, "itemSelected", 7);
+        this.itemFavorited = index$3.createEvent(this, "itemFavorited", 7);
+        this.itemUnfavorited = index$3.createEvent(this, "itemUnfavorited", 7);
+        this.itemLabelChanged = index$3.createEvent(this, "itemLabelChanged", 7);
         this.value = undefined;
         this.label = undefined;
         this.icon = undefined;
@@ -16127,7 +16110,7 @@ const InnoSelectItem = class {
      * This event is fired whenever the selected item's label changes. The inno-select component then will rerender.
      */
     itemLabelChanged;
-    get host() { return index$2.getElement(this); }
+    get host() { return index$3.getElement(this); }
     popover;
     get hostElementHasId() {
         return this.host.id != null && this.host.id.trim() !== '';
@@ -16154,14 +16137,14 @@ const InnoSelectItem = class {
     }
     favoriteStar() {
         return this.isFavorite
-            ? index$2.h("span", { class: "star favorite", onClick: (event) => this.unFavoriteItem(event) }, "\u2605")
-            : index$2.h("span", { class: "star not-favorite", onClick: (event) => this.favoriteItem(event) }, "\u2606");
+            ? index$3.h("span", { class: "star favorite", onClick: (event) => this.unFavoriteItem(event) }, "\u2605")
+            : index$3.h("span", { class: "star not-favorite", onClick: (event) => this.favoriteItem(event) }, "\u2606");
     }
     favoriteStarPopup() {
         if (!this.hostElementHasId) {
             return null;
         }
-        return index$2.h("inno-popover", { ref: el => this.popover = el, popoverText: this.isFavorite ? this.removeFromFavoritesLabel : this.addToFavoritesLabel, trigger: 'hover', for: this.forSelector, placement: this.favoriteIconTooltipPos, variant: this.favoriteIconTooltipVariant, offset: this.favoriteIconTooltipOffset });
+        return index$3.h("inno-popover", { ref: el => this.popover = el, popoverText: this.isFavorite ? this.removeFromFavoritesLabel : this.addToFavoritesLabel, trigger: 'hover', for: this.forSelector, placement: this.favoriteIconTooltipPos, variant: this.favoriteIconTooltipVariant, offset: this.favoriteIconTooltipOffset });
     }
     labelChanged(newLabel) {
         if (this.selected) {
@@ -16172,13 +16155,13 @@ const InnoSelectItem = class {
         if (this.hostElementHasId && !!this.popover) {
             this.popover.updateForElement(this.forSelector);
         }
-        return (index$2.h(index$2.Host, { key: 'e6bfe4a0271d4ecd73622e77ee356adf373eb8d7', class: {
+        return (index$3.h(index$3.Host, { key: 'e6bfe4a0271d4ecd73622e77ee356adf373eb8d7', class: {
                 'select-item': true,
                 'icon-driven': this.icon != undefined || this.iconFont != undefined,
                 selected: this.selected,
                 'can-favorite': this.canFavorite,
                 separator: this.hasSeparator
-            }, onClick: (e) => this.selectItem(e) }, this.icon ? index$2.h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? index$2.h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, index$2.h("div", { key: '4bca610ca6fa4e3d947606850eed089f60492d30', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? index$2.h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
+            }, onClick: (e) => this.selectItem(e) }, this.icon ? index$3.h("inno-icon", { icon: this.icon, size: 24 }) : null, this.iconFont && !this.icon ? index$3.h("inno-icon", { iconFont: this.iconFont, size: 24 }) : null, index$3.h("div", { key: '4bca610ca6fa4e3d947606850eed089f60492d30', class: "content-wrapper" }, this.label), this.selected && !this.icon && !this.iconFont ? index$3.h("inno-icon", { icon: "check_checkbox", size: 24 }) : null, this.canFavorite ? this.favoriteStar() : null, this.canFavorite ? this.favoriteStarPopup() : null));
     }
     static get formAssociated() { return true; }
     static get watchers() { return {
@@ -16192,14 +16175,14 @@ const InnoSplitStyle0 = innoSplitCss;
 
 const InnoSplit = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.orientation = 'horizontal';
         this.splitAreasDefaultSizes = [];
         this.splitAreasCurrentSizes = [];
         this.isMouseDown = false;
         this.slotNames = undefined;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     splitAreasIndices = [];
     originalPos = undefined;
     gutterIndex = undefined;
@@ -16307,18 +16290,18 @@ const InnoSplit = class {
             'grid-template-columns': this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
             'grid-template-rows': !this.isHorizontal ? this.splitAreasCurrentSizes.join('% ') + 'fr' : null,
         };
-        return (index$2.h(index$2.Host, { key: 'b317c21cfa30ef3584b4bd474a6a083b6d95761a', class: {
+        return (index$3.h(index$3.Host, { key: 'b317c21cfa30ef3584b4bd474a6a083b6d95761a', class: {
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical',
                 'dragging': this.isMouseDown
             }, style: style }, this.splitAreasIndices.map(index => {
             let hasGutter = this.splitAreasIndices.length > 1 && index !== (this.splitAreasIndices.length - 1);
-            return (index$2.h("div", { class: {
+            return (index$3.h("div", { class: {
                     'split-slot-container': true,
                     'horizontal': this.orientation === 'horizontal',
                     'vertical': this.orientation === 'vertical'
-                } }, index$2.h("slot", { name: this.slotNames[index] }), hasGutter
-                ? index$2.h("inno-split-gutter", { orientation: this.orientation, onMouseDown: (e) => this.handleMouseDown(e, index) })
+                } }, index$3.h("slot", { name: this.slotNames[index] }), hasGutter
+                ? index$3.h("inno-split-gutter", { orientation: this.orientation, onMouseDown: (e) => this.handleMouseDown(e, index) })
                 : null));
         })));
     }
@@ -16330,15 +16313,15 @@ const InnoSplitGutterStyle0 = innoSplitGutterCss;
 
 const InnoSplitGutter = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.orientation = 'horizontal';
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '0ad4da3139c5d119bd57ddcc31077342a89625d1', class: {
+        return (index$3.h(index$3.Host, { key: '0ad4da3139c5d119bd57ddcc31077342a89625d1', class: {
                 'split-gutter': true,
                 'horizontal': this.orientation === 'horizontal',
                 'vertical': this.orientation === 'vertical'
-            } }, index$2.h("div", { key: 'e5e1d6275c2ea9fee9e486b763edfe61b7c6e73b', class: "handle" })));
+            } }, index$3.h("div", { key: 'e5e1d6275c2ea9fee9e486b763edfe61b7c6e73b', class: "handle" })));
     }
 };
 InnoSplitGutter.style = InnoSplitGutterStyle0;
@@ -16348,10 +16331,10 @@ const InnoSplitItemStyle0 = innoSplitItemCss;
 
 const InnoSplitItem = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'a12f069a60676f3b95cc21e2734144dac735c574' }, index$2.h("slot", { key: 'f01e34fb3894e07133ee8b4da065c541342f1396' })));
+        return (index$3.h(index$3.Host, { key: 'a12f069a60676f3b95cc21e2734144dac735c574' }, index$3.h("slot", { key: 'f01e34fb3894e07133ee8b4da065c541342f1396' })));
     }
 };
 InnoSplitItem.style = InnoSplitItemStyle0;
@@ -16386,8 +16369,8 @@ const InnoStatusMessageStyle0 = innoStatusMessageCss;
 
 const InnoStatusMessage = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.closeMessage = index$2.createEvent(this, "closeMessage", 7);
+        index$3.registerInstance(this, hostRef);
+        this.closeMessage = index$3.createEvent(this, "closeMessage", 7);
         this.progress = 0;
         this.touched = false;
         this.theme = 'light';
@@ -16398,7 +16381,7 @@ const InnoStatusMessage = class {
         this.icon = undefined;
         this.iconColor = undefined;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * Status message is closed.
      */
@@ -16433,7 +16416,7 @@ const InnoStatusMessage = class {
         };
         const iconName = this.icon ?? typeInfo.icon;
         const iconStyle = this.iconColor ? { color: this.iconColor } : {};
-        return (index$2.h("div", { class: classes }, index$2.h("inno-icon", { icon: iconName, size: 48, style: iconStyle })));
+        return (index$3.h("div", { class: classes }, index$3.h("inno-icon", { icon: iconName, size: 48, style: iconStyle })));
     }
     messageContainer(typeDetails, themeClasses) {
         const classes = {
@@ -16441,7 +16424,7 @@ const InnoStatusMessage = class {
             'message-container': true,
             [typeDetails.typeClass]: true,
         };
-        return (index$2.h("div", { class: classes }, index$2.h("slot", null)));
+        return (index$3.h("div", { class: classes }, index$3.h("slot", null)));
     }
     closeControl(typeDetails, themeClasses) {
         const classes = {
@@ -16449,7 +16432,7 @@ const InnoStatusMessage = class {
             'close-container': true,
             [typeDetails.typeClass]: true,
         };
-        return (index$2.h("div", { class: classes }, index$2.h("inno-icon", { icon: "close_small", size: 32, onClick: () => this.closeMessage.emit() })));
+        return (index$3.h("div", { class: classes }, index$3.h("inno-icon", { icon: "close_small", size: 32, onClick: () => this.closeMessage.emit() })));
     }
     progressBar(typeDetails, themeClasses) {
         const classes = {
@@ -16462,7 +16445,7 @@ const InnoStatusMessage = class {
             animationDuration: `${this.autoCloseDelay}ms`,
             animationPlayState: this.touched ? 'paused' : 'running',
         };
-        return (index$2.h("div", { class: classes, style: progressBarStyle, onAnimationEnd: () => this.closeProcess(), onTransitionEnd: () => {
+        return (index$3.h("div", { class: classes, style: progressBarStyle, onAnimationEnd: () => this.closeProcess(), onTransitionEnd: () => {
                 if (this.progress === 0) {
                     this.closeProcess();
                 }
@@ -16476,7 +16459,7 @@ const InnoStatusMessage = class {
             [typeDetails.typeClass]: true,
             'sm-fade-in': true,
         };
-        return (index$2.h(index$2.Host, { key: '79997bf4cbae19961cceb5852606d7a12a5e83a0', class: hostClasses, onPointerEnter: () => (this.touched = true), onPointerLeave: () => (this.touched = false) }, this.messageIcon(typeDetails, themeClasses), this.messageContainer(typeDetails, themeClasses), this.closeControl(typeDetails, themeClasses), this.progressBar(typeDetails, themeClasses)));
+        return (index$3.h(index$3.Host, { key: '79997bf4cbae19961cceb5852606d7a12a5e83a0', class: hostClasses, onPointerEnter: () => (this.touched = true), onPointerLeave: () => (this.touched = false) }, this.messageIcon(typeDetails, themeClasses), this.messageContainer(typeDetails, themeClasses), this.closeControl(typeDetails, themeClasses), this.progressBar(typeDetails, themeClasses)));
     }
 };
 InnoStatusMessage.style = InnoStatusMessageStyle0;
@@ -16504,8 +16487,8 @@ const InnoTabStyle0 = innoTabCss;
 
 const InnoTab = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.selectedChange = index$2.createEvent(this, "selectedChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.selectedChange = index$3.createEvent(this, "selectedChange", 7);
         this.theme = 'light';
         this.selected = undefined;
         this.layout = 'auto';
@@ -16517,7 +16500,7 @@ const InnoTab = class {
         this.scrollAmount = 100;
         this.scrollActionAmount = 0;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * `selected` property changed
      */
@@ -16735,16 +16718,16 @@ const InnoTab = class {
         };
     }
     leftArrow() {
-        return (index$2.h("div", { class: this.arrowStyle(true), onClick: () => this.move(this.scrollAmount, true), ref: ref => (this.arrowLeftElement = ref) }, index$2.h("inno-icon", { icon: "chevron_left_small", size: 24 })));
+        return (index$3.h("div", { class: this.arrowStyle(true), onClick: () => this.move(this.scrollAmount, true), ref: ref => (this.arrowLeftElement = ref) }, index$3.h("inno-icon", { icon: "chevron_left_small", size: 24 })));
     }
     scrollContent() {
-        return (index$2.h("div", { class: { 'tab-items': true } }, index$2.h("div", { class: { 'items-content': true } }, index$2.h("slot", null))));
+        return (index$3.h("div", { class: { 'tab-items': true } }, index$3.h("div", { class: { 'items-content': true } }, index$3.h("slot", null))));
     }
     rightArrow() {
-        return (index$2.h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, index$2.h("inno-icon", { icon: "chevron_right_small", size: 24 })));
+        return (index$3.h("div", { class: this.arrowStyle(false), onClick: () => this.move(-this.scrollAmount, true), ref: ref => (this.arrowRightElement = ref) }, index$3.h("inno-icon", { icon: "chevron_right_small", size: 24 })));
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '4558f79c9da8456b33fca901e389804c16f75b4a', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
+        return (index$3.h(index$3.Host, { key: '4558f79c9da8456b33fca901e389804c16f75b4a', class: this.themeClasses() }, this.leftArrow(), this.scrollContent(), this.rightArrow()));
     }
 };
 InnoTab.style = InnoTabStyle0;
@@ -16754,8 +16737,8 @@ const InnoTabItemStyle0 = innoTabItemCss;
 
 const InnoTabItem = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.tabClick = index$2.createEvent(this, "tabClick", 7);
+        index$3.registerInstance(this, hostRef);
+        this.tabClick = index$3.createEvent(this, "tabClick", 7);
         this.theme = 'light';
         this.layout = 'auto';
         this.selected = false;
@@ -16792,14 +16775,14 @@ const InnoTabItem = class {
         };
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '4103149e09aff4801c25e8e36e97af718c6e0bc4', class: this.hostClasses(), tabIndex: 0, onClick: (event) => {
+        return (index$3.h(index$3.Host, { key: '4103149e09aff4801c25e8e36e97af718c6e0bc4', class: this.hostClasses(), tabIndex: 0, onClick: (event) => {
                 const clientEvent = this.tabClick.emit({
                     nativeEvent: event,
                 });
                 if (clientEvent.defaultPrevented) {
                     event.stopPropagation();
                 }
-            } }, index$2.h("div", { key: '37d613687fd9e1990eb093d2d71817123e3c724b', class: this.slotContainerClasses() }, index$2.h("slot", { key: '8751c5d516cdf803ac080072424ba4dafc79bdc2' }))));
+            } }, index$3.h("div", { key: '37d613687fd9e1990eb093d2d71817123e3c724b', class: this.slotContainerClasses() }, index$3.h("slot", { key: '8751c5d516cdf803ac080072424ba4dafc79bdc2' }))));
     }
 };
 InnoTabItem.style = InnoTabItemStyle0;
@@ -16809,11 +16792,11 @@ const InnoTableBaseStyle0 = innoTableBaseCss;
 
 const InnoTableBase = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
+        index$3.registerInstance(this, hostRef);
         this.variant = 'light';
         this.maskColor = '#ffffff';
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     maskElement;
     scrollBar;
     /**
@@ -16849,7 +16832,7 @@ const InnoTableBase = class {
         this.setMask(event.target);
     };
     componentDidLoad() {
-        this.scrollBar = new index$3.SimpleBar(this.hostElement.querySelector('.table-div'), { autoHide: false });
+        this.scrollBar = new index$2.SimpleBar(this.hostElement.querySelector('.table-div'), { autoHide: false });
         this.maskElement = this.hostElement.querySelector('.mask-layer');
         let table = this.hostElement.querySelector('table');
         if (!!table) {
@@ -16865,7 +16848,7 @@ const InnoTableBase = class {
         this.scrollBar.getScrollElement().removeEventListener('scroll', this.scrollListener);
     }
     render() {
-        return (index$2.h(index$2.Host, { key: '851f010ad0f965f88b1254dea43fc0df0815802d', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$2.h("div", { key: '7a5963e51ff519b27e992a2c1e0a8a9e8e006eac', class: "table-wrapper" }, index$2.h("div", { key: '16f67496c87ab69bcdca6c07a8e0415481945bf1', class: "mask-layer" }), index$2.h("div", { key: 'b95b9b2e78c120e44cffc8407983678d025bdaa7', class: "table-div" }, index$2.h("slot", { key: 'b8672b4e810e6d385841c0fa745d19983a7d329d' })))));
+        return (index$3.h(index$3.Host, { key: '851f010ad0f965f88b1254dea43fc0df0815802d', class: { light: this.variant === 'light', dark: this.variant === 'dark' } }, index$3.h("div", { key: '7a5963e51ff519b27e992a2c1e0a8a9e8e006eac', class: "table-wrapper" }, index$3.h("div", { key: '16f67496c87ab69bcdca6c07a8e0415481945bf1', class: "mask-layer" }), index$3.h("div", { key: 'b95b9b2e78c120e44cffc8407983678d025bdaa7', class: "table-div" }, index$3.h("slot", { key: 'b8672b4e810e6d385841c0fa745d19983a7d329d' })))));
     }
 };
 InnoTableBase.style = InnoTableBaseStyle0;
@@ -16875,14 +16858,14 @@ const InnoToggleStyle0 = innoToggleCss;
 
 const InnoToggle = class {
     constructor(hostRef) {
-        index$2.registerInstance(this, hostRef);
-        this.checkedChange = index$2.createEvent(this, "checkedChange", 7);
+        index$3.registerInstance(this, hostRef);
+        this.checkedChange = index$3.createEvent(this, "checkedChange", 7);
         this.checked = false;
         this.disabled = false;
         this.variant = 'dark';
         this.tabIdx = 0;
     }
-    get hostElement() { return index$2.getElement(this); }
+    get hostElement() { return index$3.getElement(this); }
     /**
      * An event will be dispatched each time the slide-toggle changes its value.
      */
@@ -16896,9 +16879,9 @@ const InnoToggle = class {
         }
     }
     render() {
-        return (index$2.h(index$2.Host, { key: 'd2fdc860c45063b221d6527a62c49edbba5b89b8', class: {
+        return (index$3.h(index$3.Host, { key: 'd2fdc860c45063b221d6527a62c49edbba5b89b8', class: {
                 disabled: this.disabled
-            }, onClick: () => this.onCheckedChange(!this.checked) }, index$2.h("input", { key: '929d6b4279155334e01ec397eb28048a92dd12d8', disabled: this.disabled, checked: this.checked, role: "switch", tabindex: this.disabled ? -1 : this.tabIdx, type: "checkbox", "aria-checked": a11yBoolean(this.checked), onChange: (event) => this.onCheckedChange(event.target.checked) }), index$2.h("label", { key: '648a9a799c33c536b60833073a26f6b7e57e297b', class: "switch", tabIndex: -1 }, index$2.h("span", { key: '5167f7a326934348584f1b2be3c83f72761604f0', class: {
+            }, onClick: () => this.onCheckedChange(!this.checked) }, index$3.h("input", { key: '929d6b4279155334e01ec397eb28048a92dd12d8', disabled: this.disabled, checked: this.checked, role: "switch", tabindex: this.disabled ? -1 : this.tabIdx, type: "checkbox", "aria-checked": a11yBoolean(this.checked), onChange: (event) => this.onCheckedChange(event.target.checked) }), index$3.h("label", { key: '648a9a799c33c536b60833073a26f6b7e57e297b', class: "switch", tabIndex: -1 }, index$3.h("span", { key: '5167f7a326934348584f1b2be3c83f72761604f0', class: {
                 "slider": true,
                 "dark": this.variant === "dark",
                 "light": this.variant === "light"

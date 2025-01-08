@@ -1,23 +1,6 @@
 import { r as registerInstance, c as createEvent, g as getElement, h, H as Host, F as Fragment } from './index-aa3fe2a7.js';
+import { c as commonjsGlobal, g as getAugmentedNamespace, S as SimpleBar } from './index-e6bc1d98.js';
 import { D as DateTime_1, I as Info_1 } from './luxon-761b9b2d.js';
-import { S as SimpleBar } from './index-00d75f3d.js';
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function getAugmentedNamespace(n) {
-	if (n.__esModule) return n;
-	var a = Object.defineProperty({}, '__esModule', {value: true});
-	Object.keys(n).forEach(function (k) {
-		var d = Object.getOwnPropertyDescriptor(n, k);
-		Object.defineProperty(a, k, d.get ? d : {
-			enumerable: true,
-			get: function () {
-				return n[k];
-			}
-		});
-	});
-	return a;
-}
 
 var decode = {};
 
@@ -2121,18 +2104,18 @@ const CDATA$1 = ElementType.CDATA;
 const Doctype = ElementType.Doctype;
 
 const index$1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	get ElementType () { return ElementType; },
-	isTag: isTag$1,
-	Root: Root$7,
-	Text: Text$1,
-	Directive: Directive,
-	Comment: Comment$6,
-	Script: Script,
-	Style: Style,
-	Tag: Tag,
-	CDATA: CDATA$1,
-	Doctype: Doctype
+    __proto__: null,
+    get ElementType () { return ElementType; },
+    isTag: isTag$1,
+    Root: Root$7,
+    Text: Text$1,
+    Directive: Directive,
+    Comment: Comment$6,
+    Script: Script,
+    Style: Style,
+    Tag: Tag,
+    CDATA: CDATA$1,
+    Doctype: Doctype
 });
 
 /**
@@ -3917,48 +3900,48 @@ function isValidFeed(value) {
 }
 
 const index = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	isTag: isTag,
-	isCDATA: isCDATA,
-	isText: isText,
-	isComment: isComment,
-	isDocument: isDocument,
-	hasChildren: hasChildren,
-	getOuterHTML: getOuterHTML,
-	getInnerHTML: getInnerHTML,
-	getText: getText,
-	textContent: textContent,
-	innerText: innerText,
-	getChildren: getChildren,
-	getParent: getParent,
-	getSiblings: getSiblings,
-	getAttributeValue: getAttributeValue,
-	hasAttrib: hasAttrib,
-	getName: getName,
-	nextElementSibling: nextElementSibling,
-	prevElementSibling: prevElementSibling,
-	removeElement: removeElement,
-	replaceElement: replaceElement,
-	appendChild: appendChild,
-	append: append,
-	prependChild: prependChild,
-	prepend: prepend,
-	filter: filter$1,
-	find: find,
-	findOneChild: findOneChild,
-	findOne: findOne,
-	existsOne: existsOne,
-	findAll: findAll,
-	testElement: testElement,
-	getElements: getElements,
-	getElementById: getElementById,
-	getElementsByTagName: getElementsByTagName,
-	getElementsByTagType: getElementsByTagType,
-	removeSubsets: removeSubsets,
-	get DocumentPosition () { return DocumentPosition; },
-	compareDocumentPosition: compareDocumentPosition,
-	uniqueSort: uniqueSort,
-	getFeed: getFeed
+    __proto__: null,
+    isTag: isTag,
+    isCDATA: isCDATA,
+    isText: isText,
+    isComment: isComment,
+    isDocument: isDocument,
+    hasChildren: hasChildren,
+    getOuterHTML: getOuterHTML,
+    getInnerHTML: getInnerHTML,
+    getText: getText,
+    textContent: textContent,
+    innerText: innerText,
+    getChildren: getChildren,
+    getParent: getParent,
+    getSiblings: getSiblings,
+    getAttributeValue: getAttributeValue,
+    hasAttrib: hasAttrib,
+    getName: getName,
+    nextElementSibling: nextElementSibling,
+    prevElementSibling: prevElementSibling,
+    removeElement: removeElement,
+    replaceElement: replaceElement,
+    appendChild: appendChild,
+    append: append,
+    prependChild: prependChild,
+    prepend: prepend,
+    filter: filter$1,
+    find: find,
+    findOneChild: findOneChild,
+    findOne: findOne,
+    existsOne: existsOne,
+    findAll: findAll,
+    testElement: testElement,
+    getElements: getElements,
+    getElementById: getElementById,
+    getElementsByTagName: getElementsByTagName,
+    getElementsByTagType: getElementsByTagType,
+    removeSubsets: removeSubsets,
+    get DocumentPosition () { return DocumentPosition; },
+    compareDocumentPosition: compareDocumentPosition,
+    uniqueSort: uniqueSort,
+    getFeed: getFeed
 });
 
 // Helper methods
@@ -4009,18 +3992,18 @@ function parseFeed(feed, options = parseFeedDefaultOptions) {
 }
 
 const esm = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	parseDocument: parseDocument,
-	parseDOM: parseDOM,
-	createDomStream: createDomStream,
-	parseFeed: parseFeed,
-	Parser: Parser$2,
-	DomHandler: DomHandler,
-	DefaultHandler: DomHandler,
-	Tokenizer: Tokenizer,
-	ElementType: index$1,
-	getFeed: getFeed,
-	DomUtils: index
+    __proto__: null,
+    parseDocument: parseDocument,
+    parseDOM: parseDOM,
+    createDomStream: createDomStream,
+    parseFeed: parseFeed,
+    Parser: Parser$2,
+    DomHandler: DomHandler,
+    DefaultHandler: DomHandler,
+    Tokenizer: Tokenizer,
+    ElementType: index$1,
+    getFeed: getFeed,
+    DomUtils: index
 });
 
 const require$$0 = /*@__PURE__*/getAugmentedNamespace(esm);
@@ -4071,8 +4054,8 @@ function isPlainObject$1(o) {
 }
 
 const isPlainObject$2 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	isPlainObject: isPlainObject$1
+    __proto__: null,
+    isPlainObject: isPlainObject$1
 });
 
 const require$$2$1 = /*@__PURE__*/getAugmentedNamespace(isPlainObject$2);
@@ -4548,8 +4531,8 @@ picocolors_browser.exports.createColors = create;
 const _nodeResolve_empty = {};
 
 const _nodeResolve_empty$1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	'default': _nodeResolve_empty
+    __proto__: null,
+    'default': _nodeResolve_empty
 });
 
 const require$$2 = /*@__PURE__*/getAugmentedNamespace(_nodeResolve_empty$1);
@@ -5446,9 +5429,9 @@ let nanoid$1 = (size = 21) => {
 };
 
 const nonSecure = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	nanoid: nanoid$1,
-	customAlphabet: customAlphabet
+    __proto__: null,
+    nanoid: nanoid$1,
+    customAlphabet: customAlphabet
 });
 
 const require$$3 = /*@__PURE__*/getAugmentedNamespace(nonSecure);
