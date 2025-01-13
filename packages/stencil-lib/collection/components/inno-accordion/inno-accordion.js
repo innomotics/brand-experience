@@ -1,14 +1,30 @@
 import { h, Host } from "@stencil/core";
 import sanitizeHtml from "sanitize-html";
 export class InnoAccordion {
-    constructor() {
-        this.variant = 'light';
-        this.collapsed = false;
-        this.last = false;
-        this.inner = false;
-        this.label = undefined;
-        this.secondLabel = undefined;
-    }
+    /**
+     * Color variant of the accordion.
+     */
+    variant = 'light';
+    /**
+     * You can programatically open/close the accordion with this property.
+     */
+    collapsed = false;
+    /**
+     * Whether the accordion is the last in a group of accordions. Needed for styling.
+     */
+    last = false;
+    /**
+     * Whether it is an accordion inside another accordion. Gives a different style then the main one.
+     */
+    inner = false;
+    /**
+     * Text to display for the accordion. Always visible whether the accordion is opened or closed.
+     */
+    label;
+    /**
+     * Secondary text for the accordion. Always visible whether the accordion is opened or closed.
+     */
+    secondLabel;
     /**
      * This event is fired whenever the accordion is opened/closed via user interaction.
      */
@@ -98,6 +114,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "Color variant of the accordion."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -116,6 +134,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "You can programatically open/close the accordion with this property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "collapsed",
                 "reflect": false,
                 "defaultValue": "false"
@@ -134,6 +154,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "Whether the accordion is the last in a group of accordions. Needed for styling."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "last",
                 "reflect": false,
                 "defaultValue": "false"
@@ -152,6 +174,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "Whether it is an accordion inside another accordion. Gives a different style then the main one."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "inner",
                 "reflect": false,
                 "defaultValue": "false"
@@ -170,6 +194,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "Text to display for the accordion. Always visible whether the accordion is opened or closed."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false
             },
@@ -187,6 +213,8 @@ export class InnoAccordion {
                     "tags": [],
                     "text": "Secondary text for the accordion. Always visible whether the accordion is opened or closed."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "second-label",
                 "reflect": false
             }

@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { a as a11yBoolean } from './p-df111cda.js';
 
 const innoToggleCss = ".sc-inno-toggle-h{display:inline-flex;position:relative;height:24px;justify-content:flex-start;align-items:center}.sc-inno-toggle-h *.sc-inno-toggle,.sc-inno-toggle-h *.sc-inno-toggle::after,.sc-inno-toggle-h *.sc-inno-toggle::before{box-sizing:border-box}.sc-inno-toggle-h .switch.sc-inno-toggle{position:relative;display:inline-block;width:48px;min-width:48px;max-width:48px;height:20px}.sc-inno-toggle-h .switch.sc-inno-toggle input.sc-inno-toggle{opacity:0;width:0;height:0}.sc-inno-toggle-h .slider.sc-inno-toggle{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;transition:all 300ms cubic-bezier(0.84, 0, 0.58, 1);border-radius:14px}.sc-inno-toggle-h .slider.dark.sc-inno-toggle{background-color:#cad5da}.sc-inno-toggle-h .slider.light.sc-inno-toggle{background-color:#40545b}.sc-inno-toggle-h .slider.sc-inno-toggle::before{position:absolute;content:\"\";height:24px;width:24px;left:-2px;bottom:-2px;background-color:#ffffff;box-shadow:0px 0px 3px 0px rgba(8, 25, 31, 0.4);transition:all 300ms cubic-bezier(0.84, 0, 0.58, 1);border-radius:50%}.sc-inno-toggle-h input.sc-inno-toggle{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sc-inno-toggle-h input.sc-inno-toggle:focus-visible+.switch.sc-inno-toggle>.slider.sc-inno-toggle{outline:2px solid #1491EB;outline-offset:5px}.sc-inno-toggle-h input.sc-inno-toggle:checked+.switch.sc-inno-toggle>.slider.dark.sc-inno-toggle{background-color:#08191f}.sc-inno-toggle-h input.sc-inno-toggle:checked+.switch.sc-inno-toggle>.slider.light.sc-inno-toggle{background-color:#e1f000}.sc-inno-toggle-h input.sc-inno-toggle:checked+.switch.sc-inno-toggle>.slider.sc-inno-toggle::before{transform:translateX(28px)}.sc-inno-toggle-h input.sc-inno-toggle+.switch.sc-inno-toggle:hover>.slider.dark.sc-inno-toggle{background-color:#40545b}.sc-inno-toggle-h input.sc-inno-toggle+.switch.sc-inno-toggle:hover>.slider.light.sc-inno-toggle{background-color:#b2c1c7}.disabled.sc-inno-toggle-h{pointer-events:none}.disabled.sc-inno-toggle-h input.sc-inno-toggle+.switch.sc-inno-toggle>.slider.dark.sc-inno-toggle{background-color:#cad5da}.disabled.sc-inno-toggle-h input.sc-inno-toggle+.switch.sc-inno-toggle>.slider.light.sc-inno-toggle{background-color:#40545b}.disabled.sc-inno-toggle-h input.sc-inno-toggle+.switch.sc-inno-toggle>.slider.sc-inno-toggle::before{background-color:#9aacb4}";
@@ -9,12 +9,24 @@ const InnoToggle$1 = /*@__PURE__*/ proxyCustomElement(class InnoToggle extends H
         super();
         this.__registerHost();
         this.checkedChange = createEvent(this, "checkedChange", 7);
-        this.checked = false;
-        this.disabled = false;
-        this.variant = 'dark';
-        this.tabIdx = 0;
     }
     get hostElement() { return this; }
+    /**
+     * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
+     */
+    checked = false;
+    /**
+     * Whether the slide-toggle element is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Color variant of the toggle component.
+     */
+    variant = 'dark';
+    /**
+     * The tab index of the toggle
+     */
+    tabIdx = 0;
     /**
      * An event will be dispatched each time the slide-toggle changes its value.
      */

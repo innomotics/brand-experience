@@ -48,7 +48,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      externalRuntime: false
+      externalRuntime: false,
     },
     {
       type: 'docs-readme'
@@ -68,11 +68,11 @@ export const config: Config = {
     reactOutputTarget({
       stencilPackageName: '@innomotics/brand-experience',
       customElementsDir: 'components',
-      outDir:'../react-lib/lib/components/stencil-generated'
+      outDir:'../react-lib/lib/components/stencil-generated',
     }),
     vueOutputTarget({
       componentCorePackage: '@innomotics/brand-experience',
-      proxiesFile: '../vue-lib/lib/components.ts',
+      proxiesFile: '../vue-lib/lib/components.ts'
     }),
   ],
   testing: {

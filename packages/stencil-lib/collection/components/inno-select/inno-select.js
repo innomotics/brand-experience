@@ -2,25 +2,66 @@ import { autoUpdate, computePosition, flip, shift } from "@floating-ui/dom";
 import { Host, h } from "@stencil/core";
 import sanitizeHtml from "sanitize-html";
 export class InnoSelect {
-    constructor() {
-        this.navigationItem = undefined;
-        this.keyValueSelector = (val) => { return val; };
-        this.value = undefined;
-        this.disabled = false;
-        this.label = undefined;
-        this.variant = 'light';
-        this.isOpen = false;
-        this.disabledBackgroundColor = 'light';
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.hasIcons = false;
-        this.disableFloatingLabelAutoResize = false;
-        this.dropdownWidth = undefined;
-        this.items = [];
-    }
     hostElement;
     itemsContainerRef;
     wrapperRef;
+    navigationItem;
+    /**
+     * If you work with object arrays you can set a simple function which returns the unique key value
+     * so the objects can be differentiated. By default we assume you work with simple arrays
+     * so we simply return the value as it is, in that case you don't have to provide this function.
+     */
+    keyValueSelector = (val) => { return val; };
+    /**
+     * Value of the select.
+     */
+    value;
+    /**
+     * Whether the select is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Label for the select when no item selected.
+     */
+    label;
+    /**
+     * Color variant of the select.
+     */
+    variant = 'light';
+    isOpen = false;
+    /**
+     * Depending on the container html element's background color you can choose a lighter or darker disabled style.
+     * Only applicable when variant is 'primary'.
+     */
+    disabledBackgroundColor = 'light';
+    /**
+     * Icon for select when no item selected. Use either this or the iconFont property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Icon font for select when no item selected. Use either this or the icon property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties
+     * since your select has no state where nothing is selected.
+     */
+    hasIcons = false;
+    /**
+     * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.
+     * By default the InnoSelect component automatically resizes the floating label so it will fit inside.
+     * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
+     */
+    disableFloatingLabelAutoResize = false;
+    /**
+     * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.
+     * You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+     */
+    dropdownWidth;
     /**
      * This event is fired when the value changes.
      */
@@ -45,6 +86,7 @@ export class InnoSelect {
      * if you want to reorder your InnoSelectItems after the favorited elements are changed.
      */
     dropdownClosed;
+    items = [];
     disposeAutoUpdate;
     itemsObserver;
     resizeObserver;
@@ -339,6 +381,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "If you work with object arrays you can set a simple function which returns the unique key value \r\nso the objects can be differentiated. By default we assume you work with simple arrays\r\nso we simply return the value as it is, in that case you don't have to provide this function."
                 },
+                "getter": false,
+                "setter": false,
                 "defaultValue": "(val: any) => { return val; }"
             },
             "value": {
@@ -355,6 +399,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Value of the select."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "value",
                 "reflect": false
             },
@@ -372,6 +418,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Whether the select is disabled or not."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": true,
                 "defaultValue": "false"
@@ -390,6 +438,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Label for the select when no item selected."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false
             },
@@ -407,6 +457,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Color variant of the select."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -425,6 +477,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Depending on the container html element's background color you can choose a lighter or darker disabled style.\r\nOnly applicable when variant is 'primary'."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled-background-color",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -443,6 +497,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Icon for select when no item selected. Use either this or the iconFont property.\r\nWhen icon is present the label doesn't behave as floating.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/icons/"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon",
                 "reflect": false
             },
@@ -460,6 +516,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Icon font for select when no item selected. Use either this or the icon property.\r\nWhen icon is present the label doesn't behave as floating.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon-font",
                 "reflect": false
             },
@@ -477,6 +535,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties\r\nsince your select has no state where nothing is selected."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "has-icons",
                 "reflect": false,
                 "defaultValue": "false"
@@ -495,6 +555,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.\r\nBy default the InnoSelect component automatically resizes the floating label so it will fit inside.\r\nYou can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disable-floating-label-auto-resize",
                 "reflect": false,
                 "defaultValue": "false"
@@ -513,6 +575,8 @@ export class InnoSelect {
                     "tags": [],
                     "text": "By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.\r\nYou can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. \"300px\" or \"min-content\""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "dropdown-width",
                 "reflect": false
             }

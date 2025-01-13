@@ -1,0 +1,5 @@
+2025.01.13
+
+Updated react-output-target (fixed component generation issues)
+Updated vue-output-target
+Updated stencil package

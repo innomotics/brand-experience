@@ -4,23 +4,41 @@ import { requestAnimationFrameNoNgZone } from "../../utils/siemensix/requestAnim
  *
  */
 export class InnoTab {
-    constructor() {
-        this.theme = 'light';
-        this.selected = undefined;
-        this.layout = 'auto';
-        this.showArrow = true;
-        this.alwaysEmphasized = false;
-        this.minimalDecorator = false;
-        this.totalItems = 0;
-        this.currentScrollAmount = 0;
-        this.scrollAmount = 100;
-        this.scrollActionAmount = 0;
-    }
     hostElement;
+    /**
+     * Theme variant of the component.
+     */
+    theme = 'light';
+    /**
+     * Set default selected tab by index
+     * or undefined if not tab is selected.
+     */
+    selected = undefined;
+    /**
+     * Set layout width style
+     */
+    layout = 'auto';
+    /**
+     * Show the navigation arrow for desktop.
+     */
+    showArrow = true;
+    /**
+     * Make the non-selected items always vivid without any opacity effect.
+     */
+    alwaysEmphasized = false;
+    /**
+     * Minimalize the bottom decorator for the tab items.
+     * Show only if the given item is interracted or selected.
+     */
+    minimalDecorator = false;
     /**
      * `selected` property changed
      */
     selectedChange;
+    totalItems = 0;
+    currentScrollAmount = 0;
+    scrollAmount = 100;
+    scrollActionAmount = 0;
     windowStartSize = window.innerWidth;
     arrowLeftElement;
     arrowRightElement;
@@ -273,6 +291,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Theme variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "theme",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -291,6 +311,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Set default selected tab by index\r\nor undefined if not tab is selected."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "selected",
                 "reflect": false,
                 "defaultValue": "undefined"
@@ -309,6 +331,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Set layout width style"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "layout",
                 "reflect": false,
                 "defaultValue": "'auto'"
@@ -327,6 +351,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Show the navigation arrow for desktop."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "show-arrow",
                 "reflect": false,
                 "defaultValue": "true"
@@ -345,6 +371,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Make the non-selected items always vivid without any opacity effect."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "always-emphasized",
                 "reflect": false,
                 "defaultValue": "false"
@@ -363,6 +391,8 @@ export class InnoTab {
                     "tags": [],
                     "text": "Minimalize the bottom decorator for the tab items.\r\nShow only if the given item is interracted or selected."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "minimal-decorator",
                 "reflect": false,
                 "defaultValue": "false"

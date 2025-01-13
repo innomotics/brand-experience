@@ -1,7 +1,7 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
 import { T as TypedEvent } from './p-90b661dd.js';
-import { d as defineCustomElement$3 } from './p-f8e7f9af.js';
-import { d as defineCustomElement$2 } from './p-1fd479fa.js';
+import { d as defineCustomElement$3 } from './p-fd23d1bb.js';
+import { d as defineCustomElement$2 } from './p-c3d44be4.js';
 
 const innoStatusMessageContainerCss = "#status-message-container.sc-inno-status-message-container{z-index:1000}#status-message-container.sc-inno-status-message-container>.sc-inno-status-message-container:not(:last-child){margin-block-end:1rem}.status-message-container.sc-inno-status-message-container{display:block;position:fixed}.status-message-container--top-right.sc-inno-status-message-container{right:1rem;top:2rem}.status-message-container--bottom-right.sc-inno-status-message-container{right:1rem;bottom:2rem}.status-message-container--bottom-left.sc-inno-status-message-container{left:1rem;bottom:2rem}.status-message-container--top-left.sc-inno-status-message-container{left:1rem;top:2rem}";
 const InnoStatusMessageContainerStyle0 = innoStatusMessageContainerCss;
@@ -10,10 +10,19 @@ const InnoStatusMessageContainer$1 = /*@__PURE__*/ proxyCustomElement(class Inno
     constructor() {
         super();
         this.__registerHost();
-        this.containerId = 'status-message-container';
-        this.containerClass = 'status-message-container';
-        this.position = 'top-right';
     }
+    /**
+     * Customizable container id.
+     */
+    containerId = 'status-message-container';
+    /**
+     * Customizable container class.
+     */
+    containerClass = 'status-message-container';
+    /**
+     * Position of container.
+     */
+    position = 'top-right';
     PREFIX_POSITION_CLASS = 'status-message-container--';
     get hostContainer() {
         return new Promise(resolve => {

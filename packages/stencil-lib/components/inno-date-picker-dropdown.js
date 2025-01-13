@@ -1,10 +1,10 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { a as autoUpdate, c as computePosition, s as shift, f as flip } from './p-ae69ea43.js';
 import { a as isPresent } from './p-565004a9.js';
 import { D as DateTime_1 } from './p-1370a3b4.js';
-import { d as defineCustomElement$4 } from './p-0fdf2900.js';
-import { d as defineCustomElement$3 } from './p-98e090aa.js';
-import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
+import { d as defineCustomElement$4 } from './p-9e36fce0.js';
+import { d as defineCustomElement$3 } from './p-8f74886e.js';
+import { d as defineCustomElement$2 } from './p-fd23d1bb.js';
 
 const innoDatePickerDropdownCss = ".sc-inno-date-picker-dropdown-h{display:block;position:relative;width:100%;max-width:380px;height:56px}.picker.sc-inno-date-picker-dropdown{width:100%;height:56px;padding-left:16px;padding-right:16px;display:flex;flex-direction:row;align-items:center;position:relative;font-size:16px;font-family:\"InnomoticsHafferSQ\";cursor:pointer}.picker.light.sc-inno-date-picker-dropdown{border:1px solid #9aacb4;color:#40545b}.picker.dark.sc-inno-date-picker-dropdown{border:1px solid #9aacb4;background-color:#08191f;color:#b2c1c7}.picker.sc-inno-date-picker-dropdown .picker-label--hasvalue.sc-inno-date-picker-dropdown{position:absolute;top:6px;left:16px;font-size:12px}.picker.sc-inno-date-picker-dropdown .picker-value.sc-inno-date-picker-dropdown{position:relative;top:7px}.picker.sc-inno-date-picker-dropdown .picker-icon.sc-inno-date-picker-dropdown{margin-left:auto}.picker.sc-inno-date-picker-dropdown .picker-icon.light.sc-inno-date-picker-dropdown{color:#08191f}.picker.sc-inno-date-picker-dropdown .picker-icon.dark.sc-inno-date-picker-dropdown{color:#ffffff}.dropdown-container.sc-inno-date-picker-dropdown{display:none;z-index:10;position:fixed}.show.sc-inno-date-picker-dropdown{display:block}";
 const InnoDatePickerDropdownStyle0 = innoDatePickerDropdownCss;
@@ -14,29 +14,71 @@ const InnoDatePickerDropdown$1 = /*@__PURE__*/ proxyCustomElement(class InnoDate
         super();
         this.__registerHost();
         this.dateChange = createEvent(this, "dateChange", 7);
-        this.variant = 'dark';
-        this.format = 'yyyy/LL/dd';
-        this.range = false;
-        this.from = undefined;
-        this.to = undefined;
-        this.minDate = undefined;
-        this.maxDate = undefined;
-        this.weekStartIndex = 0;
-        this.locale = undefined;
-        this.showOuterDays = true;
-        this.label = undefined;
-        this.closeOnSelection = true;
-        this.show = false;
-        this.isOpen = false;
-        this.value = undefined;
-        this.selectedRange = undefined;
     }
     get hostElement() { return this; }
+    /**
+     * Color variant of the component.
+     */
+    variant = 'dark';
+    /**
+     * Date format string.
+     * See the date-picker component for more information.
+     */
+    format = 'yyyy/LL/dd';
+    /**
+     * If true a date-range can be selected.
+     * See the date-picker component for more information.
+     */
+    range = false;
+    /**
+     * The selected starting range.
+     * See the date-picker component for more information.
+     */
+    from;
+    /**
+     * The selected end date.
+     * See the date-picker component for more information.
+     */
+    to;
+    /**
+     * The earliest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    minDate;
+    /**
+     * The latest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    maxDate;
+    /**
+     * The index of which day to start the week on.
+     * See the date-picker component for more information.
+     */
+    weekStartIndex = 0;
+    /**
+     * Format of the date strings.
+     * See the date-picker component for more information.
+     */
+    locale = undefined;
+    /**
+     * Show the days outside the selected month.
+     * See the date-picker component for more information.
+     */
+    showOuterDays = true;
+    /**
+     * Label of the dropdown component.
+     */
+    label;
+    closeOnSelection = true;
     /**
      * Triggers if the date selection changes.
      * See the date-picker component for more information.
      */
     dateChange;
+    show = false;
+    isOpen = false;
+    value;
+    selectedRange;
     dropdownHost;
     datePicker;
     disposeAutoUpdate;

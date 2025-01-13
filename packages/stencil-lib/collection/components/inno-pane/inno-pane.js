@@ -1,20 +1,37 @@
 import { Host, h } from "@stencil/core";
 import anime from "animejs";
 export class InnoPane {
-    constructor() {
-        this.position = 'right';
-        this.expanded = false;
-        this.hideCloseButton = false;
-        this.titleText = undefined;
-        this.closeOnBackdropClick = true;
-        this.paneSize = '100%';
-        this.showContent = false;
-    }
     hostElement;
+    /**
+     * Position of the pane.
+     */
+    position = 'right';
+    /**
+     * Programatically control whether the pane is opened or closed.
+     */
+    expanded = false;
+    /**
+     * The pane comes with a close button by default. Hide it with this property.
+     */
+    hideCloseButton = false;
+    /**
+     * Title of the pane.
+     */
+    titleText;
+    /**
+     * Whether the pane is closeable by clicking outside of it.
+     */
+    closeOnBackdropClick = true;
+    /**
+     * Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position.
+     * All css units are supported which are supported by width and height css properties.
+     */
+    paneSize = '100%';
     /**
      * This event is fired when the pane is opened or closed.
      */
     expandedChanged;
+    showContent = false;
     closeViaBackdrop(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -106,6 +123,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "Position of the pane."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "position",
                 "reflect": false,
                 "defaultValue": "'right'"
@@ -124,6 +143,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "Programatically control whether the pane is opened or closed."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "expanded",
                 "reflect": false,
                 "defaultValue": "false"
@@ -142,6 +163,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "The pane comes with a close button by default. Hide it with this property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "hide-close-button",
                 "reflect": false,
                 "defaultValue": "false"
@@ -160,6 +183,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "Title of the pane."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "title-text",
                 "reflect": false
             },
@@ -177,6 +202,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "Whether the pane is closeable by clicking outside of it."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "close-on-backdrop-click",
                 "reflect": false,
                 "defaultValue": "true"
@@ -195,6 +222,8 @@ export class InnoPane {
                     "tags": [],
                     "text": "Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position. \r\nAll css units are supported which are supported by width and height css properties."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "pane-size",
                 "reflect": false,
                 "defaultValue": "'100%'"

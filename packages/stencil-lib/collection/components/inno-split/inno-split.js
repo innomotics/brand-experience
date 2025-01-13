@@ -4,14 +4,18 @@ import { Host, h } from "@stencil/core";
  * The inno-split-item components can contain inno-split component for nesting.
  */
 export class InnoSplit {
-    constructor() {
-        this.orientation = 'horizontal';
-        this.splitAreasDefaultSizes = [];
-        this.splitAreasCurrentSizes = [];
-        this.isMouseDown = false;
-        this.slotNames = undefined;
-    }
     hostElement;
+    orientation = 'horizontal';
+    /**
+     * Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes.
+     */
+    splitAreasDefaultSizes = [];
+    splitAreasCurrentSizes = [];
+    isMouseDown = false;
+    /**
+     * Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items.
+     */
+    slotNames;
     splitAreasIndices = [];
     originalPos = undefined;
     gutterIndex = undefined;
@@ -162,6 +166,8 @@ export class InnoSplit {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "orientation",
                 "reflect": false,
                 "defaultValue": "'horizontal'"
@@ -180,6 +186,8 @@ export class InnoSplit {
                     "tags": [],
                     "text": "Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes."
                 },
+                "getter": false,
+                "setter": false,
                 "defaultValue": "[]"
             },
             "slotNames": {
@@ -195,7 +203,9 @@ export class InnoSplit {
                 "docs": {
                     "tags": [],
                     "text": "Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items."
-                }
+                },
+                "getter": false,
+                "setter": false
             }
         };
     }

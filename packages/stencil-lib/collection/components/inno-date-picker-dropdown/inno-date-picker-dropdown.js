@@ -6,30 +6,70 @@ import { DateTime } from "luxon";
  * Date-picker with dropdown.
  */
 export class InnoDatePickerDropdown {
-    constructor() {
-        this.variant = 'dark';
-        this.format = 'yyyy/LL/dd';
-        this.range = false;
-        this.from = undefined;
-        this.to = undefined;
-        this.minDate = undefined;
-        this.maxDate = undefined;
-        this.weekStartIndex = 0;
-        this.locale = undefined;
-        this.showOuterDays = true;
-        this.label = undefined;
-        this.closeOnSelection = true;
-        this.show = false;
-        this.isOpen = false;
-        this.value = undefined;
-        this.selectedRange = undefined;
-    }
     hostElement;
+    /**
+     * Color variant of the component.
+     */
+    variant = 'dark';
+    /**
+     * Date format string.
+     * See the date-picker component for more information.
+     */
+    format = 'yyyy/LL/dd';
+    /**
+     * If true a date-range can be selected.
+     * See the date-picker component for more information.
+     */
+    range = false;
+    /**
+     * The selected starting range.
+     * See the date-picker component for more information.
+     */
+    from;
+    /**
+     * The selected end date.
+     * See the date-picker component for more information.
+     */
+    to;
+    /**
+     * The earliest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    minDate;
+    /**
+     * The latest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    maxDate;
+    /**
+     * The index of which day to start the week on.
+     * See the date-picker component for more information.
+     */
+    weekStartIndex = 0;
+    /**
+     * Format of the date strings.
+     * See the date-picker component for more information.
+     */
+    locale = undefined;
+    /**
+     * Show the days outside the selected month.
+     * See the date-picker component for more information.
+     */
+    showOuterDays = true;
+    /**
+     * Label of the dropdown component.
+     */
+    label;
+    closeOnSelection = true;
     /**
      * Triggers if the date selection changes.
      * See the date-picker component for more information.
      */
     dateChange;
+    show = false;
+    isOpen = false;
+    value;
+    selectedRange;
     dropdownHost;
     datePicker;
     disposeAutoUpdate;
@@ -204,6 +244,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "Color variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'dark'"
@@ -222,6 +264,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "Date format string.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "format",
                 "reflect": false,
                 "defaultValue": "'yyyy/LL/dd'"
@@ -240,6 +284,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "If true a date-range can be selected.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "range",
                 "reflect": false,
                 "defaultValue": "false"
@@ -258,6 +304,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "The selected starting range.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "from",
                 "reflect": false
             },
@@ -275,6 +323,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "The selected end date.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "to",
                 "reflect": false
             },
@@ -292,6 +342,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "The earliest date that can be selected by the date picker.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "min-date",
                 "reflect": false
             },
@@ -309,6 +361,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "The latest date that can be selected by the date picker.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "max-date",
                 "reflect": false
             },
@@ -326,6 +380,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "The index of which day to start the week on.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "week-start-index",
                 "reflect": false,
                 "defaultValue": "0"
@@ -344,6 +400,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "Format of the date strings.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "locale",
                 "reflect": false,
                 "defaultValue": "undefined"
@@ -362,6 +420,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "Show the days outside the selected month.\r\nSee the date-picker component for more information."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "show-outer-days",
                 "reflect": false,
                 "defaultValue": "true"
@@ -380,6 +440,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": "Label of the dropdown component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false
             },
@@ -397,6 +459,8 @@ export class InnoDatePickerDropdown {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "close-on-selection",
                 "reflect": false,
                 "defaultValue": "true"

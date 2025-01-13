@@ -1,7 +1,7 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated vue proxies */
-import { defineContainer } from './vue-component-lib/utils';
+import { defineContainer } from '@stencil/vue-output-target/runtime';
 
 import type { JSX } from '@innomotics/brand-experience';
 
@@ -16,11 +16,15 @@ export const InnoAccordion = /*@__PURE__*/ defineContainer<JSX.InnoAccordion>('i
   'label',
   'secondLabel',
   'collapsedChanged'
+], [
+  'collapsedChanged'
 ]);
 
 
 export const InnoBreadcrumb = /*@__PURE__*/ defineContainer<JSX.InnoBreadcrumb>('inno-breadcrumb', undefined, [
   'variant',
+  'itemClick'
+], [
   'itemClick'
 ]);
 
@@ -32,6 +36,8 @@ export const InnoBreadcrumbItem = /*@__PURE__*/ defineContainer<JSX.InnoBreadcru
   'iconSize',
   'visible',
   'showChevron',
+  'breadcrumbItemClick'
+], [
   'breadcrumbItemClick'
 ]);
 
@@ -63,6 +69,8 @@ export const InnoCheckbox = /*@__PURE__*/ defineContainer<JSX.InnoCheckbox>('inn
   'required',
   'error',
   'valueChange'
+], [
+  'valueChange'
 ]);
 
 
@@ -79,6 +87,8 @@ export const InnoDatePicker = /*@__PURE__*/ defineContainer<JSX.InnoDatePicker>(
   'showOuterDays',
   'standaloneAppearance',
   'today',
+  'dateChange'
+], [
   'dateChange'
 ]);
 
@@ -97,6 +107,8 @@ export const InnoDatePickerDropdown = /*@__PURE__*/ defineContainer<JSX.InnoDate
   'label',
   'closeOnSelection',
   'dateChange'
+], [
+  'dateChange'
 ]);
 
 
@@ -107,6 +119,8 @@ export const InnoDragAndDrop = /*@__PURE__*/ defineContainer<JSX.InnoDragAndDrop
   'disabled',
   'state',
   'texts',
+  'filesChanged'
+], [
   'filesChanged'
 ]);
 
@@ -151,6 +165,8 @@ export const InnoInput = /*@__PURE__*/ defineContainer<JSX.InnoInput>('inno-inpu
   'resizeMode',
   'disableFloatingLabelAutoResize',
   'valueChanged'
+], [
+  'valueChanged'
 ]);
 
 
@@ -172,6 +188,9 @@ export const InnoModal = /*@__PURE__*/ defineContainer<JSX.InnoModal>('inno-moda
   'closeOnEscape',
   'dialogClose',
   'dialogDismiss'
+], [
+  'dialogClose',
+  'dialogDismiss'
 ]);
 
 
@@ -186,6 +205,8 @@ export const InnoModalHeader = /*@__PURE__*/ defineContainer<JSX.InnoModalHeader
   'showClose',
   'icon',
   'closeClick'
+], [
+  'closeClick'
 ]);
 
 
@@ -193,6 +214,9 @@ export const InnoPaginator = /*@__PURE__*/ defineContainer<JSX.InnoPaginator>('i
   'variant',
   'pageCount',
   'selectedPage',
+  'pageSelected',
+  'itemCountChanged'
+], [
   'pageSelected',
   'itemCountChanged'
 ]);
@@ -205,6 +229,8 @@ export const InnoPane = /*@__PURE__*/ defineContainer<JSX.InnoPane>('inno-pane',
   'titleText',
   'closeOnBackdropClick',
   'paneSize',
+  'expandedChanged'
+], [
   'expandedChanged'
 ]);
 
@@ -221,6 +247,9 @@ export const InnoPopover = /*@__PURE__*/ defineContainer<JSX.InnoPopover>('inno-
   'hasBackdrop',
   'closable',
   'animationFrame',
+  'innoPopoverShown',
+  'innoPopoverHidden'
+], [
   'innoPopoverShown',
   'innoPopoverHidden'
 ]);
@@ -248,6 +277,8 @@ export const InnoRadio = /*@__PURE__*/ defineContainer<JSX.InnoRadio>('inno-radi
   'required',
   'error',
   'valueChange'
+], [
+  'valueChange'
 ]);
 
 
@@ -263,6 +294,12 @@ export const InnoSelect = /*@__PURE__*/ defineContainer<JSX.InnoSelect>('inno-se
   'hasIcons',
   'disableFloatingLabelAutoResize',
   'dropdownWidth',
+  'valueChanged',
+  'itemIsFavorited',
+  'itemIsUnfavorited',
+  'favoriteItemsChanged',
+  'dropdownClosed'
+], [
   'valueChanged',
   'itemIsFavorited',
   'itemIsUnfavorited',
@@ -285,6 +322,11 @@ export const InnoSelectItem = /*@__PURE__*/ defineContainer<JSX.InnoSelectItem>(
   'favoriteIconTooltipVariant',
   'favoriteIconTooltipOffset',
   'hasSeparator',
+  'itemSelected',
+  'itemFavorited',
+  'itemUnfavorited',
+  'itemLabelChanged'
+], [
   'itemSelected',
   'itemFavorited',
   'itemUnfavorited',
@@ -316,6 +358,8 @@ export const InnoStatusMessage = /*@__PURE__*/ defineContainer<JSX.InnoStatusMes
   'icon',
   'iconColor',
   'closeMessage'
+], [
+  'closeMessage'
 ]);
 
 
@@ -327,6 +371,8 @@ export const InnoTab = /*@__PURE__*/ defineContainer<JSX.InnoTab>('inno-tab', un
   'alwaysEmphasized',
   'minimalDecorator',
   'selectedChange'
+], [
+  'selectedChange'
 ]);
 
 
@@ -337,6 +383,8 @@ export const InnoTabItem = /*@__PURE__*/ defineContainer<JSX.InnoTabItem>('inno-
   'disabled',
   'alwaysEmphasized',
   'minimalDecorator',
+  'tabClick'
+], [
   'tabClick'
 ]);
 
@@ -353,6 +401,8 @@ export const InnoTimePicker = /*@__PURE__*/ defineContainer<JSX.InnoTimePicker>(
   'format',
   'time',
   'valueChange'
+], [
+  'valueChange'
 ]);
 
 
@@ -361,6 +411,8 @@ export const InnoToggle = /*@__PURE__*/ defineContainer<JSX.InnoToggle>('inno-to
   'disabled',
   'variant',
   'tabIdx',
+  'checkedChange'
+], [
   'checkedChange'
 ]);
 

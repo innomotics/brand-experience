@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
 
 const innoModalFooterCss = ".sc-inno-modal-footer-h{display:block;align-self:stretch}.sc-inno-modal-footer-h *.sc-inno-modal-footer,.sc-inno-modal-footer-h *.sc-inno-modal-footer::after,.sc-inno-modal-footer-h *.sc-inno-modal-footer::before{box-sizing:border-box}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-button{display:none}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar{width:0.5rem;height:0.5rem}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-track{border-radius:5px;background:#2a3b40}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-track:hover{background:#2a3b40}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-thumb{border-radius:5px;background:#566b73}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-thumb:hover{background:#566b73}.sc-inno-modal-footer-h .sc-inno-modal-footer::-webkit-scrollbar-corner{display:none}";
 const InnoModalFooterStyle0 = innoModalFooterCss;

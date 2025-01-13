@@ -5,10 +5,15 @@ import SimpleBar from "simplebar";
  * Can be used without html table as well, in that case only the custom scrollbar with fade-out effect will be applied to the html element.
  */
 export class InnoTableBase {
-    constructor() {
-        this.variant = 'light';
-        this.maskColor = '#ffffff';
-    }
+    /**
+     * Color variant of the table;
+     */
+    variant = 'light';
+    /**
+     * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient.
+     * For it to work properly a color must be set to be the same as the table's background color.
+     */
+    maskColor = '#ffffff';
     hostElement;
     maskElement;
     scrollBar;
@@ -91,6 +96,8 @@ export class InnoTableBase {
                     "tags": [],
                     "text": "Color variant of the table;"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -109,6 +116,8 @@ export class InnoTableBase {
                     "tags": [],
                     "text": "The fade-out effect while scrolling is achieved by using mask-image and linear-gradient. \r\nFor it to work properly a color must be set to be the same as the table's background color."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "mask-color",
                 "reflect": false,
                 "defaultValue": "'#ffffff'"

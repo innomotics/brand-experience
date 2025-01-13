@@ -182,22 +182,22 @@ export class InnoInput {
   //we redefine the input value setter, so an event will be fired besides the original setter function
   //if we disable this then we have to manually send input events to the input
   private reDefineInputValueProperty(): void {
-    if (!this.inputElementRef || !this.valuePropReDefine) {
-      return;
-    }
+    // if (!this.inputElementRef || !this.valuePropReDefine) {
+    //   return;
+    // }
 
-    let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
-    let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
-    let thisref = this;
-    Object.defineProperty(this.inputElementRef, 'value', {
-      get: function () {
-        return descriptor.get.apply(this, arguments);
-      },
-      set: function () {
-        descriptor.set.apply(this, arguments);
-        setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
-      },
-    });
+    // let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
+    // let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
+    // let thisref = this;
+    // Object.defineProperty(this.inputElementRef, 'value', {
+    //   get: function () {
+    //     return descriptor.get.apply(this, arguments);
+    //   },
+    //   set: function () {
+    //     descriptor.set.apply(this, arguments);
+    //     setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
+    //   },
+    // });
   }
 
   private startMutationObserver(): void {
@@ -251,6 +251,7 @@ export class InnoInput {
     this.errorElements.forEach(ee => ee.classList.add(this.variant));
     this.synchSeizerPosition();
     this.setFloatingLabelMaxWidth();
+
   }
 
   disconnectedCallback() {
@@ -268,6 +269,7 @@ export class InnoInput {
 
   @Listen('focusin')
   onFocus() {
+    console.log("Focusin"+ this.hostElement.id);
     this.shouldFloat = true;
     this.isActive = true;
     this.isFocused = true;
@@ -275,6 +277,7 @@ export class InnoInput {
 
   @Listen('focusout')
   onFocusout() {
+    console.log("Focusout"+ this.hostElement.id);
     if (this.isValueEmpty()) {
       this.shouldFloat = false;
     }

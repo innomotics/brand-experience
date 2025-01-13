@@ -3,19 +3,51 @@ import { h, Host } from "@stencil/core";
 import sanitizeHtml from "sanitize-html";
 const numberToPixel = (value) => (value != null ? `${value}px` : '');
 export class InnoPopover {
-    constructor() {
-        this.trigger = 'click';
-        this.variant = 'dark';
-        this.for = undefined;
-        this.popoverTitle = undefined;
-        this.popoverText = undefined;
-        this.placement = 'top';
-        this.offset = 8;
-        this.visible = false;
-        this.hasBackdrop = false;
-        this.closable = false;
-        this.animationFrame = false;
-    }
+    /**
+     * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
+     */
+    trigger = 'click';
+    /**
+     * Color variant of the popover.
+     */
+    variant = 'dark';
+    /**
+     * Css selector of the element the popover is for. This is just the initial value,
+     * don't update it manually. Use the 'updateForElement(...)' method instead.
+     */
+    for;
+    /**
+     * Contents of the title. Can be either html or a simple string. Can be omitted.
+     */
+    popoverTitle;
+    /**
+     * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,
+     * otherwise you can provide your own html directly.
+     */
+    popoverText;
+    /**
+     * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    placement = 'top';
+    /**
+     * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    offset = 8;
+    /**
+     * Programatically change whether the popover is visible or not.
+     */
+    visible = false;
+    /**
+     * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
+     */
+    hasBackdrop = false;
+    /**
+     * Popover will have a close button. Has no effect if trigger type is 'hover'.
+     */
+    closable = false;
+    /** @internal */
+    animationFrame = false;
     forInternal;
     /**
      * Fired when popover is shown.
@@ -320,6 +352,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "trigger",
                 "reflect": false,
                 "defaultValue": "'click'"
@@ -338,6 +372,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Color variant of the popover."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'dark'"
@@ -356,6 +392,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Css selector of the element the popover is for. This is just the initial value, \r\ndon't update it manually. Use the 'updateForElement(...)' method instead."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "for",
                 "reflect": false
             },
@@ -373,6 +411,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Contents of the title. Can be either html or a simple string. Can be omitted."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "popover-title",
                 "reflect": false
             },
@@ -390,6 +430,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip, \r\notherwise you can provide your own html directly."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "popover-text",
                 "reflect": false
             },
@@ -413,6 +455,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.\r\nPlease note that the offset will remain the same in case the desired placement does not fit."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "placement",
                 "reflect": false,
                 "defaultValue": "'top'"
@@ -431,6 +475,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "offset",
                 "reflect": false,
                 "defaultValue": "8"
@@ -449,6 +495,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Programatically change whether the popover is visible or not."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "visible",
                 "reflect": false,
                 "defaultValue": "false"
@@ -467,6 +515,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Popover should have a backdrop. Has no effect if trigger type is 'hover'."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "has-backdrop",
                 "reflect": false,
                 "defaultValue": "false"
@@ -485,6 +535,8 @@ export class InnoPopover {
                     "tags": [],
                     "text": "Popover will have a close button. Has no effect if trigger type is 'hover'."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "closable",
                 "reflect": false,
                 "defaultValue": "false"
@@ -506,6 +558,8 @@ export class InnoPopover {
                         }],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "animation-frame",
                 "reflect": false,
                 "defaultValue": "false"

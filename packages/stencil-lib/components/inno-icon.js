@@ -1,4 +1,4 @@
-import { I as InnoIcon$1, d as defineCustomElement$1 } from './p-f8e7f9af.js';
+import { I as InnoIcon$1, d as defineCustomElement$1 } from './p-fd23d1bb.js';
 
 const InnoIcon = InnoIcon$1;
 const defineCustomElement = defineCustomElement$1;

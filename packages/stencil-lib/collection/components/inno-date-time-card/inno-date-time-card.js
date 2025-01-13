@@ -3,9 +3,7 @@ import { Host, h } from "@stencil/core";
  *@internal
  */
 export class InnoDateTimeCard {
-    constructor() {
-        this.standaloneAppearance = false;
-    }
+    standaloneAppearance = false;
     render() {
         const cardClasses = {
             card: true,
@@ -41,6 +39,8 @@ export class InnoDateTimeCard {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "standalone-appearance",
                 "reflect": false,
                 "defaultValue": "false"

@@ -1,12 +1,16 @@
 import { Host, h } from "@stencil/core";
 export class InnoPaginator {
-    constructor() {
-        this.variant = 'light';
-        this.pageCount = undefined;
-        this.selectedPage = 1;
-    }
     maxCountPages = 8;
     hostElement;
+    variant = 'light';
+    /**
+     * Total number of pages
+     */
+    pageCount;
+    /**
+     * One based index of currently selected page
+     */
+    selectedPage = 1;
     /**
      * Page selection event
      */
@@ -137,6 +141,8 @@ export class InnoPaginator {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -155,6 +161,8 @@ export class InnoPaginator {
                     "tags": [],
                     "text": "Total number of pages"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "page-count",
                 "reflect": false
             },
@@ -172,6 +180,8 @@ export class InnoPaginator {
                     "tags": [],
                     "text": "One based index of currently selected page"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "selected-page",
                 "reflect": false,
                 "defaultValue": "1"

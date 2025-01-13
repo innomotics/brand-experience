@@ -8,10 +8,11 @@
  */
 import { h, Host } from "@stencil/core";
 export class Breadcrumb {
-    constructor() {
-        this.variant = 'light';
-    }
     hostElement;
+    /**
+     * Color variant of the accordion.
+     */
+    variant = 'light';
     /**
      * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
      */
@@ -64,6 +65,8 @@ export class Breadcrumb {
                     "tags": [],
                     "text": "Color variant of the accordion."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"

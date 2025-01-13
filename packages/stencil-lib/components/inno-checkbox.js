@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { a as a11yBoolean } from './p-df111cda.js';
 import { i as isNotPresent } from './p-565004a9.js';
 
@@ -11,20 +11,57 @@ const InnoCheckbox$1 = /*@__PURE__*/ proxyCustomElement(class InnoCheckbox exten
         this.__registerHost();
         this.valueChange = createEvent(this, "valueChange", 7);
         this.elementInternals = this.attachInternals();
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.indeterminate = false;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
     }
     get hostElement() { return this; }
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry name.
+     */
+    name;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     * Whether element is checked.
+     */
+    checked;
+    /**
+     * Whether indeterminate state is enabled for the component.
+     * The component is in indeterminate state if
+     * it is explicity requested
+     * and the checked status is not defined
+     */
+    indeterminate = false;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Checked status has been changed.
      */

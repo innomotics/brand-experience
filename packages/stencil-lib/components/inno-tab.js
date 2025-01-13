@@ -1,5 +1,5 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
+import { d as defineCustomElement$2 } from './p-fd23d1bb.js';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Copied from the the original Siemens IX library.
@@ -27,22 +27,42 @@ const InnoTab$1 = /*@__PURE__*/ proxyCustomElement(class InnoTab extends H {
         super();
         this.__registerHost();
         this.selectedChange = createEvent(this, "selectedChange", 7);
-        this.theme = 'light';
-        this.selected = undefined;
-        this.layout = 'auto';
-        this.showArrow = true;
-        this.alwaysEmphasized = false;
-        this.minimalDecorator = false;
-        this.totalItems = 0;
-        this.currentScrollAmount = 0;
-        this.scrollAmount = 100;
-        this.scrollActionAmount = 0;
     }
     get hostElement() { return this; }
+    /**
+     * Theme variant of the component.
+     */
+    theme = 'light';
+    /**
+     * Set default selected tab by index
+     * or undefined if not tab is selected.
+     */
+    selected = undefined;
+    /**
+     * Set layout width style
+     */
+    layout = 'auto';
+    /**
+     * Show the navigation arrow for desktop.
+     */
+    showArrow = true;
+    /**
+     * Make the non-selected items always vivid without any opacity effect.
+     */
+    alwaysEmphasized = false;
+    /**
+     * Minimalize the bottom decorator for the tab items.
+     * Show only if the given item is interracted or selected.
+     */
+    minimalDecorator = false;
     /**
      * `selected` property changed
      */
     selectedChange;
+    totalItems = 0;
+    currentScrollAmount = 0;
+    scrollAmount = 100;
+    scrollActionAmount = 0;
     windowStartSize = window.innerWidth;
     arrowLeftElement;
     arrowRightElement;

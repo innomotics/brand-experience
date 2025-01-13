@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
 import { S as SimpleBar } from './p-cd3f0a1b.js';
 
 const innoTableBaseCss = ".sc-inno-table-base-h{scrollbar-width:thin}.sc-inno-table-base-h .table-wrapper.sc-inno-table-base{position:relative;display:block}.sc-inno-table-base-h .table-wrapper.sc-inno-table-base .mask-layer.sc-inno-table-base{z-index:1;position:absolute;top:0;left:0;pointer-events:none;width:100%;height:calc(100% - 20px);background-color:rgba(0, 0, 0, 0);-webkit-mask-image:linear-gradient(to right, var(--left-mask-color) 0%, transparent 15%, transparent 50%, transparent calc(100% - 200px), var(--right-mask-color) 100%);mask-image:linear-gradient(to right, var(--left-mask-color) 0%, transparent 10%, transparent 85%, transparent calc(100% - 200px), var(--right-mask-color) 100%);-webkit-mask-size:contain;mask-size:contain;--left-mask-color:transparent;--right-mask-color:transparent}.sc-inno-table-base-h .table-wrapper.sc-inno-table-base .mask-layer.is-left-overflowing.sc-inno-table-base{background-color:#ffffff;--left-mask-color:black}.sc-inno-table-base-h .table-wrapper.sc-inno-table-base .mask-layer.is-right-overflowing.sc-inno-table-base{background-color:#ffffff;--right-mask-color:black}.sc-inno-table-base-h .table-wrapper.sc-inno-table-base .table-div.sc-inno-table-base{display:block;width:100%;font-size:16px;overflow-x:auto;scrollbar-width:thin}";
@@ -8,9 +8,16 @@ const InnoTableBase$1 = /*@__PURE__*/ proxyCustomElement(class InnoTableBase ext
     constructor() {
         super();
         this.__registerHost();
-        this.variant = 'light';
-        this.maskColor = '#ffffff';
     }
+    /**
+     * Color variant of the table;
+     */
+    variant = 'light';
+    /**
+     * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient.
+     * For it to work properly a color must be set to be the same as the table's background color.
+     */
+    maskColor = '#ffffff';
     get hostElement() { return this; }
     maskElement;
     scrollBar;

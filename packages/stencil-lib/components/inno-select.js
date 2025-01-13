@@ -1,7 +1,7 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { c as computePosition, s as shift, f as flip, a as autoUpdate } from './p-ae69ea43.js';
 import { s as sanitizeHtml } from './p-ed4deb6d.js';
-import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
+import { d as defineCustomElement$2 } from './p-fd23d1bb.js';
 
 const innoSelectCss = ".select-item.sc-inno-select{display:grid;grid-template-columns:minmax(0, 1fr) 16px;grid-template-rows:auto;align-items:center;border-width:0px;border-style:none;padding:0px 16px 0px 16px;height:56px;gap:10px;cursor:pointer}.select-item.icon-driven.sc-inno-select:not(.can-favorite){grid-template-columns:auto minmax(0, 1fr) 16px}.select-item.icon-driven.can-favorite.sc-inno-select{grid-template-columns:auto minmax(0, 1fr) 24px}.select-item.can-favorite.sc-inno-select .star.sc-inno-select{display:block;font-size:24px;position:relative}.select-item.separator.sc-inno-select{border-bottom:3px double #ffffff}.select-item.can-favorite.sc-inno-select:not(.selected):not(.icon-driven){grid-template-columns:minmax(0, 1fr) 24px}.select-item.can-favorite.selected.sc-inno-select:not(.icon-driven){grid-template-columns:minmax(0, 1fr) 16px 24px}.sc-inno-select-h{cursor:pointer}.sc-inno-select-h .icon-driven.sc-inno-select span.sc-inno-select{display:contents}.sc-inno-select-h:focus-visible{outline-color:#1491EB;outline-style:solid;outline-width:2px;outline-offset:2px}.light.sc-inno-select-h:hover:not(.disabled):not(:disabled){border:1px solid #40545b;box-shadow:inset 0px 0px 0px 1px #40545b}.light.sc-inno-select-h .select-header.sc-inno-select inno-icon.sc-inno-select{color:#08191f}.light.sc-inno-select-h .icon-driven.sc-inno-select:not(inno-select-item){color:#08191f}.dark.sc-inno-select-h:hover:not(.disabled):not(:disabled){border:1px solid #e1f000;box-shadow:inset 0px 0px 0px 1px #e1f000}.dark.sc-inno-select-h .select-header.sc-inno-select inno-icon.sc-inno-select{color:#ffffff}.dark.sc-inno-select-h .icon-driven.sc-inno-select:not(inno-select-item){color:#ffffff}.primary.sc-inno-select-h{transition:background-color 0.3s cubic-bezier(0.84, 0, 0.58, 1)}.primary.sc-inno-select-h:hover:not(.disabled):not(:disabled){color:#08191f;background-color:#b2c1c7}.primary.sc-inno-select-h .select-header.sc-inno-select inno-icon.sc-inno-select{color:#08191f}.primary.sc-inno-select-h .icon-driven.sc-inno-select:not(inno-select-item){color:#08191f}.primary-dark.sc-inno-select-h{transition:background-color 0.3s cubic-bezier(0.84, 0, 0.58, 1)}.primary-dark.sc-inno-select-h:hover:not(.disabled):not(:disabled){color:#ffffff;background-color:#40545b}.primary-dark.sc-inno-select-h .select-header.sc-inno-select inno-icon.sc-inno-select{color:#e1f000}.primary-dark.sc-inno-select-h .icon-driven.sc-inno-select:not(inno-select-item){color:#e1f000}.input-container.sc-inno-select-h{display:flex;flex-direction:column;border:1px solid #9aacb4;margin:5px 5px 8px 5px;height:56px;max-height:56px;min-height:56px}.input-container.primary.sc-inno-select-h{border:none}.input-container.sc-inno-select-h .select-header.sc-inno-select{padding:8px 16px 8px 16px;box-sizing:border-box;height:56px;max-height:56px;min-height:56px;display:flex;align-items:center;justify-content:space-between;position:relative}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select{display:flex;overflow-x:hidden}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.filled.sc-inno-select:not(.empty-label) .label-value.sc-inno-select{margin-top:16px}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.sc-inno-select{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.light.sc-inno-select{color:#40545b}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.light.disabled.sc-inno-select{color:#40545b}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.dark.sc-inno-select{color:#b2c1c7}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.dark.disabled.sc-inno-select{color:#b2c1c7}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.primary.sc-inno-select{color:#08191f}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.primary.disabled.sc-inno-select{color:#9aacb4;background-color:#40545b}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.primary-dark.sc-inno-select{color:#08191f}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label.primary-dark.disabled.sc-inno-select{color:#9aacb4;background-color:#cad5da}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .float.sc-inno-select{position:absolute;top:8px;font-size:12px}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.sc-inno-select{font-size:16px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.light.sc-inno-select{color:#08191f}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.light.disabled.sc-inno-select{color:#40545b}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.dark.sc-inno-select{color:#ffffff}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.dark.disabled.sc-inno-select{color:#b2c1c7}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.primary.sc-inno-select{color:#08191f}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.primary.disabled.sc-inno-select{color:#9aacb4;background-color:#40545b}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.primary-dark.sc-inno-select{color:#e1f000}.input-container.sc-inno-select-h .select-header.sc-inno-select .content.sc-inno-select .label-value.primary-dark.disabled.sc-inno-select{color:#9aacb4;background-color:#cad5da}.input-container.dark.sc-inno-select-h{background-color:#08191f}.input-container.dark.disabled.sc-inno-select-h{background-image:linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))}.input-container.light.sc-inno-select-h{background-color:#ffffff}.input-container.light.disabled.sc-inno-select-h{background-color:rgba(8, 25, 31, 0.2)}.input-container.primary.sc-inno-select-h{background-color:#e1f000}.input-container.primary.disabled.sc-inno-select-h{color:#9aacb4;background-color:#40545b}.input-container.primary-dark.sc-inno-select-h{color:#e1f000;background-color:#08191f}.input-container.primary-dark.disabled.sc-inno-select-h{color:#9aacb4;background-color:#cad5da}.sc-inno-select-h .select-wrapper.sc-inno-select{position:relative}.sc-inno-select-h .select-wrapper.sc-inno-select .items.sc-inno-select{z-index:2;display:none;position:fixed;max-height:500px;overflow-y:auto}.sc-inno-select-h .select-wrapper.sc-inno-select .items.opened.sc-inno-select{display:block}.sc-inno-select-h .select-wrapper.sc-inno-select .select-item.icon-driven.light.disabled.sc-inno-select{color:#40545b}.sc-inno-select-h .select-wrapper.sc-inno-select .select-item.icon-driven.dark.disabled.sc-inno-select{color:#b2c1c7}.sc-inno-select-h .select-wrapper.sc-inno-select .select-item.icon-driven.disabled-light.sc-inno-select{color:#9aacb4}.sc-inno-select-h .select-wrapper.sc-inno-select .select-item.icon-driven.disabled-dark.sc-inno-select{color:#9aacb4}.sc-inno-select-h .select-wrapper.sc-inno-select .select-item.icon-driven.sc-inno-select .icon-driven-label.sc-inno-select{font-size:16px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.disabled.sc-inno-select-h{border:1px solid transparent;background-color:rgba(255, 255, 255, 0.1);pointer-events:none}.disabled.sc-inno-select-h inno-icon.chevron.sc-inno-select{display:none}";
 const InnoSelectStyle0 = innoSelectCss;
@@ -15,24 +15,67 @@ const InnoSelect$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelect extends H
         this.itemIsUnfavorited = createEvent(this, "itemIsUnfavorited", 7);
         this.favoriteItemsChanged = createEvent(this, "favoriteItemsChanged", 7);
         this.dropdownClosed = createEvent(this, "dropdownClosed", 7);
-        this.navigationItem = undefined;
-        this.keyValueSelector = (val) => { return val; };
-        this.value = undefined;
-        this.disabled = false;
-        this.label = undefined;
-        this.variant = 'light';
-        this.isOpen = false;
-        this.disabledBackgroundColor = 'light';
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.hasIcons = false;
-        this.disableFloatingLabelAutoResize = false;
-        this.dropdownWidth = undefined;
-        this.items = [];
     }
     get hostElement() { return this; }
     itemsContainerRef;
     wrapperRef;
+    navigationItem;
+    /**
+     * If you work with object arrays you can set a simple function which returns the unique key value
+     * so the objects can be differentiated. By default we assume you work with simple arrays
+     * so we simply return the value as it is, in that case you don't have to provide this function.
+     */
+    keyValueSelector = (val) => { return val; };
+    /**
+     * Value of the select.
+     */
+    value;
+    /**
+     * Whether the select is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Label for the select when no item selected.
+     */
+    label;
+    /**
+     * Color variant of the select.
+     */
+    variant = 'light';
+    isOpen = false;
+    /**
+     * Depending on the container html element's background color you can choose a lighter or darker disabled style.
+     * Only applicable when variant is 'primary'.
+     */
+    disabledBackgroundColor = 'light';
+    /**
+     * Icon for select when no item selected. Use either this or the iconFont property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Icon font for select when no item selected. Use either this or the icon property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties
+     * since your select has no state where nothing is selected.
+     */
+    hasIcons = false;
+    /**
+     * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.
+     * By default the InnoSelect component automatically resizes the floating label so it will fit inside.
+     * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
+     */
+    disableFloatingLabelAutoResize = false;
+    /**
+     * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.
+     * You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+     */
+    dropdownWidth;
     /**
      * This event is fired when the value changes.
      */
@@ -57,6 +100,7 @@ const InnoSelect$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelect extends H
      * if you want to reorder your InnoSelectItems after the favorited elements are changed.
      */
     dropdownClosed;
+    items = [];
     disposeAutoUpdate;
     itemsObserver;
     resizeObserver;

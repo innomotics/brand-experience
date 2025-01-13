@@ -1,13 +1,23 @@
 import { Host, h } from "@stencil/core";
 import { a11yBoolean } from "../../utils/a11y";
 export class InnoToggle {
-    constructor() {
-        this.checked = false;
-        this.disabled = false;
-        this.variant = 'dark';
-        this.tabIdx = 0;
-    }
     hostElement;
+    /**
+     * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
+     */
+    checked = false;
+    /**
+     * Whether the slide-toggle element is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Color variant of the toggle component.
+     */
+    variant = 'dark';
+    /**
+     * The tab index of the toggle
+     */
+    tabIdx = 0;
     /**
      * An event will be dispatched each time the slide-toggle changes its value.
      */
@@ -57,6 +67,8 @@ export class InnoToggle {
                     "tags": [],
                     "text": "Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "checked",
                 "reflect": true,
                 "defaultValue": "false"
@@ -75,6 +87,8 @@ export class InnoToggle {
                     "tags": [],
                     "text": "Whether the slide-toggle element is disabled or not."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": false,
                 "defaultValue": "false"
@@ -93,6 +107,8 @@ export class InnoToggle {
                     "tags": [],
                     "text": "Color variant of the toggle component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'dark'"
@@ -111,6 +127,8 @@ export class InnoToggle {
                     "tags": [],
                     "text": "The tab index of the toggle"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "tab-idx",
                 "reflect": false,
                 "defaultValue": "0"

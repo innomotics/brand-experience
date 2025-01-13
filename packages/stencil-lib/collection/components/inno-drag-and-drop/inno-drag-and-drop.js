@@ -1,26 +1,50 @@
 import { Host, h } from "@stencil/core";
 export class InnoDragAndDrop {
-    constructor() {
-        this.variant = 'dark';
-        this.accept = undefined;
-        this.multiple = false;
-        this.disabled = false;
-        this.state = 'SELECT_FILE';
-        this.texts = {
-            firstLineText: null,
-            secondLineText: null,
-            orText: null,
-            dragText: null,
-            loadingText: null,
-            uploadFailedText: null,
-            uploadSuccessText: null,
-            acceptedFileTypesText: null,
-            uploadDisabledText: null
-        };
-        this.isFileOver = false;
-    }
+    /**
+     * Color variant of the component.
+     */
+    variant = 'dark';
+    /**
+     * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload).
+     * "https://www.w3schools.com/tags/att_input_accept.asp"
+     */
+    accept;
+    /**
+     * If multiple is true the user can drop or select multiple files
+     */
+    multiple = false;
+    /**
+     * Disable all input events
+     */
+    disabled = false;
+    /**
+     * After a file is uploaded you can set the upload component to a defined state
+     */
+    state = 'SELECT_FILE';
+    /**
+     * 'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE',
+     * <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,
+     * <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted,
+     * <br/><br/>'loadingText': will be used by state = 'LOADING',
+     * <br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED',
+     * <br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS',
+     * <br/><br/>'acceptedFileTypesText': label for accepted file types,
+     * <br/><br/>'uploadDisabledText': label for disabled state
+     */
+    texts = {
+        firstLineText: null,
+        secondLineText: null,
+        orText: null,
+        dragText: null,
+        loadingText: null,
+        uploadFailedText: null,
+        uploadSuccessText: null,
+        acceptedFileTypesText: null,
+        uploadDisabledText: null
+    };
     filesChanged;
     hostElement;
+    isFileOver = false;
     filesToUpload;
     get inputElement() {
         return this.hostElement.querySelector('#upload-browser');
@@ -155,6 +179,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "Color variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'dark'"
@@ -173,6 +199,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload).\r\n\"https://www.w3schools.com/tags/att_input_accept.asp\""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "accept",
                 "reflect": false
             },
@@ -190,6 +218,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "If multiple is true the user can drop or select multiple files"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "multiple",
                 "reflect": false,
                 "defaultValue": "false"
@@ -208,6 +238,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "Disable all input events"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": false,
                 "defaultValue": "false"
@@ -226,6 +258,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "After a file is uploaded you can set the upload component to a defined state"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "state",
                 "reflect": false,
                 "defaultValue": "'SELECT_FILE'"
@@ -250,6 +284,8 @@ export class InnoDragAndDrop {
                     "tags": [],
                     "text": "'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE',\r\n<br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,\r\n<br/><br/>'dragText': displayed when file is dragged over the component, can be omitted,\r\n<br/><br/>'loadingText': will be used by state = 'LOADING',\r\n<br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED',\r\n<br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS',\r\n<br/><br/>'acceptedFileTypesText': label for accepted file types,\r\n<br/><br/>'uploadDisabledText': label for disabled state"
                 },
+                "getter": false,
+                "setter": false,
                 "defaultValue": "{\r\n    firstLineText: null,\r\n    secondLineText: null,\r\n    orText: null,\r\n    dragText: null,\r\n    loadingText: null,\r\n    uploadFailedText: null,\r\n    uploadSuccessText: null,\r\n    acceptedFileTypesText: null,\r\n    uploadDisabledText: null\r\n  }"
             }
         };

@@ -1,5 +1,5 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
+import { d as defineCustomElement$2 } from './p-fd23d1bb.js';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function closestPassShadow(node, selector) {
@@ -28,12 +28,21 @@ const InnoModalHeader$1 = /*@__PURE__*/ proxyCustomElement(class InnoModalHeader
         super();
         this.__registerHost();
         this.closeClick = createEvent(this, "closeClick", 7);
-        this.variant = 'light';
-        this.showClose = true;
-        this.icon = undefined;
     }
     parentDialog;
     get hostElement() { return this; }
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * Hide the close button.
+     */
+    showClose = true;
+    /**
+     * Icon of the header, optional.
+     */
+    icon;
     /**
      * Emits when close icon is clicked and closes the modal
      * Can be prevented, in which case only the event is triggered, and the modal remains open

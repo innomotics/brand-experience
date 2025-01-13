@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-react-lib",
-  "version": "0.0.2-beta-22",
+  "version": "0.0.2-beta-23",
   "description": "> TODO: description",
   "author": "&innomotics",
   "homepage": "",
@@ -20,11 +20,11 @@
     "LICENSE.md"
   ],
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-22"
+    "@innomotics/brand-experience": "^0.0.2-beta-23"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-22",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-22",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-22"
+    "@innomotics/brand-experience": "^0.0.2-beta-23",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-23",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-23"
   }
 }

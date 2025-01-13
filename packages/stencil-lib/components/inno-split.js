@@ -1,5 +1,5 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$2 } from './p-69e82cdc.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
+import { d as defineCustomElement$2 } from './p-d2186ebf.js';
 
 const innoSplitCss = ".sc-inno-split-h{display:grid;inline-size:100%;block-size:100%}.dragging.sc-inno-split-h{-webkit-user-select:none !important;-moz-user-select:none !important;user-select:none !important}.dragging.vertical.sc-inno-split-h{cursor:row-resize}.dragging.horizontal.sc-inno-split-h{cursor:col-resize}.sc-inno-split-h .split-slot-container.sc-inno-split{display:flex;flex-wrap:nowrap;justify-content:space-between;min-width:0;min-height:0}.sc-inno-split-h .split-slot-container.horizontal.sc-inno-split{flex-direction:row}.sc-inno-split-h .split-slot-container.vertical.sc-inno-split{flex-direction:column}";
 const InnoSplitStyle0 = innoSplitCss;
@@ -8,13 +8,19 @@ const InnoSplit$1 = /*@__PURE__*/ proxyCustomElement(class InnoSplit extends H {
     constructor() {
         super();
         this.__registerHost();
-        this.orientation = 'horizontal';
-        this.splitAreasDefaultSizes = [];
-        this.splitAreasCurrentSizes = [];
-        this.isMouseDown = false;
-        this.slotNames = undefined;
     }
     get hostElement() { return this; }
+    orientation = 'horizontal';
+    /**
+     * Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes.
+     */
+    splitAreasDefaultSizes = [];
+    splitAreasCurrentSizes = [];
+    isMouseDown = false;
+    /**
+     * Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items.
+     */
+    slotNames;
     splitAreasIndices = [];
     originalPos = undefined;
     gutterIndex = undefined;

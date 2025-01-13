@@ -1,37 +1,58 @@
 import "./App.scss";
 import {
   defineCustomElements,
-  InnoBreadcrumb,
-  InnoBreadcrumbItem,
-  InnoIcon,
 } from "@innomotics/brand-experience-react-lib";
-import InnoTabExample from "./components/InnoTabExample/InnoTabExample";
-import InnoModalExample from "./components/InnoModalExample/InnoModalExample";
-import { InnoStatusMessageExample } from "./components/InnoStatusMessageExample/InnoStatusMessageExample";
-import InnoDatePickerExample from "./components/InnoDatePickerExample/InnoDatePickerExample";
-
+import { InnoInput } from "@innomotics/brand-experience-react-lib";
+import { InnoError } from "@innomotics/brand-experience-react-lib";
 defineCustomElements();
+function onInputChange(){
+    alert("input1");
+}
+
+function onInputChange2(){
+  alert("input2");
+}
+
 
 function App() {
   return (
     <>
-    <div className="text-4xl">retek</div>
-      <div className="tab-container">
-        <InnoTabExample></InnoTabExample>
-      </div>
-
-      <InnoBreadcrumb>
-        <InnoBreadcrumbItem icon="about" label="Item 1"></InnoBreadcrumbItem>
-        <InnoBreadcrumbItem label="Item 2"></InnoBreadcrumbItem>
-        <InnoBreadcrumbItem label="Item 3"></InnoBreadcrumbItem>
-      </InnoBreadcrumb>
-      <InnoIcon icon="youtube_logo"></InnoIcon>
-
-      <InnoModalExample></InnoModalExample>
-
-      <InnoStatusMessageExample></InnoStatusMessageExample>
-
-      <InnoDatePickerExample></InnoDatePickerExample>
+    <InnoInput
+        id='orderNumber'
+        style={{ width: 350 }}
+        label="dsa"
+        variant="dark"
+        onValueChanged={onInputChange}
+      >
+        <input id='orderNumber11' type='number'/>
+        <InnoError active={true} type='badInput'>
+          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
+        </InnoError>
+      </InnoInput>
+      <InnoInput
+        id='orderNumber2'
+        style={{ width: 350 }}
+        label="dsa"
+        variant="dark"
+        onValueChanged={onInputChange2}
+      >
+        <input id='orderNumber21' type='number'/>
+        <InnoError active={true} type='badInput'>
+          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
+        </InnoError>
+      </InnoInput>
+      <InnoInput
+        id='orderNumber3'
+        style={{ width: 350 }}
+        label="dsa"
+        variant="dark"
+        onValueChanged={onInputChange2}
+      >
+        <input id='orderNumber31' type='number'/>
+        <InnoError active={true} type='badInput'>
+          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
+        </InnoError>
+      </InnoInput>
     </>
   );
 }

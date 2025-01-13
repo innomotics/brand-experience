@@ -5,21 +5,56 @@ import { isNotPresent } from "../../utils/utils";
  * Checkbox for Innomatics design system.
  */
 export class InnoCheckbox {
-    constructor() {
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.indeterminate = false;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
-    }
     hostElement;
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry name.
+     */
+    name;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     * Whether element is checked.
+     */
+    checked;
+    /**
+     * Whether indeterminate state is enabled for the component.
+     * The component is in indeterminate state if
+     * it is explicity requested
+     * and the checked status is not defined
+     */
+    indeterminate = false;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Checked status has been changed.
      */
@@ -156,6 +191,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Theme variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -174,6 +211,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "The tab index."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "tab-idx",
                 "reflect": false,
                 "defaultValue": "0"
@@ -192,6 +231,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Form entry name."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "name",
                 "reflect": false
             },
@@ -209,6 +250,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Label to show."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false,
                 "defaultValue": "''"
@@ -227,6 +270,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Whether element is checked."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "checked",
                 "reflect": true
             },
@@ -244,6 +289,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Whether indeterminate state is enabled for the component.\r\nThe component is in indeterminate state if\r\nit is explicity requested\r\nand the checked status is not defined"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "indeterminate",
                 "reflect": false,
                 "defaultValue": "false"
@@ -262,6 +309,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Whether component is disabled.\r\nIn this state no other state effects are applied to the element like error."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": true,
                 "defaultValue": "false"
@@ -280,6 +329,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Whether the component is readonly.\r\nIn this state no other state effects are applied to the element like error."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "readonly",
                 "reflect": true,
                 "defaultValue": "false"
@@ -298,6 +349,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Mark the component as required and show the required marker.\r\nValidation is performed with this property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "required",
                 "reflect": true,
                 "defaultValue": "false"
@@ -316,6 +369,8 @@ export class InnoCheckbox {
                     "tags": [],
                     "text": "Whether the element is in error state.\r\nError state can be defined if manual error handling is required."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "error",
                 "reflect": false,
                 "defaultValue": "false"

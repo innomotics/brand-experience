@@ -1,13 +1,32 @@
 import { Host, h } from "@stencil/core";
 export class InnoProgressBar {
-    constructor() {
-        this.variant = 'light';
-        this.progressText = '';
-        this.progressPercentage = 0;
-        this.showPercentage = true;
-        this.percentagePrecision = 0;
-        this.trailingZeroes = false;
-    }
+    /**
+     * Color variant of the progress bar.
+     */
+    variant = 'light';
+    /**
+     * Text to display for the progress bar.
+     */
+    progressText = '';
+    /**
+     * Progress in percentage. Must be a number between 0 and 100.
+     */
+    progressPercentage = 0;
+    /**
+     * Show the percentage number on the progress bar. The value is rounded according to the 'percentagePrecision' and 'trailingZeroes' properties.
+     */
+    showPercentage = true;
+    /**
+     * If the percentage number is shown, how many decimal places should be visible
+     */
+    percentagePrecision = 0;
+    /**
+     * If 'percentagePrecision' is larger than 0, should we display the trailing zeroes.
+     * For example if the progress is 1.5% and the 'percentagePrecision' is 2 then the displayed text will be '1.50%'
+     * if trailing zeroes are enabled and '1.5%' if trailing zeroes are disabled.
+     * Uses the toFixed(..) function in the background.
+     */
+    trailingZeroes = false;
     frontLayerRef;
     progressChangedhandler(newValue) {
         this.setClipPath(newValue);
@@ -84,6 +103,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "Color variant of the progress bar."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -102,6 +123,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "Text to display for the progress bar."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "progress-text",
                 "reflect": false,
                 "defaultValue": "''"
@@ -120,6 +143,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "Progress in percentage. Must be a number between 0 and 100."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "progress-percentage",
                 "reflect": false,
                 "defaultValue": "0"
@@ -138,6 +163,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "Show the percentage number on the progress bar. The value is rounded according to the 'percentagePrecision' and 'trailingZeroes' properties."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "show-percentage",
                 "reflect": false,
                 "defaultValue": "true"
@@ -156,6 +183,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "If the percentage number is shown, how many decimal places should be visible"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "percentage-precision",
                 "reflect": false,
                 "defaultValue": "0"
@@ -174,6 +203,8 @@ export class InnoProgressBar {
                     "tags": [],
                     "text": "If 'percentagePrecision' is larger than 0, should we display the trailing zeroes.\r\nFor example if the progress is 1.5% and the 'percentagePrecision' is 2 then the displayed text will be '1.50%' \r\nif trailing zeroes are enabled and '1.5%' if trailing zeroes are disabled.\r\nUses the toFixed(..) function in the background."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "trailing-zeroes",
                 "reflect": false,
                 "defaultValue": "false"

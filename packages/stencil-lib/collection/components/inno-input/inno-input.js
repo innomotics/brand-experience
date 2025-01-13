@@ -1,24 +1,6 @@
 import { Host, h } from "@stencil/core";
 import sanitizeHtml from "sanitize-html";
 export class InnoInput {
-    constructor() {
-        this.isActive = undefined;
-        this.shouldFloat = undefined;
-        this.textareaMode = false;
-        this.isFocused = undefined;
-        this.disabled = false;
-        this.label = undefined;
-        this.variant = 'light';
-        this.error = undefined;
-        this.errortype = undefined;
-        this.valuePropReDefine = true;
-        this.selectOnFocus = false;
-        this.caretPosEndOnFocus = false;
-        this.resizeable = false;
-        this.resizeMode = 'both';
-        this.disableFloatingLabelAutoResize = false;
-        this.isValid = true;
-    }
     hostElement;
     inputElementRef;
     seizerElementRef;
@@ -28,6 +10,69 @@ export class InnoInput {
      * Fired when the new value is valid.
      */
     valueChanged;
+    isActive;
+    shouldFloat;
+    textareaMode = false;
+    /**
+     * Whether the input is focused or not.
+     */
+    isFocused;
+    /**
+     * Whether the inno-input component is disabled or not. Probably not needed to be set since the component
+     * automatically detects if the inserted input element is disabled or not.
+     * The inno-input component will also be in a disabled state when the input element is readonly.
+     */
+    disabled = false;
+    /**
+     * Floating label for the input.
+     */
+    label;
+    /**
+     * Color variant of the input.
+     */
+    variant = 'light';
+    /**
+     * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+     * You can either use this property or use the manually added errors. Can't use both at the same time.
+     */
+    error;
+    /**
+     * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+     * <br/><br/>Only has an effect if 'error' has a value.
+     */
+    errortype;
+    /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
+    valuePropReDefine = true;
+    /**
+     * When you click on the inno-input a focus() command is called on the input element.
+     * This might cause that the caret position will be at the beginnging of the input's value.
+     * Set this to true if you want to select all of the text by default.
+     */
+    selectOnFocus = false;
+    /**
+     * When you click on the inno-input a focus() command is called on the input element.
+     * This might cause that the caret position will be at the beginnging of the input's value.
+     * Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'.
+     * Has no effect if 'selectOnFocus' is also true.
+     */
+    caretPosEndOnFocus = false;
+    /**
+     * Whether the textarea is resizeable.
+     * Only has effect if textarea is provided as wrapped element.
+     */
+    resizeable = false;
+    /**
+     * Set the resize direction.
+     * Only has effect if textarea is provided as wrapped element.
+     */
+    resizeMode = 'both';
+    /**
+     * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component.
+     * By default the InnoInput component automatically resizes the floating label so it will fit inside.
+     * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
+     */
+    disableFloatingLabelAutoResize = false;
+    isValid = true;
     floatingLabel;
     resizeTimeout;
     get errorElements() {
@@ -87,21 +132,21 @@ export class InnoInput {
     //we redefine the input value setter, so an event will be fired besides the original setter function
     //if we disable this then we have to manually send input events to the input
     reDefineInputValueProperty() {
-        if (!this.inputElementRef || !this.valuePropReDefine) {
-            return;
-        }
-        let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
-        let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
-        let thisref = this;
-        Object.defineProperty(this.inputElementRef, 'value', {
-            get: function () {
-                return descriptor.get.apply(this, arguments);
-            },
-            set: function () {
-                descriptor.set.apply(this, arguments);
-                setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
-            },
-        });
+        // if (!this.inputElementRef || !this.valuePropReDefine) {
+        //   return;
+        // }
+        // let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
+        // let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
+        // let thisref = this;
+        // Object.defineProperty(this.inputElementRef, 'value', {
+        //   get: function () {
+        //     return descriptor.get.apply(this, arguments);
+        //   },
+        //   set: function () {
+        //     descriptor.set.apply(this, arguments);
+        //     setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
+        //   },
+        // });
     }
     startMutationObserver() {
         if (!!this.inputElementRef) {
@@ -157,11 +202,13 @@ export class InnoInput {
         this.shouldFloat = !this.isValueEmpty();
     }
     onFocus() {
+        console.log("Focusin" + this.hostElement.id);
         this.shouldFloat = true;
         this.isActive = true;
         this.isFocused = true;
     }
     onFocusout() {
+        console.log("Focusout" + this.hostElement.id);
         if (this.isValueEmpty()) {
             this.shouldFloat = false;
         }
@@ -242,7 +289,7 @@ export class InnoInput {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (h(Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
+        return (h(Host, { key: '2b88e1c7e062e54f7bcba0476fa8c6036d661ab2', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -252,7 +299,7 @@ export class InnoInput {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
+            }, onClick: () => this.activateInput() }, h("span", { key: 'b4936325615fce4f2f38c07e1790522626abc005', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -261,7 +308,7 @@ export class InnoInput {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: 'a47c4224357dcbe2fc68054e7a223df33f2316f2' }), this.seizerElement(), this.errorElement()));
     }
     static get is() { return "inno-input"; }
     static get encapsulation() { return "scoped"; }
@@ -292,6 +339,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Whether the input is focused or not."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "is-focused",
                 "reflect": false
             },
@@ -309,6 +358,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Whether the inno-input component is disabled or not. Probably not needed to be set since the component\r\nautomatically detects if the inserted input element is disabled or not.\r\nThe inno-input component will also be in a disabled state when the input element is readonly."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": true,
                 "defaultValue": "false"
@@ -327,6 +378,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Floating label for the input."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false
             },
@@ -344,6 +397,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Color variant of the input."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -362,6 +417,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.\r\nYou can either use this property or use the manually added errors. Can't use both at the same time."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "error",
                 "reflect": false
             },
@@ -379,6 +436,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState\r\n<br/><br/>Only has an effect if 'error' has a value."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "errortype",
                 "reflect": false
             },
@@ -399,6 +458,8 @@ export class InnoInput {
                         }],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "value-prop-re-define",
                 "reflect": false,
                 "defaultValue": "true"
@@ -417,6 +478,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "When you click on the inno-input a focus() command is called on the input element.\r\nThis might cause that the caret position will be at the beginnging of the input's value.\r\nSet this to true if you want to select all of the text by default."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "select-on-focus",
                 "reflect": false,
                 "defaultValue": "false"
@@ -435,6 +498,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "When you click on the inno-input a focus() command is called on the input element.\r\nThis might cause that the caret position will be at the beginnging of the input's value.\r\nSet this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'.\r\nHas no effect if 'selectOnFocus' is also true."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "caret-pos-end-on-focus",
                 "reflect": false,
                 "defaultValue": "false"
@@ -453,6 +518,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Whether the textarea is resizeable.\r\nOnly has effect if textarea is provided as wrapped element."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "resizeable",
                 "reflect": false,
                 "defaultValue": "false"
@@ -471,6 +538,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "Set the resize direction.\r\nOnly has effect if textarea is provided as wrapped element."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "resize-mode",
                 "reflect": false,
                 "defaultValue": "'both'"
@@ -489,6 +558,8 @@ export class InnoInput {
                     "tags": [],
                     "text": "The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component.\r\nBy default the InnoInput component automatically resizes the floating label so it will fit inside.\r\nYou can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disable-floating-label-auto-resize",
                 "reflect": false,
                 "defaultValue": "false"

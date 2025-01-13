@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { a as a11yBoolean } from './p-df111cda.js';
 import { i as isNotPresent } from './p-565004a9.js';
 
@@ -11,20 +11,54 @@ const InnoRadio$1 = /*@__PURE__*/ proxyCustomElement(class InnoRadio extends H {
         this.__registerHost();
         this.valueChange = createEvent(this, "valueChange", 7);
         this.elementInternals = this.attachInternals();
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.value = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
     }
     get hostElement() { return this; }
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry group name.
+     */
+    name;
+    /**
+     * Radio button value.
+     */
+    value;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     *
+     */
+    checked;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Emits the associated value when the element is clicked.
      */

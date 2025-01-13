@@ -4,8 +4,8 @@
     "outDir": "./dist",
     "lib": ["dom", "es2020"],
     "module": "es2015",
-    "moduleResolution": "node",
-    "target": "es2017",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
     "skipLibCheck": true,
     "sourceMap": false
   },

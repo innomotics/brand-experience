@@ -7,19 +7,42 @@ import { waitForElement } from "../../utils/waitForElement";
  * Represents the main frame of the modal component.
  */
 export class InnoModal {
-    constructor() {
-        this.modalVisible = false;
-        this.variant = 'light';
-        this.size = '720';
-        this.animation = true;
-        this.backdrop = true;
-        this.closeOnBackdropClick = true;
-        this.centered = false;
-        this.fixed = false;
-        this.closeOnEscape = true;
-    }
     ariaAttributes = {};
     hostElement;
+    modalVisible = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * Modal size
+     */
+    size = '720';
+    /**
+     * Should the modal be animated
+     */
+    animation = true;
+    /**
+     * Show a backdrop behind the modal dialog
+     */
+    backdrop = true;
+    /**
+     * Dismiss modal on backdrop click
+     */
+    closeOnBackdropClick = true;
+    /**
+     * Centered modal
+     */
+    centered = false;
+    /**
+     * By default the modal always opens at the top and the InnoModal component automatically scrolls to it.
+     * Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+     */
+    fixed = false;
+    /**
+     * If set to true the modal can be closed by pressing the Escape key
+     */
+    closeOnEscape = true;
     /**
      * Dialog close
      */
@@ -194,6 +217,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Theme variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -218,6 +243,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Modal size"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "size",
                 "reflect": false,
                 "defaultValue": "'720'"
@@ -236,6 +263,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Should the modal be animated"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "animation",
                 "reflect": false,
                 "defaultValue": "true"
@@ -254,6 +283,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Show a backdrop behind the modal dialog"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "backdrop",
                 "reflect": false,
                 "defaultValue": "true"
@@ -272,6 +303,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Dismiss modal on backdrop click"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "close-on-backdrop-click",
                 "reflect": false,
                 "defaultValue": "true"
@@ -290,6 +323,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "Centered modal"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "centered",
                 "reflect": false,
                 "defaultValue": "false"
@@ -308,6 +343,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "By default the modal always opens at the top and the InnoModal component automatically scrolls to it.\r\nSet this to true if you want the modal to be always in a fixed position no matter where you scroll."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "fixed",
                 "reflect": false,
                 "defaultValue": "false"
@@ -326,6 +363,8 @@ export class InnoModal {
                     "tags": [],
                     "text": "If set to true the modal can be closed by pressing the Escape key"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "close-on-escape",
                 "reflect": false,
                 "defaultValue": "true"

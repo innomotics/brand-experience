@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
 import { a as anime } from './p-9d03f00a.js';
 import { b as a11yHostAttributes, a as a11yBoolean } from './p-df111cda.js';
 
@@ -43,18 +43,43 @@ const InnoModal$1 = /*@__PURE__*/ proxyCustomElement(class InnoModal extends H {
         this.__registerHost();
         this.dialogClose = createEvent(this, "dialogClose", 7);
         this.dialogDismiss = createEvent(this, "dialogDismiss", 7);
-        this.modalVisible = false;
-        this.variant = 'light';
-        this.size = '720';
-        this.animation = true;
-        this.backdrop = true;
-        this.closeOnBackdropClick = true;
-        this.centered = false;
-        this.fixed = false;
-        this.closeOnEscape = true;
     }
     ariaAttributes = {};
     get hostElement() { return this; }
+    modalVisible = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * Modal size
+     */
+    size = '720';
+    /**
+     * Should the modal be animated
+     */
+    animation = true;
+    /**
+     * Show a backdrop behind the modal dialog
+     */
+    backdrop = true;
+    /**
+     * Dismiss modal on backdrop click
+     */
+    closeOnBackdropClick = true;
+    /**
+     * Centered modal
+     */
+    centered = false;
+    /**
+     * By default the modal always opens at the top and the InnoModal component automatically scrolls to it.
+     * Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+     */
+    fixed = false;
+    /**
+     * If set to true the modal can be closed by pressing the Escape key
+     */
+    closeOnEscape = true;
     /**
      * Dialog close
      */

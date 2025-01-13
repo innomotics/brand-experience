@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, g as getElement, h, H as Host, F as Fragment } from './index-aa3fe2a7.js';
+import { r as registerInstance, c as createEvent, g as getElement, h, H as Host, F as Fragment } from './index-46345758.js';
 import { c as commonjsGlobal, g as getAugmentedNamespace, S as SimpleBar } from './index-e6bc1d98.js';
 import { D as DateTime_1, I as Info_1 } from './luxon-761b9b2d.js';
 
@@ -9601,13 +9601,31 @@ const InnoAccordion = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.collapsedChanged = createEvent(this, "collapsedChanged", 7);
-        this.variant = 'light';
-        this.collapsed = false;
-        this.last = false;
-        this.inner = false;
-        this.label = undefined;
-        this.secondLabel = undefined;
     }
+    /**
+     * Color variant of the accordion.
+     */
+    variant = 'light';
+    /**
+     * You can programatically open/close the accordion with this property.
+     */
+    collapsed = false;
+    /**
+     * Whether the accordion is the last in a group of accordions. Needed for styling.
+     */
+    last = false;
+    /**
+     * Whether it is an accordion inside another accordion. Gives a different style then the main one.
+     */
+    inner = false;
+    /**
+     * Text to display for the accordion. Always visible whether the accordion is opened or closed.
+     */
+    label;
+    /**
+     * Secondary text for the accordion. Always visible whether the accordion is opened or closed.
+     */
+    secondLabel;
     /**
      * This event is fired whenever the accordion is opened/closed via user interaction.
      */
@@ -9679,9 +9697,12 @@ const Breadcrumb = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.itemClick = createEvent(this, "itemClick", 7);
-        this.variant = 'light';
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Color variant of the accordion.
+     */
+    variant = 'light';
     /**
      * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
      */
@@ -9716,14 +9737,26 @@ const BreadcrumbItem = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.breadcrumbItemClick = createEvent(this, "breadcrumbItemClick", 7);
-        this.label = undefined;
-        this.icon = undefined;
-        this.itemIndex = undefined;
-        this.iconSize = 16;
-        this.visible = true;
-        this.showChevron = true;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Breadcrumb label
+     */
+    label;
+    /**
+     * Icon to be displayed next ot the label
+     */
+    icon;
+    /** @internal */ //will be generated automatically
+    itemIndex;
+    /*
+    * The size of the icon if the icon property is not empty
+    */
+    iconSize = 16;
+    /**@internal */
+    visible = true;
+    /**@internal */
+    showChevron = true;
     /**@internal */
     breadcrumbItemClick;
     render() {
@@ -9743,18 +9776,53 @@ const InnoButtonStyle0 = innoButtonCss;
 const InnoButton = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.variant = 'primary';
-        this.colorVariant = 'light';
-        this.type = 'button';
-        this.tabIdx = 0;
-        this.disabled = false;
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.iconPosition = 'right';
-        this.navDirection = 'right';
-        this.iconOnly = false;
-        this.listType = false;
     }
+    /**
+     * Variant of the button.
+     */
+    variant = 'primary';
+    /**
+     * Color variant of the button.
+     */
+    colorVariant = 'light';
+    /**
+     * Type of the button.
+     */
+    type = 'button';
+    /**
+     * Tab index of the button.
+     */
+    tabIdx = 0;
+    /**
+     * Whether the button is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Icon to use inside the button. Use either this or the 'iconFont' property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Icon font to use inside the button. Use either this or the 'icon' property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Where to put the icon relative to the text.
+     */
+    iconPosition = 'right';
+    /**
+     * Direction of the navigation button. Only has effect if the variant is 'navigation'.
+     */
+    navDirection = 'right';
+    /**
+     * Only show an icon.
+     */
+    iconOnly = false;
+    /**
+     * Special style for button lists.
+     */
+    listType = false;
     get hostElement() { return getElement(this); }
     submitButtonElement;
     componentDidLoad() {
@@ -9918,20 +9986,57 @@ const InnoCheckbox = class {
             this.elementInternals = hostRef.$hostElement$.attachInternals();
             hostRef.$hostElement$["s-ei"] = this.elementInternals;
         }
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.indeterminate = false;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
     }
     get hostElement() { return getElement(this); }
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry name.
+     */
+    name;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     * Whether element is checked.
+     */
+    checked;
+    /**
+     * Whether indeterminate state is enabled for the component.
+     * The component is in indeterminate state if
+     * it is explicity requested
+     * and the checked status is not defined
+     */
+    indeterminate = false;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Checked status has been changed.
      */
@@ -12161,37 +12266,22 @@ const InnoDatePicker = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.dateChange = createEvent(this, "dateChange", 7);
-        this.format = 'yyyy/LL/dd';
-        this.range = true;
-        this.from = undefined;
-        this.to = undefined;
-        this.minDate = undefined;
-        this.maxDate = undefined;
-        this.i18nDone = 'Done';
-        this.weekStartIndex = 0;
-        this.locale = undefined;
-        this.showOuterDays = true;
-        this.standaloneAppearance = true;
-        this.today = DateTime_1.now().toISO();
-        this.currFromDate = undefined;
-        this.currToDate = undefined;
-        this.selectedYear = undefined;
-        this.tempYear = undefined;
-        this.startYear = undefined;
-        this.endYear = undefined;
-        this.selectedMonth = undefined;
-        this.tempMonth = undefined;
-        this.dropdownButtonRef = undefined;
-        this.dropdownContainerRef = undefined;
-        this.showDropdown = false;
-        this.yearContainerRef = undefined;
-        this.dayNames = undefined;
-        this.monthNames = undefined;
-        this.firstMonthRef = undefined;
-        this.focusedDay = DateTime_1.now();
-        this.focusedDayElem = undefined;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Date format string.
+     * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
+     */
+    format = 'yyyy/LL/dd';
+    /**
+     * If true a date-range can be selected (from/to).
+     */
+    range = true;
+    /**
+     * The selected starting date. If the date-picker is not in range mode this is the selected date.
+     * Format has to match the `format` property.
+     */
+    from;
     watchFromPropHandler(newValue) {
         this.currFromDate = newValue ? DateTime_1.fromFormat(newValue, this.format) : undefined;
         if (this.currFromDate?.isValid) {
@@ -12199,6 +12289,11 @@ const InnoDatePicker = class {
             this.selectedMonth = this.currFromDate.month - 1;
         }
     }
+    /**
+     * The selected end date. If the date-picker is not in range mode this property has no impact.
+     * Format has to match the `format` property.
+     */
+    to;
     watchToPropHandler(newValue) {
         this.currToDate = newValue ? DateTime_1.fromFormat(newValue, this.format) : undefined;
         if (this.currToDate?.isValid) {
@@ -12206,9 +12301,41 @@ const InnoDatePicker = class {
             this.selectedMonth = this.currToDate.month - 1;
         }
     }
+    /**
+     * The earliest date that can be selected by the date picker.
+     * If not set there will be no restriction.
+     */
+    minDate;
+    /**
+     * The latest date that can be selected by the date picker.
+     * If not set there will be no restriction.
+     */
+    maxDate;
+    /**
+     * Text of date select button
+     */
+    i18nDone = 'Done';
+    /**
+     * The index of which day to start the week on, based on the Locale#weekdays array.
+     * E.g. if the locale is en-us, weekStartIndex = 1 results in starting the week on monday.
+     */
+    weekStartIndex = 0;
+    /**
+     * Format of time string
+     * See "https://moment.github.io/luxon/#/formatting?id=table-of-tokens" for all available tokens.
+     */
+    locale = undefined;
+    /**
+     * Show the days outside the selected month.
+     */
+    showOuterDays = true;
     onLocaleChange() {
         this.setTranslations();
     }
+    /** @internal */
+    standaloneAppearance = true;
+    /** @internal */
+    today = DateTime_1.now().toISO();
     /**
      * Triggers if the date selection changes.
      */
@@ -12230,6 +12357,23 @@ const InnoDatePicker = class {
             to: undefined,
         };
     }
+    currFromDate;
+    currToDate;
+    selectedYear;
+    tempYear;
+    startYear;
+    endYear;
+    selectedMonth;
+    tempMonth;
+    dropdownButtonRef;
+    dropdownContainerRef;
+    showDropdown = false;
+    yearContainerRef;
+    dayNames;
+    monthNames;
+    firstMonthRef;
+    focusedDay = DateTime_1.now();
+    focusedDayElem;
     isDayFocus;
     monthChangedFromFocus;
     DAYS_IN_WEEK = 7;
@@ -12597,29 +12741,71 @@ const InnoDatePickerDropdown = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.dateChange = createEvent(this, "dateChange", 7);
-        this.variant = 'dark';
-        this.format = 'yyyy/LL/dd';
-        this.range = false;
-        this.from = undefined;
-        this.to = undefined;
-        this.minDate = undefined;
-        this.maxDate = undefined;
-        this.weekStartIndex = 0;
-        this.locale = undefined;
-        this.showOuterDays = true;
-        this.label = undefined;
-        this.closeOnSelection = true;
-        this.show = false;
-        this.isOpen = false;
-        this.value = undefined;
-        this.selectedRange = undefined;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Color variant of the component.
+     */
+    variant = 'dark';
+    /**
+     * Date format string.
+     * See the date-picker component for more information.
+     */
+    format = 'yyyy/LL/dd';
+    /**
+     * If true a date-range can be selected.
+     * See the date-picker component for more information.
+     */
+    range = false;
+    /**
+     * The selected starting range.
+     * See the date-picker component for more information.
+     */
+    from;
+    /**
+     * The selected end date.
+     * See the date-picker component for more information.
+     */
+    to;
+    /**
+     * The earliest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    minDate;
+    /**
+     * The latest date that can be selected by the date picker.
+     * See the date-picker component for more information.
+     */
+    maxDate;
+    /**
+     * The index of which day to start the week on.
+     * See the date-picker component for more information.
+     */
+    weekStartIndex = 0;
+    /**
+     * Format of the date strings.
+     * See the date-picker component for more information.
+     */
+    locale = undefined;
+    /**
+     * Show the days outside the selected month.
+     * See the date-picker component for more information.
+     */
+    showOuterDays = true;
+    /**
+     * Label of the dropdown component.
+     */
+    label;
+    closeOnSelection = true;
     /**
      * Triggers if the date selection changes.
      * See the date-picker component for more information.
      */
     dateChange;
+    show = false;
+    isOpen = false;
+    value;
+    selectedRange;
     dropdownHost;
     datePicker;
     disposeAutoUpdate;
@@ -12780,8 +12966,8 @@ const InnoDateTimeCardStyle0 = innoDateTimeCardCss;
 const InnoDateTimeCard = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.standaloneAppearance = false;
     }
+    standaloneAppearance = false;
     render() {
         const cardClasses = {
             card: true,
@@ -12799,26 +12985,52 @@ const InnoDragAndDrop = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.filesChanged = createEvent(this, "filesChanged", 7);
-        this.variant = 'dark';
-        this.accept = undefined;
-        this.multiple = false;
-        this.disabled = false;
-        this.state = 'SELECT_FILE';
-        this.texts = {
-            firstLineText: null,
-            secondLineText: null,
-            orText: null,
-            dragText: null,
-            loadingText: null,
-            uploadFailedText: null,
-            uploadSuccessText: null,
-            acceptedFileTypesText: null,
-            uploadDisabledText: null
-        };
-        this.isFileOver = false;
     }
+    /**
+     * Color variant of the component.
+     */
+    variant = 'dark';
+    /**
+     * The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload).
+     * "https://www.w3schools.com/tags/att_input_accept.asp"
+     */
+    accept;
+    /**
+     * If multiple is true the user can drop or select multiple files
+     */
+    multiple = false;
+    /**
+     * Disable all input events
+     */
+    disabled = false;
+    /**
+     * After a file is uploaded you can set the upload component to a defined state
+     */
+    state = 'SELECT_FILE';
+    /**
+     * 'firstLineText' and 'secondLineText': will be used by state = 'SELECT_FILE',
+     * <br/><br/>'orText': The word 'or' or its equivalent translation. Hidden if only 'firstLineText' or only 'secondLineText' is used,
+     * <br/><br/>'dragText': displayed when file is dragged over the component, can be omitted,
+     * <br/><br/>'loadingText': will be used by state = 'LOADING',
+     * <br/><br/>'uploadFailedText': will be used by state = 'UPLOAD_FAILED',
+     * <br/><br/>'uploadSuccessText': will be used by state = 'UPLOAD_SUCCESS',
+     * <br/><br/>'acceptedFileTypesText': label for accepted file types,
+     * <br/><br/>'uploadDisabledText': label for disabled state
+     */
+    texts = {
+        firstLineText: null,
+        secondLineText: null,
+        orText: null,
+        dragText: null,
+        loadingText: null,
+        uploadFailedText: null,
+        uploadSuccessText: null,
+        acceptedFileTypesText: null,
+        uploadDisabledText: null
+    };
     filesChanged;
     get hostElement() { return getElement(this); }
+    isFileOver = false;
     filesToUpload;
     get inputElement() {
         return this.hostElement.querySelector('#upload-browser');
@@ -12934,10 +13146,19 @@ const InnoErrorStyle0 = innoErrorCss;
 const InnoError = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.active = false;
-        this.type = undefined;
-        this.variant = 'light';
     }
+    /**
+     * Show the error or not.
+     */
+    active = false;
+    /**
+     * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+     */
+    type;
+    /**
+     * Theme variant of the input.
+     */
+    variant = 'light';
     render() {
         return (h(Host, { key: '813db110a8ff0b88b66de47ec6e8c9562cdb73b6', active: this.active, class: { 'dark': this.variant === 'dark', 'light': this.variant === 'light' } }, h("slot", { key: '29e129d8a0dcabea73e687db8b6fba9b268bc4ba' })));
     }
@@ -12950,10 +13171,16 @@ const InnoFooterStyle0 = innoFooterCss;
 const InnoFooter = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.variant = 'light';
-        this.copyright = '';
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Theme variant property.
+     */
+    variant = 'light';
+    /**
+     * The copyright label.
+     */
+    copyright = '';
     componentDidLoad() {
         this.cascadeFooterStyle();
     }
@@ -13003,9 +13230,14 @@ const IGNORED_ELEMENTS = ['A', 'P', 'inno-icon', 'SPAN'];
 const InnoFooterItem = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.variant = 'light';
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Theme variant property.
+     * Inherited from the parent.
+     * Can be overridden if explicitly defined.
+     */
+    variant = 'light';
     watchVariant(newVariant) {
         this.variant = newVariant;
         this.propagateStyle();
@@ -13043,12 +13275,28 @@ const InnoIconStyle0 = innoIconCss;
 const InnoIcon = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.size = 16;
-        this.variant = 'light';
-        this.content = undefined;
     }
+    /**
+     * The icon name.
+     * Use either this or the iconFont property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Font icon code for the InnomoticsUiIcons font.
+     * Use either this or the icon property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /*
+     * The icon size.
+     */
+    size = 16;
+    /**
+     * Color style of the icon.
+     */
+    variant = 'light';
+    content;
     async iconChanged() {
         this.content = await this.resolveIcon(false);
     }
@@ -13098,22 +13346,6 @@ const InnoInput = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.valueChanged = createEvent(this, "valueChanged", 7);
-        this.isActive = undefined;
-        this.shouldFloat = undefined;
-        this.textareaMode = false;
-        this.isFocused = undefined;
-        this.disabled = false;
-        this.label = undefined;
-        this.variant = 'light';
-        this.error = undefined;
-        this.errortype = undefined;
-        this.valuePropReDefine = true;
-        this.selectOnFocus = false;
-        this.caretPosEndOnFocus = false;
-        this.resizeable = false;
-        this.resizeMode = 'both';
-        this.disableFloatingLabelAutoResize = false;
-        this.isValid = true;
     }
     get hostElement() { return getElement(this); }
     inputElementRef;
@@ -13124,6 +13356,69 @@ const InnoInput = class {
      * Fired when the new value is valid.
      */
     valueChanged;
+    isActive;
+    shouldFloat;
+    textareaMode = false;
+    /**
+     * Whether the input is focused or not.
+     */
+    isFocused;
+    /**
+     * Whether the inno-input component is disabled or not. Probably not needed to be set since the component
+     * automatically detects if the inserted input element is disabled or not.
+     * The inno-input component will also be in a disabled state when the input element is readonly.
+     */
+    disabled = false;
+    /**
+     * Floating label for the input.
+     */
+    label;
+    /**
+     * Color variant of the input.
+     */
+    variant = 'light';
+    /**
+     * Error message to show. If you don't want to use this property you can manually add 'inno-error' components inside the 'inno-input' component.
+     * You can either use this property or use the manually added errors. Can't use both at the same time.
+     */
+    error;
+    /**
+     * The input's validation error type, see: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
+     * <br/><br/>Only has an effect if 'error' has a value.
+     */
+    errortype;
+    /** @internal */ //for now this stays as non public, if it causes some issues for someone, they can disable it
+    valuePropReDefine = true;
+    /**
+     * When you click on the inno-input a focus() command is called on the input element.
+     * This might cause that the caret position will be at the beginnging of the input's value.
+     * Set this to true if you want to select all of the text by default.
+     */
+    selectOnFocus = false;
+    /**
+     * When you click on the inno-input a focus() command is called on the input element.
+     * This might cause that the caret position will be at the beginnging of the input's value.
+     * Set this to true if you want the caret position to be at the end. Only has an effect if the input type is 'text'.
+     * Has no effect if 'selectOnFocus' is also true.
+     */
+    caretPosEndOnFocus = false;
+    /**
+     * Whether the textarea is resizeable.
+     * Only has effect if textarea is provided as wrapped element.
+     */
+    resizeable = false;
+    /**
+     * Set the resize direction.
+     * Only has effect if textarea is provided as wrapped element.
+     */
+    resizeMode = 'both';
+    /**
+     * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoInput component.
+     * By default the InnoInput component automatically resizes the floating label so it will fit inside.
+     * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
+     */
+    disableFloatingLabelAutoResize = false;
+    isValid = true;
     floatingLabel;
     resizeTimeout;
     get errorElements() {
@@ -13183,21 +13478,21 @@ const InnoInput = class {
     //we redefine the input value setter, so an event will be fired besides the original setter function
     //if we disable this then we have to manually send input events to the input
     reDefineInputValueProperty() {
-        if (!this.inputElementRef || !this.valuePropReDefine) {
-            return;
-        }
-        let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
-        let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
-        let thisref = this;
-        Object.defineProperty(this.inputElementRef, 'value', {
-            get: function () {
-                return descriptor.get.apply(this, arguments);
-            },
-            set: function () {
-                descriptor.set.apply(this, arguments);
-                setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
-            },
-        });
+        // if (!this.inputElementRef || !this.valuePropReDefine) {
+        //   return;
+        // }
+        // let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
+        // let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
+        // let thisref = this;
+        // Object.defineProperty(this.inputElementRef, 'value', {
+        //   get: function () {
+        //     return descriptor.get.apply(this, arguments);
+        //   },
+        //   set: function () {
+        //     descriptor.set.apply(this, arguments);
+        //     setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
+        //   },
+        // });
     }
     startMutationObserver() {
         if (!!this.inputElementRef) {
@@ -13253,11 +13548,13 @@ const InnoInput = class {
         this.shouldFloat = !this.isValueEmpty();
     }
     onFocus() {
+        console.log("Focusin" + this.hostElement.id);
         this.shouldFloat = true;
         this.isActive = true;
         this.isFocused = true;
     }
     onFocusout() {
+        console.log("Focusout" + this.hostElement.id);
         if (this.isValueEmpty()) {
             this.shouldFloat = false;
         }
@@ -13338,7 +13635,7 @@ const InnoInput = class {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (h(Host, { key: '02e1e8183e22bdc6a74da9a757d30dacd97e8d9a', class: {
+        return (h(Host, { key: '2b88e1c7e062e54f7bcba0476fa8c6036d661ab2', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -13348,7 +13645,7 @@ const InnoInput = class {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, h("span", { key: 'ee5073f0c310c182c798f3ed00d19b4f03a43881', class: {
+            }, onClick: () => this.activateInput() }, h("span", { key: 'b4936325615fce4f2f38c07e1790522626abc005', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -13357,7 +13654,7 @@ const InnoInput = class {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), h("slot", { key: 'f02829a55a464af79773e72aa452de2f3d52ff6a' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml$1(this.label) }), h("slot", { key: 'a47c4224357dcbe2fc68054e7a223df33f2316f2' }), this.seizerElement(), this.errorElement()));
     }
     static get formAssociated() { return true; }
 };
@@ -13369,10 +13666,19 @@ const InnoLoaderStyle0 = innoLoaderCss;
 const InnoLoader = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.size = 64;
-        this.variant = 'light';
-        this.strokeWidth = 'thick';
     }
+    /**
+     * Size of the loader. Valid values are: 16, 24, 32, 64.
+     */
+    size = 64;
+    /**
+     * Theme variant property.
+     */
+    variant = 'light';
+    /**
+     * Loader bar width.
+     */
+    strokeWidth = 'thick';
     getStlyes() {
         return {
             light: this.variant === 'light',
@@ -14739,18 +15045,43 @@ const InnoModal = class {
         registerInstance(this, hostRef);
         this.dialogClose = createEvent(this, "dialogClose", 7);
         this.dialogDismiss = createEvent(this, "dialogDismiss", 7);
-        this.modalVisible = false;
-        this.variant = 'light';
-        this.size = '720';
-        this.animation = true;
-        this.backdrop = true;
-        this.closeOnBackdropClick = true;
-        this.centered = false;
-        this.fixed = false;
-        this.closeOnEscape = true;
     }
     ariaAttributes = {};
     get hostElement() { return getElement(this); }
+    modalVisible = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * Modal size
+     */
+    size = '720';
+    /**
+     * Should the modal be animated
+     */
+    animation = true;
+    /**
+     * Show a backdrop behind the modal dialog
+     */
+    backdrop = true;
+    /**
+     * Dismiss modal on backdrop click
+     */
+    closeOnBackdropClick = true;
+    /**
+     * Centered modal
+     */
+    centered = false;
+    /**
+     * By default the modal always opens at the top and the InnoModal component automatically scrolls to it.
+     * Set this to true if you want the modal to be always in a fixed position no matter where you scroll.
+     */
+    fixed = false;
+    /**
+     * If set to true the modal can be closed by pressing the Escape key
+     */
+    closeOnEscape = true;
     /**
      * Dialog close
      */
@@ -14952,12 +15283,21 @@ const InnoModalHeader = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.closeClick = createEvent(this, "closeClick", 7);
-        this.variant = 'light';
-        this.showClose = true;
-        this.icon = undefined;
     }
     parentDialog;
     get hostElement() { return getElement(this); }
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * Hide the close button.
+     */
+    showClose = true;
+    /**
+     * Icon of the header, optional.
+     */
+    icon;
     /**
      * Emits when close icon is clicked and closes the modal
      * Can be prevented, in which case only the event is triggered, and the modal remains open
@@ -15012,12 +15352,18 @@ const InnoPaginator = class {
         registerInstance(this, hostRef);
         this.pageSelected = createEvent(this, "pageSelected", 7);
         this.itemCountChanged = createEvent(this, "itemCountChanged", 7);
-        this.variant = 'light';
-        this.pageCount = undefined;
-        this.selectedPage = 1;
     }
     maxCountPages = 8;
     get hostElement() { return getElement(this); }
+    variant = 'light';
+    /**
+     * Total number of pages
+     */
+    pageCount;
+    /**
+     * One based index of currently selected page
+     */
+    selectedPage = 1;
     /**
      * Page selection event
      */
@@ -15130,19 +15476,38 @@ const InnoPane = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.expandedChanged = createEvent(this, "expandedChanged", 7);
-        this.position = 'right';
-        this.expanded = false;
-        this.hideCloseButton = false;
-        this.titleText = undefined;
-        this.closeOnBackdropClick = true;
-        this.paneSize = '100%';
-        this.showContent = false;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Position of the pane.
+     */
+    position = 'right';
+    /**
+     * Programatically control whether the pane is opened or closed.
+     */
+    expanded = false;
+    /**
+     * The pane comes with a close button by default. Hide it with this property.
+     */
+    hideCloseButton = false;
+    /**
+     * Title of the pane.
+     */
+    titleText;
+    /**
+     * Whether the pane is closeable by clicking outside of it.
+     */
+    closeOnBackdropClick = true;
+    /**
+     * Size of the pane. It is a width value in case of 'left' and 'right' position, and a height value in case of 'top' and 'bottom' position.
+     * All css units are supported which are supported by width and height css properties.
+     */
+    paneSize = '100%';
     /**
      * This event is fired when the pane is opened or closed.
      */
     expandedChanged;
+    showContent = false;
     closeViaBackdrop(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -15221,18 +15586,52 @@ const InnoPopover = class {
         registerInstance(this, hostRef);
         this.innoPopoverShown = createEvent(this, "innoPopoverShown", 7);
         this.innoPopoverHidden = createEvent(this, "innoPopoverHidden", 7);
-        this.trigger = 'click';
-        this.variant = 'dark';
-        this.for = undefined;
-        this.popoverTitle = undefined;
-        this.popoverText = undefined;
-        this.placement = 'top';
-        this.offset = 8;
-        this.visible = false;
-        this.hasBackdrop = false;
-        this.closable = false;
-        this.animationFrame = false;
     }
+    /**
+     * How to show the popover. If set to 'manual' then you need to programatically modify the 'visibile' property.
+     */
+    trigger = 'click';
+    /**
+     * Color variant of the popover.
+     */
+    variant = 'dark';
+    /**
+     * Css selector of the element the popover is for. This is just the initial value,
+     * don't update it manually. Use the 'updateForElement(...)' method instead.
+     */
+    for;
+    /**
+     * Contents of the title. Can be either html or a simple string. Can be omitted.
+     */
+    popoverTitle;
+    /**
+     * Contents of the text. Can be either html or a simple string. Can be omitted. You can use this property if you want a simple tooltip,
+     * otherwise you can provide your own html directly.
+     */
+    popoverText;
+    /**
+     * Position of the popover. If there is not enough space it will be automatically placed to where it has enough place.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    placement = 'top';
+    /**
+     * Offset of the popover position in pixels. Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    offset = 8;
+    /**
+     * Programatically change whether the popover is visible or not.
+     */
+    visible = false;
+    /**
+     * Popover should have a backdrop. Has no effect if trigger type is 'hover'.
+     */
+    hasBackdrop = false;
+    /**
+     * Popover will have a close button. Has no effect if trigger type is 'hover'.
+     */
+    closable = false;
+    /** @internal */
+    animationFrame = false;
     forInternal;
     /**
      * Fired when popover is shown.
@@ -15520,13 +15919,34 @@ const InnoProgressBarStyle0 = innoProgressBarCss;
 const InnoProgressBar = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.variant = 'light';
-        this.progressText = '';
-        this.progressPercentage = 0;
-        this.showPercentage = true;
-        this.percentagePrecision = 0;
-        this.trailingZeroes = false;
     }
+    /**
+     * Color variant of the progress bar.
+     */
+    variant = 'light';
+    /**
+     * Text to display for the progress bar.
+     */
+    progressText = '';
+    /**
+     * Progress in percentage. Must be a number between 0 and 100.
+     */
+    progressPercentage = 0;
+    /**
+     * Show the percentage number on the progress bar. The value is rounded according to the 'percentagePrecision' and 'trailingZeroes' properties.
+     */
+    showPercentage = true;
+    /**
+     * If the percentage number is shown, how many decimal places should be visible
+     */
+    percentagePrecision = 0;
+    /**
+     * If 'percentagePrecision' is larger than 0, should we display the trailing zeroes.
+     * For example if the progress is 1.5% and the 'percentagePrecision' is 2 then the displayed text will be '1.50%'
+     * if trailing zeroes are enabled and '1.5%' if trailing zeroes are disabled.
+     * Uses the toFixed(..) function in the background.
+     */
+    trailingZeroes = false;
     frontLayerRef;
     progressChangedhandler(newValue) {
         this.setClipPath(newValue);
@@ -15595,20 +16015,54 @@ const InnoRadio = class {
             this.elementInternals = hostRef.$hostElement$.attachInternals();
             hostRef.$hostElement$["s-ei"] = this.elementInternals;
         }
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.value = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
     }
     get hostElement() { return getElement(this); }
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry group name.
+     */
+    name;
+    /**
+     * Radio button value.
+     */
+    value;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     *
+     */
+    checked;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Emits the associated value when the element is clicked.
      */
@@ -15751,24 +16205,67 @@ const InnoSelect = class {
         this.itemIsUnfavorited = createEvent(this, "itemIsUnfavorited", 7);
         this.favoriteItemsChanged = createEvent(this, "favoriteItemsChanged", 7);
         this.dropdownClosed = createEvent(this, "dropdownClosed", 7);
-        this.navigationItem = undefined;
-        this.keyValueSelector = (val) => { return val; };
-        this.value = undefined;
-        this.disabled = false;
-        this.label = undefined;
-        this.variant = 'light';
-        this.isOpen = false;
-        this.disabledBackgroundColor = 'light';
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.hasIcons = false;
-        this.disableFloatingLabelAutoResize = false;
-        this.dropdownWidth = undefined;
-        this.items = [];
     }
     get hostElement() { return getElement(this); }
     itemsContainerRef;
     wrapperRef;
+    navigationItem;
+    /**
+     * If you work with object arrays you can set a simple function which returns the unique key value
+     * so the objects can be differentiated. By default we assume you work with simple arrays
+     * so we simply return the value as it is, in that case you don't have to provide this function.
+     */
+    keyValueSelector = (val) => { return val; };
+    /**
+     * Value of the select.
+     */
+    value;
+    /**
+     * Whether the select is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Label for the select when no item selected.
+     */
+    label;
+    /**
+     * Color variant of the select.
+     */
+    variant = 'light';
+    isOpen = false;
+    /**
+     * Depending on the container html element's background color you can choose a lighter or darker disabled style.
+     * Only applicable when variant is 'primary'.
+     */
+    disabledBackgroundColor = 'light';
+    /**
+     * Icon for select when no item selected. Use either this or the iconFont property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Icon font for select when no item selected. Use either this or the icon property.
+     * When icon is present the label doesn't behave as floating.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Whether the select should use icons. You only have to set this to true if you don't want to use the icon or iconFont properties
+     * since your select has no state where nothing is selected.
+     */
+    hasIcons = false;
+    /**
+     * The floating label is an absolutely positioned element meaning if it is too long it will grow out of the boundaries of the InnoSelect component.
+     * By default the InnoSelect component automatically resizes the floating label so it will fit inside.
+     * You can turn this behavior off e.g. if you are sure the label will always fit or it causes some issues.
+     */
+    disableFloatingLabelAutoResize = false;
+    /**
+     * By default the InnoSelect component automatically resizes the dropdown so it will be as wide as the component itself.
+     * You can override it to be a fixed width. Accepts any value that the 'width' css property accepts, e.g. "300px" or "min-content"
+     */
+    dropdownWidth;
     /**
      * This event is fired when the value changes.
      */
@@ -15793,6 +16290,7 @@ const InnoSelect = class {
      * if you want to reorder your InnoSelectItems after the favorited elements are changed.
      */
     dropdownClosed;
+    items = [];
     disposeAutoUpdate;
     itemsObserver;
     resizeObserver;
@@ -16076,20 +16574,65 @@ const InnoSelectItem = class {
         this.itemFavorited = createEvent(this, "itemFavorited", 7);
         this.itemUnfavorited = createEvent(this, "itemUnfavorited", 7);
         this.itemLabelChanged = createEvent(this, "itemLabelChanged", 7);
-        this.value = undefined;
-        this.label = undefined;
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.selected = false;
-        this.canFavorite = false;
-        this.isFavorite = false;
-        this.addToFavoritesLabel = "Add to favorites";
-        this.removeFromFavoritesLabel = "Remove from favorites";
-        this.favoriteIconTooltipPos = "right";
-        this.favoriteIconTooltipVariant = 'light';
-        this.favoriteIconTooltipOffset = 8;
-        this.hasSeparator = false;
     }
+    /**
+     * Value of the item.
+     */
+    value;
+    /**
+     * Label of the item, can be different from the value.
+     */
+    label;
+    /**
+     * Optional icon for the label. Use either this or the iconFont property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Optional icon font for the label. Use either this or the icon property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Whether the item is selected or not.
+     */
+    selected = false;
+    /**
+     * Adds a favorite icon to the selectable item. If you press this icon an event will be fired with the selected item.
+     * You have to take care of managing and ordering the array of favorite items in your business logic.
+     * Clicking on the favorite icon will not close the dropdown.
+     */
+    canFavorite = false;
+    /**
+     * The selectable item is favorited or not.
+     */
+    isFavorite = false;
+    /**
+     * Tooltip text for favorite add. The tooltip is only visible if the InnoSelectItem has a unique id.
+     */
+    addToFavoritesLabel = "Add to favorites";
+    /**
+     * Tooltip text for favorite remove. The tooltip is only visible if the InnoSelectItem has a unique id.
+     */
+    removeFromFavoritesLabel = "Remove from favorites";
+    /**
+     * Position of the favorite icon tooltip.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    favoriteIconTooltipPos = "right";
+    /**
+     * Color variant of the favorite icon tooltip.
+     */
+    favoriteIconTooltipVariant = 'light';
+    /**
+     * Offset of the favorite icon tooltip position in pixels.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    favoriteIconTooltipOffset = 8;
+    /**
+     * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
+     */
+    hasSeparator = false;
     /**
      * This event is fired whenever an item is selected.
      */
@@ -16172,13 +16715,19 @@ const InnoSplitStyle0 = innoSplitCss;
 const InnoSplit = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.orientation = 'horizontal';
-        this.splitAreasDefaultSizes = [];
-        this.splitAreasCurrentSizes = [];
-        this.isMouseDown = false;
-        this.slotNames = undefined;
     }
     get hostElement() { return getElement(this); }
+    orientation = 'horizontal';
+    /**
+     * Default size of each contained inno-split-item in percentage (width if 'horizontal', height if 'vertical'). If omitted they will have equal sizes.
+     */
+    splitAreasDefaultSizes = [];
+    splitAreasCurrentSizes = [];
+    isMouseDown = false;
+    /**
+     * Required property. Unique slot names for the inno-split-items to insert into. Length must be equal to the number of inserted inno-split-items.
+     */
+    slotNames;
     splitAreasIndices = [];
     originalPos = undefined;
     gutterIndex = undefined;
@@ -16310,8 +16859,11 @@ const InnoSplitGutterStyle0 = innoSplitGutterCss;
 const InnoSplitGutter = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.orientation = 'horizontal';
     }
+    /**
+     * @internal
+     */
+    orientation = 'horizontal';
     render() {
         return (h(Host, { key: '0ad4da3139c5d119bd57ddcc31077342a89625d1', class: {
                 'split-gutter': true,
@@ -16367,17 +16919,40 @@ const InnoStatusMessage = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.closeMessage = createEvent(this, "closeMessage", 7);
-        this.progress = 0;
-        this.touched = false;
-        this.theme = 'light';
-        this.messageType = 'info';
-        this.autoClose = false;
-        this.autoCloseDelay = 3000;
-        this.showProgress = false;
-        this.icon = undefined;
-        this.iconColor = undefined;
     }
     get hostElement() { return getElement(this); }
+    progress = 0;
+    touched = false;
+    /**
+     * Theme variant of the component.
+     */
+    theme = 'light';
+    /**
+     * Type of the status message.
+     */
+    messageType = 'info';
+    /**
+     * Autoclose message after the given delay.
+     * The message will be closed independently from showProgress property.
+     */
+    autoClose = false;
+    /**
+     * Autoclose delay.
+     */
+    autoCloseDelay = 3000;
+    /**
+     * Animate progressbar and close after animation ends.
+     * The message will be closed independently from autoClose property.
+     */
+    showProgress = false;
+    /**
+     * Icon of toast
+     */
+    icon;
+    /**
+     * Icon color of toast
+     */
+    iconColor;
     /**
      * Status message is closed.
      */
@@ -16485,22 +17060,42 @@ const InnoTab = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.selectedChange = createEvent(this, "selectedChange", 7);
-        this.theme = 'light';
-        this.selected = undefined;
-        this.layout = 'auto';
-        this.showArrow = true;
-        this.alwaysEmphasized = false;
-        this.minimalDecorator = false;
-        this.totalItems = 0;
-        this.currentScrollAmount = 0;
-        this.scrollAmount = 100;
-        this.scrollActionAmount = 0;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Theme variant of the component.
+     */
+    theme = 'light';
+    /**
+     * Set default selected tab by index
+     * or undefined if not tab is selected.
+     */
+    selected = undefined;
+    /**
+     * Set layout width style
+     */
+    layout = 'auto';
+    /**
+     * Show the navigation arrow for desktop.
+     */
+    showArrow = true;
+    /**
+     * Make the non-selected items always vivid without any opacity effect.
+     */
+    alwaysEmphasized = false;
+    /**
+     * Minimalize the bottom decorator for the tab items.
+     * Show only if the given item is interracted or selected.
+     */
+    minimalDecorator = false;
     /**
      * `selected` property changed
      */
     selectedChange;
+    totalItems = 0;
+    currentScrollAmount = 0;
+    scrollAmount = 100;
+    scrollActionAmount = 0;
     windowStartSize = window.innerWidth;
     arrowLeftElement;
     arrowRightElement;
@@ -16735,13 +17330,36 @@ const InnoTabItem = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.tabClick = createEvent(this, "tabClick", 7);
-        this.theme = 'light';
-        this.layout = 'auto';
-        this.selected = false;
-        this.disabled = false;
-        this.alwaysEmphasized = false;
-        this.minimalDecorator = false;
     }
+    /**
+     * Theme variant property.
+     * Inherited from the parent.
+     * Can be overridden if explicitly defined.
+     */
+    theme = 'light';
+    /**
+     * Set layout width style.
+     * Auto: Item has the same width as the enclosed item in slot.
+     * Stretched: Item has the maximum available width.
+     */
+    layout = 'auto';
+    /**
+     * Set selected tab.
+     */
+    selected = false;
+    /**
+     * Set disabled tab.
+     */
+    disabled = false;
+    /**
+     * Make the non-selected items always vivid without any opacity effect.
+     */
+    alwaysEmphasized = false;
+    /**
+     * Minimalize the bottom decorator for the tab items.
+     * Show only if the given item is interracted or selected.
+     */
+    minimalDecorator = false;
     /**
      * On tab click.
      */
@@ -16789,9 +17407,16 @@ const InnoTableBaseStyle0 = innoTableBaseCss;
 const InnoTableBase = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.variant = 'light';
-        this.maskColor = '#ffffff';
     }
+    /**
+     * Color variant of the table;
+     */
+    variant = 'light';
+    /**
+     * The fade-out effect while scrolling is achieved by using mask-image and linear-gradient.
+     * For it to work properly a color must be set to be the same as the table's background color.
+     */
+    maskColor = '#ffffff';
     get hostElement() { return getElement(this); }
     maskElement;
     scrollBar;
@@ -16856,12 +17481,24 @@ const InnoToggle = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.checkedChange = createEvent(this, "checkedChange", 7);
-        this.checked = false;
-        this.disabled = false;
-        this.variant = 'dark';
-        this.tabIdx = 0;
     }
     get hostElement() { return getElement(this); }
+    /**
+     * Whether the slide-toggle element is checked or not. Can be changed programatically, will emit a change event.
+     */
+    checked = false;
+    /**
+     * Whether the slide-toggle element is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Color variant of the toggle component.
+     */
+    variant = 'dark';
+    /**
+     * The tab index of the toggle
+     */
+    tabIdx = 0;
     /**
      * An event will be dispatched each time the slide-toggle changes its value.
      */

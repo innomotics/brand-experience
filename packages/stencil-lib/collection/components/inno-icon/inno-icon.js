@@ -1,12 +1,26 @@
 import { Host, h } from "@stencil/core";
 export class InnoIcon {
-    constructor() {
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.size = 16;
-        this.variant = 'light';
-        this.content = undefined;
-    }
+    /**
+     * The icon name.
+     * Use either this or the iconFont property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Font icon code for the InnomoticsUiIcons font.
+     * Use either this or the icon property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /*
+     * The icon size.
+     */
+    size = 16;
+    /**
+     * Color style of the icon.
+     */
+    variant = 'light';
+    content;
     async iconChanged() {
         this.content = await this.resolveIcon(false);
     }
@@ -70,6 +84,8 @@ export class InnoIcon {
                     "tags": [],
                     "text": "The icon name.\r\nUse either this or the iconFont property.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/icons/"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon",
                 "reflect": false
             },
@@ -87,6 +103,8 @@ export class InnoIcon {
                     "tags": [],
                     "text": "Font icon code for the InnomoticsUiIcons font.\r\nUse either this or the icon property.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon-font",
                 "reflect": false
             },
@@ -104,6 +122,8 @@ export class InnoIcon {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "size",
                 "reflect": false,
                 "defaultValue": "16"
@@ -122,6 +142,8 @@ export class InnoIcon {
                     "tags": [],
                     "text": "Color style of the icon."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"

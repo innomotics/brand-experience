@@ -1,18 +1,51 @@
 import { Host, h } from "@stencil/core";
 export class InnoButton {
-    constructor() {
-        this.variant = 'primary';
-        this.colorVariant = 'light';
-        this.type = 'button';
-        this.tabIdx = 0;
-        this.disabled = false;
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.iconPosition = 'right';
-        this.navDirection = 'right';
-        this.iconOnly = false;
-        this.listType = false;
-    }
+    /**
+     * Variant of the button.
+     */
+    variant = 'primary';
+    /**
+     * Color variant of the button.
+     */
+    colorVariant = 'light';
+    /**
+     * Type of the button.
+     */
+    type = 'button';
+    /**
+     * Tab index of the button.
+     */
+    tabIdx = 0;
+    /**
+     * Whether the button is disabled or not.
+     */
+    disabled = false;
+    /**
+     * Icon to use inside the button. Use either this or the 'iconFont' property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Icon font to use inside the button. Use either this or the 'icon' property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Where to put the icon relative to the text.
+     */
+    iconPosition = 'right';
+    /**
+     * Direction of the navigation button. Only has effect if the variant is 'navigation'.
+     */
+    navDirection = 'right';
+    /**
+     * Only show an icon.
+     */
+    iconOnly = false;
+    /**
+     * Special style for button lists.
+     */
+    listType = false;
     hostElement;
     submitButtonElement;
     componentDidLoad() {
@@ -83,6 +116,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Variant of the button."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'primary'"
@@ -101,6 +136,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Color variant of the button."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "color-variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -119,6 +156,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Type of the button."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "type",
                 "reflect": false,
                 "defaultValue": "'button'"
@@ -137,6 +176,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Tab index of the button."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "tab-idx",
                 "reflect": false,
                 "defaultValue": "0"
@@ -155,6 +196,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Whether the button is disabled or not."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": true,
                 "defaultValue": "false"
@@ -173,6 +216,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Icon to use inside the button. Use either this or the 'iconFont' property.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/icons/"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon",
                 "reflect": false
             },
@@ -190,6 +235,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Icon font to use inside the button. Use either this or the 'icon' property.\r\nFor possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont"
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon-font",
                 "reflect": false
             },
@@ -207,6 +254,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Where to put the icon relative to the text."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon-position",
                 "reflect": false,
                 "defaultValue": "'right'"
@@ -225,6 +274,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Direction of the navigation button. Only has effect if the variant is 'navigation'."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "nav-direction",
                 "reflect": false,
                 "defaultValue": "'right'"
@@ -243,6 +294,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Only show an icon."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "icon-only",
                 "reflect": false,
                 "defaultValue": "false"
@@ -261,6 +314,8 @@ export class InnoButton {
                     "tags": [],
                     "text": "Special style for button lists."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "list-type",
                 "reflect": true,
                 "defaultValue": "false"

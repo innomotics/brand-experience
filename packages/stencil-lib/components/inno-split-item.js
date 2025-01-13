@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
 
 const innoSplitItemCss = ".sc-inno-split-item-h{display:block;overflow:hidden;width:100%;height:100%}";
 const InnoSplitItemStyle0 = innoSplitItemCss;

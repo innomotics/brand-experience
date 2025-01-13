@@ -5,21 +5,53 @@ import { isNotPresent } from "../../utils/utils";
  * Represents the default radio button for the Innomics applications.
  */
 export class InnoRadio {
-    constructor() {
-        this.isFocused = false;
-        this.variant = 'light';
-        this.tabIdx = 0;
-        this.name = undefined;
-        this.value = undefined;
-        this.label = '';
-        this.checked = undefined;
-        this.disabled = false;
-        this.readonly = false;
-        this.required = false;
-        this.error = false;
-    }
     hostElement;
     elementInternals;
+    isFocused = false;
+    /**
+     * Theme variant of the component.
+     */
+    variant = 'light';
+    /**
+     * The tab index.
+     */
+    tabIdx = 0;
+    /**
+     * Form entry group name.
+     */
+    name;
+    /**
+     * Radio button value.
+     */
+    value;
+    /**
+     * Label to show.
+     */
+    label = '';
+    /**
+     *
+     */
+    checked;
+    /**
+     * Whether component is disabled.
+     * In this state no other state effects are applied to the element like error.
+     */
+    disabled = false;
+    /**
+     * Whether the component is readonly.
+     * In this state no other state effects are applied to the element like error.
+     */
+    readonly = false;
+    /**
+     * Mark the component as required and show the required marker.
+     * Validation is performed with this property.
+     */
+    required = false;
+    /**
+     * Whether the element is in error state.
+     * Error state can be defined if manual error handling is required.
+     */
+    error = false;
     /**
      * Emits the associated value when the element is clicked.
      */
@@ -176,6 +208,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Theme variant of the component."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -194,6 +228,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "The tab index."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "tab-idx",
                 "reflect": false,
                 "defaultValue": "0"
@@ -212,6 +248,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Form entry group name."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "name",
                 "reflect": false
             },
@@ -229,6 +267,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Radio button value."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "value",
                 "reflect": false
             },
@@ -246,6 +286,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Label to show."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "label",
                 "reflect": false,
                 "defaultValue": "''"
@@ -264,6 +306,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": ""
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "checked",
                 "reflect": true
             },
@@ -281,6 +325,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Whether component is disabled.\r\nIn this state no other state effects are applied to the element like error."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "disabled",
                 "reflect": true,
                 "defaultValue": "false"
@@ -299,6 +345,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Whether the component is readonly.\r\nIn this state no other state effects are applied to the element like error."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "readonly",
                 "reflect": true,
                 "defaultValue": "false"
@@ -317,6 +365,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Mark the component as required and show the required marker.\r\nValidation is performed with this property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "required",
                 "reflect": true,
                 "defaultValue": "false"
@@ -335,6 +385,8 @@ export class InnoRadio {
                     "tags": [],
                     "text": "Whether the element is in error state.\r\nError state can be defined if manual error handling is required."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "error",
                 "reflect": false,
                 "defaultValue": "false"

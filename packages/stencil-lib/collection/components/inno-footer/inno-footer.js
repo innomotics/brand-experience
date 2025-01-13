@@ -6,11 +6,15 @@ import { Host, h } from "@stencil/core";
  * @slot icons - containing the icon elements
  */
 export class InnoFooter {
-    constructor() {
-        this.variant = 'light';
-        this.copyright = '';
-    }
     hostElement;
+    /**
+     * Theme variant property.
+     */
+    variant = 'light';
+    /**
+     * The copyright label.
+     */
+    copyright = '';
     componentDidLoad() {
         this.cascadeFooterStyle();
     }
@@ -75,6 +79,8 @@ export class InnoFooter {
                     "tags": [],
                     "text": "Theme variant property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -93,6 +99,8 @@ export class InnoFooter {
                     "tags": [],
                     "text": "The copyright label."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "copyright",
                 "reflect": false,
                 "defaultValue": "''"

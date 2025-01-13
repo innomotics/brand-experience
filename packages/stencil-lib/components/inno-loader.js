@@ -1,4 +1,4 @@
-import { I as InnoLoader$1, d as defineCustomElement$1 } from './p-3a6926e2.js';
+import { I as InnoLoader$1, d as defineCustomElement$1 } from './p-2dfe1675.js';
 
 const InnoLoader = InnoLoader$1;
 const defineCustomElement = defineCustomElement$1;

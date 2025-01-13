@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-f9444b6c.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-6a22c7f2.js';
 
 const innoFooterItemCss = ".sc-inno-footer-item-h{display:block;cursor:pointer}.sc-inno-footer-item-h.light :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon){font-weight:300;font-style:normal;font-size:14px;text-decoration:underline;margin-block-start:0;margin-block-end:0;color:#08191f}.sc-inno-footer-item-h.light :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon):hover{color:#08191f}.sc-inno-footer-item-h.dark :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon){font-weight:300;font-style:normal;font-size:14px;text-decoration:underline;margin-block-start:0;margin-block-end:0;color:#ffffff}.sc-inno-footer-item-h.dark :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon):hover{color:#ffffff}@media screen and (min-width: 768px){.sc-inno-footer-item-h{margin-bottom:0;display:flex;justify-content:center;align-items:center}.sc-inno-footer-item-h.light :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon){color:#08191f}.sc-inno-footer-item-h.light :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon):hover{color:#08191f}.sc-inno-footer-item-h.dark :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon){color:#ffffff}.sc-inno-footer-item-h.dark :where(.sc-inno-footer-item-s>a,.sc-inno-footer-item-s>p,.sc-inno-footer-item-s>span,.sc-inno-footer-item-s>inno-icon):hover{color:#ffffff}}";
 const InnoFooterItemStyle0 = innoFooterItemCss;
@@ -8,9 +8,14 @@ const InnoFooterItem$1 = /*@__PURE__*/ proxyCustomElement(class InnoFooterItem e
     constructor() {
         super();
         this.__registerHost();
-        this.variant = 'light';
     }
     get hostElement() { return this; }
+    /**
+     * Theme variant property.
+     * Inherited from the parent.
+     * Can be overridden if explicitly defined.
+     */
+    variant = 'light';
     watchVariant(newVariant) {
         this.variant = newVariant;
         this.propagateStyle();

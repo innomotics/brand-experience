@@ -1,6 +1,6 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$3 } from './p-f8e7f9af.js';
-import { d as defineCustomElement$2 } from './p-62de66a9.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
+import { d as defineCustomElement$3 } from './p-fd23d1bb.js';
+import { d as defineCustomElement$2 } from './p-88e4e2ba.js';
 
 const innoSelectItemCss = ".sc-inno-select-item-h{background-color:#2a3b40;color:#ffffff}.sc-inno-select-item-h:hover{background-color:#b2c1c7;color:#08191f}.focused.sc-inno-select-item-h{background-color:#b2c1c7;color:#08191f}.selected.sc-inno-select-item-h{color:#e1f000}.sc-inno-select-item-h .content-wrapper.sc-inno-select-item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}";
 const InnoSelectItemStyle0 = innoSelectItemCss;
@@ -13,20 +13,65 @@ const InnoSelectItem$1 = /*@__PURE__*/ proxyCustomElement(class InnoSelectItem e
         this.itemFavorited = createEvent(this, "itemFavorited", 7);
         this.itemUnfavorited = createEvent(this, "itemUnfavorited", 7);
         this.itemLabelChanged = createEvent(this, "itemLabelChanged", 7);
-        this.value = undefined;
-        this.label = undefined;
-        this.icon = undefined;
-        this.iconFont = undefined;
-        this.selected = false;
-        this.canFavorite = false;
-        this.isFavorite = false;
-        this.addToFavoritesLabel = "Add to favorites";
-        this.removeFromFavoritesLabel = "Remove from favorites";
-        this.favoriteIconTooltipPos = "right";
-        this.favoriteIconTooltipVariant = 'light';
-        this.favoriteIconTooltipOffset = 8;
-        this.hasSeparator = false;
     }
+    /**
+     * Value of the item.
+     */
+    value;
+    /**
+     * Label of the item, can be different from the value.
+     */
+    label;
+    /**
+     * Optional icon for the label. Use either this or the iconFont property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/icons/
+     */
+    icon;
+    /**
+     * Optional icon font for the label. Use either this or the icon property.
+     * For possible values, see: https://innomotics.github.io/brand-experience/docs/fonts/InnomoticsUiFont
+     */
+    iconFont;
+    /**
+     * Whether the item is selected or not.
+     */
+    selected = false;
+    /**
+     * Adds a favorite icon to the selectable item. If you press this icon an event will be fired with the selected item.
+     * You have to take care of managing and ordering the array of favorite items in your business logic.
+     * Clicking on the favorite icon will not close the dropdown.
+     */
+    canFavorite = false;
+    /**
+     * The selectable item is favorited or not.
+     */
+    isFavorite = false;
+    /**
+     * Tooltip text for favorite add. The tooltip is only visible if the InnoSelectItem has a unique id.
+     */
+    addToFavoritesLabel = "Add to favorites";
+    /**
+     * Tooltip text for favorite remove. The tooltip is only visible if the InnoSelectItem has a unique id.
+     */
+    removeFromFavoritesLabel = "Remove from favorites";
+    /**
+     * Position of the favorite icon tooltip.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    favoriteIconTooltipPos = "right";
+    /**
+     * Color variant of the favorite icon tooltip.
+     */
+    favoriteIconTooltipVariant = 'light';
+    /**
+     * Offset of the favorite icon tooltip position in pixels.
+     * Please note that the offset will remain the same in case the desired placement does not fit.
+     */
+    favoriteIconTooltipOffset = 8;
+    /**
+     * A simple separator for the item. You can use it for example to visually separate the favorited and non-favorited items.
+     */
+    hasSeparator = false;
     /**
      * This event is fired whenever an item is selected.
      */

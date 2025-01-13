@@ -6,11 +6,18 @@ import { TypedEvent } from "../../utils/typed-event";
  * @internal
  */
 export class InnoStatusMessageContainer {
-    constructor() {
-        this.containerId = 'status-message-container';
-        this.containerClass = 'status-message-container';
-        this.position = 'top-right';
-    }
+    /**
+     * Customizable container id.
+     */
+    containerId = 'status-message-container';
+    /**
+     * Customizable container class.
+     */
+    containerClass = 'status-message-container';
+    /**
+     * Position of container.
+     */
+    position = 'top-right';
     PREFIX_POSITION_CLASS = 'status-message-container--';
     get hostContainer() {
         return new Promise(resolve => {
@@ -116,6 +123,8 @@ export class InnoStatusMessageContainer {
                     "tags": [],
                     "text": "Customizable container id."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "container-id",
                 "reflect": false,
                 "defaultValue": "'status-message-container'"
@@ -134,6 +143,8 @@ export class InnoStatusMessageContainer {
                     "tags": [],
                     "text": "Customizable container class."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "container-class",
                 "reflect": false,
                 "defaultValue": "'status-message-container'"
@@ -158,6 +169,8 @@ export class InnoStatusMessageContainer {
                     "tags": [],
                     "text": "Position of container."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "position",
                 "reflect": false,
                 "defaultValue": "'top-right'"

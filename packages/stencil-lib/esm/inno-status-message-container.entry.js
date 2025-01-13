@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-aa3fe2a7.js';
+import { r as registerInstance, h, H as Host } from './index-46345758.js';
 import { T as TypedEvent } from './typed-event-2f750150.js';
 
 const innoStatusMessageContainerCss = "#status-message-container.sc-inno-status-message-container{z-index:1000}#status-message-container.sc-inno-status-message-container>.sc-inno-status-message-container:not(:last-child){margin-block-end:1rem}.status-message-container.sc-inno-status-message-container{display:block;position:fixed}.status-message-container--top-right.sc-inno-status-message-container{right:1rem;top:2rem}.status-message-container--bottom-right.sc-inno-status-message-container{right:1rem;bottom:2rem}.status-message-container--bottom-left.sc-inno-status-message-container{left:1rem;bottom:2rem}.status-message-container--top-left.sc-inno-status-message-container{left:1rem;top:2rem}";
@@ -7,10 +7,19 @@ const InnoStatusMessageContainerStyle0 = innoStatusMessageContainerCss;
 const InnoStatusMessageContainer = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.containerId = 'status-message-container';
-        this.containerClass = 'status-message-container';
-        this.position = 'top-right';
     }
+    /**
+     * Customizable container id.
+     */
+    containerId = 'status-message-container';
+    /**
+     * Customizable container class.
+     */
+    containerClass = 'status-message-container';
+    /**
+     * Position of container.
+     */
+    position = 'top-right';
     PREFIX_POSITION_CLASS = 'status-message-container--';
     get hostContainer() {
         return new Promise(resolve => {

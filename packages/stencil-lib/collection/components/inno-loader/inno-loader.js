@@ -1,11 +1,18 @@
 import { Host, h } from "@stencil/core";
 import { adjustValueToRange } from "../../utils/utils";
 export class InnoLoader {
-    constructor() {
-        this.size = 64;
-        this.variant = 'light';
-        this.strokeWidth = 'thick';
-    }
+    /**
+     * Size of the loader. Valid values are: 16, 24, 32, 64.
+     */
+    size = 64;
+    /**
+     * Theme variant property.
+     */
+    variant = 'light';
+    /**
+     * Loader bar width.
+     */
+    strokeWidth = 'thick';
     getStlyes() {
         return {
             light: this.variant === 'light',
@@ -48,6 +55,8 @@ export class InnoLoader {
                     "tags": [],
                     "text": "Size of the loader. Valid values are: 16, 24, 32, 64."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "size",
                 "reflect": false,
                 "defaultValue": "64"
@@ -66,6 +75,8 @@ export class InnoLoader {
                     "tags": [],
                     "text": "Theme variant property."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "variant",
                 "reflect": false,
                 "defaultValue": "'light'"
@@ -84,6 +95,8 @@ export class InnoLoader {
                     "tags": [],
                     "text": "Loader bar width."
                 },
+                "getter": false,
+                "setter": false,
                 "attribute": "stroke-width",
                 "reflect": false,
                 "defaultValue": "'thick'"

@@ -1,6 +1,6 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-f9444b6c.js';
-import { d as defineCustomElement$3 } from './p-fd4e2b17.js';
-import { d as defineCustomElement$2 } from './p-f8e7f9af.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-6a22c7f2.js';
+import { d as defineCustomElement$3 } from './p-3a44dd64.js';
+import { d as defineCustomElement$2 } from './p-fd23d1bb.js';
 
 const innoBreadcrumbCss = ".sc-inno-breadcrumb-h{display:flex;background-color:transparent;overflow:hidden;font-size:12px}.sc-inno-breadcrumb-h inno-icon.sc-inno-breadcrumb{padding-top:2px}.light.sc-inno-breadcrumb-h{color:#08191f}.dark.sc-inno-breadcrumb-h{color:#ffffff}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb{list-style:none;display:flex;align-items:center;flex-direction:row;flex-wrap:wrap;gap:4px;padding:0px}.sc-inno-breadcrumb-h ol.sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type,.sc-inno-breadcrumb-h ol .sc-inno-breadcrumb-s>inno-breadcrumb-item:last-of-type{font-weight:bold}";
 const InnoBreadcrumbStyle0 = innoBreadcrumbCss;
@@ -10,9 +10,12 @@ const Breadcrumb = /*@__PURE__*/ proxyCustomElement(class Breadcrumb extends H {
         super();
         this.__registerHost();
         this.itemClick = createEvent(this, "itemClick", 7);
-        this.variant = 'light';
     }
     get hostElement() { return this; }
+    /**
+     * Color variant of the accordion.
+     */
+    variant = 'light';
     /**
      * Crumb item clicked event. The event contains the label and the zero-based index of the breadcrumb item inside the breadcrumb.
      */

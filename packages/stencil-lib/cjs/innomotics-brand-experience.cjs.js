@@ -2,12 +2,12 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-317c665c.js');
+const index = require('./index-9da97d7e.js');
 const appGlobals = require('./app-globals-09560dbd.js');
 require('./index-c2072cb6.js');
 
 /*
- Stencil Client Patch Browser v4.22.3 | MIT Licensed | https://stenciljs.com
+ Stencil Client Patch Browser v4.23.2 | MIT Licensed | https://stenciljs.com
  */
 var patchBrowser = () => {
   const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('innomotics-brand-experience.cjs.js', document.baseURI).href));
