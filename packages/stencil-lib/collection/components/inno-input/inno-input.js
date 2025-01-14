@@ -132,21 +132,21 @@ export class InnoInput {
     //we redefine the input value setter, so an event will be fired besides the original setter function
     //if we disable this then we have to manually send input events to the input
     reDefineInputValueProperty() {
-        // if (!this.inputElementRef || !this.valuePropReDefine) {
-        //   return;
-        // }
-        // let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
-        // let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
-        // let thisref = this;
-        // Object.defineProperty(this.inputElementRef, 'value', {
-        //   get: function () {
-        //     return descriptor.get.apply(this, arguments);
-        //   },
-        //   set: function () {
-        //     descriptor.set.apply(this, arguments);
-        //     setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
-        //   },
-        // });
+        if (!this.inputElementRef || !this.valuePropReDefine) {
+            return;
+        }
+        let elementPrototype = Object.getPrototypeOf(this.inputElementRef);
+        let descriptor = Object.getOwnPropertyDescriptor(elementPrototype, 'value');
+        let thisref = this;
+        Object.defineProperty(this.inputElementRef, 'value', {
+            get: function () {
+                return descriptor.get.apply(this, arguments);
+            },
+            set: function () {
+                descriptor.set.apply(this, arguments);
+                setTimeout(() => thisref.hostElement.dispatchEvent(new globalThis.Event('reCheckInnoInputValue', { bubbles: true })), 0);
+            },
+        });
     }
     startMutationObserver() {
         if (!!this.inputElementRef) {
@@ -202,13 +202,11 @@ export class InnoInput {
         this.shouldFloat = !this.isValueEmpty();
     }
     onFocus() {
-        console.log("Focusin" + this.hostElement.id);
         this.shouldFloat = true;
         this.isActive = true;
         this.isFocused = true;
     }
     onFocusout() {
-        console.log("Focusout" + this.hostElement.id);
         if (this.isValueEmpty()) {
             this.shouldFloat = false;
         }
@@ -289,7 +287,7 @@ export class InnoInput {
         let canShowErrors = this.errorElements?.length > 0 || errorSpecified;
         let shouldDisable = this.disabled || this.inputElementRef?.disabled || this.inputElementRef?.readOnly;
         this.setFloatingLabelMaxWidth();
-        return (h(Host, { key: '2b88e1c7e062e54f7bcba0476fa8c6036d661ab2', class: {
+        return (h(Host, { key: '03463dd94ac7f749e09868f5a2e01ad233b32df6', class: {
                 'input-container': true,
                 'isactive': this.isActive,
                 'focused': this.isFocused,
@@ -299,7 +297,7 @@ export class InnoInput {
                 'invalid': !this.isValid || errorSpecified,
                 'can-show-errors': canShowErrors,
                 'textareamode': this.textareaMode,
-            }, onClick: () => this.activateInput() }, h("span", { key: 'b4936325615fce4f2f38c07e1790522626abc005', class: {
+            }, onClick: () => this.activateInput() }, h("span", { key: 'bea62a08098dd9ea6fe2f5e3e17d0f0611116bbb', class: {
                 label: true,
                 float: this.shouldFloat && !this.textareaMode,
                 floatarea: this.shouldFloat && this.textareaMode,
@@ -308,7 +306,7 @@ export class InnoInput {
                 dark: this.variant === 'dark',
                 invalid: !this.isValid || errorSpecified,
                 textareamode: this.textareaMode,
-            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: 'a47c4224357dcbe2fc68054e7a223df33f2316f2' }), this.seizerElement(), this.errorElement()));
+            }, ref: el => this.floatingLabel = el, innerHTML: sanitizeHtml(this.label) }), h("slot", { key: 'ca38bbd0e2b9e8be2f935cea6eaea97323cf197c' }), this.seizerElement(), this.errorElement()));
     }
     static get is() { return "inno-input"; }
     static get encapsulation() { return "scoped"; }

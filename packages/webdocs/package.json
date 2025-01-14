@@ -1,6 +1,6 @@
 {
   "name": "webdocs",
-  "version": "0.0.2-beta-23",
+  "version": "0.0.2-beta-24",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -18,8 +18,8 @@
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-23",
-    "@innomotics/brand-experience-react-lib": "^0.0.2-beta-23",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-24",
+    "@innomotics/brand-experience-react-lib": "^0.0.2-beta-24",
     "@mdx-js/react": "3.0.1",
     "clsx": "^2.0.0",
     "jszip": "^3.10.1",

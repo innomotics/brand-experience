@@ -1,5 +1,9 @@
-2025.01.13
+2025.01.13 - 0.0.2-beta-23
 
 Updated react-output-target (fixed component generation issues)
 Updated vue-output-target
 Updated stencil package
+
+2025.01.14 - 0.0.2-beta-24
+
+Commented code block restored so floating labels would work with angular form controls

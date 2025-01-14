@@ -252,7 +252,7 @@ export class InnoPane {
                     "references": {
                         "ExpandedChangedEvent": {
                             "location": "local",
-                            "path": "C:/Github/brand-experience/packages/stencil-lib/src/components/inno-pane/inno-pane.tsx",
+                            "path": "C:/brandex/packages/stencil-lib/src/components/inno-pane/inno-pane.tsx",
                             "id": "src/components/inno-pane/inno-pane.tsx::ExpandedChangedEvent"
                         }
                     }
