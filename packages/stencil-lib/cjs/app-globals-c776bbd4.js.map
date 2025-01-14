@@ -1,1 +1,0 @@
-{"file":"app-globals-c776bbd4.js","mappings":";;;;;;AACY,MAAC,aAAa,GAAGA;;;;","names":["appGlobalScript"],"sources":["@stencil/core/internal/app-globals"],"sourcesContent":["import appGlobalScript from 'C:/Github/brand-experience/packages/stencil-lib/src/polyfills.ts';\nexport const globalScripts = appGlobalScript;\n"],"version":3}
