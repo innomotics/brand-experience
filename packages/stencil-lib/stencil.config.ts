@@ -41,6 +41,9 @@ export const config: Config = {
   srcDir: './src',
   globalStyle: './styles/innomotics.scss',
   globalScript: './src/polyfills.ts',
+  extras:{
+    experimentalSlotFixes: true
+  },
   outputTargets: [
     {
       type: 'dist',

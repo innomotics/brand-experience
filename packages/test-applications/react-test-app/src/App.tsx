@@ -1,60 +1,51 @@
+import { Component, Fragment } from "react";
+import { AppState } from "./models/AppState";
 import "./App.scss";
 import {
   defineCustomElements,
+  InnoButton,
+  InnoSelect,
+  InnoSelectItem,
 } from "@innomotics/brand-experience-react-lib";
-import { InnoInput } from "@innomotics/brand-experience-react-lib";
-import { InnoError } from "@innomotics/brand-experience-react-lib";
+import { Item } from "./models/items";
 defineCustomElements();
-function onInputChange(){
-    alert("input1");
-}
-
-function onInputChange2(){
-  alert("input2");
-}
 
 
-function App() {
-  return (
-    <>
-    <InnoInput
-        id='orderNumber'
-        style={{ width: 350 }}
-        label="dsa"
-        variant="dark"
-        onValueChanged={onInputChange}
-      >
-        <input id='orderNumber11' type='number'/>
-        <InnoError active={true} type='badInput'>
-          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
-        </InnoError>
-      </InnoInput>
-      <InnoInput
-        id='orderNumber2'
-        style={{ width: 350 }}
-        label="dsa"
-        variant="dark"
-        onValueChanged={onInputChange2}
-      >
-        <input id='orderNumber21' type='number'/>
-        <InnoError active={true} type='badInput'>
-          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
-        </InnoError>
-      </InnoInput>
-      <InnoInput
-        id='orderNumber3'
-        style={{ width: 350 }}
-        label="dsa"
-        variant="dark"
-        onValueChanged={onInputChange2}
-      >
-        <input id='orderNumber31' type='number'/>
-        <InnoError active={true} type='badInput'>
-          {`Please type in the correct format: ${7} or ${10} numeric digits for the order number`}
-        </InnoError>
-      </InnoInput>
-    </>
-  );
+class App extends Component<any, AppState> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      listItems: [
+        new Item(1, "1", 1),
+        new Item(2, "2", 2),
+        new Item(3, "3", 3),
+        new Item(4, "4", 4),
+        new Item(5, "5", 5)]
+    }
+  }
+  randomize = () => {
+    this.setState({
+      listItems: [new Item(2, "2", 2),
+      new Item(3, "3", 3),
+      new Item(4, "4", 4),
+      ]
+    });
+  }
+
+  render = () => {
+    return (
+      <>
+        <InnoSelect label="Select" value="item1">
+          <Fragment>
+            {this.state.listItems.map(li => {
+              return <InnoSelectItem key={li.Id} id={li.Id.toString()} value={li.Value} label={li.Label}></InnoSelectItem>
+            })}
+          </Fragment>
+        </InnoSelect>
+        <InnoButton variant="primary" icon="arrow_right" color-variant="dark" onClick={() => this.randomize()}>primary button</InnoButton>
+      </>);
+  };
 }
 
 export default App;
