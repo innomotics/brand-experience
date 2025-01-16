@@ -18,7 +18,7 @@ import { Components } from '@innomotics/brand-experience';
   inputs: ['collapsed', 'inner', 'label', 'last', 'secondLabel', 'variant'],
 })
 export class InnoAccordion {
-  protected el: HTMLElement;
+  protected el: HTMLInnoAccordionElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -46,7 +46,7 @@ export declare interface InnoAccordion extends Components.InnoAccordion {
   inputs: ['variant'],
 })
 export class InnoBreadcrumb {
-  protected el: HTMLElement;
+  protected el: HTMLInnoBreadcrumbElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -74,7 +74,7 @@ export declare interface InnoBreadcrumb extends Components.InnoBreadcrumb {
   inputs: ['icon', 'iconSize', 'label'],
 })
 export class InnoBreadcrumbItem {
-  protected el: HTMLElement;
+  protected el: HTMLInnoBreadcrumbItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -96,7 +96,7 @@ export declare interface InnoBreadcrumbItem extends Components.InnoBreadcrumbIte
   inputs: ['colorVariant', 'disabled', 'icon', 'iconFont', 'iconOnly', 'iconPosition', 'listType', 'navDirection', 'tabIdx', 'type', 'variant'],
 })
 export class InnoButton {
-  protected el: HTMLElement;
+  protected el: HTMLInnoButtonElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -118,7 +118,7 @@ export declare interface InnoButton extends Components.InnoButton {}
   inputs: ['checked', 'disabled', 'error', 'indeterminate', 'label', 'name', 'readonly', 'required', 'tabIdx', 'variant'],
 })
 export class InnoCheckbox {
-  protected el: HTMLElement;
+  protected el: HTMLInnoCheckboxElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -147,7 +147,7 @@ export declare interface InnoCheckbox extends Components.InnoCheckbox {
   inputs: ['format', 'from', 'i18nDone', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'weekStartIndex'],
 })
 export class InnoDatePicker {
-  protected el: HTMLElement;
+  protected el: HTMLInnoDatePickerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -177,7 +177,7 @@ export declare interface InnoDatePicker extends Components.InnoDatePicker {
   inputs: ['closeOnSelection', 'format', 'from', 'label', 'locale', 'maxDate', 'minDate', 'range', 'showOuterDays', 'to', 'variant', 'weekStartIndex'],
 })
 export class InnoDatePickerDropdown {
-  protected el: HTMLElement;
+  protected el: HTMLInnoDatePickerDropdownElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -209,7 +209,7 @@ See the date-picker component for more information.
   inputs: ['accept', 'disabled', 'multiple', 'state', 'texts', 'variant'],
 })
 export class InnoDragAndDrop {
-  protected el: HTMLElement;
+  protected el: HTMLInnoDragAndDropElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -235,7 +235,7 @@ export declare interface InnoDragAndDrop extends Components.InnoDragAndDrop {
   inputs: ['active', 'type', 'variant'],
 })
 export class InnoError {
-  protected el: HTMLElement;
+  protected el: HTMLInnoErrorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -257,7 +257,7 @@ export declare interface InnoError extends Components.InnoError {}
   inputs: ['copyright', 'variant'],
 })
 export class InnoFooter {
-  protected el: HTMLElement;
+  protected el: HTMLInnoFooterElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -279,7 +279,7 @@ export declare interface InnoFooter extends Components.InnoFooter {}
   inputs: ['variant'],
 })
 export class InnoFooterItem {
-  protected el: HTMLElement;
+  protected el: HTMLInnoFooterItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -301,7 +301,7 @@ export declare interface InnoFooterItem extends Components.InnoFooterItem {}
   inputs: ['icon', 'iconFont', 'size', 'variant'],
 })
 export class InnoIcon {
-  protected el: HTMLElement;
+  protected el: HTMLInnoIconElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -323,7 +323,7 @@ export declare interface InnoIcon extends Components.InnoIcon {}
   inputs: ['caretPosEndOnFocus', 'disableFloatingLabelAutoResize', 'disabled', 'error', 'errortype', 'isFocused', 'label', 'resizeMode', 'resizeable', 'selectOnFocus', 'variant'],
 })
 export class InnoInput {
-  protected el: HTMLElement;
+  protected el: HTMLInnoInputElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -351,7 +351,7 @@ export declare interface InnoInput extends Components.InnoInput {
   inputs: ['size', 'strokeWidth', 'variant'],
 })
 export class InnoLoader {
-  protected el: HTMLElement;
+  protected el: HTMLInnoLoaderElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -374,7 +374,7 @@ export declare interface InnoLoader extends Components.InnoLoader {}
   inputs: ['animation', 'backdrop', 'centered', 'closeOnBackdropClick', 'closeOnEscape', 'fixed', 'size', 'variant'],
 })
 export class InnoModal {
-  protected el: HTMLElement;
+  protected el: HTMLInnoModalElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -405,7 +405,7 @@ export declare interface InnoModal extends Components.InnoModal {
   inputs: [],
 })
 export class InnoModalContent {
-  protected el: HTMLElement;
+  protected el: HTMLInnoModalContentElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -426,7 +426,7 @@ export declare interface InnoModalContent extends Components.InnoModalContent {}
   inputs: [],
 })
 export class InnoModalFooter {
-  protected el: HTMLElement;
+  protected el: HTMLInnoModalFooterElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -448,7 +448,7 @@ export declare interface InnoModalFooter extends Components.InnoModalFooter {}
   inputs: ['icon', 'showClose', 'variant'],
 })
 export class InnoModalHeader {
-  protected el: HTMLElement;
+  protected el: HTMLInnoModalHeaderElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -477,7 +477,7 @@ Can be prevented, in which case only the event is triggered, and the modal remai
   inputs: ['pageCount', 'selectedPage', 'variant'],
 })
 export class InnoPaginator {
-  protected el: HTMLElement;
+  protected el: HTMLInnoPaginatorElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -509,7 +509,7 @@ export declare interface InnoPaginator extends Components.InnoPaginator {
   inputs: ['closeOnBackdropClick', 'expanded', 'hideCloseButton', 'paneSize', 'position', 'titleText'],
 })
 export class InnoPane {
-  protected el: HTMLElement;
+  protected el: HTMLInnoPaneElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -540,7 +540,7 @@ export declare interface InnoPane extends Components.InnoPane {
   inputs: ['closable', 'for', 'hasBackdrop', 'offset', 'placement', 'popoverText', 'popoverTitle', 'trigger', 'variant', 'visible'],
 })
 export class InnoPopover {
-  protected el: HTMLElement;
+  protected el: HTMLInnoPopoverElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -572,7 +572,7 @@ export declare interface InnoPopover extends Components.InnoPopover {
   inputs: ['percentagePrecision', 'progressPercentage', 'progressText', 'showPercentage', 'trailingZeroes', 'variant'],
 })
 export class InnoProgressBar {
-  protected el: HTMLElement;
+  protected el: HTMLInnoProgressBarElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -595,7 +595,7 @@ export declare interface InnoProgressBar extends Components.InnoProgressBar {}
   inputs: ['checked', 'disabled', 'error', 'label', 'name', 'readonly', 'required', 'tabIdx', 'value', 'variant'],
 })
 export class InnoRadio {
-  protected el: HTMLElement;
+  protected el: HTMLInnoRadioElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -624,7 +624,7 @@ export declare interface InnoRadio extends Components.InnoRadio {
   inputs: ['disableFloatingLabelAutoResize', 'disabled', 'disabledBackgroundColor', 'dropdownWidth', 'hasIcons', 'icon', 'iconFont', 'keyValueSelector', 'label', 'value', 'variant'],
 })
 export class InnoSelect {
-  protected el: HTMLElement;
+  protected el: HTMLInnoSelectElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -672,7 +672,7 @@ if you want to reorder your InnoSelectItems after the favorited elements are cha
   inputs: ['addToFavoritesLabel', 'canFavorite', 'favoriteIconTooltipOffset', 'favoriteIconTooltipPos', 'favoriteIconTooltipVariant', 'hasSeparator', 'icon', 'iconFont', 'isFavorite', 'label', 'removeFromFavoritesLabel', 'selected', 'value'],
 })
 export class InnoSelectItem {
-  protected el: HTMLElement;
+  protected el: HTMLInnoSelectItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -713,7 +713,7 @@ export declare interface InnoSelectItem extends Components.InnoSelectItem {
   inputs: ['orientation', 'slotNames', 'splitAreasDefaultSizes'],
 })
 export class InnoSplit {
-  protected el: HTMLElement;
+  protected el: HTMLInnoSplitElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -734,7 +734,7 @@ export declare interface InnoSplit extends Components.InnoSplit {}
   inputs: [],
 })
 export class InnoSplitGutter {
-  protected el: HTMLElement;
+  protected el: HTMLInnoSplitGutterElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -755,7 +755,7 @@ export declare interface InnoSplitGutter extends Components.InnoSplitGutter {}
   inputs: [],
 })
 export class InnoSplitItem {
-  protected el: HTMLElement;
+  protected el: HTMLInnoSplitItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -777,7 +777,7 @@ export declare interface InnoSplitItem extends Components.InnoSplitItem {}
   inputs: ['autoClose', 'autoCloseDelay', 'icon', 'iconColor', 'messageType', 'showProgress', 'theme'],
 })
 export class InnoStatusMessage {
-  protected el: HTMLElement;
+  protected el: HTMLInnoStatusMessageElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -806,7 +806,7 @@ export declare interface InnoStatusMessage extends Components.InnoStatusMessage 
   inputs: ['alwaysEmphasized', 'layout', 'minimalDecorator', 'selected', 'showArrow', 'theme'],
 })
 export class InnoTab {
-  protected el: HTMLElement;
+  protected el: HTMLInnoTabElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -834,7 +834,7 @@ export declare interface InnoTab extends Components.InnoTab {
   inputs: ['alwaysEmphasized', 'disabled', 'layout', 'minimalDecorator', 'selected', 'theme'],
 })
 export class InnoTabItem {
-  protected el: HTMLElement;
+  protected el: HTMLInnoTabItemElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -865,7 +865,7 @@ export declare interface InnoTabItem extends Components.InnoTabItem {
   inputs: ['maskColor', 'variant'],
 })
 export class InnoTableBase {
-  protected el: HTMLElement;
+  protected el: HTMLInnoTableBaseElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -887,7 +887,7 @@ export declare interface InnoTableBase extends Components.InnoTableBase {}
   inputs: ['format', 'texts', 'theme', 'time'],
 })
 export class InnoTimePicker {
-  protected el: HTMLElement;
+  protected el: HTMLInnoTimePickerElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -913,7 +913,7 @@ export declare interface InnoTimePicker extends Components.InnoTimePicker {
   inputs: ['checked', 'disabled', 'tabIdx', 'variant'],
 })
 export class InnoToggle {
-  protected el: HTMLElement;
+  protected el: HTMLInnoToggleElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;

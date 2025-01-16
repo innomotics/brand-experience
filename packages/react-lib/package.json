@@ -34,7 +34,7 @@
     "@innomotics/brand-experience-icons": "^0.0.2-beta-25"
   },
   "devDependencies": {
-    "@types/react": "^18.2.60",
+    "@types/react": "18.2.64",
     "copy-files-from-to": "^3.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

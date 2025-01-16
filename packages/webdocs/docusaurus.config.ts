@@ -48,6 +48,9 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  future:{
+    experimental_router:"hash"
+  },
   plugins: [
     [
       "docusaurus-plugin-sass",

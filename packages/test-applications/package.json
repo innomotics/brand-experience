@@ -50,7 +50,7 @@
     "@rushstack/eslint-patch": "1.10.2",
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "^20.11.10",
-    "@types/react": "^18.2.56",
+    "@types/react": "18.2.64",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
