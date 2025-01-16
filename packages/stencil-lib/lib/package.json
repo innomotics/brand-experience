@@ -34,7 +34,7 @@
     "@floating-ui/dom": "^1.6.11",
     "@innomotics/brand-experience-fonts": "^0.0.2-beta-25",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-25",
-    "@stencil/core": "^4.21.0",
+    "@stencil/core": "^4.23.2",
     "@stencil/sass": "^3.0.12",
     "animejs": "^3.2.2",
     "luxon": "3.4.4",

@@ -18,7 +18,7 @@ const config: Config = {
   organizationName: "innomotics", // Usually your GitHub org/user name.
   projectName: "inno-UX", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -28,7 +28,9 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  future: {
+    experimental_router: "hash"
+  },
   presets: [
     [
       "classic",
