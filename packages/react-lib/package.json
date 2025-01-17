@@ -2,7 +2,7 @@
   "name": "@innomotics/brand-experience-react-lib",
   "version": "0.0.2-beta-25",
   "description": "> TODO: description",
-  "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
+  "author": "",
   "homepage": "",
   "license": "ISC",
   "main": "dist/index.js",
@@ -26,18 +26,18 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-25"
+    "@innomotics/brand-experience": "0.0.2-beta-25"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-25",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-25",
+    "@innomotics/brand-experience": "0.0.2-beta-25",
+    "@innomotics/brand-experience-fonts": "0.0.2-beta-25",
     "@innomotics/brand-experience-icons": "^0.0.2-beta-25"
   },
   "devDependencies": {
-    "@types/react": "18.2.64",
+    "@types/react": "18.3.12",
     "copy-files-from-to": "^3.12.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "typescript": "5.4.5"
   },
   "gitHead": "258791c1cbf11ee4ff207f0034abe74bcea86955",

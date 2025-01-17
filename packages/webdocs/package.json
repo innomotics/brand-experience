@@ -18,26 +18,26 @@
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-25",
-    "@innomotics/brand-experience-react-lib": "^0.0.2-beta-25",
+    "@innomotics/brand-experience-fonts": "0.0.2-beta-25",
+    "@innomotics/brand-experience-react-lib": "0.0.2-beta-25",
     "@mdx-js/react": "3.1.0",
     "clsx": "^2.0.0",
     "jszip": "^3.10.1",
     "prism-react-renderer": "^2.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "sass": "^1.83.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/tsconfig": "^3.7.0",
     "@docusaurus/types": "^3.7.0",
-    "@types/react": "18.2.64",
+    "@types/react": "18.3.12",
     "docusaurus-plugin-sass": "^0.2.5",
     "typescript": "5.4.5"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "*"
+    "@innomotics/brand-experience": "0.0.2-beta-25"
   },
   "browserslist": {
     "production": [

@@ -3,12 +3,12 @@
     "compilerOptions": {
       "sourceMap": false,
       "outDir": "./dist",
-      "lib": ["dom", "es2015"],
+      "lib": ["dom", "es2019"],
       "module": "ESNext",
       "moduleResolution": "bundler",
       "target": "ESNext",
       "skipLibCheck": true,
-      "jsx": "react",
+      "jsx": "react-jsx",
       "allowSyntheticDefaultImports": true,
       "declarationDir": "./dist/types"
     },
