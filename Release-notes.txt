@@ -1,3 +1,7 @@
+2025.01.16 - 0.02-beta-27
+
+React bugfix
+
 2025.01.16 - 0.02-beta-26
 
 Fixing invalid inno-icon reference
