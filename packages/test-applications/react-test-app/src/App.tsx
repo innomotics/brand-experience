@@ -1,4 +1,4 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import { AppState } from "./models/AppState";
 import "./App.scss";
 import {
