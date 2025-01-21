@@ -110,7 +110,7 @@ export class InnoSelect {
    */
   @Event() dropdownClosed: EventEmitter<void>;
 
-  @State() items: HTMLInnoSelectItemElement[] = [];
+  private items: HTMLInnoSelectItemElement[] = [];
 
   private disposeAutoUpdate?: () => void;
 
@@ -135,7 +135,7 @@ export class InnoSelect {
   }
 
   componentDidLoad() {
-    if (this.value) {
+    if (!this.valueIsUndefined) {
       let selectedItem = this.items.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
       if (!!selectedItem) {
         this.selectitem(selectedItem.value, true);
@@ -159,7 +159,7 @@ export class InnoSelect {
   @Watch('isOpen')
   alignItems() {
     if (this.isOpen) {
-      this.updateItems();
+      //this.updateItems();
       this.refreshSelected();
       this.computeDropdownPosition().then(() => {
         this.isVisible = true;

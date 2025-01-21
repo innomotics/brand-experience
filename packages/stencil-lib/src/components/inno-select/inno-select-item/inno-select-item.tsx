@@ -102,6 +102,7 @@ export class InnoSelectItem {
   @Element() host: HTMLInnoSelectElement;
 
   private popover: HTMLInnoPopoverElement;
+  private connected: boolean = true
 
   private get hostElementHasId(): boolean {
     return this.host.id != null && this.host.id.trim() !== '';
@@ -162,30 +163,39 @@ export class InnoSelectItem {
     }
   }
 
+  disconnectedCallback() {
+    this.connected = false;
+    console.log("i am out");
+  }
+  
+  connectedCallback(){
+    this.connected = true;
+  }
+
   render() {
     if (this.hostElementHasId && !!this.popover) {
       this.popover.updateForElement(this.forSelector);
     }
 
-
-    return (
-      <Host
-        class={{
-          'select-item': true,
-          'icon-driven': this.icon != undefined || this.iconFont != undefined,
-          selected: this.selected,
-          'can-favorite': this.canFavorite,
-          separator: this.hasSeparator
-        }}
-        onClick={(e: MouseEvent) => this.selectItem(e)}
-      >
-        {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
-        {this.iconFont && !this.icon ? <inno-icon iconFont={this.iconFont} size={24}></inno-icon> : null}
-        <div class="content-wrapper">{this.label}</div>
-        {this.selected && !this.icon && !this.iconFont ? <inno-icon icon="check_checkbox" size={24}></inno-icon> : null}
-        {this.canFavorite ? this.favoriteStar() : null}
-        {this.canFavorite ? this.favoriteStarPopup() : null}
-      </Host>
-    );
+    return this.connected ?
+      (
+        <Host
+          class={{
+            'select-item': true,
+            'icon-driven': this.icon != undefined || this.iconFont != undefined,
+            selected: this.selected,
+            'can-favorite': this.canFavorite,
+            separator: this.hasSeparator
+          }}
+          onClick={(e: MouseEvent) => this.selectItem(e)}
+        >
+          {this.icon ? <inno-icon icon={this.icon} size={24}></inno-icon> : null}
+          {this.iconFont && !this.icon ? <inno-icon iconFont={this.iconFont} size={24}></inno-icon> : null}
+          <div class="content-wrapper">{this.label}</div>
+          {this.selected && !this.icon && !this.iconFont ? <inno-icon icon="check_checkbox" size={24}></inno-icon> : null}
+          {this.canFavorite ? this.favoriteStar() : null}
+          {this.canFavorite ? this.favoriteStarPopup() : null}
+        </Host>
+      ) : null;
   }
 }
