@@ -112,7 +112,7 @@ let bundles = [{ set: 'white', zip: new JSZip() }, { set: 'powergrey', zip: new 
     });
   })
 
-  fs.writeFileSync("./lib/inno-icons.ts", moduleContent);
+  fs.writeFileSync("./inno-icons.ts", moduleContent);
   readmeContent += `<DownloadableIcon iconnames={['${names.join('\',\'')}']}></DownloadableIcon>`;
   fs.writeFileSync("./readme.md", readmeContent);
 })();

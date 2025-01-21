@@ -1,3 +1,7 @@
+2025.01.16 - 0.02-beta-26
+
+Fixing invalid inno-icon reference
+
 2025.01.16 - 0.02-beta-25
 
 Added extra option to stencil (experimentalSlotFixes) to support better DOM manipulation for react

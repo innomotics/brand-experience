@@ -64,7 +64,7 @@ export class InnoIcon {
 
   async resolveIcon(isIconFont: boolean): Promise<string | null> {
     if (this.icon && !isIconFont) {
-      const svgIcon = await import(`@innomotics/brand-experience-icons/lib/inno-icons`);
+      const svgIcon = await import(`@innomotics/brand-experience-icons/inno-icons`);
       const iconname = 'inno_' + this.icon;
       const resolvedIcon = svgIcon[iconname];
 
