@@ -165,7 +165,6 @@ export class InnoSelectItem {
 
   disconnectedCallback() {
     this.connected = false;
-    console.log("i am out");
   }
   
   connectedCallback(){
