@@ -1,3 +1,7 @@
+2025.01.23 - 0.02-beta-29
+
+Fixed bug where inno-select-items array might be outdated during render.
+
 2025.01.23 - 0.02-beta-28
 
 Added more null checks for inno-select

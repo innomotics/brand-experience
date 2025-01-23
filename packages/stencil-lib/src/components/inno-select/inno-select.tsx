@@ -390,15 +390,14 @@ export class InnoSelect {
     this.items = [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
 
-  get selectedItem() {
-    return this.items?.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
-  }
-
   get valueIsUndefined() {
     return this.value === undefined || this.value === '' || this.value === null;
   }
 
   render() {
+    this.updateItems();
+    let selectedItem = this.items?.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
+    this.updateSelectedItem();
     this.setLabelsMaxWidth();
 
     return (
@@ -444,7 +443,7 @@ export class InnoSelect {
                   dark: this.variant === 'dark',
                   primary: this.variant === 'primary'
                 }}>
-                  {this.selectedItem?.label}
+                  {selectedItem?.label}
                 </span>
               </div>
               <inno-icon class="chevron" icon={this.isOpen ? 'chevron_up_small' : 'chevron_down_small'} size={16}></inno-icon>{' '}
@@ -459,11 +458,11 @@ export class InnoSelect {
               'disabled-light': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'light',
               'disabled-dark': this.disabled && this.variant === 'primary' && this.disabledBackgroundColor === 'dark'
             }}>
-              {(this.selectedItem?.icon || this.selectedItem?.iconFont) ? (
+              {(selectedItem?.icon || selectedItem?.iconFont) ? (
                 <span>
-                  {this.selectedItem?.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}
-                  {this.selectedItem?.iconFont && !this.selectedItem?.icon ? <inno-icon iconFont={this.selectedItem.iconFont} size={32}></inno-icon> : null}
-                  <div class="icon-driven-label">{this.selectedItem?.label}</div>
+                  {selectedItem?.icon ? <inno-icon icon={selectedItem.icon} size={32}></inno-icon> : null}
+                  {selectedItem?.iconFont && !selectedItem?.icon ? <inno-icon iconFont={selectedItem.iconFont} size={32}></inno-icon> : null}
+                  <div class="icon-driven-label">{selectedItem?.label}</div>
                 </span>
               ) : (
                 <span>
