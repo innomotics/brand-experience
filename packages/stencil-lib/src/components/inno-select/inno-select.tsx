@@ -136,7 +136,7 @@ export class InnoSelect {
 
   componentDidLoad() {
     if (!this.valueIsUndefined) {
-      let selectedItem = this.items.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
+      let selectedItem = this.items?.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
       if (!!selectedItem) {
         this.selectitem(selectedItem.value, true);
       }
@@ -267,7 +267,7 @@ export class InnoSelect {
   }
 
   private emitAllFavoritedItems(): void {
-    let favoritedItems: any[] = this.items?.filter(item => item.isFavorite).map(item => item.value) ?? [];
+    let favoritedItems: any[] = this.items?.filter(item => item.isFavorite)?.map(item => item.value) ?? [];
     this.favoriteItemsChanged.emit(favoritedItems);
   }
 
@@ -282,7 +282,7 @@ export class InnoSelect {
   }
 
   private updateSelectedItem(): void {
-    this.items.forEach(i => {
+    this.items?.forEach(i => {
       if (this.keyValueSelector(i.value) === this.keyValueSelector(this.value)) {
         i.selected = true;
       } else {
@@ -292,8 +292,8 @@ export class InnoSelect {
   }
 
   clearFocus() {
-    let focusdItems = this.items.filter(si => si.classList.contains('focused'));
-    focusdItems.forEach(fi => fi.classList.remove('focused'));
+    let focusdItems = this.items?.filter(si => si.classList.contains('focused'));
+    focusdItems?.forEach(fi => fi.classList.remove('focused'));
   }
 
   private setLabelsMaxWidth(): void {
@@ -342,7 +342,7 @@ export class InnoSelect {
       ev.stopPropagation();
       this.clearFocus();
 
-      if (this.navigationItem) {
+      if (this.navigationItem && this.items) {
         let index = this.items.indexOf(this.navigationItem);
         switch (ev.key) {
           case 'ArrowUp': {
@@ -359,7 +359,7 @@ export class InnoSelect {
           }
         }
       } else {
-        if (this.items.length > 0) {
+        if (this.items?.length > 0) {
           this.navigationItem = this.items[0];
         }
       }
@@ -384,11 +384,14 @@ export class InnoSelect {
   }
 
   private updateItems() {
+    if (!this.hostElement) {
+      return;
+    }
     this.items = [...Array.from(this.hostElement.querySelectorAll('inno-select-item'))];
   }
 
   get selectedItem() {
-    return this.items.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
+    return this.items?.find(i => this.keyValueSelector(i.value) === this.keyValueSelector(this.value));
   }
 
   get valueIsUndefined() {
@@ -460,7 +463,7 @@ export class InnoSelect {
                 <span>
                   {this.selectedItem?.icon ? <inno-icon icon={this.selectedItem.icon} size={32}></inno-icon> : null}
                   {this.selectedItem?.iconFont && !this.selectedItem?.icon ? <inno-icon iconFont={this.selectedItem.iconFont} size={32}></inno-icon> : null}
-                  <div class="icon-driven-label">{this.selectedItem.label}</div>
+                  <div class="icon-driven-label">{this.selectedItem?.label}</div>
                 </span>
               ) : (
                 <span>

@@ -105,11 +105,11 @@ export class InnoSelectItem {
   private connected: boolean = true
 
   private get hostElementHasId(): boolean {
-    return this.host.id != null && this.host.id.trim() !== '';
+    return this.host?.id != null && this.host.id.trim() !== '';
   }
 
   private get forSelector(): string {
-    return this.isFavorite ? `#${this.host.id} .star.favorite` : `#${this.host.id} .star.not-favorite`;
+    return this.isFavorite ? `#${this.host?.id} .star.favorite` : `#${this.host?.id} .star.not-favorite`;
   }
 
   selectItem(event: MouseEvent) {
@@ -166,8 +166,8 @@ export class InnoSelectItem {
   disconnectedCallback() {
     this.connected = false;
   }
-  
-  connectedCallback(){
+
+  connectedCallback() {
     this.connected = true;
   }
 

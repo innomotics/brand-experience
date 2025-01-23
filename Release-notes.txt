@@ -1,3 +1,7 @@
+2025.01.23 - 0.02-beta-28
+
+Added more null checks for inno-select
+
 2025.01.16 - 0.02-beta-27
 
 React bugfix
