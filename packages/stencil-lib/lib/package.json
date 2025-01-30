@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience",
-  "version": "0.0.2-beta-29",
+  "version": "0.0.2-beta-30",
   "description": "Stencil Component Starter",
   "main": "index.cjs.js",
   "module": "index.js",
