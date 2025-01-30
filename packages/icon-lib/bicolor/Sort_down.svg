@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG_PG" data-name="HG PG">
+    <rect class="cls-2" x="0" width="32" height="32"/>
+  </g>
+  <g id="Motiv_Mix">
+    <rect class="cls-1" x="11" y="9" width="10" height="2" transform="translate(32 20) rotate(180)"/>
+    <polygon class="cls-3" points="12.46 16.64 11.05 18.05 16 23 20.95 18.05 19.54 16.64 16 20.17 12.46 16.64"/>
+  </g>
+</svg>

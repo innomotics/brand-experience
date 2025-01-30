@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG">
+    <rect class="cls-2" x="0" y="0" width="32" height="32"/>
+  </g>
+  <g id="White_and_lime" data-name="White and lime">
+    <path class="cls-1" d="M18.5,27H4.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h14c1.38,0,2.5,1.12,2.5,2.5s-1.12,2.5-2.5,2.5ZM4.5,24c-.28,0-.5.22-.5.5s.22.5.5.5h14c.28,0,.5-.22.5-.5s-.22-.5-.5-.5H4.5Z"/>
+    <path class="cls-3" d="M28,15V5h-1.99S4,14,4,14h0v7h15s7-12.03,7-12.03v6.03h-2v8h2.41l3.59-3.59v-4.41h-2ZM24.35,7.84l-5.35,9.19v-3.02h-9.72l15.06-6.16ZM17,19H6v-3h11v3ZM28,18.59l-2,2v-3.59h2v1.59Z"/>
+  </g>
+</svg>

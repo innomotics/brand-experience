@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG">
+    <rect class="cls-2" x="0" y="0" width="32" height="32"/>
+  </g>
+  <g id="White_and_lime" data-name="White and lime">
+    <g>
+      <rect class="cls-1" x="11" y="8" width="2" height="9"/>
+      <rect class="cls-1" x="15" y="10.9" width="2" height="6.1"/>
+      <rect class="cls-1" x="19" y="13.99" width="2" height="3.01"/>
+    </g>
+    <g>
+      <polygon class="cls-3" points="6 21.03 15 21.03 15 26.02 10 26.02 10 28.02 22 28.02 22 26.02 17 26.02 17 21.03 26 21.03 26 19.03 6 19.03 6 21.03"/>
+      <polygon class="cls-3" points="2 4.03 2 21.03 4 21.03 4 6.03 28 6.03 28 21.03 30 21.03 30 4.03 2 4.03"/>
+    </g>
+  </g>
+</svg>

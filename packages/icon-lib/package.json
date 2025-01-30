@@ -17,8 +17,9 @@
     "url": "git+https://github.com/innomotics/brand-experience.git"
   },
   "scripts": {
-    "build": "npm run generateIconModule && npx copy-files-from-to",
-    "generateIconModule": "npx ts-node generator.ts"
+    "build": "npm run generateIconModule && npm run generateBicolorIconModule && npx copy-files-from-to",
+    "generateIconModule": "npx ts-node icongenerator.ts",
+    "generateBicolorIconModule": "npx ts-node bicoloricongenerator.ts"
   },
   "bugs": {
     "url": "https://github.com/innomotics/brand-experience/issues"
@@ -44,7 +45,9 @@
         "!./downloadoutput",
         "!./lib",
         "!./node_modules",
-        "!./*.*"
+        "!./*.*",
+        "!./bicolor/*.md",
+        "!.svg/*.md"
       ],
       "to": "./dist"
     },
@@ -56,15 +59,15 @@
     },
     {
       "from": [
-        "/downloadoutput/**"
+        "./svg/readme.md"
       ],
-      "to": "../webdocs/static/svg"
+      "to": "../webdocs/docs/icons/innoicons"
     },
     {
       "from": [
-        "readme.md"
+        ".bicolor/readme.md"
       ],
-      "to": "../webdocs/docs/icons"
+      "to": "../webdocs/docs/icons/bicolor"
     }
   ],
   "copyFilesSettings": {

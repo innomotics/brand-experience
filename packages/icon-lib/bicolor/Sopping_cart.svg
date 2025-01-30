@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG">
+    <rect class="cls-2" y="0" width="32" height="32"/>
+  </g>
+  <g id="Icon_mix">
+    <g>
+      <path class="cls-3" d="M10.55,20h15.27l2.18-11H10.44l-.39-2h0l-.39-2h-5.67v2h3.97l.4,2h0l2.18,11ZM25.56,11l-1.39,7h-11.99l-.65-3.28-.72-3.72h14.74Z"/>
+      <path class="cls-1" d="M23,21c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3ZM23,25c-.55,0-1-.45-1-1s.45-1,1-1,1,.45,1,1-.45,1-1,1Z"/>
+      <path class="cls-1" d="M12.78,21c-1.65,0-3,1.35-3,3s1.35,3,3,3,3-1.35,3-3-1.35-3-3-3ZM12.78,25c-.55,0-1-.45-1-1s.45-1,1-1,1,.45,1,1-.45,1-1,1Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG">
+    <rect class="cls-2" x="0" y="0" width="32" height="32"/>
+  </g>
+  <g id="White_and_lime" data-name="White and lime">
+    <g>
+      <rect class="cls-1" x="9" y="6" width="4" height="2"/>
+      <path class="cls-1" d="M18.5,3H3.5v2h1.5v8h12V5h1.5v-2ZM15,11H7v-6h8v6Z"/>
+    </g>
+    <path class="cls-3" d="M21,29h-2v-1.05s-5.76-3.55-5.76-3.55l.37-.81c.46-.99,1.28-1.74,2.31-2.12.68-.25,1.4-.31,2.1-.18v-6.83c0-1.36,1.12-2.46,2.48-2.46s2.5,1.1,2.5,2.46v2.39l6,1.28v6.12l-2.02,2.02v2.73s-1.99,0-1.99,0v-3.56s2-2.02,2-2.02v-3.67l-6-1.28v-4.02c0-.26-.24-.46-.5-.46s-.48.2-.48.46v9.83l-1.82-.87c-.5-.24-1.07-.26-1.59-.07-.24.09-.45.21-.64.37l5.03,3.1v2.18Z"/>
+  </g>
+</svg>

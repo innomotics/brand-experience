@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e1f000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08191f;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="HG">
+    <rect class="cls-2" x="0" y="0" width="32" height="32"/>
+  </g>
+  <g id="White_Lime" data-name="White&amp;amp;Lime">
+    <g>
+      <path class="cls-3" d="M27.82,13.82l-1.97.36c.11.59.16,1.2.16,1.81,0,5.54-4.51,10.05-10.05,10.05-2.22,0-4.31-.72-6.04-2.03h4.09v-2h-7v7h2v-3.18c2.02,1.43,4.42,2.21,6.95,2.21,6.64,0,12.05-5.4,12.05-12.05,0-.73-.07-1.46-.19-2.16Z"/>
+      <path class="cls-3" d="M16.03,6c2.17,0,4.27.72,6,2h-4.01v2h7V3h-2v3.24c-2.03-1.44-4.47-2.24-6.99-2.24-6.64,0-12.05,5.4-12.05,12.05,0,.75.07,1.5.21,2.23l1.96-.37c-.11-.61-.17-1.23-.17-1.86,0-5.54,4.51-10.05,10.05-10.05Z"/>
+    </g>
+    <g>
+      <rect class="cls-1" x="15" y="19" width="2" height="2"/>
+      <rect class="cls-1" x="15" y="11" width="2" height="7"/>
+    </g>
+  </g>
+</svg>
