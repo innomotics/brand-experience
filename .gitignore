@@ -5,10 +5,14 @@ package-lock.json
 lerna-debug.log
 
 packages/icon-lib/*.md
+packages/icon-lib/bicolor/*.md
+packages/icon-lib/svg/*.md
+
 packages/angular-lib/lib/stencil-generated/
 packages/react-lib/lib/components/stencil-generated/
 packages/vue-lib/lib/components.ts
-packages/webdocs/static/svg/
+packages/webdocs/static/svg/**/*.svg
+packages/webdocs/static/svg/**/*.zip
 packages/stencil-lib/cjs/
 packages/stencil-lib/collection/
 packages/stencil-lib/components/
