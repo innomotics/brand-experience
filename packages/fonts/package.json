@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-fonts",
-  "version": "0.0.2-beta-32",
+  "version": "0.0.2-beta-34",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/innomotics/brand-experience"
+    "url": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience"
   },
   "scripts": {
     "build": "npx copy-files-from-to"
@@ -23,8 +23,7 @@
     "copy-files-from-to": "^3.12.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "gitHead": "258791c1cbf11ee4ff207f0034abe74bcea86955",
   "copyFiles": [

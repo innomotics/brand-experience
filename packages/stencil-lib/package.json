@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience",
-  "version": "0.0.2-beta-32",
+  "version": "0.0.2-beta-34",
   "description": "Stencil Component Starter",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
@@ -19,8 +19,7 @@
     "./dist"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "scripts": {
     "createadditionalreadmes": "npx ts-node colorreadmegenerator.ts && npx ts-node gridlayoutreadmegenerator.ts",
@@ -34,8 +33,8 @@
   "dependencies": {
     "@floating-ui/dom": "^1.6.13",
     "@iconify/tools": "^4.1.1",
-    "@innomotics/brand-experience-fonts": "0.0.2-beta-32",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-27",
+    "@innomotics/brand-experience-fonts": "0.0.2-beta-34",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-34",
     "@stencil/core": "^4.24.0",
     "@stencil/sass": "^3.0.12",
     "animejs": "^3.2.2",
@@ -60,8 +59,8 @@
     "puppeteer": "^24.1.0"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience-fonts": "0.0.2-beta-32",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-27"
+    "@innomotics/brand-experience-fonts": "0.0.2-beta-34",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-34"
   },
   "license": "MIT",
   "gitHead": "258791c1cbf11ee4ff207f0034abe74bcea86955",

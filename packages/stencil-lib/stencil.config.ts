@@ -42,7 +42,11 @@ export const config: Config = {
   globalStyle: './styles/innomotics.scss',
   globalScript: './src/polyfills.ts',
   extras:{
-    experimentalSlotFixes: true
+    slotChildNodesFix: true,
+    scopedSlotTextContentFix: true,
+    appendChildSlotFix: true,
+    cloneNodeFix: true,
+    experimentalScopedSlotChanges: true
   },
   outputTargets: [
     {

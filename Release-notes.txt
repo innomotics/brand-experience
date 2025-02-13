@@ -1,4 +1,4 @@
-2025.01.30 - 0.02-beta-32
+2025.01.30 - 0.02-beta-34
 
 Fixing bicolor icon generation
 

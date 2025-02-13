@@ -8,15 +8,15 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://innomotics.github.io/",
+  url: "https://pages.alm.innomotics.net",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/brand-experience/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "innomotics", // Usually your GitHub org/user name.
-  projectName: "inno-UX", // Usually your repo name.
+  //organizationName: "innomotics", // Usually your GitHub org/user name.
+  //projectName: "inno-UX", // Usually your repo name.
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -109,7 +109,7 @@ const config: Config = {
           label: "Installing",
         },
         {
-          href: "https://github.com/innomotics/brand-experience",
+          href: "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience",
           label: "GitHub",
           position: "right",
         },
@@ -144,7 +144,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/innomotics/brand-experience",
+              href: "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience",
             },
           ],
         },

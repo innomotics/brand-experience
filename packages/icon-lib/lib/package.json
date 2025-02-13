@@ -1,9 +1,9 @@
 {
   "name": "@innomotics/brand-experience-icons",
-  "version": "0.0.2-beta-32",
+  "version": "0.0.2-beta-34",
   "description": "> TODO: description",
   "author": "@innomotics",
-  "homepage": "https://github.com/innomotics/brand-experience#readme",
+  "homepage": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience#readme",
   "license": "MIT",
   "private": false,
   "files": [
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/innomotics/brand-experience.git"
+    "url": "git+https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience.git"
   },
   "bugs": {
-    "url": "https://github.com/innomotics/brand-experience/issues"
+    "url": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience/-/issues"
   },
   "dependencies": {
     "@iconify/tools": "^4.0.7",

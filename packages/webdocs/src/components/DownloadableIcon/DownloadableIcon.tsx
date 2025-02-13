@@ -22,7 +22,7 @@ export default function DownloadableIcon({ iconnames, bicolor }): JSX.Element {
 
     filteredlist.forEach(name => {
 
-        const url = `/brand-experience/svg/${color}/${name}.svg`;
+        const url = `svg/${color}/${name}.svg`;
         let item;
         if (!bc) {
             item = (
@@ -58,7 +58,7 @@ export default function DownloadableIcon({ iconnames, bicolor }): JSX.Element {
                 <InnoInput label="Search" variant="light" onValueChanged={(value) => filterlist(value)}>
                     <input type="string" />
                 </InnoInput>
-                <a download href={`/brand-experience/svg/${color}/innoicons_${color}.zip`}>Download all</a>
+                <a download href={`svg/${color}/innoicons_${color}.zip`}>Download all</a>
             </div>
             <div className="icons">
                 {icons}
