@@ -3,7 +3,7 @@
   "version": "0.0.2-beta-34",
   "description": "> TODO: description",
   "author": "@innomotics",
-  "homepage": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience#readme",
+  "homepage": "",
   "license": "MIT",
   "private": false,
   "files": [
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience/-/issues"
+    "url": ""
   },
   "dependencies": {
     "@iconify/tools": "^4.0.7",

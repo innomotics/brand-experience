@@ -3,7 +3,7 @@
   "version": "0.0.2-beta-34",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
-  "homepage": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience#readme",
+  "homepage": "",
   "license": "MIT",
   "private": false,
   "directories": {
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience.git"
+    "url": ""
   },
   "scripts": {
     "build": "npm run generateIconModule && npm run generateBicolorIconModule && npx copy-files-from-to",
@@ -22,7 +22,7 @@
     "generateBicolorIconModule": "npx ts-node bicoloricongenerator.ts"
   },
   "bugs": {
-    "url": "https://devops.alm.innomotics.net/in/innomotics-brand-experience/brand-experience/-/issues"
+    "url": ""
   },
   "devDependencies": {
     "copy-files-from-to": "^3.12.0",
