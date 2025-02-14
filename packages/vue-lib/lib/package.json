@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-34",
+  "version": "0.0.2-beta-35",
   "description": "> TODO: description",
   "author": "@innomotics",
   "homepage": "",
@@ -23,11 +23,11 @@
     "README.md"
   ],
   "dependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-34"
+    "@innomotics/brand-experience": "^0.0.2-beta-35"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "^0.0.2-beta-34",
-    "@innomotics/brand-experience-fonts": "^0.0.2-beta-34",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-34"
+    "@innomotics/brand-experience": "^0.0.2-beta-35",
+    "@innomotics/brand-experience-fonts": "^0.0.2-beta-35",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-35"
   }
 }

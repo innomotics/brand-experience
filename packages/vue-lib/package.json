@@ -1,6 +1,6 @@
 {
   "name": "@innomotics/brand-experience-vue-lib",
-  "version": "0.0.2-beta-34",
+  "version": "0.0.2-beta-35",
   "description": "> TODO: description",
   "author": "ad001\\z003a0vy <Istvan.Herbak@evosoft.com>",
   "homepage": "",
@@ -21,7 +21,7 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@innomotics/brand-experience": "0.0.2-beta-34",
+    "@innomotics/brand-experience": "0.0.2-beta-35",
     "vue": "3.4.25"
   },
   "devDependencies": {
@@ -31,9 +31,9 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@innomotics/brand-experience": "0.0.2-beta-34",
-    "@innomotics/brand-experience-fonts": "0.0.2-beta-34",
-    "@innomotics/brand-experience-icons": "^0.0.2-beta-34"
+    "@innomotics/brand-experience": "0.0.2-beta-35",
+    "@innomotics/brand-experience-fonts": "0.0.2-beta-35",
+    "@innomotics/brand-experience-icons": "^0.0.2-beta-35"
   },
   "gitHead": "15d0dae0d9741edd8f4cec2e069acec02081e1d5",
   "copyFiles": [

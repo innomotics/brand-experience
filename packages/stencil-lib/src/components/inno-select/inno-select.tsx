@@ -1,5 +1,5 @@
 import { autoUpdate, computePosition, flip, shift } from '@floating-ui/dom';
-import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen, Method } from '@stencil/core';
+import { Event, EventEmitter, Element, Component, Host, Prop, h, State, Watch, Listen, Method, forceUpdate } from '@stencil/core';
 import sanitizeHtml from 'sanitize-html';
 
 @Component({
@@ -143,7 +143,7 @@ export class InnoSelect {
     }
 
     this.itemsObserver = new MutationObserver(() => {
-      this.updateItems();
+      forceUpdate(this);
     });
     this.itemsObserver.observe(this.hostElement.querySelector(".items"), { childList: true })
 
@@ -159,7 +159,6 @@ export class InnoSelect {
   @Watch('isOpen')
   alignItems() {
     if (this.isOpen) {
-      //this.updateItems();
       this.refreshSelected();
       this.computeDropdownPosition().then(() => {
         this.isVisible = true;
@@ -255,7 +254,7 @@ export class InnoSelect {
 
   @Listen('itemLabelChanged')
   itemLabelChanged(_event: CustomEvent<any>) {
-    this.updateItems();
+    forceUpdate(this);
   }
 
   /**
@@ -263,7 +262,7 @@ export class InnoSelect {
    */
   @Method()
   async refresh() {
-    this.updateItems();
+    forceUpdate(this);
   }
 
   private emitAllFavoritedItems(): void {
